@@ -842,7 +842,21 @@ function grp1Chart()
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale));
 
-    // SVG
+    // SVG to canvas
+
+    let svgElement = document.getElementById('grp1chart');
+    let w = 340;
+    let h = 340;
+
+    let deepCopy = svgElement.cloneNode(true);
+    let outerSVG = deepCopy.outerHTML;
+    let bin = new Blob([outerSVG], {type:'image/svg+xml; charset=utf-8'});
+    let URL = window.URL || window.webkitURL || window;
+    let binURL = URL.createObjectURL(bin);
+
+    let img = new Image();
+    drawOnPDF(img, 1)
+    img.src = binURL;
 
 }
 
