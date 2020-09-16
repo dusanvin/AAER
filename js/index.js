@@ -606,6 +606,7 @@ function setBLand() {
 // Default Font-Color auf Schwarz
 //Chart.defaults.global.defaultFontColor = 'black';
 
+
 const jsData = {
     //Anlehnung an Curriculum und Bildungsstandards
     "Bezüge Curriculum": 0,
@@ -757,83 +758,6 @@ function overallChart() {
 
 function grp1Chart()
 {
-    /*
-    const jsData = {
-        //Anlehnung an Curriculum und Bildungsstandards
-        "Bezüge Curriculum": 0,
-        "Bezüge Bildungsstandards": 1,
-
-        //Diskursive Positionierung
-        "Interessegeleitete Themenführung/Positionierung": 2,
-        "Transparenz": 3,
-        "Werbliche Elemente": 0,
-        "Heterogenität/Gender": 1,
-
-        //Makrodidaktische und bildungstheoretische Fundierung
-        "Handlungsorientierung": 4,
-        "Lebensweltlichkeit": 2,
-        "Reflexion/Urteilsfähigkeit": 1,
-        "Multiperspektivität/Kontroversität": 1,
-
-        //Mikrodidaktische Umsetzung
-        "Methodenpluralität": 0,
-        "Multimedia/Multimodalität": 3,
-        "Medienkompetenz": 1,
-        "Differenzierung": 4,
-        "Barrierefreiheit/Inklusion": 4,
-
-        //Kognitive Strukturierung
-        "Transfer- und Anwendungsorientierung": 2,
-        "Prozessorientierung (Kumulation)": 1,
-        "Lernwegunterstützende Elemente (Scaffolding)": 0,
-
-        //Bild- und Textkomposition
-        "Sprachlichkeit": 2,
-        "Bildsprache": 3,
-        "Additive Kommunikation (Anreicherung)": 1,
-
-        //Aufgabendesign
-        "Sequenzierung": 4,
-        "Aktivierung": 1,
-        "Multiple Lösungswege": 0,
-
-        //Anwendungstransparenz
-        "Didaktisches Konzept": 1,
-        "Rahmenbedingungen": 2,
-
-        //Weitere Angaben
-        "Name des Lehr-Lernmittels": "keins",
-        "Link": "www",
-        "Eigene Anmerkungen": "test",
-        "Region": 1
-    };
-
-    function responsivefy(svg) {
-        const container = d3.select(svg.node().parentNode),
-            width = parseInt(svg.style('width'), 10),
-            height = parseInt(svg.style('height'), 10),
-            aspect = width / height;
-
-        svg.attr('viewBox', `0 0 ${width} ${height}`)
-            .attr('preserveAspectRatio', 'xMinYMid')
-            .call(resize);
-
-        d3.select(window).on('resize', resize);
-       //d3.select(window).on('resize.' + container.attr('id'), resize);
-
-        function resize() {
-            var containerWidth = parseInt(container.style("width"));
-            var targetWidth = containerWidth ? containerWidth : parseInt(svg.style("width"));
-            console.log(targetWidth);
-            svg.attr("width", targetWidth);
-            svg.attr("height", Math.round(targetWidth / aspect));
-
-            // const targetWidth = parseInt(container.style('width'));
-            // svg.attr('width', targetWidth);
-            // svg.attr('height', Math.round(targetWidth / aspect));
-        }
-    }*/
-
     const keys = Object.keys(jsData);
 
     const margin = {top: 10, right: 20, bottom: 30, left: 30};
@@ -918,6 +842,8 @@ function grp1Chart()
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale));
 
+    // SVG
+
 }
 
 // Ende: Details grb1Chart
@@ -949,6 +875,7 @@ function grp2Chart() {
         }
     };
     var Chart2 = new Chart(grp2ChartObject, parameter);
+
 }
 
 // Ende: Details grb2Chart
