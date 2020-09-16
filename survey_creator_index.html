@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="de">
+
+  <head>
+
+    <meta name="viewport" content="width=device-width"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>SurveyJS survey creator and form builder</title>
+
+    <meta name="description" content="The HTML5 Herald">
+
+    <meta name="author" content="SitePoint">
+
+    <!--  Begin: Scripts & Links -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
+    <script src="https://surveyjs.azureedge.net/1.7.12/survey.ko.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.10/ace.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <link href="https://surveyjs.azureedge.net/1.7.12/survey-creator.css" type="text/css" rel="stylesheet" />
+
+    <script src="https://surveyjs.azureedge.net/1.7.12/survey-creator.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Menu Design -->
+
+        
+<script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.7.23/survey.jquery.js"></script>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"/>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $('body').bootstrapMaterialDesign();
+            });
+        </script>
+
+
+    <!--  End: scripts & Links -->
+
+  </head>
+
+  <body>
+
+    <!-- Begin: Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+      <a class="text-white" style="font-size: 20px; line-height: 30px;" href="#">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">BETA: SurveyCreator </a>
+
+      </div>
+
+      <ul class="form-inline my-2 my-lg-0">
+
+        <li class="nav-item inactive">
+
+          <a class="nav-link text-light" href="index.html" style="font-size:14px;">Zurück zur Startseite</a>
+
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <!--  End: Navbar -->
+
+    <!-- Begin: surveyContainer  -->
+
+    <div id="surveyContainer">
+
+      <!-- Begin: creatorElement  -->
+
+      <div id="creatorElement"></div>
+
+      <!-- End: creatorElement  -->
+
+    </div>
+    <!-- End: surveyContainer -->
+
+    <script>
+
+    //set function on save callback
+    //surveyCreator.saveSurveyFunc = saveMySurvey;
+
+    // Step 5. Save and load surveys. Save survey.
+    //function saveMySurvey(){
+
+      //var yourNewSurveyJSON = surveyCreator.text;
+
+      //send updated json in your storage  
+
+      //Set Survey JSON directly
+      //surveyCreator.text = yourSurveyJSON;
+
+      //Load Survey from SurveyJS Service
+      //surveyCreator.loadSurvey(yourSurveyId);
+
+    //}
+
+    </script>
+    <!-- Begin: OwnJS  -->
+
+    <script type="text/javascript" src="js/scriptSurveyCreator.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+
+    <!-- End: OwnJS  -->
+
+  </body>
+
+</html>

@@ -1,0 +1,424 @@
+Survey.defaultBootstrapMaterialCss.navigationButton = "btn btn-green";
+Survey.defaultBootstrapMaterialCss.rating.item = "btn btn-default my-rating";
+Survey
+    .StylesManager
+    .applyTheme("bootstrapmaterial");
+
+
+var json = {title:"Augsburger Analyse- und Evaluationsraster für digitale und analoge Bildungsmedien (AAER)",
+    pages: [
+        {name:"Interessegeleitete Themenführung/Positionierung", title: "Interessegeleitete Themenführung/Positionierung", description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+
+            questions: [
+                {
+                    type: "radiogroup",
+                    name: "Interessegeleitete Themenführung/Positionierung",
+		    title: "Das Lehr-Lernmittel ist frei von einseitiger Informationsvermittlung bzgl. bestimmter Themen/Aussagen gesellschaftlicher Akteure.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaft-liche Diskurse gleichberechtigt zu integ-rieren. Das wird z.B. auch dadurch signa-lisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als �verabsolu-tierte� Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermit-telte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwen-dungsaufgaben, Abbildungen o.ä.).",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+            }, {name:"Transparenz", title: "Transparenz", description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Transparenz",
+		    title: "Das Lehr-Lernmittel ist transparent hinsichtlich seiner Autorenschaft/Anbieter.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es werden Autor*innen und Anbieter sowie deren organisationa-le/institutionelle Zugehörigkeit genannt. Finanzierungsquellen werden offenge-legt. Zusammenhänge (z.B. bei mehre-ren Anbietern oder beteiligten Organisa-tionen) sind für die Lehrkraft nachvoll-ziehbar. Au�erdem werden Ziele des Lehr-Lernmittels und die Gründe für das Angebot (d.h. also eine Erklärung, wa-rum dieses Lehr-Lernmittel angeboten wird) genannt.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+          }, {name:"Werbliche Elemente", title: "Werbliche Elemente", description: "Zur Frage steht hier, inwiefern und in wel-chem Ausma� in Lehr-Lernmitteln werbli-che Elemente dargestellt werden. Dies muss unter dem Aspekt, dass in vielen Bundesländern Werbung im Unterricht entweder verboten oder zumindest sehr kritisch betrachtet wird und mit bestimm-ten Auflagen versehen ist, problematisiert werden. Werbliche Elemente im Zusam-menhang mit Lehr-Lernmitteln können sein: Logos, Produktabbildungen, Nennung von Marken u.ä., die nicht Gegenstand des Unterrichts sind (d.h., die nicht unter fachli-cher oder medienpädagogischer Perspekti-ve thematisiert werden).",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Werbliche Elemente",
+		    title: "Das Lehr-Lernmittel ist frei von Werbung.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind keine der oben genannten Ele-mente im Lehr-Lernmittel enthalten. Höchstens eine direkt auf den Anbieter des Lehr-Lernmittels bezogene Na-mensnennung (Quelle) oder das Logo des Anbieters ist enthalten � jedoch sollte dieses nicht in visuell dominanter Weise präsentiert werden.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Heterogenität/Gender", title: "Heterogenität/Gender", description: "Lehr-Lernmittel enthalten direkt oder indirekt (z.B. über visuelle Darstellungen, Bilder, Grafiken oder auch im Rahmen von Textteilen) Repräsentationen/Darstellungen einer sozialen und gesellschaftlichen Umwelt, die sie jedoch auch gleichzeitig aufgrund dieser Darstellung für das Verständnis der SuS wiederum beeinflusst und �erzeugt�. In einer pluralistisch verfassten, demokratischen Gesellschaft erscheint es wichtig, dass einseitige Zuschreibungen/Festlegungen auf gesellschaftliche bzw. ethnische Gruppen oder Minderheiten, auf Menschen mit Beeinträchtigungen sowie auf Geschlecht oder Religion vermieden werden. Darüber hinaus erscheint es als wichtig, dass eine kulturelle Vielfalt, wie sie unter den SuS herrscht, auch in Lehr-Lernmitteln repräsentiert wird.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Heterogenität/Gender",
+		    title: "Das Lehr-Lernmittel ist in seinen textlichen und bildlichen Darstellungen von gesellschaftlichen bzw. ethnischen Gruppen sowie hinsichtlich der Kategorie Geschlecht ausgewogen und in ihm werden einseitige, reduzierende Darstellungen vermieden.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n In Abbildungen, Fotos und textlichen Beschreibungen, in den gesellschaftliche Gruppen vorkommen, werden diese nicht vereinseitigend dargestellt (etwa indem eine bestimmte gesellschaftliche Gruppe bestimmten Tätigkeiten, Mei-nungen und Verhaltensweisen vereinfa-chend zugeordnet wird). Für die Katego-rie Geschlecht gilt, dass eine ausgewo-gene, sozusagen gleichberechtigte Dar-stellung von weiblichen und männlichen Personen enthalten ist, in der ebenfalls vereinseitigende Zuordnungen vermie-den bzw. möglicherweise sogar bewusst aufgebrochen werden. In ähnlicher Wei-se erfolgt die Darstellung unterschiedli-cher gesellschaftlicher Gruppen, Ethnien und Menschen mit Beeinträchtigungen - dies unter anderem auch deshalb, um der Heterogenität der SuS in diesem Bereich Rechnung zu tragen und ent-sprechende Identifikationsangebote zu bieten.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Handlungsorientierung", title: "Handlungsorientierung", description: "Das Konzept der 'Handlungsorientierung' zielt auf die aktive Erschlie�ung von Wissen und Kompetenzen durch die SuS ab. Dabei ist es in einen bildungstheoretischen Rahmen eingeordnet, der übergeordnete Bil-dungsziele der Selbst- und Mitbestim-mungsfähigkeit (Klafki) als wichtige Normen für die übergeordneten Ziele von Unter-richt anerkennt. Ein Handlungsorientierter Unterricht zeichnet sich unter anderem dadurch aus, dass SuS aktiv tätig werden und eigene Arbeits- bzw. Denkergebnisse produzieren. Das kann im Rahmen von indi-viduellen Aufgabenstellungen geschehen, es bieten sich dazu jedoch auch vielfältige Formen gruppenorientierten entdecken-den Lernens (Kooperation, Kollaboration) an. So interpretiert impliziert 'Handlungsorientierung' auch Eigenverantwortlichkeit und damit die Möglichkeit bzw. Notwendig-keit, mit eigenen Entscheidungen den Lern- bzw. Bildungsprozess zu beeinflussen/zu gestalten.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Handlungsorientierung",
+		    title: "Das Lehr-Lernmittel ist handlungsorien-tiert gestaltet, indem es Ver-antwortungs-übernahme für Lernwege und Lernergebnisse durch die SuS fördert/fordert.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im bzw. durch das Lehr-Lernmittel wer-den die SuS weitreichend zu aktiven Gestaltenden ihres eigenen Lernprozes-ses bzw. der Anwendung von Wissen, Fertigkeiten und Kompetenzen. Das zeigt sich u.U. auch darin, dass individu-ell oder auch in Gruppen echte Ent-scheidungen über Lernwege oder die Anwendung von Wissen, Fertigkeiten und Kompetenzen getroffen werden, was wiederum Wahlmöglichkeiten auf Seiten der SuS voraussetzt.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Lebensweltlichkeit", title: "Lebensweltlichkeit", description: "Hier geht es um die Frage, inwiefern das Lehr-Lernmittel Bezüge zur Lebenswelt der Schülerinnen und Schüler aufweist. Das geschieht z.B. dadurch, dass es zentrale und authentische Problemstellungen zur Grund-lage hat, die unter gesellschaftlich-politischer oder unter individueller bzw. gruppenspezifischer (Klassengruppe, Peer-Group) Perspektive für die Schülerinnen und Schüler relevant sind. Dazu kann auch gehören, dass das Lehr-Lernmittel bewusst den emotionalen Aspekt dieser Lebenswelt thematisiert.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Heterogenität/Gender",
+		    title: "Das Lehr-Lernmittel weist Bezüge zur Le-benswelt der Schülerinnen und Schüler auf.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel weist nicht nur all-gemeine Bezüge zur Lebenswelt der Schülerinnen und Schüler auf, sondern diese werden konkretisiert, indem z.B. reale Elemente/Materialien/Aussagen aus der aktuellen Zeitgeschichte aufge-griffen werden, die eine (emotionale) Nähe zu den Schülerinnen und Schülern aufweisen (z.B. aus Zeitschriften, Web-seiten sowie konkrete Ereignisse, Bezü-ge zu Fragen der Identitätsentwicklung, der Lebensgestaltung, Freizeit oder Be-ruf etc.).",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Reflexion/Urteilsfähigkeit", title: "Reflexion/Urteilsfähigkeit", description: "übergeordnete pädagogische Bildungsziele wie Mündigkeit, Selbst-, Mitbestimmungs- und Solidaritätsfähigkeit (Klafki) verlangen, dass SuS im Hinblick auf fachliche Themen aber auch auf ihre nahe und weite Umwelt sowie Lebenswelt als verantwortliche, ur-teilende Menschen angesprochen werden. Dazu gehört auch ein Ma� an Selbstreflexi-on, d.h. dass SuS auch sich selbst, die eige-ne Situation, die Situation der Gruppe und ihre politische, soziale bzw. gesellschaftliche Position zum Gegenstand des Denkens machen (Metakognition, Reflexion).",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Reflexion/Urteilsfähigkeit",
+		    title: "Das Lehr-Lernmittel spricht die SuS als Men-schen an, die sich selbst und ihre Umwelt zum Gegenstand des eigenen Denkens und Urteilens machen.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel fördert die Bildung einer eigenen begründeten Meinung bzw. die argumentative äu�erung die-ser Meinung. Die SuS werden z.B. expli-zit aufgefordert, auf der Basis ihres fach-lichen Wissens und der Ihnen zur Verfü-gung stehenden Informationen, ein Urteil als Antwort auf eine bestimmte Fragestellung zu fällen. Dabei kann auch eine gewisserma�en überfachliche Di-mension eine Rolle spielen, indem z.B. fachliche Themen in ihren gesellschaftli-chen, politischen oder sozialen Bezügen eingebettet und zum Gegenstand ge-macht werden.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Multiperspektivität/Kontroversität", title: "Multiperspektivi-tät/Kontroversität", description: "Lehr-Lernmittel referenzieren als direkten Unterrichtsgegenstand oder auch als be-gleitendes Nebenthema immer wieder Themen, die innerhalb der Gesellschaft (oder auch in der Fachwissenschaft) multi-perspektivisch oder auch kontrovers disku-tiert werden. Es ist ein zentrales Anliegen eines pädagogisch verantworteten Unter-richtens, dass Lernende in solchen Themen nicht durch Unterricht und Lehrmittel be-reits einseitig für eine mögliche Positi-on/Meinung vereinnahmt werden, sondern dass sie auf Basis von Fakten sowie unter-schiedlichen Argumenten zu einer eigenen Meinungsbildung hingeführt bzw. ermäch-tigt werden. Dies gilt vorbehaltlich einer altersgemä�en Komplexitätsreduktion bzw. Elementarisierung durch die Autor*innen des Lehr-Lernmittels. Insofern sind die Entwickler*innen gefordert, nicht nur eine einseitige Darstellung von The-men/Sachverhalten in Lehr-Lernmitteln zu vermeiden, sondern auch sensibel für plu-rale Sichtweisen zu sein und, wo vorhan-den, auch die Kontroversität, die möglich-erweise in Fachwissenschaft und Gesell-schaft vorzufinden ist, den Lernenden nicht vorzuenthalten.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Multiperspektivi-tät/Kontroversität",
+		    title: "Themen bzw. Probleme, die in Gesellschaft bzw. Wissenschaft kontrovers und multiperspekti-visch diskutiert werden, werden im Lehrmittel ebenfalls kontro-vers und multi-perspektivisch dargestellt.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die im Lehr-Lernmittel dargestellten Themen, seien es zentrale oder beglei-tende, lassen in der Art der Darstellung für die Lernenden erkennen, dass es für ihre Bewertung unterschiedliche Positi-onen, Meinungen, Sichtweisen oder Argumente gibt. Es werden nicht nur einseitige Aussagen, Wertungen oder Formulierungen vermieden, die den Anschein der Alternativlosigkeit vermit-teln, sondern die Lernenden werden durch das Lehr-Lernmittel für das Beste-hen unterschiedlicher, kontroverser Sichtweisen sensibilisiert. Zudem wird durch die Präsentation der Themen/der Inhalte sowie durch die Art der sprachli-chen Vermittlung eine Offenheit für eine eigene Meinungsbil-dung/Bewertung gewährleistet.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Methodenpluralität", title: "Methodenpluralität", description: "Methoden sind 'Lern- und Arbeitstechniken zum selbständigen und sachgerechten Erkennen, Entdecken, Experimentieren, Bearbeiten, Konstruieren, Gestalten, Prä-sentieren, Kommunizieren und Kontrollieren' (Wiater). Klippert unterscheidet Me-thoden der Informationsbeschaffung (Le-sen, Nachschlagen, Befragen, etc.), der Informationsverarbeitung und Aufberei-tung (Strukturieren, Visualisieren, Gestal-ten, etc.), Methoden der Arbeits-, Zeit- und Lernplanung und Methoden, die das Nach-denken über das eigene Lernen fördern (Klippert). Einzelne Methoden können in Lehr-Lernmitteln bewusst eingesetzt wer-den, um die beabsichtigten Lernprozesse und Aktivitäten zu unterstützen. Sie kön-nen auch direkt thematisiert, in ihrer Be-deutung erläutert und gezielt eingeübt werden, um ihre Effektivität zu erhöhen (Förderung von Methodenkompetenz). Methoden erfüllen dabei keinen Selbst-zweck, sondern haben eine Funktion inner-halb der übergeordneten Ziele des Lern-prozesses (inkl. allgemeiner und überfachli-cher Entwicklungsziele der SuS). ",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Heterogenität/Gender",
+		    title: "Das Lehr-Lernmittel setzt gezielt unter-schiedliche Me-thoden ein, die den übergeordneten Zielen des Lernprozesses dienen.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden (unter-schiedliche) Methoden gezielt einge-setzt, um bestimmte Aufgaben oder Sequenzen zu unterstützen. Diese Me-thoden zielen auf die Tätigkeit der SuS ab. Dabei geht es nicht darum, möglichst viele unterschiedliche Methoden einzu-setzen (Selbstzeck), sondern nach Mög-lichkeit solche, die die angestrebten Ziele, Fertigkeiten und Kompetenzen didaktisch unterstützen. Hilfreich ist es, wenn der Sinn oder die Zielsetzung der eingesetzten Methoden genannt wird oder in Bezug auf ihre damit verbunde-ne Zielsetzung transparent ist.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Multimedia/Multimodalität", title: "Multimedia/Multimodalität", description: "Medien können ein eindrückliches Mittel sein, Sachverhalte zu veranschaulichen, Informationen didaktisch aufzubereiten, verständlich zu präsentieren und Anknüp-fungen an die Lebenswelt von Jugendlichen zu schaffen. Lehr-Lernmittel können Medi-en nutzen um Lernende auf unterschiedli-chen Wegen anzusprechen und ihren Lern-inhalt abgestimmt auf die damit verbunde-nen Lernziele zu vermitteln. Dies kann be-sonders effektiv gelingen, wenn in Lehr-Lernmitteln unterschiedliche 'Kanäle' oder Medienformate kombiniert werden, um so mehrere sensorische Kanäle der Lernenden anzusprechen (Multimodalität). Sie können dabei auch Wahlmöglichkeiten bieten, wel-che Medienarten für spezifische Schritte des Lernprozesses genutzt werden können.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Multimedia/Multimodalität",
+		    title: "Das Lehr-Lernmittel trans-portiert seine Lerninhalte auf multimedia-le/multimodale Art und Weise.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Wesentliche Inhalte des Lehr-Lernprozesses, der durch das Lehr-Lernmittel angestrebt wird, werden medial aufbereitet vermittelt bzw. ma-chen mediale Darstellungen zum Ge-genstand des Lernhandelns für die SuS. Unterschiedliche Medienarten bzw. 'Kanäle' (z.B. auditive, audiovisuelle, annotierte oder symbolische Illustratio-nen/Videos, interaktive Webelemente, etc.) werden genutzt und in sinnvoller Weise kombiniert, um den Lernprozess zu fördern. Dies kann auch so umgesetzt werden, dass Wahlmöglichkeiten je nach individueller Präferenz für unter-schiedliche Medienarten auf Seiten der Lernenden bestehen.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Medienkompetenz", title: "Medienkompetenz", description: "Medien sind Teil der kulturellen und sozia-len Umwelt von SuS sowie wesentlicher Träger der Informations- und Wissensge-sellschaft, in der wir leben. Sie sind daher gleicherma�en ein notwendiges Lehr-Lernfeld und auch ein didaktisches Mittel, um Lehr-Lernprozesse zu unterstützen (Mittlerfunktion). Durch sie kann man auf besonders eindrückliche Weise Sachverhal-te veranschaulichen, Informationen didak-tisch aufbereiten und verständlich präsen-tieren und Anknüpfungen an die Lebens-welt von Kindern und Jugendlichen schaf-fen. Es ist wichtig, die kompetente Nutzung sowie die kritische Reflexion von Medien als Kommunikationsmittel und 'Mittler von Welt' zu fördern und zu trainieren. Medi-enkompetenz lässt sich in diesem Sinn ver-stehen als Vermögen (Fähigkeit) und Be-reitschaft in Medienzusammenhängen zu handeln, über diese zu kommunizieren und kritisch zu reflektieren.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Medienkompetenz",
+		    title: "Das Lehr-Lernmittel fördert einen kompetenten Umgang mit Medien.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die Lernenden sind nicht nur passive Rezipienten medialer Inhalte, sondern setzen sich aktiv und reflexiv mit Mediendarstellung und/oder Kommunikation auseinander. Sie arbeiten, lernen und machen Lernfortschritte unter Nutzung von Medien. Und - wo möglich - erstellen sie sogar eigene Medieninhalte oder werden herausgefordert mediale Repräsentationen kritisch und reflexiv zu hinterfragen, um Medienkompetenz zu fördern.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Differenzierung", title: "Differenzierung", description: "Eine besondere Herausforderung für die Gestaltung von Unterricht stellt die Anpas-sung an eine heterogene Schülerschaft dar. Dazu können Lehr-Lernmittel einen wichti-gen Beitrag leisten, indem sie sozusagen 'Variationen' ihrer selbst anbieten (Paralle-lisierung von Unterricht). Diese können z.B. über die Bereitstellung unterschiedlicher Anwendungsgebiete und Lernziele (auch mit unterschiedlichen Schwierigkeitsgra-den) und darauf abgestimmter Arbeits-schritte bzw. unterschiedlicher Arbeitsauf-träge innerhalb des Lehr-Lernmittels erfol-gen. Dabei ist wichtig, dass die Ergebnisse der parallel durchgeführten Lernsequenzen auch wieder zusammengeführt werden.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Differenzierung",
+		    title: "Das Lehr-Lernmittel bein-haltet Angebote für binnendifferenzierte Lernar-rangements.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält Variations-angebote, die zeitlich parallel umgesetzt werden können. Diese gehen über ein-fache Arbeitsgruppen hinaus, die die-selben Ziele lediglich auf unterschiedli-che Gegenstände umsetzen.  Sie enthal-ten z.B. auch unterschiedliche Lernziele, unterschiedliche Schwierigkeitsgrade, aufeinander verweisende Arbeitsschrit-te u.ä. Dabei wird zudem die Sicherung von verbindlichen Ergebnissen für alle Schülerinnen und Schüler nicht vernach-lässigt.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Barrierefreiheit/Inklusion", title: "Barrierefreiheit/Inklusion", description: "Lehr-Lernmittel können wesentlich zur erfolgreichen Gestaltung von inklusiven Unterrichtsszenarien beitragen, indem sie barrierefreie Zugänge für SuS mit Beeinträchtigungen bieten (insbesondere für SuS mit Seh-, Hör- oder Lernbeeinträchtigungen). Für Menschen mit Hör- oder Sehbeeinträchtigungen ist beispielsweise die Beachtung des Zwei-Sinne-Prinzips von Bedeutung, d.h. ein Element/Inhalt des Lehr-Lernmittels wird immer vollständig auf zwei Wegen (auditiv und visuell) vermittelt. Au�erdem können Untertitel in Videos, zusätzliche Texte, die den Inhalt einer Grafik oder einer Abbildung beschreiben, die Integration von Gebärdensprache, Möglichkeiten zur digitalen Sprachausgabe per Screenreader oder die Nutzbarkeit von Vergrö�erungssoftware sowie Audiodeskriptionen etc. die Zugänglichkeit des Lehr-Lernmittels für die genannte Personengruppe erleichtern. Für Menschen mit Lernschwierigkeiten ist es sinnvoll, beispielsweise die Texte des Lehr-Lernmittels in leichter Sprache zu integrieren.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Barrierefreiheit/Inklusion",
+		    title: "Das Lehr-Lernmittel bietet barrierefreie Zu-gänge für SuS mit Beeinträchtigungen.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält durchgängig in allen seinen Bestandteilen/Inhalten Elemente und Anreicherungen, die eine Barrierefreiheit für zumindest eine der beschriebenen Zielgruppen ermöglicht.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Transfer- und Anwendungsorientierung", title: "Transfer- und An-wendungsorientie-rung", description: "In Lehr-Lernmitteln können unterschiedli-che kognitive Prozesse angeregt bzw. ange-strebt werden. Solche kognitiven Prozesse lassen sich grob unter folgenden Aktions-wörtern zusammenfassen (aufsteigende Reihenfolge, was die Komplexität des Vor-gangs angeht): erinnern, verstehen, an-wenden, analysieren, bewerten, erschaf-fen. Kompetenzorientiertes Unterrichten wird in der Regel darauf abzielen, neben den elementaren kognitiven Prozessen 'erinnern' und 'verstehen' auch � ent-sprechend der Lern- bzw. Kompetenzziele � 'höhere' kognitive Prozesse anzuregen. Daher können in Lehr-Lernmitteln bewusst entsprechende Prozesse in Form von Fra-gen, Aufgaben oder Anschauungen inte-griert sein.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Transfer- und Anwendungsorientierung",
+		    title: "Durch das Lehr-Lernmittel wer-den gezielt kogni-tive Prozesse angesprochen, die über elemen-tare kognitive Prozesse hinaus-gehen und als transfer- bzw. anwendungsori-entiert zu be-zeichnen sind.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es lassen sich im Lehr-Lernmittel in den einzelnen Teilen/Sequenzen die jeweils angeregten/beabsichtigten kognitiven Prozesse identifizieren bzw. sie sind möglicherweise sogar ausgewiesen. Au�erdem finden sich Fragen oder Auf-gaben, die z.B. darauf abzielen, dass die SuS aufgebautes Wissen auf andere Objekte anwenden (Transfer), Sachver-halte eigenständig analysieren, eigene Bewertungen auf der Basis ihres Wis-sens und der erworbenen fachlichen Fertigkeiten vornehmen oder sogar ei-genständig neues Wissen oder Fertigkei-ten für unbekannte Anwendungsgebie-te bilden bzw. entwickeln, um fachliche Probleme zu lösen.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Prozessorientierung (Kumulation)", title: "Prozessorientierung (Kumulation)", description: "Ein Lehr-Lernmittel besteht oftmals aus mehreren aufeinanderfolgenden Sequen-zen, die sukzessive auf ein bestimmtes Ziel bzw. auch unterschiedliche Teilziele in ei-nem Gesamtzusammenhang des Unterrich-tens bzw. Lernens hinleiten sollen. Zur Fra-ge steht, inwiefern die Verknüpfung der einzelnen Sequenzen einen fachlichen bzw. didaktisch sinnvollen Zusammenhang er-kennen lässt. Bedeutsam ist darüber hin-aus, dass in der Regel ein kumulativer, schrittweiser Aufbau von Wissen, Fertigkei-ten und Kompetenzen als erfolgverspre-chend zu betrachten ist. Dabei kann auch die Anknüpfung am Vorwissen der SuS (sozusagen als Ausgangspunkt) eine Rolle spielen.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Prozessorientierung (Kumulation)",
+		    title: "Das Lehr-Lernmittel ver-knüpft einzelne Sequenzen zu einem Prozess und unterstützt damit das Prinzip eines kumulati-ven Aufbaus von Wissen, Fertigkei-ten und Kompe-tenzen.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Lernwegunterstützende Elemente fin-den sich nicht nur vereinzelt, sondern sind erkennbar systematisch an den Schlüsselstellen des Lehr-Lernmittels integriert und haben damit eine �rah-mende� Funktion. Solche Elemente können sein: Vor- und Nachbemerkun-gen, Kommentare zu Inhalten oder Lernprozessen des Lehr-Lernmittels (diese können sich auch metakognitiv direkt auf die SuS beziehen).",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Lernwegunterstützende Elemente (Scaffolding)", title: "Lernwegunterstützende Elemente (Scaffolding)", description: "Zur Frage steht hier, inwiefern Lehr-Lernmittel Elemente enthalten, die ihren Nutzer*innen � hier insbesondere den Schülerinnen und Schülern � deutlich ma-chen können, wie mit dem Lehr-Lernmittel gelernt werden kann/soll. Dazu können erläuternde und erklärende Hinweise ge-geben werden (Vor-/ Nachbemerkungen, Kommentare, Textbausteine, Marginalien). Wichtig hierbei ist, dass diese sich auf den Lernweg der Schülerinnen und Schüler be-ziehen und den Lernprozess bzw. die Lern-aktivität unterstützen/fördern/anleiten.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Lernwegunterstützende Elemente (Scaffolding)",
+		    title: "Das Lehr-Lernmittel enthält Elemente, die den Lernprozess der Schülerinnen und Schüler un-terstützen, indem sie Aussagen ma-chen, die sich auf den Lernweg bzw. die Lernakti-vität der Schüle-rinnen und Schü-ler beziehen.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n In Abbildungen, Fotos und textlichen Beschreibungen, in den gesellschaftliche Gruppen vorkommen, werden diese nicht vereinseitigend dargestellt (etwa indem eine bestimmte gesellschaftliche Gruppe bestimmten Tätigkeiten, Mei-nungen und Verhaltensweisen vereinfa-chend zugeordnet wird). Für die Katego-rie Geschlecht gilt, dass eine ausgewo-gene, sozusagen gleichberechtigte Dar-stellung von weiblichen und männlichen Personen enthalten ist, in der ebenfalls vereinseitigende Zuordnungen vermie-den bzw. möglicherweise sogar bewusst aufgebrochen werden. In ähnlicher Wei-se erfolgt die Darstellung unterschiedli-cher gesellschaftlicher Gruppen, Ethnien und Menschen mit Beeinträchtigungen - dies unter anderem auch deshalb, um der Heterogenität der SuS in diesem Bereich Rechnung zu tragen und ent-sprechende Identifikationsangebote zu bieten.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Sprachlichkeit", title: "Sprachlichkeit", description: "Damit Lehr-Lernmittel in der Breite von Schülerinnen und Schülern genutzt werden können, ist es vorteilhaft (auch, aber nicht nur für schwächere Schülerinnen und Schüler), wenn sie in allen ihren Teilen (auch in Aufgabenstellungen) eine klare, einfache Sprache kennzeichnet. Davon unbetroffen sind für die fachliche Aufarbeitung nötige Fach- und Fremdwörter. Textpassagen sind darüber hinaus �kohärent�, d.h. sie weisen eine logische Verknüpfung ihrer Abschnitte auf (Sprachfluss ohne Unterbrechungen).",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Sprachlichkeit",
+		    title: "Die Sprache des Lehr-Lernmittels ist klar und verständlich.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine unnö-tig langen und verschachtelten Sätze. Auch Aufgaben sind direkt und klar for-muliert, und es werden nicht mehrere Aufgabenstellungen in einer einzelnen Aufgabe vermischt. Fachbegriffe und Fremdwörter werden im fachlich nöti-gen und sinnvollen Rahmen eingesetzt oder gegebenenfalls erläutert. Es exis-tieren keine sprachlichen bzw. logischen Brüche zwischen einzelnen Sätzen oder Abschnitten.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Bildsprache", title: "Bildsprache", description: "�ber unterschiedliche bildliche Darstellun-gen (z.B. Fotos, Diagramme, Tabellen, Charts, Animationen) k�nnen Sachverhalte vermittelt, verdeutlicht und erkl�rt werden. Diese bildlichen Elemente sollten in einem logischen und didaktischen Zusammenhang zum Thema und zu den Zielen des Lehr-Lernmittels stehen. Au�erdem sind bildli-che Elemente in der Regel in textliche Ele-mente eingebettet oder in Zusammenhang gesetzt � dieser Zusammenhang sollte m�glichst klar sein. Es kann zur F�rderung von bildlichem Verstehen und Interpretati-onsverm�gen sinnvoll sein, dass abstrahier-te bildliche Darstellungen (z.B. Charts) mit textlichen Elementen versehen sind, die erkl�renden Charakter haben.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Bildsprache",
+		    title: "Bildliche Elemen-te werden im Lehr-Lernmittel in klarer und logi-scher Zuordnung zum Unterrichts-thema bzw. �ziel eingesetzt.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel verwendet bildliche Elemente �ber eine rein illustrative Funktion hinaus. Sie stehen im Zusam-menhang zum Unterrichtsthema und �ziel und leisten einen eigenen Beitrag zum Verstehen, Erkl�ren oder Anwen-den von Wissen, Fertigkeiten und Kom-petenzen, die f�r den durch das Lehr-Lernmittel angeregten Unterrichtspro-zess wichtig sind. Sie sind dabei auch textlich eingebettet, was z.B. durch er-kl�rende Textpassagen oder Beschrif-tungen erreicht wird.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Additive Kommunikation (Anreicherung)", title: "Additive Kommunikation (Anreicherung)", description: "Hiermit ist gemeint, dass das Lehr-Lernmittel auch �ber die rein fachliche Aufbereitung hinaus zus�tzliche Elemente integriert und jene 'anreichern' kann. Dies k�nnen z.B. sein: Lebensweltbez�ge im Sinne von Zusatzinformationen, Anekdoten oder humoristischen Passagen. Es k�nnen auch Zus�tze sein, die sich erg�nzend oder vertiefend auf die im Lehr-Lernmittel pr�sentierten Inhalte beziehen (z.B.: Zusammenfassungen, Exkurse, Merks�tze, Glossare, Begriffserkl�rungen).",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Additive Kommunika-tion (Anreicherung)",
+		    title: "Das Lehr-Lernmittel integriert zus�tzliche kommunikative Elemente, die die Inhalte des Lehr-Lernmittels unterst�tzen/anreichern.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enth�lt �ber eine reine fachliche Aufbereitung des Unterrichtsthemas und der Unterrichtsziele hinaus auch zus�tzliche Elemente (Text/Bild/Sprache), die die SuS ansprechen, z.B. in ihren lebensweltlichen Bez�gen, oder als Erg�nzung, Erkl�rung sowie Verst�rkung der im Lehr-Lernmittel pr�sentierten Inhalte.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Sequenzierung", title: "Sequenzierung", description: "Aufgaben, die im Lehr-Lernmittel gestellt werden, sollten in einem fachlichen und/oder didaktischen Zusammenhang zueinanderstehen. Hier kann entsprechend die Frage gestellt werden, welche kogniti-ven Leistungen/Prozesse (z.B. etwas erin-nern, verstehen, anwenden, analysieren, bewerten, erschaffen) in den einzelnen Aufgaben oder ihren Teilen angeregt wer-den und ob diese in sinnvollem Zusammen-hang zueinander stehen - also z.B. aufei-nander aufbauen, zueinander hinf�hren oder ein Thema/eine Kompetenz aus un-terschiedlichen Teilaspekten behandeln und vertiefen.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Sequenzierung",
+		    title: "Die im Lehr-Lernmittel enthal-tenen Aufgaben stehen in einem didaktisch oder fachlich sinnvol-len Zusammen-hang zueinander.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die im Lehr-Lernmittel enthaltenen Auf-gaben sind in einer aus fachlicher oder didaktischer Perspektive verst�ndlichen Weise sequenziert. Sie verweisen aufei-nander/bauen aufeinander auf und da-bei werden nicht nur gleiche oder �hnli-che kognitive Prozesse wiederholt. ",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Aktivierung", title: "Aktivierung", description: "Hier geht es um die Frage, inwiefern ein Lehr-Lernmittel insgesamt eine grundle-gende Problemstellung verfolgt, die im Ver-lauf durch die Sch�lerinnen und Sch�ler bearbeitet und gel�st wird. Diese Problem-stellung wird in der Regel am Anfang des Lehr-Lernmittels formuliert und bietet da-mit das �Setting� f�r die sich daraus erge-benden Schritte und Aufgaben, wodurch lernpsychologisch betrachtet eine Aktivie-rung der Sch�lerinnen und Sch�ler erfolgt (Motivation).",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Aktivierung",
+		    title: "Das Lehr-Lernmittel steht unter einer �ber-geordne-ten/umgreifenden Problemstellung, die durch die Sch�lerinnen und Sch�ler bearbeitet und gel�st wird.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Zu Beginn des durch das Lehr-Lernmittel initiierten Lernprozesses wird eine Prob-lemstellung formuliert, die es im Verlauf zu l�sen gilt. Alle nachfolgenden Unter-richtsschritte sind auf diese Problemstel-lung bezogen und f�hren nach und nach zur L�sung bzw. vertiefen diese.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Multiple L�sungswege", title: "Multiple L�sungswege", description: "Nicht immer gibt es eine festgefertigte Me-thode, eine fachliche Prozedur oder eine Sichtweise, um ein Problem oder eine Auf-gabe zu l�sen. Lehr-Lernmittel k�nnen hier-f�r sensibel sein und � wo m�glich � unter-schiedliche Wege zu einer L�sung zu kom-men zulassen oder diese sogar anregen. Damit wird ein Spielraum f�r verschiedene plausible Strategien unterschiedlicher SuS erm�glicht, andererseits Flexibilit�t in ver-schiedenen L�sungsans�tzen gef�rdert.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Multiple L�sungswege",
+		    title: "Die im Lehr-Lernmittel enthal-tenen Aufgaben regen die SuS zur Entwicklung meh-rerer L�sungswe-ge an.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Lehr-Lernmittel lassen Raum f�r unter-schiedliche Herangehensweisen, ohne dabei die SuS g�nzlich ohne jegliche An-leitung oder Hinweise auf L�sungswege zu lassen. Z.B. werden unterschiedliche L�sungswege oder Strategien als Ange-bot an die SuS skizziert und vorgeschla-gen. Auch konkrete Beispiele f�r m�gli-che unterschiedliche L�sungen oder Strategien k�nnen diesen Ansatz unter-st�tzen.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Didaktisches Konzept", title: "Didaktisches Konzept", description: "F�r eine eigene Nutzung � insbesondere durch Lehrkr�fte � ist es von Vorteil, wenn zentrale Gedanken f�r den didaktischen Einsatz vermittelt werden. Und zwar selbst dann, wenn die Lehrpersonen das Lehr-Lernmittel nicht eins zu eins f�r ihren eige-nen Unterricht einsetzen wollen, sondern an eigene Bed�rfnisse anpassen m�chten. Dazu geh�ren Informationen wie: Zielgrup-pe(n), Ziele, Teilziele, damit verbundene Methoden, angestrebte bzw. gef�rderte Kompetenzen, Bezug zu Unterrichtsthe-men etc.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Didaktisches Konzept",
+		    title: "Das Lehr-Lernmittel enth�lt didaktische In-formationen, die seine Anwen-dung erleichtern.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enth�lt weitrei-chende und begr�ndete Informationen �ber seine didaktische Konzeption. Die-se �bersteigen grundlegende Informati-onen �ber thematische Bez�ge sowie die Zielgruppe und geben dar�ber hin-aus auch Informationen �ber methodi-sche Vorgehensweisen, angestrebte Kompetenzen oder Teilziele. Diese In-formationen erkl�ren die Intention des Lehr-Lernmittels und erleichtern somit seine Nutzbarkeit.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Rahmenbedingungen", title: "Rahmenbedingungen", description: "Der Einsatz von Lehr-Lernmitteln im Unter-richt birgt bestimmte Voraussetzungen, die bei einer beabsichtigten Nutzung zu be-denken sind. Dazu geh�ren z.B. Zeitbedarf, technische oder r�umliche Voraussetzun-gen, bestimmte Gruppengr��en, das Vor-handensein bestimmter Materialien oder Medien, die M�glichkeit der Wiedergabe bestimmter Medienformate, Internetver-bindung, eine bestimmte Anzahl an PCs oder mobilen Endger�ten etc. F�r die Lehr-kraft ist es hilfreich, wenn diese Vorausset-zungen von vornherein �bersichtlich ge-nannt werden.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Rahmenbedingungen",
+		    title: "Das Lehr-Lernmittel nennt die Rahmenbedingungen seiner Nutzung.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind alle n�tigen Rahmenbedingun-gen der Nutzung/des Einsatzes des Lehr-Lernmittels �bersichtlich aufge-f�hrt.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Bez�ge Curriculum", title: "Bez�ge Curriculum", description: "Heutige Lehrpl�ne enthalten fach- und stu-fen- bzw. jahrgangsbezogene Ziele, The-mengebiete, Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden. Wenn es auch nicht unbedingt darum geht, hier eine eng gef�hrte Ent-sprechung zu erreichen, so ist doch eine Passung der mittel- und langfristigen Unter-richtsverl�ufe zu diesen Lehrpl�nen wichtig. Dazu ist es hilfreich, wenn das Lehr-Lernmittel entsprechende Bez�ge zumin-dest stichwortartig herstellt, so dass eine Zuordnung seitens der Lehrkr�fte bzw. u.U. auch seitens der SuS leichter vollzogen werden kann.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Bez�ge Curriculum",
+		    title: "Im Lehr-Lernmittel werden nachvollzieh-bare Bez�ge zu Inhalten des f�r das Fach g�ltigen Curriculums hergestellt",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden Ziele, The-mengebiete, angestrebte Fertigkei-ten/Kompetenzen, didaktische Prinzi-pien oder Anregungen zu Methoden auf eine Art transparent gemacht, die einer Lehrkraft eine Zuordnung zu den g�lti-gen Lehr- und Bildungspl�nen (Curricula) leicht macht. Idealerweise wird eine solche Zuordnung im Lehr-/Lernmittel selbst vorgenommen, es enth�lt also spezifische Aussagen zu diesem Bereich. Das kann auch in der Form geschehen, dass der erg�nzende Charakter als indi-rekter Bezug auf die Lehr- und Bildungs-pl�ne deutlich gemacht wird.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+         }, {name:"Bez�ge Bildungsstandards", title: "Bez�ge Bildungsstandards", description: "F�r eine Reihe von F�chern existieren in der Bundesrepublik Deutschland Bildungsstan-dards, in denen Kompetenz- bzw. Anforde-rungsbereiche beschrieben sind. Zwar ist davon auszugehen, dass sich diese auch in Lehr- und Bildungspl�nen niederschlagen, jedoch kann es trotzdem hilfreich sein, wenn im Lehr-Lernmittel auch hier entspre-chende Bez�ge zumindest stichwortartig herstellt werden, so dass eine Zuordnung seitens der Lehrkr�fte bzw. u.U. auch sei-tens der SuS leichter vollzogen werden kann.",
+
+                      questions: [
+                {
+                    type: "radiogroup",
+                    name: "Bez�ge Bildungsstandards",
+		    title: "Im Lehr-Lernmittel wer-den nachvollzieh-bare Bez�ge zu Inhalten der f�r das Fach g�ltigen Bildungsstan-dards hergestellt.",
+                    //description: "Es ist grundsätzlich die Frage zu stellen, in-wiefern Inhalte des Angebots im Zusam-menhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schü-ler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
+		    isRequired: true,
+		    hasComment: true,
+		    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel findet eine grund-s�tzliche Einordnung der Lehr-Lernziele, der Themen sowie der angestrebten Kompetenzen zu entsprechenden Inhal-ten der Bildungsstandards statt (z.B. Anforderungsbereiche, Kompetenzen, Themen). Das kann auch detail-liert/kleinschrittiger passieren, indem z.B. einzelne Unterrichtssequenzen o-der Aufgaben in ihrer Bedeutung f�r den Kompetenzerwerb im Sinne der Bildungsstandards zugeordnet werden.",
+                    choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 5, text: "nicht bewertbar"}]
+                }
+            ]
+
+        }, {
+            questions: [
+                {
+                    type: "radiogroup",
+                    name: "price to competitors",
+                    title: "Das Lehr-Lernmittel enthält didaktische Informationen, die seine Anwendung erleichtern.",
+                    choices: ["Stimme gar nicht zu", "Stimme nicht zu", "Stimme zu", "Stimme voll zu", "Weiss nicht"]
+                }, {
+                    type: "radiogroup",
+                    name: "price",
+                    title: "Do you feel our current price is merited by our product?",
+                    choices: ["correct|Yes, the price is about right", "low|No, the price is too low for your product", "high|No, the price is too high for your product"]
+                }, {
+                    type: "multipletext",
+                    name: "pricelimit",
+                    title: "What is the... ",
+                    items: [
+                        {
+                            name: "mostamount",
+                            title: "Most amount you would every pay for a product like ours"
+                        }, {
+                            name: "leastamount",
+                            title: "The least amount you would feel comfortable paying"
+                        }
+                    ]
+                }
+            ]
+        }, {
+            questions: [
+                {
+                    type: "text",
+                    name: "email",
+                    title: "Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the 'Submit' button."
+                }
+            ]
+        }
+    ]
+};
+
+window.survey = new Survey.Model(json);
+
+survey
+    .onComplete
+    .add(function (result) {
+        document
+            .querySelector('#surveyResult')
+            .textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
+    });
+
+$("#surveyElement").Survey({model: survey});

@@ -1,0 +1,33 @@
+.sidenav {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  overflow-x: hidden;
+  margin-top: -100px;
+  border: 2px solid #a94c6b;
+  border-radius: 7px;
+  background-color: #a94c6b;
+}
+
+  .sidenav a {
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+@media (max-width: 718px){
+  .sidenav {display:none;}
+}
+
+.sidenav_icon:hover {
+  height:64px;
+  width:64px;
+  transition: all .2s ease-in-out;
+}
+
+.sidenav_icon {
+  transition: all .2s ease-in;
+}
