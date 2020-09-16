@@ -1,6 +1,6 @@
 # AAER
 
-Digial version of the Projekt "Augsburger Analyse- und Evalutationsraster" (AAER) to analyze Open Educational Resources (OER). Mainly for teachers and people working as educators.
+Digial version of the Project "Augsburger Analyse- und Evalutationsraster" (AAER) to analyze Open Educational Resources (OER). Mainly for teachers and people working as educators.
 
 Mixture of own CSS/JS and...
 
