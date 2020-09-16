@@ -425,7 +425,14 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
     ]
 };
 
+let canvas = document.createElement('canvas');
+canvas.width = 768;
+canvas.heigt = 1020;
+let context_pdf = canvas.getContext('2d');
 
+function drawOnPDF(chartCanvas, pos) {
+    context_pdf.drawImage(chartCanvas, 340*pos+44*(pos%2), 340*pos, canvas.width, canvas.height);
+}
 
 window.survey = new Survey.Model(json);
 
@@ -485,15 +492,8 @@ survey.onComplete.add(function (sender, options) {
     console.log(sender.data);
 
     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(sender.data, null, 4);
-    overallChart();
-    grp1Chart();
-    grp2Chart();
-    grp3Chart();
-    grp4Chart();
-    grp5Chart();
-    grp6Chart();
-    grp7Chart();
-    grp8Chart();
+
+    generateCharts();
 });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
@@ -504,18 +504,16 @@ $("#surveyElement").Survey({model: survey, onValidateQuestion: surveyValidateQue
 
 // Start: Funktionen zur Darstellung der Diagramme
 
-function displayResultData() {
-    setNameAndLink();
+function generateCharts() {
+    overallChart();
     grp1Chart();
-    grp2Chart();
+    grp2Chart(2);
     grp3Chart();
     grp4Chart();
     grp5Chart();
     grp6Chart();
     grp7Chart();
     grp8Chart();
-    setAnmerkungen();
-    setBLand();
 }
 
 // Ende: Funktionen zur Darstellung der Diagramme
@@ -759,6 +757,7 @@ function overallChart() {
 
 function grp1Chart()
 {
+    /*
     const jsData = {
         //Anlehnung an Curriculum und Bildungsstandards
         "Bezüge Curriculum": 0,
@@ -833,7 +832,7 @@ function grp1Chart()
             // svg.attr('width', targetWidth);
             // svg.attr('height', Math.round(targetWidth / aspect));
         }
-    }
+    }*/
 
     const keys = Object.keys(jsData);
 
@@ -929,10 +928,10 @@ function grp1Chart()
 
 function grp2Chart() {
     var grp2ChartObject = document.getElementById('grp2Chart');
-    var Chart2 = new Chart(grp2ChartObject, {
+    let parameter = {
         type: 'radar',
         data: {
-            labels: ["A", "B", "C", "D"],
+            labels: [["Interessegeleitete", "Themenführung/Positionierung"], "Transparenz", "Werbliche Elemente", "Heterogenität/Gender"],
             datasets: [{
                 label: "Diskursive Positionierung",
                 data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
@@ -948,7 +947,8 @@ function grp2Chart() {
 
             }
         }
-    });
+    };
+    var Chart2 = new Chart(grp2ChartObject, parameter);
 }
 
 // Ende: Details grb2Chart
