@@ -843,7 +843,7 @@ function grp1Chart()
         .call(d3.axisBottom(xScale));
 
     // SVG to canvas
-
+/*
     let svgElement = document.getElementById('grp1chart');
     let w = 340;
     let h = 340;
@@ -857,7 +857,7 @@ function grp1Chart()
     let img = new Image();
     drawOnPDF(img, 1)
     img.src = binURL;
-
+*/
 }
 
 // Ende: Details grb1Chart
