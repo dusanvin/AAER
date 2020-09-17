@@ -430,9 +430,10 @@ canvas.width = 768;
 canvas.heigt = 1020;
 let context_pdf = canvas.getContext('2d');
 
-function drawOnPDF(chartCanvas, pos) {
-    context_pdf.drawImage(chartCanvas, 340*pos+44*(pos%2), 340*pos, canvas.width, canvas.height);
+function drawOnPDF(chart, pos) {
+    context_pdf.drawImage(chart, 340*pos+44*(pos%2), 340*pos, canvas.width, canvas.height);
 }
+
 
 window.survey = new Survey.Model(json);
 
@@ -700,6 +701,8 @@ function overallChart() {
             }
         }
     });
+
+
 }
 
 // Ende: Details overallChart
@@ -890,6 +893,28 @@ function grp2Chart() {
     };
     var Chart2 = new Chart(grp2ChartObject, parameter);
 
+    // PDF
+    // let canvas = document.createElement('canvas');
+    // canvas.width = 340;
+    // canvas.heigt = 340;
+    // let toPDF = new Chart(canvas, parameter);
+    // drawOnPDF(toPDF, 2)
+
+    var newCanvas = document.querySelector('#chart2-canvas');
+    newContext = newCanvas.getContext('2d');
+    var chart2canvas = new Chart(newContext, parameter);
+    downloadPDF();
+
+}
+
+function downloadPDF() {
+    var newCanvas = document.querySelector('#chart2-canvas');
+    var newCanvasImg = newCanvas.toDataURL("image/jpeg", 1.0);
+    var doc = new jsPDF('aaer');
+    doc.setFontSize(20);
+    doc.text(15, 15, "AAER Übersicht");
+    doc.addImage(newCanvasImg, 'JPEG', 10, 10, 340, 340 );
+    doc.save('new-canvas.pdf');
 }
 
 // Ende: Details grb2Chart
