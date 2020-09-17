@@ -765,31 +765,31 @@ function grp1Chart()
     const width = 400 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
-    const data = [keys[0], keys[1]];
+    const data = [keys[0], keys[1]]; // Hier stehen einfach Strings zur Beschriftung der x-Achse
 
-    const xScale = d3.scaleBand()
+    const xScale = d3.scaleBand() // Aufteilung der x-Achse
         .padding(0.2)
         .domain(data)
         .range([0, width]);
 
-    const yScale = d3.scaleLinear()
+    const yScale = d3.scaleLinear() // Aufteilung der y-Achse von 0 bis 4
         .domain([0, 4])
         .range([height, 0]);
 
     const svg = d3.select('#grp1Chart')
-        .append('svg')
-        .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom)
-        .call(responsivefy) // this is all it takes to make the chart responsive
-        .append('g')
-        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+        .append('svg') // Anfügen svg->DOM-Element
+          .attr('width', width + margin.left + margin.right)
+          .attr('height', height + margin.top + margin.bottom)
+          .call(responsivefy) // this is all it takes to make the chart responsive
+        .append('g') // Anfügen g->svg
+          .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     const graphArea = svg
-        .append('g');
+        .append('g'); // Anfügen g->svg.g
 
-    let defs = svg.append("defs");
+    let defs = svg.append("defs"); // Anfügen defs->svg.g
 
-    let gradient = defs.append("linearGradient")
+    let gradient = defs.append("linearGradient") // Farbübergang senkrecht
         .attr("id", "svgGradient")
         //.attr("x1", "0%")
         //.attr("x2", "100%")
@@ -797,7 +797,7 @@ function grp1Chart()
         //.attr("y2", "100%");
         .attr('gradientTransform', 'rotate(90)');
 
-    gradient.append("stop")
+    gradient.append("stop") // Man fängt oben an
         .attr('class', 'start')
         .attr("offset", "0%")
         .attr("stop-color", 'green')
@@ -809,7 +809,7 @@ function grp1Chart()
         .attr("stop-color", 'white')
         .attr("stop-opacity", 0.7);
 
-    defs
+    defs // Erstellt das Chart
         .append('clipPath')
         .attr('id', 'clip-bar-rects')
         .selectAll('bar')
@@ -823,11 +823,11 @@ function grp1Chart()
         .attr("clip-path", "url(#clip-bar-rects)")
         .attr('fill', 'url(#svgGradient)');
 
-    const clipPath = graphArea
+    const clipPath = graphArea // An die Fläche wird der Bereich angebracht, auf den die Balken kommen.
         .append('g')
         .attr('clip-path', 'url(#clip-bar-rects)');
 
-    clipPath
+    clipPath // Fläche, die man benötigt, um die Balken zu färben.
         .append('rect')
         .attr('x', 0)
         .attr('y', 0)
@@ -836,9 +836,9 @@ function grp1Chart()
         .style('fill', 'url(#svgGradient)');
 
 
-    svg.append('g').call(d3.axisLeft(yScale).ticks(4));
+    svg.append('g').call(d3.axisLeft(yScale).ticks(4)); // y-Achse mit yScale[vorher definiert]
 
-    svg.append('g')
+    svg.append('g') // x-Achse mit xScale[vorher definiert]
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale));
 
