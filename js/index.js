@@ -762,8 +762,8 @@ function grp1Chart()
 
     const margin = {top: 10, right: 20, bottom: 30, left: 30};
 
-    const width = 400 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    const width = 240 - margin.left - margin.right;
+    const height = 240 - margin.top - margin.bottom;
 
     const data = [keys[0], keys[1]];
 
