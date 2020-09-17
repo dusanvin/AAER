@@ -760,7 +760,7 @@ function grp1Chart()
 {
     const keys = Object.keys(jsData);
 
-    const margin = {top: 10, right: 20, bottom: 30, left: 30};
+    const margin = {top: 20, right: 20, bottom: 20, left: 20};
 
     const width = 400 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
@@ -800,14 +800,12 @@ function grp1Chart()
     gradient.append("stop")
         .attr('class', 'start')
         .attr("offset", "0%")
-        .attr("stop-color", 'green')
-        .attr("stop-opacity", 1);
+        .attr("stop-color", '#2dc3bd');
 
     gradient.append("stop")
         .attr('class', 'end')
         .attr("offset", "100%")
-        .attr("stop-color", 'white')
-        .attr("stop-opacity", 0.7);
+        .attr("stop-color", '#e35e60');
 
     defs
         .append('clipPath')
@@ -836,11 +834,19 @@ function grp1Chart()
         .style('fill', 'url(#svgGradient)');
 
 
-    svg.append('g').call(d3.axisLeft(yScale).ticks(4));
-
+    // y-Achse hinzufügen mit Klasse .axis
     svg.append('g')
+        .attr("class", "axis")
+        .call(d3.axisLeft(yScale).ticks(4));
+
+    // x-Achse hinzufügen mit Klasse .axis
+    svg.append('g')
+        .attr("class", "axis")
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale));
+
+
+
 
     // SVG to canvas
 /*

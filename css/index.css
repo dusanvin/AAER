@@ -4,7 +4,13 @@ body {
     background: -webkit-linear-gradient(left, #aa4b6b, #6b6b83, #3b8d99);
     background: -o-linear-gradient(left, #aa4b6b, #6b6b83, #3b8d99);
     background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
- } 
+ }
+
+.axis {
+  font-size:14px !important;
+}
+
+
 .my-rating {
     font-size: 12px;
 }
