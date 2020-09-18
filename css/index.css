@@ -10,6 +10,20 @@ body {
   font-size:14px !important;
 }
 
+.tooltip-inner {
+  background-color: transparent !important;
+  color:white;
+}
+
+
+.bs-tooltip-bottom .arrow:before {
+  border-bottom-color:transparent !important;
+}
+
+.bs-tooltip-right .arrow:before {
+  border-right-color:transparent !important;
+}
+
 
 .my-rating {
     font-size: 12px;
