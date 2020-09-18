@@ -710,158 +710,141 @@ function overallChart() {
 
 
 // Start: Details grb1Chart
-//
-// function grp1Chart() {
-//     var grp1ChartObject = window.document.getElementById('grp1Chart');
-//
-//     var Chart1 = new Chart(grp1ChartObject, {
-//         type: 'bar',
-//         data: {
-//             labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards"],
-//             datasets: [{
-//                 label: "Anlehnung an Curriculum und Bildungsstandards",
-//                 backgroundColor: ["#f49080","#80b6f4"],
-//                 data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
-//             }]
-//         },
-//         options: {
-//             animation: {
-//                 easing: "easeInOutBack"
-//             },
-//             legend: {
-//                 display: false
-//             },
-//             scales: {
-//                 yAxes: [{
-//                     ticks: {
-//                         fontColor: "rgba(0,0,0,0.5)",
-//                         fontStyle: "bold",
-//                         display: true,
-//                         max: 4,
-//                         stepSize: 1,
-//                         beginAtZero: true
-//                     },
-//                     gridLines: {
-//                         display: true
-//                     }
-//                 }],
-//                 xAxes: [{
-//                     gridLines: {
-//                         display: true
-//                     },
-//                     ticks: {
-//                         display: true
-//                     }
-//                 }]
-//             }
-//         }
-//     });
-// }
 
+function grp1Chart() {
+    var grp1ChartObject = window.document.getElementById('grp1Chart');
 
-function grp1Chart()
-{
-    const keys = Object.keys(jsData);
-
-    const margin = {top: 10, right: 20, bottom: 30, left: 30};
-
-    const width = 400 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
-
-    const data = [keys[0], keys[1]]; // Hier stehen einfach Strings zur Beschriftung der x-Achse
-
-    const xScale = d3.scaleBand() // Aufteilung der x-Achse
-        .padding(0.2)
-        .domain(data)
-        .range([0, width]);
-
-    const yScale = d3.scaleLinear() // Aufteilung der y-Achse von 0 bis 4
-        .domain([0, 4])
-        .range([height, 0]);
-
-    const svg = d3.select('#grp1Chart')
-        .append('svg') // Anfügen svg->DOM-Element
-          .attr('width', width + margin.left + margin.right)
-          .attr('height', height + margin.top + margin.bottom)
-          .call(responsivefy) // this is all it takes to make the chart responsive
-        .append('g') // Anfügen g->svg
-          .attr('transform', `translate(${margin.left}, ${margin.top})`);
-
-    const graphArea = svg
-        .append('g'); // Anfügen g->svg.g
-
-    let defs = svg.append("defs"); // Anfügen defs->svg.g
-
-    let gradient = defs.append("linearGradient") // Farbübergang senkrecht
-        .attr("id", "svgGradient")
-        //.attr("x1", "0%")
-        //.attr("x2", "100%")
-        //.attr("y1", "0%")
-        //.attr("y2", "100%");
-        .attr('gradientTransform', 'rotate(90)');
-
-    gradient.append("stop") // Man fängt oben an
-        .attr('class', 'start')
-        .attr("offset", "0%")
-        .attr("stop-color", 'green')
-        .attr("stop-opacity", 1);
-
-    gradient.append("stop")
-        .attr('class', 'end')
-        .attr("offset", "100%")
-        .attr("stop-color", 'white')
-        .attr("stop-opacity", 0.7);
-
-    defs // Erstellt das Chart
-        .append('clipPath')
-        .attr('id', 'clip-bar-rects')
-        .selectAll('bar')
-        .data([survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')])
-        .enter()
-        .append('rect')
-        .attr('x', (d, i) => xScale(data[i]))
-        .attr('y', d => yScale(d))
-        .attr('width', d => xScale.bandwidth())
-        .attr('height', d => height - yScale(d))
-        .attr("clip-path", "url(#clip-bar-rects)")
-        .attr('fill', 'url(#svgGradient)');
-
-    const clipPath = graphArea // An die Fläche wird der Bereich angebracht, auf den die Balken kommen.
-        .append('g')
-        .attr('clip-path', 'url(#clip-bar-rects)');
-
-    clipPath // Fläche, die man benötigt, um die Balken zu färben.
-        .append('rect')
-        .attr('x', 0)
-        .attr('y', 0)
-        .attr('width', width)
-        .attr('height', height)
-        .style('fill', 'url(#svgGradient)');
-
-
-    svg.append('g').call(d3.axisLeft(yScale).ticks(4)); // y-Achse mit yScale[vorher definiert]
-
-    svg.append('g') // x-Achse mit xScale[vorher definiert]
-        .attr('transform', `translate(0, ${height})`)
-        .call(d3.axisBottom(xScale));
-
-    // SVG to canvas
-/*
-    let svgElement = document.getElementById('grp1chart');
-    let w = 340;
-    let h = 340;
-
-    let deepCopy = svgElement.cloneNode(true);
-    let outerSVG = deepCopy.outerHTML;
-    let bin = new Blob([outerSVG], {type:'image/svg+xml; charset=utf-8'});
-    let URL = window.URL || window.webkitURL || window;
-    let binURL = URL.createObjectURL(bin);
-
-    let img = new Image();
-    drawOnPDF(img, 1)
-    img.src = binURL;
-*/
+    var Chart1 = new Chart(grp1ChartObject, {
+        type: 'bar',
+        data: {
+            labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards"],
+            datasets: [{
+                label: "Anlehnung an Curriculum und Bildungsstandards",
+                backgroundColor: ["#f49080","#80b6f4"],
+                data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
+            }]
+        },
+        options: {
+            animation: {
+                easing: "easeInOutBack"
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "rgba(0,0,0,0.5)",
+                        fontStyle: "bold",
+                        display: true,
+                        max: 4,
+                        stepSize: 1,
+                        beginAtZero: true
+                    },
+                    gridLines: {
+                        display: true
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: true
+                    },
+                    ticks: {
+                        display: true
+                    }
+                }]
+            }
+        }
+    });
 }
+
+
+// function grp1Chart()
+// {
+//     const keys = Object.keys(jsData);
+//
+//     const margin = {top: 10, right: 20, bottom: 30, left: 30};
+//
+//     const width = 400 - margin.left - margin.right;
+//     const height = 400 - margin.top - margin.bottom;
+//
+//     const data = [keys[0], keys[1]]; // Hier stehen einfach Strings zur Beschriftung der x-Achse
+//
+//     const xScale = d3.scaleBand() // Aufteilung der x-Achse
+//         .padding(0.2)
+//         .domain(data)
+//         .range([0, width]);
+//
+//     const yScale = d3.scaleLinear() // Aufteilung der y-Achse von 0 bis 4
+//         .domain([0, 4])
+//         .range([height, 0]);
+//
+//     const svg = d3.select('#grp1Chart')
+//         .append('svg') // Anfügen svg->DOM-Element
+//           .attr('width', width + margin.left + margin.right)
+//           .attr('height', height + margin.top + margin.bottom)
+//           .call(responsivefy) // this is all it takes to make the chart responsive
+//         .append('g') // Anfügen g->svg
+//           .attr('transform', `translate(${margin.left}, ${margin.top})`);
+//
+//     const graphArea = svg
+//         .append('g'); // Anfügen g->svg.g
+//
+//     let defs = svg.append("defs"); // Anfügen defs->svg.g
+//
+//     let gradient = defs.append("linearGradient") // Farbübergang senkrecht
+//         .attr("id", "svgGradient")
+//         //.attr("x1", "0%")
+//         //.attr("x2", "100%")
+//         //.attr("y1", "0%")
+//         //.attr("y2", "100%");
+//         .attr('gradientTransform', 'rotate(90)');
+//
+//     gradient.append("stop") // Man fängt oben an
+//         .attr('class', 'start')
+//         .attr("offset", "0%")
+//         .attr("stop-color", 'green')
+//         .attr("stop-opacity", 1);
+//
+//     gradient.append("stop")
+//         .attr('class', 'end')
+//         .attr("offset", "100%")
+//         .attr("stop-color", 'white')
+//         .attr("stop-opacity", 0.7);
+//
+//     defs // Erstellt das Chart
+//         .append('clipPath')
+//         .attr('id', 'clip-bar-rects')
+//         .selectAll('bar')
+//         .data([survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')])
+//         .enter()
+//         .append('rect')
+//         .attr('x', (d, i) => xScale(data[i]))
+//         .attr('y', d => yScale(d))
+//         .attr('width', d => xScale.bandwidth())
+//         .attr('height', d => height - yScale(d))
+//         .attr("clip-path", "url(#clip-bar-rects)")
+//         .attr('fill', 'url(#svgGradient)');
+//
+//     const clipPath = graphArea // An die Fläche wird der Bereich angebracht, auf den die Balken kommen.
+//         .append('g')
+//         .attr('clip-path', 'url(#clip-bar-rects)');
+//
+//     clipPath // Fläche, die man benötigt, um die Balken zu färben.
+//         .append('rect')
+//         .attr('x', 0)
+//         .attr('y', 0)
+//         .attr('width', width)
+//         .attr('height', height)
+//         .style('fill', 'url(#svgGradient)');
+//
+//
+//     svg.append('g').call(d3.axisLeft(yScale).ticks(4)); // y-Achse mit yScale[vorher definiert]
+//
+//     svg.append('g') // x-Achse mit xScale[vorher definiert]
+//         .attr('transform', `translate(0, ${height})`)
+//         .call(d3.axisBottom(xScale));
+// }
 
 // Ende: Details grb1Chart
 
@@ -893,28 +876,6 @@ function grp2Chart() {
     };
     var Chart2 = new Chart(grp2ChartObject, parameter);
 
-    // PDF
-    // let canvas = document.createElement('canvas');
-    // canvas.width = 340;
-    // canvas.heigt = 340;
-    // let toPDF = new Chart(canvas, parameter);
-    // drawOnPDF(toPDF, 2)
-
-    var newCanvas = document.querySelector('#chart2-canvas');
-    newContext = newCanvas.getContext('2d');
-    var chart2canvas = new Chart(newContext, parameter);
-    downloadPDF();
-
-}
-
-function downloadPDF() {
-    var newCanvas = document.querySelector('#chart2-canvas');
-    var newCanvasImg = newCanvas.toDataURL("image/jpeg", 1.0);
-    var doc = new jsPDF('aaer');
-    doc.setFontSize(20);
-    doc.text(15, 15, "AAER Übersicht");
-    doc.addImage(newCanvasImg, 'JPEG', 10, 10, 340, 340 );
-    doc.save('new-canvas.pdf');
 }
 
 // Ende: Details grb2Chart

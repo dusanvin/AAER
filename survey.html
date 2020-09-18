@@ -12,9 +12,14 @@
 
         <script src="/js/Chart.js"></script>
 		<script src="/js/d3.js"></script>
-		<script src="/js/jspdf.js"></script>
-		<script src="/js/addimage.js"></script>
-		<script src="/js/FileSaver.js"></script>
+<!--		<script src="/js/jspdf.js"></script>-->
+<!--		<script src="/js/addimage.js"></script>-->
+<!--		<script src="/js/FileSaver.js"></script>-->
+<!--		<script src="/js/png.js"></script>-->
+<!--		<script src="/js/zlib.js"></script>-->
+<!--		<script src="/js/png_support.js"></script>-->
+<!--		<script src="/js/canvg.js"></script>-->
+<!--		<script src="/js/umd.js"></script>-->
 
 
         <!-- ChartJS-Integration Ende -->
@@ -397,8 +402,9 @@
 				          <div class="collapse mt-0" id="grp1Chartuebersicht">
 
 				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <div id="grp1Chart" style="max-width: 480px; height: 340px;"></div>
+
+				            <canvas id="grp1Chart" style="max-width: 480px; max-height: 340;"></canvas>
+<!--				            <div id="grp1Chart" style="max-width: 480px; height: 340px;"></div>-->
 
 				            </div>
 
@@ -807,8 +813,6 @@
    		display_ergebnisse();
 
 	  </script>
-
-	<canvas id="chart2-canvas" style="width: 340px; height: 340px;"></canvas>
 
   </body>
 
