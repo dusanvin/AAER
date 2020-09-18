@@ -4,7 +4,7 @@ function display_sidepanel() {
 		`
 		<!-- Sidepanel Start -->
 
-		<div class="sidenav ml-3">
+		<div class="sidenav">
 
 		  <a href="https://digillab.zlbib.uni-augsburg.de" alt="DigiLLab" target="_blank">
 
