@@ -767,6 +767,17 @@ barChartOptions = {
     }
 };
 
+radarChartOptions = {
+    scale: {
+        ticks: {
+            max: 4,
+            stepSize: 1,
+            beginAtZero: true
+        }
+
+    }
+};
+
 
 
 // Start: Details grb1Chart
@@ -893,16 +904,7 @@ function grp2Chart() {
                 data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
             }]
         },
-        options: {
-            scale: {
-                ticks: {
-                    max: 4,
-                    stepSize: 1,
-                    beginAtZero: true
-                }
-
-            }
-        }
+        options: radarChartOptions
     };
     var Chart2 = new Chart(grp2ChartObject, parameter);
 
@@ -925,16 +927,7 @@ function grp3Chart() {
                 data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
             }]
         },
-        options: {
-            scale: {
-                ticks: {
-                    max: 4,
-                    stepSize: 1,
-                    beginAtZero: true
-                }
-
-            }
-        }
+        options: radarChartOptions
     });
 }
 
@@ -955,16 +948,7 @@ function grp4Chart() {
                 data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
             }]
         },
-        options: {
-            scale: {
-                ticks: {
-                    max: 4,
-                    stepSize: 1,
-                    beginAtZero: true
-                }
-
-            }
-        }
+        options: radarChartOptions
     });
 }
 
@@ -985,16 +969,7 @@ function grp5Chart() {
                 data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
             }]
         },
-        options: {
-            scale: {
-                ticks: {
-                    max: 4,
-                    stepSize: 1,
-                    beginAtZero: true
-                }
-
-            }
-        }
+        options: radarChartOptions
     });
 }
 
@@ -1015,16 +990,7 @@ function grp6Chart() {
                 data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
             }]
         },
-        options: {
-            scale: {
-                ticks: {
-                    max: 4,
-                    stepSize: 1,
-                    beginAtZero: true
-                }
-
-            }
-        }
+        options: radarChartOptions
     });
 }
 
@@ -1045,16 +1011,7 @@ function grp7Chart() {
                 data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
             }]
         },
-        options: {
-            scale: {
-                ticks: {
-                    max: 4,
-                    stepSize: 1,
-                    beginAtZero: true
-                }
-
-            }
-        }
+        options: radarChartOptions
     });
 }
 
