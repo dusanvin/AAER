@@ -677,7 +677,7 @@ function responsivefy(svg) {
     }
 }
 
-$('#download').click(function() {
+function downloadPdf() {
     console.log('Button gedrückt');
     canvasPdf = document.createElement('canvas');
     canvasPdf.id = 'canvasPdf'
@@ -701,7 +701,7 @@ $('#download').click(function() {
         }
     });
 
-});
+};
 
 // Start: Details overallChart
 
