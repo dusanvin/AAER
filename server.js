@@ -4,6 +4,10 @@ var Fs = require('fs');
 var d3 = require('d3');
 const D3Node = require('d3-node');
 
+const canvasModule = require('canvas');
+
+
+
 
 const port = 3000;
 
@@ -34,9 +38,16 @@ app.post('/', (req, res) => {
 
 })
 
-const d3n = new D3Node();
+const d3n = new D3Node({ canvasModule });
 d3n.createSVG(10,20).append('g');
 console.log(d3n.svgString());
+
+const canvas = d3n.createCanvas(960, 500);
+const context = canvas.getContext('2d');
+
+//
+
+canvas.pngStream().pipe(Fs.createWriteStream('output.png'));
 
 app.listen(port, () =>  {console.log('server available at port ', port); });
 
