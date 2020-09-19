@@ -686,20 +686,21 @@ function downloadPdf() {
     canvasPdf.height = 1020;
 
     chart1canvas = document.getElementById('grp1Chart');
+    
 
     contextPdf = canvasPdf.getContext('2d');
-    contextPdf.drawImage(chart1canvas, 0, 0);
-    //contextPdf.drawImage(chart1canvas, 0, 400);
+    contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
+    contextPdf.drawImage(chart1canvas, 389, 39, 340, 170);
 
-    var doc = new jsPDF('p', 'mm');
-    html2canvas($("#canvasPdf"), {
-        onrendered: function(canvas) {
-            var imgData = canvas.toDataURL(
-                'image/png');
-            doc.addImage(imgData, 'PNG', 10, 10);
-            doc.save('sample-file.pdf');
-        }
-    });
+    // var doc = new jsPDF('p', 'mm');
+    // html2canvas($("#canvasPdf"), {
+    //     onrendered: function(canvas) {
+    //         var imgData = canvas.toDataURL(
+    //             'image/png');
+    //         doc.addImage(imgData, 'PNG', 10, 10);
+    //         doc.save('sample-file.pdf');
+    //     }
+    // });
 
 };
 
