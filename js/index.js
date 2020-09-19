@@ -658,24 +658,24 @@ const jsData = {
     "Region": 1
 };
 
-function responsivefy(svg) {
-    const container = d3.select(svg.node().parentNode),
-        width = parseInt(svg.style('width'), 10),
-        height = parseInt(svg.style('height'), 10),
-        aspect = width / height;
-
-    svg.attr('viewBox', `0 0 ${width} ${height}`)
-        .attr('preserveAspectRatio', 'xMinYMid')
-        .call(resize);
-
-    d3.select(window).on('resize.' + container.attr('id'), resize);
-
-    function resize() {
-        const targetWidth = parseInt(container.style('width'));
-        svg.attr('width', targetWidth);
-        svg.attr('height', Math.round(targetWidth / aspect));
-    }
-}
+// function responsivefy(svg) {
+//     const container = d3.select(svg.node().parentNode),
+//         width = parseInt(svg.style('width'), 10),
+//         height = parseInt(svg.style('height'), 10),
+//         aspect = width / height;
+//
+//     svg.attr('viewBox', `0 0 ${width} ${height}`)
+//         .attr('preserveAspectRatio', 'xMinYMid')
+//         .call(resize);
+//
+//     d3.select(window).on('resize.' + container.attr('id'), resize);
+//
+//     function resize() {
+//         const targetWidth = parseInt(container.style('width'));
+//         svg.attr('width', targetWidth);
+//         svg.attr('height', Math.round(targetWidth / aspect));
+//     }
+// }
 
 function downloadPdf() {
     console.log('Button gedrückt');
@@ -686,7 +686,7 @@ function downloadPdf() {
     canvasPdf.height = 1020;
 
     chart1canvas = document.getElementById('grp1Chart');
-    
+
 
     contextPdf = canvasPdf.getContext('2d');
     contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
