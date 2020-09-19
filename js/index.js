@@ -826,7 +826,7 @@ function grp1Chart() {
 
     let canvas = document.createElement('canvas');
     canvas.id = 'canvas1';
-    canvas.style.display = 'none';
+    // canvas.style.display = 'none';
     document.body.appendChild(canvas);
     canvas.width = 340;
     canvas.height = 170;
