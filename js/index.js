@@ -495,6 +495,7 @@ survey.onComplete.add(function (sender, options) {
     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(sender.data, null, 4);
 
     generateCharts();
+
 });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
@@ -680,13 +681,13 @@ const jsData = {
 function downloadPdf() {
     console.log('Button gedrückt');
     canvasPdf = document.createElement('canvas');
-    canvasPdf.id = 'canvasPdf'
+    canvasPdf.id = 'canvasPdf';
+    //canvasPdf.style.display = 'none';
     document.body.appendChild(canvasPdf);
     canvasPdf.width = 768;
     canvasPdf.height = 1020;
 
-    chart1canvas = document.getElementById('grp1Chart');
-
+    chart1canvas = document.getElementById('canvas1');
 
     contextPdf = canvasPdf.getContext('2d');
     contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
@@ -704,16 +705,23 @@ function downloadPdf() {
 
 };
 
-function Pdf() {
+function pdfView() {
     canvasPdf = document.getElementById('canvasPdf')
     //canvasPdf.width = 768;
     //canvasPdf.height = 1020;
 
+    //create a canvas
+    let canvas1 = document.createElement('canvas1');
+    canvas1.id = 'canvas1'
+    canvas1.width = 370;
+    canvas1.height = 170;
+
+    let Chart1 = new Chart(canvas1, parameter1);
+
     contextPdf = canvasPdf.getContext('2d');
 
-
-    contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
-    contextPdf.drawImage(chart1canvas, 389, 39, 340, 170);
+    contextPdf.drawImage(canvas1, 39, 39, 340, 170);
+    contextPdf.drawImage(canvas1, 389, 39, 340, 170);
 
 }
 
@@ -815,6 +823,15 @@ function grp1Chart() {
         options: barChartOptions
     };
     var Chart1 = new Chart(grp1ChartObject, parameter1);
+
+    let canvas = document.createElement('canvas');
+    canvas.id = 'canvas1';
+    canvas.style.display = 'none';
+    document.body.appendChild(canvas);
+    canvas.width = 340;
+    canvas.height = 170;
+
+    var Chart1 = new Chart(canvas1, parameter1);
 }
 
 
