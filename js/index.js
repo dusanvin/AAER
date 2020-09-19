@@ -705,25 +705,6 @@ function downloadPdf() {
 
 };
 
-function pdfView() {
-    canvasPdf = document.getElementById('canvasPdf')
-    //canvasPdf.width = 768;
-    //canvasPdf.height = 1020;
-
-    //create a canvas
-    let canvas1 = document.createElement('canvas1');
-    canvas1.id = 'canvas1'
-    canvas1.width = 370;
-    canvas1.height = 170;
-
-    let Chart1 = new Chart(canvas1, parameter1);
-
-    contextPdf = canvasPdf.getContext('2d');
-
-    contextPdf.drawImage(canvas1, 39, 39, 340, 170);
-    contextPdf.drawImage(canvas1, 389, 39, 340, 170);
-
-}
 
 // Start: Details overallChart
 
@@ -824,14 +805,16 @@ function grp1Chart() {
     };
     var Chart1 = new Chart(grp1ChartObject, parameter1);
 
-    let canvas = document.createElement('canvas');
-    canvas.id = 'canvas1';
+    // let canvas = document.createElement('canvas');
+    // canvas.id = 'canvas1';
     // canvas.style.display = 'none';
-    document.body.appendChild(canvas);
-    canvas.width = 340;
-    canvas.height = 170;
+    // canvas.style.maxWidth = 340;
+    // document.body.appendChild(canvas);
+    // canvas.width = 340;
+    // canvas.height = 170;
 
-    var Chart1 = new Chart(canvas1, parameter1);
+    let canvas1 = window.document.getElementById('canvas1');
+    var hiddenChart1 = new Chart(canvas1, parameter1);
 }
 
 
