@@ -734,6 +734,39 @@ function overallChart() {
 
 // Ende: Details overallChart
 
+barBackgroundColor = ["#f49080","#80b6f4"];
+barChartOptions = {
+    animation: {
+        easing: "easeInOutBack"
+    },
+    legend: {
+        display: false
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                fontColor: "rgba(0,0,0,0.5)",
+                fontStyle: "bold",
+                display: true,
+                max: 4,
+                stepSize: 1,
+                beginAtZero: true
+            },
+            gridLines: {
+                display: true
+            }
+        }],
+        xAxes: [{
+            gridLines: {
+                display: true
+            },
+            ticks: {
+                display: true
+            }
+        }]
+    }
+};
+
 
 
 // Start: Details grb1Chart
@@ -746,41 +779,11 @@ function grp1Chart() {
             labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards"],
             datasets: [{
                 label: "Anlehnung an Curriculum und Bildungsstandards",
-                backgroundColor: ["#f49080","#80b6f4"],
+                backgroundColor: barBackgroundColor,
                 data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
             }]
         },
-        options: {
-            animation: {
-                easing: "easeInOutBack"
-            },
-            legend: {
-                display: false
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        fontColor: "rgba(0,0,0,0.5)",
-                        fontStyle: "bold",
-                        display: true,
-                        max: 4,
-                        stepSize: 1,
-                        beginAtZero: true
-                    },
-                    gridLines: {
-                        display: true
-                    }
-                }],
-                xAxes: [{
-                    gridLines: {
-                        display: true
-                    },
-                    ticks: {
-                        display: true
-                    }
-                }]
-            }
-        }
+        options: barChartOptions
     };
     var Chart1 = new Chart(grp1ChartObject, parameter);
 }
@@ -1063,27 +1066,19 @@ function grp7Chart() {
 
 function grp8Chart() {
     var grp8ChartObject = document.getElementById('grp8Chart');
-    var Chart8 = new Chart(grp8ChartObject, {
+    let parameter = {
         type: 'bar',
         data: {
             labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
             datasets: [{
                 label: "Anwendungstransparenz",
+                backgroundColor: barBackgroundColor,
                 data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
             }]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        max: 4,
-                        stepSize: 1,
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
+        options: barChartOptions
+    }
+    var Chart8 = new Chart(grp8ChartObject, parameter);
 }
 
 // Ende: Details grb8Chart
