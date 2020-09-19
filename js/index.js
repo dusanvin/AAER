@@ -704,11 +704,26 @@ function downloadPdf() {
 
 };
 
+function Pdf() {
+    canvasPdf = document.getElementById('canvasPdf')
+    //canvasPdf.width = 768;
+    //canvasPdf.height = 1020;
+
+    contextPdf = canvasPdf.getContext('2d');
+
+
+    contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
+    contextPdf.drawImage(chart1canvas, 389, 39, 340, 170);
+
+}
+
 // Start: Details overallChart
+
+var parameterALL;
 
 function overallChart() {
     var overallChartObject = document.getElementById('overallChart');
-    let parameter = {
+    parameterALL = {
         type: 'radar',
         data: {
             labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessegeleitete Themenführung/Positionierung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität", "Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion", "Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"], "Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"], "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
@@ -728,7 +743,7 @@ function overallChart() {
             }
         }
     };
-    var overallChart = new Chart(overallChartObject, parameter);
+    var overallChart = new Chart(overallChartObject, parameterALL);
 
 
 }
@@ -783,9 +798,11 @@ radarChartOptions = {
 
 // Start: Details grb1Chart
 
+var parameter1;
+
 function grp1Chart() {
     var grp1ChartObject = window.document.getElementById('grp1Chart');
-    let parameter = {
+    parameter1 = {
         type: 'bar',
         data: {
             labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards"],
@@ -797,7 +814,7 @@ function grp1Chart() {
         },
         options: barChartOptions
     };
-    var Chart1 = new Chart(grp1ChartObject, parameter);
+    var Chart1 = new Chart(grp1ChartObject, parameter1);
 }
 
 
@@ -894,9 +911,11 @@ function grp1Chart() {
 
 // Start: Details grb2Chart
 
+var parameter2;
+
 function grp2Chart() {
     var grp2ChartObject = document.getElementById('grp2Chart');
-    let parameter = {
+    parameter2 = {
         type: 'radar',
         data: {
             labels: [["Interessegeleitete", "Themenführung/Positionierung"], "Transparenz", "Werbliche Elemente", "Heterogenität/Gender"],
@@ -907,7 +926,7 @@ function grp2Chart() {
         },
         options: radarChartOptions
     };
-    var Chart2 = new Chart(grp2ChartObject, parameter);
+    var Chart2 = new Chart(grp2ChartObject, parameter2);
 
 }
 
@@ -917,9 +936,11 @@ function grp2Chart() {
 
 // Start: Details grb3Chart
 
+var parameter3;
+
 function grp3Chart() {
     var grp3ChartObject = document.getElementById('grp3Chart');
-    var Chart3 = new Chart(grp3ChartObject, {
+    parameter3 = {
         type: 'radar',
         data: {
             labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität"],
@@ -929,7 +950,8 @@ function grp3Chart() {
             }]
         },
         options: radarChartOptions
-    });
+    };
+    var Chart3 = new Chart(grp3ChartObject, parameter3);
 }
 
 // Ende: Details grb3Chart
@@ -938,9 +960,11 @@ function grp3Chart() {
 
 // Start: Details grb4Chart
 
+var parameter4;
+
 function grp4Chart() {
     var grp4ChartObject = document.getElementById('grp4Chart');
-    var Chart4 = new Chart(grp4ChartObject, {
+    parameter4 = {
         type: 'radar',
         data: {
             labels: ["Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion"],
@@ -950,7 +974,8 @@ function grp4Chart() {
             }]
         },
         options: radarChartOptions
-    });
+    };
+    var Chart4 = new Chart(grp4ChartObject, parameter4);
 }
 
 // Ende: Details grb4Chart
@@ -959,8 +984,21 @@ function grp4Chart() {
 
 // Start: Details grb5Chart
 
+var parameter5;
+
 function grp5Chart() {
     var grp5ChartObject = document.getElementById('grp5Chart');
+    parameter5 = {
+        type: 'radar',
+        data: {
+            labels: ["Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"]],
+            datasets: [{
+                label: "Kognitive Strukturierung",
+                data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
+            }]
+        },
+        options: radarChartOptions
+    };
     var Chart5 = new Chart(grp5ChartObject, {
         type: 'radar',
         data: {
@@ -980,9 +1018,11 @@ function grp5Chart() {
 
 // Start: Details grb6Chart
 
+var parameter6;
+
 function grp6Chart() {
     var grp6ChartObject = document.getElementById('grp6Chart');
-    var Chart6 = new Chart(grp6ChartObject, {
+    parameter6 = {
         type: 'radar',
         data: {
             labels: ["Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"]],
@@ -992,7 +1032,8 @@ function grp6Chart() {
             }]
         },
         options: radarChartOptions
-    });
+    };
+    var Chart6 = new Chart(grp6ChartObject, parameter6);
 }
 
 // Ende: Details grb6Chart
@@ -1001,9 +1042,11 @@ function grp6Chart() {
 
 // Start: Details grb7Chart
 
+var parameter7;
+
 function grp7Chart() {
     var grp7ChartObject = document.getElementById('grp7Chart');
-    var Chart7 = new Chart(grp7ChartObject, {
+    parameter7 = {
         type: 'radar',
         data: {
             labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
@@ -1013,7 +1056,8 @@ function grp7Chart() {
             }]
         },
         options: radarChartOptions
-    });
+    };
+    var Chart7 = new Chart(grp7ChartObject, parameter7);
 }
 
 // Ende: Details grb7Chart
@@ -1022,9 +1066,11 @@ function grp7Chart() {
 
 // Start: Details grb8Chart
 
+var parameter8;
+
 function grp8Chart() {
     var grp8ChartObject = document.getElementById('grp8Chart');
-    let parameter = {
+    parameter8 = {
         type: 'bar',
         data: {
             labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
@@ -1036,7 +1082,7 @@ function grp8Chart() {
         },
         options: barChartOptions
     }
-    var Chart8 = new Chart(grp8ChartObject, parameter);
+    var Chart8 = new Chart(grp8ChartObject, parameter8);
 }
 
 // Ende: Details grb8Chart
