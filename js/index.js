@@ -681,7 +681,7 @@ function responsivefy(svg) {
 
 function overallChart() {
     var overallChartObject = document.getElementById('overallChart');
-    var overallChart = new Chart(overallChartObject, {
+    let parameter = {
         type: 'radar',
         data: {
             labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessegeleitete Themenführung/Positionierung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität", "Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion", "Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"], "Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"], "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
@@ -700,7 +700,8 @@ function overallChart() {
 
             }
         }
-    });
+    };
+    var overallChart = new Chart(overallChartObject, parameter);
 
 
 }
@@ -713,8 +714,7 @@ function overallChart() {
 
 function grp1Chart() {
     var grp1ChartObject = window.document.getElementById('grp1Chart');
-
-    var Chart1 = new Chart(grp1ChartObject, {
+    let parameter = {
         type: 'bar',
         data: {
             labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards"],
@@ -755,7 +755,8 @@ function grp1Chart() {
                 }]
             }
         }
-    });
+    };
+    var Chart1 = new Chart(grp1ChartObject, parameter);
 }
 
 
