@@ -687,11 +687,27 @@ function downloadPdf() {
     canvasPdf.width = 768;
     canvasPdf.height = 1020;
 
+    chartALLcanvas = document.getElementById('canvasALL');
     chart1canvas = document.getElementById('canvas1');
+    chart2canvas = document.getElementById('canvas2');
+    chart3canvas = document.getElementById('canvas3');
+    chart4canvas = document.getElementById('canvas4');
+    chart5canvas = document.getElementById('canvas5');
+    chart6canvas = document.getElementById('canvas6');
+    chart7canvas = document.getElementById('canvas7');
+    chart8canvas = document.getElementById('canvas8');
 
     contextPdf = canvasPdf.getContext('2d');
+    contextPdf.drawImage(chartALLcanvas, 39, 39+170+340+340+340, 690, 690);
     contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
-    contextPdf.drawImage(chart1canvas, 389, 39, 340, 170);
+    contextPdf.drawImage(chart8canvas, 389, 39, 340, 170);
+    contextPdf.drawImage(chart2canvas, 39, 39+170, 340, 340);
+    contextPdf.drawImage(chart3canvas, 389, 39+170, 340, 340);
+    contextPdf.drawImage(chart4canvas, 39, 39+170+340, 340, 340);
+    contextPdf.drawImage(chart5canvas, 389, 39+170+340, 340, 340);
+    contextPdf.drawImage(chart6canvas, 39, 39+170+340+340, 340, 340);
+    contextPdf.drawImage(chart7canvas, 389, 39+170+340+340, 340, 340);
+
 
     // var doc = new jsPDF('p', 'mm');
     // html2canvas($("#canvasPdf"), {
@@ -734,7 +750,8 @@ function overallChart() {
     };
     var overallChart = new Chart(overallChartObject, parameterALL);
 
-
+    let canvasALL = window.document.getElementById('canvasALL');
+    var hiddenChartALL = new Chart(canvasALL, parameterALL);
 }
 
 // Ende: Details overallChart
@@ -928,6 +945,9 @@ function grp2Chart() {
     };
     var Chart2 = new Chart(grp2ChartObject, parameter2);
 
+    let canvas2 = window.document.getElementById('canvas2');
+    var hiddenChart2 = new Chart(canvas2, parameter2);
+
 }
 
 // Ende: Details grb2Chart
@@ -952,6 +972,9 @@ function grp3Chart() {
         options: radarChartOptions
     };
     var Chart3 = new Chart(grp3ChartObject, parameter3);
+
+    let canvas3 = window.document.getElementById('canvas3');
+    var hiddenChart3 = new Chart(canvas3, parameter3);
 }
 
 // Ende: Details grb3Chart
@@ -976,6 +999,9 @@ function grp4Chart() {
         options: radarChartOptions
     };
     var Chart4 = new Chart(grp4ChartObject, parameter4);
+
+    let canvas4 = window.document.getElementById('canvas4');
+    var hiddenChart4 = new Chart(canvas4, parameter4);
 }
 
 // Ende: Details grb4Chart
@@ -999,17 +1025,10 @@ function grp5Chart() {
         },
         options: radarChartOptions
     };
-    var Chart5 = new Chart(grp5ChartObject, {
-        type: 'radar',
-        data: {
-            labels: ["Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"]],
-            datasets: [{
-                label: "Kognitive Strukturierung",
-                data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
-            }]
-        },
-        options: radarChartOptions
-    });
+    var Chart5 = new Chart(grp5ChartObject, parameter5);
+
+    let canvas5 = window.document.getElementById('canvas5');
+    var hiddenChart5 = new Chart(canvas5, parameter5);
 }
 
 // Ende: Details grb5Chart
@@ -1034,6 +1053,9 @@ function grp6Chart() {
         options: radarChartOptions
     };
     var Chart6 = new Chart(grp6ChartObject, parameter6);
+
+    let canvas6 = window.document.getElementById('canvas6');
+    var hiddenChart6 = new Chart(canvas6, parameter6);
 }
 
 // Ende: Details grb6Chart
@@ -1058,6 +1080,9 @@ function grp7Chart() {
         options: radarChartOptions
     };
     var Chart7 = new Chart(grp7ChartObject, parameter7);
+
+    let canvas7 = window.document.getElementById('canvas7');
+    var hiddenChart7 = new Chart(canvas7, parameter7);
 }
 
 // Ende: Details grb7Chart
@@ -1083,6 +1108,9 @@ function grp8Chart() {
         options: barChartOptions
     }
     var Chart8 = new Chart(grp8ChartObject, parameter8);
+
+    let canvas8 = window.document.getElementById('canvas8');
+    var hiddenChart8 = new Chart(canvas8, parameter8);
 }
 
 // Ende: Details grb8Chart
