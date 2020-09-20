@@ -698,18 +698,18 @@ function downloadPdf() {
     chart8canvas = document.getElementById('canvas8');
 
     contextPdf = canvasPdf.getContext('2d');
-    contextPdf.drawImage(chartALLcanvas, 39, 39+170+340+340+340, 690, 690);
-    contextPdf.drawImage(chart1canvas, 39, 39, 340, 170);
-    contextPdf.drawImage(chart8canvas, 389, 39, 340, 170);
-    contextPdf.drawImage(chart2canvas, 39, 39+170, 340, 340);
-    contextPdf.drawImage(chart3canvas, 389, 39+170, 340, 340);
-    contextPdf.drawImage(chart4canvas, 39, 39+170+340, 340, 340);
-    contextPdf.drawImage(chart5canvas, 389, 39+170+340, 340, 340);
-    contextPdf.drawImage(chart6canvas, 39, 39+170+340+340, 340, 340);
-    contextPdf.drawImage(chart7canvas, 389, 39+170+340+340, 340, 340);
+    contextPdf.drawImage(chartALLcanvas, 39, 100, 690, 690);
+    contextPdf.drawImage(chart1canvas, 39, 790, 340, 170);
+    contextPdf.drawImage(chart8canvas, 389, 790, 340, 170);
+    // contextPdf.drawImage(chart2canvas, 39, 39+170, 340, 340);
+    // contextPdf.drawImage(chart3canvas, 389, 39+170, 340, 340);
+    // contextPdf.drawImage(chart4canvas, 39, 39+170+340, 340, 340);
+    // contextPdf.drawImage(chart5canvas, 389, 39+170+340, 340, 340);
+    // contextPdf.drawImage(chart6canvas, 39, 39+170+340+340, 340, 340);
+    // contextPdf.drawImage(chart7canvas, 389, 39+170+340+340, 340, 340);
 
 
-    // var doc = new jsPDF('p', 'mm');
+    // var doc = new jsPDF('p', 'mm'; 'a4';
     // html2canvas($("#canvasPdf"), {
     //     onrendered: function(canvas) {
     //         var imgData = canvas.toDataURL(
@@ -755,7 +755,7 @@ function overallChart() {
         },
         responsive: false
     };
-    
+
     var overallChart = new Chart(overallChartObject, {
         type: 'radar',
         data: dataALL,
