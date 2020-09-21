@@ -688,6 +688,16 @@ function downloadPdf() {
     canvasPdf.height = 1020;
 
     chartALLcanvas = document.getElementById('canvasALL');
+    contextALL = chartALLcanvas.getContext('2d');
+    console.log(contextALL.getImageData(0, 0, 10, 10));
+
+    // let pixelData = imgData.data;
+    // for(const i = 4; i < pixelData.length; i += 4) {
+    //     console.log(pixelData[i]);
+    //     pixelData[i] = 0;
+    // }
+
+
     chart1canvas = document.getElementById('canvas1');
     chart2canvas = document.getElementById('canvas2');
     chart3canvas = document.getElementById('canvas3');
@@ -716,6 +726,7 @@ function downloadPdf() {
     // pdf.save("download.pdf");
 
     var imgData = canvasPdf.toDataURL("image/png", 1.0);
+
     var pdf = new jsPDF();
 
     pdf.addImage(imgData, 'PNG', 0, 0);
