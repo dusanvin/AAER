@@ -719,18 +719,18 @@ function downloadPdf() {
     // contextPdf.drawImage(chart7canvas, 389, 39+170+340+340, 340, 340);
 
     // only jpeg is supported by jsPDF
-    // var imgData = canvasPdf.toDataURL("image/jpeg", 1.0);
-    // var pdf = new jsPDF();
-    //
-    // pdf.addImage(imgData, 'JPEG', 0, 0);
-    // pdf.save("download.pdf");
+    var imgData1 = canvasPdf.toDataURL("image/jpeg");
+    var pdf1 = new jsPDF();
 
-    var imgData = canvasPdf.toDataURL("image/png", 1.0);
+    pdf1.addImage(imgData1, 'JPEG', 0, 0);
+    pdf1.save("AAERjpeg.pdf");
 
-    var pdf = new jsPDF();
+    var imgData2 = canvasPdf.toDataURL("image/png");
 
-    pdf.addImage(imgData, 'PNG', 0, 0);
-    pdf.save("download.pdf");
+    var pdf2 = new jsPDF();
+
+    pdf2.addImage(imgData2, 'PNG', 0, 0);
+    pdf2.save("AAERpng.pdf");
 
 
     // var doc = new jsPDF('p', 'mm');
