@@ -687,22 +687,34 @@ function downloadPdf() {
     canvasPdf.width = 768;
     canvasPdf.height = 1020;
 
-    chartALLcanvas = document.getElementById('canvasALL');
-    contextALL = chartALLcanvas.getContext('2d');
-    pixelData = contextALL.getImageData(0, 0, 100, 100);
-    console.log(pixelData);
-    console.log(pixelData.data);
-    console.log(pixelData.data.length);
-
-    for(let i = 0; i < pixelData.data.length; i += 4) {
-        console.log(pixelData.data[i]);
-        pixelData.data[i] = 100;
-        pixelData.data[1+i] = 100;
-        pixelData.data[2+i] = 100;
-        pixelData.data[3+i] = 100;
-    }
-
-    contextALL.putImageData(pixelData, 0, 0);
+    // contextPDF = canvasPdf.getContext('2d');
+    // imgPDFData = contextPDF.getImageData(0, 0, 768, 1020);
+    // valuesRGBA = imgPDFData.data;
+    //
+    // for(let i = 0; i < valuesRGBA.length; i += 4) {
+    //     valuesRGBA[i] = 255;
+    //     valuesRGBA[1+i] = 255;
+    //     valuesRGBA[2+i] = 255;
+    //     valuesRGBA[3+i] = 0;
+    // }
+    //
+    // contextPDF.putImageData(imgPDFData, 0, 0);
+    //
+    // chartALLcanvas = document.getElementById('canvasALL');
+    // contextALL = chartALLcanvas.getContext('2d');
+    // pixelData = contextALL.getImageData(0, 0, 690, 690);
+    // // console.log(pixelData);
+    // // console.log(pixelData.data);
+    // // console.log(pixelData.data.length);
+    //
+    // for(let i = 0; i < pixelData.data.length; i += 4) {
+    //     // pixelData.data[i] += 1;
+    //     // pixelData.data[1+i] += 1;
+    //     // pixelData.data[2+i] += 1;
+    //     pixelData.data[3+i] = 255;
+    // }
+    //
+    // contextALL.putImageData(pixelData, 0, 0);
 
 
     chart1canvas = document.getElementById('canvas1');
@@ -724,6 +736,8 @@ function downloadPdf() {
     // contextPdf.drawImage(chart5canvas, 389, 39+170+340, 340, 340);
     // contextPdf.drawImage(chart6canvas, 39, 39+170+340+340, 340, 340);
     // contextPdf.drawImage(chart7canvas, 389, 39+170+340+340, 340, 340);
+
+
 
     // only jpeg is supported by jsPDF
     var imgData1 = canvasPdf.toDataURL("image/jpeg");
