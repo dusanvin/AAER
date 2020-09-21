@@ -689,13 +689,20 @@ function downloadPdf() {
 
     chartALLcanvas = document.getElementById('canvasALL');
     contextALL = chartALLcanvas.getContext('2d');
-    console.log(contextALL.getImageData(0, 0, 10, 10));
+    pixelData = contextALL.getImageData(0, 0, 100, 100);
+    console.log(pixelData);
+    console.log(pixelData.data);
+    console.log(pixelData.data.length);
 
-    // let pixelData = imgData.data;
-    // for(const i = 4; i < pixelData.length; i += 4) {
-    //     console.log(pixelData[i]);
-    //     pixelData[i] = 0;
-    // }
+    for(let i = 0; i < pixelData.data.length; i += 4) {
+        console.log(pixelData.data[i]);
+        pixelData.data[i] = 100;
+        pixelData.data[1+i] = 100;
+        pixelData.data[2+i] = 100;
+        pixelData.data[3+i] = 100;
+    }
+
+    contextALL.putImageData(pixelData, 0, 0);
 
 
     chart1canvas = document.getElementById('canvas1');
