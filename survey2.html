@@ -122,7 +122,7 @@
 
 	<!-- Start: Dashboard Div -->
 
-	<div id="dashboard-aaer" class="mr-5 ml-5"></div>
+	<div id="dashboard-aaer" class="mr-lg-5 mr-md-3 mr-sm-0 mr-xs-0 ml-lg-5 ml-md-3 ml-sm-0 ml-xs-0 mt-lg-5 mt-md-5 mt-sm-1 mt-xs-1"></div>
 
 	<!-- Ende: Dashboard Div -->
 
@@ -477,19 +477,32 @@
 
 					    <div id="page-content-wrapper">
 
-					      <nav class="navbar navbar-expand-lg navbar-dashboard">
+							<nav class="navbar navbar-expand-lg navbar-dashboard">
 
-					        <button class="btn btn-primary btn-toggle" id="menu-toggle">
-					        	
-					        	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layout-sidebar-inset mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
-					  
-					  				<path fill-rule="evenodd" d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
-					  				<path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
-								</svg> Menü
+								<button class="btn btn-primary btn-toggle" id="menu-toggle">
+									
+									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layout-sidebar-inset mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
 
-					        </button>
+											<path fill-rule="evenodd" d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
+											<path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+									</svg> Menü
 
-					      </nav>
+								</button>
+
+							</nav>
+
+
+
+						    <!-- Start: Dankesnachricht -->
+
+							<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 text-center margin_top_aaer " id="display_thanks">
+
+								<p class="font-weight-normal lead lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten in <strong>visualisierter Form</strong></p>
+								<p class="resultate_info lead lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen helfen Ihnen bei der <strong>Verwendung des Bildungsmediums</strong> in Anlehnung an dessen Qualität für Unterricht und Schule.</p>
+
+							</div>
+
+							<!-- Ende: Dankesnachricht -->
 
 
 
@@ -963,6 +976,7 @@
   		// Start: Darstellung Übersicht
 
 		$( "#button_display_overallChart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "block");
 		    $( "#display_grp1Chart" ).css("display", "none");		    
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -981,6 +995,7 @@
   		// Start: grp1Chart Übersicht
 
 		$( "#button_display_grp1Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "block");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -999,6 +1014,7 @@
   		// Start: grp2Chart Übersicht
 
 		$( "#button_display_grp2Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "block");		    
@@ -1017,6 +1033,7 @@
   		// Start: grp3Chart Übersicht
 
 		$( "#button_display_grp3Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1035,6 +1052,7 @@
   		// Start: grp4Chart Übersicht
 
 		$( "#button_display_grp4Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1053,6 +1071,7 @@
   		// Start: grp5Chart Übersicht
 
 		$( "#button_display_grp5Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1071,6 +1090,7 @@
   		// Start: grp6Chart Übersicht
 
 		$( "#button_display_grp6Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1089,6 +1109,7 @@
   		// Start: grp7Chart Übersicht
 
 		$( "#button_display_grp7Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1107,6 +1128,7 @@
   		// Start: grp8Chart Übersicht
 
 		$( "#button_display_grp8Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1125,6 +1147,7 @@
 		// Start: PDF
 
 		$( "#button_display_PDF" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1143,6 +1166,7 @@
 		// Start: JSON
 
 		$( "#button_display_JSON" ).click(function() {
+		    $( "#display_thanks" ).css("display", "none");		    
 		    $( "#display_overallChart" ).css("display", "none");		    
 		    $( "#display_grp1Chart" ).css("display", "none");
 		    $( "#display_grp2Chart" ).css("display", "none");		    
@@ -1166,44 +1190,7 @@
 			var container = document.getElementById("ergebnisse_container");
 			container.innerHTML = 
 				`
-				<!-- Beginn div Survey -->
 
-			  	<div class="p-md-5 p-lg-5 m-md-3 m-lg-5" id="ergebnisse_div">
-
-			  	<p class="font-weight-normal lead lead-text margin_top_aaer text-center pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white m-xs-1 m-sm-3">Ihre Daten in <strong>visualisierter Form</strong></p>
-			  	<p class="resultate_info lead lead-text margin_top_aaer text-center text-white">Wir hoffen, Ihre Bewertungen helfen Ihnen bei der <strong>Verwendung des Bildungsmediums</strong> in Anlehnung an dessen Qualität für Unterricht und Schule.</p>
-			
-
-
-
-
-				 	
-
-
-
-				 	
-
-
-
-				 	
-
-
-
-				 	
-
-
-
-				 	
-
-
-
-				    
-
-
-
-				  </div>
-
-				  <!-- Ende div Survey -->
 
 				`;
 			console.log("Hey Nerd! Vince und Norman wünschen dir viel Spaß bei der Nutzung des AAER.");
@@ -1211,10 +1198,14 @@
 
    		display_ergebnisse();
 
+   		// Start: Trigger für Dashbaord-Menü
+
 	    $("#menu-toggle").click(function(e) {
 	      e.preventDefault();
 	      $("#wrapper").toggleClass("toggled");
 	    });
+
+   		// Ende: Trigger für Dashbaord-Menü
 
 	  </script>
 
@@ -1224,17 +1215,19 @@
 
 	<!-- Button End -->
 
+	<!-- Start: Canvas-Elemente für PDF -->
 
-	<canvas id="canvasALL" style="width: 690px; height: 690px;"></canvas>
-	<canvas id="canvas1" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas2" style="width: 690px; height: 340px;"></canvas>
-	<canvas id="canvas3" style="width: 690px; height: 340px;"></canvas>
-	<canvas id="canvas4" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas5" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas6" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas7" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas8" style="width: 340px; height: 170px;"></canvas>
+	<canvas id="canvasALL" style="width: 690px; height: 690px; display: none;"></canvas>
+	<canvas id="canvas1" style="width: 340px; height: 170px; display: none;"></canvas>
+	<canvas id="canvas2" style="width: 690px; height: 340px; display: none;"></canvas>
+	<canvas id="canvas3" style="width: 690px; height: 340px; display: none;"></canvas>
+	<canvas id="canvas4" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas5" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas6" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas7" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas8" style="width: 340px; height: 170px; display: none;"></canvas>
 
+	<!-- Ende: Canvas-Elemente für PDF -->
 
   </body>
 

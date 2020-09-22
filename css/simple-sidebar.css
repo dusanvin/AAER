@@ -1,18 +1,8 @@
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
- * Copyright 2013-2020 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
-
 #dashboard-aaer {
   display: none;
 }
 
 /* Start: Display der Ergebnisse */
-
-#display_overallChart {
-  display:none;
-}
 
 #display_grp1Chart {
   display:none;
@@ -46,8 +36,18 @@
   display:none;
 }
 
+#display_overallChart {
+  display:none;
+}
+
 #display_PDF {
   display:none;
+}
+
+#display_thanks {
+  display: block;
+  margin-left:1em;
+  margin-right:1em;
 }
 
 #display_JSON {
@@ -66,7 +66,7 @@
 }
 
 .list-group-item {
-  font-size:14px !important;
+  font-size:14px;
   background-color: #2F3436;
   color: white !important;
   transition: all .1s ease-in !important;
@@ -120,7 +120,7 @@
   background:#ff962f !important;
   border-radius:2px !important;
   color:white !important;
-  margin-left: 4rem;
+  margin-left: 2rem;
  }
 
 .list-group-icon {
@@ -176,3 +176,12 @@
     margin-left: -15rem;
   }
 }
+
+@media (max-width:1076px) {
+
+  .list-group-item svg {
+    display: none;
+  }
+}
+
+
