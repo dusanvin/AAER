@@ -1026,7 +1026,7 @@ function grp5Chart() {
 
     let canvas5 = window.document.getElementById('canvas5');
     var hiddenChart5 = new Chart(canvas5, {
-        type: 'radar',
+        type: 'bar',
         data: data5,
         options: barNonResponsive
     });
