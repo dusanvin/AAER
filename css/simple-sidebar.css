@@ -8,7 +8,7 @@
   display: none;
 }
 
-/* Start: Display der Charts */
+/* Start: Display der Ergebnisse */
 
 #display_overallChart {
   display:none;
@@ -46,7 +46,15 @@
   display:none;
 }
 
-/* Ende: Display der Charts */
+#display_PDF {
+  display:none;
+}
+
+#display_JSON {
+  display:none;
+}
+
+/* Ende: Display der Ergebnisse */
 
 .btn-toggle {
   margin-bottom: 0px !important;
@@ -133,7 +141,7 @@
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
-  padding-top:2.5rem;
+  padding-top:2.4rem;
   font-size: 2rem;
   color: white;
   background: #25292A;

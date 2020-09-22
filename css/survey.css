@@ -124,7 +124,7 @@ h5 {
 }
 
 #surveyResult {
-	font-size: 14px;
+	font-size: 12px;
 }
 
 button.resultate {
@@ -161,7 +161,6 @@ pre {
 	color: white !important;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	font-family: Fira Mono, monospace !important;
-	line-height: 2em;
 }
 
 .progress {
