@@ -678,59 +678,6 @@ const jsData = {
 //     }
 // }
 
-
-// Start: Details overallChart
-
-function overallChart() {
-    var overallChartObject = document.getElementById('overallChart');
-    dataALL = {
-        labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessegeleitete Themenführung/Positionierung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität", "Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion", "Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"], "Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"], "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
-        datasets: [{
-            label: "Übersichts-Chart",
-            data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
-        }]
-    };
-    overall = {
-        scale: {
-            ticks: {
-                max: 4,
-                stepSize: 1,
-                beginAtZero: true
-            }
-
-        }
-    };
-
-    overallNonResponsive = {
-        scale: {
-            ticks: {
-                max: 4,
-                stepSize: 1,
-                beginAtZero: true
-            }
-
-        },
-        responsive: false
-    };
-
-    var overallChart = new Chart(overallChartObject, {
-        type: 'radar',
-        data: dataALL,
-        options: overall
-    });
-
-    let canvasALL = window.document.getElementById('canvasALL');
-    var hiddenChartALL = new Chart(canvasALL, {
-        type: 'radar',
-        data: dataALL,
-        options: overallNonResponsive
-    });
-}
-
-// Ende: Details overallChart
-
-barBackgroundColor = ["#f49080","#80b6f4"];
-
 barChartOptions = {
     animation: {
         easing: "easeInOutBack"
@@ -796,28 +743,61 @@ barNonResponsive = {
     responsive: false
 };
 
-radarChartOptions = {
-    scale: {
-        ticks: {
-            max: 4,
-            stepSize: 1,
-            beginAtZero: true
-        }
 
-    }
-};
+// Start: Details overallChart
 
-radarNonResponsive = {
-    scale: {
-        ticks: {
-            max: 4,
-            stepSize: 1,
-            beginAtZero: true
-        }
+function overallChart() {
+    var overallChartObject = document.getElementById('overallChart');
+    dataALL = {
+        labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessegeleitete Themenführung/Positionierung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität", "Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion", "Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"], "Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"], "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
+        datasets: [{
+            label: "Übersichts-Chart",
+            data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
+        }]
+    };
 
-    },
-    responsive: false
-};
+    var overallChart = new Chart(overallChartObject, {
+        type: 'bar',
+        data: dataALL,
+        options: barChartOptions
+    });
+
+    let canvasALL = window.document.getElementById('canvasALL');
+    var hiddenChartALL = new Chart(canvasALL, {
+        type: 'bar',
+        data: dataALL,
+        options: barNonResponsive
+    });
+}
+
+// Ende: Details overallChart
+
+barBackgroundColor = ["#f49080","#80b6f4"];
+
+
+
+// radarChartOptions = {
+//     scale: {
+//         ticks: {
+//             max: 4,
+//             stepSize: 1,
+//             beginAtZero: true
+//         }
+//
+//     }
+// };
+//
+// radarNonResponsive = {
+//     scale: {
+//         ticks: {
+//             max: 4,
+//             stepSize: 1,
+//             beginAtZero: true
+//         }
+//
+//     },
+//     responsive: false
+// };
 
 
 
@@ -838,14 +818,6 @@ function grp1Chart() {
         data: data1,
         options: barChartOptions
     });
-
-    // let canvas = document.createElement('canvas');
-    // canvas.id = 'canvas1';
-    // canvas.style.display = 'none';
-    // canvas.style.maxWidth = 340;
-    // document.body.appendChild(canvas);
-    // canvas.width = 340;
-    // canvas.height = 170;
 
     let canvas1 = window.document.getElementById('canvas1');
     var hiddenChart1 = new Chart(canvas1, {
@@ -959,16 +931,16 @@ function grp2Chart() {
         }]
     };
     var Chart2 = new Chart(grp2ChartObject, {
-        type: 'radar',
+        type: 'bar',
         data: data2,
-        options: radarChartOptions
+        options: barChartOptions
     });
 
     let canvas2 = window.document.getElementById('canvas2');
     var hiddenChart2 = new Chart(canvas2, {
-        type: 'radar',
+        type: 'bar',
         data: data2,
-        options: radarNonResponsive
+        options: barNonResponsive
     });
 
 }
@@ -989,16 +961,16 @@ function grp3Chart() {
         }]
     };
     var Chart3 = new Chart(grp3ChartObject, {
-        type: 'radar',
+        type: 'bar',
         data: data3,
-        options: radarChartOptions
+        options: barChartOptions
     });
 
     let canvas3 = window.document.getElementById('canvas3');
     var hiddenChart3 = new Chart(canvas3, {
-        type: 'radar',
+        type: 'bar',
         data: data3,
-        options: radarNonResponsive
+        options: barNonResponsive
     });
 }
 
@@ -1018,16 +990,16 @@ function grp4Chart() {
         }]
     };
     var Chart4 = new Chart(grp4ChartObject, {
-        type: 'radar',
+        type: 'bar',
         data: data4,
-        options: radarChartOptions
+        options: barChartOptions
     });
 
     let canvas4 = window.document.getElementById('canvas4');
     var hiddenChart4 = new Chart(canvas4, {
-        type: 'radar',
+        type: 'bar',
         data: data4,
-        options: radarNonResponsive
+        options: barNonResponsive
     });
 }
 
@@ -1047,16 +1019,16 @@ function grp5Chart() {
         }]
     };
     var Chart5 = new Chart(grp5ChartObject, {
-        type: 'radar',
+        type: 'bar',
         data: data5,
-        options: radarChartOptions
+        options: barChartOptions
     });
 
     let canvas5 = window.document.getElementById('canvas5');
     var hiddenChart5 = new Chart(canvas5, {
         type: 'radar',
         data: data5,
-        options: radarNonResponsive
+        options: barNonResponsive
     });
 }
 
@@ -1076,16 +1048,16 @@ function grp6Chart() {
         }]
     };
     var Chart6 = new Chart(grp6ChartObject, {
-        type: 'radar',
+        type: 'bar',
         data: data6,
-        options: radarChartOptions
+        options: barChartOptions
     });
 
     let canvas6 = window.document.getElementById('canvas6');
     var hiddenChart6 = new Chart(canvas6, {
-        type: 'radar',
+        type: 'bar',
         data: data6,
-        options: radarNonResponsive
+        options: barNonResponsive
     });
 }
 
@@ -1105,16 +1077,16 @@ function grp7Chart() {
         }]
     };
     var Chart7 = new Chart(grp7ChartObject, {
-        type: 'radar',
+        type: 'bar',
         data: data7,
-        options: radarChartOptions
+        options: barChartOptions
     });
 
     let canvas7 = window.document.getElementById('canvas7');
     var hiddenChart7 = new Chart(canvas7, {
-        type: 'radar',
+        type: 'bar',
         data: data7,
-        options: radarNonResponsive
+        options: barNonResponsive
     });
 }
 
