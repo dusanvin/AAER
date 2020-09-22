@@ -8,6 +8,46 @@
   display: none;
 }
 
+/* Start: Display der Charts */
+
+#display_overallChart {
+  display:none;
+}
+
+#display_grp1Chart {
+  display:none;
+}
+
+#display_grp2Chart {
+  display:none;
+}
+
+#display_grp3Chart {
+  display:none;
+}
+
+#display_grp4Chart {
+  display:none;
+}
+
+#display_grp5Chart {
+  display:none;
+}
+
+#display_grp6Chart {
+  display:none;
+}
+
+#display_grp7Chart {
+  display:none;
+}
+
+#display_grp8Chart {
+  display:none;
+}
+
+/* Ende: Display der Charts */
+
 .btn-toggle {
   margin-bottom: 0px !important;
   font-size:16px;
@@ -17,22 +57,23 @@
   padding:0 !important;
 }
 
- .list-group-item {
-  font-size:14px;
+.list-group-item {
+  font-size:14px !important;
   background-color: #2F3436;
   color: white !important;
-  transition: all .1s ease-in;
-  line-height:1.5;
-  padding-left:1rem;
-  padding-right:1rem;
+  transition: all .1s ease-in !important;
+  line-height:1.5 !important;
+  padding-left:1rem !important;
+  padding-right:1rem !important;
   padding-top: 0.7rem !important;
   padding-bottom: 0.7rem !important;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
  }
 
- .list-group-item:active {
+.list-group-item:active {
   background-color: #F3F5F5 !important;
   border-left: 6px solid #009688 !important;
+  color: black !important;
  }
 
 .list-group-item:active svg {
@@ -46,11 +87,13 @@
 .list-group-item:focus {
   background-color: #F3F5F5 !important;
   border-left: 6px solid #009688 !important;
+  color: black !important;
  }
 
- .list-group-item:hover {
+.list-group-item:hover {
   transition: all .1s ease-in-out;
   background-color: #F3F5F5;
+  color: black !important;
  }
 
  #wrapper {
