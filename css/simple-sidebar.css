@@ -1,0 +1,127 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+#dashboard-aaer {
+  display: none;
+}
+
+.btn-toggle {
+  margin-bottom: 0px !important;
+  font-size:16px;
+}
+
+.list-group {
+  padding:0 !important;
+}
+
+ .list-group-item {
+  font-size:14px;
+  background-color: #2F3436;
+  color: white !important;
+  transition: all .1s ease-in;
+  line-height:1.5;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-top: 0.7rem !important;
+  padding-bottom: 0.7rem !important;
+  text-transform: uppercase;
+ }
+
+ .list-group-item:active {
+  background-color: #F3F5F5 !important;
+  border-left: 6px solid #009688 !important;
+ }
+
+.list-group-item:active svg {
+  color:#009688 !important;
+}
+
+.list-group-item:focus svg {
+  color:#009688 !important;
+}
+
+.list-group-item:focus {
+  background-color: #F3F5F5 !important;
+  border-left: 6px solid #009688 !important;
+ }
+
+ .list-group-item:hover {
+  transition: all .1s ease-in-out;
+  background-color: #F3F5F5;
+ }
+
+ #wrapper {
+    overflow-x: hidden;
+ }
+
+ .navbar-dashboard {
+  background: white;
+ }
+
+ .dashboard-title {
+    color: #747373;
+ }
+
+.new {
+  background:#ff962f !important;
+  border-radius:2px !important;
+  color:white !important;
+  margin-left: 4rem;
+ }
+
+.list-group-icon {
+  margin-right:1rem !important;
+  margin-bottom:2px;
+}
+
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  width:450px;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  padding-top:2.5rem;
+  font-size: 2rem;
+  color: white;
+  background: #25292A;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+#sidebar-wrapper .list-group {
+  
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  background: #F3F5F5;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+  max-width:15rem !important;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

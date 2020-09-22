@@ -193,7 +193,8 @@ a.btn-status {
 }
 
 #ergebnisse_container {
-	display: none;
+	/*display: none;*/
+	display: block;
 }
 
 .bg-white {

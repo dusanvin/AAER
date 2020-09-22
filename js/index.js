@@ -1265,10 +1265,12 @@ $(document).on('keypress',function(e) {
 // Start: Display der Ergebnisse erst nach Beendigung der Umfrage und Eliminierung der übrigen Container
 
 $( ".sv_complete_btn" ).click(function() {
+    $( "#dashboard-aaer" ).css("display", "block");
     $( "#ergebnisse_container" ).css("display", "block");
     $( ".front-background" ).css("display", "none");
     $( "#surveyElementContainer" ).css("display", "none");
     $( "#carouselExampleSlidesOnly" ).css("display", "none");
+    
 });
 
 // Ende: Display der Ergebnisse erst nach Beendigung der Umfrage und Eliminierung der übrigen Container
