@@ -662,6 +662,49 @@ const jsData = {
 //     }
 // }
 
+resGradientPlugin = {
+    id: "responsiveGradient",
+
+    afterLayout: function(chart, options) {
+        //         var scales = chart.scales;
+        //         // console.log(scales["x-axis-0"].left);
+        // console.log(scales["y-axis-0"].bottom);
+        // console.log(scales["x-axis-0"].right);
+        // console.log(scales["y-axis-0"].top);
+
+        if (Number.isNaN(scales["x-axis-0"].left)) {
+            scales["x-axis-0"].left = 0;
+        }
+        if (Number.isNaN(scales["y-axis-0"].bottom)) {
+            scales["y-axis-0"].bottom = 0;
+        }
+        if (Number.isNaN(scales["x-axis-0"].right)) {
+            scales["x-axis-0"].right = 0;
+        }
+        if (Number.isNaN(scales["y-axis-0"].top)) {
+            scales["y-axis-0"].top = 0;
+        }
+
+        // create a linear gradient with the dimensions of the scale
+        var color = chart.ctx.createLinearGradient(
+            scales["x-axis-0"].left,
+            scales["y-axis-0"].bottom,
+            scales["x-axis-0"].right,
+            scales["y-axis-0"].top
+        );
+        // add gradients stops
+        color.addColorStop(0, "black");
+        color.addColorStop(0.25, "red");
+        color.addColorStop(0.5, "orange");
+        color.addColorStop(0.75, "yellow");
+        color.addColorStop(1, "green");
+        // changes the background color option
+        chart.data.datasets[0].backgroundColor = color;
+    }
+};
+
+Chart.pluginService.register(resGradientPlugin);
+
 barChartOptions = {
     animation: {
         easing: "easeInOutBack"
@@ -750,7 +793,7 @@ function overallChart() {
         labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             label: "Übersichts-Chart",
-            backgroundColor: linearGradient,
+            //backgroundColor: linearGradient,
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
