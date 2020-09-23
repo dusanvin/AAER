@@ -367,7 +367,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schüler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transportiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie relevanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
                     isRequired: true,
                     hasComment: true,
-                    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind alle nötigen Rahmenbedingungen der Nutzung/des Einsatzes des Lehr-Lernmittels überichtlich aufgeführt.",
+                    commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind alle nötigen Rahmenbedingungen der Nutzung/des Einsatzes des Lehr-Lernmittels übersichtlich aufgeführt.",
                     choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
@@ -806,7 +806,7 @@ barBackgroundColor = ["#f49080","#80b6f4"];
 function grp1Chart() {
     var grp1ChartObject = window.document.getElementById('grp1Chart');
     var data1 = {
-        labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards"],
+        labels: ["Curriculum", "Bildungsstandards"],
         datasets: [{
             label: "Anlehnung an Curriculum und Bildungsstandards",
             backgroundColor: barBackgroundColor,
