@@ -734,15 +734,6 @@ barNonResponsive = {
 //     context.fillStyle = linearGradient;
 // }
 
-function barGradient(elementID) {
-    let element = document.getElementById(elementID);
-    let context = element.getContext('2d');
-    let linearGradient = context.createLinearGradient(0, 0, 0, 170);
-    linearGradient.addColorStop(0, 'red');
-    linearGradient.addColorStop(1, 'green');
-    context.fillStyle = linearGradient;
-}
-
 function backgroundGradient(context) {
     var linearGradient = context.createLinearGradient(0, 0, 0, 170);
     linearGradient.addColorStop(0, 'green');
