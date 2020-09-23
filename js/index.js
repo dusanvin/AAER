@@ -753,9 +753,9 @@ function overallChart() {
 // Start: Details grb1Chart
 
 function grp1Chart() {
-    var canvas1 = window.document.getElementById('grp1Chart');
+    let canvas1 = window.document.getElementById('grp1Chart');
     //let linearGradient = backgroundGradient(grp1ChartObject.getContext('2d'));
-    var data1 = {
+    let data1 = {
         labels: ["Curriculum", "Bildungsstandards"],
         datasets: [{
             label: "Anlehnung an Curriculum und Bildungsstandards",
@@ -763,14 +763,14 @@ function grp1Chart() {
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
         }]
     };
-    var Chart1 = new Chart(canvas1, {
+    let Chart1 = new Chart(canvas1, {
         type: 'bar',
         data: data1,
         options: barChartOptions
     });
 
     let hiddenCanvas1 = window.document.getElementById('canvas1');
-    var hiddenChart1 = new Chart(hiddenCanvas1, {
+    let hiddenChart1 = new Chart(hiddenCanvas1, {
         type: 'bar',
         data: data1,
         options: barNonResponsive
@@ -784,7 +784,7 @@ function grp1Chart() {
 // Start: Details grb2Chart
 
 function grp2Chart() {
-    var canvas2 = document.getElementById('grp2Chart');
+    let canvas2 = document.getElementById('grp2Chart');
     //let linearGradient = backgroundGradient(grp2ChartObject.getContext('2d'));
     data2 = {
         labels: [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
@@ -794,14 +794,14 @@ function grp2Chart() {
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
         }]
     };
-    var Chart2 = new Chart(canvas2, {
+    let Chart2 = new Chart(canvas2, {
         type: 'bar',
         data: data2,
         options: barChartOptions
     });
 
     let hiddenCanvas2 = window.document.getElementById('canvas2');
-    var hiddenChart2 = new Chart(hiddenCanvas2, {
+    let hiddenChart2 = new Chart(hiddenCanvas2, {
         type: 'bar',
         data: data2,
         options: barNonResponsive
@@ -816,7 +816,7 @@ function grp2Chart() {
 // Start: Details grb3Chart
 
 function grp3Chart() {
-    var canvas3 = document.getElementById('grp3Chart');
+    let canvas3 = document.getElementById('grp3Chart');
     //let linearGradient = backgroundGradient(grp3ChartObject.getContext('2d'));
     data3 = {
         labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
@@ -826,14 +826,14 @@ function grp3Chart() {
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
         }]
     };
-    var Chart3 = new Chart(canvas3, {
+    let Chart3 = new Chart(canvas3, {
         type: 'bar',
         data: data3,
         options: barChartOptions
     });
 
     let hiddenCanvas3 = window.document.getElementById('canvas3');
-    var hiddenChart3 = new Chart(hiddenCanvas3, {
+    let hiddenChart3 = new Chart(hiddenCanvas3, {
         type: 'bar',
         data: data3,
         options: barNonResponsive
@@ -847,7 +847,7 @@ function grp3Chart() {
 // Start: Details grb4Chart
 
 function grp4Chart() {
-    var canvas4 = document.getElementById('grp4Chart');
+    let canvas4 = document.getElementById('grp4Chart');
     //let linearGradient = backgroundGradient(grp4ChartObject.getContext('2d'));
     data4 = {
         labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
@@ -857,14 +857,14 @@ function grp4Chart() {
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
         }]
     };
-    var Chart4 = new Chart(canvas4, {
+    let Chart4 = new Chart(canvas4, {
         type: 'bar',
         data: data4,
         options: barChartOptions
     });
 
     let hiddenCanvas4 = window.document.getElementById('canvas4');
-    var hiddenChart4 = new Chart(hiddenCanvas4, {
+    let hiddenChart4 = new Chart(hiddenCanvas4, {
         type: 'bar',
         data: data4,
         options: barNonResponsive
@@ -878,7 +878,7 @@ function grp4Chart() {
 // Start: Details grb5Chart
 
 function grp5Chart() {
-    var canvas5 = document.getElementById('grp5Chart');
+    let canvas5 = document.getElementById('grp5Chart');
     //let linearGradient = backgroundGradient(grp5ChartObject.getContext('2d'));
     data5 = {
         labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
@@ -888,14 +888,14 @@ function grp5Chart() {
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
         }]
     };
-    var Chart5 = new Chart(canvas5, {
+    let Chart5 = new Chart(canvas5, {
         type: 'bar',
         data: data5,
         options: barChartOptions
     });
 
     let hiddenCanvas5 = window.document.getElementById('canvas5');
-    var hiddenChart5 = new Chart(hiddenCanvas5, {
+    let hiddenChart5 = new Chart(hiddenCanvas5, {
         type: 'bar',
         data: data5,
         options: barNonResponsive
@@ -909,7 +909,7 @@ function grp5Chart() {
 // Start: Details grb6Chart
 
 function grp6Chart() {
-    var canvas6 = document.getElementById('grp6Chart');
+    let canvas6 = document.getElementById('grp6Chart');
     //let linearGradient = backgroundGradient(grp6ChartObject.getContext('2d'));
     data6 = {
         labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
@@ -919,14 +919,14 @@ function grp6Chart() {
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
         }]
     };
-    var Chart6 = new Chart(canvas6, {
+    let Chart6 = new Chart(canvas6, {
         type: 'bar',
         data: data6,
         options: barChartOptions
     });
 
     let hiddenCanvas6 = window.document.getElementById('canvas6');
-    var hiddenChart6 = new Chart(hiddenCanvas6, {
+    let hiddenChart6 = new Chart(hiddenCanvas6, {
         type: 'bar',
         data: data6,
         options: barNonResponsive
@@ -940,7 +940,7 @@ function grp6Chart() {
 // Start: Details grb7Chart
 
 function grp7Chart() {
-    var canvas7 = document.getElementById('grp7Chart');
+    let canvas7 = document.getElementById('grp7Chart');
     //let linearGradient = backgroundGradient(grp7ChartObject.getContext('2d'));
     data7 = {
         labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
@@ -950,14 +950,14 @@ function grp7Chart() {
             data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
         }]
     };
-    var Chart7 = new Chart(canvas7, {
+    let Chart7 = new Chart(canvas7, {
         type: 'bar',
         data: data7,
         options: barChartOptions
     });
 
     let hiddenCanvas7 = window.document.getElementById('canvas7');
-    var hiddenChart7 = new Chart(hiddenCanvas7, {
+    let hiddenChart7 = new Chart(hiddenCanvas7, {
         type: 'bar',
         data: data7,
         options: barNonResponsive
@@ -971,7 +971,7 @@ function grp7Chart() {
 // Start: Details grb8Chart
 
 function grp8Chart() {
-    var canvas8 = document.getElementById('grp8Chart');
+    let canvas8 = document.getElementById('grp8Chart');
     //let linearGradient = backgroundGradient(grp8ChartObject.getContext('2d'));
     data8 = {
         labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
@@ -981,14 +981,14 @@ function grp8Chart() {
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
-    var Chart8 = new Chart(canvas8, {
+    let Chart8 = new Chart(canvas8, {
         type: 'bar',
         data: data8,
         options: barChartOptions
     });
 
     let hiddenCanvas8 = window.document.getElementById('canvas8');
-    var hiddenChart8 = new Chart(hiddenCanvas8, {
+    let hiddenChart8 = new Chart(hiddenCanvas8, {
         type: 'bar',
         data: data8,
         options: barNonResponsive
