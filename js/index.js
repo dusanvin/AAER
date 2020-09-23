@@ -522,12 +522,6 @@ function generateCharts() {
 
 setRadioButtonsValues();
 
-// Beispiel-Values bei Abfragen
-//survey.setValue('Name des Lehr-Lernmittels', 'Whiteboard');
-//survey.setValue('Link', 'www.mein-link-123.gibtesnicht');
-//survey.setValue('Eigene Anmerkungen', 'Teuer.');
-
-
 // Start: Radio Buttons Presets
 
 function setRadioButtonsValues() {
@@ -597,16 +591,6 @@ function setBLand() {
 }
 
 // Ende: Bundesland aka Region Abfrage
-
-
-
-// Globale Einstellungen
-
-// Default Font-Size auf 16px
-//Chart.defaults.global.defaultFontSize = 14;
-
-// Default Font-Color auf Schwarz
-//Chart.defaults.global.defaultFontColor = 'black';
 
 
 const jsData = {
@@ -743,6 +727,14 @@ barNonResponsive = {
     responsive: false
 };
 
+function barGradient(canvas) {
+    let context = canvas.getContext('2d');
+    let linearGradient = context.createLinearGradient(0, 0, 0, 170);
+    linearGradient.addColorStop(0, 'red');
+    linearGradient.addColorStop(1, 'green');
+    context.fillStyle = linearGradient;
+}
+
 
 // Start: Details overallChart
 
@@ -761,6 +753,7 @@ function overallChart() {
         data: dataALL,
         options: barChartOptions
     });
+    barGradient(overallChart);
 
     let canvasALL = window.document.getElementById('canvasALL');
     var hiddenChartALL = new Chart(canvasALL, {
@@ -768,36 +761,11 @@ function overallChart() {
         data: dataALL,
         options: barNonResponsive
     });
-}
+    barGradient(canvasALL);
 
 // Ende: Details overallChart
 
 barBackgroundColor = ["#f49080","#80b6f4"];
-
-
-
-// radarChartOptions = {
-//     scale: {
-//         ticks: {
-//             max: 4,
-//             stepSize: 1,
-//             beginAtZero: true
-//         }
-//
-//     }
-// };
-//
-// radarNonResponsive = {
-//     scale: {
-//         ticks: {
-//             max: 4,
-//             stepSize: 1,
-//             beginAtZero: true
-//         }
-//
-//     },
-//     responsive: false
-// };
 
 
 
