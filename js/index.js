@@ -727,8 +727,7 @@ barNonResponsive = {
     responsive: false
 };
 
-function barGradient(canvas) {
-    let context = canvas.getContext('2d');
+function barGradient(context) {
     let linearGradient = context.createLinearGradient(0, 0, 0, 170);
     linearGradient.addColorStop(0, 'red');
     linearGradient.addColorStop(1, 'green');
@@ -753,7 +752,7 @@ function overallChart() {
         data: dataALL,
         options: barChartOptions
     });
-    barGradient(overallChart);
+    barGradient(overallChartObject.getContext('2d'));
 
     let canvasALL = window.document.getElementById('canvasALL');
     var hiddenChartALL = new Chart(canvasALL, {
