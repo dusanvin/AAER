@@ -709,7 +709,7 @@ barNonResponsive = {
 
 
 function backgroundGradient(context) {
-    var linearGradient = context.createLinearGradient(0, 0, 0, 170);
+    let linearGradient = context.createLinearGradient(0, 0, 0, 170);
     linearGradient.addColorStop(0, 'green');
     linearGradient.addColorStop(1, 'red');
     return linearGradient;
@@ -721,7 +721,7 @@ function backgroundGradient(context) {
 // Start: Details overallChart
 
 function overallChart() {
-    var canvas0 = document.getElementById('overallChart');
+    let canvas0 = document.getElementById('overallChart');
     //linearGradient = backgroundGradient(overallChartObject.getContext('2d'));
     dataALL = {
         labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
@@ -732,14 +732,14 @@ function overallChart() {
         }]
     };
 
-    var Chart0 = new Chart(canvas0, {
+    let Chart0 = new Chart(canvas0, {
         type: 'bar',
         data: dataALL,
         options: barChartOptions
     });
 
     let hiddenCanvas0 = window.document.getElementById('canvasALL');
-    var hiddenChart0 = new Chart(hiddenCanvas0, {
+    let hiddenChart0 = new Chart(hiddenCanvas0, {
         type: 'bar',
         data: dataALL,
         options: barNonResponsive
@@ -977,7 +977,6 @@ function grp8Chart() {
         labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             label: "Anwendungstransparenz",
-            backgroundColor: barBackgroundColor,
             //backgroundColor: linearGradient,
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
