@@ -727,22 +727,39 @@ barNonResponsive = {
     responsive: false
 };
 
-function barGradient(context) {
+// function barGradient(context) {
+//     let linearGradient = context.createLinearGradient(0, 0, 0, 170);
+//     linearGradient.addColorStop(0, 'red');
+//     linearGradient.addColorStop(1, 'green');
+//     context.fillStyle = linearGradient;
+// }
+
+function barGradient(elementID) {
+    let element = document.getElementById(elementID);
+    let context = element.getContext('2d');
     let linearGradient = context.createLinearGradient(0, 0, 0, 170);
     linearGradient.addColorStop(0, 'red');
     linearGradient.addColorStop(1, 'green');
     context.fillStyle = linearGradient;
 }
 
+function backgroundGradient(context) {
+    var linearGradient = context.createLinearGradient(0, 0, 0, 170);
+    linearGradient.addColorStop(0, 'green');
+    linearGradient.addColorStop(1, 'red');
+    return linearGradient;
+}
 
 // Start: Details overallChart
 
 function overallChart() {
     var overallChartObject = document.getElementById('overallChart');
+    linearGradient = backgroundGradient(overallChartObject.getContext('2d'));
     dataALL = {
         labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             label: "Übersichts-Chart",
+            backgroundColor: linearGradient,
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
@@ -752,7 +769,6 @@ function overallChart() {
         data: dataALL,
         options: barChartOptions
     });
-    barGradient(overallChartObject.getContext('2d'));
 
     let canvasALL = window.document.getElementById('canvasALL');
     var hiddenChartALL = new Chart(canvasALL, {
