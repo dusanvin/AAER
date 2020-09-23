@@ -761,7 +761,7 @@ function overallChart() {
         data: dataALL,
         options: barNonResponsive
     });
-    barGradient(canvasALL);
+}
 
 // Ende: Details overallChart
 
