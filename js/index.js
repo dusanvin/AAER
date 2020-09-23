@@ -749,7 +749,7 @@ barNonResponsive = {
 function overallChart() {
     var overallChartObject = document.getElementById('overallChart');
     dataALL = {
-        labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität", "Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion", "Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"], "Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"], "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
+        labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             label: "Übersichts-Chart",
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
@@ -983,7 +983,7 @@ function grp3Chart() {
 function grp4Chart() {
     var grp4ChartObject = document.getElementById('grp4Chart');
     data4 = {
-        labels: ["Methodenpluralität", "Multimedia/Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit/Inklusion"],
+        labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
         datasets: [{
             label: "Mikrodidaktische Umsetzung",
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
@@ -1012,7 +1012,7 @@ function grp4Chart() {
 function grp5Chart() {
     var grp5ChartObject = document.getElementById('grp5Chart');
     data5 = {
-        labels: ["Transfer- und Anwendungsorientierung", "Prozessorientierung (Kumulation)", ["Lernwegunterstützende", "Elemente (Scaffolding)"]],
+        labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
         datasets: [{
             label: "Kognitive Strukturierung",
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
@@ -1041,7 +1041,7 @@ function grp5Chart() {
 function grp6Chart() {
     var grp6ChartObject = document.getElementById('grp6Chart');
     data6 = {
-        labels: ["Sprachlichkeit", "Bildsprache", ["Additive Kommunikation", "(Anreicherung)"]],
+        labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
         datasets: [{
             label: "Bild- und Textkomposition",
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
