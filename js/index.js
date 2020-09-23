@@ -509,7 +509,7 @@ $("#surveyElement").Survey({model: survey, onValidateQuestion: surveyValidateQue
 function generateCharts() {
     overallChart();
     grp1Chart();
-    grp2Chart(2);
+    grp2Chart();
     grp3Chart();
     grp4Chart();
     grp5Chart();
@@ -593,74 +593,6 @@ function setBLand() {
 // Ende: Bundesland aka Region Abfrage
 
 
-const jsData = {
-    //Anlehnung an Curriculum und Bildungsstandards
-    "Bezüge Curriculum": 0,
-    "Bezüge Bildungsstandards": 1,
-
-    //Diskursive Positionierung
-    "Interessegeleitete Themenführung/Positionierung": 2,
-    "Transparenz": 3,
-    "Werbliche Elemente": 0,
-    "Heterogenität/Gender": 1,
-
-    //Makrodidaktische und bildungstheoretische Fundierung
-    "Handlungsorientierung": 4,
-    "Lebensweltlichkeit": 2,
-    "Reflexion/Urteilsfähigkeit": 1,
-    "Multiperspektivität/Kontroversität": 1,
-
-    //Mikrodidaktische Umsetzung
-    "Methodenpluralität": 0,
-    "Multimedia/Multimodalität": 3,
-    "Medienkompetenz": 1,
-    "Differenzierung": 4,
-    "Barrierefreiheit/Inklusion": 4,
-
-    //Kognitive Strukturierung
-    "Transfer- und Anwendungsorientierung": 2,
-    "Prozessorientierung (Kumulation)": 1,
-    "Lernwegunterstützende Elemente (Scaffolding)": 0,
-
-    //Bild- und Textkomposition
-    "Sprachlichkeit": 2,
-    "Bildsprache": 3,
-    "Additive Kommunikation (Anreicherung)": 1,
-
-    //Aufgabendesign
-    "Sequenzierung": 4,
-    "Aktivierung": 1,
-    "Multiple Lösungswege": 0,
-
-    //Anwendungstransparenz
-    "Didaktisches Konzept": 1,
-    "Rahmenbedingungen": 2,
-
-    //Weitere Angaben
-    "Name des Lehr-Lernmittels": "keins",
-    "Link": "www",
-    "Eigene Anmerkungen": "test",
-    "Region": 1
-};
-
-// function responsivefy(svg) {
-//     const container = d3.select(svg.node().parentNode),
-//         width = parseInt(svg.style('width'), 10),
-//         height = parseInt(svg.style('height'), 10),
-//         aspect = width / height;
-//
-//     svg.attr('viewBox', `0 0 ${width} ${height}`)
-//         .attr('preserveAspectRatio', 'xMinYMid')
-//         .call(resize);
-//
-//     d3.select(window).on('resize.' + container.attr('id'), resize);
-//
-//     function resize() {
-//         const targetWidth = parseInt(container.style('width'));
-//         svg.attr('width', targetWidth);
-//         svg.attr('height', Math.round(targetWidth / aspect));
-//     }
-// }
 
 resGradientPlugin = {
     id: "responsiveGradient",
@@ -706,6 +638,7 @@ resGradientPlugin = {
 
 Chart.pluginService.register(resGradientPlugin);
 
+
 barChartOptions = {
     animation: {
         easing: "easeInOutBack"
@@ -737,6 +670,7 @@ barChartOptions = {
         }]
     }
 };
+
 
 barNonResponsive = {
     animation: {
@@ -771,12 +705,8 @@ barNonResponsive = {
     responsive: false
 };
 
-// function barGradient(context) {
-//     let linearGradient = context.createLinearGradient(0, 0, 0, 170);
-//     linearGradient.addColorStop(0, 'red');
-//     linearGradient.addColorStop(1, 'green');
-//     context.fillStyle = linearGradient;
-// }
+
+
 
 function backgroundGradient(context) {
     var linearGradient = context.createLinearGradient(0, 0, 0, 170);
@@ -785,10 +715,13 @@ function backgroundGradient(context) {
     return linearGradient;
 }
 
+
+
+
 // Start: Details overallChart
 
 function overallChart() {
-    var overallChartObject = document.getElementById('overallChart');
+    var canvas0 = document.getElementById('overallChart');
     //linearGradient = backgroundGradient(overallChartObject.getContext('2d'));
     dataALL = {
         labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
@@ -799,14 +732,14 @@ function overallChart() {
         }]
     };
 
-    var overallChart = new Chart(overallChartObject, {
+    var Chart0 = new Chart(canvas0, {
         type: 'bar',
         data: dataALL,
         options: barChartOptions
     });
 
-    let canvasALL = window.document.getElementById('canvasALL');
-    var hiddenChartALL = new Chart(canvasALL, {
+    let hiddenCanvas0 = window.document.getElementById('canvasALL');
+    var hiddenChart0 = new Chart(hiddenCanvas0, {
         type: 'bar',
         data: dataALL,
         options: barNonResponsive
@@ -815,14 +748,12 @@ function overallChart() {
 
 // Ende: Details overallChart
 
-barBackgroundColor = ["#f49080","#80b6f4"];
-
 
 
 // Start: Details grb1Chart
 
 function grp1Chart() {
-    var grp1ChartObject = window.document.getElementById('grp1Chart');
+    var canvas1 = window.document.getElementById('grp1Chart');
     //let linearGradient = backgroundGradient(grp1ChartObject.getContext('2d'));
     var data1 = {
         labels: ["Curriculum", "Bildungsstandards"],
@@ -832,107 +763,19 @@ function grp1Chart() {
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
         }]
     };
-    var Chart1 = new Chart(grp1ChartObject, {
+    var Chart1 = new Chart(canvas1, {
         type: 'bar',
         data: data1,
         options: barChartOptions
     });
 
-    let canvas1 = window.document.getElementById('canvas1');
-    var hiddenChart1 = new Chart(canvas1, {
+    let hiddenCanvas1 = window.document.getElementById('canvas1');
+    var hiddenChart1 = new Chart(hiddenCanvas1, {
         type: 'bar',
         data: data1,
         options: barNonResponsive
     });
 }
-
-
-// function grp1Chart()
-// {
-//     const keys = Object.keys(jsData);
-//
-//     const margin = {top: 10, right: 20, bottom: 30, left: 30};
-//
-//     const width = 400 - margin.left - margin.right;
-//     const height = 400 - margin.top - margin.bottom;
-//
-//     const data = [keys[0], keys[1]]; // Hier stehen einfach Strings zur Beschriftung der x-Achse
-//
-//     const xScale = d3.scaleBand() // Aufteilung der x-Achse
-//         .padding(0.2)
-//         .domain(data)
-//         .range([0, width]);
-//
-//     const yScale = d3.scaleLinear() // Aufteilung der y-Achse von 0 bis 4
-//         .domain([0, 4])
-//         .range([height, 0]);
-//
-//     const svg = d3.select('#grp1Chart')
-//         .append('svg') // Anfügen svg->DOM-Element
-//           .attr('width', width + margin.left + margin.right)
-//           .attr('height', height + margin.top + margin.bottom)
-//           .call(responsivefy) // this is all it takes to make the chart responsive
-//         .append('g') // Anfügen g->svg
-//           .attr('transform', `translate(${margin.left}, ${margin.top})`);
-//
-//     const graphArea = svg
-//         .append('g'); // Anfügen g->svg.g
-//
-//     let defs = svg.append("defs"); // Anfügen defs->svg.g
-//
-//     let gradient = defs.append("linearGradient") // Farbübergang senkrecht
-//         .attr("id", "svgGradient")
-//         //.attr("x1", "0%")
-//         //.attr("x2", "100%")
-//         //.attr("y1", "0%")
-//         //.attr("y2", "100%");
-//         .attr('gradientTransform', 'rotate(90)');
-//
-//     gradient.append("stop") // Man fängt oben an
-//         .attr('class', 'start')
-//         .attr("offset", "0%")
-//         .attr("stop-color", 'green')
-//         .attr("stop-opacity", 1);
-//
-//     gradient.append("stop")
-//         .attr('class', 'end')
-//         .attr("offset", "100%")
-//         .attr("stop-color", 'white')
-//         .attr("stop-opacity", 0.7);
-//
-//     defs // Erstellt das Chart
-//         .append('clipPath')
-//         .attr('id', 'clip-bar-rects')
-//         .selectAll('bar')
-//         .data([survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')])
-//         .enter()
-//         .append('rect')
-//         .attr('x', (d, i) => xScale(data[i]))
-//         .attr('y', d => yScale(d))
-//         .attr('width', d => xScale.bandwidth())
-//         .attr('height', d => height - yScale(d))
-//         .attr("clip-path", "url(#clip-bar-rects)")
-//         .attr('fill', 'url(#svgGradient)');
-//
-//     const clipPath = graphArea // An die Fläche wird der Bereich angebracht, auf den die Balken kommen.
-//         .append('g')
-//         .attr('clip-path', 'url(#clip-bar-rects)');
-//
-//     clipPath // Fläche, die man benötigt, um die Balken zu färben.
-//         .append('rect')
-//         .attr('x', 0)
-//         .attr('y', 0)
-//         .attr('width', width)
-//         .attr('height', height)
-//         .style('fill', 'url(#svgGradient)');
-//
-//
-//     svg.append('g').call(d3.axisLeft(yScale).ticks(4)); // y-Achse mit yScale[vorher definiert]
-//
-//     svg.append('g') // x-Achse mit xScale[vorher definiert]
-//         .attr('transform', `translate(0, ${height})`)
-//         .call(d3.axisBottom(xScale));
-// }
 
 // Ende: Details grb1Chart
 
@@ -941,7 +784,7 @@ function grp1Chart() {
 // Start: Details grb2Chart
 
 function grp2Chart() {
-    var grp2ChartObject = document.getElementById('grp2Chart');
+    var canvas2 = document.getElementById('grp2Chart');
     //let linearGradient = backgroundGradient(grp2ChartObject.getContext('2d'));
     data2 = {
         labels: [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
@@ -951,14 +794,14 @@ function grp2Chart() {
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
         }]
     };
-    var Chart2 = new Chart(grp2ChartObject, {
+    var Chart2 = new Chart(canvas2, {
         type: 'bar',
         data: data2,
         options: barChartOptions
     });
 
-    let canvas2 = window.document.getElementById('canvas2');
-    var hiddenChart2 = new Chart(canvas2, {
+    let hiddenCanvas2 = window.document.getElementById('canvas2');
+    var hiddenChart2 = new Chart(hiddenCanvas2, {
         type: 'bar',
         data: data2,
         options: barNonResponsive
@@ -973,7 +816,7 @@ function grp2Chart() {
 // Start: Details grb3Chart
 
 function grp3Chart() {
-    var grp3ChartObject = document.getElementById('grp3Chart');
+    var canvas3 = document.getElementById('grp3Chart');
     //let linearGradient = backgroundGradient(grp3ChartObject.getContext('2d'));
     data3 = {
         labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
@@ -983,14 +826,14 @@ function grp3Chart() {
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
         }]
     };
-    var Chart3 = new Chart(grp3ChartObject, {
+    var Chart3 = new Chart(canvas3, {
         type: 'bar',
         data: data3,
         options: barChartOptions
     });
 
-    let canvas3 = window.document.getElementById('canvas3');
-    var hiddenChart3 = new Chart(canvas3, {
+    let hiddenCanvas3 = window.document.getElementById('canvas3');
+    var hiddenChart3 = new Chart(hiddenCanvas3, {
         type: 'bar',
         data: data3,
         options: barNonResponsive
@@ -1004,7 +847,7 @@ function grp3Chart() {
 // Start: Details grb4Chart
 
 function grp4Chart() {
-    var grp4ChartObject = document.getElementById('grp4Chart');
+    var canvas4 = document.getElementById('grp4Chart');
     //let linearGradient = backgroundGradient(grp4ChartObject.getContext('2d'));
     data4 = {
         labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
@@ -1014,14 +857,14 @@ function grp4Chart() {
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
         }]
     };
-    var Chart4 = new Chart(grp4ChartObject, {
+    var Chart4 = new Chart(canvas4, {
         type: 'bar',
         data: data4,
         options: barChartOptions
     });
 
-    let canvas4 = window.document.getElementById('canvas4');
-    var hiddenChart4 = new Chart(canvas4, {
+    let hiddenCanvas4 = window.document.getElementById('canvas4');
+    var hiddenChart4 = new Chart(hiddenCanvas4, {
         type: 'bar',
         data: data4,
         options: barNonResponsive
@@ -1035,7 +878,7 @@ function grp4Chart() {
 // Start: Details grb5Chart
 
 function grp5Chart() {
-    var grp5ChartObject = document.getElementById('grp5Chart');
+    var canvas5 = document.getElementById('grp5Chart');
     //let linearGradient = backgroundGradient(grp5ChartObject.getContext('2d'));
     data5 = {
         labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
@@ -1045,14 +888,14 @@ function grp5Chart() {
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
         }]
     };
-    var Chart5 = new Chart(grp5ChartObject, {
+    var Chart5 = new Chart(canvas5, {
         type: 'bar',
         data: data5,
         options: barChartOptions
     });
 
-    let canvas5 = window.document.getElementById('canvas5');
-    var hiddenChart5 = new Chart(canvas5, {
+    let hiddenCanvas5 = window.document.getElementById('canvas5');
+    var hiddenChart5 = new Chart(hiddenCanvas5, {
         type: 'bar',
         data: data5,
         options: barNonResponsive
@@ -1066,7 +909,7 @@ function grp5Chart() {
 // Start: Details grb6Chart
 
 function grp6Chart() {
-    var grp6ChartObject = document.getElementById('grp6Chart');
+    var canvas6 = document.getElementById('grp6Chart');
     //let linearGradient = backgroundGradient(grp6ChartObject.getContext('2d'));
     data6 = {
         labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
@@ -1076,14 +919,14 @@ function grp6Chart() {
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
         }]
     };
-    var Chart6 = new Chart(grp6ChartObject, {
+    var Chart6 = new Chart(canvas6, {
         type: 'bar',
         data: data6,
         options: barChartOptions
     });
 
-    let canvas6 = window.document.getElementById('canvas6');
-    var hiddenChart6 = new Chart(canvas6, {
+    let hiddenCanvas6 = window.document.getElementById('canvas6');
+    var hiddenChart6 = new Chart(hiddenCanvas6, {
         type: 'bar',
         data: data6,
         options: barNonResponsive
@@ -1097,7 +940,7 @@ function grp6Chart() {
 // Start: Details grb7Chart
 
 function grp7Chart() {
-    var grp7ChartObject = document.getElementById('grp7Chart');
+    var canvas7 = document.getElementById('grp7Chart');
     //let linearGradient = backgroundGradient(grp7ChartObject.getContext('2d'));
     data7 = {
         labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
@@ -1107,14 +950,14 @@ function grp7Chart() {
             data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
         }]
     };
-    var Chart7 = new Chart(grp7ChartObject, {
+    var Chart7 = new Chart(canvas7, {
         type: 'bar',
         data: data7,
         options: barChartOptions
     });
 
-    let canvas7 = window.document.getElementById('canvas7');
-    var hiddenChart7 = new Chart(canvas7, {
+    let hiddenCanvas7 = window.document.getElementById('canvas7');
+    var hiddenChart7 = new Chart(hiddenCanvas7, {
         type: 'bar',
         data: data7,
         options: barNonResponsive
@@ -1128,7 +971,7 @@ function grp7Chart() {
 // Start: Details grb8Chart
 
 function grp8Chart() {
-    var grp8ChartObject = document.getElementById('grp8Chart');
+    var canvas8 = document.getElementById('grp8Chart');
     //let linearGradient = backgroundGradient(grp8ChartObject.getContext('2d'));
     data8 = {
         labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
@@ -1139,14 +982,14 @@ function grp8Chart() {
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
-    var Chart8 = new Chart(grp8ChartObject, {
+    var Chart8 = new Chart(canvas8, {
         type: 'bar',
         data: data8,
         options: barChartOptions
     });
 
-    let canvas8 = window.document.getElementById('canvas8');
-    var hiddenChart8 = new Chart(canvas8, {
+    let hiddenCanvas8 = window.document.getElementById('canvas8');
+    var hiddenChart8 = new Chart(hiddenCanvas8, {
         type: 'bar',
         data: data8,
         options: barNonResponsive
@@ -1154,6 +997,7 @@ function grp8Chart() {
 }
 
 // Ende: Details grb8Chart
+
 
 
 
