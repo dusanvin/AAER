@@ -501,8 +501,8 @@ survey.onComplete.add(function (sender, options) {
 // Ende: Skripte zur Speicherung der JS-Objekte
 
 
-$("#surveyElement").Survey({model: survey, onValidateQuestion: surveyValidateQuestion});
-//$("#surveyElement").Survey({model: survey});
+//$("#surveyElement").Survey({model: survey, onValidateQuestion: surveyValidateQuestion});
+$("#surveyElement").Survey({model: survey});
 
 // Start: Funktionen zur Darstellung der Diagramme
 
