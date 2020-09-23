@@ -119,7 +119,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 } //übernimmt wert von 6 # erledigt
             ]
-        }, {name:"Reflexion/Urteilsfähigkeit", title: "Reflexion/Urteilsfähigkeit", description: "übergeordnete pädagogische Bildungsziele wie Mündigkeit, Selbst-, Mitbestimmungs- und Solidaritätsfähigkeit (Klafki) verlangen, dass SuS im Hinblick auf fachliche Themen aber auch auf ihre nahe und weite Umwelt sowie Lebenswelt als verantwortliche, urteilende Menschen angesprochen werden. Dazu gehört auch ein Maß an Selbstreflexion, d.h. dass SuS auch sich selbst, die eigene Situation, die Situation der Gruppe und ihre politische, soziale bzw. gesellschaftliche Position zum Gegenstand des Denkens machen (Metakognition, Reflexion).",
+        }, {name:"Reflexion/Urteilsfähigkeit", title: "Reflexion/Urteilsfähigkeit", description: "Übergeordnete pädagogische Bildungsziele wie Mündigkeit, Selbst-, Mitbestimmungs- und Solidaritätsfähigkeit (Klafki) verlangen, dass SuS im Hinblick auf fachliche Themen aber auch auf ihre nahe und weite Umwelt sowie Lebenswelt als verantwortliche, urteilende Menschen angesprochen werden. Dazu gehört auch ein Maß an Selbstreflexion, d.h. dass SuS auch sich selbst, die eigene Situation, die Situation der Gruppe und ihre politische, soziale bzw. gesellschaftliche Position zum Gegenstand des Denkens machen (Metakognition, Reflexion).",
 
             questions: [
                 {
@@ -954,7 +954,7 @@ function grp2Chart() {
 function grp3Chart() {
     var grp3ChartObject = document.getElementById('grp3Chart');
     data3 = {
-        labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion/Urteilsfähigkeit", "Multiperspektivität/Kontroversität"],
+        labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
         datasets: [{
             label: "Makrodidaktische und bildungstheoretische Fundierung",
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]

@@ -106,6 +106,7 @@
 
  #wrapper {
     overflow-x: hidden;
+    border-radius:7px;
  }
 
  .navbar-dashboard {
