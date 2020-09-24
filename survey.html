@@ -11,10 +11,22 @@
         <!-- ChartJS-Integration Start -->
 
         <script src="/js/Chart.js"></script>
-		<script src="/js/d3.js"></script>
+		<!--<script src="/js/d3.js"></script>
+		<script src="/js/jspdf.debug.js"></script>
 
+		<script src="/js/pdfkit.js"></script>
+		<script src="/js/canvas2pdf.js"></script>
+		<script src="/js/blob-stream.js"></script> -->
+<!--		<script src="/js/addimage.js"></script>-->
+<!--		<script src="/js/FileSaver.js"></script>-->
+<!--		<script src="/js/html2canvas.js"></script>-->
+<!--		<script src="/js/png_support.js"></script>-->
+<!--		<script src="/js/png.js"></script>-->
+<!--		<script src="/js/zlib.js"></script>-->
+<!--		<script src="/js/jspdf.js"></script>-->
 
-
+<!--		<script src="/js/canvg.js"></script>-->
+<!--		<script src="/js/umd.js"></script>-->
 
 
         <!-- ChartJS-Integration Ende -->
@@ -37,11 +49,23 @@
 
         <!-- Custom Survey CSS End -->
 
+        <!-- Custom Dashboard CSS Start -->
+
+        <link href="/css/simple-sidebar.css" rel="stylesheet">
+
+        <!-- Custom Dashboard CSS End
+
         <!-- jQuery Start -->
 
-        <script src="/js/survey.jquery.js"></script>
+        <script src="/js/survey.jquery.min.js"></script>
 
         <!-- jQuery End -->
+
+        <!-- Custom Dashboard JS Start -->
+
+        <script type="/js/mdb.min.js"></script>
+
+        <!-- Custom Dashboard JS End -->
 
         <!-- Bootstrap Material Design v.4.1.1 Start -->
 
@@ -95,6 +119,12 @@
 	<div id="navigation_container"></div>
 
 	<!-- Navigation End -->
+
+	<!-- Start: Dashboard Div -->
+
+	<div id="dashboard-aaer" class="mr-lg-5 mr-md-3 mr-sm-0 mr-xs-0 ml-lg-5 ml-md-3 ml-sm-0 ml-xs-0 mt-lg-5 mt-md-5 mt-sm-1 mt-xs-1"></div>
+
+	<!-- Ende: Dashboard Div -->
 
 	<!-- Front Start -->
 
@@ -303,546 +333,1008 @@
 	<!-- Display der Ergebnisse -->
   	<script>
 
+  		function display_dashboard() {
+  			var container = document.getElementById("dashboard-aaer");
+  			container.innerHTML = `
+
+				<div>
+
+					<!-- Start: Wrapper -->
+					
+					<div class="d-flex" id="wrapper">
+
+					    <!-- Start: Sidebar -->
+
+					    <div id="sidebar-wrapper" style="background-color: #2F3436">
+
+							<div class="sidebar-heading text-center"></div>
+
+							<div class="list-group list-group-flush">
+
+								<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Auswertung</span>
+
+								<button id="button_display_overallChart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-pie-chart-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z"/>
+									</svg>Übersicht
+
+								</button>
+
+								<button id="button_display_grp1Chart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-book-half list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										
+										<path fill-rule="evenodd" d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+
+									</svg>Curriculum & Bildungsstandards
+
+								</button>
+
+								<button id="button_display_grp2Chart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-signpost list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7 1.414V4h2V1.414a1 1 0 0 0-2 0z"/>
+										<path fill-rule="evenodd" d="M12.532 5H2v4h10.532l1.666-2-1.666-2zM2 4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H2z"/>
+										<path d="M7 10h2v6H7v-6z"/>
+
+									</svg>Diskursive Positionierung
+
+								</button>
+
+								<button id="button_display_grp3Chart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-aspect-ratio-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+										<path fill-rule="evenodd" d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm1 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0V5h2.5a.5.5 0 0 0 0-1h-3zm11 8a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-1 0V11h-2.5a.5.5 0 0 0 0 1h3z"/>
+									
+									</svg>Makrodidaktische Fundierung
+
+								</button>
+
+								<button id="button_display_grp4Chart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-aspect-ratio list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+										<path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+										<path fill-rule="evenodd" d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"/>
+
+									</svg>Mikrodidaktische Fundierung
+
+								</button>
+
+								<button id="button_display_grp5Chart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-card-checklist list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+										<path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+										<path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+
+									</svg>Kognitive Strukturierung
+
+								</button>
+
+								<button id="button_display_grp6Chart" class="list-group-item list-group-item-action">
+
+								<svg width="1.3em" height="1.2em" viewBox="0 0 17 16" class="bi bi-image-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+									<path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+
+								</svg>Bild- und Textkomposition
+
+								</button>
+
+								<button id="button_display_grp7Chart" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-check-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+										<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+
+									</svg>Aufgabendesign
+
+								</button>
+
+								<button id="button_display_grp8Chart" class="list-group-item list-group-item-action mb-3">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-eye-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+										<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+										<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+
+									</svg>Anwendungstransparenz
+
+								</button>
+
+								<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3">Weiteres</span>
+
+								<button id="button_display_PDF" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+									</svg>Download
+									<div class="new p-1 pl-3 pr-3">Neu</div>
+
+								</button>
+
+								<button id="button_display_JSON" class="list-group-item list-group-item-action">
+
+									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-code-square list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+										<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+										<path fill-rule="evenodd" d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"></path>
+
+									</svg>Einträge im JSON-Format
+
+								</button>
+
+							</div>
+
+				    	</div>
+
+					    <!-- Ende: Sidebar -->
+
+					    <!-- Beginn: Page Content -->
+
+					    <div id="page-content-wrapper">
+
+							<nav class="navbar navbar-expand-lg navbar-dashboard">
+
+								<button class="btn btn-primary btn-toggle" id="menu-toggle">
+									
+									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layout-sidebar-inset mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
+
+											<path fill-rule="evenodd" d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
+											<path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+									</svg> Menü
+
+								</button>
+
+							</nav>
+
+
+
+						    <!-- Start: Dankesnachricht -->
+
+							<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 text-center margin_top_aaer" id="display_thanks">
+
+								<p class="font-weight-normal lead lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten in <strong>visualisierter Form</strong></p>
+								<p class="resultate_info lead lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen helfen Ihnen bei der <strong>Verwendung des Bildungsmediums</strong> in Anlehnung an dessen Qualität für Unterricht und Schule.</p>
+
+							</div>
+
+							<!-- Ende: Dankesnachricht -->
+
+
+
+					      	<!-- Start: overallChart -->
+
+							<div class="container-fluid" id="display_overallChart">
+
+								<!-- Beginn Container Übersicht -->
+
+							    <div class="container-fluid">
+
+							      <!-- Row Übersicht Start -->
+
+							      <div class="row justify-content-center">
+
+							        <!-- Col Übersicht Start -->
+
+							        <div class="col">
+
+							          <!-- Canvas Übersicht Start -->
+
+							          <div id="uebersicht">
+
+										<div class="text-left">
+
+											<h3 id="name_lernmittel" class="mt-5 mb-3 text-left"></h3>
+
+											Abrufbar unter: <a id="link_lernmittel"></a><br>
+											Letzter Zugriff: <span id="datum_lernmittel"></span>
+
+										</div>
+
+							            <div class="d-flex justify-content-center mt-5 mb-5 p-3 bg-white" style="height:1200px !important;">
+							              
+							            <canvas id="overallChart" style="max-width: 1450px; height: 1200px !important;"></canvas>
+
+							            </div>
+
+							          </div>
+
+							          <!-- Canvas Übersicht Ende -->
+
+							        </div>
+
+							        <!-- Col Übersicht Ende -->
+
+							      </div>
+
+							      <!-- Row Übersicht Ende -->
+
+							    </div>
+
+							    <!-- Ende Container Übersicht -->
+
+							</div>
+
+							<!-- Ende: Overall Chart -->
+
+
+
+							<!-- Beginn Container grp1Chart -->
+
+						    <div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp1Chart">
+
+						    <h2 class="font-weight-normal lead lead-text mb-0"><strong>Curriculum & Bildungsstandards</strong></h2>
+
+						      <!-- Row grp1Chart Start -->
+
+						      <div class="row justify-content-center mt-4">
+
+						        <!-- Col grp1Chart Start -->
+
+						        <div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+						          <!-- Canvas grp1Chart Start -->
+
+						          <div id="grp1Chartuebersicht">
+
+						            <div class="d-flex justify-content-center p-3 bg-white">
+
+						            <canvas id="grp1Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+						            </div>
+
+						          </div>
+
+						          <!-- Canvas grp1Chart Ende -->
+
+						        </div>
+
+						        <!-- Col grp1Chart Ende -->
+
+						        <!-- Col grp1Chart Start -->
+
+						        <div class="col d-flex">
+						              
+									<p class="resultate_info">Die Items <strong>Curriculum</strong> und <strong>Bildungsstandards</strong> beziehen sich auf eine transparente Ausrichtung des Lehr- und Lernmittels an gültigen Curricula sowie geltenden Bildungsstandards. Dies betrifft beispielsweise die fach-, stufen- und jahrgangsbezogenen Ziele, angepasst an den Kompetenz- sowie Anforderungsbereichen deutscher Bildungsstandards.</p>
+
+						        </div>
+
+						        <!-- Col grp1Chart Ende -->
+
+						      </div>
+
+						      <!-- Row grp1Chart Ende -->
+
+						    </div>
+
+						    <!-- Ende Container grp1Chart -->
+
+
+
+							<!-- Beginn Container grp2Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp2Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Diskursive Positionierung</strong></h2>
+
+								<!-- Row grp2Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp2Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp2Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp2Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp2Chart Ende -->
+
+									</div>
+
+									<!-- Col grp2Chart Ende -->
+
+									<!-- Col grp2Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Die Items <strong>Interessensgeleitete Themenführung / Positionierung, Transparenz, Werbliche Elemente</strong> und <strong>Heterogenität / Gender</strong> widmen sich der <em>diskursiven Positionierung</em> des Lehr- und Lernmittels. Dies umfasst etwa die Objektivität der Ressource, die multiperspektive Aufarbeitung der behandelten Thematik, Transparenz bezüglich der Motive der verfassenden Person sowie das Vorhandensein von werblichen Elementen. Zudem fokussiert das Item <strong>Heterogenität / Gender</strong> mögliche Zuschreibungen auf soziale oder gesellschaftliche Umwelten und das Maß an kultureller Diversität.</p>
+
+									</div>
+
+									<!-- Col grp2Chart Ende -->
+
+								</div>
+
+								<!-- Row grp2Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp2Chart -->
+
+
+
+							<!-- Beginn Container grp3Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp3Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Makrodidaktische Fundierung</strong></h2>
+
+								<!-- Row grp3Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp3Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp3Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp3Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp3Chart Ende -->
+
+									</div>
+
+									<!-- Col grp3Chart Ende -->
+
+									<!-- Col grp3Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Die Items <strong>Handlungsorientierung, Lebensweltlichkeit, Reflexion / Urteilsfähigkeit</strong> und <strong>Multiperspektivität / Kontroversität</strong> bilden den Bereich der <em>makrodidaktischen Fundierung</em>. Im Fokus stehen somit die Fragen, ob aktiv Wissensstrukturen erschlossen, ein Lebensweltbezug hergestellt, Prozesse der Selbstrefelexion gefördert sowie aktuelle Themen sowohl multiperspektivistisch als auch kontrovers diskutiert werden.</p>
+
+									</div>
+
+									<!-- Col grp3Chart Ende -->
+
+								</div>
+
+								<!-- Row grp3Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp3Chart -->
+
+
+
+							<!-- Beginn Container grp4Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp4Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Mikrodidaktische Fundierung</strong></h2>
+
+								<!-- Row grp4Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp4Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp4Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp4Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp4Chart Ende -->
+
+									</div>
+
+									<!-- Col grp4Chart Ende -->
+
+									<!-- Col grp4Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Die Items <strong>Methodenpluralität, Multimedia / Multimodalität, Medienkompetenz, Differenzierung</strong> und <strong>Barrierefreiheit / Inklusion</strong> zeichnen die <em>mikrodidaktische Fundierung</em> aus. Neben der Variation in der verwendeten Methodik und der Medialität setzt sich dieser Bereich außerdem mit der Förderung der Medienkompetenzen, der Rücksichtnahme auf Heterogenität in der Schülerschaft sowie der Barrierefreiheit beziehungsweise der Inklusion von benachteiligten Gruppierungen auseinander.</p>
+
+									</div>
+
+									<!-- Col grp4Chart Ende -->
+
+								</div>
+
+								<!-- Row grp4Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp4Chart -->							
+
+
+
+							<!-- Beginn Container grp5Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp5Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Kognitive Strukturierung</strong></h2>
+
+								<!-- Row grp5Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp5Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp5Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp5Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp5Chart Ende -->
+
+									</div>
+
+									<!-- Col grp5Chart Ende -->
+
+									<!-- Col grp5Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Die Items <strong>Transfer- und Anwendungsorientierung, Prozessorientierung (Kumulation)</strong> und <strong>Lernwegunterstützende Elemente (Scaffolding</strong> repräsentieren den Bereich der <em>kognitiven Strukturierung</em>. Im Vordergrund der Ressource steht nicht nur der Transfer sondern auch der kumulative Aufbau von Wissen, Fertigkeiten und Kompetenzen. Lernwegunterstütztende Elemente sind systematisch an entsprechenden Schlüsselstellen des Lehr- und Lernmittels aufzufinden.</p>
+
+									</div>
+
+									<!-- Col grp5Chart Ende -->
+
+								</div>
+
+								<!-- Row grp5Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp5Chart -->							
+
+
+							<!-- Beginn Container grp6Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp6Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Bild- und Textkomposition</strong></h2>
+
+								<!-- Row grp6Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp6Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp6Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp6Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp6Chart Ende -->
+
+									</div>
+
+									<!-- Col grp6Chart Ende -->
+
+									<!-- Col grp6Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Die Items <strong>Sprachlichkeit, Bildsprache</strong> beziehungsweise <strong>Additive Kommunikation (Anreicherung)</strong> lassen sich zum Bereich der <em>Bild- und Textkomposition</em> vereinen. Direkte, klare Formulierungen, ergänzende bildliche sowie zusätzliche Elemente runden das Lehr- und Lernmittel professionell ab.</p>
+
+									</div>
+
+									<!-- Col grp6Chart Ende -->
+
+								</div>
+
+								<!-- Row grp6Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp6Chart -->
+							
+
+
+							<!-- Beginn Container grp7Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp7Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Aufgabendesign</strong></h2>
+
+								<!-- Row grp7Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp7Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp7Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp7Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp7Chart Ende -->
+
+									</div>
+
+									<!-- Col grp7Chart Ende -->
+
+									<!-- Col grp7Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Die Items <strong>Sequenzierung, Aktivierung</strong> und <strong>Multiple Lösungswege</strong> befassen sich mit der sinnvollen didaktischen oder fachlichen Abstimmung der Aufgaben, der lernpsychologischen Aktivierung der bearbeitenden Person sowie der Möglichkeit unterschiedliche Lösungswege zur Klärung eines Sachverhalts zu nutzen.</p>
+
+									</div>
+
+									<!-- Col grp7Chart Ende -->
+
+								</div>
+
+								<!-- Row grp7Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp7Chart -->
+
+
+
+							<!-- Beginn Container grp8Chart -->
+
+							<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp8Chart">
+
+								<h2 class="font-weight-normal lead lead-text mb-0"><strong>Anwendungstransparenz</strong></h2>
+
+								<!-- Row grp8Chart Start -->
+
+								<div class="row justify-content-center mt-4">
+
+									<!-- Col grp8Chart Start -->
+
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+
+										<!-- Canvas grp8Chart Start -->
+
+										<div id="grp1Chartuebersicht">
+
+										    <div class="d-flex justify-content-center p-3 bg-white">
+
+										    	<canvas id="grp8Chart" style="max-width: 480px; max-height: 340;"></canvas>
+
+										    </div>
+
+										</div>
+
+										<!-- Canvas grp8Chart Ende -->
+
+									</div>
+
+									<!-- Col grp8Chart Ende -->
+
+									<!-- Col grp8Chart Start -->
+
+									<div class="col d-flex">
+									      
+										<p class="resultate_info">Der Bereich der <em>Anwendungstransprenz</em> setzt sich aus den Items <strong>Didaktisches Konzept</strong> und <strong>Rahmenbedingungen</strong> zusammen. Die vorliegende Kategorie klärt, ob das Lehr- und Lernmittel Informationen über dessen didaktische Konzeption sowie über dessen Rahmenbedingungen, wie etwa den zeitlichen Umfang oder die technischen Voraussetzungen, enthält.</p>
+
+									</div>
+
+									<!-- Col grp8Chart Ende -->
+
+								</div>
+
+								<!-- Row grp8Chart Ende -->
+
+							</div>
+
+							<!-- Ende Container grp8Chart -->
+
+
+
+							<!-- Beginn Container pdf -->
+
+						    <div class="container-fluid" id="display_PDF">
+
+						      <!-- Row pdf Start -->
+
+						      <div class="row justify-content-center">
+
+						        <!-- Col pdf Start -->
+
+						        <div class="col">
+
+						          <!-- Canvas pdf Start -->
+
+						          <div id="pdfChartuebersicht">
+
+						            <div class="d-flex justify-content-center mt-1 mb-5 p-3">
+
+										<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 text-center margin_top_aaer">
+
+											<p class="font-weight-normal lead lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten als <strong>Download</strong> im PDF-Format</p>
+											<p class="resultate_info lead lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Sie können Ihre Daten lokal sichern, um dauerhaft auf Ihre Ergebnisse zuzugreifen.</p>
+
+							            	<!-- Start: Button PDF-Download -->
+
+											<button id="downloadBtn" class="btn btn-green btn-pdf">Download als Pdf</button>
+
+											<!-- Ende: Button PDF-Download -->
+
+										</div>
+
+						            </div>
+
+						          </div>
+
+						          <!-- Canvas pdf Ende -->
+
+						        </div>
+
+						        <!-- Col pdf Ende -->
+
+						      </div>
+
+						      <!-- Row pdf Ende -->
+
+						    </div>
+
+						    <!-- Ende Container pdf -->
+
+
+
+							<!-- Beginn Container JSON -->
+
+						    <div class="container-fluid" id="display_JSON">
+
+						      <!-- Row Start -->
+
+						      <div class="row">
+
+						        <div class="col">			
+
+						          <div class="mt-1" id="AAER_JSON">
+
+						            <pre>
+						                
+						              <!-- Survey Results Start als JSON Ausgabe -->
+
+						              <div id="surveyResult" class="pl-5"></div>
+
+						              <!-- Survey Results Ende als JSON Ausgabe -->
+
+						            </pre>
+
+						          </div>
+
+						        </div>  
+
+						        <!-- Col 2 Ende --> 
+
+						      </div>
+
+						      <!-- Row Ende -->
+
+						    </div>
+
+						    <!-- Ende Container JSON -->
+
+
+
+				    	</div>
+
+				    	<!-- Ende: Page Content -->
+
+			  		</div>
+
+			  		<!-- Ende: Wrapper -->
+
+				</div>
+
+  			`;
+  		}
+
+  		display_dashboard();
+
+  		// Start: Buttons als Display-Event
+
+  		// Start: Darstellung Übersicht
+
+		$( "#button_display_overallChart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "block");
+		    $( "#display_grp1Chart" ).css("display", "none");		    
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");		    
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");
+		    display_Name();
+		    display_Link();
+		    display_Date();	    
+		});
+
+		// Ende: Darstellung Übersicht
+
+  		// Start: grp1Chart Übersicht
+
+		$( "#button_display_grp1Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "block");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");		
+		});
+
+		// Ende: grp1Chart Übersicht
+
+  		// Start: grp2Chart Übersicht
+
+		$( "#button_display_grp2Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "block");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");			    
+		});
+
+		// Ende: grp2Chart Übersicht
+
+  		// Start: grp3Chart Übersicht
+
+		$( "#button_display_grp3Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "block");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");	
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");			    
+		});
+
+		// Ende: grp3Chart Übersicht
+
+  		// Start: grp4Chart Übersicht
+
+		$( "#button_display_grp4Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "block");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");	
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");			    
+		});
+
+		// Ende: grp4Chart Übersicht
+
+  		// Start: grp5Chart Übersicht
+
+		$( "#button_display_grp5Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "block");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");				    
+		});
+
+		// Ende: grp5Chart Übersicht
+
+  		// Start: grp6Chart Übersicht
+
+		$( "#button_display_grp6Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "block");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");				    
+		});
+
+		// Ende: grp6Chart Übersicht
+
+  		// Start: grp7Chart Übersicht
+
+		$( "#button_display_grp7Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "block");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");				    
+		});
+
+		// Ende: grp7Chart Übersicht
+
+  		// Start: grp8Chart Übersicht
+
+		$( "#button_display_grp8Chart" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "block");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");				    
+		});
+
+		// Ende: grp8Chart Übersicht
+
+		// Start: PDF
+
+		$( "#button_display_PDF" ).click(function() {
+			$( "#display_thanks" ).css("display", "none");
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "block");		    
+		    $( "#display_JSON" ).css("display", "none");				    
+		});
+
+		// Ende: PDF
+
+		// Start: JSON
+
+		$( "#button_display_JSON" ).click(function() {
+		    $( "#display_thanks" ).css("display", "none");		    
+		    $( "#display_overallChart" ).css("display", "none");		    
+		    $( "#display_grp1Chart" ).css("display", "none");
+		    $( "#display_grp2Chart" ).css("display", "none");		    
+		    $( "#display_grp3Chart" ).css("display", "none");		    
+		    $( "#display_grp4Chart" ).css("display", "none");		    
+		    $( "#display_grp5Chart" ).css("display", "none");		    
+		    $( "#display_grp6Chart" ).css("display", "none");		    
+		    $( "#display_grp7Chart" ).css("display", "none");		    
+		    $( "#display_grp8Chart" ).css("display", "none");
+		    $( "#display_PDF" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "block");				    
+		});
+
+		// Ende: JSON
+
+  		// Ende: Buttons als Display-Event
+
+  		// Start: Name Lehr- Lernmittel
+
+		function display_Name () {
+        	console.log("Name:" + survey.getValue('Name'));
+	        document.getElementById('name_lernmittel').innerHTML = survey.getValue('Name');
+	    }
+
+	    function display_Link () {
+        	if (survey.getValue('Verlinkung') === "") {
+        		survey.setValue('Verlinkung','Keine Angabe');
+        		console.log("Link:" + survey.getValue('Verlinkung'));
+	        	$("#link_lernmittel").prop('href',"#");
+        	} else {
+	        	$("#link_lernmittel").prop('href',survey.getValue('Verlinkung'));
+	        	console.log("in Else");
+        	}
+        	document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
+	    }
+
+	    function display_Date () {
+	    	var d = new Date();
+			var month = d.getMonth()+1;
+			var day = d.getDate();
+			var output = ((''+day).length<2 ? '0' : '') + day + '.' + ((''+month).length<2 ? '0' : '') + month + '.' + d.getFullYear();
+			console.log("Datum:" + output);
+
+			document.getElementById('datum_lernmittel').innerHTML = output;
+			    
+	    }
+
+		// Ende: Name Lehr- Lernmittel
+
 		function display_ergebnisse() {
 			var container = document.getElementById("ergebnisse_container");
 			container.innerHTML = 
 				`
-				<!-- Beginn div Survey -->
 
-			  	<div class="p-md-5 p-lg-5 m-md-3 m-lg-5" id="ergebnisse_div">
-
-			  	<p class="font-weight-normal lead lead-text margin_top_aaer text-center pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white m-xs-1 m-sm-3">Ihre Daten in <strong>visualisierter Form</strong></p>
-			  	<p class="resultate_info lead lead-text margin_top_aaer text-center text-white">Wir hoffen, Ihre Bewertungen helfen Ihnen bei der <strong>Verwendung des Bildungsmediums</strong> in Anlehnung an dessen Qualität für Unterricht und Schule.</p>
-			
-
-<!-- Beginn: Dashboard -->
-
-<!-- Beginn: Dashboard Sidepanel -->
-
-<!-- Ende: Dasboard Sidepanel -->
-
-
-<!-- Ende: Dashboard -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					<!-- Beginn Container Übersicht -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row Übersicht Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col Übersicht Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#uebersicht" aria-expanded="false" aria-controls="collapseExample">
-				          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hexagon-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
-  <path fill-rule="evenodd" d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866L8.5.134z"/>
-</svg> Übersicht</button>
-
-				          <!-- Canvas Übersicht Start -->
-
-				          <div class="collapse mt-0" id="uebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="overallChart" style="max-width: 1450px; max-height: auto;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas Übersicht Ende -->
-
-				        </div>
-
-				        <!-- Col Übersicht Ende -->
-
-				      </div>
-
-				      <!-- Row Übersicht Ende -->
-
-				    </div>
-
-				    <!-- Ende Container Übersicht -->
-
-					
-
-					<!-- Beginn Container grp1Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp1Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp1Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp1Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <rect width="4" height="5" x="1" y="10" rx="1"/>
-							  <rect width="4" height="9" x="6" y="6" rx="1"/>
-							  <rect width="4" height="14" x="11" y="1" rx="1"/>
-							</svg>
-				            Curriculum & Bildungsstandards</button>
-
-				          <!-- Canvas grp1Chart Start -->
-
-				          <div class="collapse mt-0" id="grp1Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-
-				            <canvas id="grp1Chart" style="max-width: 480px; max-height: 340;"></canvas>
-<!--				            <div id="grp1Chart" style="max-width: 480px; height: 340px;"></div>-->
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp1Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp1Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp1Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp1Chart -->
-
-
-
-				 	<!-- Beginn Container grp2Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp2Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp2Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp2Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-diamond-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435z"/>
-							</svg> 
-				            Diskursive Positionierung</button>
-
-				          <!-- Canvas grp2Chart Start -->
-
-				          <div class="collapse mt-0" id="grp2Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp2Chart" style="max-width: 484px; height: 242px;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp2Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp2Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp2Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp2Chart -->
-
-
-
-				 	<!-- Beginn Container grp3Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp3Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp3Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp3Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-diamond-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435z"/>
-							</svg> 
-				            Makrodidaktische Fundierung</button>
-
-				          <!-- Canvas grp3Chart Start -->
-
-				          <div class="collapse mt-0" id="grp3Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp3Chart" style="max-width: 800px; max-height: auto;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp3Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp3Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp3Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp3Chart -->
-
-
-
-					<!-- Beginn Container grp4Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp4Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp4Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp4Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pentagon-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path d="M8 0l8 6.5-3 9.5H3L0 6.5 8 0z"/>
-							</svg> 
-				            Mikrodidaktische Umsetzung</button>
-
-				          <!-- Canvas grp4Chart Start -->
-
-				          <div class="collapse mt-0" id="grp4Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp4Chart" style="max-width: 800px; max-height: auto;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp4Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp4Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp4Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp4Chart -->
-
-
-
-				 	<!-- Beginn Container grp5Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp5Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp5Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp5Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-triangle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
-							</svg> 
-				            Kognitive Strukturierung</button>
-
-				          <!-- Canvas grp5Chart Start -->
-
-				          <div class="collapse mt-0" id="grp5Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp5Chart" style="max-width: 800px; max-height: auto;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp5Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp5Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp5Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp5Chart -->
-
-
-
-				 	<!-- Beginn Container grp6Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp6Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp6Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp6Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-triangle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
-							</svg> 
-				            Bild- und Textkomposition</button>
-
-				          <!-- Canvas grp6Chart Start -->
-
-				          <div class="collapse mt-0" id="grp6Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp6Chart" style="max-width: 800px; max-height: auto;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp6Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp6Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp6Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp6Chart -->
-
-
-
-				 	<!-- Beginn Container grp7Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp7Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp7Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp7Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-triangle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
-							</svg> 
-				          Aufgabendesign</button>
-
-				          <!-- Canvas grp7Chart Start -->
-
-				          <div class="collapse mt-0" id="grp7Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp7Chart" style="max-width: 800px; max-height: auto;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp7Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp7Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp7Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp7Chart -->
-
-
-
-				 	<!-- Beginn Container grp8Chart -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row grp8Chart Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col grp8Chart Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#grp8Chartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <rect width="4" height="5" x="1" y="10" rx="1"/>
-							  <rect width="4" height="9" x="6" y="6" rx="1"/>
-							  <rect width="4" height="14" x="11" y="1" rx="1"/>
-							</svg> Anwendungstransparenz</button>
-
-				          <!-- Canvas grp8Chart Start -->
-
-				          <div class="collapse mt-0" id="grp8Chartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-				              
-				            <canvas id="grp8Chart" style="max-width: 484px; height: 242px;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas grp8Chart Ende -->
-
-				        </div>
-
-				        <!-- Col grp8Chart Ende -->
-
-				      </div>
-
-				      <!-- Row grp8Chart Ende -->
-
-				    </div>
-
-				    <!-- Ende Container grp8Chart -->
-
-
-
-				 	<!-- Beginn Container pdf -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row pdf Start -->
-
-				      <div class="row justify-content-center">
-
-				        <!-- Col pdf Start -->
-
-				        <div class="col ergebnisse">
-
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" id="downloadBtn" data-toggle="collapse" data-target="#pdfChartuebersicht" aria-expanded="false" aria-controls="collapseExample">
-
-				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-triangle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-							  <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
-							</svg>
-				          Download Pdf</button>
-
-				        </div>
-
-				        <!-- Col pdf Ende -->
-
-				      </div>
-
-				      <!-- Row pdf Ende -->
-
-				    </div>
-
-				    <!-- Ende Container pdf -->
-
-
-
-				    <!-- Beginn Container JSON -->
-
-				    <div class="container-fluid">
-
-				      <!-- Row Start -->
-
-				      <div class="row">
-
-				        <div class="col ergebnisse">
-
-				            <button class="btn resultate btn-green btn-block" type="button" data-toggle="collapse" data-target="#AAER_JSON" aria-expanded="false" aria-controls="collapseExample">
-
-				            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-code-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
-  <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-  <path fill-rule="evenodd" d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
-</svg> Einträge als JSON		            		
-							
-							</button>				
-
-				          <div class="collapse mt-1" id="AAER_JSON">
-
-				            <pre>
-				                
-				              <!-- Survey Results Start als JSON Ausgabe -->
-
-				              <div id="surveyResult" class="pl-5"></div>
-
-				              <!-- Survey Results Ende als JSON Ausgabe -->
-
-				              
-				            </pre>
-
-				          </div>
-
-				        </div>  
-
-				        <!-- Col 2 Ende --> 
-
-				      </div>
-
-				      <!-- Row Ende -->
-
-				    </div>
-
-				    <!-- Ende Container JSON -->
-
-
-
-				  </div>
-
-				  <!-- Ende div Survey -->
 
 				`;
 			console.log("Hey Nerd! Vince und Norman wünschen dir viel Spaß bei der Nutzung des AAER.");
@@ -850,21 +1342,30 @@
 
    		display_ergebnisse();
 
+   		// Start: Trigger für Dashbaord-Menü
+
+	    $("#menu-toggle").click(function(e) {
+	      e.preventDefault();
+	      $("#wrapper").toggleClass("toggled");
+	    });
+
+   		// Ende: Trigger für Dashbaord-Menü
+
 	  </script>
 
+	<!-- Start: Canvas-Elemente für PDF -->
 
-	<canvas id="canvasALL" style="width: 690px; height: 690px;"></canvas>
-	<canvas id="canvas1" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas2" style="width: 690px; height: 340px;"></canvas>
-	<canvas id="canvas3" style="width: 690px; height: 340px;"></canvas>
-	<canvas id="canvas4" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas5" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas6" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas7" style="width: 690px; height: 400px;"></canvas>
-	<canvas id="canvas8" style="width: 340px; height: 170px;"></canvas>
+	<canvas id="canvasALL" style="width: 690px; height: 690px; display: none;"></canvas>
+	<canvas id="canvas1" style="width: 340px; height: 170px; display: none;"></canvas>
+	<canvas id="canvas2" style="width: 690px; height: 340px; display: none;"></canvas>
+	<canvas id="canvas3" style="width: 690px; height: 340px; display: none;"></canvas>
+	<canvas id="canvas4" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas5" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas6" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas7" style="width: 690px; height: 400px; display: none;"></canvas>
+	<canvas id="canvas8" style="width: 340px; height: 170px; display: none;"></canvas>
 
-	<script src="/js/bundle.js"></script>
-
+	<!-- Ende: Canvas-Elemente für PDF -->
 
   </body>
 
