@@ -755,6 +755,15 @@ function overallChart() {
         options: {
             barChartOptions,
             maintainAspectRatio:false,
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        max: 4,
+                        min: 0,
+                        stepSize: 1
+                    }
+                }]
+            }
         }
     });
 
