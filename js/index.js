@@ -764,9 +764,27 @@ function overallChart() {
 
     let hiddenCanvas0 = window.document.getElementById('canvasALL');
     let hiddenChart0 = new Chart(hiddenCanvas0, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: dataALL,
-        options: barNonResponsive
+        options: {
+            legend: {
+                display: false
+            },
+            animation: {
+                duration: 0
+            },
+            maintainAspectRatio:false,
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        max: 4,
+                        min: 0,
+                        stepSize: 1
+                    }
+                }]
+            }
+        },
+        responsive: false
     });
 }
 
