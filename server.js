@@ -1,12 +1,6 @@
 var Express = require('express');
 var Fs = require('fs');
 
-var d3 = require('d3');
-const D3Node = require('d3-node');
-
-const canvasModule = require('canvas');
-
-
 
 
 const port = 3000;
@@ -28,7 +22,9 @@ app.post('/', (req, res) => {
     jsObject = req.body.parse();
     console.log(jsObject);
 
-    
+
+
+
 
     file_name = Date.now() + ".json"
     file_data = JSON.stringify(req.body)
