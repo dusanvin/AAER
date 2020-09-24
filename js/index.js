@@ -636,7 +636,7 @@ resGradientPlugin = {
     }
 };
 
-Chart.pluginService.register(resGradientPlugin);
+//Chart.pluginService.register(resGradientPlugin);
 
 
 barChartOptions = {
@@ -727,7 +727,24 @@ function overallChart() {
         labels: ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             label: "Übersichts-Chart",
-            //backgroundColor: linearGradient,
+            backgroundColor: [
+                // 1. Bereich
+                "#003f5c","#003f5c",
+                // 2. Bereich
+                "#2f4b7c","#2f4b7c","#2f4b7c","#2f4b7c",
+                // 3. Bereich
+                "#665191","#665191","#665191","#665191",
+                // 4. Bereich
+                "#a05195","#a05195","#a05195","#a05195","#a05195",
+                // 5. Bereich
+                "#d45087","#d45087","#d45087",
+                // 6. Bereich
+                "#f95d6a","#f95d6a","#f95d6a",
+                // 7. Bereich
+                "#ff7c43","#ff7c43","#ff7c43",
+                // 8. Bereich
+                "#ffa600","#ffa600"
+                ],
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
@@ -759,7 +776,7 @@ function grp1Chart() {
         labels: ["Curriculum", "Bildungsstandards"],
         datasets: [{
             label: "Anlehnung an Curriculum und Bildungsstandards",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#003f5c",
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
         }]
     };
@@ -790,7 +807,7 @@ function grp2Chart() {
         labels: [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
         datasets: [{
             label: "Diskursive Positionierung",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#2f4b7c",
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
         }]
     };
@@ -822,7 +839,7 @@ function grp3Chart() {
         labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
         datasets: [{
             label: "Makrodidaktische und bildungstheoretische Fundierung",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#665191",
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
         }]
     };
@@ -853,7 +870,7 @@ function grp4Chart() {
         labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
         datasets: [{
             label: "Mikrodidaktische Umsetzung",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#a05195",
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
         }]
     };
@@ -884,7 +901,7 @@ function grp5Chart() {
         labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
         datasets: [{
             label: "Kognitive Strukturierung",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#d45087",
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
         }]
     };
@@ -915,7 +932,7 @@ function grp6Chart() {
         labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
         datasets: [{
             label: "Bild- und Textkomposition",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#f95d6a",
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
         }]
     };
@@ -946,7 +963,7 @@ function grp7Chart() {
         labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
         datasets: [{
             label: "Aufgabendesign",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#ff7c43",
             data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
         }]
     };
@@ -977,7 +994,7 @@ function grp8Chart() {
         labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             label: "Anwendungstransparenz",
-            //backgroundColor: linearGradient,
+            backgroundColor: "#ffa600",
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
