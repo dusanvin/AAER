@@ -5,6 +5,11 @@ body {
 
 html { font-size: 100% !important;}
 
+.btn-pdf {
+	color: rgb(255, 255, 255) !important;
+    background-color: rgb(24, 166, 137) !important;
+}
+
 .sv_header__text {
 	visibility: collapse;
 	display: none !important;

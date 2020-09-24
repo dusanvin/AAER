@@ -11,12 +11,12 @@
         <!-- ChartJS-Integration Start -->
 
         <script src="/js/Chart.js"></script>
-		<script src="/js/d3.js"></script>
+		<!--<script src="/js/d3.js"></script>
 		<script src="/js/jspdf.debug.js"></script>
 
 		<script src="/js/pdfkit.js"></script>
 		<script src="/js/canvas2pdf.js"></script>
-		<script src="/js/blob-stream.js"></script>
+		<script src="/js/blob-stream.js"></script> -->
 <!--		<script src="/js/addimage.js"></script>-->
 <!--		<script src="/js/FileSaver.js"></script>-->
 <!--		<script src="/js/html2canvas.js"></script>-->
@@ -451,7 +451,7 @@
 
 									<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
-									</svg>Download als PDF
+									</svg>Download
 									<div class="new p-1 pl-3 pr-3">Neu</div>
 
 								</button>
@@ -525,6 +525,15 @@
 							          <!-- Canvas Übersicht Start -->
 
 							          <div id="uebersicht">
+
+										<div class="text-left">
+
+											<h3 id="name_lernmittel" class="mt-5 mb-3 text-left"></h3>
+
+											Abrufbar unter: <a id="link_lernmittel"></a><br>
+											Letzter Zugriff: <span id="datum_lernmittel"></span>
+
+										</div>
 
 							            <div class="d-flex justify-content-center mt-5 mb-5 p-3 bg-white" style="height:1200px !important;">
 							              
@@ -985,10 +994,20 @@
 
 						          <div id="pdfChartuebersicht">
 
-						            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
+						            <div class="d-flex justify-content-center mt-1 mb-5 p-3">
 
-						            <!-- <canvas id="canvasPdf" style="width: 768px; height: 1200px;"></canvas> -->
-						            Testtext
+										<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 text-center margin_top_aaer">
+
+											<p class="font-weight-normal lead lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten als <strong>Download</strong> im PDF-Format</p>
+											<p class="resultate_info lead lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Sie können Ihre Daten lokal sichern, um dauerhaft auf Ihre Ergebnisse zuzugreifen.</p>
+
+							            	<!-- Start: Button PDF-Download -->
+
+											<button id="downloadBtn" class="btn btn-green btn-pdf" onclick="downloadPdf()">Download als Pdf</button>
+
+											<!-- Ende: Button PDF-Download -->
+
+										</div>
 
 						            </div>
 
@@ -1079,7 +1098,10 @@
 		    $( "#display_grp7Chart" ).css("display", "none");		    
 		    $( "#display_grp8Chart" ).css("display", "none");		    
 		    $( "#display_PDF" ).css("display", "none");		    
-		    $( "#display_JSON" ).css("display", "none");		    
+		    $( "#display_JSON" ).css("display", "none");
+		    display_Name();
+		    display_Link();
+		    display_Date();	    
 		});
 
 		// Ende: Darstellung Übersicht
@@ -1276,7 +1298,37 @@
 
   		// Ende: Buttons als Display-Event
 
+  		// Start: Name Lehr- Lernmittel
 
+		function display_Name () {
+        	console.log("Name:" + survey.getValue('Name'));
+	        document.getElementById('name_lernmittel').innerHTML = survey.getValue('Name');
+	    }
+
+	    function display_Link () {
+        	if (survey.getValue('Verlinkung') === "") {
+        		survey.setValue('Verlinkung','Keine Angabe');
+        		console.log("Link:" + survey.getValue('Verlinkung'));
+	        	$("#link_lernmittel").prop('href',"#");
+        	} else {
+	        	$("#link_lernmittel").prop('href',survey.getValue('Verlinkung'));
+	        	console.log("in Else");
+        	}
+        	document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
+	    }
+
+	    function display_Date () {
+	    	var d = new Date();
+			var month = d.getMonth()+1;
+			var day = d.getDate();
+			var output = ((''+day).length<2 ? '0' : '') + day + '.' + ((''+month).length<2 ? '0' : '') + month + '.' + d.getFullYear();
+			console.log("Datum:" + output);
+
+			document.getElementById('datum_lernmittel').innerHTML = output;
+			    
+	    }
+
+		// Ende: Name Lehr- Lernmittel
 
 		function display_ergebnisse() {
 			var container = document.getElementById("ergebnisse_container");
@@ -1300,12 +1352,6 @@
    		// Ende: Trigger für Dashbaord-Menü
 
 	  </script>
-
-	<!-- Button Start -->
-
-	<button id="downloadBtn" onclick="downloadPdf()">Download Pdf</button>
-
-	<!-- Button End -->
 
 	<!-- Start: Canvas-Elemente für PDF -->
 

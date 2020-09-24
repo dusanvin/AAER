@@ -7,12 +7,12 @@ Survey
 
 var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER)",
     pages: [
-        {name:"Name des Lehr-Lernmittels", title: "Name des Lehr-Lernmittels", description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
+        {name:"Name", title: "Name des Lehr-Lernmittels", description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
 
             questions: [
                 {
                     type: "text",
-                    name: "Name des Lehr-Lernmittels",
+                    name: "Name",
                     title: "Bitte geben Sie den Namen des Lehr-/ Lernmittels, das Sie mit Hilfe des AAER analysieren / evaluieren möchten, an.",
                     //description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schüler sowie Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transportiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
                     isRequired: true,
@@ -20,12 +20,12 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //commentText: "Der Name wird später Ihrer persönlichen Auswertung, die Sie sich herunterladen können, angezeigt."
                 }
             ]
-        }, {name:"Link", title: "Link (optional)", description: "Sie können an dieser Stelle den Link zu dem zu analysierenden/ zu evaluierenden Lehr-Lernmittel angeben. Er wird in der abschließend für Sie generierten Auswertungsübersicht angezeit.",
+        }, {name:"Verlinkung", title: "Link (optional)", description: "Sie können an dieser Stelle den Link zu dem zu analysierenden/ zu evaluierenden Lehr-Lernmittel angeben. Er wird in der abschließend für Sie generierten Auswertungsübersicht angezeit.",
 
             questions: [
                 {
                     type: "text",
-                    name: "Link",
+                    name: "Verlinkung",
                     title: "Bitte geben Sie den Link zu Ihrem Lehr-Lernmittel an (optional).",
                     //description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schüler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transportiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
                     isRequired: false,
@@ -527,6 +527,8 @@ setRadioButtonsValues();
 function setRadioButtonsValues() {
 
     survey.data = {
+        "Name": "",
+        "Verlinkung": "",
         "Bezüge Curriculum": 4,
         "Bezüge Bildungsstandards": 1,
         "Interessegeleitete Themenführung/Positionierung": 2,
@@ -559,19 +561,6 @@ function setRadioButtonsValues() {
 }
 
 // Ende: Radio Buttons Presets
-
-
-
-// Start: Name Lehr- Lernmittel
-
-function setNameAndLink() {
-    document.getElementById('name_lernmittel').innerHTML = "<h1>" + survey.getValue('Name des Lehr-Lernmittels') + "</h1>";
-    document.getElementById('link_lernmittel').innerHTML = "<h1>" + survey.getValue('Link') + "</h1>";
-}
-
-// Ende: Name Lehr- Lernmittel
-
-
 
 // Start: Eigene Anmerkungen
 
@@ -641,10 +630,11 @@ resGradientPlugin = {
 
 barChartOptions = {
     animation: {
-        easing: "easeInOutBack"
+        duration: 0 // general animation time
     },
+    responsiveAnimationDuration: 0, // animation duration after a resize
     legend: {
-        display: false
+        display: true
     },
     scales: {
         yAxes: [{
@@ -674,7 +664,7 @@ barChartOptions = {
 
 barNonResponsive = {
     animation: {
-        easing: "easeInOutBack"
+        duration: 0 // general animation time
     },
     legend: {
         display: false
@@ -753,7 +743,12 @@ function overallChart() {
         type: 'horizontalBar',
         data: dataALL,
         options: {
-            barChartOptions,
+            legend: {
+                display: false
+            },
+            animation: {
+                duration: 0
+            },
             maintainAspectRatio:false,
             scales: {
                 xAxes: [{
@@ -796,6 +791,7 @@ function grp1Chart() {
         type: 'bar',
         data: data1,
         options: barChartOptions
+
     });
 
     let hiddenCanvas1 = window.document.getElementById('canvas1');
@@ -827,6 +823,7 @@ function grp2Chart() {
         type: 'bar',
         data: data2,
         options: barChartOptions
+
     });
 
     let hiddenCanvas2 = window.document.getElementById('canvas2');
@@ -859,6 +856,7 @@ function grp3Chart() {
         type: 'bar',
         data: data3,
         options: barChartOptions
+
     });
 
     let hiddenCanvas3 = window.document.getElementById('canvas3');
@@ -890,6 +888,7 @@ function grp4Chart() {
         type: 'bar',
         data: data4,
         options: barChartOptions
+
     });
 
     let hiddenCanvas4 = window.document.getElementById('canvas4');
