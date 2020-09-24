@@ -771,26 +771,12 @@
 
 				        <div class="col ergebnisse">
 
-				          <button class="btn resultate btn-block mt-0 btn-green" type="button" data-toggle="collapse" data-target="#pdfChartuebersicht" aria-expanded="false" aria-controls="collapseExample">
+				          <button class="btn resultate btn-block mt-0 btn-green" type="button" id="downloadBtn" data-toggle="collapse" data-target="#pdfChartuebersicht" aria-expanded="false" aria-controls="collapseExample">
 
 				          	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-triangle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px;">
 							  <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
 							</svg>
-				          PDF</button>
-
-				          <!-- Canvas pdf Start -->
-
-				          <div class="collapse mt-0" id="pdfChartuebersicht">
-
-				            <div class="d-flex justify-content-center mt-1 mb-5 p-3 bg-white">
-
-				            <canvas id="canvasPdf" style="width: 768px; height: 1200px;"></canvas>
-
-				            </div>
-
-				          </div>
-
-				          <!-- Canvas pdf Ende -->
+				          Download Pdf</button>
 
 				        </div>
 
@@ -865,12 +851,6 @@
    		display_ergebnisse();
 
 	  </script>
-
-	<!-- Button Start -->
-
-	<button id="downloadBtn">Download Pdf</button>
-
-	<!-- Button End -->
 
 
 	<canvas id="canvasALL" style="width: 690px; height: 690px;"></canvas>
