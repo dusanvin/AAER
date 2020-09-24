@@ -782,9 +782,9 @@ function overallChart() {
                         stepSize: 1
                     }
                 }]
-            }
-        },
-        responsive: false
+            },
+            responsive: false
+        }
     });
 }
 
