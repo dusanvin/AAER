@@ -5,6 +5,8 @@ Survey
     .applyTheme("bootstrapmaterial");
 
 
+regionen = [{value: 1, text: "Baden-Württemberg"}, {value: 2, text: "Bayern"}, {value: 3, text: "Berlin"}, {value: 4, text: "Brandenburg"}, {value: 5, text: "Bremen"}, {value: 6, text: "Hamburg"}, {value: 7, text: "Hessen"}, {value: 8, text: "Mecklenburg-Vorpommern"}, {value: 9, text: "Niedersachsen"}, {value: 10, text: "Nordrhein-Westfalen"}, {value: 11, text: "Rheinladn-Pfalz"}, {value: 12, text: "Saarland"}, {value: 13, text: "Sachsen"}, {value: 14, text: "Sachsen-Anhalt"}, {value: 15, text: "Schleswig-Holstein"}, {value: 16, text: "Thüringen"}, {value: 17, text: "Schweiz"}, {value: 18, text: "Österreich"}, {value: 19, text: "andere Region"}, {value: 20, text: "keine Angabe"}];
+
 var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER)",
     pages: [
         {name:"Name", title: "Name des Lehr-Lernmittels", description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
@@ -418,7 +420,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     type: "dropdown",
                     name: "Region",
                     title: "Wir freuen uns, wenn Sie uns mitteilen aus welcher Region Sie das AAER nutzen (optional).",
-                    choices: [{value: 1, text: "Baden-Württemberg"}, {value: 2, text: "Bayern"}, {value: 3, text: "Berlin"}, {value: 4, text: "Brandenburg"}, {value: 5, text: "Bremen"}, {value: 6, text: "Hamburg"}, {value: 7, text: "Hessen"}, {value: 8, text: "Mecklenburg-Vorpommern"}, {value: 9, text: "Niedersachsen"}, {value: 10, text: "Nordrhein-Westfalen"}, {value: 11, text: "Rheinladn-Pfalz"}, {value: 12, text: "Saarland"}, {value: 13, text: "Sachsen"}, {value: 14, text: "Sachsen-Anhalt"}, {value: 15, text: "Schleswig-Holstein"}, {value: 16, text: "Thüringen"}, {value: 17, text: "Schweiz"}, {value: 18, text: "Österreich"}, {value: 19, text: "andere Region"}, {value: 20, text: "keine Angabe"}]
+                    choices: regionen
                 }
             ]
         }
@@ -496,6 +498,9 @@ survey.onComplete.add(function (sender, options) {
 
     generateCharts();
 
+    document.getElementById('region').innerHTML = regionen[survey.getValue('Region') - 1].text;
+    //document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
+
 });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
@@ -561,26 +566,6 @@ function setRadioButtonsValues() {
 }
 
 // Ende: Radio Buttons Presets
-
-// Start: Eigene Anmerkungen
-
-function setAnmerkungen() {
-    document.getElementById('anmerkungen').innerHTML = "<h1>" + survey.getValue('Eigene Anmerkungen') + "</h1>";
-}
-
-// Ende: Eigene Anmerkungen
-
-
-
-// Start: Bundesland aka Region Abfrage
-
-function setBLand() {
-    var bland_value = survey.getValue('Region')
-    document.getElementById('bland').innerHTML = "<h1>" + "Ausgewähltes Bundesland: " + bland_value + "</h1>";
-}
-
-// Ende: Bundesland aka Region Abfrage
-
 
 
 resGradientPlugin = {
