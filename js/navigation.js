@@ -56,17 +56,20 @@ function display_navigation() {
 }
 
 
-
 // Start: Hervorhebung des Active-Elements in der Navigation
+
 // Entfernung des voranstehenden / der Unterseiten
+
 var specialChars = "/";
 for (var i = 0; i < specialChars.length; i++) {
   var active = location.pathname.replace(new RegExp("\\" + specialChars[i], "gi"), "");
 }
 
-// Hinzufügen der Klasse active für das akteulle Element im DOM
+// Hinzufügen der Klasse active für das aktuelle Element im DOM
+
 $(document).ready(function() {
     $('a[href$="' + active + '"]').addClass('active');
+    console.log("Hey Nerd! Vince und Norman wünschen dir viel Spaß bei der Nutzung des AAER.");
 });
 
 // Ende: Hervorhebung des Active-Elements in der Navigation
@@ -74,6 +77,7 @@ $(document).ready(function() {
 display_navigation();
 
 // Tooltips Initialization
+
 $(function () {
-$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip()
 })

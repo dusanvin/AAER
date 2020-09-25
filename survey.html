@@ -68,31 +68,6 @@
 
         <!-- Bootstrap Material Design JS End -->
 
-
-
-        <!--<script src="https://surveyjs.azureedge.net/1.7.23/survey.jquery.js"></script>
-
-        <link rel="stylesheet" href="../css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"/>
-
-
-        <script src="https://unpkg.com/jquery"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
-        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>-->
-
-
-        <!--<script src="/js/survey_jquery_1_7_23.js"><script>-->
-
-        <!--<script>
-
-            $(document).ready(function () {
-
-                $('body').bootstrapMaterialDesign();
-
-            });
-
-        </script>-->
-
     </head>
 
     <body style="width:100% !important">
@@ -155,8 +130,6 @@
 
 				        <div class="carousel-item">
 
-							
-
 							<!-- Card Element 2 Start -->
 								
 						  	<div class="card">
@@ -200,8 +173,6 @@
 				      	<!-- Carousel Element 4 Start -->          	
 
 				        <div class="carousel-item">
-
-				          	
 
 							<!-- Card Element 4 Start -->
 								
@@ -259,23 +230,23 @@
 
 		    <div class="col">
 
-				<div>
+		    	<!-- Initialisierung der Umfrage Start -->
 
-					<div style="background:transparent;" class="mt-xs-3 mt-sm-3 m-md-5 m-lg-5" id="surveyElementContainer">
+				<div style="background:transparent;" class="mt-xs-3 mt-sm-3 m-md-5 m-lg-5" id="surveyElementContainer">
 
-						<div id="surveyElement" class="p-xs-3 p-sm-5 p-md-5 p-lg-5"></div>
+					<div id="surveyElement" class="p-xs-3 p-sm-5 p-md-5 p-lg-5"></div>
 
-						<div class="progress">
+					<div class="progress">
 
-						  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-						</div>
+						<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 					</div>
 
-					<script type="text/javascript" src="/js/index.js"></script>
-
 				</div>
+
+				<script type="text/javascript" src="/js/index.js"></script>
+
+				<!-- Initialisierung der Umfrage End -->
 
 	    	</div>
 
@@ -314,7 +285,12 @@
     <!-- Footer JS End -->
     
 	<!-- Display der Ergebnisse -->
+
   	<script>
+
+
+
+
 
   		function display_dashboard() {
   			var container = document.getElementById("dashboard-aaer");
@@ -1066,6 +1042,10 @@
 
   		display_dashboard();
 
+
+
+
+
   		// Start: Buttons als Display-Event
 
   		// Start: Darstellung Übersicht
@@ -1282,12 +1262,22 @@
 
   		// Ende: Buttons als Display-Event
 
-  		// Start: Name Lehr- Lernmittel
+
+
+
+
+  		// Start: Übersicht - Ergänzende Informationen
+
+  		// Start: Display - Name Lehr- Lernmittel
 
 		function display_Name () {
         	console.log("Name:" + survey.getValue('Name'));
 	        document.getElementById('name_lernmittel').innerHTML = survey.getValue('Name');
 	    }
+
+		// Ende: Display - Name Lehr- Lernmittel
+
+		// Start: Display - Link Lehr- Lernmittel
 
 	    function display_Link () {
         	if (survey.getValue('Verlinkung') === "") {
@@ -1301,6 +1291,10 @@
         	document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
 	    }
 
+		// Ende: Display - Link Lehr- Lernmittel
+
+		// Start: Display - Datum
+
 	    function display_Date () {
 	    	var d = new Date();
 			var month = d.getMonth()+1;
@@ -1312,19 +1306,13 @@
 			    
 	    }
 
-		// Ende: Name Lehr- Lernmittel
+		// Ende: Display - Datum
 
-		function display_ergebnisse() {
-			var container = document.getElementById("ergebnisse_container");
-			container.innerHTML = 
-				`
+  		// Ende: Übersicht - Ergänzende Informationen
 
 
-				`;
-			console.log("Hey Nerd! Vince und Norman wünschen dir viel Spaß bei der Nutzung des AAER.");
-		}
 
-   		display_ergebnisse();
+
 
    		// Start: Trigger für Dashbaord-Menü
 
@@ -1336,6 +1324,10 @@
    		// Ende: Trigger für Dashbaord-Menü
 
 	  </script>
+
+
+
+
 
 	<!-- Start: Canvas-Elemente für PDF -->
 
@@ -1349,17 +1341,9 @@
 	<canvas id="canvas7" style="width: 340px; height: 170px;"></canvas>
 	<canvas id="canvas8" style="width: 340px; height: 170px;"></canvas>
 
-	<!--<canvas id="canvasALL" style="width: 620px; height: 842px;"></canvas>
-	<canvas id="canvas1" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas2" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas3" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas4" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas5" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas6" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas7" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas8" style="width: 340px; height: 170px;"></canvas> -->
-
 	<!-- Ende: Canvas-Elemente für PDF -->
+
+
 
 
 
@@ -1368,8 +1352,6 @@
 	<script src="/js/bundle.js"></script>
 
 	<!-- PDF-Integration Ende -->
-
-
 
   </body>
 

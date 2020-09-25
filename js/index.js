@@ -419,7 +419,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                 {
                     type: "dropdown",
                     name: "Region",
-                    title: "Wir freuen uns, wenn Sie uns mitteilen aus welcher Region Sie das AAER nutzen (optional).",
+                    title: "Bitte teilen Sie uns mit, aus welcher Region Sie das AAER nutzen (optional).",
                     choices: regionen
                 }
             ]
@@ -505,8 +505,6 @@ survey.onComplete.add(function (sender, options) {
 
 // Ende: Skripte zur Speicherung der JS-Objekte
 
-
-//$("#surveyElement").Survey({model: survey, onValidateQuestion: surveyValidateQuestion});
 $("#surveyElement").Survey({model: survey});
 
 // Start: Funktionen zur Darstellung der Diagramme
@@ -567,51 +565,7 @@ function setRadioButtonsValues() {
 
 // Ende: Radio Buttons Presets
 
-
-resGradientPlugin = {
-    id: "responsiveGradient",
-
-    afterLayout: function(chart, options) {
-        var scales = chart.scales;
-
-        // console.log(scales["x-axis-0"].left);
-        // console.log(scales["y-axis-0"].bottom);
-        // console.log(scales["x-axis-0"].right);
-        // console.log(scales["y-axis-0"].top);
-
-        if (Number.isNaN(scales["x-axis-0"].left)) {
-            scales["x-axis-0"].left = 0;
-        }
-        if (Number.isNaN(scales["y-axis-0"].bottom)) {
-            scales["y-axis-0"].bottom = 0;
-        }
-        if (Number.isNaN(scales["x-axis-0"].right)) {
-            scales["x-axis-0"].right = 0;
-        }
-        if (Number.isNaN(scales["y-axis-0"].top)) {
-            scales["y-axis-0"].top = 0;
-        }
-
-        // create a linear gradient with the dimensions of the scale
-        var color = chart.ctx.createLinearGradient(
-            scales["x-axis-0"].left,
-            scales["y-axis-0"].bottom,
-            scales["x-axis-0"].left,
-            scales["y-axis-0"].top
-        );
-        // add gradients stops
-        color.addColorStop(0, "black");
-        color.addColorStop(0.25, "red");
-        color.addColorStop(0.5, "orange");
-        color.addColorStop(0.75, "yellow");
-        color.addColorStop(1, "green");
-        // changes the background color option
-        chart.data.datasets[0].backgroundColor = color;
-    }
-};
-
-//Chart.pluginService.register(resGradientPlugin);
-
+// Start: Optionen der Charts
 
 barChartOptions = {
     animation: {
@@ -646,6 +600,9 @@ barChartOptions = {
     }
 };
 
+// Ende: Optionen der Charts
+
+// Start: Optionen der Charts zur Darstellung als PDF
 
 barNonResponsive = {
     animation: {
@@ -680,25 +637,12 @@ barNonResponsive = {
     responsive: false
 };
 
-
-
-
-function backgroundGradient(context) {
-    let linearGradient = context.createLinearGradient(0, 0, 0, 170);
-    linearGradient.addColorStop(0, 'green');
-    linearGradient.addColorStop(1, 'red');
-    return linearGradient;
-}
-
-
-
+// Ende: Optionen der Charts zur Darstellung als PDF
 
 // Start: Details overallChart
 
 function overallChart() {
     let canvas0 = document.getElementById('overallChart');
-    //linearGradient = backgroundGradient(overallChartObject.getContext('2d'));
-
     let labels = ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"];
     let values = [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')];
     let colors = [
@@ -831,7 +775,6 @@ function overallChart() {
 
 function grp1Chart() {
     let canvas1 = window.document.getElementById('grp1Chart');
-    //let linearGradient = backgroundGradient(grp1ChartObject.getContext('2d'));
     let data1 = {
         labels: ["Curriculum", "Bildungsstandards"],
         datasets: [{
@@ -863,7 +806,6 @@ function grp1Chart() {
 
 function grp2Chart() {
     let canvas2 = document.getElementById('grp2Chart');
-    //let linearGradient = backgroundGradient(grp2ChartObject.getContext('2d'));
     data2 = {
         labels: [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
         datasets: [{
@@ -896,7 +838,6 @@ function grp2Chart() {
 
 function grp3Chart() {
     let canvas3 = document.getElementById('grp3Chart');
-    //let linearGradient = backgroundGradient(grp3ChartObject.getContext('2d'));
     data3 = {
         labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
         datasets: [{
@@ -928,7 +869,6 @@ function grp3Chart() {
 
 function grp4Chart() {
     let canvas4 = document.getElementById('grp4Chart');
-    //let linearGradient = backgroundGradient(grp4ChartObject.getContext('2d'));
     data4 = {
         labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
         datasets: [{
@@ -960,7 +900,6 @@ function grp4Chart() {
 
 function grp5Chart() {
     let canvas5 = document.getElementById('grp5Chart');
-    //let linearGradient = backgroundGradient(grp5ChartObject.getContext('2d'));
     data5 = {
         labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
         datasets: [{
@@ -991,7 +930,6 @@ function grp5Chart() {
 
 function grp6Chart() {
     let canvas6 = document.getElementById('grp6Chart');
-    //let linearGradient = backgroundGradient(grp6ChartObject.getContext('2d'));
     data6 = {
         labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
         datasets: [{
@@ -1022,7 +960,6 @@ function grp6Chart() {
 
 function grp7Chart() {
     let canvas7 = document.getElementById('grp7Chart');
-    //let linearGradient = backgroundGradient(grp7ChartObject.getContext('2d'));
     data7 = {
         labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
         datasets: [{
@@ -1053,7 +990,6 @@ function grp7Chart() {
 
 function grp8Chart() {
     let canvas8 = document.getElementById('grp8Chart');
-    //let linearGradient = backgroundGradient(grp8ChartObject.getContext('2d'));
     data8 = {
         labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{

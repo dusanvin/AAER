@@ -46,9 +46,9 @@ function display_footer() {
 
 		        <li><a class="text-dark" href="contact.html">Kontakt</a></li>
 
-		        <li><a class="text-dark" href="survey.html">Teilnehmen</a></li>
-
 		        <li><a class="text-dark" href="info.html">Informationen</a></li>
+
+		        <!-- <li><a class="text-dark" href="survey.html">Teilnehmen</a></li> -->
 
 		      </ul>
 
