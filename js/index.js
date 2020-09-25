@@ -609,7 +609,7 @@ barNonResponsive = {
         duration: 0 // general animation time
     },
     legend: {
-        display: false
+        display: true
     },
     scales: {
         yAxes: [{
