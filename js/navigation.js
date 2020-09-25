@@ -24,7 +24,7 @@ function display_navigation() {
 
 				<li class="nav-item pl-5 pr-5 mt-3 mb-3">
 
-					<a class="aaer_menu py-2 d-md-inline-block text-white navigation_link text-center" href="survey2.html" data-toggle="tooltip" data-placement="bottom"
+					<a class="aaer_menu py-2 d-md-inline-block text-white navigation_link text-center" href="survey.html" data-toggle="tooltip" data-placement="bottom"
   title="Analysieren und bewerten Sie ein Bildungsmedium">Zum AAER</a>
 
 				</li>
