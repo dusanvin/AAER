@@ -5,6 +5,54 @@ body {
 
 html { font-size: 100% !important;}
 
+/* Start: Display der PDF-Diagramme */
+
+#canvasALL {
+	display: none !important;
+}
+
+#canvas1 {
+	display: none !important;
+}
+
+#canvas2 {
+	display: none !important;
+}
+
+#canvas3 {
+	display: none !important;
+}
+
+#canvas4 {
+	display: none !important;
+}
+
+#canvas5 {
+	display: none !important;
+}
+
+#canvas6 {
+	display: none !important;
+}
+
+#canvas7 {
+	display: none !important;
+}
+
+#canvas8 {
+	display: none !important;
+}
+
+#canvasPdf1 {
+	display: none !important;
+}
+
+#canvasPdf2 {
+	display: none !important;
+}
+
+/* Ende: Display der PDF-Diagramme */
+
 .btn-pdf {
 	color: rgb(255, 255, 255) !important;
     background-color: rgb(24, 166, 137) !important;
