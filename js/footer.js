@@ -34,7 +34,7 @@ function display_footer() {
 
 		        </div>
 
-		        <small class="d-block mb-3"><br>Version 0.3: 9/2020; <br><br> Das AAER steht unter Copyright: <br>&copy; 2020 Universität Augsburg / Dr. Carl- Christian Fey. <br><br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">aaer.zlbib.uni-augsburg.de</a> von <a class="text-dark" href="https://www.researchgate.net/profile/Vincent_Dusanek">Vincent Dusanek</a> für <a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/digillab/">DigiLLab</a>, 2020. Lizenz:  <a class="text-dark" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a>.</small>
+		        <small class="d-block mb-3"><br>Version 0.3: 9/2020; <br><br> Das AAER steht unter Copyright: <br>&copy; 2020 Universität Augsburg / Dr. Carl- Christian Fey. <br><br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">https://aaer.zlbib.uni-augsburg.de</a> von <a class="text-dark" href="https://www.researchgate.net/profile/Vincent_Dusanek">Vincent Dusanek</a> für <a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/digillab/">DigiLLab</a>, 2020. Lizenz:  <a class="text-dark" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a>.</small>
 
 		    </div>
 
@@ -44,13 +44,9 @@ function display_footer() {
 
 		      <ul class="list-unstyled text-small">
 
-		        <li><a class="text-dark" href="#">Hilfe</a></li>
+		        <li><a class="text-dark" href="contact.html">Kontakt</a></li>
 
-		        <li><a class="text-dark" href="#">Lizenz</a></li>
-
-		        <li><a class="text-dark" href="#">Kontakt</a></li>
-
-		        <li><a class="text-dark" href="#">Teilnehmen</a></li>
+		        <li><a class="text-dark" href="survey.html">Teilnehmen</a></li>
 
 		        <li><a class="text-dark" href="info.html">Informationen</a></li>
 
@@ -64,11 +60,9 @@ function display_footer() {
 
 		        <ul class="list-unstyled text-small">
 
-		          <li><a class="text-dark" href="#">Team</a></li>
+		          <li><a class="text-dark" href="https://digillab.zlbib.uni-augsburg.de/">DigiLLab</a></li>
 
-		          <li><a class="text-dark" href="#">DigiLLab</a></li>
-
-		          <li><a class="text-dark" href="#">ZLbiB</a></li>
+		          <li><a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/">ZLbiB</a></li>
 
 		        </ul>
 
@@ -80,11 +74,9 @@ function display_footer() {
 
 		        <ul class="list-unstyled text-small">
 
-		          <li><a class="text-dark" href="#">AAER</a></li>
+		          <li><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">AAER</a></li>
 
-		          <li><a class="text-dark" href="#">DIGINEWS</a></li>
-
-		          <li><a class="text-dark" href="#">DIGIPAD</a></li>
+		          <li><a class="text-dark" href="https://digipad.zlbib.uni-augsburg.de">DIGIPAD</a></li>
 
 		        </ul>
 
@@ -98,7 +90,7 @@ function display_footer() {
 
 		          <li><a class="text-dark" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Impressum</a></li>
 
-		          <li><a class="text-dark" href="#">Datenschutz</a></li>
+		          <li><a class="text-dark" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Datenschutz</a></li>
 
 		        </ul>
 
