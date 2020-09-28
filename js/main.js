@@ -37,17 +37,17 @@ function downloadPdf() {
   pdfFile.addImage(imgData0, 'PNG', 30, 120, 270, 326); // Breite von PDF 447
 
   // Legende
-  pdfFile.text(340, 140, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
+  pdfFile.text(350, 140, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
 
   // Chart 1
   canvas1 = document.getElementById('canvas1');
   var imgData1 = canvas1.toDataURL('image/png', 1.0);
-  pdfFile.addImage(imgData1, 'PNG', 30, 450, 190, 95);
+  pdfFile.addImage(imgData1, 'PNG', 30, 450, 155, 95);
 
   // Chart 8
   canvas8 = document.getElementById('canvas8');
   var imgData8 = canvas8.toDataURL('image/png', 1.0);
-  pdfFile.addImage(imgData8, 'PNG', 230, 450, 195, 95);
+  pdfFile.addImage(imgData8, 'PNG', 210, 450, 155, 95);
 
 
 
