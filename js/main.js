@@ -5,7 +5,7 @@ button.addEventListener('click', downloadPdf);
 
 // $('#testBtn').click(myFunc());
 
-var pdfFile = new jsPDFmodule.jsPDF();
+var pdfFile = new jsPDFmodule.jsPDF(); // 595.28x841.89
 
 function downloadPdf() {
 
@@ -25,8 +25,11 @@ function downloadPdf() {
   canvasPdf1.id = 'canvasPdf1';
   
   document.body.appendChild(canvasPdf1);
-  canvasPdf1.width = 768;
-  canvasPdf1.height = 1020;
+  // canvasPdf1.width = 768;
+  // canvasPdf1.height = 1020;
+
+  canvasPdf1.width = 595;
+  canvasPdf1.height = 842;
 
 
   // Laden des Canvas-Objekts
@@ -37,7 +40,9 @@ function downloadPdf() {
 
   // Malen des Canvas-Objekts in contextPdf1-Container
   // Abstand Links, Abstand Oben, Länge, Höhe
-  contextPdf1.drawImage(chartALLcanvas, 39, 179, 620, 842);
+  // contextPdf1.drawImage(chartALLcanvas, 39, 179, 620, 842);
+
+  contextPdf1.drawImage(chartALLcanvas, 0, 0, 517, 624);
 
   // Initialisierung imgData1-Container in Abhängigkeit des contextPdf1-Containers
   var imgData1 = canvasPdf1.toDataURL('image/png');
@@ -56,7 +61,7 @@ function downloadPdf() {
   pdfFile.text(10, 39, "Verlinkung: " + survey.getValue('Verlinkung'));
 
   // Hinzufügen des imgData1-Containers als PNG
-  pdfFile.addImage(imgData1, 'PNG', 0, 0);
+  pdfFile.addImage(imgData1, 'PNG', 39, 179);
 
   // Legende
   pdfFile.setFontSize(8);
@@ -75,8 +80,8 @@ function downloadPdf() {
   canvasPdf2.id = 'canvasPdf2';
   
   document.body.appendChild(canvasPdf2);
-  canvasPdf2.width = 768;
-  canvasPdf2.height = 1020;
+  canvasPdf1.width = 595;
+  canvasPdf1.height = 842;
 
   // Laden der Canvas-Objekte
   chart1canvas = document.getElementById('canvas1');
@@ -93,20 +98,37 @@ function downloadPdf() {
 
   // Malen der Canvas-Objekte in contextPdf2-Container
   // Abstand Links, Abstand Oben, Länge, Höhe
-  contextPdf2.drawImage(chart1canvas, 39, 20+39, 340, 170);
-  contextPdf2.drawImage(chart2canvas, 415, 20+93, 340, 170);
-  contextPdf2.drawImage(chart3canvas, 39, 20+39+250, 340, 170);
-  contextPdf2.drawImage(chart4canvas, 415, 20+39+250, 340, 170);
-  contextPdf2.drawImage(chart5canvas, 39, 14+20+39+250+250, 340, 170);
-  contextPdf2.drawImage(chart6canvas, 415, 20+39+250+250, 340, 170);
-  contextPdf2.drawImage(chart7canvas, 39, 14+20+39+250+250+250, 340, 170);
-  contextPdf2.drawImage(chart8canvas, 415, 20+39+250+250+250, 340, 170);
+  // contextPdf2.drawImage(chart1canvas, 39, 20+39, 340, 170);
+  // contextPdf2.drawImage(chart2canvas, 415, 20+93, 340, 170);
+  // contextPdf2.drawImage(chart3canvas, 39, 20+39+250, 340, 170);
+  // contextPdf2.drawImage(chart4canvas, 415, 20+39+250, 340, 170);
+  // contextPdf2.drawImage(chart5canvas, 39, 14+20+39+250+250, 340, 170);
+  // contextPdf2.drawImage(chart6canvas, 415, 20+39+250+250, 340, 170);
+  // contextPdf2.drawImage(chart7canvas, 39, 14+20+39+250+250+250, 340, 170);
+  // contextPdf2.drawImage(chart8canvas, 415, 20+39+250+250+250, 340, 170);
+
+  let a1 = 0;
+  let a2 = 376;
+
+  let h1 = 59;
+  let h2 = h1 + 250;
+  let h3 = h2 + 250;
+  let h4 = h3 + 250;
+
+  contextPdf2.drawImage(chart1canvas, a1, h1, 340, 170);
+  contextPdf2.drawImage(chart2canvas, a2, h1, 340, 170);
+  contextPdf2.drawImage(chart3canvas, a1, h2, 340, 170);
+  contextPdf2.drawImage(chart4canvas, a2, h2, 340, 170);
+  contextPdf2.drawImage(chart5canvas, a1, h3, 340, 170);
+  contextPdf2.drawImage(chart6canvas, a2, h3, 340, 170);
+  contextPdf2.drawImage(chart7canvas, a1, h4, 340, 170);
+  contextPdf2.drawImage(chart8canvas, a2, h4, 340, 170);
 
   // Initialisierung imgData2-Container in Abhängigkeit des contextPdf2-Containers
   var imgData2 = canvasPdf2.toDataURL('image/png');
 
   // Hinzufügen des imgData2-Containers als PNG
-  pdfFile.addImage(imgData2, 'PNG', 0, 0);
+  pdfFile.addImage(imgData2, 'PNG', 39, 39);
 
   // Legende
   pdfFile.setFontSize(8);
