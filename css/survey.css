@@ -6,7 +6,7 @@ body {
 html { font-size: 100% !important;}
 
 /* Start: Display der PDF-Diagramme */
-
+/*
 #canvasALL {
 	display: none !important;
 }
@@ -49,7 +49,7 @@ html { font-size: 100% !important;}
 
 #canvasPdf2 {
 	display: none !important;
-}
+}*/
 
 /* Ende: Display der PDF-Diagramme */
 

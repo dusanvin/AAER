@@ -5,7 +5,7 @@ button.addEventListener('click', downloadPdf);
 
 // $('#testBtn').click(myFunc());
 
-var pdfFile = new jsPDFmodule.jsPDF(); // 595.28x841.89
+var pdfFile = new jsPDFmodule.jsPDF('p', 'px', 'a4'); // 595.28x841.89
 
 function downloadPdf() {
 
@@ -21,54 +21,39 @@ function downloadPdf() {
 
   // Seite 1
 
-  canvasPdf1 = document.createElement('canvas');
-  canvasPdf1.id = 'canvasPdf1';
-  
-  document.body.appendChild(canvasPdf1);
-  // canvasPdf1.width = 768;
-  // canvasPdf1.height = 1020;
-
-  canvasPdf1.width = 595;
-  canvasPdf1.height = 842;
-
 
   // Laden des Canvas-Objekts
-  chartALLcanvas = document.getElementById('canvasALL');
+  canvas0 = document.getElementById('canvasALL');
+  context0 = canvas0.getContext('2d');
 
-  // Initialisierung contextPdf1-Containers
-  contextPdf1 = canvasPdf1.getContext('2d');
-
-  // Malen des Canvas-Objekts in contextPdf1-Container
-  // Abstand Links, Abstand Oben, Länge, Höhe
-  // contextPdf1.drawImage(chartALLcanvas, 39, 179, 620, 842);
-
-  contextPdf1.drawImage(chartALLcanvas, 0, 0, 517, 624);
-
-  // Initialisierung imgData1-Container in Abhängigkeit des contextPdf1-Containers
-  var imgData1 = canvasPdf1.toDataURL('image/png');
+  // Umwandeln in PNG
+  var imgData1 = canvas0.toDataURL('image/png', 1.0);
 
   // Überschrift
-  pdfFile.setFontSize(20);
-  pdfFile.text(10, 19, "Übersicht Ihrer Bewertungen");
+  pdfFile.setFontSize(16);
+  pdfFile.text(30, 30, "Übersicht Ihrer Bewertungen");
 
   // Unterschrift
   pdfFile.setFontSize(10);
-  pdfFile.text(180, 16, datum());
-  pdfFile.text(10, 29, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.");
+  pdfFile.text(370, 30, datum() + '\nSeite 1/2');
+  pdfFile.text(30, 45, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.\n\nName:" + survey.getValue('Name') + "\nLink: " + survey.getValue('Verlinkung') + "\nRegion: " + regionen[survey.getValue('Region') - 1].text + "\nAnmerkungen: " + survey.getValue('Eigene Anmerkungen'));
 
   // Name und Verlinkung
-  pdfFile.text(10, 34, "Name: " + survey.getValue('Name'));
-  pdfFile.text(10, 39, "Verlinkung: " + survey.getValue('Verlinkung'));
+  // pdfFile.text(30, 70, "Name: " + survey.getValue('Name'));
+  // pdfFile.text(30, 90, "Verlinkung: " + survey.getValue('Verlinkung'));
 
   // Hinzufügen des imgData1-Containers als PNG
-  pdfFile.addImage(imgData1, 'PNG', 39, 179);
+  // Breite von PDF 447
+  pdfFile.addImage(imgData1, 'PNG', 30, 120, 270, 326);
 
   // Legende
-  pdfFile.setFontSize(8);
-  pdfFile.text(65.5, 275, "0 = nicht bewertbar | 1 = trifft nicht zu | 2 = trifft weniger zu | 3 = trifft mehr zu | 4 = trifft voll zu");
+  // pdfFile.setFontSize(8);
+  // pdfFile.text(65.5, 275, "0 = nicht bewertbar | 1 = trifft nicht zu | 2 = trifft weniger zu | 3 = trifft mehr zu | 4 = trifft voll zu");
+  pdfFile.text(310, 140, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
+
 
   // Seitenzahlen
-  pdfFile.text(10, 285, "Seite 1 / 2");
+  // pdfFile.text(10, 285, "Seite 1 / 2");
 
 
 
@@ -80,8 +65,8 @@ function downloadPdf() {
   canvasPdf2.id = 'canvasPdf2';
   
   document.body.appendChild(canvasPdf2);
-  canvasPdf1.width = 595;
-  canvasPdf1.height = 842;
+  canvasPdf2.width = 595;
+  canvasPdf2.height = 842;
 
   // Laden der Canvas-Objekte
   chart1canvas = document.getElementById('canvas1');
@@ -115,6 +100,8 @@ function downloadPdf() {
   let h3 = h2 + 250;
   let h4 = h3 + 250;
 
+
+
   contextPdf2.drawImage(chart1canvas, a1, h1, 340, 170);
   contextPdf2.drawImage(chart2canvas, a2, h1, 340, 170);
   contextPdf2.drawImage(chart3canvas, a1, h2, 340, 170);
@@ -125,10 +112,10 @@ function downloadPdf() {
   contextPdf2.drawImage(chart8canvas, a2, h4, 340, 170);
 
   // Initialisierung imgData2-Container in Abhängigkeit des contextPdf2-Containers
-  var imgData2 = canvasPdf2.toDataURL('image/png');
+  var imgData2 = canvasPdf2.toDataURL('image/png', 1.0);
 
   // Hinzufügen des imgData2-Containers als PNG
-  pdfFile.addImage(imgData2, 'PNG', 39, 39);
+  pdfFile.addImage(imgData2, 'PNG', 39, 0);
 
   // Legende
   pdfFile.setFontSize(8);

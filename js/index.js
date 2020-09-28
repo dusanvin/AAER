@@ -585,6 +585,7 @@ barNonResponsive = {
             ticks: {
                 fontColor: "rgba(0,0,0,0.5)",
                 fontStyle: "bold",
+                fontSize: 14,
                 display: true,
                 max: 4,
                 stepSize: 1,
@@ -727,7 +728,13 @@ function overallChart() {
                     ticks: {
                         max: 4,
                         min: 0,
-                        stepSize: 1
+                        stepSize: 1,
+                        fontSize: 14
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        fontSize: 14
                     }
                 }]
             },
