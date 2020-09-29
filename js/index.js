@@ -473,8 +473,10 @@ survey.onComplete.add(function (sender, options) {
 
     // Regionenname in der JSON-Übersicht anzeigen
     regionName = regionen[survey.getValue('Region') - 1].text;
-    sender.data.region = regionName;
-    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(sender.data, null, 4);
+    let resultData = Object.assign({}, sender.data);
+    resultData.Region = regionName;
+    console.log(resultData);
+    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
 
     // Charts erstellen
     generateCharts();
