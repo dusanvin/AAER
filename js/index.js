@@ -456,18 +456,32 @@ function surveyValidateQuestion(survey, options) {
 // Start: Skripte zur Speicherung der JS-Objekte
 
 survey.onComplete.add(function (sender, options) {
+
+    // Daten senden und Hash-Wert empfangen
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
+    let hash;
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // document.getElementById("hash").innerHTML = this.responseText;
+            hash = this.responseText;
+            console.log(this.responseText)
+        }
+    };
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(sender.data));
 
-    console.log(sender.data);
-
+    // Regionenname in der JSON-Übersicht anzeigen
+    regionName = regionen[survey.getValue('Region') - 1].text;
+    sender.data.region = regionName;
     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(sender.data, null, 4);
 
+    // Charts erstellen
     generateCharts();
 
-    document.getElementById('region').innerHTML = regionen[survey.getValue('Region') - 1].text;
+
+    // Diverses
+    document.getElementById('region').innerHTML = regionName;
     //document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
 
 });
