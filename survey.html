@@ -1282,11 +1282,9 @@
 	    function display_Link () {
         	if (survey.getValue('Verlinkung') === "") {
         		survey.setValue('Verlinkung','Keine Angabe');
-        		console.log("Link:" + survey.getValue('Verlinkung'));
 	        	$("#link_lernmittel").prop('href',"#");
         	} else {
 	        	$("#link_lernmittel").prop('href',survey.getValue('Verlinkung'));
-	        	console.log("in Else");
         	}
         	document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
 	    }

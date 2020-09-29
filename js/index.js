@@ -471,11 +471,12 @@ survey.onComplete.add(function (sender, options) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(sender.data));
 
+
+
     // Regionenname in der JSON-Übersicht anzeigen
     regionName = regionen[survey.getValue('Region') - 1].text;
     let resultData = Object.assign({}, sender.data);
     resultData.Region = regionName;
-    console.log(resultData);
     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
 
     // Charts erstellen
