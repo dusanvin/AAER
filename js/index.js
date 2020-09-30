@@ -456,18 +456,35 @@ function surveyValidateQuestion(survey, options) {
 // Start: Skripte zur Speicherung der JS-Objekte
 
 survey.onComplete.add(function (sender, options) {
+
+    // Daten senden und Hash-Wert empfangen
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
+    let hash;
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // document.getElementById("hash").innerHTML = this.responseText;
+            hash = this.responseText;
+            console.log(this.responseText)
+        }
+    };
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(sender.data));
 
-    console.log(sender.data);
 
-    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(sender.data, null, 4);
 
+    // Regionenname in der JSON-Übersicht anzeigen
+    regionName = regionen[survey.getValue('Region') - 1].text;
+    let resultData = Object.assign({}, sender.data);
+    resultData.Region = regionName;
+    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
+
+    // Charts erstellen
     generateCharts();
 
-    document.getElementById('region').innerHTML = regionen[survey.getValue('Region') - 1].text;
+
+    // Diverses
+    document.getElementById('region').innerHTML = regionName;
     //document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
 
 });
@@ -578,13 +595,17 @@ barNonResponsive = {
         duration: 0 // general animation time
     },
     legend: {
-        display: true
+        display: true,
+        labels: {
+            fontSize: 14
+        }
     },
     scales: {
         yAxes: [{
             ticks: {
                 fontColor: "rgba(0,0,0,0.5)",
                 fontStyle: "bold",
+                fontSize: 14,
                 display: true,
                 max: 4,
                 stepSize: 1,
@@ -599,7 +620,8 @@ barNonResponsive = {
                 display: true
             },
             ticks: {
-                display: true
+                display: true,
+                fontSize: 14
             }
         }]
     },
@@ -727,7 +749,13 @@ function overallChart() {
                     ticks: {
                         max: 4,
                         min: 0,
-                        stepSize: 1
+                        stepSize: 1,
+                        fontSize: 14
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        fontSize: 14
                     }
                 }]
             },
@@ -738,7 +766,7 @@ function overallChart() {
 
 // Ende: Details overallChart
 
-
+let maxBarWidth = 70;
 
 // Start: Details grb1Chart
 
@@ -749,6 +777,7 @@ function grp1Chart() {
         datasets: [{
             label: "Anlehnung an Curriculum und Bildungsstandards",
             backgroundColor: "#003f5c",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
         }]
     };
@@ -780,6 +809,7 @@ function grp2Chart() {
         datasets: [{
             label: "Diskursive Positionierung",
             backgroundColor: "#2f4b7c",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
         }]
     };
@@ -812,6 +842,7 @@ function grp3Chart() {
         datasets: [{
             label: "Makrodidaktische und bildungstheoretische Fundierung",
             backgroundColor: "#665191",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
         }]
     };
@@ -843,6 +874,7 @@ function grp4Chart() {
         datasets: [{
             label: "Mikrodidaktische Umsetzung",
             backgroundColor: "#a05195",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
         }]
     };
@@ -874,6 +906,7 @@ function grp5Chart() {
         datasets: [{
             label: "Kognitive Strukturierung",
             backgroundColor: "#d45087",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
         }]
     };
@@ -904,6 +937,7 @@ function grp6Chart() {
         datasets: [{
             label: "Bild- und Textkomposition",
             backgroundColor: "#f95d6a",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
         }]
     };
@@ -934,6 +968,7 @@ function grp7Chart() {
         datasets: [{
             label: "Aufgabendesign",
             backgroundColor: "#ff7c43",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
         }]
     };
@@ -964,6 +999,7 @@ function grp8Chart() {
         datasets: [{
             label: "Anwendungstransparenz",
             backgroundColor: "#ffa600",
+            maxBarThickness: maxBarWidth,
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };

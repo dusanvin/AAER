@@ -5,7 +5,7 @@ button.addEventListener('click', downloadPdf);
 
 // $('#testBtn').click(myFunc());
 
-var pdfFile = new jsPDFmodule.jsPDF();
+var pdfFile = new jsPDFmodule.jsPDF('p', 'px', 'a4'); // 595.28x841.89
 
 function downloadPdf() {
 
@@ -21,99 +21,95 @@ function downloadPdf() {
 
   // Seite 1
 
-  canvasPdf1 = document.createElement('canvas');
-  canvasPdf1.id = 'canvasPdf1';
-  
-  document.body.appendChild(canvasPdf1);
-  canvasPdf1.width = 768;
-  canvasPdf1.height = 1020;
-
-
-  // Laden des Canvas-Objekts
-  chartALLcanvas = document.getElementById('canvasALL');
-
-  // Initialisierung contextPdf1-Containers
-  contextPdf1 = canvasPdf1.getContext('2d');
-
-  // Malen des Canvas-Objekts in contextPdf1-Container
-  // Abstand Links, Abstand Oben, Länge, Höhe
-  contextPdf1.drawImage(chartALLcanvas, 39, 179, 620, 842);
-
-  // Initialisierung imgData1-Container in Abhängigkeit des contextPdf1-Containers
-  var imgData1 = canvasPdf1.toDataURL('image/png');
 
   // Überschrift
-  pdfFile.setFontSize(20);
-  pdfFile.text(10, 19, "Übersicht Ihrer Bewertungen");
+  pdfFile.setFontSize(16);
+  pdfFile.text(30, 30, "Übersicht Ihrer Bewertungen");
 
-  // Unterschrift
+  // Textinformationen
   pdfFile.setFontSize(10);
-  pdfFile.text(180, 16, datum());
-  pdfFile.text(10, 29, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.");
+  pdfFile.text(370, 30, datum() + '\nSeite 1/2');
+  pdfFile.text(30, 45, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.\n\nName:" + survey.getValue('Name') + "\nLink: " + survey.getValue('Verlinkung') + "\nRegion: " + regionen[survey.getValue('Region') - 1].text + "\nAnmerkungen: " + survey.getValue('Eigene Anmerkungen'));
 
-  // Name und Verlinkung
-  pdfFile.text(10, 34, "Name: " + survey.getValue('Name'));
-  pdfFile.text(10, 39, "Verlinkung: " + survey.getValue('Verlinkung'));
-
-  // Hinzufügen des imgData1-Containers als PNG
-  pdfFile.addImage(imgData1, 'PNG', 0, 0);
+  // Chart 0
+  canvas0 = document.getElementById('canvasALL');
+  var imgData0 = canvas0.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData0, 'PNG', 30, 120, 270, 326); // Breite von PDF 447
 
   // Legende
-  pdfFile.setFontSize(8);
-  pdfFile.text(65.5, 275, "0 = nicht bewertbar | 1 = trifft nicht zu | 2 = trifft weniger zu | 3 = trifft mehr zu | 4 = trifft voll zu");
+  pdfFile.text(350, 140, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
 
-  // Seitenzahlen
-  pdfFile.text(10, 285, "Seite 1 / 2");
+  // Chart 1
+  canvas1 = document.getElementById('canvas1');
+  var imgData1 = canvas1.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData1, 'PNG', 30, 450, 155, 95);
+
+  // Chart 8
+  canvas8 = document.getElementById('canvas8');
+  var imgData8 = canvas8.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData8, 'PNG', 210, 450, 155, 95);
+
 
 
 
   // Seite 2
 
+
   pdfFile.addPage();
 
-  canvasPdf2 = document.createElement('canvas');
-  canvasPdf2.id = 'canvasPdf2';
-  
-  document.body.appendChild(canvasPdf2);
-  canvasPdf2.width = 768;
-  canvasPdf2.height = 1020;
+  // Textinformationen
+  pdfFile.text(370, 30, datum() + '\nSeite 2/2');
 
-  // Laden der Canvas-Objekte
-  chart1canvas = document.getElementById('canvas1');
-  chart2canvas = document.getElementById('canvas2');
-  chart3canvas = document.getElementById('canvas3');
-  chart4canvas = document.getElementById('canvas4');
-  chart5canvas = document.getElementById('canvas5');
-  chart6canvas = document.getElementById('canvas6');
-  chart7canvas = document.getElementById('canvas7');
-  chart8canvas = document.getElementById('canvas8');
+  // Variablen für Charts
 
-  // Initialisierung contextPdf2-Container
-  contextPdf2 = canvasPdf2.getContext('2d');
+  let a1 = 30;
+  let imgHeight = 95;
 
-  // Malen der Canvas-Objekte in contextPdf2-Container
-  // Abstand Links, Abstand Oben, Länge, Höhe
-  contextPdf2.drawImage(chart1canvas, 39, 20+39, 340, 170);
-  contextPdf2.drawImage(chart2canvas, 415, 20+93, 340, 170);
-  contextPdf2.drawImage(chart3canvas, 39, 20+39+250, 340, 170);
-  contextPdf2.drawImage(chart4canvas, 415, 20+39+250, 340, 170);
-  contextPdf2.drawImage(chart5canvas, 39, 14+20+39+250+250, 340, 170);
-  contextPdf2.drawImage(chart6canvas, 415, 20+39+250+250, 340, 170);
-  contextPdf2.drawImage(chart7canvas, 39, 14+20+39+250+250+250, 340, 170);
-  contextPdf2.drawImage(chart8canvas, 415, 20+39+250+250+250, 340, 170);
+  let imgWidth3 = 232;
+  let imgWidth4 = 310;
+  let imgWidth5 = 387;
 
-  // Initialisierung imgData2-Container in Abhängigkeit des contextPdf2-Containers
-  var imgData2 = canvasPdf2.toDataURL('image/png');
+  let next = imgHeight + 5;
 
-  // Hinzufügen des imgData2-Containers als PNG
-  pdfFile.addImage(imgData2, 'PNG', 0, 0);
+  h1 = 24;
+  h2 = h1 + next;
+  h3 = h2 + next;
+  h4 = h3 + next;
+  h5 = h4 + next;
+  h6 = h5 + next;
+
+  // Chart 2
+  canvas2 = document.getElementById('canvas2');
+  var imgData2 = canvas2.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData2, 'PNG', a1, h1, imgWidth4, imgHeight);
+
+  // Chart 3
+  canvas3 = document.getElementById('canvas3');
+  var imgData3 = canvas3.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData3, 'PNG', a1, h2, imgWidth4, imgHeight);
+
+  // Chart 4
+  canvas4 = document.getElementById('canvas4');
+  var imgData4 = canvas4.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData4, 'PNG', a1, h3, imgWidth5, imgHeight);
+
+  // Chart 5
+  canvas5 = document.getElementById('canvas5');
+  var imgData5 = canvas5.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData5, 'PNG', a1, h4, imgWidth3, imgHeight);
+
+  // Chart 6
+  canvas6 = document.getElementById('canvas6');
+  var imgData6 = canvas6.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData6, 'PNG', a1, h5, imgWidth3, imgHeight);
+
+  // Chart 7
+  canvas7 = document.getElementById('canvas7');
+  var imgData7 = canvas7.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData7, 'PNG', a1, h6, imgWidth3, imgHeight);
 
   // Legende
-  pdfFile.setFontSize(8);
-  pdfFile.text(47, 275, "0 = nicht bewertbar | 1 = trifft nicht zu | 2 = trifft weniger zu | 3 = trifft mehr zu | 4 = trifft voll zu");
-  
-  // Seitenzahlen
-  pdfFile.text(10, 285, "Seite 2 / 2");
+  pdfFile.text(340, h6 + 30, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
 
   // Seitenname
   pdfFile.save("Uebersicht Ihrer Bewertungen mittels des AAER.pdf");

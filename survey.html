@@ -1282,11 +1282,9 @@
 	    function display_Link () {
         	if (survey.getValue('Verlinkung') === "") {
         		survey.setValue('Verlinkung','Keine Angabe');
-        		console.log("Link:" + survey.getValue('Verlinkung'));
 	        	$("#link_lernmittel").prop('href',"#");
         	} else {
 	        	$("#link_lernmittel").prop('href',survey.getValue('Verlinkung'));
-	        	console.log("in Else");
         	}
         	document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
 	    }
@@ -1331,15 +1329,26 @@
 
 	<!-- Start: Canvas-Elemente für PDF -->
 
-	<canvas id="canvasALL" style="width: 620px; height: 842px;"></canvas>
-	<canvas id="canvas1" style="width: 340px; height: 170px; margin-bottom: 20px;"></canvas>
-	<canvas id="canvas2" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas3" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas4" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas5" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas6" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas7" style="width: 340px; height: 170px;"></canvas>
-	<canvas id="canvas8" style="width: 340px; height: 170px;"></canvas>
+<!--	<canvas id="canvasALL" style="width: 620px; height: 842px;"></canvas>-->
+<!--	<canvas id="canvas1" style="width: 340px; height: 170px; margin-bottom: 20px;"></canvas>-->
+<!--	<canvas id="canvas2" style="width: 340px; height: 170px;"></canvas>-->
+<!--	<canvas id="canvas3" style="width: 340px; height: 170px;"></canvas>-->
+<!--	<canvas id="canvas4" style="width: 340px; height: 170px;"></canvas>-->
+<!--	<canvas id="canvas5" style="width: 340px; height: 170px;"></canvas>-->
+<!--	<canvas id="canvas6" style="width: 340px; height: 170px;"></canvas>-->
+<!--	<canvas id="canvas7" style="width: 340px; height: 170px;"></canvas>-->
+<!--	<canvas id="canvas8" style="width: 340px; height: 170px;"></canvas>-->
+
+<!--	<canvas id="canvasALL" style="width: 517px; height: 624px;"></canvas>-->
+	<canvas id="canvasALL" style="width: 517px; height: 624px;"></canvas>
+	<canvas id="canvas1" style="width: 360px; height: 200px;"></canvas>
+	<canvas id="canvas2" style="width: 720px; height: 200px;"></canvas>
+	<canvas id="canvas3" style="width: 720px; height: 200px;"></canvas>
+	<canvas id="canvas4" style="width: 900px; height: 200px;"></canvas>
+	<canvas id="canvas5" style="width: 540px; height: 200px;"></canvas>
+	<canvas id="canvas6" style="width: 540px; height: 200px;"></canvas>
+	<canvas id="canvas7" style="width: 540px; height: 200px;"></canvas>
+	<canvas id="canvas8" style="width: 360px; height: 200px;"></canvas>
 
 	<!-- Ende: Canvas-Elemente für PDF -->
 
