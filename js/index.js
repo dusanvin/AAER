@@ -5,7 +5,8 @@ Survey
     .applyTheme("bootstrapmaterial");
 
 
-regionen = [{value: 1, text: "Baden-Württemberg"}, {value: 2, text: "Bayern"}, {value: 3, text: "Berlin"}, {value: 4, text: "Brandenburg"}, {value: 5, text: "Bremen"}, {value: 6, text: "Hamburg"}, {value: 7, text: "Hessen"}, {value: 8, text: "Mecklenburg-Vorpommern"}, {value: 9, text: "Niedersachsen"}, {value: 10, text: "Nordrhein-Westfalen"}, {value: 11, text: "Rheinladn-Pfalz"}, {value: 12, text: "Saarland"}, {value: 13, text: "Sachsen"}, {value: 14, text: "Sachsen-Anhalt"}, {value: 15, text: "Schleswig-Holstein"}, {value: 16, text: "Thüringen"}, {value: 17, text: "Schweiz"}, {value: 18, text: "Österreich"}, {value: 19, text: "andere Region"}, {value: 20, text: "keine Angabe"}];
+regionen = [{value: 1, text: "keine Angabe"}, {value: 2, text: "Baden-Württemberg"}, {value: 3, text: "Bayern"}, {value: 4, text: "Berlin"}, {value: 5, text: "Brandenburg"}, {value: 6, text: "Bremen"}, {value: 7, text: "Hamburg"}, {value: 8, text: "Hessen"}, {value: 9, text: "Mecklenburg-Vorpommern"}, {value: 10, text: "Niedersachsen"}, {value: 11, text: "Nordrhein-Westfalen"}, {value: 12, text: "Rheinladn-Pfalz"}, {value: 13, text: "Saarland"}, {value: 14, text: "Sachsen"}, {value: 15, text: "Sachsen-Anhalt"}, {value: 16, text: "Schleswig-Holstein"}, {value: 17, text: "Thüringen"}, {value: 18, text: "Schweiz"}, {value: 19, text: "Österreich"}, {value: 20, text: "andere Region"}];
+fach = [{value: 1, text: "keine Angabe"}, {value: 2, text: "Biologie"}, {value: 3, text: "Chemie"}, {value: 4, text: "Deutsch"}, {value: 5, text: "Englisch"}, {value: 6, text: "Erdkunde/Geographie"}, {value: 7, text: "Ethik"}, {value: 8, text: "Französich"}, {value: 9, text: "Geschichte"}, {value: 10, text: "Informatik/IT"}, {value: 11, text: "Kunst/Werken"}, {value: 12, text: "Latein"}, {value: 13, text: "Mathematik"}, {value: 14, text: "Musik"}, {value: 15, text: "Pädagogik"}, {value: 16, text: "Philosophie"}, {value: 17, text: "Physik"}, {value: 18, text: "Psychologie"}, {value: 19, text: "Religion"}, {value: 20, text: "Sozialkunde/Politik"}, {value: 21, text: "Sport"}, {value: 22, text: "Sprachen (andere)"}, {value: 23, text: "Sonstiges Fach"}]
 
 var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER)",
     pages: [
@@ -41,6 +42,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Interessegeleitete Themenführung/Positionierung",
                     title: "Das Lehr-Lernmittel ist frei von einseitiger Informationsvermittlung bzgl. bestimmter Themen/Aussagen gesellschaftlicher Akteure.",
                     isRequired: true,
+                    defaultValue: 5,
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                     choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -381,7 +383,16 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     isRequired: false,
                 }
             ]
-
+        },  {
+            questions: [
+                {
+                    type: "dropdown",
+                    name: "Fach",
+                    title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
+                    defaultValue: 1,
+                    choices: fach
+                }
+            ]
 
         },  {
             questions: [
@@ -389,7 +400,8 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     type: "dropdown",
                     name: "Region",
                     title: "Bitte teilen Sie uns mit, aus welcher Region Sie das AAER nutzen (optional).",
-                    choices: regionen
+                    choices: regionen,
+                    defaultValue: 1
                 }
             ]
         }
