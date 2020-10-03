@@ -408,23 +408,13 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
     ]
 };
 
-let canvas = document.createElement('canvas');
-canvas.width = 768;
-canvas.heigt = 1020;
-let context_pdf = canvas.getContext('2d');
-
-function drawOnPDF(chart, pos) {
-    context_pdf.drawImage(chart, 340*pos+44*(pos%2), 340*pos, canvas.width, canvas.height);
-}
-
-
 window.survey = new Survey.Model(json);
 
 
+// Start: Survey Validation der Felder
+
 var stopLink = false;
 var stopAnmerkungen = false;
-
-// Start: Survey Validation der Felder
 
 function surveyValidateQuestion(survey, options) {
 
@@ -475,7 +465,7 @@ survey.onComplete.add(function (sender, options) {
     let hash;
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            // document.getElementById("hash").innerHTML = this.responseText;
+            // document.getElementById("result_id").innerHTML = this.responseText;
             hash = this.responseText;
             console.log(this.responseText)
         }
@@ -528,8 +518,8 @@ setRadioButtonsValues();
 function setRadioButtonsValues() {
 
     survey.data = {
-        "Name": "",
-        "Verlinkung": "",
+        "Name": "Bee-Bot Klassen-Set",
+        "Verlinkung": "https://www.betzold.de/prod/89809/",
         "Bezüge Curriculum": 4,
         "Bezüge Bildungsstandards": 1,
         "Interessegeleitete Themenführung/Positionierung": 2,
