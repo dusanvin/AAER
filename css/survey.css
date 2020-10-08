@@ -386,14 +386,22 @@ a.btn-status {
 	
 	}
 
-	#uebersicht {
-		display: none;
-	}
-
 	.resultate_info {
 		font-size:14px;
 	}
 
+	p.uebersicht-details {
+		font-size:14px !important;
+	}
+
+}
+
+.grey-border {
+    box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
+}
+
+.uebersicht-details {
+	font-size:16px !important;
 }
 
 
