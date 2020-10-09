@@ -212,8 +212,8 @@ button.resultate:active {
 
 pre {
 	background: black;
+	box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
 	color: white !important;
-	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	font-family: Fira Mono, monospace !important;
 }
 

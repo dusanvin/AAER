@@ -29,7 +29,7 @@ function downloadPdf() {
   // Textinformationen
   pdfFile.setFontSize(10);
   pdfFile.text(370, 30, datum() + '\nSeite 1/2');
-  pdfFile.text(30, 45, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.\n\nName:" + survey.getValue('Name') + "\nLink: " + survey.getValue('Verlinkung') + "\nRegion: " + regionen[survey.getValue('Region') - 1].text + "\nAnmerkungen: " + survey.getValue('Eigene Anmerkungen'));
+  pdfFile.text(30, 45, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.\n\nName:" + survey.getValue('Name') + "\nLink: " + survey.getValue('Verlinkung') + "\nSchulart: " + schularten[survey.getValue('Schulart') - 1].text + "\nFach: " + fach[survey.getValue('Fach') - 1].text + "\nAnmerkungen: " + survey.getValue('Eigene Anmerkungen'));
 
   // Chart 0
   canvas0 = document.getElementById('canvasALL');
