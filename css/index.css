@@ -84,6 +84,21 @@ a.teilnehmen:hover {
 
 }
 
+@media (max-width: 990px) {
+  .tooltip-inner {
+    display:none;
+  }
+
+
+  .bs-tooltip-bottom .arrow:before {
+    display:none;
+  }
+
+  .bs-tooltip-right .arrow:before {
+    display: none;
+  }
+  
+}
 
 
 @media (max-width: 1200px){

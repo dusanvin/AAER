@@ -404,6 +404,21 @@ a.btn-status {
 	font-size:16px !important;
 }
 
+.lehr-lernmittel-name {
+	color: #838f9c !important;
+    font-weight: 600;
+    font-size:100% !important;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+.lehr-lernmittel-heading {
+	color: #838f9c !important;
+    font-weight: 600;
+    font-size:100% !important;
+    letter-spacing: .02em;
+}
+
 
 
 
