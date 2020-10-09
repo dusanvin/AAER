@@ -192,7 +192,7 @@ button.addEventListener('click', downloadPdf);
 
 // $('#testBtn').click(myFunc());
 
-var pdfFile = new jsPDFmodule.jsPDF();
+var pdfFile = new jsPDFmodule.jsPDF('p', 'px', 'a4'); // 595.28x841.89
 
 function downloadPdf() {
 
@@ -208,99 +208,95 @@ function downloadPdf() {
 
   // Seite 1
 
-  canvasPdf1 = document.createElement('canvas');
-  canvasPdf1.id = 'canvasPdf1';
-  
-  document.body.appendChild(canvasPdf1);
-  canvasPdf1.width = 768;
-  canvasPdf1.height = 1020;
-
-
-  // Laden des Canvas-Objekts
-  chartALLcanvas = document.getElementById('canvasALL');
-
-  // Initialisierung contextPdf1-Containers
-  contextPdf1 = canvasPdf1.getContext('2d');
-
-  // Malen des Canvas-Objekts in contextPdf1-Container
-  // Abstand Links, Abstand Oben, Länge, Höhe
-  contextPdf1.drawImage(chartALLcanvas, 39, 179, 620, 842);
-
-  // Initialisierung imgData1-Container in Abhängigkeit des contextPdf1-Containers
-  var imgData1 = canvasPdf1.toDataURL('image/png');
 
   // Überschrift
-  pdfFile.setFontSize(20);
-  pdfFile.text(10, 19, "Übersicht Ihrer Bewertungen");
+  pdfFile.setFontSize(16);
+  pdfFile.text(30, 30, "Übersicht Ihrer Bewertungen");
 
-  // Unterschrift
+  // Textinformationen
   pdfFile.setFontSize(10);
-  pdfFile.text(180, 16, datum());
-  pdfFile.text(10, 29, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.");
+  pdfFile.text(370, 30, datum() + '\nSeite 1/2');
+  pdfFile.text(30, 45, "Die folgenden Ergebnisse erschließen sich aus Ihren Bewertungen bei der Nutzung des AAER.\n\nName:" + survey.getValue('Name') + "\nLink: " + survey.getValue('Verlinkung') + "\nSchulart: " + schularten[survey.getValue('Schulart') - 1].text + "\nFach: " + fach[survey.getValue('Fach') - 1].text + "\nAnmerkungen: " + survey.getValue('Eigene Anmerkungen'));
 
-  // Name und Verlinkung
-  pdfFile.text(10, 34, "Name: " + survey.getValue('Name'));
-  pdfFile.text(10, 39, "Verlinkung: " + survey.getValue('Verlinkung'));
-
-  // Hinzufügen des imgData1-Containers als PNG
-  pdfFile.addImage(imgData1, 'PNG', 0, 0);
+  // Chart 0
+  canvas0 = document.getElementById('canvasALL');
+  var imgData0 = canvas0.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData0, 'PNG', 30, 120, 270, 326); // Breite von PDF 447
 
   // Legende
-  pdfFile.setFontSize(8);
-  pdfFile.text(65.5, 275, "0 = nicht bewertbar | 1 = trifft nicht zu | 2 = trifft weniger zu | 3 = trifft mehr zu | 4 = trifft voll zu");
+  pdfFile.text(350, 140, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
 
-  // Seitenzahlen
-  pdfFile.text(10, 285, "Seite 1 / 2");
+  // Chart 1
+  canvas1 = document.getElementById('canvas1');
+  var imgData1 = canvas1.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData1, 'PNG', 30, 450, 155, 95);
+
+  // Chart 8
+  canvas8 = document.getElementById('canvas8');
+  var imgData8 = canvas8.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData8, 'PNG', 210, 450, 155, 95);
+
 
 
 
   // Seite 2
 
+
   pdfFile.addPage();
 
-  canvasPdf2 = document.createElement('canvas');
-  canvasPdf2.id = 'canvasPdf2';
-  
-  document.body.appendChild(canvasPdf2);
-  canvasPdf2.width = 768;
-  canvasPdf2.height = 1020;
+  // Textinformationen
+  pdfFile.text(370, 30, datum() + '\nSeite 2/2');
 
-  // Laden der Canvas-Objekte
-  chart1canvas = document.getElementById('canvas1');
-  chart2canvas = document.getElementById('canvas2');
-  chart3canvas = document.getElementById('canvas3');
-  chart4canvas = document.getElementById('canvas4');
-  chart5canvas = document.getElementById('canvas5');
-  chart6canvas = document.getElementById('canvas6');
-  chart7canvas = document.getElementById('canvas7');
-  chart8canvas = document.getElementById('canvas8');
+  // Variablen für Charts
 
-  // Initialisierung contextPdf2-Container
-  contextPdf2 = canvasPdf2.getContext('2d');
+  let a1 = 30;
+  let imgHeight = 95;
 
-  // Malen der Canvas-Objekte in contextPdf2-Container
-  // Abstand Links, Abstand Oben, Länge, Höhe
-  contextPdf2.drawImage(chart1canvas, 39, 20+39, 340, 170);
-  contextPdf2.drawImage(chart2canvas, 415, 20+93, 340, 170);
-  contextPdf2.drawImage(chart3canvas, 39, 20+39+250, 340, 170);
-  contextPdf2.drawImage(chart4canvas, 415, 20+39+250, 340, 170);
-  contextPdf2.drawImage(chart5canvas, 39, 14+20+39+250+250, 340, 170);
-  contextPdf2.drawImage(chart6canvas, 415, 20+39+250+250, 340, 170);
-  contextPdf2.drawImage(chart7canvas, 39, 14+20+39+250+250+250, 340, 170);
-  contextPdf2.drawImage(chart8canvas, 415, 20+39+250+250+250, 340, 170);
+  let imgWidth3 = 232;
+  let imgWidth4 = 310;
+  let imgWidth5 = 387;
 
-  // Initialisierung imgData2-Container in Abhängigkeit des contextPdf2-Containers
-  var imgData2 = canvasPdf2.toDataURL('image/png');
+  let next = imgHeight + 5;
 
-  // Hinzufügen des imgData2-Containers als PNG
-  pdfFile.addImage(imgData2, 'PNG', 0, 0);
+  h1 = 24;
+  h2 = h1 + next;
+  h3 = h2 + next;
+  h4 = h3 + next;
+  h5 = h4 + next;
+  h6 = h5 + next;
+
+  // Chart 2
+  canvas2 = document.getElementById('canvas2');
+  var imgData2 = canvas2.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData2, 'PNG', a1, h1, imgWidth4, imgHeight);
+
+  // Chart 3
+  canvas3 = document.getElementById('canvas3');
+  var imgData3 = canvas3.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData3, 'PNG', a1, h2, imgWidth4, imgHeight);
+
+  // Chart 4
+  canvas4 = document.getElementById('canvas4');
+  var imgData4 = canvas4.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData4, 'PNG', a1, h3, imgWidth5, imgHeight);
+
+  // Chart 5
+  canvas5 = document.getElementById('canvas5');
+  var imgData5 = canvas5.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData5, 'PNG', a1, h4, imgWidth3, imgHeight);
+
+  // Chart 6
+  canvas6 = document.getElementById('canvas6');
+  var imgData6 = canvas6.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData6, 'PNG', a1, h5, imgWidth3, imgHeight);
+
+  // Chart 7
+  canvas7 = document.getElementById('canvas7');
+  var imgData7 = canvas7.toDataURL('image/png', 1.0);
+  pdfFile.addImage(imgData7, 'PNG', a1, h6, imgWidth3, imgHeight);
 
   // Legende
-  pdfFile.setFontSize(8);
-  pdfFile.text(47, 275, "0 = nicht bewertbar | 1 = trifft nicht zu | 2 = trifft weniger zu | 3 = trifft mehr zu | 4 = trifft voll zu");
-  
-  // Seitenzahlen
-  pdfFile.text(10, 285, "Seite 2 / 2");
+  pdfFile.text(340, h6 + 30, 'Legende: \n\n0 = nicht bewertbar\n1 = trifft nicht zu\n2 = trifft weniger zu\n3 = trifft mehr zu\n4 = trifft voll zu');
 
   // Seitenname
   pdfFile.save("Uebersicht Ihrer Bewertungen mittels des AAER.pdf");
@@ -13827,8 +13823,7 @@ for (var COLLECTION_NAME in DOMIterables) {
 
   var hasOwnProperty = Object.hasOwnProperty,
       setPrototypeOf = Object.setPrototypeOf,
-      isFrozen = Object.isFrozen,
-      objectKeys = Object.keys;
+      isFrozen = Object.isFrozen;
   var freeze = Object.freeze,
       seal = Object.seal,
       create = Object.create; // eslint-disable-line import/no-mutable-exports
@@ -13862,11 +13857,8 @@ for (var COLLECTION_NAME in DOMIterables) {
   }
 
   var arrayForEach = unapply(Array.prototype.forEach);
-  var arrayIndexOf = unapply(Array.prototype.indexOf);
-  var arrayJoin = unapply(Array.prototype.join);
   var arrayPop = unapply(Array.prototype.pop);
   var arrayPush = unapply(Array.prototype.push);
-  var arraySlice = unapply(Array.prototype.slice);
 
   var stringToLowerCase = unapply(String.prototype.toLowerCase);
   var stringMatch = unapply(String.prototype.match);
@@ -13875,7 +13867,6 @@ for (var COLLECTION_NAME in DOMIterables) {
   var stringTrim = unapply(String.prototype.trim);
 
   var regExpTest = unapply(RegExp.prototype.test);
-  var regExpCreate = unconstruct(RegExp);
 
   var typeErrorCreate = unconstruct(TypeError);
 
@@ -14031,7 +14022,7 @@ for (var COLLECTION_NAME in DOMIterables) {
      * Version label, exposed for easier checks
      * if DOMPurify is up to date or not
      */
-    DOMPurify.version = '2.0.17';
+    DOMPurify.version = '2.1.1';
 
     /**
      * Array of elements that DOMPurify removed during sanitation.
@@ -14048,7 +14039,6 @@ for (var COLLECTION_NAME in DOMIterables) {
     }
 
     var originalDocument = window.document;
-    var removeTitle = false;
 
     var document = window.document;
     var DocumentFragment = window.DocumentFragment,
@@ -14135,9 +14125,6 @@ for (var COLLECTION_NAME in DOMIterables) {
 
     /* Decide if unknown protocols are okay */
     var ALLOW_UNKNOWN_PROTOCOLS = false;
-
-    /* Output should be safe for jQuery's $() factory? */
-    var SAFE_FOR_JQUERY = false;
 
     /* Output should be safe for common template engines.
      * This means, DOMPurify removes data attributes, mustaches and ERB
@@ -14236,7 +14223,6 @@ for (var COLLECTION_NAME in DOMIterables) {
       ALLOW_ARIA_ATTR = cfg.ALLOW_ARIA_ATTR !== false; // Default true
       ALLOW_DATA_ATTR = cfg.ALLOW_DATA_ATTR !== false; // Default true
       ALLOW_UNKNOWN_PROTOCOLS = cfg.ALLOW_UNKNOWN_PROTOCOLS || false; // Default false
-      SAFE_FOR_JQUERY = cfg.SAFE_FOR_JQUERY || false; // Default false
       SAFE_FOR_TEMPLATES = cfg.SAFE_FOR_TEMPLATES || false; // Default false
       WHOLE_DOCUMENT = cfg.WHOLE_DOCUMENT || false; // Default false
       RETURN_DOM = cfg.RETURN_DOM || false; // Default false
@@ -14391,11 +14377,6 @@ for (var COLLECTION_NAME in DOMIterables) {
         doc = new DOMParser().parseFromString(dirtyPayload, 'text/html');
       } catch (_) {}
 
-      /* Remove title to fix a mXSS bug in older MS Edge */
-      if (removeTitle) {
-        addToSet(FORBID_TAGS, ['title']);
-      }
-
       /* Use createHTMLDocument in case DOMParser is not available */
       if (!doc || !doc.documentElement) {
         doc = implementation.createHTMLDocument('');
@@ -14413,18 +14394,6 @@ for (var COLLECTION_NAME in DOMIterables) {
       /* Work on whole document or just its body */
       return getElementsByTagName.call(doc, WHOLE_DOCUMENT ? 'html' : 'body')[0];
     };
-
-    /* Here we test for a broken feature in Edge that might cause mXSS */
-    if (DOMPurify.isSupported) {
-      (function () {
-        try {
-          var doc = _initDocument('<x/><title>&lt;/title&gt;&lt;img&gt;');
-          if (regExpTest(/<\/title/, doc.querySelector('title').innerHTML)) {
-            removeTitle = true;
-          }
-        } catch (_) {}
-      })();
-    }
 
     /**
      * _createIterator
@@ -14494,7 +14463,6 @@ for (var COLLECTION_NAME in DOMIterables) {
      * @param   {Node} currentNode to check for permission to exist
      * @return  {Boolean} true if node was killed, false if left alive
      */
-    // eslint-disable-next-line complexity
     var _sanitizeElements = function _sanitizeElements(currentNode) {
       var content = void 0;
 
@@ -14523,7 +14491,13 @@ for (var COLLECTION_NAME in DOMIterables) {
       });
 
       /* Take care of an mXSS pattern using p, br inside svg, math */
-      if ((tagName === 'svg' || tagName === 'math') && currentNode.querySelectorAll('p, br, form, table').length !== 0) {
+      if ((tagName === 'svg' || tagName === 'math') && currentNode.querySelectorAll('p, br').length !== 0) {
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Detect mXSS attempts abusing namespace confusion */
+      if (!_isNode(currentNode.firstElementChild) && (!_isNode(currentNode.content) || !_isNode(currentNode.content.firstElementChild)) && regExpTest(/<[!/\w]/g, currentNode.innerHTML) && regExpTest(/<[!/\w]/g, currentNode.textContent)) {
         _forceRemove(currentNode);
         return true;
       }
@@ -14543,24 +14517,9 @@ for (var COLLECTION_NAME in DOMIterables) {
       }
 
       /* Remove in case a noscript/noembed XSS is suspected */
-      if (tagName === 'noscript' && regExpTest(/<\/noscript/i, currentNode.innerHTML)) {
+      if ((tagName === 'noscript' || tagName === 'noembed') && regExpTest(/<\/no(script|embed)/i, currentNode.innerHTML)) {
         _forceRemove(currentNode);
         return true;
-      }
-
-      if (tagName === 'noembed' && regExpTest(/<\/noembed/i, currentNode.innerHTML)) {
-        _forceRemove(currentNode);
-        return true;
-      }
-
-      /* Convert markup to cover jQuery behavior */
-      if (SAFE_FOR_JQUERY && !_isNode(currentNode.firstElementChild) && (!_isNode(currentNode.content) || !_isNode(currentNode.content.firstElementChild)) && regExpTest(/</g, currentNode.textContent)) {
-        arrayPush(DOMPurify.removed, { element: currentNode.cloneNode() });
-        if (currentNode.innerHTML) {
-          currentNode.innerHTML = stringReplace(currentNode.innerHTML, /</g, '&lt;');
-        } else {
-          currentNode.innerHTML = stringReplace(currentNode.textContent, /</g, '&lt;');
-        }
       }
 
       /* Sanitize element content to be template-safe */
@@ -14621,12 +14580,10 @@ for (var COLLECTION_NAME in DOMIterables) {
      *
      * @param  {Node} currentNode to sanitize
      */
-    // eslint-disable-next-line complexity
     var _sanitizeAttributes = function _sanitizeAttributes(currentNode) {
       var attr = void 0;
       var value = void 0;
       var lcName = void 0;
-      var idAttr = void 0;
       var l = void 0;
       /* Execute a hook if present */
       _executeHook('beforeSanitizeAttributes', currentNode, null);
@@ -14670,32 +14627,7 @@ for (var COLLECTION_NAME in DOMIterables) {
         }
 
         /* Remove attribute */
-        // Safari (iOS + Mac), last tested v8.0.5, crashes if you try to
-        // remove a "name" attribute from an <img> tag that has an "id"
-        // attribute at the time.
-        if (lcName === 'name' && currentNode.nodeName === 'IMG' && attributes.id) {
-          idAttr = attributes.id;
-          attributes = arraySlice(attributes, []);
-          _removeAttribute('id', currentNode);
-          _removeAttribute(name, currentNode);
-          if (arrayIndexOf(attributes, idAttr) > l) {
-            currentNode.setAttribute('id', idAttr.value);
-          }
-        } else if (
-        // This works around a bug in Safari, where input[type=file]
-        // cannot be dynamically set after type has been removed
-        currentNode.nodeName === 'INPUT' && lcName === 'type' && value === 'file' && hookEvent.keepAttr && (ALLOWED_ATTR[lcName] || !FORBID_ATTR[lcName])) {
-          continue;
-        } else {
-          // This avoids a crash in Safari v9.0 with double-ids.
-          // The trick is to first set the id to be empty and then to
-          // remove the attribute
-          if (name === 'id') {
-            currentNode.setAttribute(name, '');
-          }
-
-          _removeAttribute(name, currentNode);
-        }
+        _removeAttribute(name, currentNode);
 
         /* Did the hooks approve of the attribute? */
         if (!hookEvent.keepAttr) {
@@ -14703,13 +14635,7 @@ for (var COLLECTION_NAME in DOMIterables) {
         }
 
         /* Work around a security issue in jQuery 3.0 */
-        if (SAFE_FOR_JQUERY && regExpTest(/\/>/i, value)) {
-          _removeAttribute(name, currentNode);
-          continue;
-        }
-
-        /* Take care of an mXSS pattern using namespace switches */
-        if (regExpTest(/svg|math/i, currentNode.namespaceURI) && regExpTest(regExpCreate('</(' + arrayJoin(objectKeys(FORBID_CONTENTS), '|') + ')', 'i'), value)) {
+        if (regExpTest(/\/>/i, value)) {
           _removeAttribute(name, currentNode);
           continue;
         }
@@ -14842,7 +14768,7 @@ for (var COLLECTION_NAME in DOMIterables) {
       if (IN_PLACE) ; else if (dirty instanceof Node) {
         /* If dirty is a DOM element, append to an empty document to avoid
            elements being stripped by the parser */
-        body = _initDocument('<!-->');
+        body = _initDocument('<!---->');
         importedNode = body.ownerDocument.importNode(dirty, true);
         if (importedNode.nodeType === 1 && importedNode.nodeName === 'BODY') {
           /* Node is already a body, use as is */
