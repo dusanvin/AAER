@@ -4,35 +4,10 @@ Survey
     .StylesManager
     .applyTheme("bootstrapmaterial");
 
-//Regionen
-
-regionen = [
-{value: 1, text: "keine Angabe"},
-{value: 2, text: "Baden-Württemberg"},
-{value: 3, text: "Bayern"},
-{value: 4, text: "Berlin"},
-{value: 5, text: "Brandenburg"},
-{value: 6, text: "Bremen"},
-{value: 7, text: "Hamburg"},
-{value: 8, text: "Hessen"},
-{value: 9, text: "Mecklenburg-Vorpommern"},
-{value: 10, text: "Niedersachsen"},
-{value: 11, text: "Nordrhein-Westfalen"},
-{value: 12, text: "Rheinland-Pfalz"},
-{value: 13, text: "Saarland"},
-{value: 14, text: "Sachsen"},
-{value: 15, text: "Sachsen-Anhalt"},
-{value: 16, text: "Schleswig-Holstein"},
-{value: 17, text: "Thüringen"},
-{value: 18, text: "Schweiz"},
-{value: 19, text: "Österreich"},
-{value: 20, text: "andere Region"}
-];
-
 //Fächer
 
 fach = [
-    {value: 1, text: "keine Angabe"},
+    {value: 1, text: "Keine Angabe"},
     {value: 2, text: "Biologie"},
     {value: 3, text: "Chemie"},
     {value: 4, text: "Deutsch"},
@@ -55,7 +30,36 @@ fach = [
     {value: 21, text: "Sport"},
     {value: 22, text: "Sprachen (andere)"},
     {value: 23, text: "Sonstiges Fach"}
-]
+];
+
+schularten = [
+    {value: 1, text: "Keine Angabe"},
+    {value: 2, text: "Abendschule"},
+    {value: 3, text: "Alternatives Schulkonzept"},
+    {value: 4, text: "Berufsfachschule"},
+    {value: 5, text: "Berufskolleg"},
+    {value: 6, text: "Berufsoberschule"},
+    {value: 7, text: "Berufsschule"},
+    {value: 8, text: "Bildungskolleg"},
+    {value: 9, text: "Fachakademie"},
+    {value: 10, text: "Fachhochschule"},
+    {value: 11, text: "Fachoberschule"},
+    {value: 12, text: "Fachschule"},
+    {value: 13, text: "Förderschule"},
+    {value: 14, text: "Gesamtschule"},
+    {value: 15, text: "Grundschule"},
+    {value: 16, text: "Gymnasium"},
+    {value: 17, text: "Hochschule"},
+    {value: 18, text: "Internationale Schule"},
+    {value: 19, text: "Mittelschule"},
+    {value: 20, text: "Realschule"},
+    {value: 21, text: "Schule besonderer Art"},
+    {value: 22, text: "Schule für Kranke"},
+    {value: 23, text: "Volkshochschule"},
+    {value: 24, text: "Vorschule"},
+    {value: 25, text: "Wirtschaftsschule"},
+    {value: 26, text: "Sonstige Schule"}
+];
 
 var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER)",
     pages: [
@@ -443,16 +447,17 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                 }
             ]
 
-        },  {
+        },    {
             questions: [
                 {
                     type: "dropdown",
-                    name: "Region",
-                    title: "Bitte teilen Sie uns mit, aus welcher Region Sie das AAER nutzen (optional).",
-                    choices: regionen,
-                    defaultValue: 1
+                    name: "Schulart",
+                    title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
+                    defaultValue: 1,
+                    choices: schularten
                 }
             ]
+
         }
     ]
 };
@@ -523,26 +528,27 @@ survey.onComplete.add(function (sender, options) {
     xhr.send(JSON.stringify(sender.data));
 
 
-
-    // Regionenname in der JSON-Übersicht anzeigen
-    regionName = regionen[survey.getValue('Region') - 1].text;
     let resultData = Object.assign({}, sender.data);
-    resultData.Region = regionName;
-    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
 
     // Fachname in der JSON-Übersicht anzeigen
     fachName = fach[survey.getValue('Fach') - 1].text;
     resultData.Fach = fachName;
     console.log(fachName);
+
+    // Schulart in der JSON-Übersicht anzeigen
+    schulName = schularten[survey.getValue('Schulart') - 1].text;
+    resultData.Schulart = schulName;
+    console.log(schulName);
     
+    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
 
     // Charts erstellen
     generateCharts();
 
 
     // Diverses
-    //document.getElementById('region').innerHTML = regionName;
-    document.getElementById('fach').innerHTML = fachName;
+    //document.getElementById('fach').innerHTML = fachName;
+    //document.getElementById('schulart').innerHTML = schulName;
     //document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
 
 });
@@ -602,8 +608,8 @@ function setRadioButtonsValues() {
         "Multiple Lösungswege": 0,
         "Didaktisches Konzept": 1,
         "Rahmenbedingungen": 2,
-        "Region": 1,
-        "Fach": 1
+        "Fach": 1,
+        "Schulart": 1
     };
 
 }
