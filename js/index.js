@@ -458,36 +458,6 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                 }
             ]
 
-        }, {
-            questions: [
-                {
-                    type: "dropdown",
-                    name: "Test1",
-                    title: "Testfrage1 (optional).",
-                    defaultValue: 1,
-                    choices: [{value: 1, text: "Ant1"},
-                        {value: 2, text: "Ant2"},
-                        {value: 3, text: "Ant3"},
-                        {value: 4, text: "Ant4"},
-                        {value: 5, text: "Ant5"},]
-                }
-            ]
-
-        }, {
-            questions: [
-                {
-                    type: "dropdown",
-                    name: "Test1",
-                    title: "Testfrage1 (optional).",
-                    defaultValue: 1,
-                    choices: [{value: 1, text: "Ant1"},
-                        {value: 2, text: "Ant2"},
-                        {value: 3, text: "Ant3"},
-                        {value: 4, text: "Ant4"},
-                        {value: 5, text: "Ant5"},]
-                }
-            ]
-
         }
     ]
 };
