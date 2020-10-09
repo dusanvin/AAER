@@ -547,9 +547,9 @@ survey.onComplete.add(function (sender, options) {
 
 
     // Diverses
-    //document.getElementById('fach').innerHTML = fachName;
-    //document.getElementById('schulart').innerHTML = schulName;
-    //document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
+    document.getElementById('fach').innerHTML = fachName;
+    document.getElementById('schulart').innerHTML = schulName;
+    document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
 
 });
 
@@ -582,6 +582,7 @@ function setRadioButtonsValues() {
     survey.data = {
         "Name": "Bee-Bot Klassen-Set",
         "Verlinkung": "https://www.betzold.de/prod/89809/",
+        "Eigene Anmerkungen": "Keine Angabe",
         "Bezüge Curriculum": 4,
         "Bezüge Bildungsstandards": 1,
         "Interessegeleitete Themenführung/Positionierung": 2,
