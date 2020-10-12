@@ -465,49 +465,6 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
 window.survey = new Survey.Model(json);
 
 
-// Start: Survey Validation der Felder
-
-var stopLink = false;
-var stopAnmerkungen = false;
-
-function surveyValidateQuestion(survey, options) {
-
-    if (options.name == 'Link' && !stopLink) {
-        console.log(options.value);
-
-        var input;
-        if (options.value === undefined) {
-            input = '(undefined)';
-
-        } else {
-            input = options.value;
-        }
-        survey.setValue('Link', input);
-        console.log(input);
-        stopLink = true;
-
-    }
-    if (options.name == 'Eigene Anmerkungen' && !stopAnmerkungen) {
-        console.log(options.value);
-
-        var input;
-        if (options.value === undefined) {
-            input = '(undefined)';
-
-        } else {
-            input = options.value;
-        }
-        survey.setValue('Eigene Anmerkungen', input);
-        console.log(input);
-        stopLink = true;
-
-    }
-
-}
-
-// Ende: Survey Validation der Felder
-
-
 
 // Start: Skripte zur Speicherung der JS-Objekte
 
@@ -572,44 +529,53 @@ function load() {
 
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
-                data_object = {
-                    "id": data.result_id,
-                    "Name": data._tool_name,
-                    "Verlinkung": data._link,
-                    "Bezüge Curriculum": data._00,
-                    "Bezüge Bildungsstandards": data._01,
-                    "Interessegeleitete Themenführung/Positionierung": data._10,
-                    "Transparenz": data._11,
-                    "Werbliche Elemente": data._12,
-                    "Heterogenität/Gender": data._13,
-                    "Handlungsorientierung": data._20,
-                    "Lebensweltlichkeit": data._21,
-                    "Reflexion/Urteilsfähigkeit": data._22,
-                    "Multiperspektivität/Kontroversität": data._23,
-                    "Methodenpluralität": data._30,
-                    "Multimedia/Multimodalität": data._31,
-                    "Medienkompetenz": data._32,
-                    "Differenzierung": data._33,
-                    "Barrierefreiheit/Inklusion": data._34,
-                    "Transfer- und Anwendungsorientierung": data._40,
-                    "Prozessorientierung (Kumulation)": data._41,
-                    "Lernwegunterstützende Elemente (Scaffolding)": data._42,
-                    "Sprachlichkeit": data._50,
-                    "Bildsprache": data._51,
-                    "Additive Kommunikation (Anreicherung)": data._52,
-                    "Sequenzierung": data._60,
-                    "Aktivierung": data._61,
-                    "Multiple Lösungswege": data._62,
-                    "Didaktisches Konzept": data._70,
-                    "Rahmenbedingungen": data._71,
-                    "Fach": data.fk_subject,
-                    "Schulart": data.fk_institution,
-                    "Eigene Anmerkungen": data._comment
-                };
-                console.log(data_object);
-                //document.getElementById('result').innerText = this.responseText;
-            }
+                db_data = this.responseText;
+                if (db_data.length > 0) {
+                    console.log(db_data);
+                    data = JSON.parse(db_data);
+                    jsonViewData = {
+                        "id": data.result_id,
+                        "Name": data._tool_name,
+                        "Verlinkung": data._link,
+                        "Bezüge Curriculum": data._00,
+                        "Bezüge Bildungsstandards": data._01,
+                        "Interessegeleitete Themenführung/Positionierung": data._10,
+                        "Transparenz": data._11,
+                        "Werbliche Elemente": data._12,
+                        "Heterogenität/Gender": data._13,
+                        "Handlungsorientierung": data._20,
+                        "Lebensweltlichkeit": data._21,
+                        "Reflexion/Urteilsfähigkeit": data._22,
+                        "Multiperspektivität/Kontroversität": data._23,
+                        "Methodenpluralität": data._30,
+                        "Multimedia/Multimodalität": data._31,
+                        "Medienkompetenz": data._32,
+                        "Differenzierung": data._33,
+                        "Barrierefreiheit/Inklusion": data._34,
+                        "Transfer- und Anwendungsorientierung": data._40,
+                        "Prozessorientierung (Kumulation)": data._41,
+                        "Lernwegunterstützende Elemente (Scaffolding)": data._42,
+                        "Sprachlichkeit": data._50,
+                        "Bildsprache": data._51,
+                        "Additive Kommunikation (Anreicherung)": data._52,
+                        "Sequenzierung": data._60,
+                        "Aktivierung": data._61,
+                        "Multiple Lösungswege": data._62,
+                        "Didaktisches Konzept": data._70,
+                        "Rahmenbedingungen": data._71,
+                        "Fach": data.fk_subject,
+                        "Schulart": data.fk_institution,
+                        "Eigene Anmerkungen": data._comment
+                    };
+                    console.log(data_object);
+                    survey.data = data_object;
+                    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
+                    generateCharts();
+
+                } else {
+                    console.log("No result.")
+                }
+            };
         };
 
     } else {
