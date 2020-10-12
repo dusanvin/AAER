@@ -523,7 +523,7 @@ function loadResult() {
     if (input.length === 12) {
 
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de:3000/load");
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/load");
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify({"id": input}));
 
@@ -533,7 +533,7 @@ function loadResult() {
                 if (db_data.length > 0) {
                     console.log(db_data);
                     data = JSON.parse(db_data);
-                    jsonViewData = {
+                    data_object = {
                         "id": data.result_id,
                         "Name": data._tool_name,
                         "Verlinkung": data._link,
@@ -569,7 +569,7 @@ function loadResult() {
                     };
                     console.log(data_object);
                     survey.data = data_object;
-                    survey.doComplete();
+                    //survey.doComplete();
 
 
                 } else {
