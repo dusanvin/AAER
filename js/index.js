@@ -513,49 +513,149 @@ function surveyValidateQuestion(survey, options) {
 
 survey.onComplete.add(function (sender, options) {
 
-    // Daten senden und 12-stellige-Id empfangen
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
-    let new_result_id;
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            new_result_id = this.responseText;
-            // document.getElementById("new_id").innerHTML = this.responseText; // to display if user finished survey
-            console.log(new_result_id)
-        }
-    };
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(sender.data));
+    save(sender.data);
+    // // Daten senden und 12-stellige-Id empfangen
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
+    // let new_result_id;
+    // xhr.onreadystatechange = function() {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         new_result_id = this.responseText;
+    //         // document.getElementById("new_id").innerHTML = this.responseText; // to display if user finished survey
+    //         console.log(new_result_id)
+    //     }
+    // };
+    // xhr.setRequestHeader("Content-Type", "application/json");
+    // xhr.send(JSON.stringify(sender.data));
+
+    show(sender.data);
+
+    // let jsonViewData = Object.assign({}, sender.data);
+    //
+    // // Fachname anzeigen
+    // fachName = fach[survey.getValue('Fach') - 1].text;
+    // jsonViewData.Fach = fachName; // JSON-Übersicht
+    // document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
+    // console.log(fachName);
+    //
+    // // Schulart anzeigen
+    // schulName = schularten[survey.getValue('Schulart') - 1].text;
+    // jsonViewData.Schulart = schulName; // JSON-Übersicht
+    // document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
+    // console.log(schulName);
+    //
+    // document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
+    //
+    // document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
+    //
+    // // Charts erstellen
+    // generateCharts();
 
 
-    let resultData = Object.assign({}, sender.data);
 
-    // Fachname in der JSON-Übersicht anzeigen
-    fachName = fach[survey.getValue('Fach') - 1].text;
-    resultData.Fach = fachName;
-    console.log(fachName);
-
-    // Schulart in der JSON-Übersicht anzeigen
-    schulName = schularten[survey.getValue('Schulart') - 1].text;
-    resultData.Schulart = schulName;
-    console.log(schulName);
-    
-    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
-
-    // Charts erstellen
-    generateCharts();
-
-
-    // Diverses
-    document.getElementById('fach').innerHTML = fachName;
-    document.getElementById('schulart').innerHTML = schulName;
-    document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
 
 });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
 
 $("#surveyElement").Survey({model: survey});
+
+
+// Daten senden und 12-stellige-Id empfangen
+function save(result) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
+    let new_result_id;
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            new_result_id = this.responseText;
+            console.log(new_result_id);
+            // document.getElementById('result_id').innerHTML = new_result_id; // to display if user finished survey
+        }
+    };
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(result));
+}
+
+function show(result) {
+    let jsonViewData = Object.assign({}, result);
+
+    // Fachname anzeigen
+    fachName = fach[survey.getValue('Fach') - 1].text;
+    jsonViewData.Fach = fachName; // JSON-Übersicht
+    document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
+    console.log(fachName);
+
+    // Schulart anzeigen
+    schulName = schularten[survey.getValue('Schulart') - 1].text;
+    jsonViewData.Schulart = schulName; // JSON-Übersicht
+    document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
+    console.log(schulName);
+
+    document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
+
+    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
+
+    // Charts erstellen
+    generateCharts();
+}
+
+// Wird über einen Button aufgerufen und lädt Daten aus der DB
+function load() {
+    let input = document.getElementById('toLoad').value;
+    if (input.length === 12) {
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de:3000/load");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({"id": input}));
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                data_object = {
+                    "id": data.result_id,
+                    "Name": data._tool_name,
+                    "Verlinkung": data._link,
+                    "Bezüge Curriculum": data._00,
+                    "Bezüge Bildungsstandards": data._01,
+                    "Interessegeleitete Themenführung/Positionierung": data._10,
+                    "Transparenz": data._11,
+                    "Werbliche Elemente": data._12,
+                    "Heterogenität/Gender": data._13,
+                    "Handlungsorientierung": data._20,
+                    "Lebensweltlichkeit": data._21,
+                    "Reflexion/Urteilsfähigkeit": data._22,
+                    "Multiperspektivität/Kontroversität": data._23,
+                    "Methodenpluralität": data._30,
+                    "Multimedia/Multimodalität": data._31,
+                    "Medienkompetenz": data._32,
+                    "Differenzierung": data._33,
+                    "Barrierefreiheit/Inklusion": data._34,
+                    "Transfer- und Anwendungsorientierung": data._40,
+                    "Prozessorientierung (Kumulation)": data._41,
+                    "Lernwegunterstützende Elemente (Scaffolding)": data._42,
+                    "Sprachlichkeit": data._50,
+                    "Bildsprache": data._51,
+                    "Additive Kommunikation (Anreicherung)": data._52,
+                    "Sequenzierung": data._60,
+                    "Aktivierung": data._61,
+                    "Multiple Lösungswege": data._62,
+                    "Didaktisches Konzept": data._70,
+                    "Rahmenbedingungen": data._71,
+                    "Fach": data.fk_subject,
+                    "Schulart": data.fk_institution,
+                    "Eigene Anmerkungen": data._comment
+                };
+                console.log(data_object);
+                //document.getElementById('result').innerText = this.responseText;
+            }
+        };
+
+    } else {
+        console.log("Es müssen genau 12 Zeichen sein.")
+    }
+}
 
 // Start: Funktionen zur Darstellung der Diagramme
 
@@ -570,6 +670,7 @@ function generateCharts() {
     grp7Chart();
     grp8Chart();
 }
+
 
 // Ende: Funktionen zur Darstellung der Diagramme
 
