@@ -512,48 +512,8 @@ function surveyValidateQuestion(survey, options) {
 // Start: Skripte zur Speicherung der JS-Objekte
 
 survey.onComplete.add(function (sender, options) {
-
     save(sender.data);
-    // // Daten senden und 12-stellige-Id empfangen
-    // var xhr = new XMLHttpRequest();
-    // xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
-    // let new_result_id;
-    // xhr.onreadystatechange = function() {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //         new_result_id = this.responseText;
-    //         // document.getElementById("new_id").innerHTML = this.responseText; // to display if user finished survey
-    //         console.log(new_result_id)
-    //     }
-    // };
-    // xhr.setRequestHeader("Content-Type", "application/json");
-    // xhr.send(JSON.stringify(sender.data));
-
     show(sender.data);
-
-    // let jsonViewData = Object.assign({}, sender.data);
-    //
-    // // Fachname anzeigen
-    // fachName = fach[survey.getValue('Fach') - 1].text;
-    // jsonViewData.Fach = fachName; // JSON-Übersicht
-    // document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
-    // console.log(fachName);
-    //
-    // // Schulart anzeigen
-    // schulName = schularten[survey.getValue('Schulart') - 1].text;
-    // jsonViewData.Schulart = schulName; // JSON-Übersicht
-    // document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
-    // console.log(schulName);
-    //
-    // document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
-    //
-    // document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
-    //
-    // // Charts erstellen
-    // generateCharts();
-
-
-
-
 });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
