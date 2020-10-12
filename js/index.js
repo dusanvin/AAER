@@ -518,7 +518,7 @@ function show(result) {
 }
 
 // Wird über einen Button aufgerufen und lädt Daten aus der DB
-function load() {
+function loadResult() {
     let input = document.getElementById('toLoad').value;
     if (input.length === 12) {
 
@@ -569,8 +569,8 @@ function load() {
                     };
                     console.log(data_object);
                     survey.data = data_object;
-                    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
-                    generateCharts();
+                    survey.doComplete();
+
 
                 } else {
                     console.log("No result.")
