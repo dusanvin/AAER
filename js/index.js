@@ -513,15 +513,15 @@ function surveyValidateQuestion(survey, options) {
 
 survey.onComplete.add(function (sender, options) {
 
-    // Daten senden und Hash-Wert empfangen
+    // Daten senden und 12-stellige-Id empfangen
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
-    let hash;
+    let new_result_id;
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            // document.getElementById("result_id").innerHTML = this.responseText;
-            hash = this.responseText;
-            console.log(this.responseText)
+            new_result_id = this.responseText;
+            // document.getElementById("new_id").innerHTML = this.responseText; // to display if user finished survey
+            console.log(new_result_id)
         }
     };
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -573,44 +573,62 @@ function generateCharts() {
 
 // Ende: Funktionen zur Darstellung der Diagramme
 
-setRadioButtonsValues();
+setSurveyValues();
 
 // Start: Radio Buttons Presets
 
-function setRadioButtonsValues() {
+function setSurveyValues() {
 
     survey.data = {
         "Name": "Bee-Bot Klassen-Set",
         "Verlinkung": "https://www.betzold.de/prod/89809/",
-        "Eigene Anmerkungen": "Keine Angabe",
+
+        //Anlehnung an Curriculum und Bildungsstandards
         "Bezüge Curriculum": 4,
         "Bezüge Bildungsstandards": 1,
+
+        //Diskursive Positionierung
         "Interessegeleitete Themenführung/Positionierung": 2,
         "Transparenz": 3,
         "Werbliche Elemente": 0,
         "Heterogenität/Gender": 1,
+
+        //Makrodidaktische und bildungstheoretische Fundierung
         "Handlungsorientierung": 4,
         "Lebensweltlichkeit": 2,
         "Reflexion/Urteilsfähigkeit": 1,
         "Multiperspektivität/Kontroversität": 1,
+
+        //Mikrodidaktische Umsetzung
         "Methodenpluralität": 0,
         "Multimedia/Multimodalität": 3,
         "Medienkompetenz": 1,
         "Differenzierung": 4,
         "Barrierefreiheit/Inklusion": 4,
+
+        //Kognitive Strukturierung
         "Transfer- und Anwendungsorientierung": 2,
         "Prozessorientierung (Kumulation)": 1,
         "Lernwegunterstützende Elemente (Scaffolding)": 0,
+
+        //Bild- und Textkomposition
         "Sprachlichkeit": 2,
         "Bildsprache": 3,
         "Additive Kommunikation (Anreicherung)": 1,
+
+        //Aufgabendesign
         "Sequenzierung": 4,
         "Aktivierung": 1,
         "Multiple Lösungswege": 0,
+
+        //Anwendungstransparenz
         "Didaktisches Konzept": 1,
         "Rahmenbedingungen": 2,
+
+
         "Fach": 1,
-        "Schulart": 1
+        "Schulart": 1,
+        "Eigene Anmerkungen": "Super!"
     };
 
 }
