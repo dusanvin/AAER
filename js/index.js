@@ -61,6 +61,13 @@ schularten = [
     {value: 26, text: "Sonstige Schule"}
 ];
 
+var isPredefinedName = false;
+var isPredefinedLink = false;
+var isPredefinedSubject = false;
+var isPredefinedInstitute = false;
+
+
+
 var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER)",
     pages: [
         {name:"Name", title: "Name des Lehr-Lernmittels", description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
@@ -71,6 +78,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Name",
                     title: "Bitte geben Sie den Namen des Lehr-/ Lernmittels, das Sie mit Hilfe des AAER analysieren / evaluieren möchten, an.",
                     isRequired: true,
+                    readOnly: isPredefinedName,
                     //hasComment: true,
                     //commentText: "Der Name wird später Ihrer persönlichen Auswertung, die Sie sich herunterladen können, angezeigt."
                 }
@@ -83,6 +91,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Verlinkung",
                     title: "Bitte geben Sie den Link zu Ihrem Lehr-Lernmittel an (optional).",
                     isRequired: false,
+                    readOnly: isPredefinedLink,
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaft-liche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                 }
@@ -96,6 +105,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     title: "Das Lehr-Lernmittel ist frei von einseitiger Informationsvermittlung bzgl. bestimmter Themen/Aussagen gesellschaftlicher Akteure.",
                     isRequired: true,
                     defaultValue: 5,
+                    readOnly: true,
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                     choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -443,6 +453,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Fach",
                     title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
                     defaultValue: 1,
+                    readOnly: isPredefinedSubject,
                     choices: fach
                 }
             ]
@@ -454,6 +465,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Schulart",
                     title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
                     defaultValue: 1,
+                    readOnly: isPredefinedInstitute,
                     choices: schularten
                 }
             ]
