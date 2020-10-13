@@ -622,6 +622,38 @@ function generateCharts() {
     grp8Chart();
 }
 
+function loadSurvey() {
+    let input = document.getElementById('toLoadSurvey').value;
+    if (input.length === 10) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSurvey");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({"id": input}));
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                db_data = this.responseText;
+                if (db_data.length > 0) {
+                    console.log(db_data);
+                    data = JSON.parse(db_data);
+                    data_object = {
+                        "id": data.survey_id,
+                        "Name": data._tool_name,
+                        "Verlinkung": data._link,
+                        "Fach": data.fk_subject,
+                        "Schulart": data.fk_institution
+                    };
+                    console.log(data_object);
+                    survey.data = data_object;
+                } else {
+                    console.log("No result.")
+                }
+            }
+        }
+    } else {
+        console.log("Es müssen genau 10 Zeichen sein.")
+    }
+}
 
 // Ende: Funktionen zur Darstellung der Diagramme
 
