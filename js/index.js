@@ -569,7 +569,7 @@ function loadResult() {
                     };
                     console.log(data_object);
                     survey.data = data_object;
-                    //survey.doComplete();
+                    showDashboard();
 
 
                 } else {
