@@ -583,6 +583,15 @@ function loadResult() {
     }
 }
 
+function showDashboard() {
+    survey.doComplete();
+    $("#dashboard-aaer").css("display", "block");
+    $("#ergebnisse_container").css("display", "block");
+    $(".front-background").css("display", "none");
+    $("#surveyElementContainer").css("display", "none");
+    $("#carouselExampleSlidesOnly").css("display", "none");
+}
+
 // Start: Funktionen zur Darstellung der Diagramme
 
 function generateCharts() {
