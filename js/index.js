@@ -96,6 +96,30 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaft-liche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                 }
             ]
+        }, {
+            questions: [
+                {
+                    type: "dropdown",
+                    name: "Fach",
+                    title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
+                    defaultValue: 1,
+                    readOnly: isPredefinedSubject,
+                    choices: fach
+                }
+            ]
+
+        }, {
+            questions: [
+                {
+                    type: "dropdown",
+                    name: "Schulart",
+                    title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
+                    defaultValue: 1,
+                    readOnly: isPredefinedInstitute,
+                    choices: schularten
+                }
+            ]
+
         }, {name:"Interessegeleitete Themenführung/Positionierung", title: "Interessegeleitete Themenführung/Positionierung", description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schüler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
 
             questions: [
@@ -105,7 +129,6 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     title: "Das Lehr-Lernmittel ist frei von einseitiger Informationsvermittlung bzgl. bestimmter Themen/Aussagen gesellschaftlicher Akteure.",
                     isRequired: true,
                     defaultValue: 5,
-                    readOnly: true,
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                     choices: [{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -446,30 +469,6 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     isRequired: false,
                 }
             ]
-        },  {
-            questions: [
-                {
-                    type: "dropdown",
-                    name: "Fach",
-                    title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
-                    defaultValue: 1,
-                    readOnly: isPredefinedSubject,
-                    choices: fach
-                }
-            ]
-
-        },    {
-            questions: [
-                {
-                    type: "dropdown",
-                    name: "Schulart",
-                    title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
-                    defaultValue: 1,
-                    readOnly: isPredefinedInstitute,
-                    choices: schularten
-                }
-            ]
-
         }
     ]
 };
