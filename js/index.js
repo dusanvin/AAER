@@ -467,9 +467,12 @@ window.survey = new Survey.Model(json);
 
 
 // Start: Skripte zur Speicherung der JS-Objekte
+var new_result = true;
 
 survey.onComplete.add(function (sender, options) {
-    save(sender.data);
+    if (new_result) {
+        save(sender.data);
+    }
     show(sender.data);
 });
 
@@ -569,7 +572,9 @@ function loadResult() {
                     };
                     console.log(data_object);
                     survey.data = data_object;
+                    new_result = false;
                     showDashboard();
+                    new_result = true;
 
 
                 } else {
