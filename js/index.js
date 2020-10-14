@@ -637,14 +637,24 @@ function loadSurvey() {
                     console.log(db_data);
                     data = JSON.parse(db_data);
                     data_object = {
-                        "id": data.survey_id,
-                        "Name": data._tool_name,
-                        "Verlinkung": data._link,
-                        "Fach": data.fk_subject,
-                        "Schulart": data.fk_institution
+                        "Name": data._pre_tname,
+                        "Verlinkung": data._pre_link,
+                        "Fach": data.fk_pre_subject,
+                        "Schulart": data.fk_pre_institution
                     };
                     console.log(data_object);
+
+
                     survey.data = data_object;
+
+                    survey.data = {
+                        "Name": "ein lehrmittel",
+                        "Verlinkung": "ein link",
+                        "Fach": "Mathe",
+                        "Schulart": "Fachoberschule"
+                    }
+
+
                 } else {
                     console.log("No result.")
                 }
