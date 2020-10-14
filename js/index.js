@@ -480,6 +480,9 @@ window.survey = new Survey.Model(json);
 // Start: Skripte zur Speicherung der JS-Objekte
 var new_result = true;
 
+var pre_survey = false;
+var pre_survey_id = "";
+
 survey.onComplete.add(function (sender, options) {
     if (new_result) {
         save(sender.data);
@@ -501,6 +504,10 @@ function save(result) {
         if (this.readyState == 4 && this.status == 200) {
             new_result_id = this.responseText;
             console.log(new_result_id);
+            if(pre_survey) {
+                result.preset_id = pre_survey_id;
+                pre_survey = false;
+            }
             // document.getElementById('result_id').innerHTML = new_result_id; // to display if user finished survey
         }
     };
@@ -624,6 +631,7 @@ function generateCharts() {
 
 function loadSurvey() {
     let input = document.getElementById('toLoadSurvey').value;
+
     if (input.length === 10) {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSurvey");
@@ -666,6 +674,10 @@ function loadSurvey() {
                     survey.data = data_object;
 
                     $("#surveyElement").Survey({model: survey});
+
+
+                    pre_survey = true;
+                    pre_survey_id = input;
 
                 } else {
                     console.log("No result.")
