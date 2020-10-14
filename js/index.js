@@ -634,26 +634,38 @@ function loadSurvey() {
             if (this.readyState == 4 && this.status == 200) {
                 db_data = this.responseText;
                 if (db_data.length > 0) {
+                    window.survey = new Survey.Model(json);
+
                     console.log(db_data);
                     data = JSON.parse(db_data);
+
                     data_object = {
                         "Name": data._pre_tname,
                         "Verlinkung": data._pre_link,
                         "Fach": data.fk_pre_subject,
                         "Schulart": data.fk_pre_institution
                     };
-                    console.log(data_object);
 
+                    all_questions = survey.getAllQuestions();
+                    all_questions[0].readOnly = true;
+
+                    if (data_object.Verlinkung != null) {
+                        all_questions[1].readOnly = true;
+                    };
+
+                    if (data_object.Fach != null) {
+                        all_questions[2].readOnly = true;
+                    };
+
+                    if (data_object.Schulart != null) {
+                        all_questions[3].readOnly = true;
+                    };
+
+                    console.log(data_object);
 
                     survey.data = data_object;
 
-                    survey.data = {
-                        "Name": "ein lehrmittel",
-                        "Verlinkung": "ein link",
-                        "Fach": "Mathe",
-                        "Schulart": "Fachoberschule"
-                    }
-
+                    $("#surveyElement").Survey({model: survey});
 
                 } else {
                     console.log("No result.")
