@@ -654,6 +654,8 @@ function loadSurvey() {
                             save(sender.data);
                         }
                         show(sender.data);
+                        showDashboard();
+                        console.log("show dashboard exe")
                     });
 
                     console.log(db_data);
