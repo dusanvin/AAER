@@ -254,7 +254,7 @@
 
 		    	<!-- Initialisierung der Umfrage Start -->
 
-				<div style="background:transparent;" class="mt-xs-3 mt-sm-3 m-md-5 m-lg-5" id="surveyElementContainer">
+				<div style="background:transparent;" class="mt-xs-3 mt-sm-3 m-md-5 m-lg-5 mb-3" id="surveyElementContainer">
 
 					<div id="surveyElement" class="p-xs-3 p-sm-5 p-md-5 p-lg-5"></div>
 
@@ -269,6 +269,21 @@
 				<script type="text/javascript" src="/js/index.js"></script>
 
 				<!-- Initialisierung der Umfrage End -->
+
+				<!-- Start: Buttons zum Laden von Umfragen -->
+
+			    <div class="bg-white pt-5 pb-5 pl-5 pr-5 mt-xs-3 mt-sm-3 m-md-5 m-lg-5">
+			    	
+			    	<input class="pt-2 pb-1 pl-3 pr-3 mb-3" type="text" id="toLoad" placeholder="12-stelliger-Code" style="width:9.8em;">
+					<button class="btn btn-green" onclick="loadResult();">Datensatz laden</button>
+
+					<!--
+					<input type="text" id="toLoadSurvey" placeholder="10-stelliger-Code">
+					<button onclick="loadSurvey();">Angelegte Befragung laden</button> -->
+
+			    </div>
+
+				<!-- Ende: Buttons zum Laden von Umfragen -->
 
 	    	</div>
 
@@ -1479,14 +1494,6 @@
 	<canvas id="canvas8" style="width: 324px; height: 200px;"></canvas>
 
 	<!-- Ende: Canvas-Elemente für PDF -->
-
-	<input type="text" id="toLoad" placeholder="12-stelliger-Code">
-	<button onclick="loadResult();">Datensatz laden</button>
-
-	<input type="text" id="toLoadSurvey" placeholder="10-stelliger-Code">
-	<button onclick="loadSurvey();">Angelegte Befragung laden</button>
-
-
 
 	<!-- PDF-Integration Start -->
 

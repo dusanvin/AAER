@@ -237,7 +237,9 @@ a.btn-status {
 
 .btn-green {
 	border: 2px solid rgb(24, 166, 137) !important;
-	border-radius: 7px !important;
+    border-radius: 7px !important;
+    background-color: rgb(24, 166, 137) !important;
+    color: white !important;
 }
 
 .btn-green:hover {
