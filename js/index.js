@@ -592,9 +592,12 @@ function loadResult() {
                     };
                     console.log(data_object);
                     survey.data = data_object;
-                    new_result = false;
+
+                    new_result = false; // speichern aussschalten
+                    survey.doComplete();
                     showDashboard();
                     new_result = true;
+
 
 
                 } else {
@@ -609,7 +612,6 @@ function loadResult() {
 }
 
 function showDashboard() {
-    survey.doComplete();
     $("#dashboard-aaer").css("display", "block");
     $("#ergebnisse_container").css("display", "block");
     $(".front-background").css("display", "none");
