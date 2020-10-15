@@ -297,7 +297,7 @@
 					<div class="mt-3">
 
 						Bitte legen Sie einen Namen für das Lehr-/Lernmittel fest:
-						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_tname" placeholder="Namen eingeben" style="width:10.5em;">
+						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_tname" style="width:10.5em;">
 						<br>
 
 						Möchten Sie einen Link festlegen?<br>
@@ -306,7 +306,7 @@
 						<input type="radio" id="no_link" name="answer_link" value="no" checked>
 						<label for="no_link">Nein.</label>
 						<br>
-						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_link" placeholder="Link" style="width:10.5em;">
+						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_link" style="width:10.5em;">
 						<br>
 
 						Wird die Befragung für ein bestimmtes Fach erstellt?<br>
@@ -315,8 +315,33 @@
 						<input type="radio" id="no_subject" name="answer_subject" value="no" checked>
 						<label for="no_link">Nein.</label>
 						<br>
-						<label for="survey_subject">Fach festlegen:</label>
-						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_subject" placeholder="Fach" style="width:10.5em;">
+<!--						<label for="survey_subject">Fach festlegen:</label>-->
+						<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" id="survey_subject" style="width:12.5em;">
+							<option value="">Wählen Sie ein Fach</option>
+<!--							<option value="1">Keine Angabe</option>-->
+							<option value="2">Biologie</option>
+							<option value="3">Chemie</option>
+							<option value="4">Deutsch</option>
+							<option value="5">Englisch</option>
+							<option value="6">Erdkunde / Geographie</option>
+							<option value="7">Ethik</option>
+							<option value="8">Französich</option>
+							<option value="9">Geschichte</option>
+							<option value="10">Informatik / IT</option>
+							<option value="11">Kunst / Werken</option>
+							<option value="12">Latein</option>
+							<option value="13">Mathematik</option>
+							<option value="14">Musik</option>
+							<option value="15">Pädagogik</option>
+							<option value="16">Philosophie</option>
+							<option value="17">Physik</option>
+							<option value="18">Psychologie</option>
+							<option value="19">Religion</option>
+							<option value="20">Sozialkunde / Politik</option>
+							<option value="21">Sport</option>
+							<option value="22">Sprachen (andere)</option>
+							<option value="23">Sonstiges Fach</option>
+						</select>
 						<br>
 
 						Wird die Befragung für eine bestimmte Schulart erstellt?<br>
@@ -325,11 +350,82 @@
 						<input type="radio" id="no_institution" name="answer_institution" value="no" checked>
 						<label for="no_institution">Nein.</label>
 						<br>
-						<label for="survey_institution">Schulart festlegen:</label>
-						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_institution" placeholder="Schulart" style="width:10.5em;">
+<!--						<label for="survey_institution">Schulart festlegen:</label>-->
+						<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_institution" style="width:12.5em;">
+							<option value="">Wählen Sie eine Schulart</option>
+							<!--							<option value="1">Keine Angabe</option>-->
+							<option value="2">Abendschule</option>
+							<option value="3">Alternatives Schulkonzept</option>
+							<option value="4">Berufsfachschule</option>
+							<option value="5">Berufskolleg</option>
+							<option value="6">Berufsoberschule</option>
+							<option value="7">Berufsschule</option>
+							<option value="8">Bildungskolleg</option>
+							<option value="9">Fachakademie</option>
+							<option value="10">Fachhochschule</option>
+							<option value="11">Fachoberschule</option>
+							<option value="12">Fachschule</option>
+							<option value="13">Förderschule</option>
+							<option value="14">Gesamtschule</option>
+							<option value="15">Grundschule</option>
+							<option value="16">Gymnasium</option>
+							<option value="17">Hochschule</option>
+							<option value="18">Internationale Schule</option>
+							<option value="19">Mittelschule</option>
+							<option value="20">Realschule</option>
+							<option value="21">Schule besonderer Art</option>
+							<option value="22">Schule für Kranke</option>
+							<option value="23">Volkshochschule</option>
+							<option value="24">Vorschule</option>
+							<option value="25">Wirtschaftsschule</option>
+							<option value="26">Sonstige Schule</option>
+						</select>
 						<br>
 						<br>
 						<button class="btn btn-green ml-1 mr-1" onclick="saveSurvey();">Befragung erstellen</button>
+
+						<script>
+							survey_link = document.getElementById('survey_link');
+							survey_link.disabled = true;
+							survey_subject = document.getElementById('survey_subject');
+							survey_subject.disabled = true;
+							survey_institution = document.getElementById('survey_institution');
+							survey_institution.disabled = true;
+
+							document.body.addEventListener('change', function (e) {
+								let target = e.target;
+								switch (target.id) {
+									case 'yes_link':
+										console.log('link set to yes');
+										survey_link.disabled = false;
+										break;
+									case 'no_link':
+										console.log('link set to no');
+										survey_link.value = "";
+										survey_link.disabled = true;
+										break;
+									case 'yes_subject':
+										console.log('subject set to yes');
+										survey_subject.disabled = false;
+										break;
+									case 'no_subject':
+										console.log('subject set to no');
+										survey_subject.value = "";
+										survey_subject.disabled = true;
+										break;
+									case 'yes_institution':
+										console.log('institution set to yes');
+										survey_institution.disabled = false;
+										break;
+									case 'no_institution':
+										console.log('institution set to no');
+										survey_institution.value = "";
+										survey_institution.disabled = true;
+										break;
+
+								}
+							});
+						</script>
 
 					</div>
 					<!--
