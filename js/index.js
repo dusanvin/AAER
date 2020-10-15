@@ -705,13 +705,40 @@ function loadSurvey() {
 
 function saveSurvey() {
     let input_tname = document.getElementById('survey_tname').value;
+    if (!input_tname.replace(/\s/g, '').length) { // only whitespaces
+        document.getElementById('survey_saved').innerText = "Bitte Name des Lehr-/Lernmittels eingeben!";
+        return;
+    }
+
     let input_link = document.getElementById('survey_link').value;
+    if (!input_link.replace(/\s/g, '').length) {
+        input_link = null;
+    }
+
     let input_subject = document.getElementById('survey_subject').value;
+    if (input_subject.length == 0) {
+        console.log("Kein Fach wird vorausgesetzt.");
+        input_subject = null;
+    }
+
     let input_institute = document.getElementById('survey_institution').value;
+    if (input_institute.length == 0) {
+        console.log("Keine Schulart wird vorausgesetzt.")
+        input_institute = null;
+    }
+
+
     //value_link = document.querySelector('input[name="answer_link"]:checked').value;
     survey_data = {
-
+        "_pre_tname": input_tname,
+        "_pre_link": input_link,
+        "_pre_subject": input_subject,
+        "_pre_institution": input_institute
     }
+
+    console.log(survey_data);
+
+    document.getElementById('survey_saved').innerText = "1234567890";
 
 }
 
