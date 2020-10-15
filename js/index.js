@@ -504,13 +504,15 @@ function save(result) {
         if (this.readyState == 4 && this.status == 200) {
             new_result_id = this.responseText;
             console.log(new_result_id);
-            if(pre_survey) {
-                result.preset_id = pre_survey_id;
-                pre_survey = false;
-            }
             // document.getElementById('result_id').innerHTML = new_result_id; // to display if user finished survey
         }
     };
+
+    if(pre_survey) {
+        result.preset_id = pre_survey_id;
+        pre_survey = false;
+    }
+
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(result));
 }
