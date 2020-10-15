@@ -703,6 +703,15 @@ function loadSurvey() {
     }
 }
 
+function saveSurvey() {
+    let input_tname = document.getElementById('survey_tname').value;
+    let input_link = document.getElementById('survey_link').value;
+    let input_subject = document.getElementById('survey_subject').value;
+    let input_institute = document.getElementById('survey_institution').value;
+    value_link = document.querySelector('input[name="answer_link"]:checked').value;
+    console.log(value_link);
+}
+
 // Ende: Funktionen zur Darstellung der Diagramme
 
 setSurveyValues();

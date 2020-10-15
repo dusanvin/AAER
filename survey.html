@@ -291,8 +291,42 @@
 					<button class="btn btn-green ml-1 mr-1" onclick="loadSurvey();">Befragung laden</button>
 
 			    	</div>
-			    	
 
+					<p class="mt-5">Erstellen Sie eine neue Befragung.</p>
+
+					<div class="mt-3">
+
+						<h3>Bitte legen Sie einen Namen für das Lehr-/Lernmittel fest:</h3>
+						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_tname" placeholder="Namen eingeben" style="width:10.5em;">
+
+						<h3>Soll ein Link festgelegt werden?</h3>
+						<input type="radio" id="yes_link" name="answer_link" value="yes">
+						<label for="yes_link">Ja.</label>
+						<input type="radio" id="no_link" name="answer_link" value="no" checked>
+						<label for="no_link">Nein.</label>
+						<br>
+						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_link" placeholder="Link" style="width:10.5em;">
+
+						<h3>Soll ein Fach festgelegt werden?</h3>
+						<input type="radio" id="yes_subject" name="answer_subject" value="yes">
+						<label for="yes_subject">Ja.</label>
+						<input type="radio" id="no_subject" name="answer_subject" value="no" checked>
+						<label for="no_link">Nein.</label>
+						<br>
+						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_subject" placeholder="Fach" style="width:10.5em;">
+
+						<h3>Soll eine Schulart festgelegt werden?</h3>
+						<input type="radio" id="yes_institution" name="answer_institution" value="yes">
+						<label for="yes_institution">Ja.</label>
+						<input type="radio" id="no_institution" name="answer_institution" value="no" checked>
+						<label for="no_institution">Nein.</label>
+						<br>
+						<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_institution" placeholder="Schulart" style="width:10.5em;">
+						<br>
+						<br>
+						<button class="btn btn-green ml-1 mr-1" onclick="saveSurvey();">Befragung erstellen</button>
+
+					</div>
 					<!--
 					<input type="text" id="toLoadSurvey" placeholder="10-stelliger-Code">
 					<button onclick="loadSurvey();">Angelegte Befragung laden</button> -->
