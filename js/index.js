@@ -61,6 +61,13 @@ schularten = [
     {value: 26, text: "Sonstige Schule"}
 ];
 
+var isPredefinedName = false;
+var isPredefinedLink = false;
+var isPredefinedSubject = false;
+var isPredefinedInstitute = false;
+
+
+
 var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER)",
     pages: [
         {name:"Name", title: "Name des Lehr-Lernmittels", description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
@@ -71,6 +78,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Name",
                     title: "Bitte geben Sie den Namen des Lehr-/ Lernmittels, das Sie mit Hilfe des AAER analysieren / evaluieren möchten, an.",
                     isRequired: true,
+                    readOnly: isPredefinedName,
                     //hasComment: true,
                     //commentText: "Der Name wird später Ihrer persönlichen Auswertung, die Sie sich herunterladen können, angezeigt."
                 }
@@ -83,10 +91,35 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Verlinkung",
                     title: "Bitte geben Sie den Link zu Ihrem Lehr-Lernmittel an (optional).",
                     isRequired: false,
+                    readOnly: isPredefinedLink,
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaft-liche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                 }
             ]
+        }, {
+            questions: [
+                {
+                    type: "dropdown",
+                    name: "Fach",
+                    title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
+                    defaultValue: 1,
+                    readOnly: isPredefinedSubject,
+                    choices: fach
+                }
+            ]
+
+        }, {
+            questions: [
+                {
+                    type: "dropdown",
+                    name: "Schulart",
+                    title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
+                    defaultValue: 1,
+                    readOnly: isPredefinedInstitute,
+                    choices: schularten
+                }
+            ]
+
         }, {name:"Interessegeleitete Themenführung/Positionierung", title: "Interessegeleitete Themenführung/Positionierung", description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schülerinnen und Schüler und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transpor-tiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie rele-vanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektive Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig präsentiert sind?",
 
             questions: [
@@ -436,28 +469,6 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     isRequired: false,
                 }
             ]
-        },  {
-            questions: [
-                {
-                    type: "dropdown",
-                    name: "Fach",
-                    title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
-                    defaultValue: 1,
-                    choices: fach
-                }
-            ]
-
-        },    {
-            questions: [
-                {
-                    type: "dropdown",
-                    name: "Schulart",
-                    title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
-                    defaultValue: 1,
-                    choices: schularten
-                }
-            ]
-
         }
     ]
 };
@@ -465,97 +476,146 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
 window.survey = new Survey.Model(json);
 
 
-// Start: Survey Validation der Felder
-
-var stopLink = false;
-var stopAnmerkungen = false;
-
-function surveyValidateQuestion(survey, options) {
-
-    if (options.name == 'Link' && !stopLink) {
-        console.log(options.value);
-
-        var input;
-        if (options.value === undefined) {
-            input = '(undefined)';
-
-        } else {
-            input = options.value;
-        }
-        survey.setValue('Link', input);
-        console.log(input);
-        stopLink = true;
-
-    }
-    if (options.name == 'Eigene Anmerkungen' && !stopAnmerkungen) {
-        console.log(options.value);
-
-        var input;
-        if (options.value === undefined) {
-            input = '(undefined)';
-
-        } else {
-            input = options.value;
-        }
-        survey.setValue('Eigene Anmerkungen', input);
-        console.log(input);
-        stopLink = true;
-
-    }
-
-}
-
-// Ende: Survey Validation der Felder
-
-
 
 // Start: Skripte zur Speicherung der JS-Objekte
+var new_result = true;
+
+var pre_survey = false;
+var pre_survey_id = "";
 
 survey.onComplete.add(function (sender, options) {
-
-    // Daten senden und Hash-Wert empfangen
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
-    let hash;
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // document.getElementById("result_id").innerHTML = this.responseText;
-            hash = this.responseText;
-            console.log(this.responseText)
-        }
-    };
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(sender.data));
-
-
-    let resultData = Object.assign({}, sender.data);
-
-    // Fachname in der JSON-Übersicht anzeigen
-    fachName = fach[survey.getValue('Fach') - 1].text;
-    resultData.Fach = fachName;
-    console.log(fachName);
-
-    // Schulart in der JSON-Übersicht anzeigen
-    schulName = schularten[survey.getValue('Schulart') - 1].text;
-    resultData.Schulart = schulName;
-    console.log(schulName);
-    
-    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(resultData, null, 4);
-
-    // Charts erstellen
-    generateCharts();
-
-
-    // Diverses
-    document.getElementById('fach').innerHTML = fachName;
-    document.getElementById('schulart').innerHTML = schulName;
-    document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen');
-
+    if (new_result) {
+        save(sender.data);
+    }
+    show(sender.data);
 });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
 
 $("#surveyElement").Survey({model: survey});
+
+
+// Daten senden und 12-stellige-Id empfangen
+function save(result) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
+    let new_result_id;
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            new_result_id = this.responseText;
+            console.log(new_result_id);
+            // document.getElementById('result_id').innerHTML = new_result_id; // to display if user finished survey
+        }
+    };
+
+    if(pre_survey) {
+        result.preset_id = pre_survey_id;
+        pre_survey = false;
+    }
+
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(result));
+}
+
+function show(result) {
+    let jsonViewData = Object.assign({}, result);
+
+    // Fachname anzeigen
+    fachName = fach[survey.getValue('Fach') - 1].text;
+    jsonViewData.Fach = fachName; // JSON-Übersicht
+    document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
+    console.log(fachName);
+
+    // Schulart anzeigen
+    schulName = schularten[survey.getValue('Schulart') - 1].text;
+    jsonViewData.Schulart = schulName; // JSON-Übersicht
+    document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
+    console.log(schulName);
+
+    document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
+
+    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
+
+    // Charts erstellen
+    generateCharts();
+}
+
+// Wird über einen Button aufgerufen und lädt Daten aus der DB
+function loadResult() {
+    let input = document.getElementById('toLoad').value;
+    if (input.length === 12) {
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/load");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({"id": input}));
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                db_data = this.responseText;
+                if (db_data.length > 0) {
+                    console.log(db_data);
+                    data = JSON.parse(db_data);
+                    data_object = {
+                        "id": data.result_id,
+                        "Name": data._tool_name,
+                        "Verlinkung": data._link,
+                        "Bezüge Curriculum": data._00,
+                        "Bezüge Bildungsstandards": data._01,
+                        "Interessegeleitete Themenführung/Positionierung": data._10,
+                        "Transparenz": data._11,
+                        "Werbliche Elemente": data._12,
+                        "Heterogenität/Gender": data._13,
+                        "Handlungsorientierung": data._20,
+                        "Lebensweltlichkeit": data._21,
+                        "Reflexion/Urteilsfähigkeit": data._22,
+                        "Multiperspektivität/Kontroversität": data._23,
+                        "Methodenpluralität": data._30,
+                        "Multimedia/Multimodalität": data._31,
+                        "Medienkompetenz": data._32,
+                        "Differenzierung": data._33,
+                        "Barrierefreiheit/Inklusion": data._34,
+                        "Transfer- und Anwendungsorientierung": data._40,
+                        "Prozessorientierung (Kumulation)": data._41,
+                        "Lernwegunterstützende Elemente (Scaffolding)": data._42,
+                        "Sprachlichkeit": data._50,
+                        "Bildsprache": data._51,
+                        "Additive Kommunikation (Anreicherung)": data._52,
+                        "Sequenzierung": data._60,
+                        "Aktivierung": data._61,
+                        "Multiple Lösungswege": data._62,
+                        "Didaktisches Konzept": data._70,
+                        "Rahmenbedingungen": data._71,
+                        "Fach": data.fk_subject,
+                        "Schulart": data.fk_institution,
+                        "Eigene Anmerkungen": data._comment
+                    };
+                    console.log(data_object);
+                    survey.data = data_object;
+                    new_result = false;
+                    showDashboard();
+                    new_result = true;
+
+
+                } else {
+                    console.log("No result.")
+                }
+            };
+        };
+
+    } else {
+        console.log("Es müssen genau 12 Zeichen sein.")
+    }
+}
+
+function showDashboard() {
+    survey.doComplete();
+    $("#dashboard-aaer").css("display", "block");
+    $("#ergebnisse_container").css("display", "block");
+    $(".front-background").css("display", "none");
+    $("#surveyElementContainer").css("display", "none");
+    $("#carouselExampleSlidesOnly").css("display", "none");
+}
 
 // Start: Funktionen zur Darstellung der Diagramme
 
@@ -571,46 +631,132 @@ function generateCharts() {
     grp8Chart();
 }
 
+function loadSurvey() {
+    let input = document.getElementById('toLoadSurvey').value;
+
+    if (input.length === 10) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSurvey");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({"id": input}));
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                db_data = this.responseText;
+                if (db_data.length > 0) {
+                    window.survey = new Survey.Model(json);
+
+                    survey.onComplete.add(function (sender, options) {
+                        console.log("TEST");
+                        if (new_result) {
+                            save(sender.data);
+                        }
+                        show(sender.data);
+                    });
+
+                    console.log(db_data);
+                    data = JSON.parse(db_data);
+
+                    data_object = {
+                        "Name": data._pre_tname,
+                        "Verlinkung": data._pre_link,
+                        "Fach": data.fk_pre_subject,
+                        "Schulart": data.fk_pre_institution
+                    };
+
+                    all_questions = survey.getAllQuestions();
+                    all_questions[0].readOnly = true;
+
+                    if (data_object.Verlinkung != null) {
+                        all_questions[1].readOnly = true;
+                    };
+
+                    if (data_object.Fach != null) {
+                        all_questions[2].readOnly = true;
+                    };
+
+                    if (data_object.Schulart != null) {
+                        all_questions[3].readOnly = true;
+                    };
+
+                    console.log(data_object);
+
+                    survey.data = data_object;
+
+                    $("#surveyElement").Survey({model: survey});
+
+
+                    pre_survey = true;
+                    pre_survey_id = input;
+
+                } else {
+                    console.log("No result.")
+                }
+            }
+        }
+    } else {
+        console.log("Es müssen genau 10 Zeichen sein.")
+    }
+}
+
 // Ende: Funktionen zur Darstellung der Diagramme
 
-setRadioButtonsValues();
+setSurveyValues();
 
 // Start: Radio Buttons Presets
 
-function setRadioButtonsValues() {
+function setSurveyValues() {
 
     survey.data = {
         "Name": "Bee-Bot Klassen-Set",
         "Verlinkung": "https://www.betzold.de/prod/89809/",
-        "Eigene Anmerkungen": "Keine Angabe",
+
+        //Anlehnung an Curriculum und Bildungsstandards
         "Bezüge Curriculum": 4,
         "Bezüge Bildungsstandards": 1,
+
+        //Diskursive Positionierung
         "Interessegeleitete Themenführung/Positionierung": 2,
         "Transparenz": 3,
         "Werbliche Elemente": 0,
         "Heterogenität/Gender": 1,
+
+        //Makrodidaktische und bildungstheoretische Fundierung
         "Handlungsorientierung": 4,
         "Lebensweltlichkeit": 2,
         "Reflexion/Urteilsfähigkeit": 1,
         "Multiperspektivität/Kontroversität": 1,
+
+        //Mikrodidaktische Umsetzung
         "Methodenpluralität": 0,
         "Multimedia/Multimodalität": 3,
         "Medienkompetenz": 1,
         "Differenzierung": 4,
         "Barrierefreiheit/Inklusion": 4,
+
+        //Kognitive Strukturierung
         "Transfer- und Anwendungsorientierung": 2,
         "Prozessorientierung (Kumulation)": 1,
         "Lernwegunterstützende Elemente (Scaffolding)": 0,
+
+        //Bild- und Textkomposition
         "Sprachlichkeit": 2,
         "Bildsprache": 3,
         "Additive Kommunikation (Anreicherung)": 1,
+
+        //Aufgabendesign
         "Sequenzierung": 4,
         "Aktivierung": 1,
         "Multiple Lösungswege": 0,
+
+        //Anwendungstransparenz
         "Didaktisches Konzept": 1,
         "Rahmenbedingungen": 2,
+
+
         "Fach": 1,
-        "Schulart": 1
+        "Schulart": 1,
+        "Eigene Anmerkungen": "Super!"
     };
 
 }
