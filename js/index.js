@@ -644,6 +644,14 @@ function loadSurvey() {
                 if (db_data.length > 0) {
                     window.survey = new Survey.Model(json);
 
+                    survey.onComplete.add(function (sender, options) {
+                        console.log("TEST");
+                        if (new_result) {
+                            save(sender.data);
+                        }
+                        show(sender.data);
+                    });
+
                     console.log(db_data);
                     data = JSON.parse(db_data);
 
