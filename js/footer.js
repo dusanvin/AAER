@@ -34,7 +34,7 @@ function display_footer() {
 
 		        </div>
 
-		        <small class="d-block mb-3"><br>Version 0.3: 9/2020; <br><br> Das AAER steht unter Copyright: <br>&copy; 2020 Universität Augsburg / Dr. Carl- Christian Fey. <br><br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">https://aaer.zlbib.uni-augsburg.de</a> von <a class="text-dark" href="https://www.researchgate.net/profile/Vincent_Dusanek">Vincent Dusanek</a> für <a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/digillab/">DigiLLab</a>, 2020. Lizenz:  <a class="text-dark" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a>.</small>
+		        <small class="d-block mb-3"><br><strong>BETA-Version 0.1: 10/2020;</strong><br><br> Das AAER steht unter Copyright: <br>&copy; 2020 Universität Augsburg / Dr. Carl- Christian Fey. <br><br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">https://aaer.zlbib.uni-augsburg.de</a> von <a class="text-dark" href="https://www.researchgate.net/profile/Vincent_Dusanek">Vincent Dusanek</a> für <a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/digillab/">DigiLLab</a>, 2020. Lizenz:  <a class="text-dark" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a>.</small>
 
 		    </div>
 
@@ -47,6 +47,8 @@ function display_footer() {
 		        <li><a class="text-dark" href="contact.html">Kontakt</a></li>
 
 		        <li><a class="text-dark" href="info.html">Informationen</a></li>
+
+		        <li><a class="text-dark" href="log.html">Log</a></li>
 
 		        <!-- <li><a class="text-dark" href="survey.html">Teilnehmen</a></li> -->
 

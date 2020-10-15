@@ -1,0 +1,17 @@
+.text-dark-grey {
+	color:#3B3938;
+}
+
+.inner-light-grey {
+	background-color: #f1f3fa;
+	border-radius: 7px;
+	min-height:76px;
+}
+
+.inner-text-styling {
+	word-break:break-word;
+	font-weight:400;
+	font-size:80%;
+	color:#3B3938;
+	line-height: 1.8em;
+}
