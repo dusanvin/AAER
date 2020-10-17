@@ -484,6 +484,8 @@ var pre_survey = false;
 var pre_survey_id = "";
 
 survey.onComplete.add(function (sender, options) {
+    console.log("onComplete index.js normal")
+    console.log("new_result: " + new_result)
     if (new_result) {
         save(sender.data);
     }
@@ -500,15 +502,22 @@ function save(result) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
 
-    return new Promise( (resolve,reject) => {
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                resolve(this.responseText);
-            } else {
-                reject({status: xhr.status, statusText: xhr.statusText});
-            }
+    // return new Promise( (resolve,reject) => {
+    //     xhr.onreadystatechange = function() {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             console.log(this.responseText)
+    //             resolve(this.responseText);
+    //         } else {
+    //             reject({status: xhr.status, statusText: xhr.statusText});
+    //         }
+    //     };
+    // });
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('display_result_id').innerHTML = this.responseText;
         };
-    });
+    }
 
 
     if(pre_survey) {
@@ -527,13 +536,11 @@ function show(result) {
     fachName = fach[survey.getValue('Fach') - 1].text;
     jsonViewData.Fach = fachName; // JSON-Übersicht
     document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
-    console.log(fachName);
 
     // Schulart anzeigen
     schulName = schularten[survey.getValue('Schulart') - 1].text;
     jsonViewData.Schulart = schulName; // JSON-Übersicht
     document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
-    console.log(schulName);
 
     document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
 
@@ -558,7 +565,6 @@ function loadResult() {
             if (this.readyState == 4 && this.status == 200) {
                 db_data = this.responseText;
                 if (db_data.length > 0) {
-                    console.log(db_data);
                     data = JSON.parse(db_data);
                     data_object = {
                         "id": data.result_id,
@@ -599,7 +605,6 @@ function loadResult() {
 
                     new_result = false; // speichern aussschalten
                     survey.doComplete();
-                    //showDashboard();
                     new_result = true;
 
 
