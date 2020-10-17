@@ -750,17 +750,10 @@ function saveSurvey() {
 
 // Ende: Funktionen zur Darstellung der Diagramme
 
-function cheat() {
-    setSurveyValues();
-    survey.doComplete();
-    showDashboard();
-}
-
-setSurveyValues();
 
 // Start: Radio Buttons Presets
 
-function setSurveyValues() {
+function setSurveyData() {
 
     survey.data = {
         "Name": "Bee-Bot Klassen-Set",

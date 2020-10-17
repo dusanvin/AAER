@@ -71,6 +71,7 @@
 		<script>
 			const DISPLAY = {
 				UMFRAGE: "#display_umfrage",
+				WILLKOMMEN: "#display_willkommen",
 				START: "#display_start",
 				ANLEGEN: "#display_anlegen",
 				AUSWERTEN: "#display_auswerten",
@@ -340,25 +341,25 @@
 
 					<!-- Ende: UMFRAGE -->
 
-					<!-- Start: teilnahme_start -->
+					<!-- Start: WILLKOMMEN -->
 
-					<div class="container-fluid" id="display_start">
+					<div class="container-fluid" id="display_willkommen">
 
-						<!-- Beginn Container 1234 -->
+						<!-- Beginn Container _WILLKOMMEN -->
 
 						<div class="container-fluid">
 
-							<!-- Row Übersicht Start -->
+							<!-- Row _WILLKOMMEN Start -->
 
 							<div class="row justify-content-center">
 
-								<!-- Col Übersicht Start -->
+								<!-- Col _WILLKOMMEN Start -->
 
 								<div class="col">
 
-									<!-- Canvas Übersicht Start -->
+									<!-- Canvas _WILLKOMMEN Start -->
 
-									<div id="survey_start1">
+									<div id="survey_start">
 
 										<div class="text-left">
 
@@ -366,7 +367,65 @@
 
 												<div class="row pt-4 bg-white">
 
-													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" id="survey_start2" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+														<p class="mt-5">Willkommen beim AAER!</p>
+													</div>
+
+
+												</div>
+
+											</div>
+
+
+										</div>
+
+									</div>
+
+									<!-- Canvas _WILLKOMMEN Ende -->
+
+								</div>
+
+								<!-- Col _WILLKOMMEN Ende -->
+
+							</div>
+
+							<!-- Row _WILLKOMMEN Ende -->
+
+						</div>
+
+						<!-- Ende Container _WILLKOMMEN -->
+
+					</div>
+
+					<!-- Ende: WILLKOMMEN -->
+
+					<!-- Start: START -->
+
+					<div class="container-fluid" id="display_start">
+
+						<!-- Beginn Container _START -->
+
+						<div class="container-fluid">
+
+							<!-- Row _START -->
+
+							<div class="row justify-content-center">
+
+								<!-- Col _START -->
+
+								<div class="col">
+
+									<!-- Canvas _START -->
+
+									<div>
+
+										<div class="text-left">
+
+											<div class="container-fluid grey-border mt-3">
+
+												<div class="row pt-4 bg-white">
+
+													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
 														<p class="mt-5">Nehmen Sie an einer bereits bestehenden Gruppenbefragung teil. Geben Sie hierfür zunächst den erhaltenen Code ein. Wählen Sie dann den Button zur Teilnahme.</p>
 
 														<div class="mt-3">
@@ -381,8 +440,8 @@
 													</div>
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" id="survey_start" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p>Oder beginnen Sie hier einfach eine unabhängige Einzelbefragung.</p>
-														<button class="btn btn-green ml-1 mr-1" onclick="">Befragung starten</button>
+														<p>Oder beginnen Sie hier einfach eine neue unabhängige Einzelbefragung.</p>
+														<button class="btn btn-green ml-1 mr-1" onclick="displayController(DISPLAY.UMFRAGE)">Befragung starten</button>
 													</div>
 
 
@@ -395,21 +454,23 @@
 
 									</div>
 
-									<!-- Canvas Übersicht Ende -->
+									<!-- Canvas _START Ende -->
 
 								</div>
 
-								<!-- Col Übersicht Ende -->
+								<!-- Col _START Ende -->
 
 							</div>
 
-							<!-- Row Übersicht Ende -->
+							<!-- Row _START Ende -->
 
 						</div>
 
-						<!-- Ende Container Übersicht -->
+						<!-- Ende Container _START -->
 
 					</div>
+
+					<!-- Ende START -->
 
 					<!-- Start: ANLEGEN -->
 
@@ -1647,9 +1708,6 @@
 				}
 			}
 
-			function selectController() {
-
-			}
 
    		// Start: Trigger für Dashbaord-Menü
 
@@ -1661,6 +1719,7 @@
    		// Ende: Trigger für Dashbaord-Menü
 
 		$("#dashboard-aaer").css("display", "block");
+		displayController(DISPLAY.WILLKOMMEN);
 
 	  </script>
 
@@ -1671,7 +1730,7 @@
 
 	<!-- Start: Canvas-Elemente für PDF -->
 
-	<button onclick="cheat()">Cheat</button>
+	<button onclick="setSurveyData()">SETZE DATEN</button>
 
 	<canvas id="canvasALL" style="width: 517px; height: 624px;"></canvas>
 	<canvas id="canvas1" style="width: 324px; height: 200px;"></canvas>
