@@ -495,18 +495,21 @@ survey.onComplete.add(function (sender, options) {
 $("#surveyElement").Survey({model: survey});
 
 
-// Daten senden und 12-stellige-Id empfangen
+// saves data of a survey to db and return result_id
 function save(result) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
-    let new_result_id;
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            new_result_id = this.responseText;
-            console.log(new_result_id);
-            // document.getElementById('result_id').innerHTML = new_result_id; // to display if user finished survey
-        }
-    };
+
+    return new Promise( (resolve,reject) => {
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                resolve(this.responseText);
+            } else {
+                reject({status: xhr.status, statusText: xhr.statusText});
+            }
+        };
+    });
+
 
     if(pre_survey) {
         result.preset_id = pre_survey_id;
@@ -644,7 +647,7 @@ function loadSurvey() {
 
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                db_data = this.responseText;
+                let db_data = this.responseText;
                 if (db_data.length > 0) {
                     window.survey = new Survey.Model(json);
 
@@ -693,8 +696,10 @@ function loadSurvey() {
                     pre_survey = true;
                     pre_survey_id = input;
 
-                    $("#surveyElementContainer").css("display", "block");
-                    $("#survey_start").css("display", "none");
+                    //$("#surveyElementContainer").css("display", "block");
+                    //$("#survey_start").css("display", "none");
+
+
 
                 } else {
                     document.getElementById('survey_start_message').innerHTML = `Zum angegebenen Code ${input} wurde nichts gefunden!`;
@@ -1306,14 +1311,14 @@ $(document).on('keypress',function(e) {
 
 // Start: Display der Ergebnisse erst nach Beendigung der Umfrage und Eliminierung der übrigen Container
 
-$( ".sv_complete_btn" ).click(function() {
-    $( "#dashboard-aaer" ).css("display", "block");
-    $( "#ergebnisse_container" ).css("display", "block");
-    $( ".front-background" ).css("display", "none");
-    $( "#surveyElementContainer" ).css("display", "none");
-    $( "#carouselExampleSlidesOnly" ).css("display", "none");
-    
-});
+// $( ".sv_complete_btn" ).click(function() {
+//     $( "#dashboard-aaer" ).css("display", "block");
+//     $( "#ergebnisse_container" ).css("display", "block");
+//     $( ".front-background" ).css("display", "none");
+//     $( "#surveyElementContainer" ).css("display", "none");
+//     $( "#carouselExampleSlidesOnly" ).css("display", "none");
+//
+// });
 
 // Ende: Display der Ergebnisse erst nach Beendigung der Umfrage und Eliminierung der übrigen Container
 
