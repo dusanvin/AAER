@@ -546,6 +546,7 @@ function show(result) {
 // Wird über einen Button aufgerufen und lädt Daten aus der DB
 function loadResult() {
     let input = document.getElementById('toLoad12').value;
+    console.log(input)
     if (input.length === 12) {
 
         let xhr = new XMLHttpRequest();
@@ -604,23 +605,23 @@ function loadResult() {
 
 
                 } else {
-                    console.log("No result.")
+                    document.getElementById('loadResult_message').innerText = "Es konnten keine entsprechenden Daten geladen werden."
                 }
             };
         };
 
     } else {
-        console.log("Es müssen genau 12 Zeichen sein.")
+        document.getElementById('loadResult_message').innerText = "Es müssen genau 12 Zeichen sein.";
     }
 }
 
-function showDashboard() {
-    $("#dashboard-aaer").css("display", "block");
-    $("#ergebnisse_container").css("display", "block");
-    $(".front-background").css("display", "none");
-    $("#surveyElementContainer").css("display", "none");
-    $("#carouselExampleSlidesOnly").css("display", "none");
-}
+// function showDashboard() {
+//     $("#dashboard-aaer").css("display", "block");
+//     $("#ergebnisse_container").css("display", "block");
+//     $(".front-background").css("display", "none");
+//     $("#surveyElementContainer").css("display", "none");
+//     $("#carouselExampleSlidesOnly").css("display", "none");
+// }
 
 // Start: Funktionen zur Darstellung der Diagramme
 
