@@ -473,7 +473,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
     ]
 };
 
-window.survey = new Survey.Model(json);
+//window.survey = new Survey.Model(json);
 
 
 
@@ -483,18 +483,18 @@ var new_result = true;
 var pre_survey = false;
 var pre_survey_id = "";
 
-survey.onComplete.add(function (sender, options) {
-    console.log("onComplete index.js normal")
-    console.log("new_result: " + new_result)
-    if (new_result) {
-        save(sender.data);
-    }
-    show(sender.data);
-});
+// survey.onComplete.add(function (sender, options) {
+//     console.log("onComplete index.js normal")
+//     console.log("new_result: " + new_result)
+//     if (new_result) {
+//         save(sender.data);
+//     }
+//     show(sender.data);
+// });
 
 // Ende: Skripte zur Speicherung der JS-Objekte
 
-$("#surveyElement").Survey({model: survey});
+//$("#surveyElement").Survey({model: survey});
 
 
 // saves data of a survey to db and return result_id
@@ -711,11 +711,7 @@ function loadSurveyData() {
             }
 
 
-
-
-
         } else {
-            //document.getElementById('survey_start_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!"
             reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
         }
 
