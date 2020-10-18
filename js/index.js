@@ -645,13 +645,14 @@ function generateCharts() {
 function loadSurveyData() {
     let input = document.getElementById('toLoadSurvey').value;
 
-    if (input.length === 10) {
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSurvey");
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify({"id": input}));
+    return new Promise( (resolve, reject) => {
+        if (input.length === 10) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSurvey");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({"id": input}));
 
-        return new Promise( (resolve => {
+
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     let db_data = this.responseText;
@@ -704,19 +705,21 @@ function loadSurveyData() {
                         resolve();
 
                     } else {
-                        document.getElementById('survey_start_message').innerHTML = `Zum angegebenen Code ${input} wurde nichts gefunden!`;
+                        reject("Zum angegebenen Code wurde nichts gefunden!");
                     }
                 }
             }
 
 
 
-        }))
 
-    } else {
-        console.log("Es müssen genau 10 Zeichen sein.")
-        document.getElementById('survey_start_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!"
-    }
+
+        } else {
+            //document.getElementById('survey_start_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!"
+            reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
+        }
+
+    });
 }
 
 

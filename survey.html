@@ -1731,8 +1731,11 @@
 					$( ".sv_complete_btn" ).click(function() {
 						displayController(DISPLAY.THANKS);
 					});
+					displayController(DISPLAY.UMFRAGE);
+				})
+				.catch( err => {
+					document.getElementById('survey_start_message').innerHTML = err;
 				});
-				displayController(DISPLAY.UMFRAGE);
 			}
 
 			function newSurvey() {
@@ -1758,9 +1761,9 @@
 		$("#dashboard-aaer").css("display", "block");
 		displayController(DISPLAY.WILLKOMMEN);
 
-		$( ".sv_complete_btn" ).click(function() {
-			displayController(DISPLAY.THANKS);
-		});
+		// $( ".sv_complete_btn" ).click(function() {
+		// 	displayController(DISPLAY.THANKS);
+		// });
 
 	  </script>
 
