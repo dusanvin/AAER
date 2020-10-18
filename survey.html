@@ -593,10 +593,10 @@
 															</select>
 															<br>
 															<br>
-															<button class="btn btn-green ml-1 mr-1" onclick="saveSurvey();">Befragung erstellen</button>
+															<button class="btn btn-green ml-1 mr-1" onclick="newGroup();">Befragung erstellen</button>
 
 															<br>
-															<div id="survey_saved"></div>
+															<div id="newGroup_message"></div>
 
 															<script>
 																$("#survey_create").css("display", "none");
@@ -1758,9 +1758,19 @@
 			function evaluateResult() {
 				loadResult().then( () => {
 					displayController(DISPLAY.OVERALL);
+
 				})
 				.catch( err => {
 					document.getElementById('evaluateResult_message').innerText = err;
+				})
+			}
+
+			function newGroup() {
+				saveNewGroup().then( () => {
+
+				})
+				.catch( err => {
+					document.getElementById('newGroup_message').innerText = err;
 				})
 			}
 

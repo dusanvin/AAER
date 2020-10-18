@@ -523,14 +523,12 @@ function show(result) {
 // Wird über einen Button aufgerufen und lädt Daten aus der DB
 function loadResult() {
     let input = document.getElementById('toLoad12').value;
-
+    console.log(input)
     return new Promise( ((resolve, reject) => {
         if (input.length === 12) {
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/load");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"id": input}));
 
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -588,7 +586,11 @@ function loadResult() {
                         reject("Es konnten keine entsprechenden Daten geladen werden.");
                     }
                 };
+
             };
+
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({"id": input}));
 
         } else {
             reject("Es müssen genau 12 Zeichen sein.");
@@ -600,11 +602,31 @@ function loadResult() {
 
 function loadSet() {
     let input = document.getElementById('load_set').value;
-    console.log(input)
 
     return new Promise( ((resolve, reject) => {
         if (input.length === 10) {
-            resolve();
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSet");
+
+            xhr.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    db_data = this.responseText;
+                    if (db_data.length > 0 && db_data !== '[]') {
+                        console.log(db_data);
+                        console.log(db_data.length);
+                        resolve();
+                    } else {
+                        reject("Es konnten keine entsprechenden Daten geladen werden.");
+                    }
+                }
+
+            }
+
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({"id": input}));
+
         } else {
             reject("Es müssen genau 10 Zeichen sein.");
         }
@@ -706,41 +728,42 @@ function newSurveyData() {
     $("#surveyElement").Survey({model: survey});
 }
 
-function saveSurvey() {
-    let input_tname = document.getElementById('survey_tname').value;
-    if (!input_tname.replace(/\s/g, '').length) { // only whitespaces
-        document.getElementById('survey_saved').innerText = "Bitte Name des Lehr-/Lernmittels eingeben!";
-        return;
-    }
+function saveNewGroup() {
+    return new Promise( ((resolve, reject) => {
 
-    let input_link = document.getElementById('survey_link').value;
-    if (!input_link.replace(/\s/g, '').length) {
-        input_link = null;
-    }
+        let input_tname = document.getElementById('survey_tname').value;
+        if (!input_tname.replace(/\s/g, '').length) { // only whitespaces
+            reject("Bitte Name des Lehr-/Lernmittels eingeben!");
+        }
 
-    let input_subject = document.getElementById('survey_subject').value;
-    if (input_subject.length == 0) {
-        console.log("Kein Fach wird vorausgesetzt.");
-        input_subject = null;
-    }
+        let input_link = document.getElementById('survey_link').value;
+        if (!input_link.replace(/\s/g, '').length) {
+            input_link = null;
+        }
 
-    let input_institute = document.getElementById('survey_institution').value;
-    if (input_institute.length == 0) {
-        console.log("Keine Schulart wird vorausgesetzt.")
-        input_institute = null;
-    }
+        let input_subject = document.getElementById('survey_subject').value;
+        if (input_subject.length == 0) {
+            console.log("Kein Fach wird vorausgesetzt.");
+            input_subject = null;
+        }
 
+        let input_institute = document.getElementById('survey_institution').value;
+        if (input_institute.length == 0) {
+            console.log("Keine Schulart wird vorausgesetzt.")
+            input_institute = null;
+        }
 
-    //value_link = document.querySelector('input[name="answer_link"]:checked').value;
-    survey_data = {
-        "_pre_tname": input_tname,
-        "_pre_link": input_link,
-        "_pre_subject": input_subject,
-        "_pre_institution": input_institute
-    }
+        //value_link = document.querySelector('input[name="answer_link"]:checked').value;
+        survey_data = {
+            "_pre_tname": input_tname,
+            "_pre_link": input_link,
+            "_pre_subject": input_subject,
+            "_pre_institution": input_institute
+        }
 
-    console.log(survey_data);
-    document.getElementById('survey_saved').innerText = "1234567890";
+        console.log(survey_data)
+
+    }))
 
 }
 
