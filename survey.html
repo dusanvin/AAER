@@ -441,7 +441,7 @@
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" id="survey_start" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
 														<p>Oder beginnen Sie hier einfach eine neue unabhängige Einzelbefragung.</p>
-														<button class="btn btn-green ml-1 mr-1" onclick="displayController(DISPLAY.UMFRAGE)">Befragung starten</button>
+														<button class="btn btn-green ml-1 mr-1" onclick="newSurvey()">Befragung starten</button>
 													</div>
 
 
@@ -1726,9 +1726,18 @@
 				}
 			}
 
-			function startNewSurvey() {
-
+			function loadSurvey() {
+				loadSurveyData();
+				displayController(DISPLAY.UMFRAGE);
 			}
+
+			function newSurvey() {
+				newSurveyData();
+				displayController(DISPLAY.UMFRAGE);
+			}
+
+
+
 
    		// Start: Trigger für Dashbaord-Menü
 

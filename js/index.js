@@ -642,7 +642,7 @@ function generateCharts() {
     grp8Chart();
 }
 
-function loadSurvey() {
+function loadSurveyData() {
     let input = document.getElementById('toLoadSurvey').value;
 
     if (input.length === 10) {
@@ -663,8 +663,6 @@ function loadSurvey() {
                             save(sender.data);
                         }
                         show(sender.data);
-                        showDashboard();
-                        console.log("show dashboard exe")
                     });
 
                     console.log(db_data);
@@ -702,11 +700,6 @@ function loadSurvey() {
                     pre_survey = true;
                     pre_survey_id = input;
 
-                    //$("#surveyElementContainer").css("display", "block");
-                    //$("#survey_start").css("display", "none");
-
-
-
                 } else {
                     document.getElementById('survey_start_message').innerHTML = `Zum angegebenen Code ${input} wurde nichts gefunden!`;
                 }
@@ -716,6 +709,22 @@ function loadSurvey() {
         console.log("Es müssen genau 10 Zeichen sein.")
         document.getElementById('survey_start_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!"
     }
+}
+
+function newSurveyData() {
+    window.survey = new Survey.Model(json);
+
+    survey.onComplete.add(function (sender, options) {
+        console.log("new Survey");
+        if (new_result) {
+            save(sender.data);
+        }
+        show(sender.data);
+    });
+
+    survey.data = {};
+
+    $("#surveyElement").Survey({model: survey});
 }
 
 function saveSurvey() {
