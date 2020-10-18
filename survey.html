@@ -708,10 +708,10 @@
 
 														<div class="mt-3">
 
-															<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="toLoad10" placeholder="10-stelliger-Code" style="width:10.5em;">
-															<button class="btn btn-green ml-1 mr-1" onclick="loadSurveyData();">Umfrage auswerten</button>
+															<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="load_set" placeholder="10-stelliger-Code" style="width:10.5em;">
+															<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Umfrage auswerten</button>
 
-															<div id="loadSurveyData_message" style="color: red;"></div>
+															<div id="evaluateSet_message" style="color: red;"></div>
 
 														</div>
 
@@ -724,11 +724,11 @@
 														<div class="mt-3">
 
 															<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="toLoad12" placeholder="12-stelliger-Code" style="width:10.5em;">
-															<button class="btn btn-green ml-1 mr-1" onclick="loadResult();">Einzelumfrage auswerten</button>
+															<button class="btn btn-green ml-1 mr-1" onclick="evaluateResult();">Einzelumfrage auswerten</button>
 
 															<br>
 															<br>
-															<div id="loadResult_message" style="color: red;"></div>
+															<div id="evaluateResult_message" style="color: red;"></div>
 
 														</div>
 
@@ -1744,6 +1744,24 @@
 					displayController(DISPLAY.THANKS);
 				});
 				displayController(DISPLAY.UMFRAGE);
+			}
+
+			function evaluateSet() {
+				loadSet().then( () => {
+					displayController(DISPLAY.OVERALL);
+				})
+				.catch( err => {
+					document.getElementById('evaluateSet_message').innerText = err;
+				})
+			}
+
+			function evaluateResult() {
+				loadResult().then( () => {
+					displayController(DISPLAY.OVERALL);
+				})
+				.catch( err => {
+					document.getElementById('evaluateResult_message').innerText = err;
+				})
 			}
 
 

@@ -473,28 +473,10 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
     ]
 };
 
-//window.survey = new Survey.Model(json);
-
-
-
-// Start: Skripte zur Speicherung der JS-Objekte
 var new_result = true;
 
 var pre_survey = false;
 var pre_survey_id = "";
-
-// survey.onComplete.add(function (sender, options) {
-//     console.log("onComplete index.js normal")
-//     console.log("new_result: " + new_result)
-//     if (new_result) {
-//         save(sender.data);
-//     }
-//     show(sender.data);
-// });
-
-// Ende: Skripte zur Speicherung der JS-Objekte
-
-//$("#surveyElement").Survey({model: survey});
 
 
 // saves data of a survey to db and return result_id
@@ -502,23 +484,11 @@ function save(result) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
 
-    // return new Promise( (resolve,reject) => {
-    //     xhr.onreadystatechange = function() {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //             console.log(this.responseText)
-    //             resolve(this.responseText);
-    //         } else {
-    //             reject({status: xhr.status, statusText: xhr.statusText});
-    //         }
-    //     };
-    // });
-
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('display_result_id').innerHTML = this.responseText;
         };
     }
-
 
     if(pre_survey) {
         result.preset_id = pre_survey_id;
@@ -553,94 +523,95 @@ function show(result) {
 // Wird über einen Button aufgerufen und lädt Daten aus der DB
 function loadResult() {
     let input = document.getElementById('toLoad12').value;
-    console.log(input)
-    if (input.length === 12) {
 
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/load");
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify({"id": input}));
+    return new Promise( ((resolve, reject) => {
+        if (input.length === 12) {
 
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                db_data = this.responseText;
-                if (db_data.length > 0) {
-                    data = JSON.parse(db_data);
-                    data_object = {
-                        "id": data.result_id,
-                        "Name": data._tool_name,
-                        "Verlinkung": data._link,
-                        "Bezüge Curriculum": data._00,
-                        "Bezüge Bildungsstandards": data._01,
-                        "Interessegeleitete Themenführung/Positionierung": data._10,
-                        "Transparenz": data._11,
-                        "Werbliche Elemente": data._12,
-                        "Heterogenität/Gender": data._13,
-                        "Handlungsorientierung": data._20,
-                        "Lebensweltlichkeit": data._21,
-                        "Reflexion/Urteilsfähigkeit": data._22,
-                        "Multiperspektivität/Kontroversität": data._23,
-                        "Methodenpluralität": data._30,
-                        "Multimedia/Multimodalität": data._31,
-                        "Medienkompetenz": data._32,
-                        "Differenzierung": data._33,
-                        "Barrierefreiheit/Inklusion": data._34,
-                        "Transfer- und Anwendungsorientierung": data._40,
-                        "Prozessorientierung (Kumulation)": data._41,
-                        "Lernwegunterstützende Elemente (Scaffolding)": data._42,
-                        "Sprachlichkeit": data._50,
-                        "Bildsprache": data._51,
-                        "Additive Kommunikation (Anreicherung)": data._52,
-                        "Sequenzierung": data._60,
-                        "Aktivierung": data._61,
-                        "Multiple Lösungswege": data._62,
-                        "Didaktisches Konzept": data._70,
-                        "Rahmenbedingungen": data._71,
-                        "Fach": data.fk_subject,
-                        "Schulart": data.fk_institution,
-                        "Eigene Anmerkungen": data._comment
-                    };
-                    console.log(data_object);
-                    survey.data = data_object;
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/load");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({"id": input}));
 
-                    new_result = false; // speichern aussschalten
-                    survey.doComplete();
-                    new_result = true;
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    db_data = this.responseText;
+                    if (db_data.length > 0) {
+                        data = JSON.parse(db_data);
+                        data_object = {
+                            "id": data.result_id,
+                            "Name": data._tool_name,
+                            "Verlinkung": data._link,
+                            "Bezüge Curriculum": data._00,
+                            "Bezüge Bildungsstandards": data._01,
+                            "Interessegeleitete Themenführung/Positionierung": data._10,
+                            "Transparenz": data._11,
+                            "Werbliche Elemente": data._12,
+                            "Heterogenität/Gender": data._13,
+                            "Handlungsorientierung": data._20,
+                            "Lebensweltlichkeit": data._21,
+                            "Reflexion/Urteilsfähigkeit": data._22,
+                            "Multiperspektivität/Kontroversität": data._23,
+                            "Methodenpluralität": data._30,
+                            "Multimedia/Multimodalität": data._31,
+                            "Medienkompetenz": data._32,
+                            "Differenzierung": data._33,
+                            "Barrierefreiheit/Inklusion": data._34,
+                            "Transfer- und Anwendungsorientierung": data._40,
+                            "Prozessorientierung (Kumulation)": data._41,
+                            "Lernwegunterstützende Elemente (Scaffolding)": data._42,
+                            "Sprachlichkeit": data._50,
+                            "Bildsprache": data._51,
+                            "Additive Kommunikation (Anreicherung)": data._52,
+                            "Sequenzierung": data._60,
+                            "Aktivierung": data._61,
+                            "Multiple Lösungswege": data._62,
+                            "Didaktisches Konzept": data._70,
+                            "Rahmenbedingungen": data._71,
+                            "Fach": data.fk_subject,
+                            "Schulart": data.fk_institution,
+                            "Eigene Anmerkungen": data._comment
+                        };
+                        console.log(data_object);
 
+                        window.survey = new Survey.Model(json);
+                        survey.data = data_object;
+                        survey.onComplete.add(function (sender, options) {
+                            show(sender.data);
+                        });
+                        survey.doComplete();
 
+                        document.getElementById('display_result_id').innerHTML = input;
 
-                } else {
-                    document.getElementById('loadResult_message').innerText = "Es konnten keine entsprechenden Daten geladen werden."
-                }
+                        resolve();
+
+                    } else {
+                        reject("Es konnten keine entsprechenden Daten geladen werden.");
+                    }
+                };
             };
-        };
 
-    } else {
-        document.getElementById('loadResult_message').innerText = "Es müssen genau 12 Zeichen sein.";
-    }
+        } else {
+            reject("Es müssen genau 12 Zeichen sein.");
+        }
+
+    }))
+
 }
 
-// function showDashboard() {
-//     $("#dashboard-aaer").css("display", "block");
-//     $("#ergebnisse_container").css("display", "block");
-//     $(".front-background").css("display", "none");
-//     $("#surveyElementContainer").css("display", "none");
-//     $("#carouselExampleSlidesOnly").css("display", "none");
-// }
+function loadSet() {
+    let input = document.getElementById('load_set').value;
+    console.log(input)
 
-// Start: Funktionen zur Darstellung der Diagramme
+    return new Promise( ((resolve, reject) => {
+        if (input.length === 10) {
+            resolve();
+        } else {
+            reject("Es müssen genau 10 Zeichen sein.");
+        }
+    }))
 
-function generateCharts() {
-    overallChart();
-    grp1Chart();
-    grp2Chart();
-    grp3Chart();
-    grp4Chart();
-    grp5Chart();
-    grp6Chart();
-    grp7Chart();
-    grp8Chart();
 }
+
 
 function loadSurveyData() {
     let input = document.getElementById('toLoadSurvey').value;
@@ -660,7 +631,6 @@ function loadSurveyData() {
                         window.survey = new Survey.Model(json);
 
                         survey.onComplete.add(function (sender, options) {
-                            console.log("TEST");
                             if (new_result) {
                                 save(sender.data);
                             }
@@ -770,9 +740,6 @@ function saveSurvey() {
     }
 
     console.log(survey_data);
-
-
-
     document.getElementById('survey_saved').innerText = "1234567890";
 
 }
@@ -843,6 +810,18 @@ function toLastPage() {
     console.log(survey.pages);
     console.log(survey.pages.length);
     survey.currentPage = survey.pages[30];
+}
+
+function generateCharts() {
+    overallChart();
+    grp1Chart();
+    grp2Chart();
+    grp3Chart();
+    grp4Chart();
+    grp5Chart();
+    grp6Chart();
+    grp7Chart();
+    grp8Chart();
 }
 
 // Ende: Radio Buttons Presets
