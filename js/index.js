@@ -762,7 +762,7 @@ function saveNewGroup() {
         }
 
         console.log(survey_data)
-
+        resolve();
     }))
 
 }

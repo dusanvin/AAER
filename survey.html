@@ -74,6 +74,7 @@
 				WILLKOMMEN: "#display_willkommen",
 				START: "#display_start",
 				ANLEGEN: "#display_anlegen",
+				ANLEGEN_NEXT: "#display_anlegen_next",
 				AUSWERTEN: "#display_auswerten",
 				THANKS: "#display_thanks",
 				OVERALL: "#display_overallChart",
@@ -675,6 +676,71 @@
 					</div>
 
 					<!-- Ende: ANLEGEN -->
+
+					<!-- Start: ANLEGEN_NEXT -->
+
+					<div class="container-fluid" id="display_anlegen_next">
+
+						<!-- Beginn Container _ANLEGEN_NEXT -->
+
+						<div class="container-fluid">
+
+							<!-- Row _ANLEGEN_NEXT Start -->
+
+							<div class="row justify-content-center">
+
+								<!-- Col _ANLEGEN_NEXT Start -->
+
+								<div class="col">
+
+									<!-- Canvas _ANLEGEN_NEXT Start -->
+
+									<div>
+
+										<div class="text-left">
+
+											<div class="container-fluid grey-border mt-3">
+
+												<div class="row pt-4 bg-white">
+
+													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+														<p class="mt-5">Ihr Gruppe wurde erfolgreich angelegt. Sie können direkt fortfahren und eine Umfrage dazu ausfüllen.</p>
+
+														<div class="mt-3">
+															<div id="anlegen_next_message" style="color: green;"></div>
+															<button class="btn btn-green ml-1 mr-1" onclick="beginNewGroupSurvey();">Umfrage auswerten</button>
+														</div>
+														
+													</div>
+
+
+
+												</div>
+
+											</div>
+
+
+										</div>
+
+									</div>
+
+									<!-- Canvas _ANLEGEN_NEXT Ende -->
+
+								</div>
+
+								<!-- Col _ANLEGEN_NEXT Ende -->
+
+							</div>
+
+							<!-- Row _ANLEGEN_NEXT Ende -->
+
+						</div>
+
+						<!-- Ende Container _ANLEGEN_NEXT -->
+
+					</div>
+
+					<!-- Ende: ANLEGEN_NEXT -->
 
 					<!-- Start: AUSWERTEN -->
 
@@ -1758,7 +1824,6 @@
 			function evaluateResult() {
 				loadResult().then( () => {
 					displayController(DISPLAY.OVERALL);
-
 				})
 				.catch( err => {
 					document.getElementById('evaluateResult_message').innerText = err;
@@ -1767,11 +1832,20 @@
 
 			function newGroup() {
 				saveNewGroup().then( () => {
-
+					displayController(DISPLAY.ANLEGEN_NEXT);
 				})
 				.catch( err => {
 					document.getElementById('newGroup_message').innerText = err;
 				})
+			}
+
+			function beginNewGroupSurvey() {
+				group_id = document.getElementById('anlegen_next_message').value;
+				console.log(group_id);
+				document.getElementById('toLoadSurvey').value = group_id;
+				checkvalue = document.getElementById('toLoadSurvey').value;
+				console.log(checkvalue);
+				//loadSurvey();
 			}
 
 
