@@ -1727,12 +1727,19 @@
 			}
 
 			function loadSurvey() {
-				loadSurveyData();
+				loadSurveyData().then( () => {
+					$( ".sv_complete_btn" ).click(function() {
+						displayController(DISPLAY.THANKS);
+					});
+				});
 				displayController(DISPLAY.UMFRAGE);
 			}
 
 			function newSurvey() {
 				newSurveyData();
+				$( ".sv_complete_btn" ).click(function() {
+					displayController(DISPLAY.THANKS);
+				});
 				displayController(DISPLAY.UMFRAGE);
 			}
 
@@ -1752,7 +1759,7 @@
 		displayController(DISPLAY.WILLKOMMEN);
 
 		$( ".sv_complete_btn" ).click(function() {
-			displayController(DISPLAY.OVERALL);
+			displayController(DISPLAY.THANKS);
 		});
 
 	  </script>
@@ -1764,7 +1771,8 @@
 
 	<!-- Start: Canvas-Elemente für PDF -->
 
-	<button onclick="setSurveyData()">SETZE DATEN</button>
+	<button onclick="setSurveyData()">NUR DATEN SETZEN</button>
+	<button onclick="toLastPage()">DATEN SETZEN UND ZUR LETZTEN SEITE</button>
 
 	<canvas id="canvasALL" style="width: 517px; height: 624px;"></canvas>
 	<canvas id="canvas1" style="width: 324px; height: 200px;"></canvas>

@@ -651,65 +651,75 @@ function loadSurveyData() {
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify({"id": input}));
 
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                let db_data = this.responseText;
-                if (db_data.length > 0) {
-                    window.survey = new Survey.Model(json);
+        return new Promise( (resolve => {
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let db_data = this.responseText;
+                    if (db_data.length > 0) {
+                        window.survey = new Survey.Model(json);
 
-                    survey.onComplete.add(function (sender, options) {
-                        console.log("TEST");
-                        if (new_result) {
-                            save(sender.data);
-                        }
-                        show(sender.data);
-                    });
+                        survey.onComplete.add(function (sender, options) {
+                            console.log("TEST");
+                            if (new_result) {
+                                save(sender.data);
+                            }
+                            show(sender.data);
+                        });
 
-                    console.log(db_data);
-                    data = JSON.parse(db_data);
+                        console.log(db_data);
+                        data = JSON.parse(db_data);
 
-                    data_object = {
-                        "Name": data._pre_tname,
-                        "Verlinkung": data._pre_link,
-                        "Fach": data.fk_pre_subject,
-                        "Schulart": data.fk_pre_institution
-                    };
+                        data_object = {
+                            "Name": data._pre_tname,
+                            "Verlinkung": data._pre_link,
+                            "Fach": data.fk_pre_subject,
+                            "Schulart": data.fk_pre_institution
+                        };
 
-                    all_questions = survey.getAllQuestions();
-                    all_questions[0].readOnly = true;
+                        all_questions = survey.getAllQuestions();
+                        all_questions[0].readOnly = true;
 
-                    if (data_object.Verlinkung != null) {
-                        all_questions[1].readOnly = true;
-                    };
+                        if (data_object.Verlinkung != null) {
+                            all_questions[1].readOnly = true;
+                        };
 
-                    if (data_object.Fach != null) {
-                        all_questions[2].readOnly = true;
-                    };
+                        if (data_object.Fach != null) {
+                            all_questions[2].readOnly = true;
+                        };
 
-                    if (data_object.Schulart != null) {
-                        all_questions[3].readOnly = true;
-                    };
+                        if (data_object.Schulart != null) {
+                            all_questions[3].readOnly = true;
+                        };
 
-                    console.log(data_object);
+                        console.log(data_object);
 
-                    survey.data = data_object;
+                        survey.data = data_object;
 
-                    $("#surveyElement").Survey({model: survey});
+                        $("#surveyElement").Survey({model: survey});
 
 
-                    pre_survey = true;
-                    pre_survey_id = input;
+                        pre_survey = true;
+                        pre_survey_id = input;
 
-                } else {
-                    document.getElementById('survey_start_message').innerHTML = `Zum angegebenen Code ${input} wurde nichts gefunden!`;
+                        resolve();
+
+                    } else {
+                        document.getElementById('survey_start_message').innerHTML = `Zum angegebenen Code ${input} wurde nichts gefunden!`;
+                    }
                 }
             }
-        }
+
+
+
+        }))
+
     } else {
         console.log("Es müssen genau 10 Zeichen sein.")
         document.getElementById('survey_start_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!"
     }
 }
+
+
 
 function newSurveyData() {
     window.survey = new Survey.Model(json);
@@ -827,6 +837,13 @@ function setSurveyData() {
         "Eigene Anmerkungen": "Super!"
     };
 
+}
+
+function toLastPage() {
+    setSurveyData();
+    console.log(survey.pages);
+    console.log(survey.pages.length);
+    survey.currentPage = survey.pages[30];
 }
 
 // Ende: Radio Buttons Presets
