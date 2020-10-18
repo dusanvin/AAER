@@ -482,7 +482,7 @@ var pre_survey_id = "";
 // saves data of a survey to db and return result_id
 function save(result) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/result");
+    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/save");
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -761,8 +761,19 @@ function saveNewGroup() {
             "_pre_institution": input_institute
         }
 
-        console.log(survey_data)
-        resolve("1234567890");
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/saveSurvey");
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("db: " + this.responseText);
+                resolve(this.responseText);
+            }
+        }
+
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(survey_data));
+
     }))
 
 }
