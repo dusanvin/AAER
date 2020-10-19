@@ -488,6 +488,10 @@ function saveResult(data) {
         };
     }
 
+    console.log("predefined boolean: " )
+    console.log(predefined)
+    console.log(predefined_id)
+
     if(predefined) {
         data.predefined_id = predefined_id;
         predefined = false;
