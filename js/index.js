@@ -520,7 +520,7 @@ function show(result) {
 
 // Wird über einen Button aufgerufen und lädt Daten aus der DB
 function loadResult() {
-    let input = document.getElementById('toLoad12').value;
+    let input = document.getElementById('loadResult').value;
     console.log(input)
     return new Promise( ((resolve, reject) => {
         if (input.length === 12) {
