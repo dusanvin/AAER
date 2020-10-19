@@ -473,14 +473,14 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
     ]
 };
 
-var pre_survey = false;
-var pre_survey_id = "";
+var predefined = false;
+var predefined_id = "";
 
 
 // saves data of a survey to db and return result_id
-function save(result) {
+function saveResult(data) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/save");
+    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/saveResult");
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -488,13 +488,13 @@ function save(result) {
         };
     }
 
-    if(pre_survey) {
-        result.preset_id = pre_survey_id;
-        pre_survey = false;
+    if(predefined) {
+        data.predefined_id = predefined_id;
+        predefined = false;
     }
 
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(result));
+    xhr.send(JSON.stringify(data));
 }
 
 function show(result) {
@@ -526,14 +526,14 @@ function loadResult() {
         if (input.length === 12) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/load");
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResult");
 
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     db_data = this.responseText;
                     if (db_data.length > 0) {
-                        data = JSON.parse(db_data);
-                        data_object = {
+                        let data = JSON.parse(db_data);
+                        let data_object = {
                             "id": data.result_id,
                             "Name": data._tool_name,
                             "Verlinkung": data._link,
@@ -563,8 +563,8 @@ function loadResult() {
                             "Multiple Lösungswege": data._62,
                             "Didaktisches Konzept": data._70,
                             "Rahmenbedingungen": data._71,
-                            "Fach": data.fk_subject,
-                            "Schulart": data.fk_institution,
+                            "Fach": data.subject_id,
+                            "Schulart": data.institution_id,
                             "Eigene Anmerkungen": data._comment
                         };
                         console.log(data_object);
@@ -588,7 +588,7 @@ function loadResult() {
             };
 
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"id": input}));
+            xhr.send(JSON.stringify({"result_id": input}));
 
         } else {
             reject("Es müssen genau 12 Zeichen sein.");
@@ -598,14 +598,14 @@ function loadResult() {
 
 }
 
-function loadSet() {
-    let input = document.getElementById('load_set').value;
+function loadResultSet() {
+    let input = document.getElementById('loadResultSet').value;
 
     return new Promise( ((resolve, reject) => {
         if (input.length === 10) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSet");
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResultSet");
 
             xhr.onreadystatechange = function() {
 
@@ -623,7 +623,7 @@ function loadSet() {
             }
 
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"id": input}));
+            xhr.send(JSON.stringify({"predefined_id": input}));
 
         } else {
             reject("Es müssen genau 10 Zeichen sein.");
@@ -633,15 +633,15 @@ function loadSet() {
 }
 
 
-function loadSurveyData() {
-    let input = document.getElementById('toLoadSurvey').value;
+function loadPredefined() {
+    let input = document.getElementById('loadPredefined').value;
 
     return new Promise( (resolve, reject) => {
         if (input.length === 10) {
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadSurvey");
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"id": input}));
+            xhr.send(JSON.stringify({"predefined_id": input}));
 
 
             xhr.onreadystatechange = function () {
@@ -661,8 +661,8 @@ function loadSurveyData() {
                         data_object = {
                             "Name": data._pre_tname,
                             "Verlinkung": data._pre_link,
-                            "Fach": data.fk_pre_subject,
-                            "Schulart": data.fk_pre_institution
+                            "Fach": data.subject_id,
+                            "Schulart": data.institution_id
                         };
 
                         all_questions = survey.getAllQuestions();
@@ -687,8 +687,8 @@ function loadSurveyData() {
                         $("#surveyElement").Survey({model: survey});
 
 
-                        pre_survey = true;
-                        pre_survey_id = input;
+                        predefined = true;
+                        predefined_id = input;
 
                         resolve();
 
@@ -721,7 +721,7 @@ function newSurveyData() {
     $("#surveyElement").Survey({model: survey});
 }
 
-function saveNewGroup() {
+function savePredefined() {
     return new Promise( ((resolve, reject) => {
 
         let input_tname = document.getElementById('survey_tname').value;
@@ -747,15 +747,15 @@ function saveNewGroup() {
         }
 
         //value_link = document.querySelector('input[name="answer_link"]:checked').value;
-        survey_data = {
+        let predefined_data = {
             "_pre_tname": input_tname,
             "_pre_link": input_link,
-            "_pre_subject": input_subject,
-            "_pre_institution": input_institute
+            "subject_id": input_subject,
+            "institution_id": input_institute
         }
 
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/saveSurvey");
+        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/savePredefined");
 
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -765,7 +765,7 @@ function saveNewGroup() {
         }
 
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(survey_data));
+        xhr.send(JSON.stringify(predefined_data));
 
     }))
 
