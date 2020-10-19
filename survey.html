@@ -440,7 +440,7 @@
 															<button class="btn btn-green ml-1 mr-1" onclick="startPredefined();">teilnehmen</button>
 															<br>
 
-															<div id="survey_start_message" style="color: red;"></div>
+															<div id="teilnehmen_message" style="color: red;"></div>
 
 														</div>
 
@@ -600,10 +600,10 @@
 															</select>
 															<br>
 															<br>
-															<button class="btn btn-green ml-1 mr-1" onclick="newGroup();">Befragung erstellen</button>
+															<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Befragung erstellen</button>
 
 															<br>
-															<div id="newGroup_message" style="color: red;"></div>
+															<div id="newPredefined_message" style="color: red;"></div>
 
 															<script>
 																$("#survey_create").css("display", "none");
@@ -783,7 +783,7 @@
 															<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="loadResultSet" placeholder="10-stelliger-Code" style="width:10.5em;">
 															<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Umfrage auswerten</button>
 
-															<div id="evaluateSet_message" style="color: red;"></div>
+															<div id="evaluateResultSet_message" style="color: red;"></div>
 
 														</div>
 
@@ -1796,6 +1796,7 @@
 					display_Link();
 					display_Date();
 				}
+				clearErrorMessages();
 			}
 
 			function startPredefined() {
@@ -1806,7 +1807,7 @@
 					displayController(DISPLAY.UMFRAGE);
 				})
 				.catch( err => {
-					document.getElementById('survey_start_message').innerHTML = err;
+					document.getElementById('teilnehmen_message').innerHTML = err;
 				});
 			}
 
@@ -1823,7 +1824,7 @@
 					displayController(DISPLAY.OVERALL);
 				})
 				.catch( err => {
-					document.getElementById('evaluateSet_message').innerText = err;
+					document.getElementById('evaluateResultSet_message').innerText = err;
 				})
 			}
 
@@ -1836,22 +1837,26 @@
 				})
 			}
 
-			function newGroup() {
+			function newPredefined() {
 				savePredefined().then( (predefined_id) => {
 					document.getElementById('anlegen_next_message').innerText = predefined_id;
 					document.getElementById('loadPredefined').value = predefined_id;
-					val = document.getElementById('loadPredefined').value;
-					console.log(val)
-					console.log(val.length)
 					displayController(DISPLAY.ANLEGEN_NEXT);
 				})
 				.catch( err => {
-					document.getElementById('newGroup_message').innerText = err;
+					document.getElementById('newPredefined_message').innerText = err;
 				})
 			}
 
 			function startNewPredefined() {
 				startPredefined();
+			}
+
+			function clearErrorMessages() {
+				document.getElementById('teilnehmen_message').innerHTML = null;
+				document.getElementById('evaluateResultSet_message').innerText = null;
+				document.getElementById('evaluateResult_message').innerText = null;
+				document.getElementById('newPredefined_message').innerText = null;
 			}
 
 
