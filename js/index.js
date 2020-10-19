@@ -731,45 +731,46 @@ function savePredefined() {
         let input_tname = document.getElementById('survey_tname').value;
         if (!input_tname.replace(/\s/g, '').length) { // only whitespaces
             reject("Bitte Name des Lehr-/Lernmittels eingeben!");
-        }
-
-        let input_link = document.getElementById('survey_link').value;
-        if (!input_link.replace(/\s/g, '').length) {
-            input_link = null;
-        }
-
-        let input_subject = document.getElementById('survey_subject').value;
-        if (input_subject.length == 0) {
-            console.log("Kein Fach wird vorausgesetzt.");
-            input_subject = null;
-        }
-
-        let input_institute = document.getElementById('survey_institution').value;
-        if (input_institute.length == 0) {
-            console.log("Keine Schulart wird vorausgesetzt.")
-            input_institute = null;
-        }
-
-        //value_link = document.querySelector('input[name="answer_link"]:checked').value;
-        let predefined_data = {
-            "_pre_tname": input_tname,
-            "_pre_link": input_link,
-            "subject_id": input_subject,
-            "institution_id": input_institute
-        }
-
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/savePredefined");
-
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("db: " + this.responseText);
-                resolve(this.responseText);
+        } else {
+            let input_link = document.getElementById('survey_link').value;
+            if (!input_link.replace(/\s/g, '').length) {
+                input_link = null;
             }
-        }
 
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(predefined_data));
+            let input_subject = document.getElementById('survey_subject').value;
+            if (input_subject.length == 0) {
+                console.log("Kein Fach wird vorausgesetzt.");
+                input_subject = null;
+            }
+
+            let input_institute = document.getElementById('survey_institution').value;
+            if (input_institute.length == 0) {
+                console.log("Keine Schulart wird vorausgesetzt.")
+                input_institute = null;
+            }
+
+            //value_link = document.querySelector('input[name="answer_link"]:checked').value;
+            let predefined_data = {
+                "_pre_tname": input_tname,
+                "_pre_link": input_link,
+                "subject_id": input_subject,
+                "institution_id": input_institute
+            }
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/savePredefined");
+
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("db: " + this.responseText);
+                    resolve(this.responseText);
+                }
+            }
+
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(predefined_data));
+
+        }
 
     }))
 
