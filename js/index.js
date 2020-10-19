@@ -473,8 +473,6 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
     ]
 };
 
-var new_result = true;
-
 var pre_survey = false;
 var pre_survey_id = "";
 
@@ -653,9 +651,7 @@ function loadSurveyData() {
                         window.survey = new Survey.Model(json);
 
                         survey.onComplete.add(function (sender, options) {
-                            if (new_result) {
-                                save(sender.data);
-                            }
+                            save(sender.data);
                             show(sender.data);
                         });
 
@@ -716,10 +712,7 @@ function newSurveyData() {
     window.survey = new Survey.Model(json);
 
     survey.onComplete.add(function (sender, options) {
-        console.log("new Survey");
-        if (new_result) {
-            save(sender.data);
-        }
+        save(sender.data);
         show(sender.data);
     });
 
