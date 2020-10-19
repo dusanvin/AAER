@@ -651,7 +651,7 @@ function loadPredefined() {
                         window.survey = new Survey.Model(json);
 
                         survey.onComplete.add(function (sender, options) {
-                            save(sender.data);
+                            saveResult(sender.data);
                             show(sender.data);
                         });
 
@@ -712,7 +712,7 @@ function newSurveyData() {
     window.survey = new Survey.Model(json);
 
     survey.onComplete.add(function (sender, options) {
-        save(sender.data);
+        saveResult(sender.data);
         show(sender.data);
     });
 

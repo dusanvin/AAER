@@ -1839,7 +1839,7 @@
 			function newGroup() {
 				savePredefined().then( (predefined_id) => {
 					document.getElementById('anlegen_next_message').innerText = predefined_id;
-					document.getElementById('toLoadSurvey').value = predefined_id;
+					document.getElementById('loadPredefined').value = predefined_id;
 					val = document.getElementById('loadPredefined').value;
 					console.log(val)
 					console.log(val.length)
