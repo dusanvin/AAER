@@ -141,7 +141,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Transparenz", title: "Transparenz", description: "'Transparenz' bedeutet in diesem Zusammenhang, inwieweit für die nutzende Person eines Lehr-Lernmittels klar ersichtlich ist, von wem dieses Lehr-Lernmittel stammt, so dass eine (kritische) Bewertung und Einordnung erfolgen kann. Dafür ist es wichtig, dass im Lehr-Lernmittel selbstbezogene Informationen bereitstellt werden. Dazu gehört z.B., wer es entwickelt und verbreitet (Autor*innen, Herausgeber*innen und Fördernde – Personen und Zugehörigkeit zu bestimmten Organisationen), woher möglicherweise Gelder stammen, die zur Entwicklung des Lehr-Lernmittels genutzt wurden und woher die Informationen stammen, die im Lehr-Lernmittel enthalten sind (Quellen). Wichtige Informationen für die Lehrkraft sind in diesem Zusammenhang auch Aussagen über die Ziele, die mit diesem Angebot verfolgt werden bzw. Antworten auf die Frage, warum dieses Lehr-Lernmittel angeboten wird (Motivation).",
@@ -155,7 +155,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es werden Autor*innen und Anbieter sowie deren organisationale/institutionelle Zugehörigkeit genannt. Finanzierungsquellen werden offengelegt. Zusammenhänge (z.B. bei mehreren Anbietern oder beteiligten Organisationen) sind für die Lehrkraft nachvollziehbar. Außerdem werden Ziele des Lehr-Lernmittels und die Gründe für das Angebot (d.h. also eine Erklärung, warum dieses Lehr-Lernmittel angeboten wird) genannt.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Werbliche Elemente", title: "Werbliche Elemente", description: "Zur Frage steht hier, inwiefern und in welchem Ausmaß in Lehr-Lernmitteln werbliche Elemente dargestellt werden. Dies muss unter dem Aspekt, dass in vielen Bundesländern Werbung im Unterricht entweder verboten oder zumindest sehr kritisch betrachtet wird und mit bestimmten Auflagen versehen ist, problematisiert werden. Werbliche Elemente im Zusammenhang mit Lehr-Lernmitteln können sein: Logos, Produktabbildungen, Nennung von Marken u.ä., die nicht Gegenstand des Unterrichts sind (d.h., die nicht unter fachlicher oder medienpädagogischer Perspektive thematisiert werden).",
@@ -169,7 +169,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind keine der oben genannten Elemente im Lehr-Lernmittel enthalten. Höchstens eine direkt auf den Anbieter des Lehr-Lernmittels bezogene Namensnennung (Quelle) oder das Logo des Anbieters ist enthalten - jedoch sollte dieses nicht in visuell dominanter Weise präsentiert werden.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Heterogenität/Gender", title: "Heterogenität/Gender", description: "Lehr-Lernmittel enthalten direkt oder indirekt (z.B. über visuelle Darstellungen, Bilder, Grafiken oder auch im Rahmen von Textteilen) Repräsentationen/Darstellungen einer sozialen und gesellschaftlichen Umwelt, die sie jedoch auch gleichzeitig aufgrund dieser Darstellung für das Verständnis der SuS wiederum beeinflusst und 'erzeugt'. In einer pluralistisch verfassten, demokratischen Gesellschaft erscheint es wichtig, dass einseitige Zuschreibungen/Festlegungen auf gesellschaftliche bzw. ethnische Gruppen oder Minderheiten, auf Menschen mit Beeinträchtigungen sowie auf Geschlecht oder Religion vermieden werden. Darüber hinaus erscheint es als wichtig, dass eine kulturelle Vielfalt, wie sie unter den SuS herrscht, auch in Lehr-Lernmitteln repräsentiert wird.",
@@ -183,7 +183,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n In Abbildungen, Fotos und textlichen Beschreibungen, in den gesellschaftliche Gruppen vorkommen, werden diese nicht vereinseitigend dargestellt (etwa indem eine bestimmte gesellschaftliche Gruppe bestimmten Tätigkeiten, Meinungen und Verhaltensweisen vereinfachend zugeordnet wird). Für die Kategorie Geschlecht gilt, dass eine ausgewogene, sozusagen gleichberechtigte Darstellung von weiblichen und männlichen Personen enthalten ist, in der ebenfalls vereinseitigende Zuordnungen vermieden bzw. möglicherweise sogar bewusst aufgebrochen werden. In ähnlicher Weise erfolgt die Darstellung unterschiedlicher gesellschaftlicher Gruppen, Ethnien und Menschen mit Beeinträchtigungen - dies unter anderem auch deshalb, um der Heterogenität der SuS in diesem Bereich Rechnung zu tragen und entsprechende Identifikationsangebote zu bieten.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Handlungsorientierung", title: "Handlungsorientierung", description: "Das Konzept der 'Handlungsorientierung' zielt auf die aktive Erschließung von Wissen und Kompetenzen durch die SuS ab. Dabei ist es in einen bildungstheoretischen Rahmen eingeordnet, der übergeordnete Bildungsziele der Selbst- und Mitbestimmungsfähigkeit (Klafki) als wichtige Normen für die übergeordneten Ziele von Unterricht anerkennt. Ein Handlungsorientierter Unterricht zeichnet sich unter anderem dadurch aus, dass SuS aktiv tätig werden und eigene Arbeits bzw. Denkergebnisse produzieren. Das kann im Rahmen von individuellen Aufgabenstellungen geschehen, es bieten sich dazu jedoch auch vielfältige Formen gruppenorientierten entdeckenden Lernens (Kooperation, Kollaboration) an. So interpretiert impliziert 'Handlungsorientierung' auch Eigenverantwortlichkeit und damit die Möglichkeit bzw. Notwendigkeit, mit eigenen Entscheidungen den Lern- bzw. Bildungsprozess zu beeinflussen/zu gestalten.",
@@ -197,7 +197,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im bzw. durch das Lehr-Lernmittel werden die SuS weitreichend zu aktiven Gestaltenden ihres eigenen Lernprozesses bzw. der Anwendung von Wissen, Fertigkeiten und Kompetenzen. Das zeigt sich u.U. auch darin, dass individuell oder auch in Gruppen echte Entscheidungen über Lernwege oder die Anwendung von Wissen, Fertigkeiten und Kompetenzen getroffen werden, was wiederum Wahlmöglichkeiten auf Seiten der SuS voraussetzt.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Lebensweltlichkeit", title: "Lebensweltlichkeit", description: "Hier geht es um die Frage, inwiefern das Lehr-Lernmittel Bezüge zur Lebenswelt der Schülerinnen und Schüler aufweist. Das geschieht z.B. dadurch, dass es zentrale und authentische Problemstellungen zur Grundlage hat, die unter gesellschaftlich-politischer oder unter individueller bzw. gruppenspezifischer (Klassengruppe, PeerGroup) Perspektive für die Schülerinnen und Schüler relevant sind. Dazu kann auch gehören, dass das Lehr-Lernmittel bewusst den emotionalen Aspekt dieser Lebenswelt thematisiert.",
@@ -211,7 +211,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel weist nicht nur allgemeine Bezüge zur Lebenswelt der Schülerinnen und Schüler auf, sondern diese werden konkretisiert, indem z.B. reale Elemente/Materialien/Aussagen aus der aktuellen Zeitgeschichte aufgegriffen werden, die eine (emotionale) Nähe zu den Schülerinnen und Schülern aufweisen (z.B. aus Zeitschriften, Webseiten sowie konkrete Ereignisse, Bezüge zu Fragen der Identitätsentwicklung, der Lebensgestaltung, Freizeit oder Beruf etc.).",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 } //übernimmt wert von 6 # erledigt
             ]
         }, {name:"Reflexion/Urteilsfähigkeit", title: "Reflexion/Urteilsfähigkeit", description: "Übergeordnete pädagogische Bildungsziele wie Mündigkeit, Selbst-, Mitbestimmungs- und Solidaritätsfähigkeit (Klafki) verlangen, dass SuS im Hinblick auf fachliche Themen aber auch auf ihre nahe und weite Umwelt sowie Lebenswelt als verantwortliche, urteilende Menschen angesprochen werden. Dazu gehört auch ein Maß an Selbstreflexion, d.h. dass SuS auch sich selbst, die eigene Situation, die Situation der Gruppe und ihre politische, soziale bzw. gesellschaftliche Position zum Gegenstand des Denkens machen (Metakognition, Reflexion).",
@@ -225,7 +225,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel fördert die Bildung einer eigenen begründeten Meinung bzw. die argumentative Äußerung dieser Meinung. Die SuS werden z.B. explizit aufgefordert, auf der Basis ihres fachlichen Wissens und der Ihnen zur Verfügung stehenden Informationen, ein Urteil als Antwort auf eine bestimmte Fragestellung zu fällen. Dabei kann auch eine gewissermaßen überfachliche Dimension eine Rolle spielen, indem z.B. fachliche Themen in ihren gesellschaftlichen, politischen oder sozialen Bezügen eingebettet und zum Gegenstand gemacht werden.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Multiperspektivität/Kontroversität", title: "Multiperspektivität/Kontroversität", description: "Lehr-Lernmittel referenzieren als direkten Unterrichtsgegenstand oder auch als begleitendes Nebenthema immer wieder Themen, die innerhalb der Gesellschaft (oder auch in der Fachwissenschaft) multiperspektivisch oder auch kontrovers diskutiert werden. Es ist ein zentrales Anliegen eines pädagogisch verantworteten Unterrichtens, dass Lernende in solchen Themen nicht durch Unterricht und Lehrmittel bereits einseitig für eine mögliche Position/Meinung vereinnahmt werden, sondern dass sie auf Basis von Fakten sowie unterschiedlichen Argumenten zu einer eigenen Meinungsbildung hingeführt bzw. ermächtigt werden. Dies gilt vorbehaltlich einer altersgemäßen Komplexitätsreduktion bzw. Elementarisierung durch die Autor*innen des Lehr-Lernmittels. Insofern sind die Entwickler*innen gefordert, nicht nur eine einseitige Darstellung von Themen/Sachverhalten in Lehr-Lernmitteln zu vermeiden, sondern auch sensibel für plurale Sichtweisen zu sein und, wo vorhanden, auch die Kontroversität, die möglicherweise in Fachwissenschaft und Gesellschaft vorzufinden ist, den Lernenden nicht vorzuenthalten.",
@@ -239,7 +239,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die im Lehr-Lernmittel dargestellten Themen, seien es zentrale oder begleitende, lassen in der Art der Darstellung für die Lernenden erkennen, dass es für ihre Bewertung unterschiedliche Positionen, Meinungen, Sichtweisen oder Argumente gibt. Es werden nicht nur einseitige Aussagen, Wertungen oder Formulierungen vermieden, die den Anschein der Alternativlosigkeit vermitteln, sondern die Lernenden werden durch das Lehr-Lernmittel für das Bestehen unterschiedlicher, kontroverser Sichtweisen sensibilisiert. Zudem wird durch die Präsentation der Themen/der Inhalte sowie durch die Art der sprachlichen Vermittlung eine Offenheit für eine eigene Meinungsbildung/Bewertung gewährleistet.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Methodenpluralität", title: "Methodenpluralität", description: "Methoden sind 'Lern- und Arbeitstechniken zum selbständigen und sachgerechten Erkennen, Entdecken, Experimentieren, Bearbeiten, Konstruieren, Gestalten, Präsentieren, Kommunizieren und Kontrollieren' (Wiater). Klippert unterscheidet Methoden der Informationsbeschaffung (Lesen, Nachschlagen, Befragen, etc.), der Informationsverarbeitung und Aufbereitung (Strukturieren, Visualisieren, Gestalten, etc.), Methoden der Arbeits-, Zeit- und Lernplanung und Methoden, die das Nachdenken über das eigene Lernen fördern (Klippert). Einzelne Methoden können in Lehr-Lernmitteln bewusst eingesetzt werden, um die beabsichtigten Lernprozesse und Aktivitäten zu unterstützen. Sie können auch direkt thematisiert, in ihrer Bedeutung erläutert und gezielt eingeübt werden, um ihre Effektivität zu erhöhen (Förderung von Methodenkompetenz). Methoden erfüllen dabei keinen Selbstzweck, sondern haben eine Funktion innerhalb der übergeordneten Ziele des Lern-prozesses (inkl. allgemeiner und überfachlicher Entwicklungsziele der SuS). ",
@@ -253,7 +253,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden (unterschiedliche) Methoden gezielt eingesetzt, um bestimmte Aufgaben oder Sequenzen zu unterstützen. Diese Methoden zielen auf die Tätigkeit der SuS ab. Dabei geht es nicht darum, möglichst viele unterschiedliche Methoden einzusetzen (Selbstzeck), sondern nach Möglichkeit solche, die die angestrebten Ziele, Fertigkeiten und Kompetenzen didaktisch unterstützen. Hilfreich ist es, wenn der Sinn oder die Zielsetzung der eingesetzten Methoden genannt wird oder in Bezug auf ihre damit verbundene Zielsetzung transparent ist.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 } // übernimmt den wert von 8 # erledigt
             ]
         }, {name:"Multimedia/Multimodalität", title: "Multimedia/Multimodalität", description: "Medien können ein eindrückliches Mittel sein, Sachverhalte zu veranschaulichen, Informationen didaktisch aufzubereiten, verständlich zu präsentieren und Anknüpfungen an die Lebenswelt von Jugendlichen zu schaffen. Lehr-Lernmittel können Medien nutzen um Lernende auf unterschiedlichen Wegen anzusprechen und ihren Lerninhalt abgestimmt auf die damit verbundenen Lernziele zu vermitteln. Dies kann besonders effektiv gelingen, wenn in Lehr-Lernmitteln unterschiedliche 'Kanäle' oder Medienformate kombiniert werden, um so mehrere sensorische Kanäle der Lernenden anzusprechen (Multimodalität). Sie können dabei auch Wahlmöglichkeiten bieten, welche Medienarten für spezifische Schritte des Lernprozesses genutzt werden können.",
@@ -267,7 +267,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Wesentliche Inhalte des Lehr-Lernprozesses, der durch das Lehr-Lernmittel angestrebt wird, werden medial aufbereitet vermittelt bzw. machen mediale Darstellungen zum Gegenstand des Lernhandelns für die SuS. Unterschiedliche Medienarten bzw. 'Kanäle' (z.B. auditive, audiovisuelle, annotierte oder symbolische Illustrationen/Videos, interaktive Webelemente, etc.) werden genutzt und in sinnvoller Weise kombiniert, um den Lernprozess zu fördern. Dies kann auch so umgesetzt werden, dass Wahlmöglichkeiten je nach individueller Präferenz für unterschiedliche Medienarten auf Seiten der Lernenden bestehen.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Medienkompetenz", title: "Medienkompetenz", description: "Medien sind Teil der kulturellen und sozialen Umwelt von SuS sowie wesentlicher Träger der Informations- und Wissensgesellschaft, in der wir leben. Sie sind daher gleichermaßen ein notwendiges Lehr-Lernfeld und auch ein didaktisches Mittel, um Lehr-Lernprozesse zu unterstützen (Mittlerfunktion). Durch sie kann man auf besonders eindrückliche Weise Sachverhalte veranschaulichen, Informationen didaktisch aufbereiten und verständlich präsentieren und Anknüpfungen an die Lebenswelt von Kindern und Jugendlichen schaffen. Es ist wichtig, die kompetente Nutzung sowie die kritische Reflexion von Medien als Kommunikationsmittel und 'Mittler von Welt' zu fördern und zu trainieren. Medienkompetenz lässt sich in diesem Sinn verstehen als Vermögen (Fähigkeit) und Bereitschaft in Medienzusammenhängen zu handeln, über diese zu kommunizieren und kritisch zu reflektieren.",
@@ -281,7 +281,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die Lernenden sind nicht nur passive Rezipienten medialer Inhalte, sondern setzen sich aktiv und reflexiv mit Mediendarstellung und/oder Kommunikation auseinander. Sie arbeiten, lernen und machen Lernfortschritte unter Nutzung von Medien. Und - wo möglich - erstellen sie sogar eigene Medieninhalte oder werden herausgefordert mediale Repräsentationen kritisch und reflexiv zu hinterfragen, um Medienkompetenz zu fördern.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Differenzierung", title: "Differenzierung", description: "Eine besondere Herausforderung für die Gestaltung von Unterricht stellt die Anpassung an eine heterogene Schülerschaft dar. Dazu können Lehr-Lernmittel einen wichtigen Beitrag leisten, indem sie sozusagen 'Variationen' ihrer selbst anbieten (Parallelisierung von Unterricht). Diese können z.B. über die Bereitstellung unterschiedlicher Anwendungsgebiete und Lernziele (auch mit unterschiedlichen Schwierigkeitsgraden) und darauf abgestimmter Arbeitsschritte bzw. unterschiedlicher Arbeitsaufträge innerhalb des Lehr-Lernmittels erfolgen. Dabei ist wichtig, dass die Ergebnisse der parallel durchgeführten Lernsequenzen auch wieder zusammengeführt werden.",
@@ -295,7 +295,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält Variationsangebote, die zeitlich parallel umgesetzt werden können. Diese gehen über einfache Arbeitsgruppen hinaus, die dieselben Ziele lediglich auf unterschiedliche Gegenstände umsetzen.  Sie enthalten z.B. auch unterschiedliche Lernziele, unterschiedliche Schwierigkeitsgrade, aufeinander verweisende Arbeitsschritte u.ä. Dabei wird zudem die Sicherung von verbindlichen Ergebnissen für alle Schülerinnen und Schüler nicht vernachlässigt.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Barrierefreiheit/Inklusion", title: "Barrierefreiheit/Inklusion", description: "Lehr-Lernmittel können wesentlich zur erfolgreichen Gestaltung von inklusiven Unterrichtsszenarien beitragen, indem sie barrierefreie Zugänge für SuS mit Beeinträchtigungen bieten (insbesondere für SuS mit Seh-, Hör- oder Lernbeeinträchtigungen). Für Menschen mit Hör oder Sehbeeinträchtigungen ist beispielsweise die Beachtung des Zwei-Sinne-Prinzips von Bedeutung, d.h. ein Element/Inhalt des Lehr-Lernmittels wird immer vollständig auf zwei Wegen (auditiv und visuell) vermittelt. Außerdem können Untertitel in Videos, zusätzliche Texte, die den Inhalt einer Grafik oder einer Abbildung beschreiben, die Integration von Gebärdensprache, Möglichkeiten zur digitalen Sprachausgabe per Screenreader oder die Nutzbarkeit von Vergrößerungssoftware sowie Audiodeskriptionen etc. die Zugänglichkeit des Lehr-Lernmittels für die genannte Personengruppe erleichtern. Für Menschen mit Lernschwierigkeiten ist es sinnvoll, beispielsweise die Texte des Lehr-Lernmittels in leichter Sprache zu integrieren.",
@@ -309,7 +309,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält durchgängig in allen seinen Bestandteilen/Inhalten Elemente und Anreicherungen, die eine Barrierefreiheit für zumindest eine der beschriebenen Zielgruppen ermöglicht.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Transfer- und Anwendungsorientierung", title: "Transfer- und Anwendungsorientierung", description: "In Lehr-Lernmitteln können unterschiedliche kognitive Prozesse angeregt bzw. angestrebt werden. Solche kognitiven Prozesse lassen sich grob unter folgenden Aktionswörtern zusammenfassen (aufsteigende Reihenfolge, was die Komplexität des Vorgangs angeht): erinnern, verstehen, anwenden, analysieren, bewerten, erschaffen. Kompetenzorientiertes Unterrichten wird in der Regel darauf abzielen, neben den elementaren kognitiven Prozessen 'erinnern' und 'verstehen' auch - entsprechend der Lern- bzw. Kompetenzziele - 'höhere' kognitive Prozesse anzuregen. Daher können in Lehr-Lernmitteln bewusst entsprechende Prozesse in Form von Fragen, Aufgaben oder Anschauungen integriert sein.",
@@ -323,7 +323,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es lassen sich im Lehr-Lernmittel in den einzelnen Teilen/Sequenzen die jeweils angeregten/beabsichtigten kognitiven Prozesse identifizieren bzw. sie sind möglicherweise sogar ausgewiesen. Außerdem finden sich Fragen oder Aufgaben, die z.B. darauf abzielen, dass die SuS aufgebautes Wissen auf andere Objekte anwenden (Transfer), Sachverhalte eigenständig analysieren, eigene Bewertungen auf der Basis ihres Wissens und der erworbenen fachlichen Fertigkeiten vornehmen oder sogar eigenständig neues Wissen oder Fertigkeiten für unbekannte Anwendungsgebiete bilden bzw. entwickeln, um fachliche Probleme zu lösen.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Prozessorientierung (Kumulation)", title: "Prozessorientierung (Kumulation)", description: "Ein Lehr-Lernmittel besteht oftmals aus mehreren aufeinanderfolgenden Sequenzen, die sukzessive auf ein bestimmtes Ziel bzw. auch unterschiedliche Teilziele in einem Gesamtzusammenhang des Unterrichtens bzw. Lernens hinleiten sollen. Zur Frage steht, inwiefern die Verknüpfung der einzelnen Sequenzen einen fachlichen bzw. didaktisch sinnvollen Zusammenhang erkennen lässt. Bedeutsam ist darüber hinaus, dass in der Regel ein kumulativer, schrittweiser Aufbau von Wissen, Fertigkeiten und Kompetenzen als erfolgversprechend zu betrachten ist. Dabei kann auch die Anknüpfung am Vorwissen der SuS (sozusagen als Ausgangspunkt) eine Rolle spielen.",
@@ -337,7 +337,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Sequenzen sind im Lehr-Lernmittel als solche zu erkennen und in ihren Verweisungszusammenhängen untereinander deutlich. In Bezug auf Unterrichtsziele, angestrebte Fertigkeiten und Kompe-tenzen lässt sich eine schrittweise Vorgehensweise erkennen bzw. mit dem Lehr-Lernmittel umsetzen. Unter Umständen ist das Lehr-Lernmittel sogar so konzipiert, dass es die Bedeutung seiner einzelnen Schritte und Zusammenhänge selbst erklärt und transparent macht.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Lernwegunterstützende Elemente (Scaffolding)", title: "Lernwegunterstützende Elemente (Scaffolding)", description: "Zur Frage steht hier, inwiefern Lehr-Lernmittel Elemente enthalten, die ihren Nutzer*innen - hier insbesondere den Schülerinnen und Schülern - deutlich machen können, wie mit dem Lehr-Lernmittel gelernt werden kann/soll. Dazu können erläuternde und erklärende Hinweise gegeben werden (Vor-/ Nachbemerkungen, Kommentare, Textbausteine, Marginalien). Wichtig hierbei ist, dass diese sich auf den Lernweg der Schülerinnen und Schüler beziehen und den Lernprozess bzw. die Lernaktivität unterstützen/fördern/anleiten.",
@@ -351,7 +351,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Lernwegunterstützende Elemente finden sich nicht nur vereinzelt, sondern sind erkennbar systematisch an den Schlüsselstellen des Lehr-Lernmittels integriert und haben damit eine 'rahmende' Funktion. Solche Elemente können sein: Vor- und Nachbemerkungen, Kommentare zu Inhalten oder Lernprozessen des Lehr-Lernmittels (diese können sich auch metakognitiv direkt auf die SuS beziehen).",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Sprachlichkeit", title: "Sprachlichkeit", description: "Damit Lehr-Lernmittel in der Breite von Schülerinnen und Schülern genutzt werden können, ist es vorteilhaft (auch, aber nicht nur für schwächere Schülerinnen und Schüler), wenn sie in allen ihren Teilen (auch in Aufgabenstellungen) eine klare, einfache Sprache kennzeichnet. Davon unbetroffen sind für die fachliche Aufarbeitung nötige Fach und Fremdwörter. Textpassagen sind darüber hinaus 'kohärent' d.h. sie weisen eine logische Verknüpfung ihrer Abschnitte auf (Sprachfluss ohne Unterbrechungen).",
@@ -365,7 +365,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine unnötig langen und verschachtelten Sätze. Auch Aufgaben sind direkt und klar formuliert, und es werden nicht mehrere Aufgabenstellungen in einer einzelnen Aufgabe vermischt. Fachbegriffe und Fremdwörter werden im fachlich nötigen und sinnvollen Rahmen eingesetzt oder gegebenenfalls erläutert. Es existieren keine sprachlichen bzw. logischen Brüche zwischen einzelnen Sätzen oder Abschnitten.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Bildsprache", title: "Bildsprache", description: "Über unterschiedliche bildliche Darstellungen (z.B. Fotos, Diagramme, Tabellen, Charts, Animationen) können Sachverhalte vermittelt, verdeutlicht und erklärt werden. Diese bildlichen Elemente sollten in einem logischen und didaktischen Zusammenhang zum Thema und zu den Zielen des Lehr-Lernmittels stehen. Außerdem sind bildliche Elemente in der Regel in textliche Elemente eingebettet oder in Zusammenhang gesetzt - dieser Zusammenhang sollte möglichst klar sein. Es kann zur Förderung von bildlichem Verstehen und Interpretationsvermögen sinnvoll sein, dass abstrahierte bildliche Darstellungen (z.B. Charts) mit textlichen Elementen versehen sind, die erklärenden Charakter haben.",
@@ -379,7 +379,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel verwendet bildliche Elemente über eine rein illustrative Funktion hinaus. Sie stehen im Zusammenhang zum Unterrichtsthema und -ziel und leisten einen eigenen Beitrag zum Verstehen, Erklären oder Anwenden von Wissen, Fertigkeiten und Kompetenzen, die für den durch das Lehr-Lernmittel angeregten Unterrichtsprozess wichtig sind. Sie sind dabei auch textlich eingebettet, was z.B. durch erklärende Textpassagen oder Beschriftungen erreicht wird.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Additive Kommunikation (Anreicherung)", title: "Additive Kommunikation (Anreicherung)", description: "Hiermit ist gemeint, dass das Lehr-Lernmittel auch über die rein fachliche Aufbereitung hinaus zusätzliche Elemente integriert und jene 'anreichern' kann. Dies können z.B. sein: Lebensweltbezüge im Sinne von Zusatzinformationen, Anekdoten oder humoristischen Passagen. Es können auch Zusätze sein, die sich ergänzend oder vertiefend auf die im Lehr-Lernmittel präsentierten Inhalte beziehen (z.B.: Zusammenfassungen, Exkurse, Merksätze, Glossare, Begriffserklärungen).",
@@ -393,7 +393,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält über eine reine fachliche Aufbereitung des Unterrichtsthemas und der Unterrichtsziele hinaus auch zusätzliche Elemente (Text/Bild/Sprache), die die SuS ansprechen, z.B. in ihren lebensweltlichen Bezügen, oder als Ergänzung, Erklärung sowie Verstärkung der im Lehr-Lernmittel präsentierten Inhalte.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Sequenzierung", title: "Sequenzierung", description: "Aufgaben, die im Lehr-Lernmittel gestellt werden, sollten in einem fachlichen und/oder didaktischen Zusammenhang zueinanderstehen. Hier kann entsprechend die Frage gestellt werden, welche kognitiven Leistungen/Prozesse (z.B. etwas erinnern, verstehen, anwenden, analysieren, bewerten, erschaffen) in den einzelnen Aufgaben oder ihren Teilen angeregt werden und ob diese in sinnvollem Zusammenhang zueinander stehen - also z.B. aufeinander aufbauen, zueinander hinführen oder ein Thema/eine Kompetenz aus unterschiedlichen Teilaspekten behandeln und vertiefen.",
@@ -407,7 +407,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die im Lehr-Lernmittel enthaltenen Aufgaben sind in einer aus fachlicher oder didaktischer Perspektive verständlichen Weise sequenziert. Sie verweisen aufeinander/bauen aufeinander auf und dabei werden nicht nur gleiche oder ähnliche kognitive Prozesse wiederholt. ",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Aktivierung", title: "Aktivierung", description: "Hier geht es um die Frage, inwiefern ein Lehr-Lernmittel insgesamt eine grundlegende Problemstellung verfolgt, die im Verlauf durch die Schülerinnen und Schüler bearbeitet und gelöst wird. Diese Problemstellung wird in der Regel am Anfang des Lehr-Lernmittels formuliert und bietet damit das 'Setting' für die sich daraus ergebenden Schritte und Aufgaben, wodurch lernpsychologisch betrachtet eine Aktivierung der Schülerinnen und Schüler erfolgt (Motivation).",
@@ -421,7 +421,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Zu Beginn des durch das Lehr-Lernmittel initiierten Lernprozesses wird eine Problemstellung formuliert, die es im Verlauf zu lösen gilt. Alle nachfolgenden Unterrichtsschritte sind auf diese Problemstellung bezogen und führen nach und nach zur Lösung bzw. vertiefen diese.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Multiple Lösungswege", title: "Multiple Lösungswege", description: "Nicht immer gibt es eine festgefertigte Methode, eine fachliche Prozedur oder eine Sichtweise, um ein Problem oder eine Aufgabe zu lösen. Lehr-Lernmittel können hierfür sensibel sein und - wo möglich - unterschiedliche Wege zu einer Lösung zu kommen zulassen oder diese sogar anregen. Damit wird ein Spielraum für verschiedene plausible Strategien unterschiedlicher SuS ermöglicht, andererseits Flexibilität in verschiedenen Lösungsgsansätzen gefördert.",
@@ -435,7 +435,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Lehr-Lernmittel lassen Raum für unterschiedliche Herangehensweisen, ohne dabei die SuS gänzlich ohne jegliche Anleitung oder Hinweise auf Lösungswege zu lassen. Z.B. werden unterschiedliche Lösungswege oder Strategien als Angebot an die SuS skizziert und vorgeschlagen. Auch konkrete Beispiele für mögliche unterschiedliche Lösungen oder Strategien können diesen Ansatz unterstützen.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Didaktisches Konzept", title: "Didaktisches Konzept", description: "Für eine eigene Nutzung - insbesondere durch Lehrkräfte - ist es von Vorteil, wenn zentrale Gedanken für den didaktischen Einsatz vermittelt werden. Und zwar selbst dann, wenn die Lehrpersonen das Lehr-Lernmittel nicht eins zu eins für ihren eigenen Unterricht einsetzen wollen, sondern an eigene Bedürfnisse anpassen möchten. Dazu gehören Informationen wie: Zielgruppe(n), Ziele, Teilziele, damit verbundene Methoden, angestrebte bzw. geförderte Kompetenzen, Bezug zu Unterrichtsthemen etc.",
@@ -449,7 +449,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält weitreichende und begründete Informationen über seine didaktische Konzeption. Diese übersteigen grundlegende Informationen über thematische Bezüge sowie die Zielgruppe und geben darüber hinaus auch Informationen über methodische Vorgehensweisen, angestrebte Kompetenzen oder Teilziele. Diese Informationen erklären die Intention des Lehr-Lernmittels und erleichtern somit seine Nutzbarkeit.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Rahmenbedingungen", title: "Rahmenbedingungen", description: "Der Einsatz von Lehr-Lernmitteln im Unterricht birgt bestimmte Voraussetzungen, die bei einer beabsichtigten Nutzung zu bedenken sind. Dazu gehören z.B. Zeitbedarf, technische oder räumliche Voraussetzungen, bestimmte Gruppengrößen, das Vorhandensein bestimmter Materialien oder Medien, die Möglichkeit der Wiedergabe bestimmter Medienformate, Internetverbindung, eine bestimmte Anzahl an PCs oder mobilen Endgeräten etc. Für die Lehrkraft ist es hilfreich, wenn diese Voraussetzungen von vornherein übersichtlich genannt werden.",
@@ -463,7 +463,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind alle nötigen Rahmenbedingungen der Nutzung/des Einsatzes des Lehr-Lernmittels übersichtlich aufgeführt.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Bezüge Curriculum", title: "Bezüge Curriculum", description: "Heutige Lehrpläne enthalten fach- und stufen- bzw. jahrgangsbezogene Ziele, Themengebiete, Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden. Wenn es auch nicht unbedingt darum geht, hier eine eng geführte Entsprechung zu erreichen, so ist doch eine Passung der mittel und langfristigen Unterrichtsverläufe zu diesen Lehrplänen wichtig. Dazu ist es hilfreich, wenn das Lehr-Lernmittel entsprechende Bezüge zumindest stichwortartig herstellt, so dass eine Zuordnung seitens der Lehrkräfte bzw. u.U. auch seitens der SuS leichter vollzogen werden kann.",
@@ -477,7 +477,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden Ziele, Themengebiete, angestrebte Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden auf eine Art transparent gemacht, die einer Lehrkraft eine Zuordnung zu den gültigen Lehr- und Bildungsplänen (Curricula) leicht macht. Idealerweise wird eine solche Zuordnung im Lehr-/Lernmittel selbst vorgenommen, es enthält also spezifische Aussagen zu diesem Bereich. Das kann auch in der Form geschehen, dass der ergänzende Charakter als indirekter Bezug auf die Lehr- und Bildungspläne deutlich gemacht wird.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Bezüge Bildungsstandards", title: "Bezüge Bildungsstandards", description: "Für eine Reihe von Fächern existieren in der Bundesrepublik Deutschland Bildungsstandards, in denen Kompetenz- bzw. Anforderungsbereiche beschrieben sind. Zwar ist davon auszugehen, dass sich diese auch in Lehr- und Bildungsplänen niederschlagen, jedoch kann es trotzdem hilfreich sein, wenn im Lehr-Lernmittel auch hier entsprechende Bezüge zumindest stichwortartig herstellt werden, so dass eine Zuordnung seitens der Lehrkräfte bzw. u.U. auch seitens der SuS leichter vollzogen werden kann.",
@@ -491,7 +491,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     //hasComment: true,
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel findet eine grundsätzliche Einordnung der Lehr-Lernziele, der Themen sowie der angestrebten Kompetenzen zu entsprechenden Inhalten der Bildungsstandards statt (z.B. Anforderungsbereiche, Kompetenzen, Themen). Das kann auch detailliert/kleinschrittiger passieren, indem z.B. einzelne Unterrichtssequenzen oder Aufgaben in ihrer Bedeutung für den Kompetenzerwerb im Sinne der Bildungsstandards zugeordnet werden.",
                     choices: antworten
-                        //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
         }, {name:"Eigene Anmerkungen", title: "Eigene Anmerkungen", description: "Hier können Sie eigene Kommentare zum analysierten / evaluierten Lehr-Lernmnittel einfügen, die in der Auswertung angezeigt werden.",
@@ -646,251 +646,252 @@ function loadResult() {
 function loadResultSet() {
     let input = document.getElementById('loadResultSet').value;
 
-    return new Promise( ((resolve, reject) => {
-        if (input.length === 10) {
+    return getPredefinedData(input).then( data => {
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResultSet");
+        return new Promise( ((resolve, reject) => {
+            if (input.length === 10) {
 
-            xhr.onreadystatechange = function() {
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResultSet");
 
-                if (this.readyState == 4 && this.status == 200) {
-                    // Daten kommen als String an
-                    let db_data = JSON.parse(this.responseText);
-                    console.log(db_data)
+                xhr.onreadystatechange = function() {
 
-                    if (db_data.length > 0) {  // && db_data !== '[]'
+                    if (this.readyState == 4 && this.status == 200) {
+                        // Daten kommen als String an
+                        let db_data = JSON.parse(this.responseText);
+                        console.log(db_data)
 
-                        let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
-                        let _01SUM = 0, _01COUNT = 0, _01COUNT_NULL = 0;
+                        if (db_data.length > 0) {  // && db_data !== '[]'
 
-                        let _10SUM = 0, _10COUNT = 0, _10COUNT_NULL = 0;
-                        let _11SUM = 0, _11COUNT = 0, _11COUNT_NULL = 0;
-                        let _12SUM = 0, _12COUNT = 0, _12COUNT_NULL = 0;
-                        let _13SUM = 0, _13COUNT = 0, _13COUNT_NULL = 0;
+                            let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
+                            let _01SUM = 0, _01COUNT = 0, _01COUNT_NULL = 0;
 
-                        let _20SUM = 0, _20COUNT = 0, _20COUNT_NULL = 0;
-                        let _21SUM = 0, _21COUNT = 0, _21COUNT_NULL = 0;
-                        let _22SUM = 0, _22COUNT = 0, _22COUNT_NULL = 0;
-                        let _23SUM = 0, _23COUNT = 0, _23COUNT_NULL = 0;
+                            let _10SUM = 0, _10COUNT = 0, _10COUNT_NULL = 0;
+                            let _11SUM = 0, _11COUNT = 0, _11COUNT_NULL = 0;
+                            let _12SUM = 0, _12COUNT = 0, _12COUNT_NULL = 0;
+                            let _13SUM = 0, _13COUNT = 0, _13COUNT_NULL = 0;
 
-                        let _30SUM = 0, _30COUNT = 0, _30COUNT_NULL = 0;
-                        let _31SUM = 0, _31COUNT = 0, _31COUNT_NULL = 0;
-                        let _32SUM = 0, _32COUNT = 0, _32COUNT_NULL = 0;
-                        let _33SUM = 0, _33COUNT = 0, _33COUNT_NULL = 0;
-                        let _34SUM = 0, _34COUNT = 0, _34COUNT_NULL = 0;
+                            let _20SUM = 0, _20COUNT = 0, _20COUNT_NULL = 0;
+                            let _21SUM = 0, _21COUNT = 0, _21COUNT_NULL = 0;
+                            let _22SUM = 0, _22COUNT = 0, _22COUNT_NULL = 0;
+                            let _23SUM = 0, _23COUNT = 0, _23COUNT_NULL = 0;
 
-                        let _40SUM = 0, _40COUNT = 0, _40COUNT_NULL = 0;
-                        let _41SUM = 0, _41COUNT = 0, _41COUNT_NULL = 0;
-                        let _42SUM = 0, _42COUNT = 0, _42COUNT_NULL = 0;
+                            let _30SUM = 0, _30COUNT = 0, _30COUNT_NULL = 0;
+                            let _31SUM = 0, _31COUNT = 0, _31COUNT_NULL = 0;
+                            let _32SUM = 0, _32COUNT = 0, _32COUNT_NULL = 0;
+                            let _33SUM = 0, _33COUNT = 0, _33COUNT_NULL = 0;
+                            let _34SUM = 0, _34COUNT = 0, _34COUNT_NULL = 0;
 
-                        let _50SUM = 0, _50COUNT = 0, _50COUNT_NULL = 0;
-                        let _51SUM = 0, _51COUNT = 0, _51COUNT_NULL = 0;
-                        let _52SUM = 0, _52COUNT = 0, _52COUNT_NULL = 0;
+                            let _40SUM = 0, _40COUNT = 0, _40COUNT_NULL = 0;
+                            let _41SUM = 0, _41COUNT = 0, _41COUNT_NULL = 0;
+                            let _42SUM = 0, _42COUNT = 0, _42COUNT_NULL = 0;
 
-                        let _60SUM = 0, _60COUNT = 0, _60COUNT_NULL = 0;
-                        let _61SUM = 0, _61COUNT = 0, _61COUNT_NULL = 0;
-                        let _62SUM = 0, _62COUNT = 0, _62COUNT_NULL = 0;
+                            let _50SUM = 0, _50COUNT = 0, _50COUNT_NULL = 0;
+                            let _51SUM = 0, _51COUNT = 0, _51COUNT_NULL = 0;
+                            let _52SUM = 0, _52COUNT = 0, _52COUNT_NULL = 0;
 
-                        let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
-                        let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
+                            let _60SUM = 0, _60COUNT = 0, _60COUNT_NULL = 0;
+                            let _61SUM = 0, _61COUNT = 0, _61COUNT_NULL = 0;
+                            let _62SUM = 0, _62COUNT = 0, _62COUNT_NULL = 0;
 
-
-                        for (let i=0; i<db_data.length; i++) {
-                            console.log(db_data[i])
-
-                            let _00 = db_data[i]._00;
-                            let _01 = db_data[i]._01;
-
-                            let _10 = db_data[i]._10;
-                            let _11 = db_data[i]._11;
-                            let _12 = db_data[i]._12;
-                            let _13 = db_data[i]._13;
-
-                            let _20 = db_data[i]._20;
-                            let _21 = db_data[i]._21;
-                            let _22 = db_data[i]._22;
-                            let _23 = db_data[i]._23;
-
-                            let _30 = db_data[i]._30;
-                            let _31 = db_data[i]._31;
-                            let _32 = db_data[i]._32;
-                            let _33 = db_data[i]._33;
-                            let _34 = db_data[i]._34;
-
-                            let _40 = db_data[i]._40;
-                            let _41 = db_data[i]._41;
-                            let _42 = db_data[i]._42;
-
-                            let _50 = db_data[i]._50;
-                            let _51 = db_data[i]._51;
-                            let _52 = db_data[i]._52;
-
-                            let _60 = db_data[i]._60;
-                            let _61 = db_data[i]._61;
-                            let _62 = db_data[i]._62;
-
-                            let _70 = db_data[i]._70;
-                            let _71 = db_data[i]._71;
+                            let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
+                            let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
 
 
-                            if (_00 === 0) { _00COUNT_NULL++; }
-                            else { _00SUM += _00; _00COUNT++; }
-                            if (_01 === 0) { _01COUNT_NULL++; }
-                            else { _01SUM += _01; _01COUNT++; }
+                            for (let i=0; i<db_data.length; i++) {
+                                console.log(db_data[i])
 
-                            if (_10 === 0) { _10COUNT_NULL++; }
-                            else { _10SUM += _10; _10COUNT++; }
-                            if (_11 === 0) { _11COUNT_NULL++; }
-                            else { _11SUM += _11; _11COUNT++; }
-                            if (_12 === 0) { _12COUNT_NULL++; }
-                            else { _12SUM += _12; _12COUNT++; }
-                            if (_13 === 0) { _13COUNT_NULL++; }
-                            else { _13SUM += _13; _13COUNT++; }
+                                let _00 = db_data[i]._00;
+                                let _01 = db_data[i]._01;
 
-                            if (_20 === 0) { _20COUNT_NULL++; }
-                            else { _20SUM += _20; _20COUNT++; }
-                            if (_21 === 0) { _21COUNT_NULL++; }
-                            else { _21SUM += _21; _21COUNT++; }
-                            if (_22 === 0) { _22COUNT_NULL++; }
-                            else { _22SUM += _22; _22COUNT++; }
-                            if (_23 === 0) { _23COUNT_NULL++; }
-                            else { _23SUM += _23; _23COUNT++; }
+                                let _10 = db_data[i]._10;
+                                let _11 = db_data[i]._11;
+                                let _12 = db_data[i]._12;
+                                let _13 = db_data[i]._13;
 
-                            if (_30 === 0) { _30COUNT_NULL++; }
-                            else { _30SUM += _30; _30COUNT++; }
-                            if (_31 === 0) { _31COUNT_NULL++; }
-                            else { _31SUM += _31; _31COUNT++; }
-                            if (_32 === 0) { _32COUNT_NULL++; }
-                            else { _32SUM += _32; _32COUNT++; }
-                            if (_33 === 0) { _33COUNT_NULL++; }
-                            else { _33SUM += _33; _33COUNT++; }
-                            if (_34 === 0) { _34COUNT_NULL++; }
-                            else { _34SUM += _34; _30COUNT++; }
+                                let _20 = db_data[i]._20;
+                                let _21 = db_data[i]._21;
+                                let _22 = db_data[i]._22;
+                                let _23 = db_data[i]._23;
 
-                            if (_40 === 0) { _40COUNT_NULL++; }
-                            else { _40SUM += _40; _40COUNT++; }
-                            if (_41 === 0) { _41COUNT_NULL++; }
-                            else { _41SUM += _41; _41COUNT++; }
-                            if (_42 === 0) { _42COUNT_NULL++; }
-                            else { _42SUM += _42; _42COUNT++; }
+                                let _30 = db_data[i]._30;
+                                let _31 = db_data[i]._31;
+                                let _32 = db_data[i]._32;
+                                let _33 = db_data[i]._33;
+                                let _34 = db_data[i]._34;
 
-                            if (_50 === 0) { _50COUNT_NULL++; }
-                            else { _50SUM += _50; _50COUNT++; }
-                            if (_51 === 0) { _51COUNT_NULL++; }
-                            else { _51SUM += _51; _51COUNT++; }
-                            if (_52 === 0) { _52COUNT_NULL++; }
-                            else { _52SUM += _52; _52COUNT++; }
+                                let _40 = db_data[i]._40;
+                                let _41 = db_data[i]._41;
+                                let _42 = db_data[i]._42;
 
-                            if (_60 === 0) { _60COUNT_NULL++; }
-                            else { _60SUM += _60; _60COUNT++; }
-                            if (_61 === 0) { _61COUNT_NULL++; }
-                            else { _61SUM += _61; _61COUNT++; }
-                            if (_62 === 0) { _62COUNT_NULL++; }
-                            else { _62SUM += _62; _62COUNT++; }
+                                let _50 = db_data[i]._50;
+                                let _51 = db_data[i]._51;
+                                let _52 = db_data[i]._52;
 
-                            if (_70 === 0) { _70COUNT_NULL++; }
-                            else { _70SUM += _70; _70COUNT++; }
-                            if (_71 === 0) { _71COUNT_NULL++; }
-                            else { _71SUM += _71; _71COUNT++; }
+                                let _60 = db_data[i]._60;
+                                let _61 = db_data[i]._61;
+                                let _62 = db_data[i]._62;
 
+                                let _70 = db_data[i]._70;
+                                let _71 = db_data[i]._71;
+
+
+                                if (_00 === 0) { _00COUNT_NULL++; }
+                                else { _00SUM += _00; _00COUNT++; }
+                                if (_01 === 0) { _01COUNT_NULL++; }
+                                else { _01SUM += _01; _01COUNT++; }
+
+                                if (_10 === 0) { _10COUNT_NULL++; }
+                                else { _10SUM += _10; _10COUNT++; }
+                                if (_11 === 0) { _11COUNT_NULL++; }
+                                else { _11SUM += _11; _11COUNT++; }
+                                if (_12 === 0) { _12COUNT_NULL++; }
+                                else { _12SUM += _12; _12COUNT++; }
+                                if (_13 === 0) { _13COUNT_NULL++; }
+                                else { _13SUM += _13; _13COUNT++; }
+
+                                if (_20 === 0) { _20COUNT_NULL++; }
+                                else { _20SUM += _20; _20COUNT++; }
+                                if (_21 === 0) { _21COUNT_NULL++; }
+                                else { _21SUM += _21; _21COUNT++; }
+                                if (_22 === 0) { _22COUNT_NULL++; }
+                                else { _22SUM += _22; _22COUNT++; }
+                                if (_23 === 0) { _23COUNT_NULL++; }
+                                else { _23SUM += _23; _23COUNT++; }
+
+                                if (_30 === 0) { _30COUNT_NULL++; }
+                                else { _30SUM += _30; _30COUNT++; }
+                                if (_31 === 0) { _31COUNT_NULL++; }
+                                else { _31SUM += _31; _31COUNT++; }
+                                if (_32 === 0) { _32COUNT_NULL++; }
+                                else { _32SUM += _32; _32COUNT++; }
+                                if (_33 === 0) { _33COUNT_NULL++; }
+                                else { _33SUM += _33; _33COUNT++; }
+                                if (_34 === 0) { _34COUNT_NULL++; }
+                                else { _34SUM += _34; _30COUNT++; }
+
+                                if (_40 === 0) { _40COUNT_NULL++; }
+                                else { _40SUM += _40; _40COUNT++; }
+                                if (_41 === 0) { _41COUNT_NULL++; }
+                                else { _41SUM += _41; _41COUNT++; }
+                                if (_42 === 0) { _42COUNT_NULL++; }
+                                else { _42SUM += _42; _42COUNT++; }
+
+                                if (_50 === 0) { _50COUNT_NULL++; }
+                                else { _50SUM += _50; _50COUNT++; }
+                                if (_51 === 0) { _51COUNT_NULL++; }
+                                else { _51SUM += _51; _51COUNT++; }
+                                if (_52 === 0) { _52COUNT_NULL++; }
+                                else { _52SUM += _52; _52COUNT++; }
+
+                                if (_60 === 0) { _60COUNT_NULL++; }
+                                else { _60SUM += _60; _60COUNT++; }
+                                if (_61 === 0) { _61COUNT_NULL++; }
+                                else { _61SUM += _61; _61COUNT++; }
+                                if (_62 === 0) { _62COUNT_NULL++; }
+                                else { _62SUM += _62; _62COUNT++; }
+
+                                if (_70 === 0) { _70COUNT_NULL++; }
+                                else { _70SUM += _70; _70COUNT++; }
+                                if (_71 === 0) { _71COUNT_NULL++; }
+                                else { _71SUM += _71; _71COUNT++; }
+
+                            }
+
+                            let data_object = {
+                                "Evaluation": input,
+                                "Name": data._pre_tname,
+                                "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
+                                "Fach": (data.subject_id == null) ? 'Keine Angabe' : data.subject_id,
+                                "Schulart": (data.institution_id == null) ? 'Keine Angabe' : data.institution_id,
+                                "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
+                                "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
+                                "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
+                                "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
+                                "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
+                                "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
+                                "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
+                                "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
+                                "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
+                                "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
+                                "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
+                                "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
+                                "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
+                                "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
+                                "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
+                                "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
+                                "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
+                                "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
+                                "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
+                                "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
+                                "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
+                                "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
+                                "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
+                                "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
+                                "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
+                                "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
+                                "Anzahl Datensätze:": db_data.length
+                            };
+                            console.log(data_object);
+
+                            window.survey = new Survey.Model(json);
+                            survey.data = data_object;
+                            visualize(data_object);
+
+                            further_data = {
+                                "Bezüge Curriculum": _00COUNT_NULL,
+                                "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
+                                "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
+                                "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
+                                "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
+                                "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
+                                "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
+                                "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
+                                "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
+                                "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
+                                "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
+                                "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
+                                "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
+                                "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
+                                "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
+                                "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
+                                "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
+                                "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
+                                "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
+                                "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
+                                "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
+                                "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
+                                "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
+                                "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
+                                "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
+                                "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
+                            }
+
+
+
+                            document.getElementById('display_id').innerHTML = input;
+
+                            document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
+
+                            //document.querySelector('#surveyResult').textContent += "\n\n" + JSON.stringify(data_object, null, 4);
+
+                            resolve();
+                        } else {
+                            reject("Es konnten keine entsprechenden Daten geladen werden.");
                         }
-                        console.log(_00SUM)
-                        console.log(_00COUNT)
-                        console.log(_00COUNT_NULL)
-
-                        let data_object = {
-                            "Evaluation": input,
-                            "Name": db_data[0]._tool_name,
-                            "Verlinkung": db_data[0]._link,
-                            "Fach": db_data[0].subject_id,
-                            "Schulart": db_data[0].institution_id,
-                            "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
-                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
-                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
-                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
-                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
-                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
-                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
-                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
-                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
-                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
-                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
-                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
-                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
-                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
-                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
-                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
-                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
-                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
-                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
-                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
-                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
-                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
-                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
-                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
-                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
-                            "Anzahl Datensätze:": db_data.length
-                        };
-                        console.log(data_object);
-
-                        window.survey = new Survey.Model(json);
-                        survey.data = data_object;
-                        visualize(data_object);
-
-                        further_data = {
-                            "Bezüge Curriculum": _00COUNT_NULL,
-                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
-                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
-                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
-                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
-                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
-                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
-                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
-                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
-                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
-                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
-                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
-                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
-                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
-                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
-                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
-                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
-                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
-                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
-                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
-                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
-                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
-                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
-                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
-                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
-                        }
-
-
-
-                        document.getElementById('display_id').innerHTML = input;
-
-                        document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
-
-                        //document.querySelector('#surveyResult').textContent += "\n\n" + JSON.stringify(data_object, null, 4);
-
-                        resolve();
-                    } else {
-                        reject("Es konnten keine entsprechenden Daten geladen werden.");
                     }
+
                 }
 
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.send(JSON.stringify({"predefined_id": input}));
+
+            } else {
+                reject("Es müssen genau 10 Zeichen sein.");
             }
+        }))
 
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"predefined_id": input}));
-
-        } else {
-            reject("Es müssen genau 10 Zeichen sein.");
-        }
-    }))
+    })
 
 }
 
@@ -904,14 +905,7 @@ function getPredefinedData(id) {
                 if (this.readyState == 4 && this.status == 200) {
                     let db_data = this.responseText;
                     if (db_data.length > 0) {
-                        data = JSON.parse(db_data);
-                        data_object = {
-                            "Name": data._pre_tname,
-                            "Verlinkung": data._pre_link,
-                            "Fach": data.subject_id,
-                            "Schulart": data.institution_id
-                        };
-                        resolve(data_object);
+                        resolve(JSON.parse(db_data));
                     } else {
                         reject("Zum angegebenen Code wurde nichts gefunden!");
                     }
