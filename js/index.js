@@ -1206,7 +1206,7 @@ function overallChart() {
     }
 
     sorted.sort(function (a, b) {
-        return ((a.value < b.value) ? -1 : ( (a.value == b.value) ? 0 : 1 ));
+        return ((a.value > b.value) ? -1 : ( (a.value == b.value) ? 0 : 1 ));
     })
 
     for (let i = 0; i < sorted.length; i++) {
