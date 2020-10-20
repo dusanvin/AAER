@@ -594,7 +594,7 @@ function loadResult() {
                     if (db_data.length > 0) {
                         let data = JSON.parse(db_data);
                         let data_object = {
-                            "id": data.result_id,
+                            "Einzelevaluation": data.result_id,
                             "Name": data._tool_name,
                             "Verlinkung": data._link,
                             "Fach": data.subject_id,
