@@ -1036,8 +1036,8 @@ function savePredefined() {
 function setSurveyData() {
 
     survey.data = {
-        "Name": "Bee-Bot Klassen-Set",
-        "Verlinkung": "https://www.betzold.de/prod/89809/",
+        // "Name": "Bee-Bot Klassen-Set",
+        // "Verlinkung": "https://www.betzold.de/prod/89809/",
 
         //Anlehnung an Curriculum und Bildungsstandards
         "Bezüge Curriculum": 4,
@@ -1082,8 +1082,8 @@ function setSurveyData() {
         "Rahmenbedingungen": 2,
 
 
-        "Fach": 1,
-        "Schulart": 1,
+        // "Fach": 1,
+        // "Schulart": 1,
         "Eigene Anmerkungen": "Super!"
     };
 
