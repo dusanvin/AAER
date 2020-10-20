@@ -973,13 +973,13 @@ function savePredefined() {
             }
 
             let input_subject = document.getElementById('survey_subject').value;
-            if (input_subject.length == 0) {
+            if (input_subject === '' || input_subject == 1) {
                 console.log("Kein Fach wird vorausgesetzt.");
                 input_subject = null;
             }
 
             let input_institute = document.getElementById('survey_institution').value;
-            if (input_institute.length == 0) {
+            if (input_institute == '' || input_institute == 1) {
                 console.log("Keine Schulart wird vorausgesetzt.")
                 input_institute = null;
             }
