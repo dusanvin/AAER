@@ -68,29 +68,29 @@
 
         <!-- Bootstrap Material Design JS End -->
 
-		<script>
-			const DISPLAY = {
-				UMFRAGE: "#display_umfrage",
-				WILLKOMMEN: "#display_willkommen",
-				START: "#display_start",
-				ANLEGEN: "#display_anlegen",
-				ANLEGEN_NEXT: "#display_anlegen_next",
-				AUSWERTEN: "#display_auswerten",
-				THANKS: "#display_thanks",
-				OVERALL: "#display_overallChart",
-				CHART1: "#display_grp1Chart",
-				CHART2: "#display_grp2Chart",
-				CHART3: "#display_grp3Chart",
-				CHART4: "#display_grp4Chart",
-				CHART5: "#display_grp5Chart",
-				CHART6: "#display_grp6Chart",
-				CHART7: "#display_grp7Chart",
-				CHART8: "#display_grp8Chart",
-				PDF: "#display_PDF",
-				JSON: "#display_JSON"
-			}
+<!--		<script>-->
+<!--			const DISPLAY = {-->
+<!--				UMFRAGE: "#display_umfrage",-->
+<!--				WILLKOMMEN: "#display_willkommen",-->
+<!--				START: "#display_start",-->
+<!--				ANLEGEN: "#display_anlegen",-->
+<!--				ANLEGEN_NEXT: "#display_anlegen_next",-->
+<!--				AUSWERTEN: "#display_auswerten",-->
+<!--				THANKS: "#display_thanks",-->
+<!--				OVERALL: "#display_overallChart",-->
+<!--				CHART1: "#display_grp1Chart",-->
+<!--				CHART2: "#display_grp2Chart",-->
+<!--				CHART3: "#display_grp3Chart",-->
+<!--				CHART4: "#display_grp4Chart",-->
+<!--				CHART5: "#display_grp5Chart",-->
+<!--				CHART6: "#display_grp6Chart",-->
+<!--				CHART7: "#display_grp7Chart",-->
+<!--				CHART8: "#display_grp8Chart",-->
+<!--				PDF: "#display_PDF",-->
+<!--				JSON: "#display_JSON"-->
+<!--			}-->
 
-		</script>
+<!--		</script>-->
 
     </head>
 
@@ -119,8 +119,6 @@
 					<div class="sidebar-heading text-center"></div>
 
 					<div class="list-group list-group-flush">
-
-<!--						<button id="button_display_umfrage" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.UMFRAGE)">Umfrage</button>-->
 
 						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Teilnahme</span>
 
@@ -347,62 +345,8 @@
 					<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 mt-5 text-center" id="display_willkommen">
 
 						<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3"><strong>Willkommen beim AAER!</strong></p>
-<!--						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen helfen Ihnen bei der <strong>Verwendung des Bildungsmediums</strong> in Anlehnung an dessen Qualität für Unterricht und Schule.</p>-->
 
 					</div>
-
-<!--					<div class="container-fluid" id="display_willkommen">-->
-
-<!--						&lt;!&ndash; Beginn Container _WILLKOMMEN &ndash;&gt;-->
-
-<!--						<div class="container-fluid">-->
-
-<!--							&lt;!&ndash; Row _WILLKOMMEN Start &ndash;&gt;-->
-
-<!--							<div class="row justify-content-center">-->
-
-<!--								&lt;!&ndash; Col _WILLKOMMEN Start &ndash;&gt;-->
-
-<!--								<div class="col">-->
-
-<!--									&lt;!&ndash; Canvas _WILLKOMMEN Start &ndash;&gt;-->
-
-<!--									<div id="survey_start">-->
-
-<!--										<div class="text-left">-->
-
-<!--											<div class="container-fluid grey-border mt-3">-->
-
-<!--												<div class="row pt-4 bg-white">-->
-
-<!--&lt;!&ndash;													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">&ndash;&gt;-->
-<!--														<p class="mt-5">Willkommen beim AAER!</p>-->
-<!--&lt;!&ndash;													</div>&ndash;&gt;-->
-<!--													-->
-<!--												</div>-->
-
-<!--											</div>-->
-
-
-<!--										</div>-->
-
-<!--									</div>-->
-
-<!--									&lt;!&ndash; Canvas _WILLKOMMEN Ende &ndash;&gt;-->
-
-<!--								</div>-->
-
-<!--								&lt;!&ndash; Col _WILLKOMMEN Ende &ndash;&gt;-->
-
-<!--							</div>-->
-
-<!--							&lt;!&ndash; Row _WILLKOMMEN Ende &ndash;&gt;-->
-
-<!--						</div>-->
-
-<!--						&lt;!&ndash; Ende Container _WILLKOMMEN &ndash;&gt;-->
-
-<!--					</div>-->
 
 					<!-- Ende: WILLKOMMEN -->
 
@@ -519,21 +463,12 @@
 															<br>
 
 															Möchten Sie einen Link festlegen?<br>
-<!--															<input type="radio" id="yes_link" name="answer_link" value="yes">-->
-<!--															<label for="yes_link">Ja.</label>-->
-<!--															<input type="radio" id="no_link" name="answer_link" value="no" checked>-->
-<!--															<label for="no_link">Nein.</label>-->
 															<br>
 															<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_link" style="width:10.5em;">
 															<br>
 
 															Wird die Evaluation für ein bestimmtes Fach erstellt?<br>
-<!--															<input type="radio" id="yes_subject" name="answer_subject" value="yes">-->
-<!--															<label for="yes_subject">Ja.</label>-->
-<!--															<input type="radio" id="no_subject" name="answer_subject" value="no" checked>-->
-<!--															<label for="no_link">Nein.</label>-->
 															<br>
-															<!--						<label for="survey_subject">Fach festlegen:</label>-->
 															<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" id="survey_subject" style="width:12.5em;">
 																<option selected="selected" disabled="disabled" value="">Wählen Sie ein Fach</option>
 																<option value="1">Keine Angabe</option>
@@ -563,12 +498,7 @@
 															<br>
 
 															Wird die Evaluation für eine bestimmte Schulart erstellt?<br>
-<!--															<input type="radio" id="yes_institution" name="answer_institution" value="yes">-->
-<!--															<label for="yes_institution">Ja.</label>-->
-<!--															<input type="radio" id="no_institution" name="answer_institution" value="no" checked>-->
-<!--															<label for="no_institution">Nein.</label>-->
 															<br>
-															<!--						<label for="survey_institution">Schulart festlegen:</label>-->
 															<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_institution" style="width:12.5em;">
 																<option selected="selected" disabled="disabled" value="">Wählen Sie eine Schulart</option>
 																<option value="1">Keine Angabe</option>
@@ -1785,6 +1715,27 @@
 
 		// Ende: Übersicht - Ergänzende Informationen
 
+		const DISPLAY = {
+			UMFRAGE: "#display_umfrage",
+			WILLKOMMEN: "#display_willkommen",
+			START: "#display_start",
+			ANLEGEN: "#display_anlegen",
+			ANLEGEN_NEXT: "#display_anlegen_next",
+			AUSWERTEN: "#display_auswerten",
+			THANKS: "#display_thanks",
+			OVERALL: "#display_overallChart",
+			CHART1: "#display_grp1Chart",
+			CHART2: "#display_grp2Chart",
+			CHART3: "#display_grp3Chart",
+			CHART4: "#display_grp4Chart",
+			CHART5: "#display_grp5Chart",
+			CHART6: "#display_grp6Chart",
+			CHART7: "#display_grp7Chart",
+			CHART8: "#display_grp8Chart",
+			PDF: "#display_PDF",
+			JSON: "#display_JSON"
+		}
+
 
 			function displayController(btn_enum) {
 				for (variable in DISPLAY) {
@@ -1799,12 +1750,29 @@
 				clearErrorMessages();
 			}
 
+		buttons = [
+			'button_display_overallChart',
+			'button_display_grp1Chart',
+			'button_display_grp2Chart',
+			'button_display_grp3Chart',
+			'button_display_grp4Chart',
+			'button_display_grp5Chart',
+			'button_display_grp6Chart',
+			'button_display_grp7Chart',
+			'button_display_grp8Chart',
+			'button_display_PDF',
+			'button_display_JSON'
+		];
+
+
 			function startPredefined() {
 				loadPredefined().then( () => {
 					$( ".sv_complete_btn" ).click(function() {
 						displayController(DISPLAY.THANKS);
+						buttons.forEach( btn => document.getElementById(btn).disabled = false);
 					});
 					displayController(DISPLAY.UMFRAGE);
+					buttons.forEach( btn => document.getElementById(btn).disabled = true);
 				})
 				.catch( err => {
 					document.getElementById('teilnehmen_message').innerHTML = err;
@@ -1815,12 +1783,15 @@
 				newSurveyData();
 				$( ".sv_complete_btn" ).click(function() {
 					displayController(DISPLAY.THANKS);
+					buttons.forEach( btn => document.getElementById(btn).disabled = false);
 				});
 				displayController(DISPLAY.UMFRAGE);
+				buttons.forEach( btn => document.getElementById(btn).disabled = true);
 			}
 
 			function evaluateSet() {
 				loadResultSet().then( () => {
+					buttons.forEach( btn => document.getElementById(btn).disabled = false);
 					displayController(DISPLAY.OVERALL);
 				})
 				.catch( err => {
@@ -1830,6 +1801,7 @@
 
 			function evaluateResult() {
 				loadResult().then( () => {
+					buttons.forEach( btn => document.getElementById(btn).disabled = false);
 					displayController(DISPLAY.OVERALL);
 				})
 				.catch( err => {
