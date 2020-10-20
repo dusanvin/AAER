@@ -540,11 +540,17 @@ function visualize(data) {
     let jsonViewData = Object.assign({}, data);
 
     // Fachname anzeigen
+    if (data['Fach'] == null) {
+        data['Fach'] = 1;
+    }
     fachName = fach[data['Fach'] - 1].text;
     jsonViewData.Fach = fachName; // JSON-Übersicht
     document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
 
     // Schulart anzeigen
+    if (data['Schulart'] == null) {
+        data['Schulart'] = 1;
+    }
     schulName = schularten[data['Schulart'] - 1].text;
     jsonViewData.Schulart = schulName; // JSON-Übersicht
     document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
