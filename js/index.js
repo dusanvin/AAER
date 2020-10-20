@@ -536,20 +536,41 @@ function saveResult(data) {
     xhr.send(JSON.stringify(data));
 }
 
-function setVisualData(result) {
-    let jsonViewData = Object.assign({}, result);
+// function setVisualData(result) {
+//     let jsonViewData = Object.assign({}, result);
+//
+//     // Fachname anzeigen
+//     fachName = fach[survey.getValue('Fach') - 1].text;
+//     jsonViewData.Fach = fachName; // JSON-Übersicht
+//     document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
+//
+//     // Schulart anzeigen
+//     schulName = schularten[survey.getValue('Schulart') - 1].text;
+//     jsonViewData.Schulart = schulName; // JSON-Übersicht
+//     document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
+//
+//     document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
+//
+//     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
+//
+//     // Charts erstellen
+//     generateCharts();
+// }
+
+function visualize(data) {
+    let jsonViewData = Object.assign({}, data);
 
     // Fachname anzeigen
-    fachName = fach[survey.getValue('Fach') - 1].text;
+    fachName = fach[data['Fach'] - 1].text;
     jsonViewData.Fach = fachName; // JSON-Übersicht
     document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
 
     // Schulart anzeigen
-    schulName = schularten[survey.getValue('Schulart') - 1].text;
+    schulName = schularten[data['Schulart'] - 1].text;
     jsonViewData.Schulart = schulName; // JSON-Übersicht
     document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
 
-    document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
+    document.getElementById('anmerkungen').innerHTML = data['Eigene Anmerkungen']; // Gesamtübersicht
 
     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
 
@@ -576,6 +597,8 @@ function loadResult() {
                             "id": data.result_id,
                             "Name": data._tool_name,
                             "Verlinkung": data._link,
+                            "Fach": data.subject_id,
+                            "Schulart": data.institution_id,
                             "Bezüge Curriculum": data._00,
                             "Bezüge Bildungsstandards": data._01,
                             "Interessegeleitete Themenführung/Positionierung": data._10,
@@ -602,8 +625,6 @@ function loadResult() {
                             "Multiple Lösungswege": data._62,
                             "Didaktisches Konzept": data._70,
                             "Rahmenbedingungen": data._71,
-                            "Fach": data.subject_id,
-                            "Schulart": data.institution_id,
                             "Eigene Anmerkungen": data._comment
                         };
                         console.log(data_object);
@@ -611,7 +632,7 @@ function loadResult() {
                         window.survey = new Survey.Model(json);
                         survey.data = data_object;
                         survey.onComplete.add(function (sender, options) {
-                            setVisualData(sender.data);
+                            visualize(sender.data);
                         });
                         survey.doComplete();
 
@@ -797,6 +818,8 @@ function loadResultSet() {
                             "Evaluation": input,
                             "Name": db_data[0]._tool_name,
                             "Verlinkung": db_data[0]._link,
+                            "Fach": db_data[0].subject_id,
+                            "Schulart": db_data[0].institution_id,
                             "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
                             "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
                             "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
@@ -822,12 +845,13 @@ function loadResultSet() {
                             "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
                             "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
                             "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
-                            "Fach": db_data[0].subject_id,
-                            "Schulart": db_data[0].institution_id,
+                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
                         };
                         console.log(data_object);
-                        document.querySelector('#surveyResult').textContent = "" + JSON.stringify(data_object, null, 4);
+
+
+
+                        //document.querySelector('#surveyResult').textContent = "" + JSON.stringify(data_object, null, 4);
 
 
                         resolve();
@@ -868,7 +892,7 @@ function loadPredefined() {
 
                         survey.onComplete.add(function (sender, options) {
                             saveResult(sender.data);
-                            setVisualData(sender.data);
+                            visualize(sender.data);
                         });
 
                         console.log(db_data);
@@ -929,7 +953,7 @@ function newSurveyData() {
 
     survey.onComplete.add(function (sender, options) {
         saveResult(sender.data);
-        setVisualData(sender.data);
+        visualize(sender.data);
     });
 
     survey.data = {};
