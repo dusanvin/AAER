@@ -825,7 +825,7 @@ function loadResultSet() {
                             "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
                             "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
                             "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
-                            "Anzahl Datensätze:" db_data.length
+                            "Anzahl Datensätze:": db_data.length
                         };
                         console.log(data_object);
 
