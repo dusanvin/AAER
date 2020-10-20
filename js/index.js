@@ -519,7 +519,7 @@ function saveResult(data) {
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('display_result_id').innerHTML = this.responseText;
+            document.getElementById('display_id').innerHTML = this.responseText;
         };
     }
 
@@ -636,7 +636,7 @@ function loadResult() {
                         });
                         survey.doComplete();
 
-                        document.getElementById('display_result_id').innerHTML = input;
+                        document.getElementById('display_id').innerHTML = input;
 
                         resolve();
 
@@ -852,6 +852,8 @@ function loadResultSet() {
                         window.survey = new Survey.Model(json);
                         survey.data = data_object;
                         visualize(data_object);
+
+                        document.getElementById('display_id').innerHTML = input;
 
                         resolve();
                     } else {
