@@ -1777,7 +1777,9 @@
    		// Ende: Trigger für Dashbaord-Menü
 
 		$("#dashboard-aaer").css("display", "block");
+		buttons.forEach( btn => document.getElementById(btn).disabled = true);
 		displayController(DISPLAY.WILLKOMMEN);
+
 
 	  </script>
 
