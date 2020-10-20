@@ -536,7 +536,7 @@ function saveResult(data) {
     xhr.send(JSON.stringify(data));
 }
 
-function show(result) {
+function setVisualData(result) {
     let jsonViewData = Object.assign({}, result);
 
     // Fachname anzeigen
@@ -611,7 +611,7 @@ function loadResult() {
                         window.survey = new Survey.Model(json);
                         survey.data = data_object;
                         survey.onComplete.add(function (sender, options) {
-                            show(sender.data);
+                            setVisualData(sender.data);
                         });
                         survey.doComplete();
 
@@ -649,10 +649,187 @@ function loadResultSet() {
             xhr.onreadystatechange = function() {
 
                 if (this.readyState == 4 && this.status == 200) {
-                    db_data = this.responseText;
-                    if (db_data.length > 0 && db_data !== '[]') {
-                        console.log(db_data);
-                        console.log(db_data.length);
+                    // Daten kommen als String an
+                    db_data = JSON.parse(this.responseText);
+                    console.log(db_data)
+                    //document.querySelector('#surveyResult').textContent = "" + JSON.stringify(db_data, null, 4);
+                    if (db_data.length > 0) {  // && db_data !== '[]'
+
+                        let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
+                        let _01SUM = 0, _01COUNT = 0, _01COUNT_NULL = 0;
+
+                        let _10SUM = 0, _10COUNT = 0, _10COUNT_NULL = 0;
+                        let _11SUM = 0, _11COUNT = 0, _11COUNT_NULL = 0;
+                        let _12SUM = 0, _12COUNT = 0, _12COUNT_NULL = 0;
+                        let _13SUM = 0, _13COUNT = 0, _13COUNT_NULL = 0;
+
+                        let _20SUM = 0, _20COUNT = 0, _20COUNT_NULL = 0;
+                        let _21SUM = 0, _21COUNT = 0, _21COUNT_NULL = 0;
+                        let _22SUM = 0, _22COUNT = 0, _22COUNT_NULL = 0;
+                        let _23SUM = 0, _23COUNT = 0, _23COUNT_NULL = 0;
+
+                        let _30SUM = 0, _30COUNT = 0, _30COUNT_NULL = 0;
+                        let _31SUM = 0, _31COUNT = 0, _31COUNT_NULL = 0;
+                        let _32SUM = 0, _32COUNT = 0, _32COUNT_NULL = 0;
+                        let _33SUM = 0, _33COUNT = 0, _33COUNT_NULL = 0;
+                        let _34SUM = 0, _34COUNT = 0, _34COUNT_NULL = 0;
+
+                        let _40SUM = 0, _40COUNT = 0, _40COUNT_NULL = 0;
+                        let _41SUM = 0, _41COUNT = 0, _41COUNT_NULL = 0;
+                        let _42SUM = 0, _42COUNT = 0, _42COUNT_NULL = 0;
+
+                        let _50SUM = 0, _50COUNT = 0, _50COUNT_NULL = 0;
+                        let _51SUM = 0, _51COUNT = 0, _51COUNT_NULL = 0;
+                        let _52SUM = 0, _52COUNT = 0, _52COUNT_NULL = 0;
+
+                        let _60SUM = 0, _60COUNT = 0, _60COUNT_NULL = 0;
+                        let _61SUM = 0, _61COUNT = 0, _61COUNT_NULL = 0;
+                        let _62SUM = 0, _62COUNT = 0, _62COUNT_NULL = 0;
+
+                        let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
+                        let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
+
+
+                        for (let i=0; i<db_data.length; i++) {
+                            console.log(db_data[i])
+
+                            let _00 = db_data[i]._00;
+                            let _01 = db_data[i]._01;
+
+                            let _10 = db_data[i]._10;
+                            let _11 = db_data[i]._11;
+                            let _12 = db_data[i]._12;
+                            let _13 = db_data[i]._13;
+
+                            let _20 = db_data[i]._20;
+                            let _21 = db_data[i]._21;
+                            let _22 = db_data[i]._22;
+                            let _23 = db_data[i]._23;
+
+                            let _30 = db_data[i]._30;
+                            let _31 = db_data[i]._31;
+                            let _32 = db_data[i]._32;
+                            let _33 = db_data[i]._33;
+                            let _34 = db_data[i]._34;
+
+                            let _40 = db_data[i]._40;
+                            let _41 = db_data[i]._41;
+                            let _42 = db_data[i]._42;
+
+                            let _50 = db_data[i]._50;
+                            let _51 = db_data[i]._51;
+                            let _52 = db_data[i]._52;
+
+                            let _60 = db_data[i]._60;
+                            let _61 = db_data[i]._61;
+                            let _62 = db_data[i]._62;
+
+                            let _70 = db_data[i]._70;
+                            let _71 = db_data[i]._71;
+
+
+                            if (_00 === 0) { _00COUNT_NULL++; }
+                            else { _00SUM += _00; _00COUNT++; }
+                            if (_01 === 0) { _01COUNT_NULL++; }
+                            else { _01SUM += _01; _01COUNT++; }
+
+                            if (_10 === 0) { _10COUNT_NULL++; }
+                            else { _10SUM += _10; _10COUNT++; }
+                            if (_11 === 0) { _11COUNT_NULL++; }
+                            else { _11SUM += _11; _11COUNT++; }
+                            if (_12 === 0) { _12COUNT_NULL++; }
+                            else { _12SUM += _12; _12COUNT++; }
+                            if (_13 === 0) { _13COUNT_NULL++; }
+                            else { _13SUM += _13; _13COUNT++; }
+
+                            if (_20 === 0) { _20COUNT_NULL++; }
+                            else { _20SUM += _20; _20COUNT++; }
+                            if (_21 === 0) { _21COUNT_NULL++; }
+                            else { _21SUM += _21; _21COUNT++; }
+                            if (_22 === 0) { _22COUNT_NULL++; }
+                            else { _22SUM += _22; _22COUNT++; }
+                            if (_23 === 0) { _23COUNT_NULL++; }
+                            else { _23SUM += _23; _23COUNT++; }
+
+                            if (_30 === 0) { _30COUNT_NULL++; }
+                            else { _30SUM += _30; _30COUNT++; }
+                            if (_31 === 0) { _31COUNT_NULL++; }
+                            else { _31SUM += _31; _31COUNT++; }
+                            if (_32 === 0) { _32COUNT_NULL++; }
+                            else { _32SUM += _32; _32COUNT++; }
+                            if (_33 === 0) { _33COUNT_NULL++; }
+                            else { _33SUM += _33; _33COUNT++; }
+                            if (_34 === 0) { _34COUNT_NULL++; }
+                            else { _34SUM += _34; _30COUNT++; }
+
+                            if (_40 === 0) { _40COUNT_NULL++; }
+                            else { _40SUM += _40; _40COUNT++; }
+                            if (_41 === 0) { _41COUNT_NULL++; }
+                            else { _41SUM += _41; _41COUNT++; }
+                            if (_42 === 0) { _42COUNT_NULL++; }
+                            else { _42SUM += _42; _42COUNT++; }
+
+                            if (_50 === 0) { _50COUNT_NULL++; }
+                            else { _50SUM += _50; _50COUNT++; }
+                            if (_51 === 0) { _51COUNT_NULL++; }
+                            else { _51SUM += _51; _51COUNT++; }
+                            if (_52 === 0) { _52COUNT_NULL++; }
+                            else { _52SUM += _52; _52COUNT++; }
+
+                            if (_60 === 0) { _60COUNT_NULL++; }
+                            else { _60SUM += _60; _60COUNT++; }
+                            if (_61 === 0) { _61COUNT_NULL++; }
+                            else { _61SUM += _61; _61COUNT++; }
+                            if (_62 === 0) { _62COUNT_NULL++; }
+                            else { _62SUM += _62; _62COUNT++; }
+
+                            if (_70 === 0) { _70COUNT_NULL++; }
+                            else { _70SUM += _70; _70COUNT++; }
+                            if (_71 === 0) { _71COUNT_NULL++; }
+                            else { _71SUM += _71; _71COUNT++; }
+
+                        }
+                        console.log(_00SUM)
+                        console.log(_00COUNT)
+                        console.log(_00COUNT_NULL)
+
+                        let data_object = {
+                            "Evaluation": input,
+                            "Name": db_data[0]._tool_name,
+                            "Verlinkung": db_data[0]._link,
+                            "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
+                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
+                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
+                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
+                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
+                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
+                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
+                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
+                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
+                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
+                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
+                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
+                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
+                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
+                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
+                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
+                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
+                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
+                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
+                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
+                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
+                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
+                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
+                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
+                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
+                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
+                            "Fach": db_data[0].subject_id,
+                            "Schulart": db_data[0].institution_id,
+                        };
+                        console.log(data_object);
+                        document.querySelector('#surveyResult').textContent = "" + JSON.stringify(data_object, null, 4);
+
+
                         resolve();
                     } else {
                         reject("Es konnten keine entsprechenden Daten geladen werden.");
@@ -691,7 +868,7 @@ function loadPredefined() {
 
                         survey.onComplete.add(function (sender, options) {
                             saveResult(sender.data);
-                            show(sender.data);
+                            setVisualData(sender.data);
                         });
 
                         console.log(db_data);
@@ -752,7 +929,7 @@ function newSurveyData() {
 
     survey.onComplete.add(function (sender, options) {
         saveResult(sender.data);
-        show(sender.data);
+        setVisualData(sender.data);
     });
 
     survey.data = {};
