@@ -126,7 +126,7 @@
 
 						<button id="button_display_start" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.START)">Start</button>
 
-						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Umfrage anlegen</button>
+						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenauswertung anlegen</button>
 
 						<button id="button_display_auswerten" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.AUSWERTEN)">Daten laden und auswerten</button>
 
@@ -433,7 +433,7 @@
 												<div class="row pt-4 bg-white">
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Nehmen Sie an einer bereits bestehenden Gruppenbefragung teil. Geben Sie hierfür zunächst den erhaltenen Code ein. Wählen Sie dann den Button zur Teilnahme.</p>
+														<p class="mt-5">Nehmen Sie an einer bereits bestehenden Gruppenevaluation teil. Geben Sie hierfür zunächst den erhaltenen Code ein. Wählen Sie dann den Button zur Teilnahme.</p>
 
 														<div class="mt-3">
 															<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="loadPredefined" placeholder="10-stelliger-Code" style="width:10.5em;">
@@ -447,8 +447,8 @@
 													</div>
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p>Oder beginnen Sie hier einfach eine neue unabhängige Einzelbefragung.</p>
-														<button class="btn btn-green ml-1 mr-1" onclick="newSurvey()">Befragung starten</button>
+														<p>Oder beginnen Sie hier einfach eine neue unabhängige Einzelevaluation.</p>
+														<button class="btn btn-green ml-1 mr-1" onclick="newSurvey()">evaluation starten</button>
 													</div>
 
 
@@ -510,7 +510,7 @@
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
 
 
-														<p class="mt-5">Erstellen Sie eine neue Gruppenbefragung. Sie erhalten dadurch einen 10-stelligen Code, den Sie an potentielle Teilnehmer/innen weiterreichen können.</p>
+														<p class="mt-5">Erstellen Sie eine neue Gruppenevaluation. Sie erhalten dadurch einen 10-stelligen Code, den Sie an potentielle Teilnehmer/innen weiterreichen können.</p>
 
 														<div class="mt-3">
 
@@ -519,19 +519,19 @@
 															<br>
 
 															Möchten Sie einen Link festlegen?<br>
-															<input type="radio" id="yes_link" name="answer_link" value="yes">
-															<label for="yes_link">Ja.</label>
-															<input type="radio" id="no_link" name="answer_link" value="no" checked>
-															<label for="no_link">Nein.</label>
+<!--															<input type="radio" id="yes_link" name="answer_link" value="yes">-->
+<!--															<label for="yes_link">Ja.</label>-->
+<!--															<input type="radio" id="no_link" name="answer_link" value="no" checked>-->
+<!--															<label for="no_link">Nein.</label>-->
 															<br>
 															<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_link" style="width:10.5em;">
 															<br>
 
-															Wird die Befragung für ein bestimmtes Fach erstellt?<br>
-															<input type="radio" id="yes_subject" name="answer_subject" value="yes">
-															<label for="yes_subject">Ja.</label>
-															<input type="radio" id="no_subject" name="answer_subject" value="no" checked>
-															<label for="no_link">Nein.</label>
+															Wird die Evaluation für ein bestimmtes Fach erstellt?<br>
+<!--															<input type="radio" id="yes_subject" name="answer_subject" value="yes">-->
+<!--															<label for="yes_subject">Ja.</label>-->
+<!--															<input type="radio" id="no_subject" name="answer_subject" value="no" checked>-->
+<!--															<label for="no_link">Nein.</label>-->
 															<br>
 															<!--						<label for="survey_subject">Fach festlegen:</label>-->
 															<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" id="survey_subject" style="width:12.5em;">
@@ -562,11 +562,11 @@
 															</select>
 															<br>
 
-															Wird die Befragung für eine bestimmte Schulart erstellt?<br>
-															<input type="radio" id="yes_institution" name="answer_institution" value="yes">
-															<label for="yes_institution">Ja.</label>
-															<input type="radio" id="no_institution" name="answer_institution" value="no" checked>
-															<label for="no_institution">Nein.</label>
+															Wird die Evaluation für eine bestimmte Schulart erstellt?<br>
+<!--															<input type="radio" id="yes_institution" name="answer_institution" value="yes">-->
+<!--															<label for="yes_institution">Ja.</label>-->
+<!--															<input type="radio" id="no_institution" name="answer_institution" value="no" checked>-->
+<!--															<label for="no_institution">Nein.</label>-->
 															<br>
 															<!--						<label for="survey_institution">Schulart festlegen:</label>-->
 															<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_institution" style="width:12.5em;">
@@ -600,7 +600,7 @@
 															</select>
 															<br>
 															<br>
-															<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Befragung erstellen</button>
+															<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation erstellen</button>
 
 															<br>
 															<div id="newPredefined_message" style="color: red;"></div>
@@ -710,7 +710,7 @@
 												<div class="row pt-4 bg-white">
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Ihr Gruppe wurde erfolgreich angelegt. Sie können direkt fortfahren und eine Umfrage dazu ausfüllen.</p>
+														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation angelegt. Sie können direkt fortfahren und eine Umfrage dazu ausfüllen.</p>
 
 														<div class="mt-3">
 															<div id="anlegen_next_message" style="color: green;"></div>
