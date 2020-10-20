@@ -849,10 +849,9 @@ function loadResultSet() {
                         };
                         console.log(data_object);
 
-
-
-                        //document.querySelector('#surveyResult').textContent = "" + JSON.stringify(data_object, null, 4);
-
+                        window.survey = new Survey.Model(json);
+                        survey.data = data_object;
+                        visualize(data_object);
 
                         resolve();
                     } else {
@@ -1249,6 +1248,15 @@ function overallChart() {
             label: "Übersichts-Chart",
             backgroundColor: sortedColors,
             data: sortedValues
+        }]
+    };
+
+    dataALL = {
+        labels: labels,
+        datasets: [{
+            label: "Übersichts-Chart",
+            backgroundColor: colors,
+            data: values
         }]
     };
 

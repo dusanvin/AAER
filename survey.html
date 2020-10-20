@@ -126,7 +126,7 @@
 
 						<button id="button_display_start" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.START)">Start</button>
 
-						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenauswertung anlegen</button>
+						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation anlegen</button>
 
 						<button id="button_display_auswerten" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.AUSWERTEN)">Daten laden und auswerten</button>
 
@@ -536,7 +536,7 @@
 															<!--						<label for="survey_subject">Fach festlegen:</label>-->
 															<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" id="survey_subject" style="width:12.5em;">
 																<option selected="selected" disabled="disabled" value="">Wählen Sie ein Fach</option>
-																<!--							<option value="1">Keine Angabe</option>-->
+																<option value="1">Keine Angabe</option>
 																<option value="2">Biologie</option>
 																<option value="3">Chemie</option>
 																<option value="4">Deutsch</option>
@@ -571,7 +571,7 @@
 															<!--						<label for="survey_institution">Schulart festlegen:</label>-->
 															<select class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="survey_institution" style="width:12.5em;">
 																<option selected="selected" disabled="disabled" value="">Wählen Sie eine Schulart</option>
-																<!--							<option value="1">Keine Angabe</option>-->
+																<option value="1">Keine Angabe</option>
 																<option value="2">Abendschule</option>
 																<option value="3">Alternatives Schulkonzept</option>
 																<option value="4">Berufsfachschule</option>
@@ -606,47 +606,47 @@
 															<div id="newPredefined_message" style="color: red;"></div>
 
 															<script>
-																$("#survey_create").css("display", "none");
-																survey_link = document.getElementById('survey_link');
-																survey_link.disabled = true;
-																survey_subject = document.getElementById('survey_subject');
-																survey_subject.disabled = true;
-																survey_institution = document.getElementById('survey_institution');
-																survey_institution.disabled = true;
+																// $("#survey_create").css("display", "none");
+																// survey_link = document.getElementById('survey_link');
+																// survey_link.disabled = true;
+																// survey_subject = document.getElementById('survey_subject');
+																// survey_subject.disabled = true;
+																// survey_institution = document.getElementById('survey_institution');
+																// survey_institution.disabled = true;
 
-																document.body.addEventListener('change', function (e) {
-																	let target = e.target;
-																	switch (target.id) {
-																		case 'yes_link':
-																			console.log('link set to yes');
-																			survey_link.disabled = false;
-																			break;
-																		case 'no_link':
-																			console.log('link set to no');
-																			survey_link.value = "";
-																			survey_link.disabled = true;
-																			break;
-																		case 'yes_subject':
-																			console.log('subject set to yes');
-																			survey_subject.disabled = false;
-																			break;
-																		case 'no_subject':
-																			console.log('subject set to no');
-																			survey_subject.value = "";
-																			survey_subject.disabled = true;
-																			break;
-																		case 'yes_institution':
-																			console.log('institution set to yes');
-																			survey_institution.disabled = false;
-																			break;
-																		case 'no_institution':
-																			console.log('institution set to no');
-																			survey_institution.value = "";
-																			survey_institution.disabled = true;
-																			break;
-
-																	}
-																});
+																// document.body.addEventListener('change', function (e) {
+																// 	let target = e.target;
+																// 	switch (target.id) {
+																// 		case 'yes_link':
+																// 			console.log('link set to yes');
+																// 			survey_link.disabled = false;
+																// 			break;
+																// 		case 'no_link':
+																// 			console.log('link set to no');
+																// 			survey_link.value = "";
+																// 			survey_link.disabled = true;
+																// 			break;
+																// 		case 'yes_subject':
+																// 			console.log('subject set to yes');
+																// 			survey_subject.disabled = false;
+																// 			break;
+																// 		case 'no_subject':
+																// 			console.log('subject set to no');
+																// 			survey_subject.value = "";
+																// 			survey_subject.disabled = true;
+																// 			break;
+																// 		case 'yes_institution':
+																// 			console.log('institution set to yes');
+																// 			survey_institution.disabled = false;
+																// 			break;
+																// 		case 'no_institution':
+																// 			console.log('institution set to no');
+																// 			survey_institution.value = "";
+																// 			survey_institution.disabled = true;
+																// 			break;
+																//
+																// 	}
+																// });
 															</script>
 
 														</div>
@@ -791,7 +791,7 @@
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
 
-														<p>Verwenden Sie Ihren Ergebniscode einer Einzelauswertung um das Resultat erneut abzurufen.</p>
+														<p>Verwenden Sie Ihren Ergebniscode einer Einzelevaluation um das Resultat erneut abzurufen.</p>
 
 														<div class="mt-3">
 
