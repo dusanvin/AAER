@@ -894,6 +894,43 @@ function loadResultSet() {
 
 }
 
+function getPredefinedData(id) {
+    return new Promise( ((resolve, reject) => {
+        if (id.length === 10) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
+
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let db_data = this.responseText;
+                    if (db_data.length > 0) {
+                        data = JSON.parse(db_data);
+                        data_object = {
+                            "Name": data._pre_tname,
+                            "Verlinkung": data._pre_link,
+                            "Fach": data.subject_id,
+                            "Schulart": data.institution_id
+                        };
+                        resolve(data_object);
+                    } else {
+                        reject("Zum angegebenen Code wurde nichts gefunden!");
+                    }
+
+
+                } else
+                    reject();
+            }
+
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({"predefined_id": id}));
+
+        } else {
+            reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
+        }
+
+    }))
+}
+
 
 function loadPredefined() {
     let input = document.getElementById('loadPredefined').value;
