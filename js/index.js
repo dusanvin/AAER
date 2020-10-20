@@ -536,27 +536,6 @@ function saveResult(data) {
     xhr.send(JSON.stringify(data));
 }
 
-// function setVisualData(result) {
-//     let jsonViewData = Object.assign({}, result);
-//
-//     // Fachname anzeigen
-//     fachName = fach[survey.getValue('Fach') - 1].text;
-//     jsonViewData.Fach = fachName; // JSON-Übersicht
-//     document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
-//
-//     // Schulart anzeigen
-//     schulName = schularten[survey.getValue('Schulart') - 1].text;
-//     jsonViewData.Schulart = schulName; // JSON-Übersicht
-//     document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
-//
-//     document.getElementById('anmerkungen').innerHTML = survey.getValue('Eigene Anmerkungen'); // Gesamtübersicht
-//
-//     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
-//
-//     // Charts erstellen
-//     generateCharts();
-// }
-
 function visualize(data) {
     let jsonViewData = Object.assign({}, data);
 
@@ -671,9 +650,9 @@ function loadResultSet() {
 
                 if (this.readyState == 4 && this.status == 200) {
                     // Daten kommen als String an
-                    db_data = JSON.parse(this.responseText);
+                    let db_data = JSON.parse(this.responseText);
                     console.log(db_data)
-                    //document.querySelector('#surveyResult').textContent = "" + JSON.stringify(db_data, null, 4);
+
                     if (db_data.length > 0) {  // && db_data !== '[]'
 
                         let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
@@ -845,7 +824,8 @@ function loadResultSet() {
                             "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
                             "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
                             "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
+                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
+                            "Anzahl Datensätze:" db_data.length
                         };
                         console.log(data_object);
 
@@ -853,7 +833,42 @@ function loadResultSet() {
                         survey.data = data_object;
                         visualize(data_object);
 
+                        further_data = {
+                            "Bezüge Curriculum": _00COUNT_NULL,
+                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
+                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
+                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
+                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
+                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
+                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
+                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
+                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
+                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
+                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
+                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
+                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
+                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
+                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
+                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
+                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
+                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
+                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
+                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
+                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
+                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
+                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
+                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
+                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
+                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
+                        }
+
+
+
                         document.getElementById('display_id').innerHTML = input;
+
+                        document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
+
+                        //document.querySelector('#surveyResult').textContent += "\n\n" + JSON.stringify(data_object, null, 4);
 
                         resolve();
                     } else {
