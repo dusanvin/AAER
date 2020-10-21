@@ -643,280 +643,279 @@ function loadResult() {
 
 }
 
-function loadResultSet() {
+function loadResultSet(data) {
     let input = document.getElementById('loadResultSet').value;
+    data = JSON.parse(data);
 
-    return getPredefinedData(input).then( data => {
+    return new Promise( ((resolve, reject) => {
+        if (input.length === 10) {
 
-        return new Promise( ((resolve, reject) => {
-            if (input.length === 10) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResultSet");
 
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResultSet");
+            xhr.onreadystatechange = function() {
 
-                xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Daten kommen als String an
+                    let db_data = JSON.parse(this.responseText);
+                    console.log(db_data)
 
-                    if (this.readyState == 4 && this.status == 200) {
-                        // Daten kommen als String an
-                        let db_data = JSON.parse(this.responseText);
-                        console.log(db_data)
+                    if (db_data.length > 0) {  // && db_data !== '[]'
 
-                        if (db_data.length > 0) {  // && db_data !== '[]'
+                        let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
+                        let _01SUM = 0, _01COUNT = 0, _01COUNT_NULL = 0;
 
-                            let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
-                            let _01SUM = 0, _01COUNT = 0, _01COUNT_NULL = 0;
+                        let _10SUM = 0, _10COUNT = 0, _10COUNT_NULL = 0;
+                        let _11SUM = 0, _11COUNT = 0, _11COUNT_NULL = 0;
+                        let _12SUM = 0, _12COUNT = 0, _12COUNT_NULL = 0;
+                        let _13SUM = 0, _13COUNT = 0, _13COUNT_NULL = 0;
 
-                            let _10SUM = 0, _10COUNT = 0, _10COUNT_NULL = 0;
-                            let _11SUM = 0, _11COUNT = 0, _11COUNT_NULL = 0;
-                            let _12SUM = 0, _12COUNT = 0, _12COUNT_NULL = 0;
-                            let _13SUM = 0, _13COUNT = 0, _13COUNT_NULL = 0;
+                        let _20SUM = 0, _20COUNT = 0, _20COUNT_NULL = 0;
+                        let _21SUM = 0, _21COUNT = 0, _21COUNT_NULL = 0;
+                        let _22SUM = 0, _22COUNT = 0, _22COUNT_NULL = 0;
+                        let _23SUM = 0, _23COUNT = 0, _23COUNT_NULL = 0;
 
-                            let _20SUM = 0, _20COUNT = 0, _20COUNT_NULL = 0;
-                            let _21SUM = 0, _21COUNT = 0, _21COUNT_NULL = 0;
-                            let _22SUM = 0, _22COUNT = 0, _22COUNT_NULL = 0;
-                            let _23SUM = 0, _23COUNT = 0, _23COUNT_NULL = 0;
+                        let _30SUM = 0, _30COUNT = 0, _30COUNT_NULL = 0;
+                        let _31SUM = 0, _31COUNT = 0, _31COUNT_NULL = 0;
+                        let _32SUM = 0, _32COUNT = 0, _32COUNT_NULL = 0;
+                        let _33SUM = 0, _33COUNT = 0, _33COUNT_NULL = 0;
+                        let _34SUM = 0, _34COUNT = 0, _34COUNT_NULL = 0;
 
-                            let _30SUM = 0, _30COUNT = 0, _30COUNT_NULL = 0;
-                            let _31SUM = 0, _31COUNT = 0, _31COUNT_NULL = 0;
-                            let _32SUM = 0, _32COUNT = 0, _32COUNT_NULL = 0;
-                            let _33SUM = 0, _33COUNT = 0, _33COUNT_NULL = 0;
-                            let _34SUM = 0, _34COUNT = 0, _34COUNT_NULL = 0;
+                        let _40SUM = 0, _40COUNT = 0, _40COUNT_NULL = 0;
+                        let _41SUM = 0, _41COUNT = 0, _41COUNT_NULL = 0;
+                        let _42SUM = 0, _42COUNT = 0, _42COUNT_NULL = 0;
 
-                            let _40SUM = 0, _40COUNT = 0, _40COUNT_NULL = 0;
-                            let _41SUM = 0, _41COUNT = 0, _41COUNT_NULL = 0;
-                            let _42SUM = 0, _42COUNT = 0, _42COUNT_NULL = 0;
+                        let _50SUM = 0, _50COUNT = 0, _50COUNT_NULL = 0;
+                        let _51SUM = 0, _51COUNT = 0, _51COUNT_NULL = 0;
+                        let _52SUM = 0, _52COUNT = 0, _52COUNT_NULL = 0;
 
-                            let _50SUM = 0, _50COUNT = 0, _50COUNT_NULL = 0;
-                            let _51SUM = 0, _51COUNT = 0, _51COUNT_NULL = 0;
-                            let _52SUM = 0, _52COUNT = 0, _52COUNT_NULL = 0;
+                        let _60SUM = 0, _60COUNT = 0, _60COUNT_NULL = 0;
+                        let _61SUM = 0, _61COUNT = 0, _61COUNT_NULL = 0;
+                        let _62SUM = 0, _62COUNT = 0, _62COUNT_NULL = 0;
 
-                            let _60SUM = 0, _60COUNT = 0, _60COUNT_NULL = 0;
-                            let _61SUM = 0, _61COUNT = 0, _61COUNT_NULL = 0;
-                            let _62SUM = 0, _62COUNT = 0, _62COUNT_NULL = 0;
-
-                            let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
-                            let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
-
-
-                            for (let i=0; i<db_data.length; i++) {
-                                console.log(db_data[i])
-
-                                let _00 = db_data[i]._00;
-                                let _01 = db_data[i]._01;
-
-                                let _10 = db_data[i]._10;
-                                let _11 = db_data[i]._11;
-                                let _12 = db_data[i]._12;
-                                let _13 = db_data[i]._13;
-
-                                let _20 = db_data[i]._20;
-                                let _21 = db_data[i]._21;
-                                let _22 = db_data[i]._22;
-                                let _23 = db_data[i]._23;
-
-                                let _30 = db_data[i]._30;
-                                let _31 = db_data[i]._31;
-                                let _32 = db_data[i]._32;
-                                let _33 = db_data[i]._33;
-                                let _34 = db_data[i]._34;
-
-                                let _40 = db_data[i]._40;
-                                let _41 = db_data[i]._41;
-                                let _42 = db_data[i]._42;
-
-                                let _50 = db_data[i]._50;
-                                let _51 = db_data[i]._51;
-                                let _52 = db_data[i]._52;
-
-                                let _60 = db_data[i]._60;
-                                let _61 = db_data[i]._61;
-                                let _62 = db_data[i]._62;
-
-                                let _70 = db_data[i]._70;
-                                let _71 = db_data[i]._71;
+                        let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
+                        let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
 
 
-                                if (_00 === 0) { _00COUNT_NULL++; }
-                                else { _00SUM += _00; _00COUNT++; }
-                                if (_01 === 0) { _01COUNT_NULL++; }
-                                else { _01SUM += _01; _01COUNT++; }
+                        for (let i=0; i<db_data.length; i++) {
+                            console.log(db_data[i])
 
-                                if (_10 === 0) { _10COUNT_NULL++; }
-                                else { _10SUM += _10; _10COUNT++; }
-                                if (_11 === 0) { _11COUNT_NULL++; }
-                                else { _11SUM += _11; _11COUNT++; }
-                                if (_12 === 0) { _12COUNT_NULL++; }
-                                else { _12SUM += _12; _12COUNT++; }
-                                if (_13 === 0) { _13COUNT_NULL++; }
-                                else { _13SUM += _13; _13COUNT++; }
+                            let _00 = db_data[i]._00;
+                            let _01 = db_data[i]._01;
 
-                                if (_20 === 0) { _20COUNT_NULL++; }
-                                else { _20SUM += _20; _20COUNT++; }
-                                if (_21 === 0) { _21COUNT_NULL++; }
-                                else { _21SUM += _21; _21COUNT++; }
-                                if (_22 === 0) { _22COUNT_NULL++; }
-                                else { _22SUM += _22; _22COUNT++; }
-                                if (_23 === 0) { _23COUNT_NULL++; }
-                                else { _23SUM += _23; _23COUNT++; }
+                            let _10 = db_data[i]._10;
+                            let _11 = db_data[i]._11;
+                            let _12 = db_data[i]._12;
+                            let _13 = db_data[i]._13;
 
-                                if (_30 === 0) { _30COUNT_NULL++; }
-                                else { _30SUM += _30; _30COUNT++; }
-                                if (_31 === 0) { _31COUNT_NULL++; }
-                                else { _31SUM += _31; _31COUNT++; }
-                                if (_32 === 0) { _32COUNT_NULL++; }
-                                else { _32SUM += _32; _32COUNT++; }
-                                if (_33 === 0) { _33COUNT_NULL++; }
-                                else { _33SUM += _33; _33COUNT++; }
-                                if (_34 === 0) { _34COUNT_NULL++; }
-                                else { _34SUM += _34; _30COUNT++; }
+                            let _20 = db_data[i]._20;
+                            let _21 = db_data[i]._21;
+                            let _22 = db_data[i]._22;
+                            let _23 = db_data[i]._23;
 
-                                if (_40 === 0) { _40COUNT_NULL++; }
-                                else { _40SUM += _40; _40COUNT++; }
-                                if (_41 === 0) { _41COUNT_NULL++; }
-                                else { _41SUM += _41; _41COUNT++; }
-                                if (_42 === 0) { _42COUNT_NULL++; }
-                                else { _42SUM += _42; _42COUNT++; }
+                            let _30 = db_data[i]._30;
+                            let _31 = db_data[i]._31;
+                            let _32 = db_data[i]._32;
+                            let _33 = db_data[i]._33;
+                            let _34 = db_data[i]._34;
 
-                                if (_50 === 0) { _50COUNT_NULL++; }
-                                else { _50SUM += _50; _50COUNT++; }
-                                if (_51 === 0) { _51COUNT_NULL++; }
-                                else { _51SUM += _51; _51COUNT++; }
-                                if (_52 === 0) { _52COUNT_NULL++; }
-                                else { _52SUM += _52; _52COUNT++; }
+                            let _40 = db_data[i]._40;
+                            let _41 = db_data[i]._41;
+                            let _42 = db_data[i]._42;
 
-                                if (_60 === 0) { _60COUNT_NULL++; }
-                                else { _60SUM += _60; _60COUNT++; }
-                                if (_61 === 0) { _61COUNT_NULL++; }
-                                else { _61SUM += _61; _61COUNT++; }
-                                if (_62 === 0) { _62COUNT_NULL++; }
-                                else { _62SUM += _62; _62COUNT++; }
+                            let _50 = db_data[i]._50;
+                            let _51 = db_data[i]._51;
+                            let _52 = db_data[i]._52;
 
-                                if (_70 === 0) { _70COUNT_NULL++; }
-                                else { _70SUM += _70; _70COUNT++; }
-                                if (_71 === 0) { _71COUNT_NULL++; }
-                                else { _71SUM += _71; _71COUNT++; }
+                            let _60 = db_data[i]._60;
+                            let _61 = db_data[i]._61;
+                            let _62 = db_data[i]._62;
 
-                            }
-
-                            let data_object = {
-                                "Evaluation": input,
-                                "Name": data._pre_tname,
-                                "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
-                                "Fach": (data.subject_id == null) ? 'Keine Angabe' : data.subject_id,
-                                "Schulart": (data.institution_id == null) ? 'Keine Angabe' : data.institution_id,
-                                "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
-                                "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
-                                "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
-                                "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
-                                "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
-                                "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
-                                "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
-                                "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
-                                "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
-                                "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
-                                "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
-                                "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
-                                "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
-                                "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
-                                "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
-                                "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
-                                "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
-                                "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
-                                "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
-                                "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
-                                "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
-                                "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
-                                "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
-                                "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
-                                "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                                "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
-                                "Anzahl Datensätze:": db_data.length
-                            };
-                            console.log(data_object);
-
-                            window.survey = new Survey.Model(json);
-                            survey.data = data_object;
-                            visualize(data_object);
-
-                            further_data = {
-                                "Bezüge Curriculum": _00COUNT_NULL,
-                                "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
-                                "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
-                                "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
-                                "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
-                                "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
-                                "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
-                                "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
-                                "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
-                                "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
-                                "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
-                                "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
-                                "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
-                                "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
-                                "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
-                                "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
-                                "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
-                                "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
-                                "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
-                                "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
-                                "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
-                                "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
-                                "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
-                                "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
-                                "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                                "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
-                            }
+                            let _70 = db_data[i]._70;
+                            let _71 = db_data[i]._71;
 
 
+                            if (_00 === 0) { _00COUNT_NULL++; }
+                            else { _00SUM += _00; _00COUNT++; }
+                            if (_01 === 0) { _01COUNT_NULL++; }
+                            else { _01SUM += _01; _01COUNT++; }
 
-                            document.getElementById('display_id').innerHTML = input;
+                            if (_10 === 0) { _10COUNT_NULL++; }
+                            else { _10SUM += _10; _10COUNT++; }
+                            if (_11 === 0) { _11COUNT_NULL++; }
+                            else { _11SUM += _11; _11COUNT++; }
+                            if (_12 === 0) { _12COUNT_NULL++; }
+                            else { _12SUM += _12; _12COUNT++; }
+                            if (_13 === 0) { _13COUNT_NULL++; }
+                            else { _13SUM += _13; _13COUNT++; }
 
-                            document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
+                            if (_20 === 0) { _20COUNT_NULL++; }
+                            else { _20SUM += _20; _20COUNT++; }
+                            if (_21 === 0) { _21COUNT_NULL++; }
+                            else { _21SUM += _21; _21COUNT++; }
+                            if (_22 === 0) { _22COUNT_NULL++; }
+                            else { _22SUM += _22; _22COUNT++; }
+                            if (_23 === 0) { _23COUNT_NULL++; }
+                            else { _23SUM += _23; _23COUNT++; }
 
-                            //document.querySelector('#surveyResult').textContent += "\n\n" + JSON.stringify(data_object, null, 4);
+                            if (_30 === 0) { _30COUNT_NULL++; }
+                            else { _30SUM += _30; _30COUNT++; }
+                            if (_31 === 0) { _31COUNT_NULL++; }
+                            else { _31SUM += _31; _31COUNT++; }
+                            if (_32 === 0) { _32COUNT_NULL++; }
+                            else { _32SUM += _32; _32COUNT++; }
+                            if (_33 === 0) { _33COUNT_NULL++; }
+                            else { _33SUM += _33; _33COUNT++; }
+                            if (_34 === 0) { _34COUNT_NULL++; }
+                            else { _34SUM += _34; _30COUNT++; }
 
-                            resolve();
-                        } else {
-                            reject("Es konnten keine entsprechenden Daten geladen werden.");
+                            if (_40 === 0) { _40COUNT_NULL++; }
+                            else { _40SUM += _40; _40COUNT++; }
+                            if (_41 === 0) { _41COUNT_NULL++; }
+                            else { _41SUM += _41; _41COUNT++; }
+                            if (_42 === 0) { _42COUNT_NULL++; }
+                            else { _42SUM += _42; _42COUNT++; }
+
+                            if (_50 === 0) { _50COUNT_NULL++; }
+                            else { _50SUM += _50; _50COUNT++; }
+                            if (_51 === 0) { _51COUNT_NULL++; }
+                            else { _51SUM += _51; _51COUNT++; }
+                            if (_52 === 0) { _52COUNT_NULL++; }
+                            else { _52SUM += _52; _52COUNT++; }
+
+                            if (_60 === 0) { _60COUNT_NULL++; }
+                            else { _60SUM += _60; _60COUNT++; }
+                            if (_61 === 0) { _61COUNT_NULL++; }
+                            else { _61SUM += _61; _61COUNT++; }
+                            if (_62 === 0) { _62COUNT_NULL++; }
+                            else { _62SUM += _62; _62COUNT++; }
+
+                            if (_70 === 0) { _70COUNT_NULL++; }
+                            else { _70SUM += _70; _70COUNT++; }
+                            if (_71 === 0) { _71COUNT_NULL++; }
+                            else { _71SUM += _71; _71COUNT++; }
+
                         }
-                    }
 
+                        let data_object = {
+                            "Evaluation": input,
+                            "Name": data._pre_tname,
+                            "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
+                            "Fach": (data.subject_id == null) ? 'Keine Angabe' : data.subject_id,
+                            "Schulart": (data.institution_id == null) ? 'Keine Angabe' : data.institution_id,
+                            "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
+                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
+                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
+                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
+                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
+                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
+                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
+                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
+                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
+                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
+                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
+                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
+                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
+                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
+                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
+                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
+                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
+                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
+                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
+                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
+                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
+                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
+                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
+                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
+                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
+                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
+                            "Anzahl Datensätze:": db_data.length
+                        };
+                        console.log(data_object);
+
+                        window.survey = new Survey.Model(json);
+                        survey.data = data_object;
+                        visualize(data_object);
+
+                        further_data = {
+                            "Bezüge Curriculum": _00COUNT_NULL,
+                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
+                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
+                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
+                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
+                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
+                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
+                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
+                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
+                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
+                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
+                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
+                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
+                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
+                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
+                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
+                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
+                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
+                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
+                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
+                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
+                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
+                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
+                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
+                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
+                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
+                        }
+
+
+
+                        document.getElementById('display_id').innerHTML = input;
+
+                        document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
+
+                        //document.querySelector('#surveyResult').textContent += "\n\n" + JSON.stringify(data_object, null, 4);
+
+                        resolve();
+                    } else {
+                        reject("Es konnten keine entsprechenden Daten geladen werden.");
+                    }
                 }
 
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.send(JSON.stringify({"predefined_id": input}));
-
-            } else {
-                reject("Es müssen genau 10 Zeichen sein.");
             }
-        }))
 
-    })
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({"predefined_id": input}));
+
+        } else {
+            reject("Es müssen genau 10 Zeichen sein.");
+        }
+    }))
 
 }
 
-function getPredefinedData(id) {
+function getPredefinedData() {
+    let input = document.getElementById('loadResultSet').value;
+
     return new Promise( ((resolve, reject) => {
-        if (id.length === 10) {
+        if (input.length === 10) {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
-
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     let db_data = this.responseText;
                     if (db_data.length > 0) {
-                        resolve(JSON.parse(db_data));
+                        console.log(db_data)
+                        data = JSON.parse(db_data);
+                        console.log(data)
+                        resolve(db_data);
                     } else {
                         reject("Zum angegebenen Code wurde nichts gefunden!");
                     }
 
-
-                } else
-                    reject();
+                }
             }
 
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"predefined_id": id}));
+            xhr.send(JSON.stringify({"predefined_id": input}));
 
         } else {
             reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
