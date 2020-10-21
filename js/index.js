@@ -696,9 +696,25 @@ function loadResultSet(data) {
                         let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
                         let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
 
+                        let json_str;
 
                         for (let i=0; i<db_data.length; i++) {
+                            let result = {};
                             console.log(db_data[i])
+
+                            result.Einzelevaluation = db_data[i].result_id;
+
+                            if (data._pre_link == null) {
+                                result.Verlinkung = db_data[i]._link;
+                            }
+
+                            if (data.subject_id == null) {
+                                result.Fach = db_data[i].subject_id;
+                            }
+
+                            if (data.institution_id == null) {
+                                result.Schulart = db_data[i].institution_id;
+                            }
 
                             let _00 = db_data[i]._00;
                             let _01 = db_data[i]._01;
@@ -733,6 +749,35 @@ function loadResultSet(data) {
 
                             let _70 = db_data[i]._70;
                             let _71 = db_data[i]._71;
+
+                            result['Bezüge Curriculum'] = _00;
+                            result['Bezüge Bildungsstandards'] = _01;
+                            result['Interessegeleitete Themenführung/Positionierung'] = _10;
+                            result['Transparenz'] = _11;
+                            result['Werbliche Elemente'] = _12;
+                            result['Heterogenität/Gender'] = _13;
+                            result['Handlungsorientierung'] = _20;
+                            result['Lebensweltlichkeit'] = _21;
+                            result['Reflexion/Urteilsfähigkeit'] = _22;
+                            result['Multiperspektivität/Kontroversität'] = _23;
+                            result['Methodenpluralität'] = _30;
+                            result['Multimedia/Multimodalität'] = _31;
+                            result['Medienkompetenz'] = _32;
+                            result['Differenzierung'] = _33;
+                            result['Barrierefreiheit/Inklusion'] = _34;
+                            result['Transfer- und Anwendungsorientierung'] = _40;
+                            result['Prozessorientierung (Kumulation)'] = _41;
+                            result['Lernwegunterstützende Elemente (Scaffolding)'] = _42;
+                            result['Sprachlichkeit'] = _50;
+                            result['Bildsprache'] = _51;
+                            result['Additive Kommunikation (Anreicherung)'] = _52;
+                            result['Sequenzierung'] = _60;
+                            result['Aktivierung'] = _61;
+                            result['Multiple Lösungswege'] = _62;
+                            result['Didaktisches Konzept'] = _70;
+                            result['Rahmenbedingungen'] = _71;
+
+                            json_str += '\n\n' + JSON.stringify(result, null, 4);
 
 
                             if (_00 === 0) { _00COUNT_NULL++; }
@@ -837,42 +882,12 @@ function loadResultSet(data) {
                         survey.data = data_object;
                         visualize(data_object);
 
-                        further_data = {
-                            "Bezüge Curriculum": _00COUNT_NULL,
-                            "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
-                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
-                            "Transparenz": (_11COUNT > 0)?(_11SUM/_11COUNT):0,
-                            "Werbliche Elemente": (_12COUNT > 0)?(_12SUM/_12COUNT):0,
-                            "Heterogenität/Gender": (_13COUNT > 0)?(_13SUM/_13COUNT):0,
-                            "Handlungsorientierung": (_20COUNT > 0)?(_20SUM/_20COUNT):0,
-                            "Lebensweltlichkeit": (_21COUNT > 0)?(_21SUM/_21COUNT):0,
-                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0)?(_22SUM/_22COUNT):0,
-                            "Multiperspektivität/Kontroversität": (_23COUNT > 0)?(_23SUM/_23COUNT):0,
-                            "Methodenpluralität": (_30COUNT > 0)?(_30SUM/_30COUNT):0,
-                            "Multimedia/Multimodalität": (_31COUNT > 0)?(_31SUM/_31COUNT):0,
-                            "Medienkompetenz": (_32COUNT > 0)?(_32SUM/_32COUNT):0,
-                            "Differenzierung": (_33COUNT > 0)?(_33SUM/_33COUNT):0,
-                            "Barrierefreiheit/Inklusion": (_34COUNT > 0)?(_34SUM/_34COUNT):0,
-                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0)?(_40SUM/_40COUNT):0,
-                            "Prozessorientierung (Kumulation)": (_41COUNT > 0)?(_41SUM/_41COUNT):0,
-                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0)?(_42SUM/_42COUNT):0,
-                            "Sprachlichkeit": (_50COUNT > 0)?(_50SUM/_50COUNT):0,
-                            "Bildsprache": (_51COUNT > 0)?(_51SUM/_51COUNT):0,
-                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0)?(_52SUM/_52COUNT):0,
-                            "Sequenzierung": (_60COUNT > 0)?(_60SUM/_60COUNT):0,
-                            "Aktivierung": (_61COUNT > 0)?(_61SUM/_61COUNT):0,
-                            "Multiple Lösungswege": (_62COUNT > 0)?(_62SUM/_62COUNT):0,
-                            "Didaktisches Konzept": (_70COUNT > 0)?(_70SUM/_70COUNT):0,
-                            "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0
-                        }
-
-
 
                         document.getElementById('display_id').innerHTML = input;
 
                         document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
 
-                        //document.querySelector('#surveyResult').textContent += "\n\n" + JSON.stringify(data_object, null, 4);
+                        document.querySelector('#surveyResult').textContent += "\n\n" + json_str;
 
                         resolve();
                     } else {
