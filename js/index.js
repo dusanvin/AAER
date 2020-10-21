@@ -800,7 +800,7 @@ function loadResultSet(data) {
                         let data_object = {
                             "Evaluation": input,
                             "Name": data._pre_tname,
-                            "Verlinkung": (data._pre_link == null) ? 1 : data._pre_link,
+                            "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
                             "Fach": (data.subject_id == null) ? 1 : data.subject_id,
                             "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
                             "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
