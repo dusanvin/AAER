@@ -777,7 +777,7 @@ function loadResultSet(data) {
                             result['Didaktisches Konzept'] = _70;
                             result['Rahmenbedingungen'] = _71;
 
-                            if (db_data[i]._comment == null || (!input_tname.replace(/\s/g, '').length)) {
+                            if (db_data[i]._comment == null || (!db_data[i]._comment.replace(/\s/g, '').length)) {
                                 result['Eigene Anmerkungen'] = 'Keine Angabe.'
                             } else {
                                 result['Eigene Anmerkungen'] = db_data[i]._comment;
