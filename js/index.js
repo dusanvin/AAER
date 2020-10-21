@@ -800,9 +800,9 @@ function loadResultSet(data) {
                         let data_object = {
                             "Evaluation": input,
                             "Name": data._pre_tname,
-                            "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
-                            "Fach": (data.subject_id == null) ? 'Keine Angabe' : data.subject_id,
-                            "Schulart": (data.institution_id == null) ? 'Keine Angabe' : data.institution_id,
+                            "Verlinkung": (data._pre_link == null) ? 1 : data._pre_link,
+                            "Fach": (data.subject_id == null) ? 1 : data.subject_id,
+                            "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
                             "Bezüge Curriculum": (_00COUNT > 0)?(_00SUM/_00COUNT):0,
                             "Bezüge Bildungsstandards": (_01COUNT > 0)?(_01SUM/_01COUNT):0,
                             "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0)?(_10SUM/_10COUNT):0,
