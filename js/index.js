@@ -696,7 +696,7 @@ function loadResultSet(data) {
                         let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
                         let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
 
-                        let json_str;
+                        let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
 
                         for (let i=0; i<db_data.length; i++) {
                             let result = {};
