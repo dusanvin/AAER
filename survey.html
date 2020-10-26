@@ -99,11 +99,11 @@
 
 						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Teilnahme</span>
 
-						<button id="button_display_start" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.START)">Start</button>
+						<button id="button_display_start" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.START)">Lehr-/ Lernmittel evaluieren</button>
 
-						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation anlegen</button>
+						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation erstellen</button>
 
-						<button id="button_display_auswerten" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.AUSWERTEN)">Daten laden und auswerten</button>
+						<button id="button_display_auswerten" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.AUSWERTEN)">(Gruppen-)Evaluation laden</button>
 
 						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Auswertung</span>
 
@@ -289,7 +289,6 @@
 
 													<!-- Initialisierung der Umfrage End -->
 
-
 												</div>
 
 											</div>
@@ -331,58 +330,31 @@
 
 					<div class="container-fluid" id="display_start">
 
-						<!-- Beginn Container _START -->
-
-						<div class="container-fluid">
-
 							<!-- Row _START -->
 
 							<div class="row justify-content-center">
 
 								<!-- Col _START -->
 
-								<div class="col">
+								<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 text-center">									
+									
+									<p class="mt-5">Analysieren / Evaluieren Sie ein Lehr-/ Lernmittel.</p>
 
-									<!-- Canvas _START -->
+									<button class="btn btn-green ml-1 mr-1" onclick="newSurvey()">Lehr-/ Lernmittel evaluieren</button>
 
-									<div>
+									<p class="mt-5">Nehmen Sie an einer bereits bestehenden Gruppenevaluation mittels eines 10-stelligen Codes teil.</p>
 
-										<div class="text-left">
+									<div class="mt-3">
 
-											<div class="container-fluid grey-border mt-3">
+										<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="loadPredefined" placeholder="10-stelliger-Code" style="width:10.5em;">
 
-												<div class="row pt-4 bg-white">
+										<button class="btn btn-green ml-1 mr-1" onclick="startPredefined();">teilnehmen</button>
 
-													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Nehmen Sie an einer bereits bestehenden Gruppenevaluation teil. Geben Sie hierfür zunächst den erhaltenen Code ein. Wählen Sie dann den Button zur Teilnahme.</p>
+										<br>
 
-														<div class="mt-3">
-															<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="loadPredefined" placeholder="10-stelliger-Code" style="width:10.5em;">
-															<button class="btn btn-green ml-1 mr-1" onclick="startPredefined();">teilnehmen</button>
-															<br>
-
-															<div id="teilnehmen_message" style="color: red;"></div>
-
-														</div>
-
-													</div>
-
-													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p>Oder beginnen Sie hier einfach eine neue unabhängige Einzelevaluation.</p>
-														<button class="btn btn-green ml-1 mr-1" onclick="newSurvey()">evaluation starten</button>
-													</div>
-
-
-												</div>
-
-											</div>
-
-
-										</div>
+										<div id="teilnehmen_message" style="color: red;"></div>
 
 									</div>
-
-									<!-- Canvas _START Ende -->
 
 								</div>
 
@@ -392,10 +364,6 @@
 
 							<!-- Row _START Ende -->
 
-						</div>
-
-						<!-- Ende Container _START -->
-
 					</div>
 
 					<!-- Ende START -->
@@ -404,142 +372,118 @@
 
 					<div class="container-fluid" id="display_anlegen">
 
-						<!-- Beginn Container _ANLEGEN -->
+						<!-- Row _ANLEGEN Start -->
 
-						<div class="container-fluid">
+						<div class="row justify-content-center">
 
-							<!-- Row _ANLEGEN Start -->
+							<!-- Col _ANLEGEN Start -->
 
-							<div class="row justify-content-center">
+							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 px-xs-1 px-sm-3 px-md-3 px-lg-5 text-left" id="survey_anlegen1">
 
-								<!-- Col _ANLEGEN Start -->
+								<p class="mt-5 text-center"><strong>Erstellen Sie eine neue Gruppenevaluation.</strong> Sie erhalten anschließend einen <strong>10-stelligen Code</strong> zur Weitergabe an andere Teilnehmende.</p>
 
-								<div class="col">
+								<div class="mt-5">
 
-									<!-- Canvas _ANLEGEN Start -->
+									Wie lautet der Name des Lehr-/ Lernmittels?
 
-									<div id="survey_anlegen1">
+									<input class="form-control" type="text" id="survey_tname">
 
-										<div class="text-left">
+									<br>
 
-											<div class="container-fluid grey-border mt-3">
+									Wie möchten Sie den Link zum Lehr-/ Lernmittel benennen?
 
-												<div class="row pt-4 bg-white">
+									<input class="form-control" type="text" id="survey_link">
 
-													<!-- Start: Formular um neue Gruppenbefragung anzulegen -->
+									<br>
 
-													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+									Welchem Fach kann das Lehr-/ Lernmittel zugeordnet werden?
 
+									<select class="form-control" id="survey_subject">
+										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein Fach...</option>
+										<option value="1">Keine Angabe</option>
+										<option value="2">Biologie</option>
+										<option value="3">Chemie</option>
+										<option value="4">Deutsch</option>
+										<option value="5">Englisch</option>
+										<option value="6">Erdkunde / Geographie</option>
+										<option value="7">Ethik</option>
+										<option value="8">Französich</option>
+										<option value="9">Geschichte</option>
+										<option value="10">Informatik / IT</option>
+										<option value="11">Kunst / Werken</option>
+										<option value="12">Latein</option>
+										<option value="13">Mathematik</option>
+										<option value="14">Musik</option>
+										<option value="15">Pädagogik</option>
+										<option value="16">Philosophie</option>
+										<option value="17">Physik</option>
+										<option value="18">Psychologie</option>
+										<option value="19">Religion</option>
+										<option value="20">Sozialkunde / Politik</option>
+										<option value="21">Sport</option>
+										<option value="22">Sprachen (andere)</option>
+										<option value="23">Sonstiges Fach</option>
+									</select>
 
-														<p class="mt-5">Erstellen Sie eine neue Gruppenevaluation. Sie erhalten dadurch einen 10-stelligen Code, den Sie an potentielle Teilnehmer/innen weiterreichen können.</p>
+									<br>
 
-														<div class="mt-3">
+									Welcher Schulart kann das Lehr-/ Lernmittel zugeordnet werden?
 
-															Bitte legen Sie einen Namen für das Lehr-/Lernmittel fest:
-															<input class="form-control" type="text" id="survey_tname">
-															<br>
+									<br>
 
-															Möchten Sie einen Link festlegen?
-															<input class="form-control" type="text" id="survey_link">
-															<br>
+									<select class="form-control" id="survey_institution">
+										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie eine Schulart...</option>
+										<option value="1">Keine Angabe</option>
+										<option value="2">Abendschule</option>
+										<option value="3">Alternatives Schulkonzept</option>
+										<option value="4">Berufsfachschule</option>
+										<option value="5">Berufskolleg</option>
+										<option value="6">Berufsoberschule</option>
+										<option value="7">Berufsschule</option>
+										<option value="8">Bildungskolleg</option>
+										<option value="9">Fachakademie</option>
+										<option value="10">Fachhochschule</option>
+										<option value="11">Fachoberschule</option>
+										<option value="12">Fachschule</option>
+										<option value="13">Förderschule</option>
+										<option value="14">Gesamtschule</option>
+										<option value="15">Grundschule</option>
+										<option value="16">Gymnasium</option>
+										<option value="17">Hochschule</option>
+										<option value="18">Internationale Schule</option>
+										<option value="19">Mittelschule</option>
+										<option value="20">Realschule</option>
+										<option value="21">Schule besonderer Art</option>
+										<option value="22">Schule für Kranke</option>
+										<option value="23">Volkshochschule</option>
+										<option value="24">Vorschule</option>
+										<option value="25">Wirtschaftsschule</option>
+										<option value="26">Sonstige Schule</option>
+									</select>
 
-<!--															Wird die Evaluation für ein bestimmtes Fach erstellt?<br>-->
-															<br>
-															<select class="form-control" id="survey_subject">
-																<option selected="selected" disabled="disabled" value="">Wählen Sie ein Fach</option>
-																<option value="1">Keine Angabe</option>
-																<option value="2">Biologie</option>
-																<option value="3">Chemie</option>
-																<option value="4">Deutsch</option>
-																<option value="5">Englisch</option>
-																<option value="6">Erdkunde / Geographie</option>
-																<option value="7">Ethik</option>
-																<option value="8">Französich</option>
-																<option value="9">Geschichte</option>
-																<option value="10">Informatik / IT</option>
-																<option value="11">Kunst / Werken</option>
-																<option value="12">Latein</option>
-																<option value="13">Mathematik</option>
-																<option value="14">Musik</option>
-																<option value="15">Pädagogik</option>
-																<option value="16">Philosophie</option>
-																<option value="17">Physik</option>
-																<option value="18">Psychologie</option>
-																<option value="19">Religion</option>
-																<option value="20">Sozialkunde / Politik</option>
-																<option value="21">Sport</option>
-																<option value="22">Sprachen (andere)</option>
-																<option value="23">Sonstiges Fach</option>
-															</select>
-															<br>
+									<br>
 
-<!--															Wird die Evaluation für eine bestimmte Schulart erstellt?<br>-->
-															<br>
-															<select class="form-control" id="survey_institution">
-																<option selected="selected" disabled="disabled" value="">Wählen Sie eine Schulart</option>
-																<option value="1">Keine Angabe</option>
-																<option value="2">Abendschule</option>
-																<option value="3">Alternatives Schulkonzept</option>
-																<option value="4">Berufsfachschule</option>
-																<option value="5">Berufskolleg</option>
-																<option value="6">Berufsoberschule</option>
-																<option value="7">Berufsschule</option>
-																<option value="8">Bildungskolleg</option>
-																<option value="9">Fachakademie</option>
-																<option value="10">Fachhochschule</option>
-																<option value="11">Fachoberschule</option>
-																<option value="12">Fachschule</option>
-																<option value="13">Förderschule</option>
-																<option value="14">Gesamtschule</option>
-																<option value="15">Grundschule</option>
-																<option value="16">Gymnasium</option>
-																<option value="17">Hochschule</option>
-																<option value="18">Internationale Schule</option>
-																<option value="19">Mittelschule</option>
-																<option value="20">Realschule</option>
-																<option value="21">Schule besonderer Art</option>
-																<option value="22">Schule für Kranke</option>
-																<option value="23">Volkshochschule</option>
-																<option value="24">Vorschule</option>
-																<option value="25">Wirtschaftsschule</option>
-																<option value="26">Sonstige Schule</option>
-															</select>
-															<br>
-															<br>
-															<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation erstellen</button>
+									<br>
 
-															<br>
-															<div id="newPredefined_message" style="color: red;"></div>
-
-														</div>
-
-
-													</div>
-
-													<!-- Ende: Formular um neue Gruppenbefragung anzulegen -->
-
-												</div>
-
-											</div>
-
-
-										</div>
+									<div class="text-center">
+										
+									<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation erstellen</button>
 
 									</div>
 
-									<!-- Canvas _ANLEGEN Ende -->
+									<br>
+
+									<div id="newPredefined_message" style="color: red;"></div>
 
 								</div>
 
-								<!-- Col _ANLEGEN Ende -->
-
 							</div>
 
-							<!-- Row _ANLEGEN Ende -->
+							<!-- Col _ANLEGEN Ende -->
 
 						</div>
-
-						<!-- Ende Container _ANLEGEN -->
+						
+						<!-- Row _ANLEGEN Ende -->
 
 					</div>
 
