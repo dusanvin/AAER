@@ -247,6 +247,32 @@ a.btn-status {
 	color: rgb(24, 166, 137) !important;
 }
 
+.btn-transparent {
+	border:2px solid white !important;
+    border-radius: 7px !important;
+    background-color:transparent !important;
+    color:white !important;
+}
+
+.btn-transparent:hover {
+ 	background-color: white !important;
+ 	border: 2px solid #fff !important;
+  	border-color: white !important;
+  	color: #B52188 !important;
+}
+
+.btn-important {
+	background-color: #B52188 !important;
+	border: 2px solid #B52188 !important;
+	color: white !important;
+}
+
+.btn-important:hover {
+	background-color: white !important;
+	color: #B52188 !important;
+}
+
+
 #ergebnisse_container {
 	/*display: none;*/
 	display: block;
