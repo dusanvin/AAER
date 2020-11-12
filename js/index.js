@@ -88,7 +88,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     title: "Bitte geben Sie den Namen des Lehr-Lernmittels an, das Sie mit Hilfe des AAER analysieren/evaluieren möchten.",
                     isRequired: true,
                     readOnly: isPredefinedName,
-                    //hasComment: true,
+                    
                     //commentText: "Der Name wird später Ihrer persönlichen Auswertung, die Sie sich herunterladen können, angezeigt."
                 }
             ]
@@ -101,7 +101,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     title: "Bitte geben Sie den Link zu Ihrem Lehr-Lernmittel an (optional).",
                     isRequired: false,
                     readOnly: isPredefinedLink,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                 }
             ]
@@ -128,7 +128,34 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     choices: schularten
                 }
             ]
+        }, {name:"Bezüge Curriculum", title: "Bezüge Curriculum", description: "Heutige Lehrpläne enthalten fach- und stufen- bzw. jahrgangsbezogene Ziele, Themengebiete, Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden. Wenn es auch nicht unbedingt darum geht, hier eine eng geführte Entsprechung zu erreichen, so ist doch eine Passung der mittel- und langfristigen Unterrichtsverläufe zu diesen Lehrplänen wichtig. Dazu ist es hilfreich, wenn das Lehr-Lernmittel entsprechende Bezüge zumindest stichwortartig herstellt, sodass eine Zuordnung seitens der Lehrkräfte, bzw. unter Umständen auch seitens der Schüler*innen, leichter vollzogen werden kann.",
 
+        questions: [
+            {
+                type: "radiogroup",
+                name: "Bezüge Curriculum",
+                title: "Im Lehr-Lernmittel werden nachvollziehbare Bezüge zu Inhalten des gültigen Curriculums hergestellt.",
+                isRequired: true,
+                
+                //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden Ziele, Themengebiete, angestrebte Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden auf eine Art transparent gemacht, die einer Lehrkraft eine Zuordnung zu den gültigen Lehr- und Bildungsplänen (Curricula) leicht macht. Idealerweise wird eine solche Zuordnung im Lehr-Lernmittel selbst vorgenommen, es enthält also spezifische Aussagen zu diesem Bereich. Das kann auch in der Form geschehen, dass der ergänzende Charakter als indirekter Bezug auf die Lehr- und Bildungspläne deutlich gemacht wird.",
+                choices: antworten
+                //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+            }
+        ]
+    }, {name:"Bezüge Bildungsstandards", title: "Bezüge Bildungsstandards", description: "Für eine Reihe von Fächern existieren in der Bundesrepublik Deutschland Bildungsstandards, in denen Kompetenz- bzw. Anforderungsbereiche beschrieben sind. Zwar ist davon auszugehen, dass sich diese auch in Lehr- und Bildungsplänen der Bundesländer niederschlagen, jedoch kann es trotzdem hilfreich sein, wenn im Lehr-Lernmittel auch hier entsprechende Bezüge zumindest stichwortartig herstellt werden, sodass eine Zuordnung seitens der Lehrkräfte, bzw. unter Umständen auch seitens der Schüler*innen, leichter vollzogen werden kann.",
+
+        questions: [
+            {
+                type: "radiogroup",
+                name: "Bezüge Bildungsstandards",
+                title: "Im Lehr-Lernmittel werden nachvollziehbare Bezüge zu Inhalten der gültigen Bildungsstandards hergestellt.",
+                isRequired: true,
+                
+                //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel findet eine grundsätzliche Einordnung der Lehr-Lernziele, der Themen sowie der angestrebten Kompetenzen zu entsprechenden Inhalten der Bildungsstandards statt (z.B. Anforderungsbereiche, Kompetenzen, Themen). Das kann auch detailliert/kleinschrittiger passieren, indem z.B. einzelne Unterrichtssequenzen oder Aufgaben in ihrer Bedeutung für den Kompetenzerwerb im Sinne der Bildungsstandards zugeordnet werden.",
+                choices: antworten
+                //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
+            }
+        ]
         }, {name:"Interessegeleitete Themenführung/Positionierung", title: "Interessegeleitete Themenführung/Positionierung", description: "Es ist grundsätzlich die Frage zu stellen, inwiefern Inhalte des Angebots im Zusammenhang mit bestimmten Interessen des Anbieters stehen und ob das eine einseitige Einflussnahme auf Schüler*innen und Lehrkräfte darstellt. Soll z.B. ein bestimmtes Thema in die Schule transportiert werden? Sollen bestimmte Inhalte oder Aussagen platziert werden? Soll eine bestimmte Organisation bzgl. für sie relevanter Themen in ein gutes Licht gerückt werden? Geschieht dies vereinseitigend oder ist eine multiperspektivische Sichtweise auf gesellschaftlich, politisch oder wissenschaftlich relevante Diskurse gegeben, in der auch anderslautende Perspektiven gleichwertig repräsentiert sind?",
 
             questions: [
@@ -138,7 +165,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     title: "Das Lehr-Lernmittel ist frei von einseitiger Informationsvermittlung bzgl. bestimmter Themen/Aussagen gesellschaftlicher Akteure.",
                     isRequired: true,
                     defaultValue: 5,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -152,7 +179,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Transparenz",
                     title: "Das Lehr-Lernmittel ist transparent hinsichtlich seiner Autorenschaft/Anbieter.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es werden Autor*innen und Anbieter sowie deren organisationale/institutionelle Zugehörigkeit genannt. Finanzierungsquellen werden offengelegt. Zusammenhänge (z.B. bei mehreren Anbietern oder beteiligten Organisationen) sind für die Lehrkraft nachvollziehbar. Außerdem werden Ziele des Lehr-Lernmittels und die Gründe für das Angebot (d.h. also eine Erklärung, warum dieses Lehr-Lernmittel angeboten wird) genannt.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -166,7 +193,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Werbliche Elemente",
                     title: "Das Lehr-Lernmittel ist frei von Werbung.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind keine der oben genannten Elemente im Lehr-Lernmittel enthalten. Höchstens eine direkt auf den Anbieter des Lehr-Lernmittels bezogene Namensnennung (Quelle) oder das Logo des Anbieters ist enthalten - jedoch sollte dieses nicht in visuell dominanter Weise präsentiert werden.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -180,7 +207,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Heterogenität/Gender",
                     title: "Das Lehr-Lernmittel ist in seinen textlichen und bildlichen Darstellungen von gesellschaftlichen bzw. ethnischen Gruppen sowie hinsichtlich der Kategorie Geschlecht ausgewogen und in ihm werden einseitige, reduzierende Darstellungen vermieden.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n In Abbildungen, Fotos und textlichen Beschreibungen, in den gesellschaftliche Gruppen vorkommen, werden diese nicht vereinseitigend dargestellt (etwa indem eine bestimmte gesellschaftliche Gruppe bestimmten Tätigkeiten, Meinungen und Verhaltensweisen vereinfachend zugeordnet wird). Für die Kategorie Geschlecht gilt, dass eine ausgewogene, sozusagen gleichberechtigte Darstellung von weiblichen und männlichen Personen enthalten ist, in der ebenfalls vereinseitigende Zuordnungen vermieden bzw. möglicherweise sogar bewusst aufgebrochen werden. In ähnlicher Weise erfolgt die Darstellung unterschiedlicher gesellschaftlicher Gruppen, Ethnien und Menschen mit Beeinträchtigungen - dies unter anderem auch deshalb, um der Heterogenität der Schüler*innen in diesem Bereich Rechnung zu tragen und entsprechende Identifikationsangebote zu bieten.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -194,7 +221,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Handlungsorientierung",
                     title: "Das Lehr-Lernmittel ist handlungsorientiert gestaltet, indem es Verantwortungsübernahme für Lernwege und Lernergebnisse durch die Schüler*innen fördert/fordert.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im bzw. durch das Lehr-Lernmittel werden die Schüler*innen weitreichend zu aktiven Gestaltenden ihres eigenen Lernprozesses bzw. der Anwendung von Wissen, Fertigkeiten und Kompetenzen. Das zeigt sich u.U. auch darin, dass individuell oder auch in Gruppen echte Entscheidungen über Lernwege oder die Anwendung von Wissen, Fertigkeiten und Kompetenzen getroffen werden, was wiederum Wahlmöglichkeiten auf Seiten der Schüler*innen voraussetzt.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -208,7 +235,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Lebensweltlichkeit",
                     title: "Das Lehr-Lernmittel weist Bezüge zur Lebenswelt der Schüler*innen auf.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel weist nicht nur allgemeine Bezüge zur Lebenswelt der Schüler*innen auf, sondern diese werden konkretisiert, indem z.B. reale Elemente/Materialien/Aussagen aus der aktuellen Zeitgeschichte aufgegriffen werden, die eine (emotionale) Nähe zu den Schüler*innen aufweisen (z.B. aus Zeitschriften, Webseiten sowie konkrete Ereignisse, Bezüge zu Fragen der Identitätsentwicklung, der Lebensgestaltung, Freizeit oder Beruf etc.).",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -222,7 +249,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Reflexion/Urteilsfähigkeit",
                     title: "Das Lehr-Lernmittel spricht die Schüler*innen als Menschen an, die sich selbst und ihre Umwelt zum Gegenstand des eigenen Denkens und Urteilens machen.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel fördert die Bildung einer eigenen begründeten Meinung bzw. die argumentative Äußerung dieser Meinung. Die Schüler*innen werden z.B. explizit aufgefordert, auf der Basis ihres fachlichen Wissens und der Ihnen zur Verfügung stehenden Informationen, ein Urteil als Antwort auf eine bestimmte Fragestellung zu fällen. Dabei kann auch eine gewissermaßen überfachliche Dimension eine Rolle spielen, indem z.B. fachliche Themen in ihren gesellschaftlichen, politischen oder sozialen Bezügen eingebettet und zum Gegenstand gemacht werden.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -236,7 +263,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Multiperspektivität/Kontroversität",
                     title: "Themen bzw. Probleme, die in Gesellschaft bzw. Wissenschaft kontrovers und multiperspektivisch diskutiert werden, werden im Lehrmittel ebenfalls kontrovers und multiperspektivisch dargestellt.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die im Lehr-Lernmittel dargestellten Themen, seien es zentrale oder begleitende, lassen in der Art der Darstellung für die Lernenden erkennen, dass es für ihre Bewertung unterschiedliche Positionen, Meinungen, Sichtweisen oder Argumente gibt. Es werden nicht nur einseitige Aussagen, Wertungen oder Formulierungen vermieden, die den Anschein der Alternativlosigkeit vermitteln, sondern die Lernenden werden durch das Lehr-Lernmittel für das Bestehen unterschiedlicher, kontroverser Sichtweisen sensibilisiert. Zudem wird durch die Präsentation der Themen/der Inhalte sowie durch die Art der sprachlichen Vermittlung eine Offenheit für eine eigene Meinungsbildung/Bewertung gewährleistet.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -250,7 +277,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Methodenpluralität",
                     title: "Das Lehr-Lernmittel setzt gezielt unterschiedliche Methoden ein, die den übergeordneten Zielen des Lernprozesses dienen.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden (unterschiedliche) Methoden gezielt eingesetzt, um bestimmte Aufgaben oder Sequenzen zu unterstützen. Diese Methoden zielen auf die Tätigkeit der Schüler*innen ab. Dabei geht es nicht darum, möglichst viele unterschiedliche Methoden einzusetzen (Selbstzeck), sondern nach Möglichkeit solche, die die angestrebten Ziele, Fertigkeiten und Kompetenzen didaktisch unterstützen. Hilfreich ist es, wenn der Sinn oder die Zielsetzung der eingesetzten Methoden genannt wird oder in Bezug auf ihre damit verbundene Zielsetzung transparent ist.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -264,7 +291,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Multimedia/Multimodalität",
                     title: "Das Lehr-Lernmittel transportiert seine Lerninhalte auf multimediale/multimodale Art und Weise.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Wesentliche Inhalte des Lehr-Lernprozesses, der durch das Lehr-Lernmittel angestrebt wird, werden medial aufbereitet vermittelt bzw. machen mediale Darstellungen zum Gegenstand des Lernhandelns für die Schüler*innen. Unterschiedliche Medienarten bzw. 'Kanäle' (z.B. auditive, audiovisuelle, annotierte oder symbolische Illustrationen/Videos, interaktive Webelemente, etc.) werden genutzt und in sinnvoller Weise kombiniert, um den Lernprozess zu fördern. Dies kann auch so umgesetzt werden, dass Wahlmöglichkeiten je nach individueller Präferenz für unterschiedliche Medienarten auf Seiten der Lernenden bestehen.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -278,7 +305,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Medienkompetenz",
                     title: "Das Lehr-Lernmittel fördert einen kompetenten Umgang mit Medien.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die Lernenden sind nicht nur passive Rezipienten medialer Inhalte, sondern setzen sich aktiv und reflexiv mit Mediendarstellung und/oder Kommunikation auseinander. Sie arbeiten, lernen und machen Lernfortschritte unter Nutzung von Medien. Und - wo möglich - erstellen sie sogar eigene Medieninhalte oder werden herausgefordert mediale Repräsentationen kritisch und reflexiv zu hinterfragen, um Medienkompetenz zu fördern.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -292,7 +319,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Differenzierung",
                     title: "Das Lehr-Lernmittel beinhaltet Angebote für binnendifferenzierte Lernarrangements.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält Variationsangebote, die zeitlich parallel umgesetzt werden können. Diese gehen über einfache Arbeitsgruppen hinaus, die dieselben Ziele lediglich auf unterschiedliche Gegenstände umsetzen.  Sie enthalten z.B. auch unterschiedliche Lernziele, unterschiedliche Schwierigkeitsgrade, aufeinander verweisende Arbeitsschritte u.ä. Dabei wird zudem die Sicherung von verbindlichen Ergebnissen für alle Schüler*innen nicht vernachlässigt.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -306,7 +333,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Barrierefreiheit/Inklusion",
                     title: "Das Lehr-Lernmittel bietet barrierefreie Zugänge für Schüler*innen mit Beeinträchtigungen.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält durchgängig in allen seinen Bestandteilen/Inhalten Elemente und Anreicherungen, die eine Barrierefreiheit für zumindest eine der beschriebenen Zielgruppen ermöglicht.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -320,7 +347,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Transfer- und Anwendungsorientierung",
                     title: "Durch das Lehr-Lernmittel werden gezielt kognitive Prozesse angesprochen, die über elementare kognitive Prozesse hinausgehen und als transfer- bzw. anwendungsorientiert zu bezeichnen sind.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es lassen sich im Lehr-Lernmittel in den einzelnen Teilen/Sequenzen die jeweils angeregten/beabsichtigten kognitiven Prozesse identifizieren bzw. sie sind möglicherweise sogar ausgewiesen. Außerdem finden sich Fragen oder Aufgaben, die z.B. darauf abzielen, dass die Schüler*innen aufgebautes Wissen auf andere Objekte anwenden (Transfer), Sachverhalte eigenständig analysieren, eigene Bewertungen auf der Basis ihres Wissens und der erworbenen fachlichen Fertigkeiten vornehmen oder sogar eigenständig neues Wissen oder Fertigkeiten für unbekannte Anwendungsgebiete bilden bzw. entwickeln, um fachliche Probleme zu lösen.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -334,7 +361,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Prozessorientierung (Kumulation)",
                     title: "Das Lehr-Lernmittel verknüpft einzelne Sequenzen zu einem Prozess und unterstützt damit das Prinzip eines kumulativen Aufbaus von Wissen, Fertigkeiten und Kompetenzen.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Sequenzen sind im Lehr-Lernmittel als solche zu erkennen und in ihren Verweisungszusammenhängen untereinander deutlich. In Bezug auf Unterrichtsziele, angestrebte Fertigkeiten und Kompetenzen lässt sich eine schrittweise Vorgehensweise erkennen bzw. mit dem Lehr-Lernmittel umsetzen. Unter Umständen ist das Lehr-Lernmittel sogar so konzipiert, dass es die Bedeutung seiner einzelnen Schritte und Zusammenhänge selbst erklärt und transparent macht.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -348,7 +375,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Lernwegunterstützende Elemente (Scaffolding)",
                     title: "Das Lehr-Lernmittel enthält Elemente, die den Lernprozess der Schüler*innen unterstützen, indem sie Aussagen machen, die sich auf den Lernweg bzw. die Lernaktivität der Schüler*innen beziehen.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Lernwegunterstützende Elemente finden sich nicht nur vereinzelt, sondern sind erkennbar systematisch an den Schlüsselstellen des Lehr-Lernmittels integriert und haben damit eine 'rahmende' Funktion. Solche Elemente können sein: Vor- und Nachbemerkungen, Kommentare zu Inhalten oder Lernprozessen des Lehr-Lernmittels (diese können sich auch metakognitiv direkt auf die Schüler*innen beziehen).",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -362,7 +389,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Sprachlichkeit",
                     title: "Die Sprache des Lehr-Lernmittels ist klar und verständlich.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine unnötig langen und verschachtelten Sätze. Auch Aufgaben sind direkt und klar formuliert, und es werden nicht mehrere Aufgabenstellungen in einer einzelnen Aufgabe vermischt. Fachbegriffe und Fremdwörter werden im fachlich nötigen und sinnvollen Rahmen eingesetzt oder gegebenenfalls erläutert. Es existieren keine sprachlichen bzw. logischen Brüche zwischen einzelnen Sätzen oder Abschnitten.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -376,7 +403,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Bildsprache",
                     title: "Bildliche Elemente werden im Lehr-Lernmittel in klarer und logischer Zuordnung zum Lerngegenstand bzw. -ziel eingesetzt.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel verwendet bildliche Elemente über eine rein illustrative Funktion hinaus. Sie stehen im Zusammenhang zum Unterrichtsthema und -ziel und leisten einen eigenen Beitrag zum Verstehen, Erklären oder Anwenden von Wissen, Fertigkeiten und Kompetenzen, die für den durch das Lehr-Lernmittel angeregten Unterrichtsprozess wichtig sind. Sie sind dabei auch textlich eingebettet, was z.B. durch erklärende Textpassagen oder Beschriftungen erreicht wird.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -390,7 +417,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Additive Kommunikation (Anreicherung)",
                     title: "Das Lehr-Lernmittel integriert zusätzliche kommunikative Elemente, die seine Inhalte unterstützen/anreichern.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält über eine reine fachliche Aufbereitung des Unterrichtsthemas und der Unterrichtsziele hinaus auch zusätzliche Elemente (Text/Bild/Sprache), die die Schüler*innen ansprechen, z.B. in ihren lebensweltlichen Bezügen, oder als Ergänzung, Erklärung sowie Verstärkung der im Lehr-Lernmittel präsentierten Inhalte.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -404,7 +431,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Sequenzierung",
                     title: "Die im Lehr-Lernmittel enthaltenen Aufgaben stehen in einem didaktisch oder fachlich sinnvollen Zusammenhang zueinander.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Die im Lehr-Lernmittel enthaltenen Aufgaben sind in einer aus fachlicher oder didaktischer Perspektive verständlichen Weise sequenziert. Sie verweisen aufeinander/bauen aufeinander auf und dabei werden nicht nur gleiche oder ähnliche kognitive Prozesse wiederholt. ",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -418,7 +445,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Aktivierung",
                     title: "Das Lehr-Lernmittel steht unter einer übergeordneten/umgreifenden Problemstellung, die durch die Schüler*innen bearbeitet und gelöst wird.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Zu Beginn des durch das Lehr-Lernmittel initiierten Lernprozesses wird eine Problemstellung formuliert, die es im Verlauf zu lösen gilt. Alle nachfolgenden Unterrichtsschritte sind auf diese Problemstellung bezogen und führen nach und nach zur Lösung bzw. vertiefen diese.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -432,7 +459,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Multiple Lösungswege",
                     title: "Die im Lehr-Lernmittel enthaltenen Aufgaben regen die Schüler*innen zur Entwicklung mehrerer Lösungswege an.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Lehr-Lernmittel lassen Raum für unterschiedliche Herangehensweisen, ohne dabei die Schüler*innen gänzlich ohne jegliche Anleitung oder Hinweise auf Lösungswege zu lassen. Z.B. werden unterschiedliche Lösungswege oder Strategien als Angebot an die Schüler*innen skizziert und vorgeschlagen. Auch konkrete Beispiele für mögliche unterschiedliche Lösungen oder Strategien können diesen Ansatz unterstützen.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -446,7 +473,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Didaktisches Konzept",
                     title: "Das Lehr-Lernmittel enthält didaktische Informationen, die seine Anwendung erleichtern.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält weitreichende und begründete Informationen über seine didaktische Konzeption. Diese übersteigen grundlegende Informationen über thematische Bezüge sowie die Zielgruppe und geben darüber hinaus auch Informationen über methodische Vorgehensweisen, angestrebte Kompetenzen oder Teilziele. Diese Informationen erklären die Intention des Lehr-Lernmittels und erleichtern somit seine Nutzbarkeit.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
@@ -460,40 +487,13 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Rahmenbedingungen",
                     title: "Das Lehr-Lernmittel nennt die Rahmenbedingungen seiner Nutzung.",
                     isRequired: true,
-                    //hasComment: true,
+                    
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Es sind alle nötigen Rahmenbedingungen der Nutzung/des Einsatzes des Lehr-Lernmittels übersichtlich aufgeführt.",
                     choices: antworten
                     //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
                 }
             ]
-        }, {name:"Bezüge Curriculum", title: "Bezüge Curriculum", description: "Heutige Lehrpläne enthalten fach- und stufen- bzw. jahrgangsbezogene Ziele, Themengebiete, Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden. Wenn es auch nicht unbedingt darum geht, hier eine eng geführte Entsprechung zu erreichen, so ist doch eine Passung der mittel- und langfristigen Unterrichtsverläufe zu diesen Lehrplänen wichtig. Dazu ist es hilfreich, wenn das Lehr-Lernmittel entsprechende Bezüge zumindest stichwortartig herstellt, sodass eine Zuordnung seitens der Lehrkräfte, bzw. unter Umständen auch seitens der Schüler*innen, leichter vollzogen werden kann.",
 
-            questions: [
-                {
-                    type: "radiogroup",
-                    name: "Bezüge Curriculum",
-                    title: "Im Lehr-Lernmittel werden nachvollziehbare Bezüge zu Inhalten des gültigen Curriculums hergestellt.",
-                    isRequired: true,
-                    //hasComment: true,
-                    //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel werden Ziele, Themengebiete, angestrebte Fertigkeiten/Kompetenzen, didaktische Prinzipien oder Anregungen zu Methoden auf eine Art transparent gemacht, die einer Lehrkraft eine Zuordnung zu den gültigen Lehr- und Bildungsplänen (Curricula) leicht macht. Idealerweise wird eine solche Zuordnung im Lehr-Lernmittel selbst vorgenommen, es enthält also spezifische Aussagen zu diesem Bereich. Das kann auch in der Form geschehen, dass der ergänzende Charakter als indirekter Bezug auf die Lehr- und Bildungspläne deutlich gemacht wird.",
-                    choices: antworten
-                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
-                }
-            ]
-        }, {name:"Bezüge Bildungsstandards", title: "Bezüge Bildungsstandards", description: "Für eine Reihe von Fächern existieren in der Bundesrepublik Deutschland Bildungsstandards, in denen Kompetenz- bzw. Anforderungsbereiche beschrieben sind. Zwar ist davon auszugehen, dass sich diese auch in Lehr- und Bildungsplänen der Bundesländer niederschlagen, jedoch kann es trotzdem hilfreich sein, wenn im Lehr-Lernmittel auch hier entsprechende Bezüge zumindest stichwortartig herstellt werden, sodass eine Zuordnung seitens der Lehrkräfte, bzw. unter Umständen auch seitens der Schüler*innen, leichter vollzogen werden kann.",
-
-            questions: [
-                {
-                    type: "radiogroup",
-                    name: "Bezüge Bildungsstandards",
-                    title: "Im Lehr-Lernmittel werden nachvollziehbare Bezüge zu Inhalten der gültigen Bildungsstandards hergestellt.",
-                    isRequired: true,
-                    //hasComment: true,
-                    //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Im Lehr-Lernmittel findet eine grundsätzliche Einordnung der Lehr-Lernziele, der Themen sowie der angestrebten Kompetenzen zu entsprechenden Inhalten der Bildungsstandards statt (z.B. Anforderungsbereiche, Kompetenzen, Themen). Das kann auch detailliert/kleinschrittiger passieren, indem z.B. einzelne Unterrichtssequenzen oder Aufgaben in ihrer Bedeutung für den Kompetenzerwerb im Sinne der Bildungsstandards zugeordnet werden.",
-                    choices: antworten
-                    //[{value: 1, text: "trifft nicht zu"}, {value: 2, text: "trifft weniger zu"}, {value: 3, text: "trifft mehr zu"}, {value: 4, text: "trifft voll zu"}, {value: 0, text: "nicht bewertbar"}]
-                }
-            ]
         }, {name:"Eigene Anmerkungen", title: "Eigene Anmerkungen", description: "Hier können Sie eigene Kommentare zum analysierten/evaluierten Lehr-Lernmnittel einfügen, die in der Auswertung angezeigt werden.",
 
             questions: [
