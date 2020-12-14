@@ -158,11 +158,6 @@ h5 {
 	font-weight: 600 !important;
 }
 
-#surveyElement {
-	background: white;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
 #surveyElementContainer {
 	border-top-left-radius: 7px !important;
 	border-top-right-radius: 7px !important;
@@ -285,6 +280,8 @@ a.btn-status {
 #surveyElement {
     border-top-right-radius: 7px;
 	border-top-left-radius: 7px;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
