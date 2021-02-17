@@ -66,7 +66,7 @@ antworten = [
     {value: 2, text: "trifft weniger zu"},
     {value: 3, text: "trifft mehr zu"},
     {value: 4, text: "trifft voll zu"},
-    {value: 0, text: "nicht bewertbar"}
+    {value: 0, text: "nicht bewertbar / nicht relevant"}
 ];
 
 

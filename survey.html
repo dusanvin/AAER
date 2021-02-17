@@ -101,7 +101,7 @@
 
 						<button id="button_display_start" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.START)">Lehr-Lernmittel evaluieren</button>
 
-						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation erstellen</button>
+						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation anlegen</button>
 
 						<button id="button_display_auswerten" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.AUSWERTEN)">Evaluationsergebnisse laden</button>
 
@@ -339,7 +339,7 @@
 
 								<p class="mt-0 uebersicht-details">
 
-									Sie erhalten im Anschluss einen <strong>12-stelligen Code</strong> zur Weitergabe Ihrer Ergebnisse.
+									Sie erhalten im Anschluss einen <strong>12-stelligen Code</strong> mit dem Sie Ihre Bewertung teilen und erneut aufrufen können.
 
 								</p>
 
@@ -347,13 +347,13 @@
 
 								<p class="mb-3 mt-5">
 
-									Nehmen Sie an einer bereits bestehenden Gruppenevaluation teil.
+									Nehmen Sie an einer Gruppenevaluation teil.
 
 								</p>
 
 								<p class="mt-0 uebersicht-details">
 
-								 Sie benötigen zur Teilnahme an einer Gruppenevaluation einen <strong>10-stelligen Code</strong>.
+								 Sie benötigen zur Teilnahme an einer Gruppenevaluation Ihren <strong>10-stelligen Gruppencode</strong>.
 
 								</p>
 
@@ -395,12 +395,12 @@
 
 								<p class="mb-3 mt-5 text-center">
 
-									<strong>Erstellen Sie eine neue Gruppenevaluation.</strong>
+									<strong>Legen Sie hier eine neue Gruppenevaluation an.</strong>
 								</p>
 
 								<p class="mt-0 text-center uebersicht-details">
 
-									Sie erhalten anschließend einen <strong>10-stelligen Code</strong>, um andere Teilnehmende zu Ihrer Gruppenevaluation einzuladen. 
+									Geben Sie hier die Basisdaten des Lehr-Lernmittels ein, die für alle Teilnehmer*innen übernommen werden. Sie erhalten nach Abschluss einen <strong>10-stelligen Gruppencode</strong>, mit dem Sie andere Teilnehmende zu Ihrer Gruppenevaluation einladen können. 
 
 								</p>
 
@@ -412,13 +412,13 @@
 
 									<br>
 
-									Wie möchten Sie den Link zum Lehr-Lernmittel benennen?
+									Bitte geben Sie den Link zum Lehr-Lernmittel an (optional)?
 
 									<input class="form-control" type="text" id="survey_link">
 
 									<br>
 
-									Welchem Fach kann das Lehr-Lernmittel zugeordnet werden?
+									Welchem Fach ist das Lehr-Lernmittel zugeordnet?
 
 									<select class="form-control" id="survey_subject">
 										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein Fach...</option>
@@ -449,7 +449,7 @@
 
 									<br>
 
-									Welcher Schulart kann das Lehr-/ Lernmittel zugeordnet werden?
+									Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?
 
 									<br>
 
@@ -489,7 +489,7 @@
 
 									<div class="text-center">
 										
-									<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation erstellen</button>
+									<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation anlegen</button>
 
 									</div>
 
@@ -538,11 +538,11 @@
 												<div class="row pt-4 bg-white">
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation angelegt. Sie können direkt fortfahren und eine Umfrage dazu ausfüllen.</p>
+														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation angelegt. Bitte kopieren Sie den angegebenen Code und geben diesen an die weiteren Teilnehmer*innen weiter. Sie können direkt fortfahren und Ihre eigenen Bewertung vornehmen, wenn Sie möchten.</p>
 
 														<div class="mt-3">
 															<div id="anlegen_next_message" style="color: green;"></div>
-															<button class="btn btn-green ml-1 mr-1" onclick="startNewPredefined();">Umfrage auswerten</button>
+															<button class="btn btn-green ml-1 mr-1" onclick="startNewPredefined();">Eigene Bewertung vornehmen</button>
 														</div>
 
 													</div>
@@ -590,12 +590,12 @@
 
 								<!-- Canvas _AUSWERTEN Start -->
 
-								<p class="mt-5">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong> mittels eines 10-stelligen Codes.</p>
+								<p class="mt-5">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong> mittels Ihres Gruppencodes (10-stellig).</p>
 
 								<div class="mt-3">
 
 									<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="loadResultSet" placeholder="10-stelliger-Code" style="width:10.5em;">
-									<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Gruppenergebnisse laden</button>
+									<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Gruppenergebnis laden</button>
 
 									<div id="evaluateResultSet_message" style="color: red;"></div>
 
@@ -603,12 +603,12 @@
 
 								<div class="mt-5">
 
-									<p>Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels eines 12-stelligen Codes.</p>
+									<p>Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres Einzelcodes (12-stellig).</p>
 
 									<div class="mt-3">
 
 										<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="loadResult" placeholder="12-stelliger-Code" style="width:10.5em;">
-										<button class="btn btn-green ml-1 mr-1" onclick="evaluateResult();">Ergebnisse laden</button>
+										<button class="btn btn-green ml-1 mr-1" onclick="evaluateResult();">Einzelergebnis laden</button>
 
 										<br>
 
