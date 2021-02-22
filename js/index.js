@@ -537,7 +537,8 @@ function saveResult(data) {
 }
 
 function visualize(data) {
-    let jsonViewData = Object.assign({}, data);
+    let dict = {}
+    let jsonViewData = Object.assign(dict, data);
 
     // Fachname anzeigen
     if (data['Fach'] == null) {
