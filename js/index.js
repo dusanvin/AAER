@@ -1155,7 +1155,31 @@ function toLastPage() {
     survey.currentPage = survey.pages[30];
 }
 
+var charts_created = false;
+
+var Chart0 = null;
+var Chart1 = null;
+var Chart2 = null;
+var Chart3 = null;
+var Chart4 = null;
+var Chart5 = null;
+var Chart6 = null;
+var Chart7 = null;
+var Chart8 = null;
+
+
 function generateCharts() {
+    if (charts_created) {
+        Chart0.destroy();
+        Chart1.destroy();
+        Chart2.destroy();
+        Chart3.destroy();
+        Chart4.destroy();
+        Chart5.destroy();
+        Chart6.destroy();
+        Chart7.destroy();
+        Chart8.destroy();
+    }
     overallChart();
     grp1Chart();
     grp2Chart();
@@ -1165,6 +1189,8 @@ function generateCharts() {
     grp6Chart();
     grp7Chart();
     grp8Chart();
+
+    charts_created = true;
 }
 
 // Ende: Radio Buttons Presets
@@ -1298,7 +1324,7 @@ function overallChart() {
         }]
     };
 
-    let Chart0 = new Chart(canvas0, {
+    Chart0 = new Chart(canvas0, {
         type: 'horizontalBar',
         data: dataALL,
         options: {
@@ -1371,7 +1397,7 @@ function grp1Chart() {
         }]
     };
 
-    let Chart1 = new Chart(canvas1, {
+    Chart1 = new Chart(canvas1, {
         type: 'bar',
         data: data1,
         options: barChartOptions
@@ -1404,7 +1430,7 @@ function grp2Chart() {
         }]
     };
 
-    let Chart2 = new Chart(canvas2, {
+    Chart2 = new Chart(canvas2, {
         type: 'bar',
         data: data2,
         options: barChartOptions
@@ -1438,7 +1464,7 @@ function grp3Chart() {
         }]
     };
 
-    let Chart3 = new Chart(canvas3, {
+    Chart3 = new Chart(canvas3, {
         type: 'bar',
         data: data3,
         options: barChartOptions
@@ -1471,7 +1497,7 @@ function grp4Chart() {
         }]
     };
 
-    let Chart4 = new Chart(canvas4, {
+    Chart4 = new Chart(canvas4, {
         type: 'bar',
         data: data4,
         options: barChartOptions
@@ -1505,7 +1531,7 @@ function grp5Chart() {
     };
 
 
-    let Chart5 = new Chart(canvas5, {
+    Chart5 = new Chart(canvas5, {
         type: 'bar',
         data: data5,
         options: barChartOptions
@@ -1537,7 +1563,7 @@ function grp6Chart() {
         }]
     };
 
-    let Chart6 = new Chart(canvas6, {
+    Chart6 = new Chart(canvas6, {
         type: 'bar',
         data: data6,
         options: barChartOptions
@@ -1569,7 +1595,7 @@ function grp7Chart() {
         }]
     };
 
-    let Chart7 = new Chart(canvas7, {
+    Chart7 = new Chart(canvas7, {
         type: 'bar',
         data: data7,
         options: barChartOptions
@@ -1601,7 +1627,7 @@ function grp8Chart() {
         }]
     };
 
-    let Chart8 = new Chart(canvas8, {
+    Chart8 = new Chart(canvas8, {
         type: 'bar',
         data: data8,
         options: barChartOptions
