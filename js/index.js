@@ -1298,10 +1298,6 @@ function overallChart() {
         }]
     };
 
-    if(Chart0 != undefined){
-        Chart0.destroy()
-    }
-
     let Chart0 = new Chart(canvas0, {
         type: 'horizontalBar',
         data: dataALL,
@@ -1375,10 +1371,6 @@ function grp1Chart() {
         }]
     };
 
-    if(Chart1 != undefined){
-        Chart1.destroy()
-    }
-
     let Chart1 = new Chart(canvas1, {
         type: 'bar',
         data: data1,
@@ -1411,10 +1403,6 @@ function grp2Chart() {
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
         }]
     };
-
-    if(Chart2 != undefined){
-        Chart2.destroy()
-    }
 
     let Chart2 = new Chart(canvas2, {
         type: 'bar',
@@ -1450,10 +1438,6 @@ function grp3Chart() {
         }]
     };
 
-    if(Chart3 != undefined){
-        Chart3.destroy()
-    }
-
     let Chart3 = new Chart(canvas3, {
         type: 'bar',
         data: data3,
@@ -1486,10 +1470,6 @@ function grp4Chart() {
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
         }]
     };
-
-    if(Chart4 != undefined){
-        Chart4.destroy()
-    }
 
     let Chart4 = new Chart(canvas4, {
         type: 'bar',
@@ -1524,9 +1504,6 @@ function grp5Chart() {
         }]
     };
 
-    if(Chart5 != undefined){
-        Chart5.destroy()
-    }
 
     let Chart5 = new Chart(canvas5, {
         type: 'bar',
@@ -1560,10 +1537,6 @@ function grp6Chart() {
         }]
     };
 
-    if(Chart6 != undefined){
-        Chart6.destroy()
-    }
-
     let Chart6 = new Chart(canvas6, {
         type: 'bar',
         data: data6,
@@ -1596,10 +1569,6 @@ function grp7Chart() {
         }]
     };
 
-    if(Chart7 != undefined){
-        Chart7.destroy()
-    }
-
     let Chart7 = new Chart(canvas7, {
         type: 'bar',
         data: data7,
@@ -1631,10 +1600,6 @@ function grp8Chart() {
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
-
-    if(Chart8 != undefined){
-        Chart8.destroy()
-    }
 
     let Chart8 = new Chart(canvas8, {
         type: 'bar',
