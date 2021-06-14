@@ -1283,7 +1283,7 @@
 
 											<!-- Start: Button PDF-Download -->
 
-											<button id="downloadBtn" class="btn btn-green btn-pdf" onclick="print()">Drucken</button>
+											<!--<button id="downloadBtn" class="btn btn-green btn-pdf" onclick="print()">Drucken</button>-->
 
 											<!-- Ende: Button PDF-Download -->
 
@@ -1627,7 +1627,7 @@
 		}
 
       function print() {
-        $('#document').printThis({
+        $(DISPLAY.OVERALL).printThis({
             importCSS: false,
             //loadCSS: "/css/filename.css",
             header: "<h1>AAER</h1>"
@@ -1645,6 +1645,8 @@
            $(DISPLAY.CHART7).css("display", "block");
            $(DISPLAY.CHART8).css("display", "block");
            $(DISPLAY.PDF).css("display", "block");
+
+           $("#wrapper").toggleClass("toggled");
       }
 
       // gets called if button is clicked
