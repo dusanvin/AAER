@@ -20,6 +20,12 @@
 
         <!-- jQuery End -->
 
+        <!-- printThis Start -->
+
+        <script src="/js/printThis.js"></script>
+
+        <!-- printThis End -->
+
         <!-- Custom Index CSS Start -->
 
 	    <link rel="stylesheet" href="/css/index.css">
@@ -201,11 +207,12 @@
 
 						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3">Weiteres</span>
 
-						<button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.PDF)">
+						<!--<button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.PDF)">-->
+            <button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="printview()">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
-							</svg>Download
+							</svg>Druckansicht
 							<div class="new p-1 pl-3 pr-3">Neu</div>
 
 						</button>
@@ -340,8 +347,8 @@
 
 							<!-- Col _START -->
 
-							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 text-center">									
-								
+							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 text-center">
+
 								<p class="mb-3 mt-5">
 
 									Analysieren beziehungsweise evaluieren Sie ein Lehr-Lernmittel.
@@ -411,7 +418,7 @@
 
 								<p class="mt-0 text-center uebersicht-details">
 
-									Geben Sie hier die Basisdaten des Lehr-Lernmittels ein, die für alle Teilnehmer*innen übernommen werden. Sie erhalten nach Abschluss einen <strong>10-stelligen Gruppencode</strong>, mit dem Sie andere Teilnehmende zu Ihrer Gruppenevaluation einladen können. 
+									Geben Sie hier die Basisdaten des Lehr-Lernmittels ein, die für alle Teilnehmer*innen übernommen werden. Sie erhalten nach Abschluss einen <strong>10-stelligen Gruppencode</strong>, mit dem Sie andere Teilnehmende zu Ihrer Gruppenevaluation einladen können.
 
 								</p>
 
@@ -499,7 +506,7 @@
 									<br>
 
 									<div class="text-center">
-										
+
 									<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation anlegen</button>
 
 									</div>
@@ -515,7 +522,7 @@
 							<!-- Col _ANLEGEN Ende -->
 
 						</div>
-						
+
 						<!-- Row _ANLEGEN Ende -->
 
 					</div>
@@ -629,7 +636,7 @@
 
 									</div>
 
-								</div>							
+								</div>
 
 								<!-- Canvas _AUSWERTEN Ende -->
 
@@ -1269,12 +1276,14 @@
 
 										<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 text-center">
 
+                      <!--
 											<p class="font-weight-normal lead-text mt-5 pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten als <strong>Download</strong> im PDF-Format</p>
 											<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Sie können Ihre Daten lokal sichern, um dauerhaft auf Ihre Ergebnisse zuzugreifen.</p>
+                      -->
 
 											<!-- Start: Button PDF-Download -->
 
-											<button id="downloadBtn" class="btn btn-green btn-pdf">Download als Pdf</button>
+											<button id="downloadBtn" class="btn btn-green btn-pdf" onclick="print()">Drucken</button>
 
 											<!-- Ende: Button PDF-Download -->
 
@@ -1377,7 +1386,7 @@
 				        <div class="carousel-item active">
 
 							<!-- Card Element 0 Start -->
-							
+
 						  	<div class="card">
 
 						  		<div class="card-body">
@@ -1399,7 +1408,7 @@
 				        <div class="carousel-item">
 
 							<!-- Card Element 1 Start -->
-							
+
 						  	<div class="card">
 
 						  		<div class="card-body">
@@ -1421,7 +1430,7 @@
 				        <div class="carousel-item">
 
 							<!-- Card Element 2 Start -->
-								
+
 						  	<div class="card">
 
 						  		<div class="card-body">
@@ -1438,12 +1447,12 @@
 
 				      	<!-- Carousel Element 2 End -->
 
-				      	<!-- Carousel Element 3 Start -->      	
+				      	<!-- Carousel Element 3 Start -->
 
-				        <div class="carousel-item">		          	
+				        <div class="carousel-item">
 
 							<!-- Card Element 3 Start -->
-								
+
 						  	<div class="card">
 
 						  		<div class="card-body">
@@ -1460,12 +1469,12 @@
 
 				      	<!-- Carousel Element 3 End -->
 
-				      	<!-- Carousel Element 4 Start -->          	
+				      	<!-- Carousel Element 4 Start -->
 
 				        <div class="carousel-item">
 
 							<!-- Card Element 4 Start -->
-								
+
 						  	<div class="card">
 
 						  		<div class="card-body">
@@ -1487,7 +1496,7 @@
 				        <div class="carousel-item">
 
 							<!-- Card Element 5 Start -->
-								
+
 						  	<div class="card">
 
 						  		<div class="card-body">
@@ -1547,7 +1556,7 @@
     <script src="/js/footer.js"></script>
 
     <!-- Footer JS End -->
-    
+
 	<!-- Display der Ergebnisse -->
 
   	<script>
@@ -1617,7 +1626,28 @@
 			JSON: "#display_JSON"
 		}
 
+      function print() {
+        $('#document').printThis({
+            importCSS: false,
+            //loadCSS: "/css/filename.css",
+            header: "<h1>AAER</h1>"
+        });
+      }
 
+      function printview(){
+			     $(DISPLAY.OVERALL).css("display", "block");
+           $(DISPLAY.CHART1).css("display", "block");
+           $(DISPLAY.CHART2).css("display", "block");
+           $(DISPLAY.CHART3).css("display", "block");
+           $(DISPLAY.CHART4).css("display", "block");
+           $(DISPLAY.CHART5).css("display", "block");
+           $(DISPLAY.CHART6).css("display", "block");
+           $(DISPLAY.CHART7).css("display", "block");
+           $(DISPLAY.CHART8).css("display", "block");
+           $(DISPLAY.PDF).css("display", "block");
+      }
+
+      // gets called if button is clicked
 			function displayController(btn_enum) {
 				for (variable in DISPLAY) {
 					$(DISPLAY[variable]).css("display", "none");
@@ -1740,8 +1770,6 @@
 
 	<!-- Start: Canvas-Elemente für PDF -->
 
-	<button onclick="setSurveyData()" style="display:none;">NUR DATEN SETZEN</button>
-
 	<canvas id="canvasALL" style="width: 517px; height: 624px;"></canvas>
 	<canvas id="canvas1" style="width: 324px; height: 200px;"></canvas>
 	<canvas id="canvas2" style="width: 648px; height: 200px;"></canvas>
@@ -1756,7 +1784,7 @@
 
 	<!-- PDF-Integration Start -->
 
-	<script src="/js/bundle.js"></script>
+	<!--<script src="/js/bundle.js"></script>-->
 
 	<!-- PDF-Integration Ende -->
 
