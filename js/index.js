@@ -579,6 +579,8 @@ function visualize(data) {
 
     document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
 
+    aaer_data.Schulart = schulName;
+    aaer_data.Fach = fachName;
     // Charts erstellen
     generateCharts();
 }

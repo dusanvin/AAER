@@ -1649,7 +1649,7 @@
            $(DISPLAY.FOOTER).css("display", "none");
 
 		   $("#text-container").css("display", "none");
-		   document.getElementById("name_lernmittel").innerHTML += "    Abrufcode: " + aaer_data.Einzelevaluation;
+		   document.getElementById("name_lernmittel").innerHTML = aaer_data.Name + "    Abrufcode: " + aaer_data.Einzelevaluation + "<br>" + "Schulart: " + aaer_data.Schulart + "    Fach: " + aaer_data.Fach;
            $("#wrapper").toggleClass("toggled");
       }
 
