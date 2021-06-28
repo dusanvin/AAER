@@ -700,7 +700,7 @@
 															Name des Lehr-Lernmittels
 														</p>
 
-														<div class="container-fluid mb-3">
+														<div id="text-container" class="container-fluid mb-3">
 
 															<div class="row pt-1 pb-1 lehr-lernmittel-heading">
 
@@ -1566,7 +1566,7 @@
 		// Start: Display - Name Lehr- Lernmittel
 
 		function display_Name () {
-			// console.log("Name:" + survey.getValue('Name'));
+			//$('name_lernmittel').css("display", "block");
 			document.getElementById('name_lernmittel').innerHTML = survey.getValue('Name');
 		}
 
@@ -1581,6 +1581,7 @@
 			} else {
 				$("#link_lernmittel").prop('href',survey.getValue('Verlinkung'));
 			}
+			//$("#link_lernmittel").css("display", "block");
 			document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
 		}
 
@@ -1589,14 +1590,8 @@
 		// Start: Display - Datum
 
 		function display_Date () {
-			var d = new Date();
-			var month = d.getMonth()+1;
-			var day = d.getDate();
-			var output = ((''+day).length<2 ? '0' : '') + day + '.' + ((''+month).length<2 ? '0' : '') + month + '.' + d.getFullYear();
-			// console.log("Datum:" + output);
-
-			document.getElementById('datum_lernmittel').innerHTML = output;
-
+			//$("#datum_lernmittel").css("display", "block");
+			document.getElementById('datum_lernmittel').innerHTML = getDate();
 		}
 
 		// Ende: Display - Datum
@@ -1623,7 +1618,8 @@
 			CHART7: "#display_grp7Chart",
 			CHART8: "#display_grp8Chart",
 			PDF: "#display_PDF",
-			JSON: "#display_JSON"
+			JSON: "#display_JSON",
+			FOOTER: "#footer_container"
 		}
 
       function print() {
@@ -1646,6 +1642,11 @@
            $(DISPLAY.CHART8).css("display", "block");
            $(DISPLAY.PDF).css("display", "block");
 
+           $(DISPLAY.FOOTER).css("display", "none");
+
+		   $("#text-container").css("display", "none");
+		   //document.getElementById("name_lernmittel").innerHTML += "<br>" + "Abrufcode: " + aaer_data.result_id + "<br>" + "Verlinkung: " + aaer_data._link + "<br>" + "Schulart: " + aaer_data.Schulart + "<br>" + "Fach: " + aaer_data.Fach + "<br>" + "Datum: " + aaer_data.Datum + "<br>" + "Anmerkungen: " + aaer_data['Eigene Anmerkungen'];
+
            $("#wrapper").toggleClass("toggled");
       }
 
@@ -1653,6 +1654,13 @@
 			function displayController(btn_enum) {
 				for (variable in DISPLAY) {
 					$(DISPLAY[variable]).css("display", "none");
+					$(DISPLAY.FOOTER).css("display", "block");
+					$("#text-container").css("display", "block");
+
+					if ('name' in aaer_data) {
+						$("#name_lernmittel").innerHTML = aaer_data.name;
+					}
+
 				}
 				$(btn_enum).css("display", "block");
 				if (btn_enum == DISPLAY.OVERALL) {

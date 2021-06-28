@@ -511,6 +511,16 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
 var predefined = false;
 var predefined_id = "";
 
+var aaer_data = {};
+
+
+function getDate() {
+    var d = new Date();
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    return ((''+day).length<2 ? '0' : '') + day + '.' + ((''+month).length<2 ? '0' : '') + month + '.' + d.getFullYear();
+}
+
 
 // saves data of a survey to db and return result_id
 function saveResult(data) {
@@ -534,6 +544,14 @@ function saveResult(data) {
 
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(data));
+
+    data.Datum = getDate();
+
+    aaer_data = data;
+
+    console.log(aaer_data)
+
+
 }
 
 //
@@ -568,7 +586,6 @@ function visualize(data) {
 // Wird über einen Button aufgerufen und lädt Daten aus der DB
 function loadResult() {
     let input = document.getElementById('loadResult').value;
-    console.log(input)
     return new Promise( ((resolve, reject) => {
         if (input.length === 12) {
 
@@ -614,7 +631,9 @@ function loadResult() {
                             "Rahmenbedingungen": data._71,
                             "Eigene Anmerkungen": data._comment
                         };
-                        console.log(data_object);
+                        data_object.Datum = getDate();
+
+                        aaer_data = data_object;
 
                         window.survey = new Survey.Model(json);
                         survey.data = data_object;
@@ -884,7 +903,9 @@ function loadResultSet(data) {
                             "Rahmenbedingungen": (_71COUNT > 0)?(_71SUM/_71COUNT):0,
                             "Anzahl Datensätze:": db_data.length
                         };
-                        console.log(data_object);
+                        data_object.Datum = getDate();
+
+                        aaer_data = data_object;
 
                         window.survey = new Survey.Model(json);
                         survey.data = data_object;
