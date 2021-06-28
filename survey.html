@@ -1631,7 +1631,11 @@
       }
 
       function printview(){
-			     $(DISPLAY.OVERALL).css("display", "block");
+
+		  for (variable in DISPLAY) {
+			  $(DISPLAY[variable]).css("display", "none");
+		  }
+		   $(DISPLAY.OVERALL).css("display", "block");
            $(DISPLAY.CHART1).css("display", "block");
            $(DISPLAY.CHART2).css("display", "block");
            $(DISPLAY.CHART3).css("display", "block");
@@ -1645,8 +1649,7 @@
            $(DISPLAY.FOOTER).css("display", "none");
 
 		   $("#text-container").css("display", "none");
-		   //document.getElementById("name_lernmittel").innerHTML += "<br>" + "Abrufcode: " + aaer_data.result_id + "<br>" + "Verlinkung: " + aaer_data._link + "<br>" + "Schulart: " + aaer_data.Schulart + "<br>" + "Fach: " + aaer_data.Fach + "<br>" + "Datum: " + aaer_data.Datum + "<br>" + "Anmerkungen: " + aaer_data['Eigene Anmerkungen'];
-
+		   document.getElementById("name_lernmittel").innerHTML += "    Abrufcode: " + aaer_data.Einzelevaluation;
            $("#wrapper").toggleClass("toggled");
       }
 
@@ -1658,7 +1661,7 @@
 					$("#text-container").css("display", "block");
 
 					if ('name' in aaer_data) {
-						$("#name_lernmittel").innerHTML = aaer_data.name;
+						$("#name_lernmittel").innerHTML = aaer_data.Einzelevaluation;
 					}
 
 				}
