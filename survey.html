@@ -1254,7 +1254,7 @@
 
 					<!-- Ende Container grp8Chart -->
 
-
+					<div class="container-fluid grey-border mt-3" id="aaer_text"></div>
 
 					<!-- Beginn Container pdf -->
 
@@ -1649,8 +1649,16 @@
            $(DISPLAY.FOOTER).css("display", "none");
 
 		   $("#text-container").css("display", "none");
-		   document.getElementById("name_lernmittel").innerHTML = aaer_data.Name + "    Abrufcode: " + aaer_data.Einzelevaluation + "<br>" + "Schulart: " + aaer_data.Schulart + "    Fach: " + aaer_data.Fach;
-           $("#wrapper").toggleClass("toggled");
+		   document.getElementById("name_lernmittel").innerHTML = aaer_data.Name;
+		   document.getElementById("aaer_text").innerHTML = "Verlinkung: " + aaer_data.Verlinkung +
+				    "<br> Schulart: " + aaer_data.Schulart +
+				    "<br> Fach: " + aaer_data.Fach +
+				    "<br> Eigene Anmerkungen: " + aaer_data['Eigene Anmerkungen'] +
+				    "<br> Datum: " + aaer_data.Datum +
+				    "<br>" +
+		  			"<br> Diese AAER Evaluation ist abrufbar mit folgendem Code: " + aaer_data.Einzelevaluation;
+
+		  $("#wrapper").toggleClass("toggled");
       }
 
       // gets called if button is clicked
@@ -1663,6 +1671,7 @@
 					if ('name' in aaer_data) {
 						$("#name_lernmittel").innerHTML = aaer_data.Einzelevaluation;
 					}
+					document.getElementById("aaer_text").innerHTML = '';
 
 				}
 				$(btn_enum).css("display", "block");
