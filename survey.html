@@ -1650,13 +1650,42 @@
 
 		   $("#text-container").css("display", "none");
 		   document.getElementById("name_lernmittel").innerHTML = aaer_data.Name;
-		   document.getElementById("aaer_text").innerHTML = "Verlinkung: " + aaer_data.Verlinkung +
-				    "<br> Schulart: " + aaer_data.Schulart +
-				    "<br> Fach: " + aaer_data.Fach +
-				    "<br> Eigene Anmerkungen: " + aaer_data['Eigene Anmerkungen'] +
-				    "<br> Datum: " + aaer_data.Datum +
-				    "<br>" +
-		  			"<br> Diese AAER Evaluation ist abrufbar mit folgendem Code: " + aaer_data.Einzelevaluation;
+
+		  let link;
+		  if (aaer_data.Verlinkung == null) {
+			  link = 'Keine Angabe';
+		  } else {
+			  link = aaer_data.Verlinkung;
+		  }
+
+		  let schulart;
+		  if (aaer_data.Schulart == null) {
+			  schulart = 'Keine Angabe';
+		  } else {
+			  schulart = aaer_data.Schulart;
+		  }
+
+		  let fach;
+		  if (aaer_data.Fach == null) {
+			  fach = 'Keine Angabe';
+		  } else {
+			  fach = aaer_data.Fach;
+		  }
+
+		  let anmerkungen;
+		  if (aaer_data['Eigene Anmerkungen'] == null) {
+			  anmerkungen = 'Keine Angabe';
+		  } else {
+			  anmerkungen = aaer_data['Eigene Anmerkungen'];
+		  }
+
+		   document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + link +
+				    '<br> Schulart: ' + schulart +
+				    '<br> Fach: ' + fach +
+				    '<br> Eigene Anmerkungen: ' + anmerkungen +
+				    '<br> Datum: ' + aaer_data.Datum +
+				    '<br>' +
+		  			'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
 
 		  $("#wrapper").toggleClass("toggled");
       }
