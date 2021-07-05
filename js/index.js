@@ -530,6 +530,7 @@ function saveResult(data) {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('display_id').innerHTML = this.responseText;
+            aaer_data.Einzelevaluation = this.responseText;
         };
     }
 
