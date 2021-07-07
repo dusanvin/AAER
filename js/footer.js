@@ -25,11 +25,6 @@ function display_footer() {
 
 		            <img class="image-img" src="https://assets.uni-augsburg.de/media/filer_public_thumbnails/filer_public/13/bf/13bf55b7-1c18-4cd5-beb3-c06308004042/uni_aug_logo_zlbib_cmyk.png__1080x2000_q85_subject_location-2655%2C481_subsampling-2.png" width="200">
 
-		            <figcaption class="image-caption" style="font-size: 8pt; margin-top:5px;">
-		              
-		                    Das DigiLLab ist eine Einrichtung innerhalb des ZLbiB.
-		                </figcaption>
-
 		          </figure>
 
 		        </div>
