@@ -1378,36 +1378,6 @@ function overallChart() {
         data: dataALL,
     });
 
-    // let hiddenCanvas0 = window.document.getElementById('canvasALL');
-    // let hiddenChart0 = new Chart(hiddenCanvas0, {
-    //     type: 'horizontalBar',
-    //     data: dataALL,
-    //     options: {
-    //         legend: {
-    //             display: false
-    //         },
-    //         animation: {
-    //             duration: 0
-    //         },
-    //         maintainAspectRatio:false,
-    //         scales: {
-    //             xAxes: [{
-    //                 ticks: {
-    //                     max: 4,
-    //                     min: 0,
-    //                     stepSize: 1,
-    //                     fontSize: 14
-    //                 }
-    //             }],
-    //             yAxes: [{
-    //                 ticks: {
-    //                     fontSize: 14
-    //                 }
-    //             }]
-    //         },
-    //         responsive: false
-    //     }
-    // });
 }
 
 // Ende: Details overallChart
@@ -1435,12 +1405,6 @@ function grp1Chart() {
 
     });
 
-    // let hiddenCanvas1 = window.document.getElementById('canvas1');
-    // let hiddenChart1 = new Chart(hiddenCanvas1, {
-    //     type: 'bar',
-    //     data: data1,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb1Chart
@@ -1467,13 +1431,6 @@ function grp2Chart() {
         options: barChartOptions
 
     });
-
-    // let hiddenCanvas2 = window.document.getElementById('canvas2');
-    // let hiddenChart2 = new Chart(hiddenCanvas2, {
-    //     type: 'bar',
-    //     data: data2,
-    //     options: barNonResponsive
-    // });
 
 }
 
@@ -1502,12 +1459,6 @@ function grp3Chart() {
 
     });
 
-    // let hiddenCanvas3 = window.document.getElementById('canvas3');
-    // let hiddenChart3 = new Chart(hiddenCanvas3, {
-    //     type: 'bar',
-    //     data: data3,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb3Chart
@@ -1535,12 +1486,6 @@ function grp4Chart() {
 
     });
 
-    // let hiddenCanvas4 = window.document.getElementById('canvas4');
-    // let hiddenChart4 = new Chart(hiddenCanvas4, {
-    //     type: 'bar',
-    //     data: data4,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb4Chart
@@ -1568,12 +1513,6 @@ function grp5Chart() {
         options: barChartOptions
     });
 
-    // let hiddenCanvas5 = window.document.getElementById('canvas5');
-    // let hiddenChart5 = new Chart(hiddenCanvas5, {
-    //     type: 'bar',
-    //     data: data5,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb5Chart
@@ -1600,12 +1539,6 @@ function grp6Chart() {
         options: barChartOptions
     });
 
-    // let hiddenCanvas6 = window.document.getElementById('canvas6');
-    // let hiddenChart6 = new Chart(hiddenCanvas6, {
-    //     type: 'bar',
-    //     data: data6,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb6Chart
@@ -1632,12 +1565,6 @@ function grp7Chart() {
         options: barChartOptions
     });
 
-    // let hiddenCanvas7 = window.document.getElementById('canvas7');
-    // let hiddenChart7 = new Chart(hiddenCanvas7, {
-    //     type: 'bar',
-    //     data: data7,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb7Chart
@@ -1664,12 +1591,6 @@ function grp8Chart() {
         options: barChartOptions
     });
 
-    // let hiddenCanvas8 = window.document.getElementById('canvas8');
-    // let hiddenChart8 = new Chart(hiddenCanvas8, {
-    //     type: 'bar',
-    //     data: data8,
-    //     options: barNonResponsive
-    // });
 }
 
 // Ende: Details grb8Chart
