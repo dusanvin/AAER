@@ -1371,6 +1371,13 @@ function overallChart() {
         }
     });
 
+
+    let radarCanvas = document.getElementById('radarChart');
+    radarChart = new Chart(radarCanvas, {
+        type: 'radar',
+        data: dataALL,
+    });
+
     // let hiddenCanvas0 = window.document.getElementById('canvasALL');
     // let hiddenChart0 = new Chart(hiddenCanvas0, {
     //     type: 'horizontalBar',
