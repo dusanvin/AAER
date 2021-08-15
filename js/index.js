@@ -1410,6 +1410,7 @@ function overallChart() {
         type: 'radar',
         data: dataRadar,
         options: {
+            maintainAspectRatio:false,
             scale: {
                 ticks: {
                     beginAtZero: true,
