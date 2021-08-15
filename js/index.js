@@ -1399,8 +1399,7 @@ function overallChart() {
         datasets: [{
             label: "Übersichts-Chart",
             backgroundColor: colorsRadar,
-            data: valuesRadar,
-            fill: true
+            data: valuesRadar
         }]
     };
 
@@ -1410,6 +1409,7 @@ function overallChart() {
         type: 'radar',
         data: dataRadar,
         options: {
+            events: [],
             maintainAspectRatio:false,
             scale: {
                 ticks: {
