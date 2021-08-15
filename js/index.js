@@ -1182,6 +1182,7 @@ function toLastPage() {
 var charts_created = false;
 
 var Chart0 = null;
+var radarChart = null;
 var Chart1 = null;
 var Chart2 = null;
 var Chart3 = null;
@@ -1195,6 +1196,7 @@ var Chart8 = null;
 function generateCharts() {
     if (charts_created) {
         Chart0.destroy();
+        radarChart.destroy();
         Chart1.destroy();
         Chart2.destroy();
         Chart3.destroy();
@@ -1371,11 +1373,41 @@ function overallChart() {
         }
     });
 
+    let labelsRadar = ["", "Bezüge Curriculum", "Bezüge Bildungsstandards", "", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "", "Sprachlichkeit", "Bildsprache", "Anreicherung", "", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "", "Didaktisches Konzept", "Rahmenbedingungen"];
+    let valuesRadar = [0, survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), 0, survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), 0, survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), 0, survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), 0, survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), 0, survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), 0, survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), 0, survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')];
+    let colorsRadar = [
+        // 1. Bereich
+        "#ffffff", "#003f5c","#003f5c",
+        // 2. Bereich
+        "#ffffff", "#2f4b7c","#2f4b7c","#2f4b7c","#2f4b7c",
+        // 3. Bereich
+        "#ffffff", "#665191","#665191","#665191","#665191",
+        // 4. Bereich
+        "#ffffff", "#a05195","#a05195","#a05195","#a05195","#a05195",
+        // 5. Bereich
+        "#ffffff", "#d45087","#d45087","#d45087",
+        // 6. Bereich
+        "#ffffff", "#f95d6a","#f95d6a","#f95d6a",
+        // 7. Bereich
+        "#ffffff", "#ff7c43","#ff7c43","#ff7c43",
+        // 8. Bereich
+        "#ffffff", "#ffa600","#ffa600"
+    ];
+
+    dataRadar = {
+        labels: labelsRadar,
+        datasets: [{
+            label: "Übersichts-Chart",
+            backgroundColor: colorsRadar,
+            data: valuesRadar
+        }]
+    };
+
 
     let radarCanvas = document.getElementById('radarChart');
     radarChart = new Chart(radarCanvas, {
         type: 'radar',
-        data: dataALL,
+        data: dataRadar,
     });
 
 }
