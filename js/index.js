@@ -1323,21 +1323,21 @@ function overallChart() {
         "#ffa600","#ffa600"
     ];
 
-    let sorted = [];
+    // let sorted = [];
 
-    for (let i = 0; i < labels.length; i++) {
-        sorted.push({'label': labels[i], 'value': values[i], 'color': colors[i]});
-    }
+    // for (let i = 0; i < labels.length; i++) {
+    //     sorted.push({'label': labels[i], 'value': values[i], 'color': colors[i]});
+    // }
 
-    sorted.sort(function (a, b) {
-        return ((a.value > b.value) ? -1 : ( (a.value == b.value) ? 0 : 1 ));
-    })
+    // sorted.sort(function (a, b) {
+    //     return ((a.value > b.value) ? -1 : ( (a.value == b.value) ? 0 : 1 ));
+    // })
 
-    for (let i = 0; i < sorted.length; i++) {
-        labels[i] = sorted[i].label;
-        values[i] = sorted[i].value;
-        colors[i] = sorted[i].color;
-    }
+    // for (let i = 0; i < sorted.length; i++) {
+    //     labels[i] = sorted[i].label;
+    //     values[i] = sorted[i].value;
+    //     colors[i] = sorted[i].color;
+    // }
 
     dataALL = {
         labels: labels,
