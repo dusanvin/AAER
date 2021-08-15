@@ -1394,12 +1394,14 @@ function overallChart() {
         "#ffffff", "#ffa600","#ffa600"
     ];
 
+
     dataRadar = {
         labels: labelsRadar,
         datasets: [{
             label: "Übersichts-Chart",
-            backgroundColor: colorsRadar,
-            data: valuesRadar
+            backgroundColor: "rgba(140, 140, 140, 0.15)", //colorsRadar
+            data: valuesRadar,
+            lineTension: 0.1
         }]
     };
 
@@ -1409,6 +1411,9 @@ function overallChart() {
         type: 'radar',
         data: dataRadar,
         options: {
+            legend: {
+                display: false
+            },
             events: [],
             maintainAspectRatio:false,
             scale: {
