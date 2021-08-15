@@ -1399,7 +1399,8 @@ function overallChart() {
         datasets: [{
             label: "Übersichts-Chart",
             backgroundColor: colorsRadar,
-            data: valuesRadar
+            data: valuesRadar,
+            fill: true
         }]
     };
 
@@ -1408,6 +1409,16 @@ function overallChart() {
     radarChart = new Chart(radarCanvas, {
         type: 'radar',
         data: dataRadar,
+        options: {
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    max: 4,
+                    min: 0,
+                    stepSize: 1
+                }
+            }
+        }
     });
 
 }
