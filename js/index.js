@@ -1325,21 +1325,44 @@ function overallChart() {
         "#ffa600","#ffa600"
     ];
 
-    // let sorted = [];
+    let labelsRadar = ["", "Bezüge Curriculum", "Bezüge Bildungsstandards", "", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "", "Sprachlichkeit", "Bildsprache", "Anreicherung", "", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "", "Didaktisches Konzept", "Rahmenbedingungen"];
+    let valuesRadar = [0, survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), 0, survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), 0, survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), 0, survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), 0, survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), 0, survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), 0, survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), 0, survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')];
+    let colorsRadar = [
+        // 1. Bereich
+        "#ffffff", "#003f5c","#003f5c",
+        // 2. Bereich
+        "#ffffff", "#2f4b7c","#2f4b7c","#2f4b7c","#2f4b7c",
+        // 3. Bereich
+        "#ffffff", "#665191","#665191","#665191","#665191",
+        // 4. Bereich
+        "#ffffff", "#a05195","#a05195","#a05195","#a05195","#a05195",
+        // 5. Bereich
+        "#ffffff", "#d45087","#d45087","#d45087",
+        // 6. Bereich
+        "#ffffff", "#f95d6a","#f95d6a","#f95d6a",
+        // 7. Bereich
+        "#ffffff", "#ff7c43","#ff7c43","#ff7c43",
+        // 8. Bereich
+        "#ffffff", "#ffa600","#ffa600"
+    ];
 
-    // for (let i = 0; i < labels.length; i++) {
-    //     sorted.push({'label': labels[i], 'value': values[i], 'color': colors[i]});
-    // }
 
-    // sorted.sort(function (a, b) {
-    //     return ((a.value > b.value) ? -1 : ( (a.value == b.value) ? 0 : 1 ));
-    // })
 
-    // for (let i = 0; i < sorted.length; i++) {
-    //     labels[i] = sorted[i].label;
-    //     values[i] = sorted[i].value;
-    //     colors[i] = sorted[i].color;
-    // }
+    let sorted = [];
+
+    for (let i = 0; i < labels.length; i++) {
+        sorted.push({'label': labels[i], 'value': values[i], 'color': colors[i]});
+    }
+
+    sorted.sort(function (a, b) {
+        return ((a.value > b.value) ? -1 : ( (a.value == b.value) ? 0 : 1 ));
+    })
+
+    for (let i = 0; i < sorted.length; i++) {
+        labels[i] = sorted[i].label;
+        values[i] = sorted[i].value;
+        colors[i] = sorted[i].color;
+    }
 
     dataALL = {
         labels: labels,
@@ -1372,27 +1395,6 @@ function overallChart() {
             }
         }
     });
-
-    let labelsRadar = ["", "Bezüge Curriculum", "Bezüge Bildungsstandards", "", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "", "Sprachlichkeit", "Bildsprache", "Anreicherung", "", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "", "Didaktisches Konzept", "Rahmenbedingungen"];
-    let valuesRadar = [0, survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), 0, survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), 0, survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), 0, survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), 0, survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), 0, survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), 0, survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), 0, survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')];
-    let colorsRadar = [
-        // 1. Bereich
-        "#ffffff", "#003f5c","#003f5c",
-        // 2. Bereich
-        "#ffffff", "#2f4b7c","#2f4b7c","#2f4b7c","#2f4b7c",
-        // 3. Bereich
-        "#ffffff", "#665191","#665191","#665191","#665191",
-        // 4. Bereich
-        "#ffffff", "#a05195","#a05195","#a05195","#a05195","#a05195",
-        // 5. Bereich
-        "#ffffff", "#d45087","#d45087","#d45087",
-        // 6. Bereich
-        "#ffffff", "#f95d6a","#f95d6a","#f95d6a",
-        // 7. Bereich
-        "#ffffff", "#ff7c43","#ff7c43","#ff7c43",
-        // 8. Bereich
-        "#ffffff", "#ffa600","#ffa600"
-    ];
 
 
     dataRadar = {
