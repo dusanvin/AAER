@@ -844,7 +844,7 @@ function loadResultSet(data) {
                             if (_33 == 0) { _33COUNT_NULL++; }
                             else { _33SUM += _33; _33COUNT++; }
                             if (_34 == 0) { _34COUNT_NULL++; }
-                            else { _34SUM += _34; _30COUNT++; }
+                            else { _34SUM += _34; _34COUNT++; }
 
                             if (_40 == 0) { _40COUNT_NULL++; }
                             else { _40SUM += _40; _40COUNT++; }
@@ -965,7 +965,7 @@ function loadResultSet(data) {
 
                         let _31COUNT_NULL_MSG = '';
                         if (_31COUNT_NULL > 0) 
-                            _31COUNT_NULL_MSG = `Multimedia/Multimodalität wurde ${_31COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+                            _31COUNT_NULL_MSG = `<br> Multimedia/Multimodalität wurde ${_31COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
 
                         let _32COUNT_NULL_MSG = '';
                         if (_32COUNT_NULL > 0) 
@@ -981,7 +981,7 @@ function loadResultSet(data) {
 
                         let _40COUNT_NULL_MSG = '';
                         if (_40COUNT_NULL > 0) 
-                            _40COUNT_NULL_MSG = `Transfer- und Anwendungsorientierung wurde ${_40COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+                            _40COUNT_NULL_MSG = `<br> Transfer- und Anwendungsorientierung wurde ${_40COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
 
                         let _41COUNT_NULL_MSG = '';
                         if (_41COUNT_NULL > 0) 
@@ -1001,7 +1001,7 @@ function loadResultSet(data) {
 
                         let _52COUNT_NULL_MSG = '';
                         if (_52COUNT_NULL > 0) 
-                            _52COUNT_NULL_MSG = `Additive Kommunikation (Anreicherung) wurde ${_52COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+                            _52COUNT_NULL_MSG = `<br> Additive Kommunikation (Anreicherung) wurde ${_52COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
 
                         let _60COUNT_NULL_MSG = '';
                         if (_60COUNT_NULL > 0) 
@@ -1009,7 +1009,7 @@ function loadResultSet(data) {
 
                         let _61COUNT_NULL_MSG = '';
                         if (_61COUNT_NULL > 0) 
-                            _61COUNT_NULL_MSG = `Aktivierung wurde ${_61COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+                            _61COUNT_NULL_MSG = `<br> Aktivierung wurde ${_61COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
 
                         let _62COUNT_NULL_MSG = '';
                         if (_62COUNT_NULL > 0) 
