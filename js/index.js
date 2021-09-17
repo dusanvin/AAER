@@ -774,6 +774,8 @@ function loadResultSet(data) {
                             let _70 = db_data[i]._70;
                             let _71 = db_data[i]._71;
 
+
+                            // EINTRÄGE IM JSON-FORMAT 
                             result['Bezüge Curriculum'] = _00;
                             result['Bezüge Bildungsstandards'] = _01;
                             result['Interessegeleitete Themenführung/Positionierung'] = _10;
@@ -810,64 +812,64 @@ function loadResultSet(data) {
                             json_str += '\n\n' + JSON.stringify(result, null, 4);
 
 
-                            if (_00 === 0) { _00COUNT_NULL++; }
+                            if (_00 == 0) { _00COUNT_NULL++; }
                             else { _00SUM += _00; _00COUNT++; }
-                            if (_01 === 0) { _01COUNT_NULL++; }
+                            if (_01 == 0) { _01COUNT_NULL++; }
                             else { _01SUM += _01; _01COUNT++; }
 
-                            if (_10 === 0) { _10COUNT_NULL++; }
+                            if (_10 == 0) { _10COUNT_NULL++; }
                             else { _10SUM += _10; _10COUNT++; }
-                            if (_11 === 0) { _11COUNT_NULL++; }
+                            if (_11 == 0) { _11COUNT_NULL++; }
                             else { _11SUM += _11; _11COUNT++; }
-                            if (_12 === 0) { _12COUNT_NULL++; }
+                            if (_12 == 0) { _12COUNT_NULL++; }
                             else { _12SUM += _12; _12COUNT++; }
-                            if (_13 === 0) { _13COUNT_NULL++; }
+                            if (_13 == 0) { _13COUNT_NULL++; }
                             else { _13SUM += _13; _13COUNT++; }
 
-                            if (_20 === 0) { _20COUNT_NULL++; }
+                            if (_20 == 0) { _20COUNT_NULL++; }
                             else { _20SUM += _20; _20COUNT++; }
-                            if (_21 === 0) { _21COUNT_NULL++; }
+                            if (_21 == 0) { _21COUNT_NULL++; }
                             else { _21SUM += _21; _21COUNT++; }
-                            if (_22 === 0) { _22COUNT_NULL++; }
+                            if (_22 == 0) { _22COUNT_NULL++; }
                             else { _22SUM += _22; _22COUNT++; }
-                            if (_23 === 0) { _23COUNT_NULL++; }
+                            if (_23 == 0) { _23COUNT_NULL++; }
                             else { _23SUM += _23; _23COUNT++; }
 
-                            if (_30 === 0) { _30COUNT_NULL++; }
+                            if (_30 == 0) { _30COUNT_NULL++; }
                             else { _30SUM += _30; _30COUNT++; }
-                            if (_31 === 0) { _31COUNT_NULL++; }
+                            if (_31 == 0) { _31COUNT_NULL++; }
                             else { _31SUM += _31; _31COUNT++; }
-                            if (_32 === 0) { _32COUNT_NULL++; }
+                            if (_32 == 0) { _32COUNT_NULL++; }
                             else { _32SUM += _32; _32COUNT++; }
-                            if (_33 === 0) { _33COUNT_NULL++; }
+                            if (_33 == 0) { _33COUNT_NULL++; }
                             else { _33SUM += _33; _33COUNT++; }
-                            if (_34 === 0) { _34COUNT_NULL++; }
+                            if (_34 == 0) { _34COUNT_NULL++; }
                             else { _34SUM += _34; _30COUNT++; }
 
-                            if (_40 === 0) { _40COUNT_NULL++; }
+                            if (_40 == 0) { _40COUNT_NULL++; }
                             else { _40SUM += _40; _40COUNT++; }
-                            if (_41 === 0) { _41COUNT_NULL++; }
+                            if (_41 == 0) { _41COUNT_NULL++; }
                             else { _41SUM += _41; _41COUNT++; }
-                            if (_42 === 0) { _42COUNT_NULL++; }
+                            if (_42 == 0) { _42COUNT_NULL++; }
                             else { _42SUM += _42; _42COUNT++; }
 
-                            if (_50 === 0) { _50COUNT_NULL++; }
+                            if (_50 == 0) { _50COUNT_NULL++; }
                             else { _50SUM += _50; _50COUNT++; }
-                            if (_51 === 0) { _51COUNT_NULL++; }
+                            if (_51 == 0) { _51COUNT_NULL++; }
                             else { _51SUM += _51; _51COUNT++; }
-                            if (_52 === 0) { _52COUNT_NULL++; }
+                            if (_52 == 0) { _52COUNT_NULL++; }
                             else { _52SUM += _52; _52COUNT++; }
 
-                            if (_60 === 0) { _60COUNT_NULL++; }
+                            if (_60 == 0) { _60COUNT_NULL++; }
                             else { _60SUM += _60; _60COUNT++; }
-                            if (_61 === 0) { _61COUNT_NULL++; }
+                            if (_61 == 0) { _61COUNT_NULL++; }
                             else { _61SUM += _61; _61COUNT++; }
-                            if (_62 === 0) { _62COUNT_NULL++; }
+                            if (_62 == 0) { _62COUNT_NULL++; }
                             else { _62SUM += _62; _62COUNT++; }
 
-                            if (_70 === 0) { _70COUNT_NULL++; }
+                            if (_70 == 0) { _70COUNT_NULL++; }
                             else { _70SUM += _70; _70COUNT++; }
-                            if (_71 === 0) { _71COUNT_NULL++; }
+                            if (_71 == 0) { _71COUNT_NULL++; }
                             else { _71SUM += _71; _71COUNT++; }
 
                         }
@@ -916,8 +918,114 @@ function loadResultSet(data) {
 
 
                         document.getElementById('display_id').innerHTML = input;
+                        
+                        let _00COUNT_NULL_MSG = '';
+                        if (_00COUNT_NULL > 0) 
+                            _00COUNT_NULL_MSG = `<br> Bezüge Curriculum wurde ${_00COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
 
-                        document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.`;
+                        let _01COUNT_NULL_MSG = '';
+                        if (_01COUNT_NULL > 0) 
+                            _01COUNT_NULL_MSG = `<br> Bezüge Bildungsstandards wurde ${_01COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;                        
+
+                        let _10COUNT_NULL_MSG = '';
+                        if (_10COUNT_NULL > 0) 
+                            _10COUNT_NULL_MSG = `<br> Interessegeleitete Themenführung/Positionierung wurde ${_10COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+                        
+                        let _11COUNT_NULL_MSG = '';
+                        if (_11COUNT_NULL > 0) 
+                            _11COUNT_NULL_MSG = `<br> Transparenz wurde ${_11COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+ 
+                        let _12COUNT_NULL_MSG = '';
+                        if (_12COUNT_NULL > 0) 
+                            _12COUNT_NULL_MSG = `<br> Werbliche Elemente wurde ${_12COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _13COUNT_NULL_MSG = '';
+                        if (_13COUNT_NULL > 0) 
+                            _13COUNT_NULL_MSG = `<br> Heterogenität/Gender wurde ${_13COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _20COUNT_NULL_MSG = '';
+                        if (_20COUNT_NULL > 0) 
+                            _20COUNT_NULL_MSG = `<br> Handlungsorientierung wurde ${_20COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _21COUNT_NULL_MSG = '';
+                        if (_21COUNT_NULL > 0) 
+                            _21COUNT_NULL_MSG = `<br> Lebensweltlichkeit wurde ${_21COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _22COUNT_NULL_MSG = '';
+                        if (_22COUNT_NULL > 0) 
+                            _22COUNT_NULL_MSG = `<br> Reflexion/Urteilsfähigkeit wurde ${_22COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _23COUNT_NULL_MSG = '';
+                        if (_23COUNT_NULL > 0) 
+                            _23COUNT_NULL_MSG = `<br> Multiperspektivität/Kontroversität wurde ${_23COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _30COUNT_NULL_MSG = '';
+                        if (_30COUNT_NULL > 0) 
+                            _30COUNT_NULL_MSG = `<br> Methodenpluralität wurde ${_30COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _31COUNT_NULL_MSG = '';
+                        if (_31COUNT_NULL > 0) 
+                            _31COUNT_NULL_MSG = `Multimedia/Multimodalität wurde ${_31COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _32COUNT_NULL_MSG = '';
+                        if (_32COUNT_NULL > 0) 
+                            _32COUNT_NULL_MSG = `<br> Medienkompetenz wurde ${_32COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _33COUNT_NULL_MSG = '';
+                        if (_33COUNT_NULL > 0) 
+                            _33COUNT_NULL_MSG = `<br> Differenzierung wurde ${_33COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _34COUNT_NULL_MSG = '';
+                        if (_34COUNT_NULL > 0) 
+                            _34COUNT_NULL_MSG = `<br> Barrierefreiheit/Inklusion wurde ${_34COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _40COUNT_NULL_MSG = '';
+                        if (_40COUNT_NULL > 0) 
+                            _40COUNT_NULL_MSG = `Transfer- und Anwendungsorientierung wurde ${_40COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _41COUNT_NULL_MSG = '';
+                        if (_41COUNT_NULL > 0) 
+                            _41COUNT_NULL_MSG = `<br> Prozessorientierung (Kumulation) wurde ${_41COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _42COUNT_NULL_MSG = '';
+                        if (_42COUNT_NULL > 0) 
+                            _42COUNT_NULL_MSG = `<br> Lernwegunterstützende Elemente (Scaffolding) wurde ${_42COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _50COUNT_NULL_MSG = '';
+                        if (_50COUNT_NULL > 0) 
+                            _50COUNT_NULL_MSG = `<br> Sprachlichkeit wurde ${_50COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _51COUNT_NULL_MSG = '';
+                        if (_51COUNT_NULL > 0) 
+                            _51COUNT_NULL_MSG = `<br> Bildsprache wurde ${_51COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _52COUNT_NULL_MSG = '';
+                        if (_52COUNT_NULL > 0) 
+                            _52COUNT_NULL_MSG = `Additive Kommunikation (Anreicherung) wurde ${_52COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _60COUNT_NULL_MSG = '';
+                        if (_60COUNT_NULL > 0) 
+                            _60COUNT_NULL_MSG = `<br> Sequenzierung wurde ${_60COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _61COUNT_NULL_MSG = '';
+                        if (_61COUNT_NULL > 0) 
+                            _61COUNT_NULL_MSG = `Aktivierung wurde ${_61COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _62COUNT_NULL_MSG = '';
+                        if (_62COUNT_NULL > 0) 
+                            _62COUNT_NULL_MSG = `<br> Multiple Lösungswege wurde ${_62COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _70COUNT_NULL_MSG = '';
+                        if (_70COUNT_NULL > 0) 
+                            _70COUNT_NULL_MSG = `<br> Didaktisches Konzept wurde ${_70COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        let _71COUNT_NULL_MSG = '';
+                        if (_71COUNT_NULL > 0) 
+                            _71COUNT_NULL_MSG = `<br> Rahmenbedingungen wurde ${_71COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+                        console.log('AUSGABE: ' + _00COUNT_NULL + _01COUNT_NULL + _10COUNT_NULL + _11COUNT_NULL + _12COUNT_NULL + _13COUNT_NULL +  _20COUNT_NULL +  _21COUNT_NULL + _22COUNT_NULL +  _23COUNT_NULL + _30COUNT_NULL + _31COUNT_NULL + _32COUNT_NULL + _33COUNT_NULL + _34COUNT_NULL + _40COUNT_NULL + _41COUNT_NULL + _42COUNT_NULL + _50COUNT_NULL + _51COUNT_NULL + _52COUNT_NULL + _60COUNT_NULL + _61COUNT_NULL + _62COUNT_NULL + _70COUNT_NULL + _71COUNT_NULL);
+
+                        document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.` +  _00COUNT_NULL_MSG + _01COUNT_NULL_MSG + _10COUNT_NULL_MSG + _11COUNT_NULL_MSG + _12COUNT_NULL_MSG + _13COUNT_NULL_MSG +  _20COUNT_NULL_MSG +  _21COUNT_NULL_MSG + _22COUNT_NULL_MSG +  _23COUNT_NULL_MSG + _30COUNT_NULL_MSG + _31COUNT_NULL_MSG + _32COUNT_NULL_MSG + _33COUNT_NULL_MSG + _34COUNT_NULL_MSG + _40COUNT_NULL_MSG + _41COUNT_NULL_MSG + _42COUNT_NULL_MSG + _50COUNT_NULL_MSG + _51COUNT_NULL_MSG + _52COUNT_NULL_MSG + _60COUNT_NULL_MSG + _61COUNT_NULL_MSG + _62COUNT_NULL_MSG + _70COUNT_NULL_MSG + _71COUNT_NULL_MSG;
 
                         document.querySelector('#surveyResult').textContent += "\n\n" + json_str;
 
