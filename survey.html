@@ -208,7 +208,7 @@
 						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3">Weiteres</span>
 
 						<!--<button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.PDF)">-->
-            <button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="printview()">
+            <button id="button_display_PDF" data-toggle="modal" data-target="#DruckansichtModal" class="list-group-item list-group-item-action" onclick="printview()">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
@@ -216,6 +216,24 @@
 							<div class="new p-1 pl-3 pr-3">Neu</div>
 
 						</button>
+						<div class="modal fade" id="DruckansichtModal" tabindex="-1" role="dialog" aria-labelledby="DruckansichtModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <h5 class="modal-title" id="DruckansichtModalLabel">Information</h5>
+								  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								  </button>
+								</div>
+								<div class="modal-body">
+								  Wählen Sie Menü um zurück zu gelangen. Sie können nun mit Rechtsklick <b>Drucken...</b> auswählen.
+								</div>
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-secondary" data-dismiss="modal">Verstanden.</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
 
 						<button id="button_display_JSON" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.JSON)">
 
