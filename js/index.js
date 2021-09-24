@@ -46,6 +46,7 @@ schularten = [
     {value: 11, text: "Fachoberschule"},
     {value: 12, text: "Fachschule"},
     {value: 13, text: "Förderschule"},
+    {value: 27, text: "Gemeinschaftsschule"},
     {value: 14, text: "Gesamtschule"},
     {value: 15, text: "Grundschule"},
     {value: 16, text: "Gymnasium"},
@@ -55,10 +56,11 @@ schularten = [
     {value: 20, text: "Realschule"},
     {value: 21, text: "Schule besonderer Art"},
     {value: 22, text: "Schule für Kranke"},
+    {value: 28, text: "Sekundarschule"},
     {value: 23, text: "Volkshochschule"},
     {value: 24, text: "Vorschule"},
     {value: 25, text: "Wirtschaftsschule"},
-    {value: 26, text: "Sonstige Schule"}
+    {value: 26, text: "Sonstige Schule"},
 ];
 
 antworten = [
@@ -572,7 +574,14 @@ function visualize(data) {
     if (data['Schulart'] == null) {
         data['Schulart'] = 1;
     }
-    schulName = schularten[data['Schulart'] - 1].text;
+    schulName = '';
+    for(let i=0; i < schularten.length;i++) {
+         if (schularten[i].value == data['Schulart']) {
+            schulName = schularten[i].text;
+        }
+    }
+        
+    // schulName = schularten[schulart_index].text;
     jsonViewData.Schulart = schulName; // JSON-Übersicht
     document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
 
