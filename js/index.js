@@ -4,8 +4,10 @@ Survey
     .StylesManager
     .applyTheme("bootstrapmaterial");
 
-
-window.onbeforeunload = function() { return 'Seite verlassen'; };
+window.addEventListener("beforeunload", function(event) {
+    event.preventDefault();
+    event.returnValue = '';
+});
 
 //Fächer
 
