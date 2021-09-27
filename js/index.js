@@ -4,6 +4,9 @@ Survey
     .StylesManager
     .applyTheme("bootstrapmaterial");
 
+
+window.onbeforeunload = function() { return 'Seite verlassen'; };
+
 //Fächer
 
 fach = [
