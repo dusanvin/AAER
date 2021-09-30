@@ -1989,6 +1989,74 @@
 				});
 		}
 
+
+		function getrand(n = 5) {
+			return Math.floor(Math.random() * n);
+		}
+
+
+		function fill() {
+			newSurvey();
+
+			survey.data = {
+				"Name": 'Generiert',
+				"Verlinkung": 'https://aaer.zlbib.uni-augsburg.de/',
+
+				"Fach": getrand(22) + 2,
+				"Schulart": getrand(25) + 2,
+
+				//Anlehnung an Curriculum und Bildungsstandards
+				"Bezüge Curriculum": getrand(),
+				"Bezüge Bildungsstandards": getrand(),
+
+				//Diskursive Positionierung
+				"Interessegeleitete Themenführung/Positionierung": getrand(),
+				"Transparenz": getrand(),
+				"Werbliche Elemente": getrand(),
+				"Heterogenität/Gender": getrand(),
+
+				//Makrodidaktische und bildungstheoretische Fundierung
+				"Handlungsorientierung": getrand(),
+				"Lebensweltlichkeit": getrand(),
+				"Reflexion/Urteilsfähigkeit": getrand(),
+				"Multiperspektivität/Kontroversität": getrand(),
+
+				//Mikrodidaktische Umsetzung
+				"Methodenpluralität": getrand(),
+				"Multimedia/Multimodalität": getrand(),
+				"Medienkompetenz": getrand(),
+				"Differenzierung": getrand(),
+				"Barrierefreiheit/Inklusion": getrand(),
+
+				//Kognitive Strukturierung
+				"Transfer- und Anwendungsorientierung": getrand(),
+				"Prozessorientierung (Kumulation)": getrand(),
+				"Lernwegunterstützende Elemente (Scaffolding)": getrand(),
+
+				//Bild- und Textkomposition
+				"Sprachlichkeit": getrand(),
+				"Bildsprache": getrand(),
+				"Additive Kommunikation (Anreicherung)": getrand(),
+
+				//Aufgabendesign
+				"Sequenzierung": getrand(),
+				"Aktivierung": getrand(),
+				"Multiple Lösungswege": getrand(),
+
+				//Anwendungstransparenz
+				"Didaktisches Konzept": getrand(),
+				"Rahmenbedingungen": getrand(),
+				
+				"Eigene Anmerkungen": "Super!"
+			};
+
+			index_last = window.survey.pages.length - 1
+			survey.currentPage = survey.pages[index_last];
+
+			displayController(DISPLAY.UMFRAGE);
+
+		}
+
 		var error_status = false;
 		var saved_data;
 		function newSurvey() {
@@ -2011,7 +2079,7 @@
 
 				alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
 			}
-			
+
 
 			$("#surveyElement").Survey({ model: survey });
 
@@ -2031,7 +2099,7 @@
 					}
 				}
 				status_request.send();
-				
+
 			});
 			displayController(DISPLAY.UMFRAGE);
 			buttons.forEach(btn => document.getElementById(btn).disabled = true);
