@@ -2017,12 +2017,12 @@
 
 
 			$(".sv_complete_btn").click(function () {
+				displayController(DISPLAY.THANKS);
 				var status_request = new XMLHttpRequest();
 				status_request.open('POST', 'https://aaer.zlbib.uni-augsburg.de/');
 
 				status_request.onreadystatechange = function () {
 					if (this.status == 200) {
-						displayController(DISPLAY.THANKS);
 						buttons.forEach(btn => document.getElementById(btn).disabled = false);
 					} else {
 						error_status = true;
