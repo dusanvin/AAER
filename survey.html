@@ -2021,7 +2021,7 @@
 				status_request.open('POST', 'https://aaer.zlbib.uni-augsburg.de/');
 
 				status_request.onreadystatechange = function () {
-					if (this.readyState == 4 && this.status == 200) {
+					if (this.status == 200) {
 						displayController(DISPLAY.THANKS);
 						buttons.forEach(btn => document.getElementById(btn).disabled = false);
 					} else {
