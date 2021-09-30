@@ -1976,17 +1976,61 @@
 
 
 		function startPredefined() {
-			loadPredefined().then(() => {
-				$(".sv_complete_btn").click(function () {
-					displayController(DISPLAY.THANKS);
-					buttons.forEach(btn => document.getElementById(btn).disabled = false);
-				});
-				displayController(DISPLAY.UMFRAGE);
-				buttons.forEach(btn => document.getElementById(btn).disabled = true);
-			})
-				.catch(err => {
-					document.getElementById('teilnehmen_message').innerHTML = err;
-				});
+			let input = document.getElementById('loadPredefined').value;
+
+			if (input.length === 10) {
+				let xhr = new XMLHttpRequest();
+				xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.send(JSON.stringify({ "predefined_id": input }));
+
+				xhr.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						let db_data = this.responseText;
+						if (db_data.length > 0) {
+							newSurvey();
+
+							data = JSON.parse(db_data);
+							data_object = {
+								"Name": data._pre_tname,
+								"Verlinkung": data._pre_link,
+								"Fach": data.subject_id,
+								"Schulart": data.institution_id
+							};
+
+							all_questions = survey.getAllQuestions();
+							all_questions[0].readOnly = true;
+
+							if (data_object.Verlinkung != null) {
+								all_questions[1].readOnly = true;
+							};
+
+							if (data_object.Fach != null) {
+								all_questions[2].readOnly = true;
+							};
+
+							if (data_object.Schulart != null) {
+								all_questions[3].readOnly = true;
+							};
+
+							survey.data = data_object;
+
+							// $("#surveyElement").Survey({ model: survey });
+
+
+							predefined = true;
+							predefined_id = input;
+
+						} else {
+							document.getElementById('teilnehmen_message').innerHTML = "Zum angegebenen Code wurde nichts gefunden!";
+						}
+					}
+				}
+
+
+			} else {
+				document.getElementById('teilnehmen_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!";
+			}
 		}
 
 
@@ -2046,7 +2090,7 @@
 				//Anwendungstransparenz
 				"Didaktisches Konzept": getrand(),
 				"Rahmenbedingungen": getrand(),
-				
+
 				"Eigene Anmerkungen": "Super!"
 			};
 

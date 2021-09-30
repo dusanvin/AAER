@@ -1094,78 +1094,78 @@ function getPredefinedData() {
 }
 
 
-function loadPredefined() {
-    let input = document.getElementById('loadPredefined').value;
+// function loadPredefined() {
+//     let input = document.getElementById('loadPredefined').value;
 
-    return new Promise( (resolve, reject) => {
-        if (input.length === 10) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({"predefined_id": input}));
-
-
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    let db_data = this.responseText;
-                    if (db_data.length > 0) {
-                        window.survey = new Survey.Model(json);
-
-                        survey.onComplete.add(function (sender, options) {
-                            saveResult(sender.data);
-                            visualize(sender.data);
-                        });
-
-                        console.log(db_data);
-                        data = JSON.parse(db_data);
-
-                        data_object = {
-                            "Name": data._pre_tname,
-                            "Verlinkung": data._pre_link,
-                            "Fach": data.subject_id,
-                            "Schulart": data.institution_id
-                        };
-
-                        all_questions = survey.getAllQuestions();
-                        all_questions[0].readOnly = true;
-
-                        if (data_object.Verlinkung != null) {
-                            all_questions[1].readOnly = true;
-                        };
-
-                        if (data_object.Fach != null) {
-                            all_questions[2].readOnly = true;
-                        };
-
-                        if (data_object.Schulart != null) {
-                            all_questions[3].readOnly = true;
-                        };
-
-                        console.log(data_object);
-
-                        survey.data = data_object;
-
-                        $("#surveyElement").Survey({model: survey});
+//     return new Promise( (resolve, reject) => {
+//         if (input.length === 10) {
+//             let xhr = new XMLHttpRequest();
+//             xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
+//             xhr.setRequestHeader("Content-Type", "application/json");
+//             xhr.send(JSON.stringify({"predefined_id": input}));
 
 
-                        predefined = true;
-                        predefined_id = input;
+//             xhr.onreadystatechange = function () {
+//                 if (this.readyState == 4 && this.status == 200) {
+//                     let db_data = this.responseText;
+//                     if (db_data.length > 0) {
+//                         window.survey = new Survey.Model(json);
 
-                        resolve();
+//                         survey.onComplete.add(function (sender, options) {
+//                             saveResult(sender.data);
+//                             visualize(sender.data);
+//                         });
 
-                    } else {
-                        reject("Zum angegebenen Code wurde nichts gefunden!");
-                    }
-                }
-            }
+//                         console.log(db_data);
+//                         data = JSON.parse(db_data);
+
+//                         data_object = {
+//                             "Name": data._pre_tname,
+//                             "Verlinkung": data._pre_link,
+//                             "Fach": data.subject_id,
+//                             "Schulart": data.institution_id
+//                         };
+
+//                         all_questions = survey.getAllQuestions();
+//                         all_questions[0].readOnly = true;
+
+//                         if (data_object.Verlinkung != null) {
+//                             all_questions[1].readOnly = true;
+//                         };
+
+//                         if (data_object.Fach != null) {
+//                             all_questions[2].readOnly = true;
+//                         };
+
+//                         if (data_object.Schulart != null) {
+//                             all_questions[3].readOnly = true;
+//                         };
+
+//                         console.log(data_object);
+
+//                         survey.data = data_object;
+
+//                         $("#surveyElement").Survey({model: survey});
 
 
-        } else {
-            reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
-        }
+//                         predefined = true;
+//                         predefined_id = input;
 
-    });
-}
+//                         resolve();
+
+//                     } else {
+//                         reject("Zum angegebenen Code wurde nichts gefunden!");
+//                     }
+//                 }
+//             }
+
+
+//         } else {
+//             reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
+//         }
+
+//     });
+// }
 
 
 function savePredefined() {
