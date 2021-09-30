@@ -1224,69 +1224,6 @@ function savePredefined() {
 
 // Start: Radio Buttons Presets
 
-function setSurveyData() {
-
-    survey.data = {
-        // "Name": "Bee-Bot Klassen-Set",
-        // "Verlinkung": "https://www.betzold.de/prod/89809/",
-
-        //Anlehnung an Curriculum und Bildungsstandards
-        "Bezüge Curriculum": 4,
-        "Bezüge Bildungsstandards": 1,
-
-        //Diskursive Positionierung
-        "Interessegeleitete Themenführung/Positionierung": 2,
-        "Transparenz": 3,
-        "Werbliche Elemente": 0,
-        "Heterogenität/Gender": 1,
-
-        //Makrodidaktische und bildungstheoretische Fundierung
-        "Handlungsorientierung": 4,
-        "Lebensweltlichkeit": 2,
-        "Reflexion/Urteilsfähigkeit": 1,
-        "Multiperspektivität/Kontroversität": 1,
-
-        //Mikrodidaktische Umsetzung
-        "Methodenpluralität": 0,
-        "Multimedia/Multimodalität": 3,
-        "Medienkompetenz": 1,
-        "Differenzierung": 4,
-        "Barrierefreiheit/Inklusion": 4,
-
-        //Kognitive Strukturierung
-        "Transfer- und Anwendungsorientierung": 2,
-        "Prozessorientierung (Kumulation)": 1,
-        "Lernwegunterstützende Elemente (Scaffolding)": 0,
-
-        //Bild- und Textkomposition
-        "Sprachlichkeit": 2,
-        "Bildsprache": 3,
-        "Additive Kommunikation (Anreicherung)": 1,
-
-        //Aufgabendesign
-        "Sequenzierung": 4,
-        "Aktivierung": 1,
-        "Multiple Lösungswege": 0,
-
-        //Anwendungstransparenz
-        "Didaktisches Konzept": 1,
-        "Rahmenbedingungen": 2,
-
-
-        // "Fach": 1,
-        // "Schulart": 1,
-        "Eigene Anmerkungen": "Super!"
-    };
-
-}
-
-function toLastPage() {
-    setSurveyData();
-    console.log(survey.pages);
-    console.log(survey.pages.length);
-    survey.currentPage = survey.pages[30];
-}
-
 var charts_created = false;
 
 var Chart0 = null;
@@ -1776,21 +1713,6 @@ $(document).on('keypress',function(e) {
 });
 
 // Ende: Eingabe durch Enter-Taste als Alternative zum Button "Weiter" und zum Button "Fertig"
-
-
-
-// Start: Display der Ergebnisse erst nach Beendigung der Umfrage und Eliminierung der übrigen Container
-
-// $( ".sv_complete_btn" ).click(function() {
-//     $( "#dashboard-aaer" ).css("display", "block");
-//     $( "#ergebnisse_container" ).css("display", "block");
-//     $( ".front-background" ).css("display", "none");
-//     $( "#surveyElementContainer" ).css("display", "none");
-//     $( "#carouselExampleSlidesOnly" ).css("display", "none");
-//
-// });
-
-// Ende: Display der Ergebnisse erst nach Beendigung der Umfrage und Eliminierung der übrigen Container
 
 
 
