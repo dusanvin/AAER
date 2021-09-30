@@ -1,83 +1,83 @@
-
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>AAER - DigiLLab UniA Umfrage</title>
 
-        <meta name="viewport" content="width=device-width"/>
+<head>
+	<title>AAER - DigiLLab UniA Umfrage</title>
 
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width" />
 
-        <!-- ChartJS-Integration Start -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-        <script src="/js/Chart.js"></script>
+	<!-- ChartJS-Integration Start -->
 
-        <!-- ChartJS-Integration Ende -->
+	<script src="/js/Chart.js"></script>
+
+	<!-- ChartJS-Integration Ende -->
+
+	<!-- jQuery Start -->
+
+	<script src="/js/jquery-3.5.1.min.js"></script>
+
+	<!-- jQuery End -->
+
+	<!-- printThis Start -->
+
+	<script src="/js/printThis.js"></script>
+
+	<!-- printThis End -->
+
+	<!-- Custom Index CSS Start -->
+
+	<link rel="stylesheet" href="/css/index.css">
+
+	<!-- Custom Index CSS End -->
+
+	<!-- Custom Survey CSS Start -->
+
+	<link rel="stylesheet" href="/css/survey.css">
+
+	<!-- Custom Survey CSS End -->
+
+	<!-- Custom Dashboard CSS Start -->
+
+	<link href="/css/simple-sidebar.css" rel="stylesheet">
+
+	<!-- Custom Dashboard CSS End
 
         <!-- jQuery Start -->
 
-        <script src="/js/jquery-3.5.1.min.js"></script>
+	<script src="/js/survey.jquery.min.js"></script>
 
-        <!-- jQuery End -->
+	<!-- jQuery End -->
 
-        <!-- printThis Start -->
+	<!-- Custom Dashboard JS Start -->
 
-        <script src="/js/printThis.js"></script>
+	<script type="/js/mdb.min.js"></script>
 
-        <!-- printThis End -->
+	<!-- Custom Dashboard JS End -->
 
-        <!-- Custom Index CSS Start -->
+	<!-- Bootstrap Material Design v.4.1.1 Start -->
 
-	    <link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/bootstrap-material-design-4_1_1-min.css">
 
-        <!-- Custom Index CSS End -->
+	<!-- Bootstrap Material Design v.4.1.1 End -->
 
-        <!-- Custom Survey CSS Start -->
+	<!-- PopperJS v.1.12.6 Start -->
 
-        <link rel="stylesheet" href="/css/survey.css">
+	<script src="/js/popperJS-1_12_6.js"></script>
 
-        <!-- Custom Survey CSS End -->
+	<!-- PopperJS v.1.12.6 End -->
 
-        <!-- Custom Dashboard CSS Start -->
+	<!-- Bootstrap Material Design JS Start -->
 
-        <link href="/css/simple-sidebar.css" rel="stylesheet">
+	<script src="/js/bootstrap-material-design.js"></script>
 
-        <!-- Custom Dashboard CSS End
-
-        <!-- jQuery Start -->
-
-        <script src="/js/survey.jquery.min.js"></script>
-
-        <!-- jQuery End -->
-
-        <!-- Custom Dashboard JS Start -->
-
-        <script type="/js/mdb.min.js"></script>
-
-        <!-- Custom Dashboard JS End -->
-
-        <!-- Bootstrap Material Design v.4.1.1 Start -->
-
-        <link rel="stylesheet" href="/css/bootstrap-material-design-4_1_1-min.css">
-
-        <!-- Bootstrap Material Design v.4.1.1 End -->
-
-        <!-- PopperJS v.1.12.6 Start -->
-
-        <script src="/js/popperJS-1_12_6.js"></script>
-
-        <!-- PopperJS v.1.12.6 End -->
-
-        <!-- Bootstrap Material Design JS Start -->
-
-        <script src="/js/bootstrap-material-design.js"></script>
-
-        <!-- Bootstrap Material Design JS End -->
+	<!-- Bootstrap Material Design JS End -->
 
 
-    </head>
+</head>
 
-    <body style="width:100% !important">
+<body style="width:100% !important">
 
 	<!-- Navigation Start -->
 
@@ -87,7 +87,8 @@
 
 	<!-- Start: Dashboard Div -->
 
-	<div id="dashboard-aaer" class="mr-lg-5 mr-md-3 mr-sm-0 mr-xs-0 ml-lg-5 ml-md-3 ml-sm-0 ml-xs-0 mt-lg-5 mt-md-5 mt-sm-1 mt-xs-1">
+	<div id="dashboard-aaer"
+		class="mr-lg-5 mr-md-3 mr-sm-0 mr-xs-0 ml-lg-5 ml-md-3 ml-sm-0 ml-xs-0 mt-lg-5 mt-md-5 mt-sm-1 mt-xs-1">
 
 		<div>
 
@@ -105,101 +106,140 @@
 
 						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Analyse und Evaluation</span>
 
-						<button id="button_display_start" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.START)">Lehr-Lernmittel evaluieren</button>
+						<button id="button_display_start" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.START)">Lehr-Lernmittel evaluieren</button>
 
-						<button id="button_display_anlegen" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation anlegen</button>
+						<button id="button_display_anlegen" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation anlegen</button>
 
-						<button id="button_display_auswerten" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.AUSWERTEN)">Evaluationsergebnisse laden</button>
+						<button id="button_display_auswerten" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.AUSWERTEN)">Evaluationsergebnisse laden</button>
 
 						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Auswertung</span>
 
-						<button id="button_display_overallChart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.OVERALL)">
+						<button id="button_display_overallChart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.OVERALL)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-pie-chart-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z"/>
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-pie-chart-fill list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z" />
 							</svg>Übersicht
 
 						</button>
 
-						<button id="button_display_grp1Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART1)">
+						<button id="button_display_grp1Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART1)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-book-half list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-book-half list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+								<path fill-rule="evenodd"
+									d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
 
 							</svg>Curriculum & Bildungsstandards
 
 						</button>
 
-						<button id="button_display_grp2Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART2)">
+						<button id="button_display_grp2Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART2)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-signpost list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path d="M7 1.414V4h2V1.414a1 1 0 0 0-2 0z"/>
-								<path fill-rule="evenodd" d="M12.532 5H2v4h10.532l1.666-2-1.666-2zM2 4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H2z"/>
-								<path d="M7 10h2v6H7v-6z"/>
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-signpost list-group-icon"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path d="M7 1.414V4h2V1.414a1 1 0 0 0-2 0z" />
+								<path fill-rule="evenodd"
+									d="M12.532 5H2v4h10.532l1.666-2-1.666-2zM2 4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H2z" />
+								<path d="M7 10h2v6H7v-6z" />
 
 							</svg>Diskursive Positionierung
 
 						</button>
 
-						<button id="button_display_grp3Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART3)">
+						<button id="button_display_grp3Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART3)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-aspect-ratio-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-aspect-ratio-fill list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm1 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0V5h2.5a.5.5 0 0 0 0-1h-3zm11 8a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-1 0V11h-2.5a.5.5 0 0 0 0 1h3z"/>
+								<path fill-rule="evenodd"
+									d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm1 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0V5h2.5a.5.5 0 0 0 0-1h-3zm11 8a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-1 0V11h-2.5a.5.5 0 0 0 0 1h3z" />
 
 							</svg>Makrodidaktische Fundierung
 
 						</button>
 
-						<button id="button_display_grp4Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART4)">
+						<button id="button_display_grp4Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART4)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-aspect-ratio list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-aspect-ratio list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
-								<path fill-rule="evenodd" d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"/>
+								<path fill-rule="evenodd"
+									d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
+								<path fill-rule="evenodd"
+									d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z" />
 
 							</svg>Mikrodidaktische Fundierung
 
 						</button>
 
-						<button id="button_display_grp5Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART5)">
+						<button id="button_display_grp5Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART5)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-card-checklist list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-card-checklist list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-								<path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+								<path fill-rule="evenodd"
+									d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+								<path fill-rule="evenodd"
+									d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
 
 							</svg>Kognitive Strukturierung
 
 						</button>
 
-						<button id="button_display_grp6Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART6)">
+						<button id="button_display_grp6Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART6)">
 
-							<svg width="1.3em" height="1.2em" viewBox="0 0 17 16" class="bi bi-image-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.3em" height="1.2em" viewBox="0 0 17 16"
+								class="bi bi-image-fill list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+								<path fill-rule="evenodd"
+									d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
 
 							</svg>Bild- und Textkomposition
 
 						</button>
 
-						<button id="button_display_grp7Chart" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.CHART7)">
+						<button id="button_display_grp7Chart" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.CHART7)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-check-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-check-square-fill list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+								<path fill-rule="evenodd"
+									d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
 
 							</svg>Aufgabendesign
 
 						</button>
 
-						<button id="button_display_grp8Chart" class="list-group-item list-group-item-action mb-3" onclick="displayController(DISPLAY.CHART8)">
+						<button id="button_display_grp8Chart" class="list-group-item list-group-item-action mb-3"
+							onclick="displayController(DISPLAY.CHART8)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-eye-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-eye-fill list-group-icon"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 
-								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-								<path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+								<path fill-rule="evenodd"
+									d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
 
 							</svg>Anwendungstransparenz
 
@@ -208,39 +248,53 @@
 						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3">Weiteres</span>
 
 						<!--<button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.PDF)">-->
-            <button id="button_display_PDF" data-toggle="modal" data-target="#DruckansichtModal" class="list-group-item list-group-item-action" onclick="printview()">
+						<button id="button_display_PDF" data-toggle="modal" data-target="#DruckansichtModal"
+							class="list-group-item list-group-item-action" onclick="printview()">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
 							</svg>Druckansicht
 							<div class="new p-1 pl-3 pr-3">Neu</div>
 
 						</button>
-						<div class="modal fade" id="DruckansichtModal" tabindex="-1" role="dialog" aria-labelledby="DruckansichtModalLabel" aria-hidden="true">
+						<div class="modal fade" id="DruckansichtModal" tabindex="-1" role="dialog"
+							aria-labelledby="DruckansichtModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="DruckansichtModalLabel">Information</h5>
-								  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								  </button>
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="DruckansichtModalLabel">Information</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										Wählen Sie <b>Menü</b> um zurück zu gelangen. Mit Rechtsklick am Rand der Seite
+										können Sie nun <b>Drucken...</b> auswählen.
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Verstanden.</button>
+									</div>
 								</div>
-								<div class="modal-body">
-								  Wählen Sie <b>Menü</b> um zurück zu gelangen. Mit Rechtsklick am Rand der Seite können Sie nun <b>Drucken...</b> auswählen.
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-secondary" data-dismiss="modal">Verstanden.</button>
-								</div>
-							  </div>
 							</div>
-						  </div>
+						</div>
 
-						<button id="button_display_JSON" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.JSON)">
+						<button id="button_display_JSON" class="list-group-item list-group-item-action"
+							onclick="displayController(DISPLAY.JSON)">
 
-							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-code-square list-group-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
+								class="bi bi-code-square list-group-icon" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
 
-								<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
-								<path fill-rule="evenodd" d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"></path>
+								<path fill-rule="evenodd"
+									d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
+								</path>
+								<path fill-rule="evenodd"
+									d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z">
+								</path>
 
 							</svg>Einträge im JSON-Format
 
@@ -260,10 +314,12 @@
 
 						<button class="btn btn-primary btn-toggle" id="menu-toggle">
 
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layout-sidebar-inset mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layout-sidebar-inset mr-1"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
 
-								<path fill-rule="evenodd" d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
-								<path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+								<path fill-rule="evenodd"
+									d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
+								<path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z" />
 							</svg> Menü
 
 						</button>
@@ -274,60 +330,61 @@
 
 					<div class="container-fluid" id="display_umfrage">
 
-							<!-- Row _UMFRAGE Start -->
+						<!-- Row _UMFRAGE Start -->
 
-							<div class="row justify-content-center">
+						<div class="row justify-content-center">
 
-								<!-- Col _UMFRAGE Start -->
+							<!-- Col _UMFRAGE Start -->
 
-								<div class="col">
+							<div class="col">
 
-									<!-- Canvas _UMFRAGE Start -->
+								<!-- Canvas _UMFRAGE Start -->
 
-									<div>
+								<div>
 
-										<div class="text-left">
+									<div class="text-left">
 
-											<div class="container-fluid grey-border mt-3">
+										<div class="container-fluid grey-border mt-3">
 
-												<div class="row pt-4 bg-white">
+											<div class="row pt-4 bg-white">
 
-													<!-- Initialisierung der Umfrage Start -->
+												<!-- Initialisierung der Umfrage Start -->
 
-<!--													<div style="background:transparent;" class="mt-xs-3 mt-sm-3 m-md-5 m-lg-5 mb-3" id="surveyElementContainer">-->
+												<!--													<div style="background:transparent;" class="mt-xs-3 mt-sm-3 m-md-5 m-lg-5 mb-3" id="surveyElementContainer">-->
 
-														<div id="surveyElement" class="p-xs-3 p-sm-5 p-md-5 p-lg-5"></div>
+												<div id="surveyElement" class="p-xs-3 p-sm-5 p-md-5 p-lg-5"></div>
 
-														<div class="progress">
+												<div class="progress">
 
-															<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-														</div>
-
-<!--													</div>-->
-
-													<script type="text/javascript" src="/js/index.js"></script>
-
-													<!-- Initialisierung der Umfrage End -->
+													<div class="progress-bar" role="progressbar" aria-valuenow="25"
+														aria-valuemin="0" aria-valuemax="100"></div>
 
 												</div>
 
-											</div>
+												<!--													</div>-->
 
+												<script type="text/javascript" src="/js/index.js"></script>
+
+												<!-- Initialisierung der Umfrage End -->
+
+											</div>
 
 										</div>
 
-									</div>
 
-									<!-- Canvas _UMFRAGE Ende -->
+									</div>
 
 								</div>
 
-								<!-- Col _UMFRAGE Ende -->
+								<!-- Canvas _UMFRAGE Ende -->
 
 							</div>
 
-							<!-- Row _UMFRAGE Ende -->
+							<!-- Col _UMFRAGE Ende -->
+
+						</div>
+
+						<!-- Row _UMFRAGE Ende -->
 
 					</div>
 
@@ -337,19 +394,30 @@
 
 					<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 mt-5 text-center" id="display_willkommen">
 
-						<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3"><strong>Analysieren und bewerten Sie ein Bildungsmedium.</strong></p>
+						<p
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">
+							<strong>Analysieren und bewerten Sie ein Bildungsmedium.</strong>
+						</p>
 
 						<div class="video-container-wrapper pb-3 pt-3 px-3">
 
 							<div class="video-container">
 
-								<iframe width="480" height="270" src="https://www.youtube.com/embed/SsMzuQGLJJ0" title="YouTube video player" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+								<iframe width="480" height="270" src="https://www.youtube.com/embed/SsMzuQGLJJ0"
+									title="YouTube video player" frameborder="0"
+									allowfullscreen="allowfullscreen"></iframe>
 
 							</div>
 
 						</div>
 
-						<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-3 pt-lg-3 px-xs-1 px-sm-1 px-md-3 px-lg-3 uebersicht-details mx-3">Sie haben die Möglichkeit, <strong>ein Lehr-Lernmittel zu bewerten</strong>, an <strong>einer Gruppenevaluation eines Bildungsmediums teilzunehmen</strong> sowie <strong>bereits vorhandene Bewertungssergebnisse</strong> zu laden. Nutzen Sie dazu das Menü am linken Bildschirmrand.</p>
+						<p
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-3 pt-lg-3 px-xs-1 px-sm-1 px-md-3 px-lg-3 uebersicht-details mx-3">
+							Sie haben die Möglichkeit, <strong>ein Lehr-Lernmittel zu bewerten</strong>, an
+							<strong>einer Gruppenevaluation eines Bildungsmediums teilzunehmen</strong> sowie
+							<strong>bereits vorhandene Bewertungssergebnisse</strong> zu laden. Nutzen Sie dazu das Menü
+							am linken Bildschirmrand.
+						</p>
 
 					</div>
 
@@ -375,11 +443,13 @@
 
 								<p class="mt-0 uebersicht-details">
 
-									Sie erhalten im Anschluss einen <strong>12-stelligen Code</strong> mit dem Sie Ihre Bewertung teilen und erneut aufrufen können.
+									Sie erhalten im Anschluss einen <strong>12-stelligen Code</strong> mit dem Sie Ihre
+									Bewertung teilen und erneut aufrufen können.
 
 								</p>
 
-								<button class="btn btn-green ml-1 mr-1 mb-3" onclick="newSurvey()">Lehr-Lernmittel evaluieren</button>
+								<button class="btn btn-green ml-1 mr-1 mb-3" onclick="newSurvey()">Lehr-Lernmittel
+									evaluieren</button>
 
 								<p class="mb-3 mt-5">
 
@@ -389,15 +459,18 @@
 
 								<p class="mt-0 uebersicht-details">
 
-								 Sie benötigen zur Teilnahme an einer Gruppenevaluation Ihren <strong>10-stelligen Gruppencode</strong>.
+									Sie benötigen zur Teilnahme an einer Gruppenevaluation Ihren <strong>10-stelligen
+										Gruppencode</strong>.
 
 								</p>
 
 								<div class="mt-3">
 
-									<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text" id="loadPredefined" placeholder="10-stelliger-Code" style="width:10.5em;">
+									<input class="pt-2 pb-1 pl-3 pr-3 mb-3  ml-1 mr-1text-center" type="text"
+										id="loadPredefined" placeholder="10-stelliger-Code" style="width:10.5em;">
 
-									<button class="btn btn-green ml-1 mr-1" onclick="startPredefined();">teilnehmen</button>
+									<button class="btn btn-green ml-1 mr-1"
+										onclick="startPredefined();">teilnehmen</button>
 
 									<br>
 
@@ -427,7 +500,8 @@
 
 							<!-- Col _ANLEGEN Start -->
 
-							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 px-xs-1 px-sm-3 px-md-3 px-lg-5 text-left" id="survey_anlegen1">
+							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 px-xs-1 px-sm-3 px-md-3 px-lg-5 text-left"
+								id="survey_anlegen1">
 
 								<p class="mb-3 mt-5 text-center">
 
@@ -436,7 +510,10 @@
 
 								<p class="mt-0 text-center uebersicht-details">
 
-									Geben Sie hier die Basisdaten des Lehr-Lernmittels ein, die für alle Teilnehmer*innen übernommen werden. Sie erhalten nach Abschluss einen <strong>10-stelligen Gruppencode</strong>, mit dem Sie andere Teilnehmende zu Ihrer Gruppenevaluation einladen können.
+									Geben Sie hier die Basisdaten des Lehr-Lernmittels ein, die für alle
+									Teilnehmer*innen übernommen werden. Sie erhalten nach Abschluss einen
+									<strong>10-stelligen Gruppencode</strong>, mit dem Sie andere Teilnehmende zu Ihrer
+									Gruppenevaluation einladen können.
 
 								</p>
 
@@ -457,7 +534,8 @@
 									Welchem Fach ist das Lehr-Lernmittel zugeordnet?
 
 									<select class="form-control" id="survey_subject">
-										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein Fach...</option>
+										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein
+											Fach...</option>
 										<option value="1">Keine Angabe</option>
 										<option value="2">Biologie</option>
 										<option value="3">Chemie</option>
@@ -490,7 +568,8 @@
 									<br>
 
 									<select class="form-control" id="survey_institution">
-										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie eine Schulart...</option>
+										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie eine
+											Schulart...</option>
 										<option value="1">Keine Angabe</option>
 										<option value="2">Abendschule</option>
 										<option value="3">Alternatives Schulkonzept</option>
@@ -504,7 +583,7 @@
 										<option value="11">Fachoberschule</option>
 										<option value="12">Fachschule</option>
 										<option value="13">Förderschule</option>
-										<option	value="27">Gemeinschaftsschule</option>
+										<option value="27">Gemeinschaftsschule</option>
 										<option value="14">Gesamtschule</option>
 										<option value="15">Grundschule</option>
 										<option value="16">Gymnasium</option>
@@ -527,7 +606,8 @@
 
 									<div class="text-center">
 
-									<button class="btn btn-green ml-1 mr-1" onclick="newPredefined();">Gruppenevaluation anlegen</button>
+										<button class="btn btn-green ml-1 mr-1"
+											onclick="newPredefined();">Gruppenevaluation anlegen</button>
 
 									</div>
 
@@ -575,12 +655,19 @@
 
 												<div class="row pt-4 bg-white">
 
-													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation angelegt. Bitte kopieren Sie den angegebenen Code und geben diesen an die weiteren Teilnehmer*innen weiter. Sie können direkt fortfahren und Ihre eigenen Bewertung vornehmen, wenn Sie möchten.</p>
+													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center"
+														style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation
+															angelegt. Bitte kopieren Sie den angegebenen Code und geben
+															diesen an die weiteren Teilnehmer*innen weiter. Sie können
+															direkt fortfahren und Ihre eigenen Bewertung vornehmen, wenn
+															Sie möchten.</p>
 
 														<div class="mt-3">
 															<div id="anlegen_next_message" style="color: green;"></div>
-															<button class="btn btn-green ml-1 mr-1" onclick="startNewPredefined();">Eigene Bewertung vornehmen</button>
+															<button class="btn btn-green ml-1 mr-1"
+																onclick="startNewPredefined();">Eigene Bewertung
+																vornehmen</button>
 														</div>
 
 													</div>
@@ -628,12 +715,15 @@
 
 								<!-- Canvas _AUSWERTEN Start -->
 
-								<p class="mt-5">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong> mittels Ihres Gruppencodes (10-stellig).</p>
+								<p class="mt-5">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong>
+									mittels Ihres Gruppencodes (10-stellig).</p>
 
 								<div class="mt-3">
 
-									<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="loadResultSet" placeholder="10-stelliger-Code" style="width:10.5em;">
-									<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Gruppenergebnis laden</button>
+									<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text"
+										id="loadResultSet" placeholder="10-stelliger-Code" style="width:10.5em;">
+									<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Gruppenergebnis
+										laden</button>
 
 									<div id="evaluateResultSet_message" style="color: red;"></div>
 
@@ -641,12 +731,15 @@
 
 								<div class="mt-5">
 
-									<p>Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres Einzelcodes (12-stellig).</p>
+									<p>Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres
+										Einzelcodes (12-stellig).</p>
 
 									<div class="mt-3">
 
-										<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text" id="loadResult" placeholder="12-stelliger-Code" style="width:10.5em;">
-										<button class="btn btn-green ml-1 mr-1" onclick="evaluateResult();">Einzelergebnis laden</button>
+										<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text"
+											id="loadResult" placeholder="12-stelliger-Code" style="width:10.5em;">
+										<button class="btn btn-green ml-1 mr-1"
+											onclick="evaluateResult();">Einzelergebnis laden</button>
 
 										<br>
 
@@ -679,8 +772,12 @@
 
 					<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 mt-5 text-center" id="display_thanks">
 
-						<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten in <strong>visualisierter Form finden Sie links unter "Auswertung"</strong></p>
-						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen helfen Ihnen bei der Entscheidung über die <strong>Nutzung des Bildungsmediums</strong> in Unterricht und Schule.</p>
+						<p
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">
+							Ihre Daten in <strong>visualisierter Form finden Sie links unter "Auswertung"</strong></p>
+						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen
+							helfen Ihnen bei der Entscheidung über die <strong>Nutzung des Bildungsmediums</strong> in
+							Unterricht und Schule.</p>
 
 					</div>
 
@@ -724,73 +821,101 @@
 
 															<div class="row pt-1 pb-1 lehr-lernmittel-heading">
 
-																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
+																<div
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
-																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">Ihr Abrufcode</p>
+																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
+																		Ihr Abrufcode</p>
 
-																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;" class="pt-3 pb-3 pl-3 pr-3">
+																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
 
-																		<a id="display_id" style="word-break:break-word; font-weight:400; font-size:80%;" target="_blank" rel="noopener" alt="Verlinkung zum Lehr- und Lernmittel"></a>
-
-																	</div>
-
-																</div>
-
-																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
-
-																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">Verlinkung</p>
-
-																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;" class="pt-3 pb-3 pl-3 pr-3">
-
-																		<a id="link_lernmittel" style="word-break:break-word; font-weight:400; font-size:80%;" target="_blank" rel="noopener" alt="Verlinkung zum Lehr- und Lernmittel"></a>
+																		<a id="display_id"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"
+																			target="_blank" rel="noopener"
+																			alt="Verlinkung zum Lehr- und Lernmittel"></a>
 
 																	</div>
 
 																</div>
 
-																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 pl-0 pr-0">
+																<div
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
-																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">Schulart</p>
+																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
+																		Verlinkung</p>
 
-																	<div style="background-color: #f1f3fa; min-height:76px;" class="pt-3 pb-3 pl-3 pr-3">
+																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
 
-																		<a id="schulart" style="word-break:break-word; font-weight:400; font-size:80%;"></a>
-
-																	</div>
-
-																</div>
-
-																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
-
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Fach</p>
-
-																	<div style="background-color: #f1f3fa; min-height:76px;" class="pt-3 pb-3 pl-3">
-
-																		<a id="fach" style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+																		<a id="link_lernmittel"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"
+																			target="_blank" rel="noopener"
+																			alt="Verlinkung zum Lehr- und Lernmittel"></a>
 
 																	</div>
 
 																</div>
 
-																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
+																<div
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 pl-0 pr-0">
 
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Datum</p>
+																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
+																		Schulart</p>
 
-																	<div style="background-color: #f1f3fa; border-bottom-right-radius: 7px; border-top-right-radius: 7px; min-height:76px;" class="pt-3 pb-3 pl-3 pr-3">
+																	<div style="background-color: #f1f3fa; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
 
-																		<a id="datum_lernmittel" style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+																		<a id="schulart"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
 
 																	</div>
 
 																</div>
 
-																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
+																<div
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Anmerkungen</p>
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Fach
+																	</p>
 
-																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;" class="pt-3 pb-3 pl-3 pr-3">
+																	<div style="background-color: #f1f3fa; min-height:76px;"
+																		class="pt-3 pb-3 pl-3">
 
-																		<a id="anmerkungen" style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+																		<a id="fach"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+
+																	</div>
+
+																</div>
+
+																<div
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
+
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Datum
+																	</p>
+
+																	<div style="background-color: #f1f3fa; border-bottom-right-radius: 7px; border-top-right-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
+																		<a id="datum_lernmittel"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+
+																	</div>
+
+																</div>
+
+																<div
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
+
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
+																		Anmerkungen</p>
+
+																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
+																		<a id="anmerkungen"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
 
 																	</div>
 
@@ -812,8 +937,11 @@
 
 													<div class="col text-right" style="max-width:fit-content;">
 
-														<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color:#009688;">
-															<path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+														<svg width="2em" height="2em" viewBox="0 0 16 16"
+															class="bi bi-info-circle-fill" fill="currentColor"
+															xmlns="http://www.w3.org/2000/svg" style="color:#009688;">
+															<path fill-rule="evenodd"
+																d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
 														</svg>
 
 													</div>
@@ -821,7 +949,13 @@
 													<div class="col pl-0">
 
 														<p style="font-size:80% !important;">
-															Ihre Bewertungen werden in dieser Darstellung in absteigender Reihenfolge - <strong>der Wertigkeit nach</strong> - visualisiert. Während <em>0</em> für <em>nicht bewertbar</em> steht, repräsentieren <em>1 = trifft nicht zu</em>, <em>2 = trifft weniger zu</em>, <em>3 = trifft mehr zu</em> und <em>4 = trifft voll zu</em>. Diese Indexierung gilt für alle Auswertungen.
+															Ihre Bewertungen werden in dieser Darstellung in
+															absteigender Reihenfolge - <strong>der Wertigkeit
+																nach</strong> - visualisiert. Während <em>0</em> für
+															<em>nicht bewertbar</em> steht, repräsentieren <em>1 =
+																trifft nicht zu</em>, <em>2 = trifft weniger zu</em>,
+															<em>3 = trifft mehr zu</em> und <em>4 = trifft voll zu</em>.
+															Diese Indexierung gilt für alle Auswertungen.
 
 														</p>
 
@@ -833,9 +967,11 @@
 
 										</div>
 
-										<div class="d-flex justify-content-center mt-3 mb-3 p-3 bg-white grey-border" style="height:1200px !important;">
+										<div class="d-flex justify-content-center mt-3 mb-3 p-3 bg-white grey-border"
+											style="height:1200px !important;">
 
-											<canvas id="overallChart" style="max-width: 1450px; height: 1200px !important;"></canvas>
+											<canvas id="overallChart"
+												style="max-width: 1450px; height: 1200px !important;"></canvas>
 
 										</div>
 
@@ -846,9 +982,11 @@
 										<br>
 										<br>
 
-										<div class="d-flex justify-content-center mt-3 mb-3 p-3 bg-white grey-border" style="height:700px !important;">
+										<div class="d-flex justify-content-center mt-3 mb-3 p-3 bg-white grey-border"
+											style="height:700px !important;">
 
-											<canvas id="radarChart" style="max-width: 1450px; height: 700px !important;"></canvas>
+											<canvas id="radarChart"
+												style="max-width: 1450px; height: 700px !important;"></canvas>
 
 										</div>
 
@@ -884,7 +1022,8 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp1Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Curriculum & Bildungsstandards</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong>Curriculum & Bildungsstandards</strong>
+						</h2>
 
 						<!-- Row grp1Chart Start -->
 
@@ -916,7 +1055,12 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Curriculum</strong> und <strong>Bildungsstandards</strong> beziehen sich auf eine transparente Ausrichtung des Lehr- und Lernmittels an gültigen Curricula sowie geltenden Bildungsstandards. Dies betrifft beispielsweise die fach-, stufen- und jahrgangsbezogenen Ziele, angepasst an den Kompetenz- sowie Anforderungsbereichen deutscher Bildungsstandards.</p>
+								<p class="resultate_info">Die Items <strong>Curriculum</strong> und
+									<strong>Bildungsstandards</strong> beziehen sich auf eine transparente Ausrichtung
+									des Lehr- und Lernmittels an gültigen Curricula sowie geltenden Bildungsstandards.
+									Dies betrifft beispielsweise die fach-, stufen- und jahrgangsbezogenen Ziele,
+									angepasst an den Kompetenz- sowie Anforderungsbereichen deutscher Bildungsstandards.
+								</p>
 
 							</div>
 
@@ -968,7 +1112,16 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Interessensgeleitete Themenführung / Positionierung, Transparenz, Werbliche Elemente</strong> und <strong>Heterogenität / Gender</strong> widmen sich der <em>diskursiven Positionierung</em> des Lehr- und Lernmittels. Dies umfasst etwa die Objektivität der Ressource, die multiperspektive Aufarbeitung der behandelten Thematik, Transparenz bezüglich der Motive der verfassenden Person sowie das Vorhandensein von werblichen Elementen. Zudem fokussiert das Item <strong>Heterogenität / Gender</strong> mögliche Zuschreibungen auf soziale oder gesellschaftliche Umwelten und das Maß an kultureller Diversität.</p>
+								<p class="resultate_info">Die Items <strong>Interessensgeleitete Themenführung /
+										Positionierung, Transparenz, Werbliche Elemente</strong> und
+									<strong>Heterogenität / Gender</strong> widmen sich der <em>diskursiven
+										Positionierung</em> des Lehr- und Lernmittels. Dies umfasst etwa die
+									Objektivität der Ressource, die multiperspektive Aufarbeitung der behandelten
+									Thematik, Transparenz bezüglich der Motive der verfassenden Person sowie das
+									Vorhandensein von werblichen Elementen. Zudem fokussiert das Item
+									<strong>Heterogenität / Gender</strong> mögliche Zuschreibungen auf soziale oder
+									gesellschaftliche Umwelten und das Maß an kultureller Diversität.
+								</p>
 
 							</div>
 
@@ -1020,7 +1173,13 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Handlungsorientierung, Lebensweltlichkeit, Reflexion / Urteilsfähigkeit</strong> und <strong>Multiperspektivität / Kontroversität</strong> bilden den Bereich der <em>makrodidaktischen Fundierung</em>. Im Fokus stehen somit die Fragen, ob aktiv Wissensstrukturen erschlossen, ein Lebensweltbezug hergestellt, Prozesse der Selbstrefelexion gefördert sowie aktuelle Themen sowohl multiperspektivistisch als auch kontrovers diskutiert werden.</p>
+								<p class="resultate_info">Die Items <strong>Handlungsorientierung, Lebensweltlichkeit,
+										Reflexion / Urteilsfähigkeit</strong> und <strong>Multiperspektivität /
+										Kontroversität</strong> bilden den Bereich der <em>makrodidaktischen
+										Fundierung</em>. Im Fokus stehen somit die Fragen, ob aktiv Wissensstrukturen
+									erschlossen, ein Lebensweltbezug hergestellt, Prozesse der Selbstrefelexion
+									gefördert sowie aktuelle Themen sowohl multiperspektivistisch als auch kontrovers
+									diskutiert werden.</p>
 
 							</div>
 
@@ -1072,7 +1231,15 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Methodenpluralität, Multimedia / Multimodalität, Medienkompetenz, Differenzierung</strong> und <strong>Barrierefreiheit / Inklusion</strong> zeichnen die <em>mikrodidaktische Fundierung</em> aus. Neben der Variation in der verwendeten Methodik und der Medialität setzt sich dieser Bereich außerdem mit der Förderung der Medienkompetenzen, der Rücksichtnahme auf Heterogenität in der Schülerschaft sowie der Barrierefreiheit beziehungsweise der Inklusion von benachteiligten Gruppierungen auseinander.</p>
+								<p class="resultate_info">Die Items <strong>Methodenpluralität, Multimedia /
+										Multimodalität, Medienkompetenz, Differenzierung</strong> und
+									<strong>Barrierefreiheit / Inklusion</strong> zeichnen die <em>mikrodidaktische
+										Fundierung</em> aus. Neben der Variation in der verwendeten Methodik und der
+									Medialität setzt sich dieser Bereich außerdem mit der Förderung der
+									Medienkompetenzen, der Rücksichtnahme auf Heterogenität in der Schülerschaft sowie
+									der Barrierefreiheit beziehungsweise der Inklusion von benachteiligten Gruppierungen
+									auseinander.
+								</p>
 
 							</div>
 
@@ -1124,7 +1291,13 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Transfer- und Anwendungsorientierung, Prozessorientierung (Kumulation)</strong> und <strong>Lernwegunterstützende Elemente (Scaffolding</strong> repräsentieren den Bereich der <em>kognitiven Strukturierung</em>. Im Vordergrund der Ressource steht nicht nur der Transfer sondern auch der kumulative Aufbau von Wissen, Fertigkeiten und Kompetenzen. Lernwegunterstütztende Elemente sind systematisch an entsprechenden Schlüsselstellen des Lehr- und Lernmittels aufzufinden.</p>
+								<p class="resultate_info">Die Items <strong>Transfer- und Anwendungsorientierung,
+										Prozessorientierung (Kumulation)</strong> und <strong>Lernwegunterstützende
+										Elemente (Scaffolding</strong> repräsentieren den Bereich der <em>kognitiven
+										Strukturierung</em>. Im Vordergrund der Ressource steht nicht nur der Transfer
+									sondern auch der kumulative Aufbau von Wissen, Fertigkeiten und Kompetenzen.
+									Lernwegunterstütztende Elemente sind systematisch an entsprechenden Schlüsselstellen
+									des Lehr- und Lernmittels aufzufinden.</p>
 
 							</div>
 
@@ -1175,7 +1348,11 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Sprachlichkeit, Bildsprache</strong> beziehungsweise <strong>Additive Kommunikation (Anreicherung)</strong> lassen sich zum Bereich der <em>Bild- und Textkomposition</em> vereinen. Direkte, klare Formulierungen, ergänzende bildliche sowie zusätzliche Elemente runden das Lehr- und Lernmittel professionell ab.</p>
+								<p class="resultate_info">Die Items <strong>Sprachlichkeit, Bildsprache</strong>
+									beziehungsweise <strong>Additive Kommunikation (Anreicherung)</strong> lassen sich
+									zum Bereich der <em>Bild- und Textkomposition</em> vereinen. Direkte, klare
+									Formulierungen, ergänzende bildliche sowie zusätzliche Elemente runden das Lehr- und
+									Lernmittel professionell ab.</p>
 
 							</div>
 
@@ -1227,7 +1404,12 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Sequenzierung, Aktivierung</strong> und <strong>Multiple Lösungswege</strong> befassen sich mit der sinnvollen didaktischen oder fachlichen Abstimmung der Aufgaben, der lernpsychologischen Aktivierung der bearbeitenden Person sowie der Möglichkeit unterschiedliche Lösungswege zur Klärung eines Sachverhalts zu nutzen.</p>
+								<p class="resultate_info">Die Items <strong>Sequenzierung, Aktivierung</strong> und
+									<strong>Multiple Lösungswege</strong> befassen sich mit der sinnvollen didaktischen
+									oder fachlichen Abstimmung der Aufgaben, der lernpsychologischen Aktivierung der
+									bearbeitenden Person sowie der Möglichkeit unterschiedliche Lösungswege zur Klärung
+									eines Sachverhalts zu nutzen.
+								</p>
 
 							</div>
 
@@ -1279,7 +1461,13 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Der Bereich der <em>Anwendungstransprenz</em> setzt sich aus den Items <strong>Didaktisches Konzept</strong> und <strong>Rahmenbedingungen</strong> zusammen. Die vorliegende Kategorie klärt, ob das Lehr- und Lernmittel Informationen über dessen didaktische Konzeption sowie über dessen Rahmenbedingungen, wie etwa den zeitlichen Umfang oder die technischen Voraussetzungen, enthält.</p>
+								<p class="resultate_info">Der Bereich der <em>Anwendungstransprenz</em> setzt sich aus
+									den Items <strong>Didaktisches Konzept</strong> und
+									<strong>Rahmenbedingungen</strong> zusammen. Die vorliegende Kategorie klärt, ob das
+									Lehr- und Lernmittel Informationen über dessen didaktische Konzeption sowie über
+									dessen Rahmenbedingungen, wie etwa den zeitlichen Umfang oder die technischen
+									Voraussetzungen, enthält.
+								</p>
 
 							</div>
 
@@ -1315,7 +1503,7 @@
 
 										<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 text-center">
 
-                      <!--
+											<!--
 											<p class="font-weight-normal lead-text mt-5 pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">Ihre Daten als <strong>Download</strong> im PDF-Format</p>
 											<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Sie können Ihre Daten lokal sichern, um dauerhaft auf Ihre Ergebnisse zuzugreifen.</p>
                       -->
@@ -1360,7 +1548,7 @@
 
 								<div class="mt-3" id="AAER_JSON">
 
-						            <pre>
+									<pre>
 
 						              <!-- Survey Results Start als JSON Ausgabe -->
 
@@ -1404,169 +1592,190 @@
 
 	<div class="position-relative overflow-hidden p-1 p-md-5 m-md-3 text-center front-background">
 
-	    <!-- Lead Start -->
+		<!-- Lead Start -->
 
-	    <div class="row">
+		<div class="row">
 
-	    	<!-- Lead Row 1 Start -->
+			<!-- Lead Row 1 Start -->
 
-		    <div class="col visibility_collapse pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5">
+			<div class="col visibility_collapse pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5">
 
-		    	<!-- Carousel Start -->
+				<!-- Carousel Start -->
 
-			    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+				<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 
-			    	<!-- Carousel Inner Start -->
+					<!-- Carousel Inner Start -->
 
-			      	<div class="carousel-inner">
+					<div class="carousel-inner">
 
-			      		<!-- Carousel Element 0 Start -->
+						<!-- Carousel Element 0 Start -->
 
-				        <div class="carousel-item active">
+						<div class="carousel-item active">
 
 							<!-- Card Element 0 Start -->
 
-						  	<div class="card">
+							<div class="card">
 
-						  		<div class="card-body">
+								<div class="card-body">
 
-						  			<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">Nutzen Sie die <strong>Gruppenevaluation</strong> um gemeinsame Evaluationen in Ihrem Kollegium durchzuführen.</p>
+									<p
+										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
+										Nutzen Sie die <strong>Gruppenevaluation</strong> um gemeinsame Evaluationen in
+										Ihrem Kollegium durchzuführen.</p>
 
-						  		</div>
+								</div>
 
-						  	</div>
+							</div>
 
-						  	<!-- Card Element 0 End -->
+							<!-- Card Element 0 End -->
 
-				        </div>
+						</div>
 
-				      	<!-- Carousel Element 0 End -->
+						<!-- Carousel Element 0 End -->
 
-			      		<!-- Carousel Element 1 Start -->
+						<!-- Carousel Element 1 Start -->
 
-				        <div class="carousel-item">
+						<div class="carousel-item">
 
 							<!-- Card Element 1 Start -->
 
-						  	<div class="card">
+							<div class="card">
 
-						  		<div class="card-body">
+								<div class="card-body">
 
-						  			<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">Ein <strong>mediendidaktisch fundiertes Online-Instrument</strong> zur Analyse und Evaluation von Bildungsmedien in der Schul- und Unterrichtspraxis.</p>
+									<p
+										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
+										Ein <strong>mediendidaktisch fundiertes Online-Instrument</strong> zur Analyse
+										und Evaluation von Bildungsmedien in der Schul- und Unterrichtspraxis.</p>
 
-						  		</div>
+								</div>
 
-						  	</div>
+							</div>
 
-						  	<!-- Card Element 1 End -->
+							<!-- Card Element 1 End -->
 
-				        </div>
+						</div>
 
-				      	<!-- Carousel Element 1 End -->
+						<!-- Carousel Element 1 End -->
 
-				      	<!-- Carousel Element 2 Start -->
+						<!-- Carousel Element 2 Start -->
 
-				        <div class="carousel-item">
+						<div class="carousel-item">
 
 							<!-- Card Element 2 Start -->
 
-						  	<div class="card">
+							<div class="card">
 
-						  		<div class="card-body">
+								<div class="card-body">
 
-						  			<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">Ein <strong>Reflexionsintrument</strong> und eine <strong>Entscheidungshilfe</strong> zur pädagogisch-didaktischen Auswahl von Lehr- und Lernmitteln.</p>
+									<p
+										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
+										Ein <strong>Reflexionsintrument</strong> und eine
+										<strong>Entscheidungshilfe</strong> zur pädagogisch-didaktischen Auswahl von
+										Lehr- und Lernmitteln.
+									</p>
 
-						  		</div>
+								</div>
 
-						  	</div>
+							</div>
 
-						  	<!-- Card Element 2 End -->
+							<!-- Card Element 2 End -->
 
-				        </div>
+						</div>
 
-				      	<!-- Carousel Element 2 End -->
+						<!-- Carousel Element 2 End -->
 
-				      	<!-- Carousel Element 3 Start -->
+						<!-- Carousel Element 3 Start -->
 
-				        <div class="carousel-item">
+						<div class="carousel-item">
 
 							<!-- Card Element 3 Start -->
 
-						  	<div class="card">
+							<div class="card">
 
-						  		<div class="card-body">
+								<div class="card-body">
 
-						  			<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">Ein <strong>Leitfaden für AutorInnen und ProduzentInnen</strong> von Bildungsmedien / Open Educational Resources (OER).</p>
+									<p
+										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
+										Ein <strong>Leitfaden für AutorInnen und ProduzentInnen</strong> von
+										Bildungsmedien / Open Educational Resources (OER).</p>
 
-						  		</div>
+								</div>
 
-						  	</div>
+							</div>
 
-						  	<!-- Card Element 3 End -->
+							<!-- Card Element 3 End -->
 
-				        </div>
+						</div>
 
-				      	<!-- Carousel Element 3 End -->
+						<!-- Carousel Element 3 End -->
 
-				      	<!-- Carousel Element 4 Start -->
+						<!-- Carousel Element 4 Start -->
 
-				        <div class="carousel-item">
+						<div class="carousel-item">
 
 							<!-- Card Element 4 Start -->
 
-						  	<div class="card">
+							<div class="card">
 
-						  		<div class="card-body">
+								<div class="card-body">
 
-						  			<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">Ein <strong>Bewertungs- und Prüfinstrument</strong> für Repositorien von Lehr- und Lernmitteln.</p>
+									<p
+										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
+										Ein <strong>Bewertungs- und Prüfinstrument</strong> für Repositorien von Lehr-
+										und Lernmitteln.</p>
 
-						  		</div>
+								</div>
 
-						  	</div>
+							</div>
 
-						  	<!-- Card Element 4 End -->
+							<!-- Card Element 4 End -->
 
-				        </div>
+						</div>
 
-				      	<!-- Carousel Element 4 End -->
+						<!-- Carousel Element 4 End -->
 
-				      	<!-- Carousel Element 5 Start -->
+						<!-- Carousel Element 5 Start -->
 
-				        <div class="carousel-item">
+						<div class="carousel-item">
 
 							<!-- Card Element 5 Start -->
 
-						  	<div class="card">
+							<div class="card">
 
-						  		<div class="card-body">
+								<div class="card-body">
 
-						  			<p class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">Eine <strong>Entscheidungshilfe</strong> sowie ein <strong>Instrument zur Herstellung von Transparenz</strong> in Hinblick auf die Auswahl von Lehr- und Lernmitteln für Fachgremien in Schulen.</p>
+									<p
+										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
+										Eine <strong>Entscheidungshilfe</strong> sowie ein <strong>Instrument zur
+											Herstellung von Transparenz</strong> in Hinblick auf die Auswahl von Lehr-
+										und Lernmitteln für Fachgremien in Schulen.</p>
 
-						  		</div>
+								</div>
 
-						  	</div>
+							</div>
 
-						  	<!-- Card Element 5 End -->
+							<!-- Card Element 5 End -->
 
-				        </div>
+						</div>
 
-			      		<!-- Carousel Element 5 End -->
+						<!-- Carousel Element 5 End -->
 
-			      	</div>
+					</div>
 
-			    	<!-- Carousel Inner End -->
+					<!-- Carousel Inner End -->
 
-			    </div>
+				</div>
 
-			    <!-- Carousel End -->
+				<!-- Carousel End -->
 
-		    </div>
+			</div>
 
-	    	<!-- Lead Row 1 End -->
+			<!-- Lead Row 1 End -->
 
-	    </div>
+		</div>
 
-	    <!-- Lead End -->
+		<!-- Lead End -->
 
 	</div>
 
@@ -1584,27 +1793,27 @@
 
 	<!-- Navigation JS End -->
 
-    <!-- Footer Start -->
+	<!-- Footer Start -->
 
-    <div id="footer_container"></div>
+	<div id="footer_container"></div>
 
-    <!-- Footer End -->
+	<!-- Footer End -->
 
-    <!-- Footer JS Start -->
+	<!-- Footer JS Start -->
 
-    <script src="/js/footer.js"></script>
+	<script src="/js/footer.js"></script>
 
-    <!-- Footer JS End -->
+	<!-- Footer JS End -->
 
 	<!-- Display der Ergebnisse -->
 
-  	<script>
+	<script>
 
 		// Start: Übersicht - Ergänzende Informationen
 
 		// Start: Display - Name Lehr- Lernmittel
 
-		function display_Name () {
+		function display_Name() {
 			//$('name_lernmittel').css("display", "block");
 			document.getElementById('name_lernmittel').innerHTML = survey.getValue('Name');
 		}
@@ -1613,12 +1822,12 @@
 
 		// Start: Display - Link Lehr- Lernmittel
 
-		function display_Link () {
+		function display_Link() {
 			if (survey.getValue('Verlinkung') === "") {
-				survey.setValue('Verlinkung','Keine Angabe');
-				$("#link_lernmittel").prop('href',"#");
+				survey.setValue('Verlinkung', 'Keine Angabe');
+				$("#link_lernmittel").prop('href', "#");
 			} else {
-				$("#link_lernmittel").prop('href',survey.getValue('Verlinkung'));
+				$("#link_lernmittel").prop('href', survey.getValue('Verlinkung'));
 			}
 			//$("#link_lernmittel").css("display", "block");
 			document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
@@ -1628,7 +1837,7 @@
 
 		// Start: Display - Datum
 
-		function display_Date () {
+		function display_Date() {
 			//$("#datum_lernmittel").css("display", "block");
 			document.getElementById('datum_lernmittel').innerHTML = getDate();
 		}
@@ -1661,95 +1870,95 @@
 			FOOTER: "#footer_container"
 		}
 
-      function print() {
-        $(DISPLAY.OVERALL).printThis({
-            importCSS: false,
-            //loadCSS: "/css/filename.css",
-            header: "<h1>AAER</h1>"
-        });
-      }
+		function print() {
+			$(DISPLAY.OVERALL).printThis({
+				importCSS: false,
+				//loadCSS: "/css/filename.css",
+				header: "<h1>AAER</h1>"
+			});
+		}
 
-      function printview(){
+		function printview() {
 
-		  for (variable in DISPLAY) {
-			  $(DISPLAY[variable]).css("display", "none");
-		  }
-		   $(DISPLAY.OVERALL).css("display", "block");
-           $(DISPLAY.CHART1).css("display", "block");
-           $(DISPLAY.CHART2).css("display", "block");
-           $(DISPLAY.CHART3).css("display", "block");
-           $(DISPLAY.CHART4).css("display", "block");
-           $(DISPLAY.CHART5).css("display", "block");
-           $(DISPLAY.CHART6).css("display", "block");
-           $(DISPLAY.CHART7).css("display", "block");
-           $(DISPLAY.CHART8).css("display", "block");
-           $(DISPLAY.PDF).css("display", "block");
-
-           $(DISPLAY.FOOTER).css("display", "none");
-
-		   $("#text-container").css("display", "none");
-		   document.getElementById("name_lernmittel").innerHTML = aaer_data.Name;
-
-		  let link;
-		  if (aaer_data.Verlinkung == null) {
-			  link = 'Keine Angabe';
-		  } else {
-			  link = aaer_data.Verlinkung;
-		  }
-
-		  let schulart;
-		  if (aaer_data.Schulart == null) {
-			  schulart = 'Keine Angabe';
-		  } else {
-			  schulart = aaer_data.Schulart;
-		  }
-
-		  let fach;
-		  if (aaer_data.Fach == null) {
-			  fach = 'Keine Angabe';
-		  } else {
-			  fach = aaer_data.Fach;
-		  }
-
-		  let anmerkungen;
-		  if (aaer_data['Eigene Anmerkungen'] == null) {
-			  anmerkungen = 'Keine Angabe';
-		  } else {
-			  anmerkungen = aaer_data['Eigene Anmerkungen'];
-		  }
-
-		   document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + link +
-				    '<br> Schulart: ' + schulart +
-				    '<br> Fach: ' + fach +
-				    '<br> Eigene Anmerkungen: ' + anmerkungen +
-				    '<br> Datum: ' + aaer_data.Datum +
-				    '<br>' +
-		  			'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
-
-		  $("#wrapper").toggleClass("toggled");
-      }
-
-      // gets called if button is clicked
-			function displayController(btn_enum) {
-				for (variable in DISPLAY) {
-					$(DISPLAY[variable]).css("display", "none");
-					$(DISPLAY.FOOTER).css("display", "block");
-					$("#text-container").css("display", "block");
-
-					if ('name' in aaer_data) {
-						$("#name_lernmittel").innerHTML = aaer_data.Einzelevaluation;
-					}
-					document.getElementById("aaer_text").innerHTML = '';
-
-				}
-				$(btn_enum).css("display", "block");
-				if (btn_enum == DISPLAY.OVERALL) {
-					display_Name();
-					display_Link();
-					display_Date();
-				}
-				clearErrorMessages();
+			for (variable in DISPLAY) {
+				$(DISPLAY[variable]).css("display", "none");
 			}
+			$(DISPLAY.OVERALL).css("display", "block");
+			$(DISPLAY.CHART1).css("display", "block");
+			$(DISPLAY.CHART2).css("display", "block");
+			$(DISPLAY.CHART3).css("display", "block");
+			$(DISPLAY.CHART4).css("display", "block");
+			$(DISPLAY.CHART5).css("display", "block");
+			$(DISPLAY.CHART6).css("display", "block");
+			$(DISPLAY.CHART7).css("display", "block");
+			$(DISPLAY.CHART8).css("display", "block");
+			$(DISPLAY.PDF).css("display", "block");
+
+			$(DISPLAY.FOOTER).css("display", "none");
+
+			$("#text-container").css("display", "none");
+			document.getElementById("name_lernmittel").innerHTML = aaer_data.Name;
+
+			let link;
+			if (aaer_data.Verlinkung == null) {
+				link = 'Keine Angabe';
+			} else {
+				link = aaer_data.Verlinkung;
+			}
+
+			let schulart;
+			if (aaer_data.Schulart == null) {
+				schulart = 'Keine Angabe';
+			} else {
+				schulart = aaer_data.Schulart;
+			}
+
+			let fach;
+			if (aaer_data.Fach == null) {
+				fach = 'Keine Angabe';
+			} else {
+				fach = aaer_data.Fach;
+			}
+
+			let anmerkungen;
+			if (aaer_data['Eigene Anmerkungen'] == null) {
+				anmerkungen = 'Keine Angabe';
+			} else {
+				anmerkungen = aaer_data['Eigene Anmerkungen'];
+			}
+
+			document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + link +
+				'<br> Schulart: ' + schulart +
+				'<br> Fach: ' + fach +
+				'<br> Eigene Anmerkungen: ' + anmerkungen +
+				'<br> Datum: ' + aaer_data.Datum +
+				'<br>' +
+				'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
+
+			$("#wrapper").toggleClass("toggled");
+		}
+
+		// gets called if button is clicked
+		function displayController(btn_enum) {
+			for (variable in DISPLAY) {
+				$(DISPLAY[variable]).css("display", "none");
+				$(DISPLAY.FOOTER).css("display", "block");
+				$("#text-container").css("display", "block");
+
+				if ('name' in aaer_data) {
+					$("#name_lernmittel").innerHTML = aaer_data.Einzelevaluation;
+				}
+				document.getElementById("aaer_text").innerHTML = '';
+
+			}
+			$(btn_enum).css("display", "block");
+			if (btn_enum == DISPLAY.OVERALL) {
+				display_Name();
+				display_Link();
+				display_Date();
+			}
+			clearErrorMessages();
+		}
 
 		buttons = [
 			'button_display_overallChart',
@@ -1766,93 +1975,131 @@
 		];
 
 
-			function startPredefined() {
-				loadPredefined().then( () => {
-					$( ".sv_complete_btn" ).click(function() {
-						displayController(DISPLAY.THANKS);
-						buttons.forEach( btn => document.getElementById(btn).disabled = false);
-					});
-					displayController(DISPLAY.UMFRAGE);
-					buttons.forEach( btn => document.getElementById(btn).disabled = true);
-				})
-				.catch( err => {
-					document.getElementById('teilnehmen_message').innerHTML = err;
-				});
-			}
-
-			function newSurvey() {
-				newSurveyData();
-				$( ".sv_complete_btn" ).click(function() {
+		function startPredefined() {
+			loadPredefined().then(() => {
+				$(".sv_complete_btn").click(function () {
 					displayController(DISPLAY.THANKS);
-					buttons.forEach( btn => document.getElementById(btn).disabled = false);
+					buttons.forEach(btn => document.getElementById(btn).disabled = false);
 				});
 				displayController(DISPLAY.UMFRAGE);
-				buttons.forEach( btn => document.getElementById(btn).disabled = true);
-			}
+				buttons.forEach(btn => document.getElementById(btn).disabled = true);
+			})
+				.catch(err => {
+					document.getElementById('teilnehmen_message').innerHTML = err;
+				});
+		}
 
-			function evaluateSet() {
-				getPredefinedData().then( (data) => {
-					return loadResultSet(data);
-				}).then( () => {
-					buttons.forEach( btn => document.getElementById(btn).disabled = false);
-					displayController(DISPLAY.OVERALL);
-				})
-				.catch( err => {
+		var error_status = false;
+		var saved_data;
+		function newSurvey() {
+			// newSurveyData();
+			window.survey = new Survey.Model(json);
+
+			survey.onComplete.add(function (sender, options) {
+				saveResult(sender.data);
+				visualize(sender.data);
+			});
+
+			survey.data = {};
+
+			if (error_status) {
+				survey.data = saved_data;
+				error_status = false;
+
+				index_last = window.survey.pages.length - 1
+				survey.currentPage = survey.pages[index_last];
+
+				alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
+			}
+			
+
+			$("#surveyElement").Survey({ model: survey });
+
+
+			$(".sv_complete_btn").click(function () {
+				var status_request = new XMLHttpRequest();
+				status_request.open('POST', 'https://aaer.zlbib.uni-augsburg.de/');
+
+				status_request.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						displayController(DISPLAY.THANKS);
+						buttons.forEach(btn => document.getElementById(btn).disabled = false);
+					} else {
+						error_status = true;
+						saved_data = survey.data;
+						newSurvey();
+					}
+				}
+				status_request.send();
+				
+			});
+			displayController(DISPLAY.UMFRAGE);
+			buttons.forEach(btn => document.getElementById(btn).disabled = true);
+		}
+
+		function evaluateSet() {
+			getPredefinedData().then((data) => {
+				return loadResultSet(data);
+			}).then(() => {
+				buttons.forEach(btn => document.getElementById(btn).disabled = false);
+				displayController(DISPLAY.OVERALL);
+			})
+				.catch(err => {
 					document.getElementById('evaluateResultSet_message').innerText = err;
 				})
-			}
+		}
 
-			function evaluateResult() {
-				loadResult().then( () => {
-					buttons.forEach( btn => document.getElementById(btn).disabled = false);
-					displayController(DISPLAY.OVERALL);
-				})
-				.catch( err => {
+		function evaluateResult() {
+			loadResult().then(() => {
+				buttons.forEach(btn => document.getElementById(btn).disabled = false);
+				displayController(DISPLAY.OVERALL);
+			})
+				.catch(err => {
 					document.getElementById('evaluateResult_message').innerText = err;
 				})
-			}
+		}
 
-			function newPredefined() {
-				savePredefined().then( (predefined_id) => {
-					document.getElementById('anlegen_next_message').innerText = predefined_id;
-					document.getElementById('loadPredefined').value = predefined_id;
-					displayController(DISPLAY.ANLEGEN_NEXT);
-				})
-				.catch( err => {
+		function newPredefined() {
+			savePredefined().then((predefined_id) => {
+				document.getElementById('anlegen_next_message').innerText = predefined_id;
+				document.getElementById('loadPredefined').value = predefined_id;
+				displayController(DISPLAY.ANLEGEN_NEXT);
+			})
+				.catch(err => {
 					document.getElementById('newPredefined_message').innerText = err;
 				})
-			}
+		}
 
-			function startNewPredefined() {
-				startPredefined();
-			}
+		function startNewPredefined() {
+			startPredefined();
+		}
 
-			function clearErrorMessages() {
-				document.getElementById('teilnehmen_message').innerHTML = null;
-				document.getElementById('evaluateResultSet_message').innerText = null;
-				document.getElementById('evaluateResult_message').innerText = null;
-				document.getElementById('newPredefined_message').innerText = null;
-			}
-
-
+		function clearErrorMessages() {
+			document.getElementById('teilnehmen_message').innerHTML = null;
+			document.getElementById('evaluateResultSet_message').innerText = null;
+			document.getElementById('evaluateResult_message').innerText = null;
+			document.getElementById('newPredefined_message').innerText = null;
+		}
 
 
-   		// Start: Trigger für Dashbaord-Menü
 
-	    $("#menu-toggle").click(function(e) {
-	      e.preventDefault();
-	      $("#wrapper").toggleClass("toggled");
-	    });
 
-   		// Ende: Trigger für Dashbaord-Menü
+		// Start: Trigger für Dashbaord-Menü
+
+		$("#menu-toggle").click(function (e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+
+		// Ende: Trigger für Dashbaord-Menü
 
 		$("#dashboard-aaer").css("display", "block");
-		buttons.forEach( btn => document.getElementById(btn).disabled = true);
+		buttons.forEach(btn => document.getElementById(btn).disabled = true);
 		displayController(DISPLAY.WILLKOMMEN);
 
 
-	  </script>
+	</script>
 
-  </body>
+</body>
 
 </html>

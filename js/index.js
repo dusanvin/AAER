@@ -1168,20 +1168,6 @@ function loadPredefined() {
 }
 
 
-
-function newSurveyData() {
-    window.survey = new Survey.Model(json);
-
-    survey.onComplete.add(function (sender, options) {
-        saveResult(sender.data);
-        visualize(sender.data);
-    });
-
-    survey.data = {};
-
-    $("#surveyElement").Survey({model: survey});
-}
-
 function savePredefined() {
     return new Promise( ((resolve, reject) => {
 
