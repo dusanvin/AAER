@@ -2135,6 +2135,7 @@
 
 
 			$(".sv_complete_btn").click(function () {
+				console.log('pre000' + predefined)
 				displayController(DISPLAY.THANKS);
 				var status_request = new XMLHttpRequest();
 				status_request.open('POST', 'https://aaer.zlbib.uni-augsburg.de/');
@@ -2144,10 +2145,11 @@
 						buttons.forEach(btn => document.getElementById(btn).disabled = false);
 					} else {
 						error_status = true;
+						
 						saved_data = survey.data;
-						let save = predefined;
 						newSurvey();
-						predefined = save;
+						predefined = error_case;
+						error_case = false;
 					}
 				}
 				status_request.send();

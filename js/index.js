@@ -518,6 +518,8 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
 var predefined = false;
 var predefined_id = "";
 
+var error_case = false;
+
 var aaer_data = {};
 
 
@@ -544,6 +546,8 @@ function saveResult(data) {
     console.log("predefined boolean: " )
     console.log(predefined)
     console.log(predefined_id)
+
+    error_case = predefined;
 
     if(predefined) {
         data.predefined_id = predefined_id;
