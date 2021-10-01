@@ -2039,15 +2039,22 @@
 		}
 
 
-		function fill() {
+		function fill(loaded_values = 0) {
+			let nam, link, fach, schulart;
+			if (loaded_values) {
+				name = survey.data.Name;
+				link = survey.data.Verlinkung;
+				fach = survey.data.Fach;
+				schulart = survey.data.Schulart
+			}
 			newSurvey();
 
 			survey.data = {
-				"Name": 'Generiert',
-				"Verlinkung": 'https://aaer.zlbib.uni-augsburg.de/',
+				"Name": loaded_values? name: 'Generiert',
+				"Verlinkung": loaded_values? link: 'https://aaer.zlbib.uni-augsburg.de/',
 
-				"Fach": getrand(22) + 2,
-				"Schulart": getrand(25) + 2,
+				"Fach": loaded_values? fach: (22) + 2,
+				"Schulart": loaded_values? schulart: (25) + 2,
 
 				//Anlehnung an Curriculum und Bildungsstandards
 				"Bezüge Curriculum": getrand(),
@@ -2104,7 +2111,7 @@
 		var error_status = false;
 		var saved_data;
 		function newSurvey() {
-			// newSurveyData();
+			
 			window.survey = new Survey.Model(json);
 
 			survey.onComplete.add(function (sender, options) {
