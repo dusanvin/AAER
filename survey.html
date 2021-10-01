@@ -2098,7 +2098,7 @@
 				"Didaktisches Konzept": getrand(),
 				"Rahmenbedingungen": getrand(),
 
-				"Eigene Anmerkungen": "Super!"
+				"Eigene Anmerkungen": loaded_values? 'Daten wurden automatisch generiert.': 'Super!'
 			};
 
 			index_last = window.survey.pages.length - 1
@@ -2111,7 +2111,7 @@
 		var error_status = false;
 		var saved_data;
 		function newSurvey() {
-			
+
 			window.survey = new Survey.Model(json);
 
 			survey.onComplete.add(function (sender, options) {
