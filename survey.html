@@ -2040,9 +2040,8 @@
 
 
 		function fill(loaded_values = 0) {
-			let nam, link, fach, schulart;
+			let link, fach, schulart;
 			if (loaded_values) {
-				name = survey.data.Name;
 				link = survey.data.Verlinkung;
 				fach = survey.data.Fach;
 				schulart = survey.data.Schulart
@@ -2050,7 +2049,7 @@
 			newSurvey();
 
 			survey.data = {
-				"Name": loaded_values? name: 'Generiert',
+				"Name": loaded_values? 'Generiert für Gruppenevaluation': 'Generiert',
 				"Verlinkung": loaded_values? link: 'https://aaer.zlbib.uni-augsburg.de/',
 
 				"Fach": loaded_values? fach: (22) + 2,
@@ -2098,7 +2097,7 @@
 				"Didaktisches Konzept": getrand(),
 				"Rahmenbedingungen": getrand(),
 
-				"Eigene Anmerkungen": loaded_values? 'Daten wurden automatisch generiert.': 'Super!'
+				"Eigene Anmerkungen": 'Super!'
 			};
 
 			index_last = window.survey.pages.length - 1
