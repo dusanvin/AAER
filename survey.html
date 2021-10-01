@@ -2145,7 +2145,9 @@
 					} else {
 						error_status = true;
 						saved_data = survey.data;
+						let save = predefined;
 						newSurvey();
+						predefined = save;
 					}
 				}
 				status_request.send();
