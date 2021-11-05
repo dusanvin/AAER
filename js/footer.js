@@ -23,13 +23,13 @@ function display_footer() {
 		    
 		          <figure>
 
-		            <img class="image-img" src="https://assets.uni-augsburg.de/media/filer_public_thumbnails/filer_public/13/bf/13bf55b7-1c18-4cd5-beb3-c06308004042/uni_aug_logo_zlbib_cmyk.png__1080x2000_q85_subject_location-2655%2C481_subsampling-2.png" width="200">
+		            <img class="image-img" src="https://aaer.zlbib.uni-augsburg.de/img/Uni_Aug_Logo_ZDL_RGB_small.png" width="200">
 
 		          </figure>
 
 		        </div>
 
-		        <small class="d-block mb-3"><br><strong>Version 1.0: 08/2021;</strong><br><br> Das AAER steht unter Copyright: <br>&copy; 2020 Universität Augsburg / Dr. Carl- Christian Fey. <br><br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">https://aaer.zlbib.uni-augsburg.de</a> von <a class="text-dark" href="https://www.researchgate.net/profile/Vincent_Dusanek">Vincent Dusanek</a> für <a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/digillab/">DigiLLab</a>, 2020. MIT-Lizenz.</small>
+		        <small class="d-block mb-3 ml-3"><br><strong>Version 1.0: 08/2021;</strong><br><br> Lizenz des AAERs:<br>&copy; 2020 Universität Augsburg / Dr. Carl- Christian Fey. <br><br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">https://aaer.zlbib.uni-augsburg.de</a> von <a class="text-dark" href="https://www.researchgate.net/profile/Vincent_Dusanek">Vincent Dusanek</a> für <a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/digillab/">DigiLLab</a>, 2020. MIT-Lizenz.</small>
 
 		    </div>
 
