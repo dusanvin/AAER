@@ -250,8 +250,8 @@ var json = {
     title: "Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER) im Bereich Geschichte",
     pages: [
         {
-            name: "Name", title: "Name des Lehr-Lernmittels", description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
-
+            title: "Name des Lehr-Lernmittels", 
+            description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
             elements: [
                 {
                     type: "text",
@@ -262,8 +262,8 @@ var json = {
                 }
             ]
         }, {
-            name: "Verlinkung", title: "Link (optional)", description: "Sie können an dieser Stelle den Link zu dem zu analysierenden/evaluierenden Lehr-Lernmittel angeben. Er wird in der abschließend für Sie generierten Auswertungsübersicht angezeigt.",
-
+            title: "Link (optional)", 
+            description: "Sie können an dieser Stelle den Link zu dem zu analysierenden/evaluierenden Lehr-Lernmittel angeben. Er wird in der abschließend für Sie generierten Auswertungsübersicht angezeigt.",
             elements: [
                 {
                     type: "text",
