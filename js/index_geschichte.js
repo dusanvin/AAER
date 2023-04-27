@@ -333,7 +333,6 @@ var json = {
                     name: "Interessegeleitete Themenführung/Positionierung",
                     title: "Das Lehr-Lernmittel ist frei von einseitiger Informationsvermittlung bzgl. bestimmter Themen/Aussagen gesellschaftlicher Akteure.",
                     isRequired: true,
-                    defaultValue: 5,
 
                     //commentText: "Indikator für eine positve Ausprägung (trifft voll zu): \n Das Lehr-Lernmittel enthält keine einseitigen Aussagen, Themenführungen oder Selbstdarstellungen von Organisationen/Anbietern und lässt sichtbar ein Bemühen erkennen, unterschiedliche und plurale Sichtweisen auf gesellschaftliche Diskurse gleichberechtigt zu integrieren. Das wird z.B. auch dadurch signalisiert, dass Aussagen, die keine simplen Fakten darstellen, nicht als 'verabsolutierte' Aussagen formuliert sind. Dies gilt auch für sozusagen beiläufig vermittelte Inhalte oder Aussagen, die nicht in zentralem Zusammenhang mit dem Thema des Lehr-Lernmittels stehen (z.B. Aussagen in Textaufgaben, Anwendungsaufgaben, Abbildungen o.ä.).",
                     choices: antworten
