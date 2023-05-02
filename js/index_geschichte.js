@@ -232,6 +232,63 @@ aaer_geschichte = [
 	},
 ]
 
+fach = [
+    "Keine Angabe",
+    "Biologie",
+    "Chemie",
+    "Deutsch",
+    "Englisch",
+    "Erdkunde / Geographie",
+    "Ethik",
+    "Französich",
+    "Geschichte",
+    "Informatik / IT",
+    "Kunst / Werken",
+    "Latein",
+    "Mathematik",
+    "Musik",
+    "Pädagogik",
+    "Philosophie",
+    "Physik",
+    "Psychologie",
+    "Religion",
+    "Sozialkunde / Politik",
+    "Sport",
+    "Sprachen (andere)",
+    "Sonstiges Fach"
+];
+
+schularten = [
+    "Keine Angabe",
+    "Abendschule",
+    "Alternatives Schulkonzept",
+    "Berufsfachschule",
+    "Berufskolleg",
+    "Berufsoberschule",
+    "Berufsschule",
+    "Bildungskolleg",
+    "Fachakademie",
+    "Fachhochschule",
+    "Fachoberschule",
+    "Fachschule",
+    "Förderschule",
+    "Gemeinschaftsschule",
+    "Gesamtschule",
+    "Grundschule",
+    "Gymnasium",
+    "Hochschule",
+    "Internationale Schule",
+    "Mittelschule",
+    "Realschule",
+    "Schule besonderer Art",
+    "Schule für Kranke",
+    "Sekundarschule",
+    "Volkshochschule",
+    "Vorschule",
+    "Wirtschaftsschule",
+    "Sonstige Schule",
+];
+
 antworten = [
     { value: 1, text: "trifft nicht zu" },
     { value: 2, text: "trifft weniger zu" },
@@ -703,9 +760,7 @@ var json = {
 var predefined = false;
 var predefined_id = "";
 
-var error_case = false;
-
-var aaer_data = {};
+var aaer_data;
 
 
 function getDate() {
@@ -716,139 +771,73 @@ function getDate() {
 }
 
 
-// saves data of a survey to db and return result_id
+// daten speichern
+// evaluationscode
+// danach anzeigen der daten
 function saveResult(data) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/saveResult");
-
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('display_id').innerHTML = this.responseText;
-            aaer_data.Einzelevaluation = this.responseText;
-        };
-    }
-
-    console.log("predefined boolean: ")
-    console.log(predefined)
-    console.log(predefined_id)
-
-    error_case = predefined;
 
     if (predefined) {
         data.predefined_id = predefined_id;
-        predefined = false;
+        predefined = false;  // reset flag
+    }
+    data.Evaluationsdatum = getDate();
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/save");
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            data.Evaluationscode = this.responseText;
+            aaer_data = data; 
+            visualize(data);
+        };
     }
 
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(data));
-
-    data.Datum = getDate();
-
-    aaer_data = data;
-
-    console.log(aaer_data)
-
-
 }
 
-//
+
 function visualize(data) {
-    let dict = {}
-    let jsonViewData = Object.assign(dict, data);
+    
+    document.getElementById('evaluationscode').innerHTML = data['Evaluationscode'];
+    document.getElementById('verlinkung').innerHTML = data['Verlinkung'];
+    document.getElementById('schulart').innerHTML = data['Schulart'];
+    document.getElementById('fach').innerHTML = data['Fach'];
+    document.getElementById('evaluationsdatum').innerHTML = data['Evaluationsdatum'];
+    document.getElementById('anmerkungen').innerHTML = data['Eigene Anmerkungen'];
+    
+    // JSON-Übersicht
+    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(data, null, 4);
 
-    // Fachname anzeigen
-    if (data['Fach'] == null) {
-        data['Fach'] = 1;
-    }
-    fachName = fach[data['Fach'] - 1].text;
-    jsonViewData.Fach = fachName; // JSON-Übersicht
-    document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
-
-    // Schulart anzeigen
-    if (data['Schulart'] == null) {
-        data['Schulart'] = 1;
-    }
-    schulName = '';
-    for (let i = 0; i < schularten.length; i++) {
-        if (schularten[i].value == data['Schulart']) {
-            schulName = schularten[i].text;
-        }
-    }
-
-    // schulName = schularten[schulart_index].text;
-    jsonViewData.Schulart = schulName; // JSON-Übersicht
-    document.getElementById('schulart').innerHTML = schulName; // Gesamtübersicht
-
-    document.getElementById('anmerkungen').innerHTML = data['Eigene Anmerkungen']; // Gesamtübersicht
-
-    document.querySelector('#surveyResult').textContent = "" + JSON.stringify(jsonViewData, null, 4);
-
-    aaer_data.Schulart = schulName;
-    aaer_data.Fach = fachName;
-    // Charts erstellen
     generateCharts();
 }
 
-// Wird über einen Button aufgerufen und lädt Daten aus der DB
+
+// Wird über einen Button aufgerufen und lädt Daten aus der DB, Einzelevaluation 
 function loadResult() {
-    let input = document.getElementById('loadResult').value;
+    let evaluationscode = document.getElementById('loadResult').value;
+
     return new Promise(((resolve, reject) => {
-        if (input.length === 12) {
+        if (evaluationscode.length === 12) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResult");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/load");
 
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    db_data = this.responseText;
-                    if (db_data.length > 0) {
-                        let data = JSON.parse(db_data);
-                        let data_object = {
-                            "Einzelevaluation": data.result_id,
-                            "Name": data._tool_name,
-                            "Verlinkung": data._link,
-                            "Fach": data.subject_id,
-                            "Schulart": data.institution_id,
-                            "Bezüge Curriculum": data._00,
-                            "Bezüge Bildungsstandards": data._01,
-                            "Interessegeleitete Themenführung/Positionierung": data._10,
-                            "Transparenz": data._11,
-                            "Werbliche Elemente": data._12,
-                            "Heterogenität/Gender": data._13,
-                            "Handlungsorientierung": data._20,
-                            "Lebensweltlichkeit": data._21,
-                            "Reflexion/Urteilsfähigkeit": data._22,
-                            "Multiperspektivität/Kontroversität": data._23,
-                            "Methodenpluralität": data._30,
-                            "Multimedia/Multimodalität": data._31,
-                            "Medienkompetenz": data._32,
-                            "Differenzierung": data._33,
-                            "Barrierefreiheit/Inklusion": data._34,
-                            "Transfer- und Anwendungsorientierung": data._40,
-                            "Prozessorientierung (Kumulation)": data._41,
-                            "Lernwegunterstützende Elemente (Scaffolding)": data._42,
-                            "Sprachlichkeit": data._50,
-                            "Bildsprache": data._51,
-                            "Additive Kommunikation (Anreicherung)": data._52,
-                            "Sequenzierung": data._60,
-                            "Aktivierung": data._61,
-                            "Multiple Lösungswege": data._62,
-                            "Didaktisches Konzept": data._70,
-                            "Rahmenbedingungen": data._71,
-                            "Eigene Anmerkungen": data._comment
-                        };
-                        data_object.Datum = getDate();
 
-                        aaer_data = data_object;
+                    if (this.responseText.length > 0) {
+                        let data = JSON.parse(this.responseText);
 
                         window.survey = new Survey.Model(json);
-                        survey.data = data_object;
+                        survey.data = data;
+
                         survey.onComplete.add(function (sender, options) {
+                            aaer_data = sender.data;
                             visualize(sender.data);
                         });
                         survey.doComplete();
-
-                        document.getElementById('display_id').innerHTML = input;
 
                         resolve();
 
@@ -860,7 +849,7 @@ function loadResult() {
             };
 
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({ "result_id": input }));
+            xhr.send(JSON.stringify({ "evaluationscode": evaluationscode }));
 
         } else {
             reject("Es müssen genau 12 Zeichen sein.");
@@ -870,23 +859,25 @@ function loadResult() {
 
 }
 
+
 function loadResultSet(data) {
-    let input = document.getElementById('loadResultSet').value;
-    data = JSON.parse(data);
+    let evaluationscode = document.getElementById('loadResultSet').value;
+    data = JSON.parse(data);  // ?????? user formular eingabe
 
     return new Promise(((resolve, reject) => {
-        if (input.length === 10) {
+        if (evaluationscode.length === 10) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadResultSet");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadResultSet");
 
             xhr.onreadystatechange = function () {
 
                 if (this.readyState == 4 && this.status == 200) {
-                    // Daten kommen als String an
-                    let db_data = JSON.parse(this.responseText);
-                    console.log(db_data)
 
+                    // array mit datensätzen
+                    let db_data = JSON.parse(this.responseText);
+
+                    // init variables
                     if (db_data.length > 0) {  // && db_data !== '[]'
 
                         let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
@@ -925,9 +916,10 @@ function loadResultSet(data) {
 
                         let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
 
+                        // array durchlaufen
                         for (let i = 0; i < db_data.length; i++) {
                             let result = {};
-                            console.log(db_data[i])
+                            // console.log(db_data[i])
 
                             result.Einzelevaluation = db_data[i].result_id;
 
@@ -1012,9 +1004,12 @@ function loadResultSet(data) {
                                 result['Eigene Anmerkungen'] = db_data[i]._comment;
                             }
 
+                            // alle datensätze als json ausgeben
                             json_str += '\n\n' + JSON.stringify(result, null, 4);
 
 
+
+                            // zählen
                             if (_00 == 0) { _00COUNT_NULL++; }
                             else { _00SUM += _00; _00COUNT++; }
                             if (_01 == 0) { _01COUNT_NULL++; }
@@ -1078,7 +1073,7 @@ function loadResultSet(data) {
                         }
 
                         let data_object = {
-                            "Evaluation": input,
+                            "Evaluation": evaluationscode,
                             "Name": data._pre_tname,
                             "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
                             "Fach": (data.subject_id == null) ? 1 : data.subject_id,
@@ -1120,7 +1115,7 @@ function loadResultSet(data) {
                         visualize(data_object);
 
 
-                        document.getElementById('display_id').innerHTML = input;
+                        document.getElementById('display_id').innerHTML = evaluationscode;
 
                         let _00COUNT_NULL_MSG = '';
                         if (_00COUNT_NULL > 0)
@@ -1241,7 +1236,7 @@ function loadResultSet(data) {
             }
 
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({ "predefined_id": input }));
+            xhr.send(JSON.stringify({ "predefined_id": evaluationscode }));
 
         } else {
             reject("Es müssen genau 10 Zeichen sein.");
@@ -1250,25 +1245,23 @@ function loadResultSet(data) {
 
 }
 
+
 function getPredefinedData() {
-    let input = document.getElementById('loadResultSet').value;
+    
 
     return new Promise(((resolve, reject) => {
+        let input = document.getElementById('gruppencode').value;
         if (input.length === 10) {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    let db_data = this.responseText;
                     if (db_data.length > 0) {
-                        console.log(db_data)
-                        data = JSON.parse(db_data);
-                        console.log(data)
-                        resolve(db_data);
+                        // data = JSON.parse(this.responseText;);
+                        resolve(this.responseText);
                     } else {
                         reject("Zum angegebenen Code wurde nichts gefunden!");
                     }
-
                 }
             }
 
@@ -1278,83 +1271,8 @@ function getPredefinedData() {
         } else {
             reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
         }
-
     }))
 }
-
-
-// function loadPredefined() {
-//     let input = document.getElementById('loadPredefined').value;
-
-//     return new Promise( (resolve, reject) => {
-//         if (input.length === 10) {
-//             let xhr = new XMLHttpRequest();
-//             xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
-//             xhr.setRequestHeader("Content-Type", "application/json");
-//             xhr.send(JSON.stringify({"predefined_id": input}));
-
-
-//             xhr.onreadystatechange = function () {
-//                 if (this.readyState == 4 && this.status == 200) {
-//                     let db_data = this.responseText;
-//                     if (db_data.length > 0) {
-//                         window.survey = new Survey.Model(json);
-
-//                         survey.onComplete.add(function (sender, options) {
-//                             saveResult(sender.data);
-//                             visualize(sender.data);
-//                         });
-
-//                         console.log(db_data);
-//                         data = JSON.parse(db_data);
-
-//                         data_object = {
-//                             "Name": data._pre_tname,
-//                             "Verlinkung": data._pre_link,
-//                             "Fach": data.subject_id,
-//                             "Schulart": data.institution_id
-//                         };
-
-//                         all_questions = survey.getAllQuestions();
-//                         all_questions[0].readOnly = true;
-
-//                         if (data_object.Verlinkung != null) {
-//                             all_questions[1].readOnly = true;
-//                         };
-
-//                         if (data_object.Fach != null) {
-//                             all_questions[2].readOnly = true;
-//                         };
-
-//                         if (data_object.Schulart != null) {
-//                             all_questions[3].readOnly = true;
-//                         };
-
-//                         console.log(data_object);
-
-//                         survey.data = data_object;
-
-//                         $("#surveyElement").Survey({model: survey});
-
-
-//                         predefined = true;
-//                         predefined_id = input;
-
-//                         resolve();
-
-//                     } else {
-//                         reject("Zum angegebenen Code wurde nichts gefunden!");
-//                     }
-//                 }
-//             }
-
-
-//         } else {
-//             reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
-//         }
-
-//     });
-// }
 
 
 function savePredefined() {
