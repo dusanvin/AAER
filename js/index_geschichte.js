@@ -906,44 +906,38 @@ function loadEvaluationGroupAndVisualize(data) {
                         "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
                     };
                     
+                    // werte für die durchschnittsberechnungen
+                    let countVars = new Map();
                     for(i=0; i<aaer_geschichte.length; i++) {
                         for(j=0; j<aaer_geschichte[i].items.length; j++) {
 
-                            eval('var dim' + i + 'item' + j + 'SUM = 0;');
-                            eval('var dim' + i + 'item' + j + 'COUNT = 0;');
-                            eval('var dim' + i + 'item' + j + 'COUNT_NULL = 0;');
+                            countVars.set('dim' + i + 'item' + j, {'SUM': 0, 'COUNT': 0, 'COUNT_NULLS':0 , AVG: NaN});
 
                             loadedEvaluations.forEach(evaluation => {
                                 if (evaluation[aaer_geschichte[i].items[j].name] == 0) {
-                                    eval('dim' + i + 'item' + j + 'COUNT_NULL++;');
+                                    countVars.get('dim' + i + 'item' + j).COUNT_NULLS++;
                                 } else {
-                                    eval('dim' + i + 'item' + j + 'SUM += ' + evaluation[aaer_geschichte[i].items[j].name] + ';');
-                                    eval('dim' + i + 'item' + j + 'COUNT++;');
+                                    countVars.get('dim' + i + 'item' + j).SUM += evaluation[aaer_geschichte[i].items[j].name];
+                                    countVars.get('dim' + i + 'item' + j).COUNT++;
                                 }
                             });
 
                         }
-                    }
-
-                    for(i=0; i<aaer_geschichte.length; i++) {
-                        for(j=0; j<aaer_geschichte[i].items.length; j++) {
-                            
-                            eval('dim' + i + 'item' + j + 'SUM / dim' + i + 'item' + j + 'COUNT;');
-
-                            loadedEvaluations.forEach(evaluation => {
-                                if (evaluation[aaer_geschichte[i].items[j].name] == 0) {
-                                    eval('dim' + i + 'item' + j + 'COUNT_NULL++;');
-                                } else {
-                                    eval('dim' + i + 'item' + j + 'SUM += ' + evaluation[aaer_geschichte[i].items[j].name] + ';');
-                                    eval('dim' + i + 'item' + j + 'COUNT++;');
-                                }
-                            });
-                        }
-
                     }
 
 
                     // berechnungen der durchschnittswerte
+                    for(i=0; i<aaer_geschichte.length; i++) {
+                        for(j=0; j<aaer_geschichte[i].items.length; j++) {
+
+                            if (countVars.get('dim' + i + 'item' + j).COUNT > 0)
+                                countVars.get('dim' + i + 'item' + j).AVG = countVars.get('dim' + i + 'item' + j).SUM / countVars.get('dim' + i + 'item' + j).COUNT;
+
+                        }
+                    }
+
+
+
 
 
                     // init variables
@@ -954,40 +948,7 @@ function loadEvaluationGroupAndVisualize(data) {
                         json_str += '\n\n' + JSON.stringify(result, null, 4);
 
 
-                        let gesamtEvaluation = {
-                            "Evaluation": evaluationscode,
-                            "Name": data._pre_tname,
-                            "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
-                            "Fach": (data.subject_id == null) ? 1 : data.subject_id,
-                            "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
-                            "Bezüge Curriculum": (_00COUNT > 0) ? (_00SUM / _00COUNT) : 0,
-                            "Bezüge Bildungsstandards": (_01COUNT > 0) ? (_01SUM / _01COUNT) : 0,
-                            "Interessegeleitete Themenführung/Positionierung": (_10COUNT > 0) ? (_10SUM / _10COUNT) : 0,
-                            "Transparenz": (_11COUNT > 0) ? (_11SUM / _11COUNT) : 0,
-                            "Werbliche Elemente": (_12COUNT > 0) ? (_12SUM / _12COUNT) : 0,
-                            "Heterogenität/Gender": (_13COUNT > 0) ? (_13SUM / _13COUNT) : 0,
-                            "Handlungsorientierung": (_20COUNT > 0) ? (_20SUM / _20COUNT) : 0,
-                            "Lebensweltlichkeit": (_21COUNT > 0) ? (_21SUM / _21COUNT) : 0,
-                            "Reflexion/Urteilsfähigkeit": (_22COUNT > 0) ? (_22SUM / _22COUNT) : 0,
-                            "Multiperspektivität/Kontroversität": (_23COUNT > 0) ? (_23SUM / _23COUNT) : 0,
-                            "Methodenpluralität": (_30COUNT > 0) ? (_30SUM / _30COUNT) : 0,
-                            "Multimedia/Multimodalität": (_31COUNT > 0) ? (_31SUM / _31COUNT) : 0,
-                            "Medienkompetenz": (_32COUNT > 0) ? (_32SUM / _32COUNT) : 0,
-                            "Differenzierung": (_33COUNT > 0) ? (_33SUM / _33COUNT) : 0,
-                            "Barrierefreiheit/Inklusion": (_34COUNT > 0) ? (_34SUM / _34COUNT) : 0,
-                            "Transfer- und Anwendungsorientierung": (_40COUNT > 0) ? (_40SUM / _40COUNT) : 0,
-                            "Prozessorientierung (Kumulation)": (_41COUNT > 0) ? (_41SUM / _41COUNT) : 0,
-                            "Lernwegunterstützende Elemente (Scaffolding)": (_42COUNT > 0) ? (_42SUM / _42COUNT) : 0,
-                            "Sprachlichkeit": (_50COUNT > 0) ? (_50SUM / _50COUNT) : 0,
-                            "Bildsprache": (_51COUNT > 0) ? (_51SUM / _51COUNT) : 0,
-                            "Additive Kommunikation (Anreicherung)": (_52COUNT > 0) ? (_52SUM / _52COUNT) : 0,
-                            "Sequenzierung": (_60COUNT > 0) ? (_60SUM / _60COUNT) : 0,
-                            "Aktivierung": (_61COUNT > 0) ? (_61SUM / _61COUNT) : 0,
-                            "Multiple Lösungswege": (_62COUNT > 0) ? (_62SUM / _62COUNT) : 0,
-                            "Didaktisches Konzept": (_70COUNT > 0) ? (_70SUM / _70COUNT) : 0,
-                            "Rahmenbedingungen": (_71COUNT > 0) ? (_71SUM / _71COUNT) : 0,
-                            "Anzahl Datensätze:": db_data.length
-                        };
+
                         data_object.Datum = getDate();
 
                         aaer_data = data_object;
