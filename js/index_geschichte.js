@@ -51,7 +51,7 @@ aaer_geschichte = [
 			},
 			
 			{
-				titel: "5. Verfassungskonforme, antidiskriminierende Geschichtsbilder  ",
+				titel: "5. Verfassungskonforme, antidiskriminierende Geschichtsbilder",
 				beschreibung: "Gesamtgesellschaftlich relevant ist die Frage, ob im Geschichtsunterricht das Risiko besteht, dass neben einseitigen auch gefährliche Geschichtsbilder transportiert oder gestützt werden, welche einem modernen, pluralistisch angelegtem freiheitlich-demokratischen Wertekanon zu Wider laufen. Im Extremfall können diese nicht nur diskriminierend, sondern auch rassistisch oder antisemitisch sein. In Lehr-Lernmittel erscheinen solche Geschichtsbilder selten offen, sondern verdeckt und subtil, häufig auch über abwertende Begriffe. „Gute“ Geschichtslehrmittel stellen sich nicht nur durch sprachliche Abfederung der Allgegenwärtigkeit von Stereotypen in Bezug auf Kultur, Religion, Geschlecht, Region etc. entgehen, sondern hinterfragen auch ihre historische Bedingtheit. Dazu gehört nicht nur, dass der Geschichte der „großen, siegreichen, weißen Männer“ auch die Perspektiven der vermeintlich „schweigenden“ Frauen, Minderheiten, Unterlegenen etc. entgegengestellt werden, sondern auch eine mit anderen Weltregionen verbundene \"Verflechtungsgeschichte\", welche einem westlich dominierten, eurozentrischen Geschichtsbild entgegentritt.  ",
 				kurz: "Das Lehr-Lernmittel transportiert verfassungskonforme Geschichtsbilder. Es stellt sich diskriminierenden, rassistischen, antisemitischen und eurozentrischen Geschichtsbildern und mit ihnen verbundenen Stereotypisierungen entgegen. ",
 				indikatoren: "Die Autor*innen haben das Lehr-Lernmittel so angelegt, dass es gegenwärtige, diskriminierende, rassistische und antisemitische Stereotype in Bezug auf verschiedene gesellschaftliche Gruppierungen nicht fortschreibt, sondern in ihrer historischen Bedingtheit hinterfragt. An die Stelle von eurozentrischen Geschichtsbilder treten plurale Geschichtsbilder, welchen von Respekt gegenüber anderen Weltregionen und ihrer historischen Entwicklung geprägt sind. Unabhängig vom Thema kommen auch vermeintlich historisch Schweigende zur Sprache.  "
@@ -69,7 +69,7 @@ aaer_geschichte = [
 				indikatoren: "Das Lehr-Lernmittel vertritt inhaltlich Positionen, die dem Konsens der aktuellen fachwissenschaftlichen Forschung entsprechen. Durch Verweise auf aktuelle fachwissenschaftliche Literatur (z. B. Zitierungen, Fußnoten, Literaturverzeichnisse etc.) wird dies auch den Schüler*innen verdeutlicht. Dabei ist spezifische Fachliteratur zum Thema überblicksartigen, stark verdichteten Gesamtdarstellungen vorzuziehen. Die Lehr-Lernmittel sind in ihrer Gesamtkonzeption so angelegt, dass deutlich wird, was Konsens in der historischen Forschung ist, aber auch was strittig und diskutierbar ist. Auch „Mindermeinungen“ sollen im Lehr-Lernmittel repräsentiert sein.  "
 			},
 			{
-				titel: "7. Quellen-/Methodenorientierung   ",
+				titel: "7. Quellen-/Methodenorientierung",
 				beschreibung: "In der Quellen- und Methodenorientierung setzt sich das Prinzip der Wissenschaftsorientierung auf anderer Ebene fort. Durch die wissenschaftsnahe Auseinandersetzung mit historischen Quellen mittels wissenschaftsnahen Methoden wird den Schüler*innen eine direkte, authentische Auseinandersetzung mit geschichtlichen Zusammenhängen ermöglicht. Es geht darum erfahrbar zu machen, wie Geschichte entsteht, und zu verstehen, dass Geschichte immer Konstruktion von Vergangenheit in einer ihr nachgelagerten Gegenwart ist. Dabei zielen die Methoden auf unterschiedlichen Gattungen historischer Quellen mit ihren jeweiligen Spezifika, wodurch auch die Analyse- und Interpretationsverfahren variieren. Das Prinzip der Methodenorientierung schließt auch die Bildung eigener, zu begründenden Narrationen sowie eine wissenschaftsförmige Auseinandersetzung mit bestehenden (wissenschaftlichen) Deutungen ein.  ",
 				kurz: "Das Lehr-Lernmittel setzt sich gattungsspezifisch mit historischen Quellen und Darstellungen mittels an die Methoden von Historiker*innen angelegten Verfahren auseinander. ",
 				indikatoren: "Das Lehr-Lernmittel macht die Bedeutung von historischen Quellen und Darstellungen für das Fach Geschichte und die Geschichtswissenschaft deutlich. Es fördert durch entsprechende Aufgabenstellungen den aktiven Umgang mit ihnen. Die im Lehrmittel angelegten methodischen Schritte folgen wissenschaftsförmigen Verfahren. Die Schüler*innen werden aktiv aufgefordert und angeleitet diese einzuüben, zu erweitern und zu vertiefen. Verfahrensschritte, die bereits durch die Autor*innen vorweggenommen sind (z. B. die Auswahl einer bestimmten Quelle) werden auf andere Weise thematisiert. "
@@ -81,7 +81,7 @@ aaer_geschichte = [
 				indikatoren: "Das Lehr-Lern-Mittel beinhaltet zwei oder mehrere Quellen unterschiedlicher beteiligter oder betroffener Zeitzeugen, welche unterschiedliche „Blickwinkel“ auf das historische Ereignis oder die historischen Begebenheiten repräsentieren. Die Medien, Aufgabenstellungen und Methoden sind entsprechend der Vorkenntnisse der Schüler*innen darauf ausgelegt, die Ursachen der unterschiedlichen Sichtweisen zu ermitteln und sie miteinander zu vergleichen. Nicht überlieferte Positionen bestimmter Akteure/Betroffener werden nicht ausgeklammert, aber auch nicht als „Quasi-Quellen“ fingiert, sondern diskutiert."
 			},
 			{
-				titel: "9. Kontroversität ",
+				titel: "9. Kontroversität",
 				beschreibung: "Den Schüler*innen soll vermittelt werden, dass es auch im wissenschaftlichen Sinne keine „wahre“ und „objektive“ Geschichte geben kann. Den Schüler*innen soll bewusst werden, dass auch Historiker*innen Menschen ihrer Zeit und ihrer gesellschaftlichen Umstände sind, ihre Darstellungen über bestimmte historische Ereignisse und Begebenheiten, auch mit zeitlichem Abstand, einem veränderten Erkenntnisinteresse und anderen Methoden unterschiedlich interpretiert werden können. Dabei können die wissenschaftlichen Deutungen der Vergangenheit auch in Deutungskonkurrenz mit anderen (medialen) Formen von Geschichtsdarstellungen (Geschichtskultur), z. B. Gedenkstätten, Denkmäler, Museen, populärwissenschaftliche Magazine, Historienfilme, Spielzeug etc. konfrontiert werden. Auch diese Deutungskonkurrenz soll angeleitet durch Vergleiche Gegenstand „guter“ Geschichtslehrmittel sein. ",
 				kurz: "Das Lehr-Lern-Mittel thematisiert unterschiedliche Deutungen von Vergangenheit kontrastierend. ",
 				indikatoren: "Das Lehr-Lernmittel enthält verschiedene Darstellungen wissenschaftlicher, populärwissenschaftlicher und geschichtskultureller Art, die für verschiedene Deutungen von Vergangenheit stehen. Die Aufgabenstellungen, Medien und Methoden leiten einen Vergleich zwischen den Darstellungen an, der darauf abzielt, Gemeinsamkeiten und Unterschiede in der Deutung eines historischen Ereignisses oder einer historischen Begebenheit den Schüler*innen altersgemäß und entsprechend ihrer Vorkenntnisse bewusst zu machen. Auch das „Vetorecht“ der Quellen wird dabei thematisiert. "
@@ -129,11 +129,11 @@ aaer_geschichte = [
 				indikatoren: "Das Lehr-Lernmittel orientiert sich an den Grundlagen der Historischen Methode und vermittelt, übt, vertieft oder verfeinert entsprechen der Vorkenntnisse der Schüler*innen einzelne oder mehrere Schritte der Methode der (Re-)Konstruktion von Vergangenheit auf der Basis von verschiedenen Gattungen historischer Quellen. Es werden (z. B. durch Hinweise in den Aufgabenstellungen oder Methodenanleitungen) auch Bezüge zu anderen (Teil-)Schritten der Quellenarbeit hergestellt, die im konkreten Lehr-Lehrmittel nicht explizit mit den Schüler*innen erarbeitet werden. Heuristik und (innere) Kritik bleiben ebenso wenig ausgeblendet wie die Teilschritte der Narrationsbildung selbst.   "
 			},
 			{
-				titel: "16. Methode der Dekonstruktion vorhandener Darstellungen     ",
+				titel: "16. Methode der Dekonstruktion vorhandener Darstellungen",
 				beschreibung: "Das Gegenstück zur Methode der Konstruktion von Geschichte mittels Quellen bildet die Dekonstruktion von vorhandenen bzw. im Lehrmittel präsentierten Darstellungen. „Gute“ Geschichtslehrmittel zielen mit ihren vorgeschlagenen Unterrichtsverfahren und -methoden sowie und Aufgabenstellungen auch auf das Erfassen und Hinterfragen von Geschichtsdarstellungen in ihrer Tiefenstruktur (Barricelli). Die Schüler*innen fragen nach den Schwerpunkten der Darstellung, den entsprechenden Interpretationen, somit auch der Meinung des Verfassers, sie hinterfragen seine Materialauswahl und seine Arbeitsweise, um sich über die Glaubwürdigkeit (narrative Triftigkeit) seiner Darstellung ein Urteil zu bilden. Fiktionale Darstellungen sollen den Schüler*innen durch ihre Dekonstruktion in ihrer Fiktionalität erfassbar werden. "
 			},
 			{
-				titel: "17. Methode des Historischen Vergleichs    ",
+				titel: "17. Methode des Historischen Vergleichs",
 				beschreibung: "Viele Prinzipien des Geschichtsunterrichts sind ohne die Methode des Historischen Vergleichs nicht realisierbar. Dies gilt nicht nur für die Gegenwarts-/Zukunftsorientierung (Vergleich zwischen Vergangenheit und Gegenwart/Zukunft), sondern auch für das multiperspektivische historische Lernen (Vergleich der Sichtweisen und Bewertungen mehreren historischer Betroffener bzw. Nachgeborener). Auch Längsschnitte und Fallanalysen bedürfen der Methode des Vergleichs. „Gute“ Geschichtslehrmittel leiten die Methode des Historischen Vergleichs entsprechend der Vorkenntnisse der Schüler*innen an. Auch verschiedene Sozial- und Arbeitsformen (z. B. Stationentraining, Partner- und Gruppenarbeit) sind geprägt von Vergleichen. Verglichen werden können v. a. Inhalte und Medien. Die Methode des Vergleichs zielt auf das Ergründen von Gemeinsamkeiten und Differenzen.  ",
 				kurz: "Das Lehr-Lernmittel vermittelt, übt, vertieft oder verfeinert die Methode des Historischen Vergleichs. ",
 				indikatoren: "Das Lehr-Lernmittel orientiert sich an den Grundlagen der Methode des Historischen Vergleichs. Am Anfang geht es dabei um das bloße Wahrnehmen von Gemeinsamkeiten und Unterschieden. Komplexere Übungen erfragen Erklärungen und fordern eine klare Abfolge von Problemanalyse, Begrenzung auf bestimmte Vergleichskategorien und eine vergleichende Dateninterpretation ein. Die zu vergleichenden „Fälle“ sind hinreichend (z. B. durch entsprechenden Kontextinformationen und Verstehenshilfen) im Lehr-Lernmittel erläutert, sodass ein „echter“ Vergleich für die Schüler*innen möglich wird.  "
@@ -145,13 +145,13 @@ aaer_geschichte = [
 		dimension: "V. Kognitive Strukturierung",
 		items: [
 			{
-				titel: "18. Kumulation von historischen Wissensdimensionen  ",
+				titel: "18. Kumulation von historischen Wissensdimensionen",
 				beschreibung: "„Gute“ Geschichtslehrmittel zeichnen sich dadurch aus, dass die in ihnen angelegten kognitiven historischen Lernprozesse in Bezug zu verschiedenen historischen Wissensdimensionen stehen und diese kumulativ durch Sequenzierungen und Phasierungen verschränken. Die Wissensdimensionen verstehen sich gleichsam als aufeinander aufbauende, Vorwissen aktivierende, kognitive Lernzielstufen. An erster Stufe steht das deklarative Wissen, worunter z. B. Fachbegriffe, Namen, Daten und Orte zu verstehen sind. Auf der zweiten Stufe setzen sich die Schüler*innen die einzelnen „Fakten“ in einem Zusammenhang, der narrativ ist und diskutierbar ist. Eine Stufe höher steht das prozedurale Wissen, die fachspezifischen Fähigkeiten und Fertigkeiten (Methoden). Auf der höchsten Ebene soll das Lehrmittel metakognitives Wissen vermitteln. Hier geht es um die Reflexion über den Stand der eigenen historischen Kenntnisse und Kompetenzen und deren Notwendigkeit. Ziel ist das Nachdenken über das (eigene und kollektive) Geschichtsbewusstsein und die Frage nach seinem Zweck. ",
 				kurz: "Das Lehr-Lernmittel verknüpft die einzelnen Sequenzen und Phasen zu einem Prozess des kumulativen Aufbaus von historischen Wissensdimensionen. ",
 				indikatoren: "Das Lehr-Lernmittel ordnet sich in den Prozess des schrittweisen Aufbaus historischer Wissensdimensionen ein. Umfangreichere Lehr-Lernmittel leiten diesen Prozess über eine schrittweise Vorgehensweise selbst an, in dem sie einzelnen Sequenzen und Phasen in Bezug auf die verschiedenen, anzusprechenden Wissensdimensionen sinnhaft miteinander verknüpfen. Kleinere Lehr-Lehr-Lernmittel, welche nur eine oder wenige Wissensdimensionen ansprechen, legen transparent dar, welche Prozesse bzw. einzelnen Schritte bereits außerhalb des Lehr-Lernmittels von den Schüler*innen gegangenen sein müssen. Das Lehr-Mittel schließt sich dann an diese kumulativ an. "
 			},
 			{
-				titel: "19. Progression und Transfer/Anwendung von historischen Kompetenzen  ",
+				titel: "19. Progression und Transfer/Anwendung von historischen Kompetenzen",
 				beschreibung: "„Gute“ Geschichtslehrmittel müssen fachspezifisch kompetenzorientiert sein und diese fachspezifisch, in den Lehrplänen dargelegten historischen Kompetenzen entsprechend des aktuellen Kompetenzstandes der Schüler*innen einüben, weiterentwickeln, vertiefen, anzuwenden, verfeinern und miteinander zu vernetzen. Die Kompetenzen sollen dabei zunächst über die Aufgabenstellungen auf einem basalen Niveau, dann auf einem intermediären Niveau und schließlich auf einem elaborierten Niveau. Dabei ist auch die Frage zu stellen, ob das Lehr-Lernmittel so konzipiert, dass an ihm beispielhaft fachspezifische Methoden und Arbeitstechniken, Erkenntnisverfahren und Deutungsmuster historischen Denken kennen zu lernen sind, die dann auch auf andere – auch schwierigere – historische Themenfelder, historischen Quellen bzw. Darstellungen sowie andere Schulfächer und v. a. außerschulisch und damit gegenwarts- und zukunftsrelevant angewandt werden können. ",
 				kurz: "Das Lehr-Lernmittel spricht gezielt kognitive Prozesse historischen Denkens an, welche auf andere Kontexte übertragen und angewandt werden können. ",
 				indikatoren: "Das Lehr-Lehrmittel vermittelt, übt, vertieft oder verfeinert einzelnen oder mehrere Prozesse historischen Denkens, sodass sie auf andere Kontexte übertragen werden können. Fachspezifische Methoden und Arbeitstechniken, Erkenntnisverfahren und Deutungsmuster historischen Denken werden so erworben, dass sie auf andere Themenfelder, andere historischen Quellen, anderen Darstellung, andere Fächere, aber v.a. auf den außer- und nachschulischen Bereiche übertragen und angewandt werden können. Im Idealfall stellt das Lehr-Lehrmittel den Schüler*innen transparent dar, welche weiteren Anwendungsbezüge das soeben erlernte hat. Gerade der außer- und nachschulische Zusammenhang sollte den Schüler*innen nachvollziehbar im Lehr-Lernmittel angelegt sein.  "
@@ -181,7 +181,7 @@ aaer_geschichte = [
 				indikatoren: "Das Lehr-Lernmittel verwendet bildliche Elemente über eine rein illustrative Funktion hinaus. Das Lehr-Lernmittel erkennt die Bildelemente als historische Quellen oder Darstellungen und lädt zu einer aktiven Auseinandersetzung mit ihnen ein. Sie leisten einen eigenen Beitrag zum Erwerb historischen Wissens und historischer Kompetenzen. Notwendige Kontextinformationen sind ebenso im Lehr-Lernmittel enthalten wie Deutungshilfen, die nicht nur aber auch, die ikonische Analyse durch zeitgemäße Erläuterungen bestimmter Symbole, Codes, Schriftelemente und Farben etc. unterstützen."
 			},
 			{
-				titel: "23. Fachspezifische Paratexte/Hilfsdiskurse  ",
+				titel: "23. Fachspezifische Paratexte/Hilfsdiskurse",
 				beschreibung: "Neben Lehrtexten und Quellen/Darstellungen spielen Paratexte als verständnisfördernde, gliedernde und die Materialien erläuternde Elemente eine entscheidende Rolle beim historischen Lernen. Sie können in Textform und visuell und kombiniert auftreten. „Gute“ Geschichtslehrmittel zeichnen sich dadurch aus, dass sie überhaupt solche Elemente enthalten, und diese nicht nur auf den Inhalt, sondern auch auf die Vorkenntnisse der Schüler*innen abgestimmt sind. Ohne geeignete Hintergrundinformationen und Interpretationshilfen können die von den Schüler*innen zu bearbeitenden historischen Quellen und die Darstellungen, seien es textliche oder visuelle, nicht wissenschaftsbasiert erschlossen werden Zu den Paratexten gehören auch zusätzliche Hinweise im Rahmen in Aufgabenstellungen (z. B. Denke auch an…) und Verweise auf bestimmt Schritte in der Anwendung fachspezifischer Methoden. ",
 				kurz: "Das Lehr-Lernmittel enthält fachspezifische verständnisfördernde, gliedernde und Hintergrundinformationen bereitstellende Zusatzelemente. ",
 				indikatoren: "Das Lehr-Lernmittel enthält zusätzliche Elemente in Form von Texten, Bildern und Sprache, welche die Schüler*innen ansprechen. Sie ergänzen, erklären und verstärken die im Lehr-Lernmittel vermittelten historischen Inhalte, Methoden und Denkweisen. Gängige Formen sind z. B. Vorworten, Zeitleisten, Info-  und Lexikonboxen und Glossare. Sie liefern auch angemessene Hintergrundinformationen, welche für die Analyse und Interpretation der im Lehr-Lernmittel präsentierten historischen Quellen und Darstellungen unabdingbar sind."
@@ -205,7 +205,7 @@ aaer_geschichte = [
 				indikatoren: "Die einzelnen Aufgaben lassen den Feldern Sachanalyse, Sachurteil und Werturteil zuordnen. Die Aufgabenstellung (v. a. die Operatoren) sind entsprechend ausgerichtet und für die Schüler*innen verständlich. Gerade in den unteren Klassenstufen nimmt das Aufgabensetting die Schüler*innen noch stärker an der Hand, die Aufgaben sind kleinteiliger, die einzeln Aufgaben konzentrieren sich auf einzelne Aspekte und Schritte historischen Denkens. Der Anteil an wirklichen alle historischen Kompetenzfelder vernetzenden Denkaufgaben (v. a. Anforderungsniveau „Reflexion“) steigt mit den Jahrgangsstufen an. Hier sind die Aufgabenstellungen umfassender, einzelne Aspekte und Schritte sind von den Schüler*innen eigenständig(er) durchzuführen.  "
 			},
 			{
-				titel: "26. Materiell-Methodische Schwerpunktsetzung des historischen Aufgabensettings     ",
+				titel: "26. Materiell-Methodische Schwerpunktsetzung des historischen Aufgabensettings",
 				beschreibung: "„Gute“ Aufgabendesigns beziehen sich im Geschichtsunterricht schwerpunktmäßig auf die im Lehr-Lernmittel präsentierten oder von den Schüler*innen zu recherchierenden fachspezifischen Medien in Form von historischen Quellen und Darstellungen. Dabei schöpfen „gute“ Aufgabenstellungen das fachspezifische „Potential“ dieser Medien nicht nur möglichst umfangreich, sondern auch gattungs- und lerngruppenspezifisch aus. Das Aufgabendesign ist so angelegt, dass sich die Schüler*innen aktiv und kritischen mit den Materialien auseinandersetzen. Dabei haben die Aufgabenstellungen stets nicht nur Bezug zu den historischen Themenfeldern, sondern auch zu einzelnen oder mehreren fachspezifischen Operationen historischen Denkens bzw. einzelnen Elementen dieser (Konstruktion, De-Konstruktion, Historischer Vergleich). ",
 				kurz: "Das Aufgabensetting bezieht sich im Schwerpunkt auf historischen Quellen und Darstellen und historische Erkenntnisverfahren. ",
 				indikatoren: "Das historische Aufgabensetting bezieht sich im Schwerpunkt auf die im Lehr-Lernmittel präsentierten Präsentationsformen von Geschichte (historische Quellen, Darstellungen) sowie die historischen Erkenntnisverfahren (Konstruktion, De-Konstruktion, Historischer Vergleich). Das Aufgabendesign leitet die Schüler*innen zum Erlernen, Üben, Anwendung, Vertiefen und Erweitern dieser fachspezifischen Methoden gattungsspezifisch an und bietet angemessene Verstehenshilfen."
@@ -312,7 +312,7 @@ var json = {
             elements: [
                 {
                     type: "text",
-                    name: "Name", // dict key
+                    name: "Name", // dict key, zugriff auf angegeben wert
                     title: "Bitte geben Sie den Namen des Lehr-Lernmittels an, das Sie mit Hilfe des AAER analysieren/evaluieren möchten.", // überschrift direkt vor der eingabe
                     isRequired: true,
                     readOnly: isPredefinedName,
@@ -794,7 +794,7 @@ function getDate() {
 
 // umfragedaten werden als json gesendet und gespeichert
 // danach generiertem evaluationscode angezeigt
-function saveResult(data) {
+function submitEvaluationAndVisualize(data) {
 
     if (predefined) {
         data.predefined_id = predefined_id;
@@ -835,7 +835,7 @@ function visualize(data) {
 
 
 // Wird über einen Button aufgerufen und lädt Daten aus der DB, Einzelevaluation 
-function loadResult() {
+function loadEvaluationAndVisualize() {
     let evaluationscode = document.getElementById('loadResult').value;
 
     return new Promise(((resolve, reject) => {
@@ -880,219 +880,81 @@ function loadResult() {
 }
 
 
-function loadResultSet(data) {
+function loadEvaluationGroupAndVisualize(data) {
     let evaluationscode = document.getElementById('loadResultSet').value;
-    data = JSON.parse(data);  // ?????? user formular eingabe
+    // data = JSON.parse(data);  // ?????? user formular eingabe
 
     return new Promise(((resolve, reject) => {
         if (evaluationscode.length === 10) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadResultSet");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluationGroup");
 
             xhr.onreadystatechange = function () {
 
                 if (this.readyState == 4 && this.status == 200) {
 
                     // array mit datensätzen
-                    let db_data = JSON.parse(this.responseText);
+                    let loadedEvaluations = JSON.parse(this.responseText);
+
+                    
+                    let gesamtEvaluation = {
+                        "Evaluation": evaluationscode,
+                        "Name": data._pre_tname,
+                        "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
+                        "Fach": (data.subject_id == null) ? 1 : data.subject_id,
+                        "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
+                    };
+                    
+                    for(i=0; i<aaer_geschichte.length; i++) {
+                        for(j=0; j<aaer_geschichte[i].items.length; j++) {
+
+                            eval('var dim' + i + 'item' + j + 'SUM = 0;');
+                            eval('var dim' + i + 'item' + j + 'COUNT = 0;');
+                            eval('var dim' + i + 'item' + j + 'COUNT_NULL = 0;');
+
+                            loadedEvaluations.forEach(evaluation => {
+                                if (evaluation[aaer_geschichte[i].items[j].name] == 0) {
+                                    eval('dim' + i + 'item' + j + 'COUNT_NULL++;');
+                                } else {
+                                    eval('dim' + i + 'item' + j + 'SUM += ' + evaluation[aaer_geschichte[i].items[j].name] + ';');
+                                    eval('dim' + i + 'item' + j + 'COUNT++;');
+                                }
+                            });
+
+                        }
+                    }
+
+                    for(i=0; i<aaer_geschichte.length; i++) {
+                        for(j=0; j<aaer_geschichte[i].items.length; j++) {
+                            
+                            eval('dim' + i + 'item' + j + 'SUM / dim' + i + 'item' + j + 'COUNT;');
+
+                            loadedEvaluations.forEach(evaluation => {
+                                if (evaluation[aaer_geschichte[i].items[j].name] == 0) {
+                                    eval('dim' + i + 'item' + j + 'COUNT_NULL++;');
+                                } else {
+                                    eval('dim' + i + 'item' + j + 'SUM += ' + evaluation[aaer_geschichte[i].items[j].name] + ';');
+                                    eval('dim' + i + 'item' + j + 'COUNT++;');
+                                }
+                            });
+                        }
+
+                    }
+
+
+                    // berechnungen der durchschnittswerte
+
 
                     // init variables
                     if (db_data.length > 0) {  // && db_data !== '[]'
 
-                        let _00SUM = 0, _00COUNT = 0, _00COUNT_NULL = 0;
-                        let _01SUM = 0, _01COUNT = 0, _01COUNT_NULL = 0;
-
-                        let _10SUM = 0, _10COUNT = 0, _10COUNT_NULL = 0;
-                        let _11SUM = 0, _11COUNT = 0, _11COUNT_NULL = 0;
-                        let _12SUM = 0, _12COUNT = 0, _12COUNT_NULL = 0;
-                        let _13SUM = 0, _13COUNT = 0, _13COUNT_NULL = 0;
-
-                        let _20SUM = 0, _20COUNT = 0, _20COUNT_NULL = 0;
-                        let _21SUM = 0, _21COUNT = 0, _21COUNT_NULL = 0;
-                        let _22SUM = 0, _22COUNT = 0, _22COUNT_NULL = 0;
-                        let _23SUM = 0, _23COUNT = 0, _23COUNT_NULL = 0;
-
-                        let _30SUM = 0, _30COUNT = 0, _30COUNT_NULL = 0;
-                        let _31SUM = 0, _31COUNT = 0, _31COUNT_NULL = 0;
-                        let _32SUM = 0, _32COUNT = 0, _32COUNT_NULL = 0;
-                        let _33SUM = 0, _33COUNT = 0, _33COUNT_NULL = 0;
-                        let _34SUM = 0, _34COUNT = 0, _34COUNT_NULL = 0;
-
-                        let _40SUM = 0, _40COUNT = 0, _40COUNT_NULL = 0;
-                        let _41SUM = 0, _41COUNT = 0, _41COUNT_NULL = 0;
-                        let _42SUM = 0, _42COUNT = 0, _42COUNT_NULL = 0;
-
-                        let _50SUM = 0, _50COUNT = 0, _50COUNT_NULL = 0;
-                        let _51SUM = 0, _51COUNT = 0, _51COUNT_NULL = 0;
-                        let _52SUM = 0, _52COUNT = 0, _52COUNT_NULL = 0;
-
-                        let _60SUM = 0, _60COUNT = 0, _60COUNT_NULL = 0;
-                        let _61SUM = 0, _61COUNT = 0, _61COUNT_NULL = 0;
-                        let _62SUM = 0, _62COUNT = 0, _62COUNT_NULL = 0;
-
-                        let _70SUM = 0, _70COUNT = 0, _70COUNT_NULL = 0;
-                        let _71SUM = 0, _71COUNT = 0, _71COUNT_NULL = 0;
-
-                        let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
-
-                        // array durchlaufen
-                        for (let i = 0; i < db_data.length; i++) {
-                            let result = {};
-                            // console.log(db_data[i])
-
-                            result.Einzelevaluation = db_data[i].result_id;
-
-                            if (data._pre_link == null) {
-                                result.Verlinkung = db_data[i]._link;
-                            }
-
-                            if (data.subject_id == null) {
-                                result.Fach = db_data[i].subject_id;
-                            }
-
-                            if (data.institution_id == null) {
-                                result.Schulart = db_data[i].institution_id;
-                            }
-
-                            let _00 = db_data[i]._00;
-                            let _01 = db_data[i]._01;
-
-                            let _10 = db_data[i]._10;
-                            let _11 = db_data[i]._11;
-                            let _12 = db_data[i]._12;
-                            let _13 = db_data[i]._13;
-
-                            let _20 = db_data[i]._20;
-                            let _21 = db_data[i]._21;
-                            let _22 = db_data[i]._22;
-                            let _23 = db_data[i]._23;
-
-                            let _30 = db_data[i]._30;
-                            let _31 = db_data[i]._31;
-                            let _32 = db_data[i]._32;
-                            let _33 = db_data[i]._33;
-                            let _34 = db_data[i]._34;
-
-                            let _40 = db_data[i]._40;
-                            let _41 = db_data[i]._41;
-                            let _42 = db_data[i]._42;
-
-                            let _50 = db_data[i]._50;
-                            let _51 = db_data[i]._51;
-                            let _52 = db_data[i]._52;
-
-                            let _60 = db_data[i]._60;
-                            let _61 = db_data[i]._61;
-                            let _62 = db_data[i]._62;
-
-                            let _70 = db_data[i]._70;
-                            let _71 = db_data[i]._71;
+                        // let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
+                        // alle datensätze als json ausgeben
+                        json_str += '\n\n' + JSON.stringify(result, null, 4);
 
 
-                            // EINTRÄGE IM JSON-FORMAT 
-                            result['Bezüge Curriculum'] = _00;
-                            result['Bezüge Bildungsstandards'] = _01;
-                            result['Interessegeleitete Themenführung/Positionierung'] = _10;
-                            result['Transparenz'] = _11;
-                            result['Werbliche Elemente'] = _12;
-                            result['Heterogenität/Gender'] = _13;
-                            result['Handlungsorientierung'] = _20;
-                            result['Lebensweltlichkeit'] = _21;
-                            result['Reflexion/Urteilsfähigkeit'] = _22;
-                            result['Multiperspektivität/Kontroversität'] = _23;
-                            result['Methodenpluralität'] = _30;
-                            result['Multimedia/Multimodalität'] = _31;
-                            result['Medienkompetenz'] = _32;
-                            result['Differenzierung'] = _33;
-                            result['Barrierefreiheit/Inklusion'] = _34;
-                            result['Transfer- und Anwendungsorientierung'] = _40;
-                            result['Prozessorientierung (Kumulation)'] = _41;
-                            result['Lernwegunterstützende Elemente (Scaffolding)'] = _42;
-                            result['Sprachlichkeit'] = _50;
-                            result['Bildsprache'] = _51;
-                            result['Additive Kommunikation (Anreicherung)'] = _52;
-                            result['Sequenzierung'] = _60;
-                            result['Aktivierung'] = _61;
-                            result['Multiple Lösungswege'] = _62;
-                            result['Didaktisches Konzept'] = _70;
-                            result['Rahmenbedingungen'] = _71;
-
-                            if (db_data[i]._comment == null || (!db_data[i]._comment.replace(/\s/g, '').length)) {
-                                result['Eigene Anmerkungen'] = 'Keine Angabe.'
-                            } else {
-                                result['Eigene Anmerkungen'] = db_data[i]._comment;
-                            }
-
-                            // alle datensätze als json ausgeben
-                            json_str += '\n\n' + JSON.stringify(result, null, 4);
-
-
-
-                            // zählen
-                            if (_00 == 0) { _00COUNT_NULL++; }
-                            else { _00SUM += _00; _00COUNT++; }
-                            if (_01 == 0) { _01COUNT_NULL++; }
-                            else { _01SUM += _01; _01COUNT++; }
-
-                            if (_10 == 0) { _10COUNT_NULL++; }
-                            else { _10SUM += _10; _10COUNT++; }
-                            if (_11 == 0) { _11COUNT_NULL++; }
-                            else { _11SUM += _11; _11COUNT++; }
-                            if (_12 == 0) { _12COUNT_NULL++; }
-                            else { _12SUM += _12; _12COUNT++; }
-                            if (_13 == 0) { _13COUNT_NULL++; }
-                            else { _13SUM += _13; _13COUNT++; }
-
-                            if (_20 == 0) { _20COUNT_NULL++; }
-                            else { _20SUM += _20; _20COUNT++; }
-                            if (_21 == 0) { _21COUNT_NULL++; }
-                            else { _21SUM += _21; _21COUNT++; }
-                            if (_22 == 0) { _22COUNT_NULL++; }
-                            else { _22SUM += _22; _22COUNT++; }
-                            if (_23 == 0) { _23COUNT_NULL++; }
-                            else { _23SUM += _23; _23COUNT++; }
-
-                            if (_30 == 0) { _30COUNT_NULL++; }
-                            else { _30SUM += _30; _30COUNT++; }
-                            if (_31 == 0) { _31COUNT_NULL++; }
-                            else { _31SUM += _31; _31COUNT++; }
-                            if (_32 == 0) { _32COUNT_NULL++; }
-                            else { _32SUM += _32; _32COUNT++; }
-                            if (_33 == 0) { _33COUNT_NULL++; }
-                            else { _33SUM += _33; _33COUNT++; }
-                            if (_34 == 0) { _34COUNT_NULL++; }
-                            else { _34SUM += _34; _34COUNT++; }
-
-                            if (_40 == 0) { _40COUNT_NULL++; }
-                            else { _40SUM += _40; _40COUNT++; }
-                            if (_41 == 0) { _41COUNT_NULL++; }
-                            else { _41SUM += _41; _41COUNT++; }
-                            if (_42 == 0) { _42COUNT_NULL++; }
-                            else { _42SUM += _42; _42COUNT++; }
-
-                            if (_50 == 0) { _50COUNT_NULL++; }
-                            else { _50SUM += _50; _50COUNT++; }
-                            if (_51 == 0) { _51COUNT_NULL++; }
-                            else { _51SUM += _51; _51COUNT++; }
-                            if (_52 == 0) { _52COUNT_NULL++; }
-                            else { _52SUM += _52; _52COUNT++; }
-
-                            if (_60 == 0) { _60COUNT_NULL++; }
-                            else { _60SUM += _60; _60COUNT++; }
-                            if (_61 == 0) { _61COUNT_NULL++; }
-                            else { _61SUM += _61; _61COUNT++; }
-                            if (_62 == 0) { _62COUNT_NULL++; }
-                            else { _62SUM += _62; _62COUNT++; }
-
-                            if (_70 == 0) { _70COUNT_NULL++; }
-                            else { _70SUM += _70; _70COUNT++; }
-                            if (_71 == 0) { _71COUNT_NULL++; }
-                            else { _71SUM += _71; _71COUNT++; }
-
-                        }
-
-                        let data_object = {
+                        let gesamtEvaluation = {
                             "Evaluation": evaluationscode,
                             "Name": data._pre_tname,
                             "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
