@@ -896,6 +896,7 @@ function loadEvaluationGroupAndVisualize(data) {
 
                     // array mit datensätzen
                     let loadedEvaluations = JSON.parse(this.responseText);
+                    if (loadedEvaluations.length > 0) {  // && loadedEvaluations !== '[]'
 
                     
                     let gesamtEvaluation = {
@@ -906,12 +907,13 @@ function loadEvaluationGroupAndVisualize(data) {
                         "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
                     };
                     
-                    // werte für die durchschnittsberechnungen
+                    // berechnungen der durchschnittswerte
                     let countVars = new Map();
+                    document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${loadedEvaluations.length}.`;
                     for(i=0; i<aaer_geschichte.length; i++) {
                         for(j=0; j<aaer_geschichte[i].items.length; j++) {
 
-                            countVars.set('dim' + i + 'item' + j, {'SUM': 0, 'COUNT': 0, 'COUNT_NULLS':0 , AVG: NaN});
+                            countVars.set('dim' + i + 'item' + j, {'SUM': 0, 'COUNT': 0, 'COUNT_NULLS':0 , AVG: 'nicht bewertbar'});
 
                             loadedEvaluations.forEach(evaluation => {
                                 if (evaluation[aaer_geschichte[i].items[j].name] == 0) {
@@ -922,155 +924,35 @@ function loadEvaluationGroupAndVisualize(data) {
                                 }
                             });
 
-                        }
-                    }
-
-
-                    // berechnungen der durchschnittswerte
-                    for(i=0; i<aaer_geschichte.length; i++) {
-                        for(j=0; j<aaer_geschichte[i].items.length; j++) {
-
                             if (countVars.get('dim' + i + 'item' + j).COUNT > 0)
                                 countVars.get('dim' + i + 'item' + j).AVG = countVars.get('dim' + i + 'item' + j).SUM / countVars.get('dim' + i + 'item' + j).COUNT;
 
+                            gesamtEvaluation[aaer_geschichte[i].items[j].name] = countVars.get('dim' + i + 'item' + j).AVG;
+
+                            if (countVars.get('dim' + i + 'item' + j).COUNT_NULLS > 0)
+                                document.getElementById('anmerkungen').innerHTML += `<br> ${aaer_geschichte[i].items[j].name} wurde ${countVars.get('dim' + i + 'item' + j).COUNT_NULLS} mal als nicht bewertbar oder nicht relevant eingestuft.`;
+
+
                         }
                     }
 
+                    gesamtEvaluation.Datum = getDate();
+                    aaer_data = gesamtEvaluation;
+
+                    // vis code
+                    document.getElementById('display_id').innerHTML = evaluationscode;
+                    window.survey = new Survey.Model(json);
+                    survey.data = gesamtEvaluation;
+                    visualize(gesamtEvaluation);
 
 
+                    // alle datensätze als json ausgeben
+                    let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
+                    json_str += '\n\n' + JSON.stringify(loadedEvaluations, null, 4);
+                    document.querySelector('#surveyResult').textContent += "\n\n" + json_str;
 
-
-                    // init variables
-                    if (db_data.length > 0) {  // && db_data !== '[]'
-
-                        // let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
-                        // alle datensätze als json ausgeben
-                        json_str += '\n\n' + JSON.stringify(result, null, 4);
-
-
-
-                        data_object.Datum = getDate();
-
-                        aaer_data = data_object;
-
-                        window.survey = new Survey.Model(json);
-                        survey.data = data_object;
-                        visualize(data_object);
-
-
-                        document.getElementById('display_id').innerHTML = evaluationscode;
-
-                        let _00COUNT_NULL_MSG = '';
-                        if (_00COUNT_NULL > 0)
-                            _00COUNT_NULL_MSG = `<br> Bezüge Curriculum wurde ${_00COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _01COUNT_NULL_MSG = '';
-                        if (_01COUNT_NULL > 0)
-                            _01COUNT_NULL_MSG = `<br> Bezüge Bildungsstandards wurde ${_01COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _10COUNT_NULL_MSG = '';
-                        if (_10COUNT_NULL > 0)
-                            _10COUNT_NULL_MSG = `<br> Interessegeleitete Themenführung/Positionierung wurde ${_10COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _11COUNT_NULL_MSG = '';
-                        if (_11COUNT_NULL > 0)
-                            _11COUNT_NULL_MSG = `<br> Transparenz wurde ${_11COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _12COUNT_NULL_MSG = '';
-                        if (_12COUNT_NULL > 0)
-                            _12COUNT_NULL_MSG = `<br> Werbliche Elemente wurde ${_12COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _13COUNT_NULL_MSG = '';
-                        if (_13COUNT_NULL > 0)
-                            _13COUNT_NULL_MSG = `<br> Heterogenität/Gender wurde ${_13COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _20COUNT_NULL_MSG = '';
-                        if (_20COUNT_NULL > 0)
-                            _20COUNT_NULL_MSG = `<br> Handlungsorientierung wurde ${_20COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _21COUNT_NULL_MSG = '';
-                        if (_21COUNT_NULL > 0)
-                            _21COUNT_NULL_MSG = `<br> Lebensweltlichkeit wurde ${_21COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _22COUNT_NULL_MSG = '';
-                        if (_22COUNT_NULL > 0)
-                            _22COUNT_NULL_MSG = `<br> Reflexion/Urteilsfähigkeit wurde ${_22COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _23COUNT_NULL_MSG = '';
-                        if (_23COUNT_NULL > 0)
-                            _23COUNT_NULL_MSG = `<br> Multiperspektivität/Kontroversität wurde ${_23COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _30COUNT_NULL_MSG = '';
-                        if (_30COUNT_NULL > 0)
-                            _30COUNT_NULL_MSG = `<br> Methodenpluralität wurde ${_30COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _31COUNT_NULL_MSG = '';
-                        if (_31COUNT_NULL > 0)
-                            _31COUNT_NULL_MSG = `<br> Multimedia/Multimodalität wurde ${_31COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _32COUNT_NULL_MSG = '';
-                        if (_32COUNT_NULL > 0)
-                            _32COUNT_NULL_MSG = `<br> Medienkompetenz wurde ${_32COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _33COUNT_NULL_MSG = '';
-                        if (_33COUNT_NULL > 0)
-                            _33COUNT_NULL_MSG = `<br> Differenzierung wurde ${_33COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _34COUNT_NULL_MSG = '';
-                        if (_34COUNT_NULL > 0)
-                            _34COUNT_NULL_MSG = `<br> Barrierefreiheit/Inklusion wurde ${_34COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _40COUNT_NULL_MSG = '';
-                        if (_40COUNT_NULL > 0)
-                            _40COUNT_NULL_MSG = `<br> Transfer- und Anwendungsorientierung wurde ${_40COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _41COUNT_NULL_MSG = '';
-                        if (_41COUNT_NULL > 0)
-                            _41COUNT_NULL_MSG = `<br> Prozessorientierung (Kumulation) wurde ${_41COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _42COUNT_NULL_MSG = '';
-                        if (_42COUNT_NULL > 0)
-                            _42COUNT_NULL_MSG = `<br> Lernwegunterstützende Elemente (Scaffolding) wurde ${_42COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _50COUNT_NULL_MSG = '';
-                        if (_50COUNT_NULL > 0)
-                            _50COUNT_NULL_MSG = `<br> Sprachlichkeit wurde ${_50COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _51COUNT_NULL_MSG = '';
-                        if (_51COUNT_NULL > 0)
-                            _51COUNT_NULL_MSG = `<br> Bildsprache wurde ${_51COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _52COUNT_NULL_MSG = '';
-                        if (_52COUNT_NULL > 0)
-                            _52COUNT_NULL_MSG = `<br> Additive Kommunikation (Anreicherung) wurde ${_52COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _60COUNT_NULL_MSG = '';
-                        if (_60COUNT_NULL > 0)
-                            _60COUNT_NULL_MSG = `<br> Sequenzierung wurde ${_60COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _61COUNT_NULL_MSG = '';
-                        if (_61COUNT_NULL > 0)
-                            _61COUNT_NULL_MSG = `<br> Aktivierung wurde ${_61COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _62COUNT_NULL_MSG = '';
-                        if (_62COUNT_NULL > 0)
-                            _62COUNT_NULL_MSG = `<br> Multiple Lösungswege wurde ${_62COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _70COUNT_NULL_MSG = '';
-                        if (_70COUNT_NULL > 0)
-                            _70COUNT_NULL_MSG = `<br> Didaktisches Konzept wurde ${_70COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        let _71COUNT_NULL_MSG = '';
-                        if (_71COUNT_NULL > 0)
-                            _71COUNT_NULL_MSG = `<br> Rahmenbedingungen wurde ${_71COUNT_NULL} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-                        console.log('AUSGABE: ' + _00COUNT_NULL + _01COUNT_NULL + _10COUNT_NULL + _11COUNT_NULL + _12COUNT_NULL + _13COUNT_NULL + _20COUNT_NULL + _21COUNT_NULL + _22COUNT_NULL + _23COUNT_NULL + _30COUNT_NULL + _31COUNT_NULL + _32COUNT_NULL + _33COUNT_NULL + _34COUNT_NULL + _40COUNT_NULL + _41COUNT_NULL + _42COUNT_NULL + _50COUNT_NULL + _51COUNT_NULL + _52COUNT_NULL + _60COUNT_NULL + _61COUNT_NULL + _62COUNT_NULL + _70COUNT_NULL + _71COUNT_NULL);
-
-                        document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${db_data.length}.` + _00COUNT_NULL_MSG + _01COUNT_NULL_MSG + _10COUNT_NULL_MSG + _11COUNT_NULL_MSG + _12COUNT_NULL_MSG + _13COUNT_NULL_MSG + _20COUNT_NULL_MSG + _21COUNT_NULL_MSG + _22COUNT_NULL_MSG + _23COUNT_NULL_MSG + _30COUNT_NULL_MSG + _31COUNT_NULL_MSG + _32COUNT_NULL_MSG + _33COUNT_NULL_MSG + _34COUNT_NULL_MSG + _40COUNT_NULL_MSG + _41COUNT_NULL_MSG + _42COUNT_NULL_MSG + _50COUNT_NULL_MSG + _51COUNT_NULL_MSG + _52COUNT_NULL_MSG + _60COUNT_NULL_MSG + _61COUNT_NULL_MSG + _62COUNT_NULL_MSG + _70COUNT_NULL_MSG + _71COUNT_NULL_MSG;
-
-                        document.querySelector('#surveyResult').textContent += "\n\n" + json_str;
-
-                        resolve();
+                    resolve();
+                    
                     } else {
                         reject("Es konnten keine entsprechenden Daten geladen werden.");
                     }
