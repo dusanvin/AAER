@@ -1014,23 +1014,20 @@ function createEvaluationGroup() {
             }
 
             let lehrmittelFach = document.getElementById('lehrmittel-fach').value;
-            if (lehrmittelFach === '' || lehrmittelFach == 1) {
-                console.log("Kein Fach wird vorausgesetzt.");
+            if (lehrmittelFach === '' || lehrmittelFach == 'Keine Angabe') {
                 lehrmittelFach = null;
             }
 
             let lehrmittelSchulart = document.getElementById('lehrmittel-schulart').value;
-            if (lehrmittelSchulart == '' || lehrmittelSchulart == 1) {
-                console.log("Keine Schulart wird vorausgesetzt.")
+            if (lehrmittelSchulart == '' || lehrmittelSchulart == 'Keine Angabe') {
                 lehrmittelSchulart = null;
             }
 
-            //value_link = document.querySelector('input[name="answer_link"]:checked').value;
             let presets = {
-                "lehrmittelName": input_tname,
-                "lehrmittelLink": input_link,
-                "lehrmittelFach": input_subject,
-                "lehrmittelSchulart": input_institute
+                "lehrmittelName": lehrmittelName,
+                "lehrmittelLink": lehrmittelLink,
+                "lehrmittelFach": lehrmittelFach,
+                "lehrmittelSchulart": lehrmittelSchulart
             }
 
             let xhr = new XMLHttpRequest();
