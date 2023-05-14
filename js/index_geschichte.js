@@ -900,11 +900,11 @@ function loadEvaluationGroupAndVisualize(data) {
 
                     
                     let gesamtEvaluation = {
-                        "Evaluation": evaluationscode,
+                        "Evaluationscode": evaluationscode,
                         "Name": data._pre_tname,
                         "Verlinkung": (data._pre_link == null) ? 'Keine Angabe' : data._pre_link,
-                        "Fach": (data.subject_id == null) ? 1 : data.subject_id,
                         "Schulart": (data.institution_id == null) ? 1 : data.institution_id,
+                        "Fach": (data.subject_id == null) ? 1 : data.subject_id,
                     };
                     
                     // berechnungen der durchschnittswerte
@@ -936,7 +936,7 @@ function loadEvaluationGroupAndVisualize(data) {
                         }
                     }
 
-                    gesamtEvaluation.Datum = getDate();
+                    gesamtEvaluation.Evaluationsdatum = getDate();
                     aaer_data = gesamtEvaluation;
 
                     // vis code
@@ -971,79 +971,79 @@ function loadEvaluationGroupAndVisualize(data) {
 }
 
 
-function getPredefinedData() {
-    
+function loadEvaluationPresetsGroup() {
 
     return new Promise(((resolve, reject) => {
-        let input = document.getElementById('gruppencode').value;
-        if (input.length === 10) {
+
+        let evaluationscode = document.getElementById('evaluationscode-gruppe').value;
+        if (evaluationscode.length === 10) {
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadEvaluationPresetsGroup");
+            xhr.responseType = 'json';
+
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     if (db_data.length > 0) {
-                        // data = JSON.parse(this.responseText;);
-                        resolve(this.responseText);
+                        resolve(this.response); // JSON.parse(this.responseText) deprecated, use xhr.responseType if necessesary and xhr.response instead
                     } else {
                         reject("Zum angegebenen Code wurde nichts gefunden!");
                     }
                 }
             }
 
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({ "predefined_id": input }));
+            xhr.send(evaluationscode);
 
         } else {
             reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
         }
+        
     }))
 }
 
 
-function savePredefined() {
+function createEvaluationGroup() {
     return new Promise(((resolve, reject) => {
 
-        let input_tname = document.getElementById('survey_tname').value;
-        if (!input_tname.replace(/\s/g, '').length) { // only whitespaces
+        let lehrmittelName = document.getElementById('lehrmittelname-gruppe').value;
+        if (!lehrmittelname.replace(/\s/g, '').length) { // only whitespaces
             reject("Bitte Name des Lehr-/Lernmittels eingeben!");
         } else {
-            let input_link = document.getElementById('survey_link').value;
-            if (!input_link.replace(/\s/g, '').length) {
-                input_link = null;
+            let lehrmittelLink = document.getElementById('lehrmittel-link').value;
+            if (!lehrmittelLink.replace(/\s/g, '').length) {
+                lehrmittelLink = null;
             }
 
-            let input_subject = document.getElementById('survey_subject').value;
-            if (input_subject === '' || input_subject == 1) {
+            let lehrmittelFach = document.getElementById('lehrmittel-fach').value;
+            if (lehrmittelFach === '' || lehrmittelFach == 1) {
                 console.log("Kein Fach wird vorausgesetzt.");
-                input_subject = null;
+                lehrmittelFach = null;
             }
 
-            let input_institute = document.getElementById('survey_institution').value;
-            if (input_institute == '' || input_institute == 1) {
+            let lehrmittelSchulart = document.getElementById('lehrmittel-schulart').value;
+            if (lehrmittelSchulart == '' || lehrmittelSchulart == 1) {
                 console.log("Keine Schulart wird vorausgesetzt.")
-                input_institute = null;
+                lehrmittelSchulart = null;
             }
 
             //value_link = document.querySelector('input[name="answer_link"]:checked').value;
-            let predefined_data = {
-                "_pre_tname": input_tname,
-                "_pre_link": input_link,
-                "subject_id": input_subject,
-                "institution_id": input_institute
+            let presets = {
+                "lehrmittelName": input_tname,
+                "lehrmittelLink": input_link,
+                "lehrmittelFach": input_subject,
+                "lehrmittelSchulart": input_institute
             }
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/savePredefined");
+            xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/createEvaluationGroup");
 
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log("db: " + this.responseText);
-                    resolve(this.responseText);
+                    resolve(this.response);
                 }
             }
 
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify(predefined_data));
+            xhr.send(JSON.stringify(presets));
 
         }
 
