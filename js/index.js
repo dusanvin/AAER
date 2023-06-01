@@ -9,6 +9,9 @@ window.addEventListener("beforeunload", function(event) {
     event.returnValue = '';
 });
 
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.callbacks = tooltipItem => { return tooltipItem.yLabel; }
+
 //Fächer
 
 fach = [
@@ -1277,9 +1280,9 @@ barChartOptions = {
         duration: 0 // general animation time
     },
     responsiveAnimationDuration: 0, // animation duration after a resize
-    legend: {
-        display: true
-    },
+    // legend: {
+    //     display: true
+    // },
     scales: {
         yAxes: [{
             ticks: {
