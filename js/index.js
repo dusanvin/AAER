@@ -1419,7 +1419,7 @@ function overallChart() {
     dataALL = {
         labels: labels,
         datasets: [{
-            label: "Übersichts-Chart",
+            // label: "Übersichts-Chart",
             backgroundColor: colors,
             data: values
         }]
@@ -1494,7 +1494,7 @@ function grp1Chart() {
     let data1 = {
         labels: ["Curriculum", "Bildungsstandards"],
         datasets: [{
-            label: "Anlehnung an Curriculum und Bildungsstandards",
+            // label: "Anlehnung an Curriculum und Bildungsstandards",
             backgroundColor: "#003f5c",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
@@ -1521,7 +1521,7 @@ function grp2Chart() {
     data2 = {
         labels: [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
         datasets: [{
-            label: "Diskursive Positionierung",
+            // label: "Diskursive Positionierung",
             backgroundColor: "#2f4b7c",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
@@ -1548,7 +1548,7 @@ function grp3Chart() {
     data3 = {
         labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
         datasets: [{
-            label: "Makrodidaktische und bildungstheoretische Fundierung",
+            // label: "Makrodidaktische und bildungstheoretische Fundierung",
             backgroundColor: "#665191",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
@@ -1575,7 +1575,7 @@ function grp4Chart() {
     data4 = {
         labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
         datasets: [{
-            label: "Mikrodidaktische Umsetzung",
+            // label: "Mikrodidaktische Umsetzung",
             backgroundColor: "#a05195",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
@@ -1602,7 +1602,7 @@ function grp5Chart() {
     data5 = {
         labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
         datasets: [{
-            label: "Kognitive Strukturierung",
+            // label: "Kognitive Strukturierung",
             backgroundColor: "#d45087",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
@@ -1629,7 +1629,7 @@ function grp6Chart() {
     data6 = {
         labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
         datasets: [{
-            label: "Bild- und Textkomposition",
+            // label: "Bild- und Textkomposition",
             backgroundColor: "#f95d6a",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
@@ -1655,7 +1655,7 @@ function grp7Chart() {
     data7 = {
         labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
         datasets: [{
-            label: "Aufgabendesign",
+            // label: "Aufgabendesign",
             backgroundColor: "#ff7c43",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
@@ -1681,7 +1681,7 @@ function grp8Chart() {
     data8 = {
         labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
-            label: "Anwendungstransparenz",
+            // label: "Anwendungstransparenz",
             backgroundColor: "#ffa600",
             maxBarThickness: maxBarWidth,
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
