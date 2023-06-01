@@ -12,6 +12,8 @@ window.addEventListener("beforeunload", function(event) {
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.callbacks = tooltipItem => { return tooltipItem.yLabel; }
 
+Chart.defaults.global.datasets.bar.maxBarThickness = 70
+
 //Fächer
 
 fach = [
@@ -1485,7 +1487,7 @@ function overallChart() {
 
 // Ende: Details overallChart
 
-let maxBarWidth = 70;
+// let maxBarWidth = 70;
 
 // Start: Details grb1Chart
 
@@ -1496,7 +1498,7 @@ function grp1Chart() {
         datasets: [{
             // label: "Anlehnung an Curriculum und Bildungsstandards",
             backgroundColor: "#003f5c",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards')]
         }]
     };
@@ -1523,7 +1525,7 @@ function grp2Chart() {
         datasets: [{
             // label: "Diskursive Positionierung",
             backgroundColor: "#2f4b7c",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender')]
         }]
     };
@@ -1550,7 +1552,7 @@ function grp3Chart() {
         datasets: [{
             // label: "Makrodidaktische und bildungstheoretische Fundierung",
             backgroundColor: "#665191",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität')]
         }]
     };
@@ -1577,7 +1579,7 @@ function grp4Chart() {
         datasets: [{
             // label: "Mikrodidaktische Umsetzung",
             backgroundColor: "#a05195",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion')]
         }]
     };
@@ -1604,7 +1606,7 @@ function grp5Chart() {
         datasets: [{
             // label: "Kognitive Strukturierung",
             backgroundColor: "#d45087",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)')]
         }]
     };
@@ -1631,7 +1633,7 @@ function grp6Chart() {
         datasets: [{
             // label: "Bild- und Textkomposition",
             backgroundColor: "#f95d6a",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)')]
         }]
     };
@@ -1657,7 +1659,7 @@ function grp7Chart() {
         datasets: [{
             // label: "Aufgabendesign",
             backgroundColor: "#ff7c43",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege')]
         }]
     };
@@ -1683,7 +1685,7 @@ function grp8Chart() {
         datasets: [{
             // label: "Anwendungstransparenz",
             backgroundColor: "#ffa600",
-            maxBarThickness: maxBarWidth,
+            // maxBarThickness: maxBarWidth,
             data: [survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')]
         }]
     };
