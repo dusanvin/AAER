@@ -10,7 +10,7 @@ window.addEventListener("beforeunload", function(event) {
 });
 
 Chart.defaults.global.legend.display = false;
-Chart.defaults.global.callbacks = tooltipItem => { return tooltipItem.yLabel; }
+Chart.defaults.global.tooltips.callbacks.title = (tooltipItems, data) => { return tooltipItems[0].label.split(',') };
 
 Chart.defaults.global.datasets.bar.maxBarThickness = 70
 
