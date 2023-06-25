@@ -509,30 +509,6 @@ function getDate() {
 
 // umfragedaten werden als json gesendet und gespeichert
 // danach generiertem evaluationscode angezeigt
-function submitEvaluationAndVisualize(data) {
-
-    if (predefined) {
-        data.predefined_id = predefined_id;
-        predefined = false;  // reset flag
-    }
-    data.Evaluationsdatum = getDate();
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/saveEvaluation");
-
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            data.Evaluationscode = this.responseText;
-            aaer_data = data; // globale variable mit aktuellen daten
-            visualize(data);
-        };
-    }
-
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(data));
-}
-
-
 function visualize(data) {
     
     document.getElementById('evaluationscode').innerHTML = data['Evaluationscode'];
@@ -549,15 +525,92 @@ function visualize(data) {
 }
 
 
-// Wird über einen Button aufgerufen und lädt Daten aus der DB, Einzelevaluation 
-function loadEvaluationAndVisualize() {
+function createEvaluationPresetsForGroup() {
+    return new Promise(((resolve, reject) => {
+
+        let lehrmittelName = document.getElementById('lehrmittelname-gruppe').value;
+        if (!lehrmittelname.replace(/\s/g, '').length) { // only whitespaces
+            reject("Bitte Name des Lehr-/Lernmittels eingeben!");
+        } else {
+            let lehrmittelLink = document.getElementById('lehrmittel-link').value;
+            if (!lehrmittelLink.replace(/\s/g, '').length) {
+                lehrmittelLink = null;
+            }
+
+            let lehrmittelFach = document.getElementById('lehrmittel-fach').value;
+            if (lehrmittelFach === '' || lehrmittelFach == 'Keine Angabe') {
+                lehrmittelFach = null;
+            }
+
+            let lehrmittelSchulart = document.getElementById('lehrmittel-schulart').value;
+            if (lehrmittelSchulart == '' || lehrmittelSchulart == 'Keine Angabe') {
+                lehrmittelSchulart = null;
+            }
+
+            let presets = {
+                "lehrmittelName": lehrmittelName,
+                "lehrmittelLink": lehrmittelLink,
+                "lehrmittelFach": lehrmittelFach,
+                "lehrmittelSchulart": lehrmittelSchulart
+            }
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/createEvaluationPresetsForGroup");
+
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    resolve(this.response);
+                }
+            }
+
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(presets));
+
+        }
+
+    }))
+
+}
+
+
+function getEvaluationPresetsForGroup() {
+
+    return new Promise(((resolve, reject) => {
+
+        let evaluationscode = document.getElementById('evaluationscode-gruppe').value;
+        if (evaluationscode.length === 10) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluationPresetsForGroup");
+            xhr.responseType = 'json';
+
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    if (db_data.length > 0) {
+                        resolve(this.response); // JSON.parse(this.responseText) deprecated, use xhr.responseType if necessesary and xhr.response instead
+                    } else {
+                        reject("Zum angegebenen Code wurde nichts gefunden!");
+                    }
+                }
+            }
+
+            xhr.send(evaluationscode);
+
+        } else {
+            reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
+        }
+        
+    }))
+}
+
+
+function getEvaluationAndVisualize() {
     let evaluationscode = document.getElementById('loadResult').value;
 
     return new Promise(((resolve, reject) => {
         if (evaluationscode.length === 12) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluation");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluation");
 
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -595,7 +648,7 @@ function loadEvaluationAndVisualize() {
 }
 
 
-function loadEvaluationGroupAndVisualize(data) {
+function getEvaluationGroupAndVisualize(data) {
     let evaluationscode = document.getElementById('loadResultSet').value;
     // data = JSON.parse(data);  // ?????? user formular eingabe
 
@@ -603,7 +656,7 @@ function loadEvaluationGroupAndVisualize(data) {
         if (evaluationscode.length === 10) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluationGroup");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluationGroup");
 
             xhr.onreadystatechange = function () {
 
@@ -686,81 +739,27 @@ function loadEvaluationGroupAndVisualize(data) {
 }
 
 
-function loadEvaluationPresetsForGroup() {
+function submitEvaluationAndVisualize(data) {
 
-    return new Promise(((resolve, reject) => {
+    if (predefined) {
+        data.predefined_id = predefined_id;
+        predefined = false;  // reset flag
+    }
+    data.Evaluationsdatum = getDate();
 
-        let evaluationscode = document.getElementById('evaluationscode-gruppe').value;
-        if (evaluationscode.length === 10) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluationPresetsForGroup");
-            xhr.responseType = 'json';
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/saveEvaluation");
 
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    if (db_data.length > 0) {
-                        resolve(this.response); // JSON.parse(this.responseText) deprecated, use xhr.responseType if necessesary and xhr.response instead
-                    } else {
-                        reject("Zum angegebenen Code wurde nichts gefunden!");
-                    }
-                }
-            }
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            data.Evaluationscode = this.responseText;
+            aaer_data = data; // globale variable mit aktuellen daten
+            visualize(data);
+        };
+    }
 
-            xhr.send(evaluationscode);
-
-        } else {
-            reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
-        }
-        
-    }))
-}
-
-
-function createEvaluationPresetsForGroup() {
-    return new Promise(((resolve, reject) => {
-
-        let lehrmittelName = document.getElementById('lehrmittelname-gruppe').value;
-        if (!lehrmittelname.replace(/\s/g, '').length) { // only whitespaces
-            reject("Bitte Name des Lehr-/Lernmittels eingeben!");
-        } else {
-            let lehrmittelLink = document.getElementById('lehrmittel-link').value;
-            if (!lehrmittelLink.replace(/\s/g, '').length) {
-                lehrmittelLink = null;
-            }
-
-            let lehrmittelFach = document.getElementById('lehrmittel-fach').value;
-            if (lehrmittelFach === '' || lehrmittelFach == 'Keine Angabe') {
-                lehrmittelFach = null;
-            }
-
-            let lehrmittelSchulart = document.getElementById('lehrmittel-schulart').value;
-            if (lehrmittelSchulart == '' || lehrmittelSchulart == 'Keine Angabe') {
-                lehrmittelSchulart = null;
-            }
-
-            let presets = {
-                "lehrmittelName": lehrmittelName,
-                "lehrmittelLink": lehrmittelLink,
-                "lehrmittelFach": lehrmittelFach,
-                "lehrmittelSchulart": lehrmittelSchulart
-            }
-
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/createEvaluationPresetsForGroup");
-
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    resolve(this.response);
-                }
-            }
-
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify(presets));
-
-        }
-
-    }))
-
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
 }
 
 // Ende: Funktionen zur Darstellung der Diagramme
