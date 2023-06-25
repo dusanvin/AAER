@@ -23,7 +23,9 @@ export let aaer_geschichte = [
                 indicators: "Das Lehr-Lernmittel macht den Lehrkräften transparent, dass es sich auf ein im Lehrplan aufgeführtes historisches Inhaltsfeld bezieht und das Themenfeld entsprechend der Lehrplanvorgaben umsetzt. Das Lehr-Lernmittel entspricht den für einzelne Themen vorgesehene inhaltliche Strukturierungskonzepten. Idealerweise nimmt das Lehr-Lernmittel selbst (z. B. in einem didaktischen Kommentar) diese Zuordnungen vor. Dies kann auch so geschehen, dass direkte Bezüge zu den Erläuterungen im konkreten Lehrplan hergestellt werden."
 			}
 		],
-		labels: ['Ziele', 'Kompetenzen', 'Inhaltsfelder']
+		labels: ['Ziele', 'Kompetenzen', 'Inhaltsfelder'],
+		title_overview: "Curriculum & Bildungsstandards",
+		description_overview: ""
 	},
 	
 	{
@@ -43,7 +45,9 @@ export let aaer_geschichte = [
 				indicators: "Die Autor*innen haben das Lehr-Lernmittel so angelegt, dass es gegenwärtige, diskriminierende, rassistische und antisemitische Stereotype in Bezug auf verschiedene gesellschaftliche Gruppierungen nicht fortschreibt, sondern in ihrer historischen Bedingtheit hinterfragt. An die Stelle von eurozentrischen Geschichtsbilder treten plurale Geschichtsbilder, welchen von Respekt gegenüber anderen Weltregionen und ihrer historischen Entwicklung geprägt sind. Unabhängig vom Thema kommen auch vermeintlich historisch Schweigende zur Sprache.  "
 			}		
 		],
-		labels: [['Trennung von historischer', '(Sach-)information und Deutung/Wertung'], ['Verfassungskonforme,', 'antidiskriminierende Geschichtsbilder']]
+		labels: [['Trennung von historischer', '(Sach-)information und Deutung/Wertung'], ['Verfassungskonforme,', 'antidiskriminierende Geschichtsbilder']],
+		title_overview: "Diskursive Positionierung",
+		description_overview: ""
 	},
 	
 	{
@@ -86,7 +90,9 @@ export let aaer_geschichte = [
 				indicators: "Das Lehr-Lernmittel weist nicht nur allgemeine Bezüge zur persönlichen Lebenswelt der Schüler*innen auf, sondern konkretisiert sie, indem z. B. reale Elemente, Materialien, Aussagen der aktuellen Zeitgeschichte aufgegriffen werden, die eine Nähe zu den Schüler*innen aufweisen (z. B. konkrete Ereignisse in der Familie, Bezüge zu Fragen der Lebensgestaltung, Wahrnehmung der unmittelbaren Umgebung). Das Lehr-Lernmittel greift voraussehbare zukünftige individuelle und gesellschaftliche Probleme und immer wieder aktuelle Probleme auf und vernetzt sie kontrastierend mit historischen Wissensbeständen (z. B. Krieg und Frieden, soziale Fragen, Umwelt etc.). "
 			}
 		],
-		labels: ['Wissenschaftsorientierung', 'Quellen-/Methodenorientierung', 'Multiperspektivität i. e. S.', 'Kontroversität', 'Pluralität', 'Gegenwarts-/Zukunftsorientierung']
+		labels: ['Wissenschaftsorientierung', 'Quellen-/Methodenorientierung', 'Multiperspektivität i. e. S.', 'Kontroversität', 'Pluralität', 'Gegenwarts-/Zukunftsorientierung'],
+		title_overview: "Makrodidaktische Fundierung",
+		description_overview: ""
 	},
 	
 	{
@@ -127,7 +133,9 @@ export let aaer_geschichte = [
 				indicators: "Das Lehr-Lernmittel orientiert sich an den Grundlagen der Methode des Historischen Vergleichs. Am Anfang geht es dabei um das bloße Wahrnehmen von Gemeinsamkeiten und Unterschieden. Komplexere Übungen erfragen Erklärungen und fordern eine klare Abfolge von Problemanalyse, Begrenzung auf bestimmte Vergleichskategorien und eine vergleichende Dateninterpretation ein. Die zu vergleichenden „Fälle“ sind hinreichend (z. B. durch entsprechenden Kontextinformationen und Verstehenshilfen) im Lehr-Lernmittel erläutert, sodass ein „echter“ Vergleich für die Schüler*innen möglich wird.  "
 			},
 		],
-		labels: [['Unterscheidungen von historischen', 'Quellen und Darstellungen'], 'Charakter der historischen Quellen', 'Charakter der Darstellungen', ['Methode der (Re-)Konstruktion', 'von Geschichte (Quellenarbeit)'], ['Methode der Dekonstruktion', 'vorhandener Darstellungen'], 'Methode des Historischen Vergleichs']
+		labels: [['Unterscheidungen von historischen', 'Quellen und Darstellungen'], 'Charakter der historischen Quellen', 'Charakter der Darstellungen', ['Methode der (Re-)Konstruktion', 'von Geschichte (Quellenarbeit)'], ['Methode der Dekonstruktion', 'vorhandener Darstellungen'], 'Methode des Historischen Vergleichs'],
+		title_overview: "Mikrodidaktische Fundierung",
+		description_overview: ""
 	},
 	
 	{
@@ -146,7 +154,9 @@ export let aaer_geschichte = [
 				indicators: "Das Lehr-Lehrmittel vermittelt, übt, vertieft oder verfeinert einzelnen oder mehrere Prozesse historischen Denkens, sodass sie auf andere Kontexte übertragen werden können. Fachspezifische Methoden und Arbeitstechniken, Erkenntnisverfahren und Deutungsmuster historischen Denken werden so erworben, dass sie auf andere Themenfelder, andere historischen Quellen, anderen Darstellung, andere Fächere, aber v.a. auf den außer- und nachschulischen Bereiche übertragen und angewandt werden können. Im Idealfall stellt das Lehr-Lehrmittel den Schüler*innen transparent dar, welche weiteren Anwendungsbezüge das soeben erlernte hat. Gerade der außer- und nachschulische Zusammenhang sollte den Schüler*innen nachvollziehbar im Lehr-Lernmittel angelegt sein.  "
 			},
 		],
-		labels: [['Kumulation von', 'historischen Wissensdimensionen'], ['Progression und Transfer/Anwendung', 'von historischen Kompetenzen']]
+		labels: [['Kumulation von', 'historischen Wissensdimensionen'], ['Progression und Transfer/Anwendung', 'von historischen Kompetenzen']],
+		title_overview: "Kognitive Strukturierung",
+		description_overview: ""
 	},
 	
 	{
@@ -177,7 +187,9 @@ export let aaer_geschichte = [
 				indicators: "Das Lehr-Lernmittel enthält zusätzliche Elemente in Form von Texten, Bildern und Sprache, welche die Schüler*innen ansprechen. Sie ergänzen, erklären und verstärken die im Lehr-Lernmittel vermittelten historischen Inhalte, Methoden und Denkweisen. Gängige Formen sind z. B. Vorworten, Zeitleisten, Info-  und Lexikonboxen und Glossare. Sie liefern auch angemessene Hintergrundinformationen, welche für die Analyse und Interpretation der im Lehr-Lernmittel präsentierten historischen Quellen und Darstellungen unabdingbar sind."
 			},
 		],
-		labels: ['Narrative Struktur und Sprache', 'Fachvokabular und Begriffe', 'Fachspezifische Bildfunktion', 'Fachspezifische Paratexte/Hilfsdiskurse']
+		labels: ['Narrative Struktur und Sprache', 'Fachvokabular und Begriffe', 'Fachspezifische Bildfunktion', 'Fachspezifische Paratexte/Hilfsdiskurse'],
+		title_overview: "Bild- und Textkomposition",
+		description_overview: ""
 	},
 	
 	{
@@ -202,7 +214,9 @@ export let aaer_geschichte = [
 				indicators: "Das historische Aufgabensetting bezieht sich im Schwerpunkt auf die im Lehr-Lernmittel präsentierten Präsentationsformen von Geschichte (historische Quellen, Darstellungen) sowie die historischen Erkenntnisverfahren (Konstruktion, De-Konstruktion, Historischer Vergleich). Das Aufgabendesign leitet die Schüler*innen zum Erlernen, Üben, Anwendung, Vertiefen und Erweitern dieser fachspezifischen Methoden gattungsspezifisch an und bietet angemessene Verstehenshilfen."
 			},
 		],
-		labels: [['Aktivierende gegenwartsrelevante,', 'historische Leitfragen als Lernimpuls'], ['Sequenzierung und Angemessenheit', 'des historischen Aufgabensettings'], ['Materiell-Methodische Schwerpunktsetzung', 'des historischen Aufgabensettings']]
+		labels: [['Aktivierende gegenwartsrelevante,', 'historische Leitfragen als Lernimpuls'], ['Sequenzierung und Angemessenheit', 'des historischen Aufgabensettings'], ['Materiell-Methodische Schwerpunktsetzung', 'des historischen Aufgabensettings']],
+		title_overview: "Aufgabendesign",
+		description_overview: ""
 	},
 	
 	{
@@ -221,7 +235,9 @@ export let aaer_geschichte = [
 				indicators: "Es sind alle nötigen Rahmenbedingungen der Nutzung/des Einsatzes des Lehr-Lernmittels übersichtlich aufgeführt."
 			}
 		],
-		labels: ['Didaktisches Konzept', 'Rahmenbedingungen']
+		labels: ['Didaktisches Konzept', 'Rahmenbedingungen'],
+		title_overview: "Anwendungstransparenz",
+		description_overview: ""
 	},
 ]
 

@@ -10,7 +10,7 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 
-import  {aaer_geschichte, fach, schularten, antworten} from './objects.js';
+import {aaer_geschichte, fach, schularten, antworten} from './objects.js';
 
 
 var isPredefinedName = false;
@@ -518,7 +518,7 @@ function submitEvaluationAndVisualize(data) {
     data.Evaluationsdatum = getDate();
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/save");
+    xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/saveEvaluation");
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -557,7 +557,7 @@ function loadEvaluationAndVisualize() {
         if (evaluationscode.length === 12) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/load");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluation");
 
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -686,14 +686,14 @@ function loadEvaluationGroupAndVisualize(data) {
 }
 
 
-function loadEvaluationPresetsGroup() {
+function loadEvaluationPresetsForGroup() {
 
     return new Promise(((resolve, reject) => {
 
         let evaluationscode = document.getElementById('evaluationscode-gruppe').value;
         if (evaluationscode.length === 10) {
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluationPresetsGroup");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadEvaluationPresetsForGroup");
             xhr.responseType = 'json';
 
             xhr.onreadystatechange = function () {
@@ -716,7 +716,7 @@ function loadEvaluationPresetsGroup() {
 }
 
 
-function createEvaluationGroup() {
+function createEvaluationPresetsForGroup() {
     return new Promise(((resolve, reject) => {
 
         let lehrmittelName = document.getElementById('lehrmittelname-gruppe').value;
@@ -746,7 +746,7 @@ function createEvaluationGroup() {
             }
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/createEvaluationGroup");
+            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/createEvaluationPresetsForGroup");
 
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -765,50 +765,6 @@ function createEvaluationGroup() {
 
 // Ende: Funktionen zur Darstellung der Diagramme
 
-
-// Start: Radio Buttons Presets
-
-var charts_created = false;
-
-var Chart0 = null;
-var radarChart = null;
-var Chart1 = null;
-var Chart2 = null;
-var Chart3 = null;
-var Chart4 = null;
-var Chart5 = null;
-var Chart6 = null;
-var Chart7 = null;
-var Chart8 = null;
-
-
-function generateCharts() {
-    if (charts_created) {
-        Chart0.destroy();
-        radarChart.destroy();
-        Chart1.destroy();
-        Chart2.destroy();
-        Chart3.destroy();
-        Chart4.destroy();
-        Chart5.destroy();
-        Chart6.destroy();
-        Chart7.destroy();
-        Chart8.destroy();
-    }
-    overallChart();
-    grp1Chart();
-    grp2Chart();
-    grp3Chart();
-    grp4Chart();
-    grp5Chart();
-    grp6Chart();
-    grp7Chart();
-    grp8Chart();
-
-    charts_created = true;
-}
-
-// Ende: Radio Buttons Presets
 
 // Start: Optionen der Charts
 
@@ -852,45 +808,13 @@ Chart.defaults.global.tooltips.callbacks.title = (tooltipItems, data) => { retur
 
 Chart.defaults.global.datasets.bar.maxBarThickness = 70
 
-let charts = [
-    {
-        elementId: 'grp1Chart',
-        color: "#003f5c"
-    },
-    {
-        elementId: 'grp2Chart',
-        color: "#2f4b7c"
-    },
-    {
-        elementId: 'grp3Chart',
-        color: "#665191"
-    },
-    {
-        elementId: 'grp4Chart',
-        color: "#a05195"
-    },
-    {
-        elementId: 'grp5Chart',
-        color: "#d45087"
-    },
-    {
-        elementId: 'grp6Chart',
-        color: "#f95d6a"
-    },
-    {
-        elementId: 'grp7Chart',
-        color: "#ff7c43"
-    },
-    {
-        elementId: 'grp8Chart',
-        color: "#ffa600"
-    }
-]
+let ids = ['chart1', 'chart2', 'chart3', 'chart4', 'chart5', 'chart6', 'chart7', 'chart8']
+let colors = ['#003f5c', '#2f4b7c', '#665191', '#a05195', '#d45087', '#f95d6a', '#ff7c43', '#ffa600']
 
 
 function generateBarChart(index) {
 
-    let canvas = window.document.getElementById(charts[index].elementId);
+    let canvas = window.document.getElementById(ids[index]);
 
     let submittedData = [];
     aaer_geschichte[index].items.forEach(function (question) {
@@ -900,7 +824,7 @@ function generateBarChart(index) {
     let chartData = {
         labels: aaer_geschichte[index].labels,
         datasets: [{
-            backgroundColor: charts[index].backgroundColor,
+            backgroundColor: colors[index],
             data: submittedData
         }]
     }
@@ -926,17 +850,17 @@ function generateOverallChart() {
     let values = [];
     labels.forEach( label => { values.push(survey.getValue(label)) });
 
-    let colors = [];
+    let bar_colors = [];
     aaer_geschichte.forEach( (item, index) => { 
         for(let i = 0; i < item.labels.length; i++) {
-            colors.push(charts[index].color);
+            bar_colors.push(colors[index]);
         }
     });
 
     let sorted = [];
 
     for (let i = 0; i < labels.length; i++) {
-        sorted.push({ 'label': labels[i], 'value': values[i], 'color': colors[i] });
+        sorted.push({ 'label': labels[i], 'value': values[i], 'color': bar_colors[i] });
     }
 
     sorted.sort(function (a, b) {
@@ -946,14 +870,14 @@ function generateOverallChart() {
     for (let i = 0; i < sorted.length; i++) {
         labels[i] = sorted[i].label;
         values[i] = sorted[i].value;
-        colors[i] = sorted[i].color;
+        bar_colors[i] = sorted[i].color;
     }
 
     let data = {
         labels: labels,
         datasets: [{
             label: "Übersichts-Chart",
-            backgroundColor: colors,
+            backgroundColor: bar_colors,
             data: values
         }]
     };
@@ -1001,11 +925,11 @@ function generateRadarChart() {
             values.push(survey.getValue(label))
     });
 
-    let colors = [];
+    let radar_colors = [];
     aaer_geschichte.forEach( (item, index) => { 
-        colors.push("#ffffff");
+        radar_colors.push("#ffffff");
         for(let i = 0; i < item.labels.length; i++) {
-            colors.push(charts[index].color);
+            radar_colors.push(colors[index]);
         }
     });
 
@@ -1042,12 +966,22 @@ function generateRadarChart() {
 }
 
 
+var charts = [];
+
 function generateCharts() {
 
-}
+    if (charts.length) {
+        charts.forEach(chart => chart.destroy())
+    }
 
+    charts = [];
 
-function destroyCharts() {
+    charts.push(generateOverallChart());
+    charts.push(generateRadarChart())
+
+    for (let i=0; i < ids.length; i++) {
+        charts.push(generateBarChart(i))
+    }
 
 }
 

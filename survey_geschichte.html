@@ -8,23 +8,13 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-	<!-- ChartJS-Integration Start -->
 
 	<script src="/js/Chart.js"></script>
 
-	<!-- ChartJS-Integration Ende -->
-
-	<!-- jQuery Start -->
-
 	<script src="/js/jquery-3.5.1.min.js"></script>
 
-	<!-- jQuery End -->
+	<script src="/js/survey.jquery.min.js"></script>
 
-	<!-- printThis Start -->
-
-	<script src="/js/printThis.js"></script>
-
-	<!-- printThis End -->
 
 	<!-- Custom Index CSS Start -->
 
@@ -42,25 +32,21 @@
 
 	<link href="/css/simple-sidebar.css" rel="stylesheet">
 
-	<!-- Custom Dashboard CSS End
+	<!-- Custom Dashboard CSS End -->
+	
+	
+	<!-- Bootstrap Material Design v.4.1.1 Start -->
+		
+	<link rel="stylesheet" href="/css/bootstrap-material-design-4_1_1-min.css">
+	
+	<!-- Bootstrap Material Design v.4.1.1 End -->
 
-        <!-- jQuery Start -->
-
-	<script src="/js/survey.jquery.min.js"></script>
-
-	<!-- jQuery End -->
 
 	<!-- Custom Dashboard JS Start -->
 
 	<script type="/js/mdb.min.js"></script>
 
 	<!-- Custom Dashboard JS End -->
-
-	<!-- Bootstrap Material Design v.4.1.1 Start -->
-
-	<link rel="stylesheet" href="/css/bootstrap-material-design-4_1_1-min.css">
-
-	<!-- Bootstrap Material Design v.4.1.1 End -->
 
 	<!-- PopperJS v.1.12.6 Start -->
 
@@ -73,6 +59,8 @@
 	<script src="/js/bootstrap-material-design.js"></script>
 
 	<!-- Bootstrap Material Design JS End -->
+
+	<script src="/js/history/objects.js"></script>
 
 
 </head>
@@ -129,7 +117,7 @@
 
 						</button>
 
-						<button id="button_display_grp1Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart1" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART1)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
@@ -143,7 +131,7 @@
 
 						</button>
 
-						<button id="button_display_grp2Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart2" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART2)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-signpost list-group-icon"
@@ -157,7 +145,7 @@
 
 						</button>
 
-						<button id="button_display_grp3Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart3" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART3)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
@@ -171,7 +159,7 @@
 
 						</button>
 
-						<button id="button_display_grp4Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart4" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART4)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
@@ -187,7 +175,7 @@
 
 						</button>
 
-						<button id="button_display_grp5Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart5" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART5)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
@@ -203,7 +191,7 @@
 
 						</button>
 
-						<button id="button_display_grp6Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart6" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART6)">
 
 							<svg width="1.3em" height="1.2em" viewBox="0 0 17 16"
@@ -217,7 +205,7 @@
 
 						</button>
 
-						<button id="button_display_grp7Chart" class="list-group-item list-group-item-action"
+						<button id="button_display_chart7" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART7)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
@@ -231,7 +219,7 @@
 
 						</button>
 
-						<button id="button_display_grp8Chart" class="list-group-item list-group-item-action mb-3"
+						<button id="button_display_chart8" class="list-group-item list-group-item-action mb-3"
 							onclick="displayController(DISPLAY.CHART8)">
 
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-eye-fill list-group-icon"
@@ -561,6 +549,11 @@
 										<option>Sonstiges Fach</option>
 									</select>
 
+									<!-- TO DO: set options dynamically according to variable fach in objects.js-->
+									<!-- <script>
+
+									</script> -->
+
 									<br>
 
 									Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?
@@ -599,6 +592,11 @@
 										<option>Wirtschaftsschule</option>
 										<option>Sonstige Schule</option>
 									</select>
+
+									<!-- TO DO: set options dynamically according to variable schularten in objects.js-->
+									<!-- <script>
+
+									</script> -->
 
 									<br>
 
@@ -813,6 +811,8 @@
 
 													<div class="col">
 
+														<!-- ids chartübersicht: lernmittel, evaluationscode, verlinkung, schulart, fach, anmerkungen, evaluationsdatum, anmerkungen -->
+
 														<p id="lernmittel" class="lehr-lernmittel-name mb-0">
 															Name des Lehr-Lernmittels
 														</p>
@@ -968,6 +968,9 @@
 
 										</div>
 
+										<!-- TO DO: überschriften und ergänzungstext anpassen -->
+										<!-- ids charts: overallChart, radarChart, chart1, ..., chart8, -->
+
 										<div class="d-flex justify-content-center mt-3 mb-3 p-3 bg-white grey-border"
 											style="height:1200px !important;">
 
@@ -1017,470 +1020,72 @@
 					<br>
 					<br>
 					<br>
-					<br>
+					<br id="append_after_here">
 
-					<!-- Beginn Container grp1Chart -->
+					<!-- Start BarCharts -->
 
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp1Chart">
+					<script>
+						function createChartHTML(index, title, description) {
+							return `
+								<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_chart"+${index}>
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Curriculum & Bildungsstandards</strong>
-						</h2>
+								<h2 class="font-weight-normal lead-text mb-0"><strong>${title}</strong></h2>
 
-						<!-- Row grp1Chart Start -->
+								<!-- Row Start -->
 
-						<div class="row justify-content-center mt-4">
+								<div class="row justify-content-center mt-4">
 
-							<!-- Col grp1Chart Start -->
+									<!-- Col Start -->
 
-							<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+									<div class="col mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
 
-								<!-- Canvas grp1Chart Start -->
+										<!-- Canvas Start -->
 
-								<div id="grp1Chartuebersicht" class="grey-border">
+										<div class="grey-border">
 
-									<div class="d-flex justify-content-center p-3 bg-white">
+											<div class="d-flex justify-content-center p-3 bg-white">
 
-										<canvas id="grp1Chart" style="max-width: 480px; max-height: 340;"></canvas>
+												<canvas id="chart"+${index} style="max-width: 480px; max-height: 340;"></canvas>
 
-									</div>
+											</div>
 
-								</div>
+										</div>
 
-								<!-- Canvas grp1Chart Ende -->
-
-							</div>
-
-							<!-- Col grp1Chart Ende -->
-
-							<!-- Col grp1Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Curriculum</strong> und
-									<strong>Bildungsstandards</strong> beziehen sich auf eine transparente Ausrichtung
-									des Lehr- und Lernmittels an gültigen Curricula sowie geltenden Bildungsstandards.
-									Dies betrifft beispielsweise die fach-, stufen- und jahrgangsbezogenen Ziele,
-									angepasst an den Kompetenz- sowie Anforderungsbereichen deutscher Bildungsstandards.
-								</p>
-
-							</div>
-
-							<!-- Col grp1Chart Ende -->
-
-						</div>
-
-						<!-- Row grp1Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp1Chart -->
-
-
-
-					<!-- Beginn Container grp2Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp2Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Diskursive Positionierung</strong></h2>
-
-						<!-- Row grp2Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp2Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp2Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp2Chart" style="max-width: 480px; max-height: 340;"></canvas>
+										<!-- Canvas Ende -->
 
 									</div>
 
-								</div>
+									<!-- Col Ende -->
 
-								<!-- Canvas grp2Chart Ende -->
+									<!-- Col Start -->
 
-							</div>
+									<div class="col d-flex">
 
-							<!-- Col grp2Chart Ende -->
-
-							<!-- Col grp2Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Interessensgeleitete Themenführung /
-										Positionierung, Transparenz, Werbliche Elemente</strong> und
-									<strong>Heterogenität / Gender</strong> widmen sich der <em>diskursiven
-										Positionierung</em> des Lehr- und Lernmittels. Dies umfasst etwa die
-									Objektivität der Ressource, die multiperspektive Aufarbeitung der behandelten
-									Thematik, Transparenz bezüglich der Motive der verfassenden Person sowie das
-									Vorhandensein von werblichen Elementen. Zudem fokussiert das Item
-									<strong>Heterogenität / Gender</strong> mögliche Zuschreibungen auf soziale oder
-									gesellschaftliche Umwelten und das Maß an kultureller Diversität.
-								</p>
-
-							</div>
-
-							<!-- Col grp2Chart Ende -->
-
-						</div>
-
-						<!-- Row grp2Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp2Chart -->
-
-
-
-					<!-- Beginn Container grp3Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp3Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Makrodidaktische Fundierung</strong></h2>
-
-						<!-- Row grp3Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp3Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp3Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp3Chart" style="max-width: 480px; max-height: 340;"></canvas>
+										<p class="resultate_info">${description}</p>
 
 									</div>
 
-								</div>
-
-								<!-- Canvas grp3Chart Ende -->
-
-							</div>
-
-							<!-- Col grp3Chart Ende -->
-
-							<!-- Col grp3Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Handlungsorientierung, Lebensweltlichkeit,
-										Reflexion / Urteilsfähigkeit</strong> und <strong>Multiperspektivität /
-										Kontroversität</strong> bilden den Bereich der <em>makrodidaktischen
-										Fundierung</em>. Im Fokus stehen somit die Fragen, ob aktiv Wissensstrukturen
-									erschlossen, ein Lebensweltbezug hergestellt, Prozesse der Selbstrefelexion
-									gefördert sowie aktuelle Themen sowohl multiperspektivistisch als auch kontrovers
-									diskutiert werden.</p>
-
-							</div>
-
-							<!-- Col grp3Chart Ende -->
-
-						</div>
-
-						<!-- Row grp3Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp3Chart -->
-
-
-
-					<!-- Beginn Container grp4Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp4Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Mikrodidaktische Fundierung</strong></h2>
-
-						<!-- Row grp4Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp4Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp4Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp4Chart" style="max-width: 480px; max-height: 340;"></canvas>
-
-									</div>
+									<!-- Col Ende -->
 
 								</div>
 
-								<!-- Canvas grp4Chart Ende -->
-
-							</div>
-
-							<!-- Col grp4Chart Ende -->
-
-							<!-- Col grp4Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Methodenpluralität, Multimedia /
-										Multimodalität, Medienkompetenz, Differenzierung</strong> und
-									<strong>Barrierefreiheit / Inklusion</strong> zeichnen die <em>mikrodidaktische
-										Fundierung</em> aus. Neben der Variation in der verwendeten Methodik und der
-									Medialität setzt sich dieser Bereich außerdem mit der Förderung der
-									Medienkompetenzen, der Rücksichtnahme auf Heterogenität in der Schülerschaft sowie
-									der Barrierefreiheit beziehungsweise der Inklusion von benachteiligten Gruppierungen
-									auseinander.
-								</p>
-
-							</div>
-
-							<!-- Col grp4Chart Ende -->
-
-						</div>
-
-						<!-- Row grp4Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp4Chart -->
-
-
-
-					<!-- Beginn Container grp5Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp5Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Kognitive Strukturierung</strong></h2>
-
-						<!-- Row grp5Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp5Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp5Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp5Chart" style="max-width: 480px; max-height: 340;"></canvas>
-
-									</div>
+								<!-- Row Ende -->
 
 								</div>
+							`
+						}
 
-								<!-- Canvas grp5Chart Ende -->
+						let _html = [];
+						aaer_geschichte.forEach((element, index) => {
+							_html.push(createChartHTML(index, element['title_overview'], element['description_overview']))
+						})
 
-							</div>
+						document.getElementById('append_after_here').insertAdjacentHTML('afterend', _html.join(''))
 
-							<!-- Col grp5Chart Ende -->
+					</script>
 
-							<!-- Col grp5Chart Start -->
+					<!-- Ende BarCharts -->
 
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Transfer- und Anwendungsorientierung,
-										Prozessorientierung (Kumulation)</strong> und <strong>Lernwegunterstützende
-										Elemente (Scaffolding</strong> repräsentieren den Bereich der <em>kognitiven
-										Strukturierung</em>. Im Vordergrund der Ressource steht nicht nur der Transfer
-									sondern auch der kumulative Aufbau von Wissen, Fertigkeiten und Kompetenzen.
-									Lernwegunterstütztende Elemente sind systematisch an entsprechenden Schlüsselstellen
-									des Lehr- und Lernmittels aufzufinden.</p>
-
-							</div>
-
-							<!-- Col grp5Chart Ende -->
-
-						</div>
-
-						<!-- Row grp5Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp5Chart -->
-
-
-					<!-- Beginn Container grp6Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp6Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Bild- und Textkomposition</strong></h2>
-
-						<!-- Row grp6Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp6Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp6Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp6Chart" style="max-width: 480px; max-height: 340;"></canvas>
-
-									</div>
-
-								</div>
-
-								<!-- Canvas grp6Chart Ende -->
-
-							</div>
-
-							<!-- Col grp6Chart Ende -->
-
-							<!-- Col grp6Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Sprachlichkeit, Bildsprache</strong>
-									beziehungsweise <strong>Additive Kommunikation (Anreicherung)</strong> lassen sich
-									zum Bereich der <em>Bild- und Textkomposition</em> vereinen. Direkte, klare
-									Formulierungen, ergänzende bildliche sowie zusätzliche Elemente runden das Lehr- und
-									Lernmittel professionell ab.</p>
-
-							</div>
-
-							<!-- Col grp6Chart Ende -->
-
-						</div>
-
-						<!-- Row grp6Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp6Chart -->
-
-
-
-					<!-- Beginn Container grp7Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp7Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Aufgabendesign</strong></h2>
-
-						<!-- Row grp7Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp7Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp7Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp7Chart" style="max-width: 480px; max-height: 340;"></canvas>
-
-									</div>
-
-								</div>
-
-								<!-- Canvas grp7Chart Ende -->
-
-							</div>
-
-							<!-- Col grp7Chart Ende -->
-
-							<!-- Col grp7Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Die Items <strong>Sequenzierung, Aktivierung</strong> und
-									<strong>Multiple Lösungswege</strong> befassen sich mit der sinnvollen didaktischen
-									oder fachlichen Abstimmung der Aufgaben, der lernpsychologischen Aktivierung der
-									bearbeitenden Person sowie der Möglichkeit unterschiedliche Lösungswege zur Klärung
-									eines Sachverhalts zu nutzen.
-								</p>
-
-							</div>
-
-							<!-- Col grp7Chart Ende -->
-
-						</div>
-
-						<!-- Row grp7Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp7Chart -->
-
-
-
-					<!-- Beginn Container grp8Chart -->
-
-					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp8Chart">
-
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Anwendungstransparenz</strong></h2>
-
-						<!-- Row grp8Chart Start -->
-
-						<div class="row justify-content-center mt-4">
-
-							<!-- Col grp8Chart Start -->
-
-							<div class="mb-3 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-
-								<!-- Canvas grp8Chart Start -->
-
-								<div id="grp1Chartuebersicht" class="grey-border">
-
-									<div class="d-flex justify-content-center p-3 bg-white">
-
-										<canvas id="grp8Chart" style="max-width: 480px; max-height: 340;"></canvas>
-
-									</div>
-
-								</div>
-
-								<!-- Canvas grp8Chart Ende -->
-
-							</div>
-
-							<!-- Col grp8Chart Ende -->
-
-							<!-- Col grp8Chart Start -->
-
-							<div class="col d-flex">
-
-								<p class="resultate_info">Der Bereich der <em>Anwendungstransprenz</em> setzt sich aus
-									den Items <strong>Didaktisches Konzept</strong> und
-									<strong>Rahmenbedingungen</strong> zusammen. Die vorliegende Kategorie klärt, ob das
-									Lehr- und Lernmittel Informationen über dessen didaktische Konzeption sowie über
-									dessen Rahmenbedingungen, wie etwa den zeitlichen Umfang oder die technischen
-									Voraussetzungen, enthält.
-								</p>
-
-							</div>
-
-							<!-- Col grp8Chart Ende -->
-
-						</div>
-
-						<!-- Row grp8Chart Ende -->
-
-					</div>
-
-					<!-- Ende Container grp8Chart -->
 
 					<div class="container-fluid grey-border mt-3" id="aaer_text"></div>
 
@@ -1844,14 +1449,14 @@
 			AUSWERTEN: "#display_auswerten",
 			THANKS: "#display_thanks",
 			OVERALL: "#display_overallChart",
-			CHART1: "#display_grp1Chart",
-			CHART2: "#display_grp2Chart",
-			CHART3: "#display_grp3Chart",
-			CHART4: "#display_grp4Chart",
-			CHART5: "#display_grp5Chart",
-			CHART6: "#display_grp6Chart",
-			CHART7: "#display_grp7Chart",
-			CHART8: "#display_grp8Chart",
+			CHART1: "#display_chart1",
+			CHART2: "#display_chart2",
+			CHART3: "#display_chart3",
+			CHART4: "#display_chart4",
+			CHART5: "#display_chart5",
+			CHART6: "#display_chart6",
+			CHART7: "#display_chart7",
+			CHART8: "#display_chart8",
 			PDF: "#display_PDF",
 			JSON: "#display_JSON",
 			FOOTER: "#footer_container"
@@ -1915,14 +1520,14 @@
 
 		buttons = [
 			'button_display_overallChart',
-			'button_display_grp1Chart',
-			'button_display_grp2Chart',
-			'button_display_grp3Chart',
-			'button_display_grp4Chart',
-			'button_display_grp5Chart',
-			'button_display_grp6Chart',
-			'button_display_grp7Chart',
-			'button_display_grp8Chart',
+			'button_display_chart1',
+			'button_display_chart2',
+			'button_display_chart3',
+			'button_display_chart4',
+			'button_display_chart5',
+			'button_display_chart6',
+			'button_display_chart7',
+			'button_display_chart8',
 			'button_display_PDF',
 			'button_display_JSON'
 		];
