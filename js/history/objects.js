@@ -1,4 +1,4 @@
-export let aaer_geschichte = [
+let aaer_geschichte = [
 
 	{
 		dimension: "I. Anlehnung an Curriculum und fachspezifische Bildungsstandards",
@@ -242,7 +242,7 @@ export let aaer_geschichte = [
 ]
 
 
-export let fach = [
+let fach = [
     "Keine Angabe",
     "Biologie",
     "Chemie",
@@ -268,7 +268,7 @@ export let fach = [
     "Sonstiges Fach"
 ];
 
-export let schularten = [
+let schularten = [
     "Keine Angabe",
     "Abendschule",
     "Alternatives Schulkonzept",
@@ -299,7 +299,7 @@ export let schularten = [
     "Sonstige Schule",
 ];
 
-export let antworten = [
+let antworten = [
     { value: 1, text: "trifft nicht zu" },
     { value: 2, text: "trifft weniger zu" },
     { value: 3, text: "trifft mehr zu" },

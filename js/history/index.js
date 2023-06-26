@@ -10,7 +10,7 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 
-import {aaer_geschichte, fach, schularten, antworten} from './objects.js';
+// import {aaer_geschichte, fach, schularten, antworten} from './objects.js'; should be loaded in browser already
 
 
 var isPredefinedName = false;
@@ -82,40 +82,41 @@ var json = {
         },        
         //dimension 1 mit (0:2) Items
         {
-            title: aaer_geschichte[0].items[0].titel, 
-            description: aaer_geschichte[0].items[0].beschreibung,
+            // name: aaer_geschichte[0].items[0].name, // name is hidden
+            title: aaer_geschichte[0].items[0].name, 
+            description: aaer_geschichte[0].items[0].description,
             elements: [
                 {
                     type: "radiogroup",
-                    name: aaer_geschichte[0].items[0].titel, 
-                    title: aaer_geschichte[0].items[0].kurz,
-                    description: aaer_geschichte[0].items[0].indikatoren,
+                    name: aaer_geschichte[0].items[0].name, // name is hidden
+                    title: aaer_geschichte[0].items[0].summary,
+                    description: aaer_geschichte[0].items[0].indicators,
                     isRequired: true,
                     choices: antworten
                 }
             ]
         }, {
-            title: aaer_geschichte[0].items[1].titel, 
-            description: aaer_geschichte[0].items[1].beschreibung,
+            title: aaer_geschichte[0].items[1].name, 
+            description: aaer_geschichte[0].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[0].items[1].titel, 
-                            title: aaer_geschichte[0].items[1].kurz,
-                            description: aaer_geschichte[0].items[1].indikatoren,
+                            name: aaer_geschichte[0].items[1].name, 
+                            title: aaer_geschichte[0].items[1].summary,
+                            description: aaer_geschichte[0].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[0].items[2].titel, 
-            description: aaer_geschichte[0].items[2].beschreibung,
+            title: aaer_geschichte[0].items[2].name, 
+            description: aaer_geschichte[0].items[2].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[0].items[2].titel, 
-                            title: aaer_geschichte[0].items[2].kurz,
-                            description: aaer_geschichte[0].items[2].indikatoren,
+                            name: aaer_geschichte[0].items[2].name, 
+                            title: aaer_geschichte[0].items[2].summary,
+                            description: aaer_geschichte[0].items[2].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -124,27 +125,27 @@ var json = {
 
         //dimension 2 mit (0:1) items
         {
-            title: aaer_geschichte[1].items[0].titel, 
-            description: aaer_geschichte[1].items[0].beschreibung,
+            title: aaer_geschichte[1].items[0].name, 
+            description: aaer_geschichte[1].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[1].items[0].titel, 
-                            title: aaer_geschichte[1].items[0].kurz,
-                            description: aaer_geschichte[1].items[0].indikatoren,
+                            name: aaer_geschichte[1].items[0].name, 
+                            title: aaer_geschichte[1].items[0].summary,
+                            description: aaer_geschichte[1].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[1].items[1].titel, 
-            description: aaer_geschichte[1].items[1].beschreibung,
+            title: aaer_geschichte[1].items[1].name, 
+            description: aaer_geschichte[1].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[1].items[1].titel, 
-                            title: aaer_geschichte[1].items[1].kurz,
-                            description: aaer_geschichte[1].items[1].indikatoren,
+                            name: aaer_geschichte[1].items[1].name, 
+                            title: aaer_geschichte[1].items[1].summary,
+                            description: aaer_geschichte[1].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -153,79 +154,79 @@ var json = {
 
         //dimension3 mit (0:5) items
         {
-            title: aaer_geschichte[2].items[0].titel, 
-            description: aaer_geschichte[2].items[0].beschreibung,
+            title: aaer_geschichte[2].items[0].name, 
+            description: aaer_geschichte[2].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[2].items[0].titel, 
-                            title: aaer_geschichte[2].items[0].kurz,
-                            description: aaer_geschichte[2].items[0].indikatoren,
+                            name: aaer_geschichte[2].items[0].name, 
+                            title: aaer_geschichte[2].items[0].summary,
+                            description: aaer_geschichte[2].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[2].items[1].titel, 
-            description: aaer_geschichte[2].items[1].beschreibung,
+            title: aaer_geschichte[2].items[1].name, 
+            description: aaer_geschichte[2].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[2].items[1].titel, 
-                            title: aaer_geschichte[2].items[1].kurz,
-                            description: aaer_geschichte[2].items[1].indikatoren,
+                            name: aaer_geschichte[2].items[1].name, 
+                            title: aaer_geschichte[2].items[1].summary,
+                            description: aaer_geschichte[2].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[2].items[2].titel, 
-            description: aaer_geschichte[2].items[2].beschreibung,
+            title: aaer_geschichte[2].items[2].name, 
+            description: aaer_geschichte[2].items[2].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[2].items[2].titel, 
-                            title: aaer_geschichte[2].items[2].kurz,
-                            description: aaer_geschichte[2].items[2].indikatoren,
+                            name: aaer_geschichte[2].items[2].name, 
+                            title: aaer_geschichte[2].items[2].summary,
+                            description: aaer_geschichte[2].items[2].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[2].items[3].titel, 
-            description: aaer_geschichte[2].items[3].beschreibung,
+            title: aaer_geschichte[2].items[3].name, 
+            description: aaer_geschichte[2].items[3].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[2].items[3].titel, 
-                            title: aaer_geschichte[2].items[3].kurz,
-                            description: aaer_geschichte[2].items[3].indikatoren,
+                            name: aaer_geschichte[2].items[3].name, 
+                            title: aaer_geschichte[2].items[3].summary,
+                            description: aaer_geschichte[2].items[3].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[2].items[4].titel, 
-            description: aaer_geschichte[2].items[4].beschreibung,
+            title: aaer_geschichte[2].items[4].name, 
+            description: aaer_geschichte[2].items[4].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[2].items[4].titel, 
-                            title: aaer_geschichte[2].items[4].kurz,
-                            description: aaer_geschichte[2].items[4].indikatoren,
+                            name: aaer_geschichte[2].items[4].name, 
+                            title: aaer_geschichte[2].items[4].summary,
+                            description: aaer_geschichte[2].items[4].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[2].items[5].titel, 
-            description: aaer_geschichte[2].items[5].beschreibung,
+            title: aaer_geschichte[2].items[5].name, 
+            description: aaer_geschichte[2].items[5].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[2].items[5].titel, 
-                            title: aaer_geschichte[2].items[5].kurz,
-                            description: aaer_geschichte[2].items[5].indikatoren,
+                            name: aaer_geschichte[2].items[5].name, 
+                            title: aaer_geschichte[2].items[5].summary,
+                            description: aaer_geschichte[2].items[5].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -235,79 +236,79 @@ var json = {
         //dimension4 mit (0:5) items
 
         {
-            title: aaer_geschichte[3].items[0].titel, 
-            description: aaer_geschichte[3].items[0].beschreibung,
+            title: aaer_geschichte[3].items[0].name, 
+            description: aaer_geschichte[3].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[3].items[0].titel, 
-                            title: aaer_geschichte[3].items[0].kurz,
-                            description: aaer_geschichte[3].items[0].indikatoren,
+                            name: aaer_geschichte[3].items[0].name, 
+                            title: aaer_geschichte[3].items[0].summary,
+                            description: aaer_geschichte[3].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[3].items[1].titel, 
-            description: aaer_geschichte[3].items[1].beschreibung,
+            title: aaer_geschichte[3].items[1].name, 
+            description: aaer_geschichte[3].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[3].items[1].titel, 
-                            title: aaer_geschichte[3].items[1].kurz,
-                            description: aaer_geschichte[3].items[1].indikatoren,
+                            name: aaer_geschichte[3].items[1].name, 
+                            title: aaer_geschichte[3].items[1].summary,
+                            description: aaer_geschichte[3].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[3].items[2].titel, 
-            description: aaer_geschichte[3].items[2].beschreibung,
+            title: aaer_geschichte[3].items[2].name, 
+            description: aaer_geschichte[3].items[2].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[3].items[2].titel, 
-                            title: aaer_geschichte[3].items[2].kurz,
-                            description: aaer_geschichte[3].items[2].indikatoren,
+                            name: aaer_geschichte[3].items[2].name, 
+                            title: aaer_geschichte[3].items[2].summary,
+                            description: aaer_geschichte[3].items[2].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[3].items[3].titel, 
-            description: aaer_geschichte[3].items[3].beschreibung,
+            title: aaer_geschichte[3].items[3].name, 
+            description: aaer_geschichte[3].items[3].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[3].items[3].titel, 
-                            title: aaer_geschichte[3].items[3].kurz,
-                            description: aaer_geschichte[3].items[3].indikatoren,
+                            name: aaer_geschichte[3].items[3].name, 
+                            title: aaer_geschichte[3].items[3].summary,
+                            description: aaer_geschichte[3].items[3].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[3].items[4].titel, 
-            description: aaer_geschichte[3].items[4].beschreibung,
+            title: aaer_geschichte[3].items[4].name, 
+            description: aaer_geschichte[3].items[4].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[3].items[4].titel, 
-                            title: aaer_geschichte[3].items[4].kurz,
-                            description: aaer_geschichte[3].items[4].indikatoren,
+                            name: aaer_geschichte[3].items[4].name, 
+                            title: aaer_geschichte[3].items[4].summary,
+                            description: aaer_geschichte[3].items[4].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[3].items[5].titel, 
-            description: aaer_geschichte[3].items[5].beschreibung,
+            title: aaer_geschichte[3].items[5].name, 
+            description: aaer_geschichte[3].items[5].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[3].items[5].titel, 
-                            title: aaer_geschichte[3].items[5].kurz,
-                            description: aaer_geschichte[3].items[5].indikatoren,
+                            name: aaer_geschichte[3].items[5].name, 
+                            title: aaer_geschichte[3].items[5].summary,
+                            description: aaer_geschichte[3].items[5].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -316,27 +317,27 @@ var json = {
 
         //dimension5 mit (0:1) items
         {
-            title: aaer_geschichte[4].items[0].titel, 
-            description: aaer_geschichte[4].items[0].beschreibung,
+            title: aaer_geschichte[4].items[0].name, 
+            description: aaer_geschichte[4].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[4].items[0].titel, 
-                            title: aaer_geschichte[4].items[0].kurz,
-                            description: aaer_geschichte[4].items[0].indikatoren,
+                            name: aaer_geschichte[4].items[0].name, 
+                            title: aaer_geschichte[4].items[0].summary,
+                            description: aaer_geschichte[4].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[4].items[1].titel, 
-            description: aaer_geschichte[4].items[1].beschreibung,
+            title: aaer_geschichte[4].items[1].name, 
+            description: aaer_geschichte[4].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[4].items[1].titel, 
-                            title: aaer_geschichte[4].items[1].kurz,
-                            description: aaer_geschichte[4].items[1].indikatoren,
+                            name: aaer_geschichte[4].items[1].name, 
+                            title: aaer_geschichte[4].items[1].summary,
+                            description: aaer_geschichte[4].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -345,53 +346,53 @@ var json = {
 
         //dimension6 mit (0:3) items
         {
-            title: aaer_geschichte[5].items[0].titel, 
-            description: aaer_geschichte[5].items[0].beschreibung,
+            title: aaer_geschichte[5].items[0].name, 
+            description: aaer_geschichte[5].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[5].items[0].titel, 
-                            title: aaer_geschichte[5].items[0].kurz,
-                            description: aaer_geschichte[5].items[0].indikatoren,
+                            name: aaer_geschichte[5].items[0].name, 
+                            title: aaer_geschichte[5].items[0].summary,
+                            description: aaer_geschichte[5].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[5].items[1].titel, 
-            description: aaer_geschichte[5].items[1].beschreibung,
+            title: aaer_geschichte[5].items[1].name, 
+            description: aaer_geschichte[5].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[5].items[1].titel, 
-                            title: aaer_geschichte[5].items[1].kurz,
-                            description: aaer_geschichte[5].items[1].indikatoren,
+                            name: aaer_geschichte[5].items[1].name, 
+                            title: aaer_geschichte[5].items[1].summary,
+                            description: aaer_geschichte[5].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[5].items[2].titel, 
-            description: aaer_geschichte[5].items[2].beschreibung,
+            title: aaer_geschichte[5].items[2].name, 
+            description: aaer_geschichte[5].items[2].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[5].items[2].titel, 
-                            title: aaer_geschichte[5].items[2].kurz,
-                            description: aaer_geschichte[5].items[2].indikatoren,
+                            name: aaer_geschichte[5].items[2].name, 
+                            title: aaer_geschichte[5].items[2].summary,
+                            description: aaer_geschichte[5].items[2].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[5].items[3].titel, 
-            description: aaer_geschichte[5].items[3].beschreibung,
+            title: aaer_geschichte[5].items[3].name, 
+            description: aaer_geschichte[5].items[3].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[5].items[3].titel, 
-                            title: aaer_geschichte[5].items[3].kurz,
-                            description: aaer_geschichte[5].items[3].indikatoren,
+                            name: aaer_geschichte[5].items[3].name, 
+                            title: aaer_geschichte[5].items[3].summary,
+                            description: aaer_geschichte[5].items[3].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -400,40 +401,40 @@ var json = {
 
         //dimension7 mit (0:2) items
         {
-            title: aaer_geschichte[6].items[0].titel, 
-            description: aaer_geschichte[6].items[0].beschreibung,
+            title: aaer_geschichte[6].items[0].name, 
+            description: aaer_geschichte[6].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[6].items[0].titel, 
-                            title: aaer_geschichte[6].items[0].kurz,
-                            description: aaer_geschichte[6].items[0].indikatoren,
+                            name: aaer_geschichte[6].items[0].name, 
+                            title: aaer_geschichte[6].items[0].summary,
+                            description: aaer_geschichte[6].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[6].items[1].titel, 
-            description: aaer_geschichte[6].items[1].beschreibung,
+            title: aaer_geschichte[6].items[1].name, 
+            description: aaer_geschichte[6].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[6].items[1].titel, 
-                            title: aaer_geschichte[6].items[1].kurz,
-                            description: aaer_geschichte[6].items[1].indikatoren,
+                            name: aaer_geschichte[6].items[1].name, 
+                            title: aaer_geschichte[6].items[1].summary,
+                            description: aaer_geschichte[6].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[6].items[2].titel, 
-            description: aaer_geschichte[6].items[2].beschreibung,
+            title: aaer_geschichte[6].items[2].name, 
+            description: aaer_geschichte[6].items[2].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[6].items[2].titel, 
-                            title: aaer_geschichte[6].items[2].kurz,
-                            description: aaer_geschichte[6].items[2].indikatoren,
+                            name: aaer_geschichte[6].items[2].name, 
+                            title: aaer_geschichte[6].items[2].summary,
+                            description: aaer_geschichte[6].items[2].indicators,
                             isRequired: true,
                             choices: antworten
                         }
@@ -442,27 +443,27 @@ var json = {
 
         //dimension8 mit (0:1) items
         {
-            title: aaer_geschichte[7].items[0].titel, 
-            description: aaer_geschichte[7].items[0].beschreibung,
+            title: aaer_geschichte[7].items[0].name, 
+            description: aaer_geschichte[7].items[0].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[7].items[0].titel, 
-                            title: aaer_geschichte[7].items[0].kurz,
-                            description: aaer_geschichte[7].items[0].indikatoren,
+                            name: aaer_geschichte[7].items[0].name, 
+                            title: aaer_geschichte[7].items[0].summary,
+                            description: aaer_geschichte[7].items[0].indicators,
                             isRequired: true,
                             choices: antworten
                         }
                     ]
         }, {
-            title: aaer_geschichte[7].items[1].titel, 
-            description: aaer_geschichte[7].items[1].beschreibung,
+            title: aaer_geschichte[7].items[1].name, 
+            description: aaer_geschichte[7].items[1].description,
             elements: [
                         {
                             type: "radiogroup",
-                            name: aaer_geschichte[7].items[1].titel, 
-                            title: aaer_geschichte[7].items[1].kurz,
-                            description: aaer_geschichte[7].items[1].indikatoren,
+                            name: aaer_geschichte[7].items[1].name, 
+                            title: aaer_geschichte[7].items[1].summary,
+                            description: aaer_geschichte[7].items[1].indicators,
                             isRequired: true,
                             choices: antworten
                         }
