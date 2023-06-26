@@ -91,6 +91,7 @@ var json = {
                     name: aaer_geschichte[0].items[0].name, // name is hidden
                     title: aaer_geschichte[0].items[0].summary,
                     description: aaer_geschichte[0].items[0].indicators,
+                    descriptionLocation: 'underInput',
                     isRequired: true,
                     choices: antworten
                 }
