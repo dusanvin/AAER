@@ -79,18 +79,18 @@ var json = {
                     isRequired: false
                 }
             ]
-        },        
+        },
+          
         //dimension 1 mit (0:2) Items
         {
-            // name: aaer_geschichte[0].items[0].name, // name is hidden
             title: aaer_geschichte[0].items[0].name, 
             description: aaer_geschichte[0].items[0].description,
             elements: [
                 {
                     type: "radiogroup",
                     name: aaer_geschichte[0].items[0].name, // name is hidden
-                    title: aaer_geschichte[0].items[0].summary,
-                    description: aaer_geschichte[0].items[0].indicators,
+                    title: aaer_geschichte[0].items[0].summary,  // entspricht frage
+                    description: '*'+aaer_geschichte[0].items[0].indicators,
                     descriptionLocation: 'underInput',
                     isRequired: true,
                     choices: antworten
