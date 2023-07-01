@@ -1597,7 +1597,11 @@
 
 			xhr.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
+					// wird im json view mit dargestellt
 					survey.setValue('Evaluationscode', this.responseText);
+					if(group_id) {
+						survey.setValue('Gruppencode', group_id);
+					}
 					visualize();
 				};
 			}
@@ -1606,7 +1610,7 @@
 			xhr.send(JSON.stringify({"group_id": group_id ,"data": survey.data}));
 		}
 
-		
+
 		function getEvaluation() {
 			let single_id = document.getElementById('loadEvaluation').value;
 
@@ -1622,8 +1626,16 @@
 							let json = getJson()
 							window.survey = new Survey.Model(json);
 
-							let data = JSON.parse(this.responseText).data;
+							// let {single_id, group_id, data} = JSON.parse(this.responseText);
+							// console.log("destructuring")
+							// console.log(single_id)
+							// console.log(group_id)
+							// console.log(data)
+
+							let { data } = JSON.parse(this.responseText);
+
 							data.Evaluationscode = single_id;
+							// data.Gruppencode = group_id;
 							survey.data = data
 
 							survey.onComplete.add(function (sender, options) {
