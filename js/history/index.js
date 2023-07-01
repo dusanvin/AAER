@@ -13,7 +13,7 @@ window.addEventListener("beforeunload", function (event) {
 // import {aaer_geschichte, fach, schularten, antworten} from './objects.js'; should be loaded in browser already
 
 
-function getJson(isPresetName=false, isPresetVerlinkung=false, isPresetFach=false, isPresetSchulart=false) {
+function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isPresetSchulart=false) {
     return  {
         title: "Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER) im Bereich Geschichte",
         pages: [
@@ -38,7 +38,7 @@ function getJson(isPresetName=false, isPresetVerlinkung=false, isPresetFach=fals
                         name: "Verlinkung",
                         title: "Bitte geben Sie den Link zu Ihrem Lehr-Lernmittel an (optional).",
                         isRequired: false,
-                        readOnly: isPresetVerlinkung,
+                        readOnly: isPresetLink,
                     }
                 ]
             }, {

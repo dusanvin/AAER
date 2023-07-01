@@ -510,13 +510,13 @@
 
 									Wie lautet der Name des Lehr-Lernmittels?
 
-									<input class="form-control" type="text" id="form-preset-lernmittel">
+									<input class="form-control" type="text" id="form-preset-lehrmittel">
 
 									<br>
 
 									Bitte geben Sie den Link zum Lehr-Lernmittel an (optional)?
 
-									<input class="form-control" type="text" id="form-preset-verlinkung">
+									<input class="form-control" type="text" id="form-preset-link">
 
 									<br>
 
@@ -812,7 +812,7 @@
 
 													<div class="col">
 
-														<!-- ids chartübersicht: lernmittel, evaluationscode, verlinkung, schulart, fach, anmerkungen, evaluationsdatum, anmerkungen -->
+														<!-- ids chartübersicht -->
 
 														<p id="lernmittel" class="lehr-lernmittel-name mb-0">
 															Name des Lehr-Lernmittels
@@ -1541,7 +1541,7 @@
 
 		
 		// single evaluation
-		function startEvaluation(error = false, saved_data = null) {
+		function startEvaluation(saved_data = null) {
 
 			let json = getJson();
 			window.survey = new Survey.Model(json);  // global: window.
@@ -1551,7 +1551,7 @@
 			displayController(DISPLAY.UMFRAGE);
 			buttons.forEach(btn => document.getElementById(btn).disabled = true);
 
-			if (error) {
+			if (saved_data) {
 				survey.data = saved_data;
 				console.log(survey.data)
 				
@@ -1577,7 +1577,7 @@
 					if (this.status == 200) {
 						buttons.forEach(btn => document.getElementById(btn).disabled = false);
 					} else {
-						startEvaluation(error = true, saved_data = survey.data);  // fallback if connection fails
+						startEvaluation(saved_data = survey.data);  // fallback if connection fails
 					}
 				}
 				status_request.send();
@@ -1587,35 +1587,30 @@
 
 
 		// for single and group
-		function submitEvaluation(group_id=null) {
+		function submitEvaluation(data, group_id=null) {
 
-			if (group_id) {
-				survey.data.group_id = group_id;
-			}
 			// survey.data.Evaluationsdatum = getDate(); wrong
 			survey.setValue('Evaluationsdatum', getDate());
-			console.log('after eval datum insert')
-			console.log(survey.data)
 
 			let xhr = new XMLHttpRequest();
 			xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/saveEvaluation");
 
 			xhr.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
-					// survey.data.Evaluationscode = this.responseText; wrong
 					survey.setValue('Evaluationscode', this.responseText);
 					visualize();
 				};
 			}
 
 			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send(JSON.stringify(survey.data));
+			xhr.send(JSON.stringify({"group_id": group_id ,"data": survey.data}));
 		}
 
+		
 		function getEvaluation() {
-			let evaluationscode = document.getElementById('loadEvaluation').value;
+			let single_id = document.getElementById('loadEvaluation').value;
 
-			if (evaluationscode.length === 12) {
+			if (single_id.length === 12) {
 
 				let xhr = new XMLHttpRequest();
 				xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluation");
@@ -1624,9 +1619,12 @@
 					if (this.readyState == 4 && this.status == 200) {
 
 						if (this.responseText.length > 0) {
-							
+							let json = getJson()
 							window.survey = new Survey.Model(json);
-							survey.data = JSON.parse(this.responseText);
+
+							let data = JSON.parse(this.responseText).data;
+							data.Evaluationscode = single_id;
+							survey.data = data
 
 							survey.onComplete.add(function (sender, options) {
 								visualize();
@@ -1645,7 +1643,7 @@
 				};
 
 				xhr.setRequestHeader("Content-Type", "application/json");
-				xhr.send(JSON.stringify({ "Evaluationscode": evaluationscode }));
+				xhr.send(JSON.stringify({ "single_id": single_id }));
 
 			} else {
 				document.getElementById('getEvaluation_error').innerText = "Es müssen genau 12 Zeichen sein.";
@@ -1657,23 +1655,23 @@
 		// group evaluation
 		function createEvaluationPresetsForGroup() {
 
-				let lehrmittelName = document.getElementById('lehrmittel-name').value;
+				let lehrmittelName = document.getElementById('form-preset-lehrmittel').value;
 
-				if (!lehrmittelname.replace(/\s/g, '').length) { // only whitespaces
+				if (!lehrmittelName.replace(/\s/g, '').length) { // only whitespaces
 					document.getElementById('createEvaluationPresetsForGroup_error').innerText = "Bitte Name des Lehr-/Lernmittels eingeben!"
 
 				} else {
-					let lehrmittelLink = document.getElementById('lehrmittel-link').value;
+					let lehrmittelLink = document.getElementById('form-preset-link').value;
 					if (!lehrmittelLink.replace(/\s/g, '').length) {
 						lehrmittelLink = null;
 					}
 
-					let lehrmittelFach = document.getElementById('lehrmittel-fach').value;
+					let lehrmittelFach = document.getElementById('form-preset-fach').value;
 					if (lehrmittelFach === '' || lehrmittelFach == 'Keine Angabe') {
 						lehrmittelFach = null;
 					}
 
-					let lehrmittelSchulart = document.getElementById('lehrmittel-schulart').value;
+					let lehrmittelSchulart = document.getElementById('form-preset-schulart').value;
 					if (lehrmittelSchulart == '' || lehrmittelSchulart == 'Keine Angabe') {
 						lehrmittelSchulart = null;
 					}
@@ -1690,9 +1688,9 @@
 
 					xhr.onreadystatechange = function () {
 						if (this.readyState == 4 && this.status == 200) {
-							let predefined_id = this.response;
-							document.getElementById('anlegen_next_message').innerText = predefined_id;
-							document.getElementById('group_id').value = predefined_id;
+							let group_id = this.response;
+							document.getElementById('anlegen_next_message').innerText = group_id;
+							document.getElementById('group_id').value = group_id;
 							displayController(DISPLAY.ANLEGEN_NEXT);
 
 							// resolve(this.response);
@@ -1702,6 +1700,8 @@
 					}
 
 					xhr.setRequestHeader("Content-Type", "application/json");
+					console.log(presets)
+					console.log(JSON.stringify(presets))
 					xhr.send(JSON.stringify(presets));
 
 				}
@@ -1712,8 +1712,8 @@
 
 			return new Promise(((resolve, reject) => {
 
-				let evaluationscode = document.getElementById('group_id').value;
-				if (evaluationscode.length === 10) {
+				let group_id = document.getElementById('group_id').value;
+				if (group_id.length === 10) {
 					let xhr = new XMLHttpRequest();
 					xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluationPresetsForGroup");
 					xhr.responseType = 'json';
@@ -1728,7 +1728,7 @@
 						}
 					}
 
-					xhr.send(evaluationscode);
+					xhr.send(group_id);
 
 				} else {
 					reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
@@ -1828,7 +1828,7 @@
 		}
 
 
-		function startGroupEvaluation() {
+		function startGroupEvaluation(saved_data = null) {
 			let group_id = document.getElementById('group_id').value;
 			document.getElementById('group_id').value = null;
 
@@ -1842,38 +1842,61 @@
 				xhr.onreadystatechange = function () {
 					if (this.readyState == 4 && this.status == 200) {
 
-							startEvaluation(group_id=group_id);  // survey = new;
-
-							let data = JSON.parse(this.responseText);  // sollten presets sein
-							let presets = {
-								"Name": data.Name,
-								"Verlinkung": data.Verlinkung,
-								"Fach": data.Fach,
-								"Schulart": data.Schulart
-							};
-
-							all_questions = survey.getAllQuestions();
-							all_questions[0].readOnly = true;
-
-							if (presets.Verlinkung != null) {
-								all_questions[1].readOnly = true;
-							};
-
-							if (presets.Fach != null) {
-								all_questions[2].readOnly = true;
-							};
-
-							if (presets.Schulart != null) {
-								all_questions[3].readOnly = true;
-							};
+						let presets = JSON.parse(this.responseText);  // presets
+						console.log(presets)
+						console.log(presets.name ? true : false)
+						console.log(presets.link ? true : false)
+						console.log(presets.fach ? true : false)
+						console.log(presets.schulart ? true : false)
 
 
-							// $("#surveyElement").Survey({ model: survey });
+
+						let json = getJson(true, presets.link ? true : false, presets.fach ? true : false, presets.schulart ? true : false)
+						window.survey = new Survey.Model(json);  // global: window.
+
+						survey.setValue('Name', presets.name);
+						survey.setValue('Verlinkung', presets.link ?? 'Keine Angabe.');
+						survey.setValue('Fach', presets.fach ?? 'Keine Angabe.');
+						survey.setValue('Schulart', presets.schulart ?? 'Keine Angabe.');
+
+						$("#surveyElement").Survey({ model: survey });
+
+						displayController(DISPLAY.UMFRAGE);
+						buttons.forEach(btn => document.getElementById(btn).disabled = true);
+
+						if (saved_data) {
+							survey.data = saved_data;
+							console.log(survey.data)
+							
+							index_last = window.survey.pages.length - 1
+							survey.currentPage = survey.pages[index_last];
+							
+							alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
+						}
 
 
-							predefined = true;
-							predefined_id = input;
+						survey.onComplete.add(function (sender, options) {
+							submitEvaluation(survey.data, group_id);
+						});
 
+						$(".sv_complete_btn").click(function () {
+							displayController(DISPLAY.THANKS);
+							
+							let status_request = new XMLHttpRequest();
+							status_request.open('POST', 'https://aaer.digillab.uni-augsburg.de/');  // check internetverbindung
+
+							status_request.onreadystatechange = function () {
+								if (this.status == 200) {
+									buttons.forEach(btn => document.getElementById(btn).disabled = false);
+								} else {
+									startGroupEvaluation(saved_data = survey.data, group_id = group_id);  // fallback if connection fails
+								}
+							}
+							status_request.send();
+						});						
+						
+
+						
 						
 						} else {
 							document.getElementById('teilnehmen_error').innerHTML = "Zum angegebenen Code wurde nichts gefunden!";
