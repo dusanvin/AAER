@@ -1537,27 +1537,10 @@
 				$(DISPLAY[variable]).css("display", "none");
 			}
 			$(btn_enum).css("display", "block");
-			// $("#printview-text").css("display", "none");
 			$(DISPLAY.FOOTER).css("display", "block");
+			
 			if (btn_enum == DISPLAY.OVERALL) {
-
-				// Name
-				document.getElementById('lernmittel').innerHTML = survey.getValue('Name');
-				
-				// Link
-				if (survey.getValue('Verlinkung') === "") {
-					survey.setValue('Verlinkung', 'Keine Angabe');
-					$("#link_lernmittel").prop('href', "#");
-				} else {
-					$("#link_lernmittel").prop('href', survey.getValue('Verlinkung'));
-				}
-				document.getElementById('verlinkung').innerHTML = survey.getValue('Verlinkung');
-				
-				// Datum
-				document.getElementById('evaluationsdatum').innerHTML = survey.data.Evaluationsdatum;
-
 				$("#text-container").css("display", "block");
-
 			}
 			clearErrorMessages();
 		}
@@ -1606,13 +1589,13 @@
 			$('#div-anmerkungen').css("display", "block");
     
 			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
-			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'];
-			document.getElementById('schulart').innerHTML = survey.data['Schulart'];
-			document.getElementById('fach').innerHTML = survey.data['Fach'];
-			document.getElementById('meinung').innerHTML = survey.data['Meinung'];
-			document.getElementById('kritik').innerHTML = survey.data['Kritik'];
+			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? 'Keine Angabe';
+			document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? 'Keine Angabe';
+			document.getElementById('fach').innerHTML = survey.data['Fach'] ?? 'Keine Angabe';
+			document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? 'Keine Angabe';
+			document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? 'Keine Angabe';
 			document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
-			document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'];
+			document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'] ?? 'Keine Angabe';
 			
 			// JSON-Übersicht
 			document.querySelector('#surveyResult').textContent = "" + JSON.stringify(survey.data, null, 4);
@@ -1740,10 +1723,11 @@
 							survey.data = data
 
 							survey.onComplete.add(function (sender, options) {
-								visualize();
-
+	
 								buttons.forEach(btn => document.getElementById(btn).disabled = false);
 								displayController(DISPLAY.OVERALL);
+
+								visualize();
 							});
 							survey.doComplete();
 
