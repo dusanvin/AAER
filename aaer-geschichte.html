@@ -1763,14 +1763,24 @@
 
 							console.log(gesamtEvaluation)
 
+
+							evaluations.forEach(evaluation => {
+								let single_id = evaluation.single_id;
+								delete evaluation.single_id;
+								evaluation = evaluation.data;
+								console.log(evaluation)
+								evaluation.Evaluationscode = single_id;
+							})
+
 							window.survey = new Survey.Model(json);
 							survey.data = gesamtEvaluation;
 							visualize();
-
-
+							
 							// alle datensätze als json ausgeben
 							let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
-							json_str += '\n\n' + JSON.stringify(evaluations, null, 4);
+						    evaluations.forEach( evaluation => {
+								json_str += '\n\n' + JSON.stringify(evaluation.data, null, 4);
+							})
 							document.querySelector('#surveyResult').textContent += "\n\n" + json_str;
 
 							buttons.forEach(btn => document.getElementById(btn).disabled = false);
