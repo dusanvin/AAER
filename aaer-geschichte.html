@@ -1505,7 +1505,7 @@
 			for (variable in DISPLAY) {
 				$(DISPLAY[variable]).css("display", "none");
 			}
-			$("#text-container").css("display", "none");
+			$("#text-container").css("display", "block");
 			$(DISPLAY.OVERALL).css("display", "block");
 			$(DISPLAY.CHART1).css("display", "block");
 			$(DISPLAY.CHART2).css("display", "block");
@@ -1515,18 +1515,18 @@
 			$(DISPLAY.CHART6).css("display", "block");
 			$(DISPLAY.CHART7).css("display", "block");
 			$(DISPLAY.CHART8).css("display", "block");
-			$("#printview-text").css("display", "block");
+			// $("#printview-text").css("display", "block");
 			$(DISPLAY.FOOTER).css("display", "none");
 
-			document.getElementById("lernmittel").innerHTML = window.survey.data.Name;
+			// document.getElementById("lernmittel").innerHTML = window.survey.data.Name;
 
-			document.getElementById("printview-text").innerHTML = 'Verlinkung: ' + window.survey.data.Verlinkung +
-				'<br> Schulart: ' + window.survey.data.Schulart +
-				'<br> Fach: ' + window.survey.data.Fach +
-				'<br> Eigene Anmerkungen: ' + window.survey.data['Eigene Anmerkungen'] +
-				'<br> Evaluationsdatum: ' + window.survey.data.Evaluationsdatum +
-				'<br>' +
-				'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + window.survey.data.Evaluationscode + '</b>';
+			// document.getElementById("printview-text").innerHTML = 'Verlinkung: ' + window.survey.data.Verlinkung +
+			// 	'<br> Schulart: ' + window.survey.data.Schulart +
+			// 	'<br> Fach: ' + window.survey.data.Fach +
+			// 	'<br> Eigene Anmerkungen: ' + window.survey.data['Eigene Anmerkungen'] +
+			// 	'<br> Evaluationsdatum: ' + window.survey.data.Evaluationsdatum +
+			// 	'<br>' +
+			// 	'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + window.survey.data.Evaluationscode + '</b>';
 
 			$("#wrapper").toggleClass("toggled");
 		}
@@ -1537,7 +1537,7 @@
 				$(DISPLAY[variable]).css("display", "none");
 			}
 			$(btn_enum).css("display", "block");
-			$("#printview-text").css("display", "none");
+			// $("#printview-text").css("display", "none");
 			$(DISPLAY.FOOTER).css("display", "block");
 			if (btn_enum == DISPLAY.OVERALL) {
 
