@@ -243,7 +243,6 @@ let aaer_geschichte = [
 
 
 let fach = [
-    "Keine Angabe",
     "Biologie",
     "Chemie",
     "Deutsch",
@@ -269,7 +268,6 @@ let fach = [
 ];
 
 let schularten = [
-    "Keine Angabe",
     "Abendschule",
     "Alternatives Schulkonzept",
     "Berufsfachschule",
