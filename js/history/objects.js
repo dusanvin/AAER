@@ -1,6 +1,6 @@
 let aaer_geschichte = [
 
-	{
+	{ // FEHLT in übersicht
 		dimension: "I. Anlehnung an Curriculum und fachspezifische Bildungsstandards",
 		items: [
 			{
@@ -23,7 +23,7 @@ let aaer_geschichte = [
                 indicators: "Das Lehr-Lernmittel macht den Lehrkräften transparent, dass es sich auf ein im Lehrplan aufgeführtes historisches Inhaltsfeld bezieht und das Themenfeld entsprechend der Lehrplanvorgaben umsetzt. Das Lehr-Lernmittel entspricht den für einzelne Themen vorgesehene inhaltliche Strukturierungskonzepten. Idealerweise nimmt das Lehr-Lernmittel selbst (z. B. in einem didaktischen Kommentar) diese Zuordnungen vor. Dies kann auch so geschehen, dass direkte Bezüge zu den Erläuterungen im konkreten Lehrplan hergestellt werden."
 			}
 		],
-		labels: ['Ziele', 'Kompetenzen', 'Inhaltsfelder'],
+		labels: ['Ziele', 'Kompetenzen', 'Inhaltsfelder'], // wegen dem fehlen, bei dden anderen wegen array
 		title_overview: "Curriculum & Bildungsstandards",
 		description_overview: ""
 	},

@@ -574,11 +574,22 @@ function generateOverallChart() {
 
     let canvas = document.getElementById('overallChart');
 
-    let labels = [];
-    aaer_geschichte.forEach( obj => { labels = labels.concat(obj.labels) });
+    // let labels = [];
+    // aaer_geschichte.forEach( obj => { labels = labels.concat(obj.labels) });
+    // console.log("Labels:")
+    // console.log(labels)
+
+    let names = [];
+    aaer_geschichte.forEach( obj => {
+        obj.items.forEach( item => {
+            names = names.concat(item.name);
+        })
+    })
+    // console.log("Names:")
+    // console.log(names)
 
     let values = [];
-    labels.forEach( label => { values.push(survey.getValue(label)) });
+    names.forEach( name => { values.push(survey.getValue(name)) });
 
     let bar_colors = [];
     aaer_geschichte.forEach( (item, index) => { 
@@ -589,8 +600,8 @@ function generateOverallChart() {
 
     let sorted = [];
 
-    for (let i = 0; i < labels.length; i++) {
-        sorted.push({ 'label': labels[i], 'value': values[i], 'color': bar_colors[i] });
+    for (let i = 0; i < names.length; i++) {
+        sorted.push({ 'name': names[i], 'value': values[i], 'color': bar_colors[i] });
     }
 
     sorted.sort(function (a, b) {
@@ -598,13 +609,13 @@ function generateOverallChart() {
     })
 
     for (let i = 0; i < sorted.length; i++) {
-        labels[i] = sorted[i].label;
+        names[i] = sorted[i].name;
         values[i] = sorted[i].value;
         bar_colors[i] = sorted[i].color;
     }
 
     let data = {
-        labels: labels,
+        labels: names,
         datasets: [{
             label: "Übersichts-Chart",
             backgroundColor: bar_colors,
@@ -642,29 +653,30 @@ function generateOverallChart() {
 
 function generateRadarChart() {
 
-    let labels = [];
-    aaer_geschichte.forEach( obj => { 
-        labels.push('');
-        labels = labels.concat(obj.labels);
-    });
+    let names = [];
+    aaer_geschichte.forEach( obj => {
+        obj.items.forEach( item => {
+            names = names.concat(item.name);
+        })
+    })
     let values = [];
-    labels.forEach( label => {
-        if (!label) 
+    names.forEach( name => {
+        if (!name) 
            values.push(0);
         else
-            values.push(survey.getValue(label))
+            values.push(survey.getValue(name))
     });
 
     let radar_colors = [];
-    aaer_geschichte.forEach( (item, index) => { 
+    aaer_geschichte.forEach( (dimension, index) => { 
         radar_colors.push("#ffffff");
-        for(let i = 0; i < item.labels.length; i++) {
+        for(let i = 0; i < dimension.items.length; i++) {
             radar_colors.push(colors[index]);
         }
     });
 
     let data = {
-        labels: labels,
+        labels: names,
         datasets: [{
             label: "Übersichts-Chart",
             backgroundColor: "rgba(140, 140, 140, 0.15)", //colorsRadar
@@ -771,33 +783,33 @@ function forward(index) {
         "Fach": "Englisch",
         "Schulart": "Hochschule",
         "Meinung": "meinung_index_" + index,  //
-        "Kongruenz mit den fachspezifischen Zielen des Lehrplans": 3,
-        "Kongruenz mit den fachspezifischen Kompetenzen des Lehrplans": 3,
-        "Kongruenz mit den fachspezifischen Inhaltsfeldern des Lehrplans": 3,
+        "Kongruenz mit den fachspezifischen Zielen des Lehrplans": 1,
+        "Kongruenz mit den fachspezifischen Kompetenzen des Lehrplans": 2,
+        "Kongruenz mit den fachspezifischen Inhaltsfeldern des Lehrplans": 4,
         "Trennung von historischer (Sach-)information und Deutung/Wertung": 3,
-        "Verfassungskonforme, antidiskriminierende Geschichtsbilder": 3,
-        "Wissenschaftsorientierung": 3,
+        "Verfassungskonforme, antidiskriminierende Geschichtsbilder": 1,
+        "Wissenschaftsorientierung": 4,
         "Quellen-/Methodenorientierung": 3,
-        "Multiperspektivität i. e. S.": 3,
-        "Kontroversität": 3,
-        "Pluralität": 3,
+        "Multiperspektivität i. e. S.": 1,
+        "Kontroversität": 1,
+        "Pluralität": 2,
         "Gegenwarts-/Zukunftsorientierung": 3,
         "Unterscheidungen von historischen Quellen und Darstellungen": 3,
-        "Charakter der historischen Quellen": 3,
-        "Charakter der Darstellungen": 3,
+        "Charakter der historischen Quellen": 4,
+        "Charakter der Darstellungen": 1,
         "Methode der (Re-)Konstruktion von Geschichte (Quellenarbeit)": 3,
-        "Methode der Dekonstruktion vorhandener Darstellungen": 3,
-        "Methode des Historischen Vergleichs": 3,
-        "Kumulation von historischen Wissensdimensionen": 3,
-        "Progression und Transfer/Anwendung von historischen Kompetenzen": 3,
+        "Methode der Dekonstruktion vorhandener Darstellungen": 1,
+        "Methode des Historischen Vergleichs": 4,
+        "Kumulation von historischen Wissensdimensionen": 2,
+        "Progression und Transfer/Anwendung von historischen Kompetenzen": 2,
         "Narrative Struktur und Sprache": 3,
-        "Fachvokabular und Begriffe": 3,
+        "Fachvokabular und Begriffe": 1,
         "Fachspezifische Bildfunktion": 3,
-        "Fachspezifische Paratexte/Hilfsdiskurse": 3,
+        "Fachspezifische Paratexte/Hilfsdiskurse": 4,
         "Aktivierende gegenwartsrelevante, historische Leitfragen als Lernimpuls": 3,
-        "Sequenzierung und Angemessenheit des historischen Aufgabensettings": 3,
-        "Materiell-Methodische Schwerpunktsetzung des historischen Aufgabensettings": 3,
-        "Didaktisches Konzept": 3,
+        "Sequenzierung und Angemessenheit des historischen Aufgabensettings": 1,
+        "Materiell-Methodische Schwerpunktsetzung des historischen Aufgabensettings": 1,
+        "Didaktisches Konzept": 2,
         "Rahmenbedingungen": 3,
         "Kritik": "verbesserungsvorschlag_index_" + index,  //
         "Eigene Anmerkungen": "anmerkungen_index_" + index  //
@@ -808,6 +820,6 @@ function forward(index) {
 
 	$("#surveyElement").Survey({ model: survey });
 
-    startEvaluation(true, data);
+    startEvaluation(data);
 
 }
