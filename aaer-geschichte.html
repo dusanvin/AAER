@@ -812,7 +812,7 @@
 
 													<div class="col">
 
-														<!-- ids chartübersicht -->
+														<!-- ids text chartübersicht -->
 
 														<p id="lernmittel" class="lehr-lernmittel-name mb-0">
 															Name des Lehr-Lernmittels
@@ -823,7 +823,43 @@
 
 															<div class="row pt-1 pb-1 lehr-lernmittel-heading">
 
-																<div
+																<div id="div-gruppencode"
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
+
+																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
+																		Gruppencode</p>
+
+																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
+																		<a id="gruppencode"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"
+																			target="_blank" rel="noopener"
+																			alt="Verlinkung zum Lehr- und Lernmittel"></a>
+
+																	</div>
+
+																</div>
+
+																<div id="div-anzahl"
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
+
+																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
+																		Anzahl Datensätze</p>
+
+																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
+																		<a id="anzahl"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"
+																			target="_blank" rel="noopener"
+																			alt="Verlinkung zum Lehr- und Lernmittel"></a>
+
+																	</div>
+
+																</div>
+
+																<div id="div-evaluationscode"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
@@ -841,7 +877,7 @@
 
 																</div>
 
-																<div
+																<div id="div-verlinkung"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
@@ -859,7 +895,7 @@
 
 																</div>
 
-																<div
+																<div id="div-schulart"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
@@ -875,7 +911,7 @@
 
 																</div>
 
-																<div
+																<div id="div-fach"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Fach
@@ -891,7 +927,7 @@
 
 																</div>
 
-																<div
+																<div id="div-evaluationsdatum"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Evaluationsdatum
@@ -907,7 +943,39 @@
 
 																</div>
 
-																<div
+																<div id="div-meinung"
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
+
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
+																		Meinung</p>
+
+																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
+																		<a id="meinung"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+
+																	</div>
+
+																</div>
+
+																<div id="div-kritik"
+																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
+
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
+																		Kritik</p>
+
+																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
+																		<a id="kritik"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+
+																	</div>
+
+																</div>																
+
+																<div id="div-anmerkungen"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
@@ -1525,17 +1593,50 @@
 		}
 
 		function visualize() {
+
+			$('#div-gruppencode').css("display", "none");
+			$('#div-anzahl').css("display", "none");
+			$('#div-evaluationscode').css("display", "block");
+			$('#div-verlinkung').css("display", "block");
+			$('#div-schulart').css("display", "block");
+			$('#div-fach').css("display", "block");
+			$('#div-meinung').css("display", "block");
+			$('#div-kritik').css("display", "block");
+			$('#div-evaluationsdatum').css("display", "block");
+			$('#div-anmerkungen').css("display", "block");
     
 			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
 			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'];
 			document.getElementById('schulart').innerHTML = survey.data['Schulart'];
 			document.getElementById('fach').innerHTML = survey.data['Fach'];
+			document.getElementById('meinung').innerHTML = survey.data['Meinung'];
+			document.getElementById('kritik').innerHTML = survey.data['Kritik'];
 			document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
 			document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'];
 			
 			// JSON-Übersicht
 			document.querySelector('#surveyResult').textContent = "" + JSON.stringify(survey.data, null, 4);
 
+			generateCharts();
+		}
+
+		function visualizeGroup(group_id) {
+
+			$('#div-gruppencode').css("display", "block");
+			$('#div-anzahl').css("display", "block");
+			$('#div-evaluationscode').css("display", "none");
+			$('#div-verlinkung').css("display", "none");
+			$('#div-schulart').css("display", "none");
+			$('#div-fach').css("display", "none");
+			$('#div-meinung').css("display", "none");
+			$('#div-kritik').css("display", "none");
+			$('#div-evaluationsdatum').css("display", "none");
+			$('#div-anmerkungen').css("display", "block");
+    
+			document.getElementById('gruppencode').innerHTML = group_id;
+			document.getElementById('anzahl').innerHTML = survey.data["Anzahl Datensätze"] + ', für die Ermittlung der Durchschnittswerte wurden Antworten mit "nicht bewertbar / nicht relevant" ausgeschlossen';
+			document.getElementById('anmerkungen').innerHTML = 'Details zu den Einzelevaluationen gibt es unter "Einträge im JSON-Format"';
+		
 			generateCharts();
 		}
 
@@ -1774,7 +1875,9 @@
 
 							window.survey = new Survey.Model(json);
 							survey.data = gesamtEvaluation;
-							visualize();
+							visualizeGroup(group_id);
+
+
 							
 							// alle datensätze als json ausgeben
 							let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';

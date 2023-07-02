@@ -770,7 +770,7 @@ function forward(index) {
         "Verlinkung": "link_index_" + index,
         "Fach": "Englisch",
         "Schulart": "Hochschule",
-        "Meinung": "meinung_index_" + index,
+        "Meinung": "meinung_index_" + index,  //
         "Kongruenz mit den fachspezifischen Zielen des Lehrplans": 3,
         "Kongruenz mit den fachspezifischen Kompetenzen des Lehrplans": 3,
         "Kongruenz mit den fachspezifischen Inhaltsfeldern des Lehrplans": 3,
@@ -799,8 +799,8 @@ function forward(index) {
         "Materiell-Methodische Schwerpunktsetzung des historischen Aufgabensettings": 3,
         "Didaktisches Konzept": 3,
         "Rahmenbedingungen": 3,
-        "Kritik": "verbesserungsvorschlag_index_" + index,
-        "Eigene Anmerkungen": "anmerkungen_index_" + index
+        "Kritik": "verbesserungsvorschlag_index_" + index,  //
+        "Eigene Anmerkungen": "anmerkungen_index_" + index  //
     }
     
 	let json = getJson();
