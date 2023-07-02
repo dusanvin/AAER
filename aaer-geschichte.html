@@ -1880,7 +1880,11 @@
 
 							
 							// alle datensätze als json ausgeben
-							let json_str = '\nAuflistung der zugehörigen Einzelevaluationen: ';
+							let json_str = 'Gruppenevaluation:\n\n';
+							json_str += JSON.stringify(gesamtEvaluation, null, 4);
+							json_str += '\n\n';
+
+							json_str += '\nAuflistung der zugehörigen Einzelevaluationen: ';
 						    evaluations.forEach( evaluation => {
 								json_str += '\n\n' + JSON.stringify(evaluation.data, null, 4);
 							})
