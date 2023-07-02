@@ -9,6 +9,7 @@ window.addEventListener("beforeunload", function (event) {
     event.returnValue = '';
 });
 
+Survey.englishStrings.optionsCaption = "Wählen..."
 
 // import {aaer_geschichte, fach, schularten, antworten} from './objects.js'; should be loaded in browser already
 
@@ -47,7 +48,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         type: "dropdown",
                         name: "Fach",
                         title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
-                        defaultValue: 1,
+                        // defaultValue: "Keine Angabe",
                         readOnly: isPresetFach,
                         choices: fach
                     }
@@ -59,7 +60,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         type: "dropdown",
                         name: "Schulart",
                         title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
-                        defaultValue: 1,
+                        // defaultValue: "Keine Angabe",
                         readOnly: isPresetSchulart,
                         choices: schularten
                     }
@@ -86,7 +87,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         type: "radiogroup",
                         name: aaer_geschichte[0].items[0].name, // name is hidden
                         title: aaer_geschichte[0].items[0].summary,  // entspricht frage
-                        description: '*'+aaer_geschichte[0].items[0].indicators,
+                        description: '*' + aaer_geschichte[0].items[0].indicators,
                         descriptionLocation: 'underInput',
                         isRequired: true,
                         choices: antworten
@@ -100,7 +101,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[0].items[1].name, 
                                 title: aaer_geschichte[0].items[1].summary,
-                                description: aaer_geschichte[0].items[1].indicators,
+                                description: '*' + aaer_geschichte[0].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -113,7 +115,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[0].items[2].name, 
                                 title: aaer_geschichte[0].items[2].summary,
-                                description: aaer_geschichte[0].items[2].indicators,
+                                description: '*' + aaer_geschichte[0].items[2].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -129,7 +132,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[1].items[0].name, 
                                 title: aaer_geschichte[1].items[0].summary,
-                                description: aaer_geschichte[1].items[0].indicators,
+                                description: '*' + aaer_geschichte[1].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -142,7 +146,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[1].items[1].name, 
                                 title: aaer_geschichte[1].items[1].summary,
-                                description: aaer_geschichte[1].items[1].indicators,
+                                description: '*' + aaer_geschichte[1].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -158,7 +163,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[2].items[0].name, 
                                 title: aaer_geschichte[2].items[0].summary,
-                                description: aaer_geschichte[2].items[0].indicators,
+                                description: '*' + aaer_geschichte[2].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -171,7 +177,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[2].items[1].name, 
                                 title: aaer_geschichte[2].items[1].summary,
-                                description: aaer_geschichte[2].items[1].indicators,
+                                description: '*' + aaer_geschichte[2].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -184,7 +191,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[2].items[2].name, 
                                 title: aaer_geschichte[2].items[2].summary,
-                                description: aaer_geschichte[2].items[2].indicators,
+                                description: '*' + aaer_geschichte[2].items[2].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -197,7 +205,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[2].items[3].name, 
                                 title: aaer_geschichte[2].items[3].summary,
-                                description: aaer_geschichte[2].items[3].indicators,
+                                description: '*' + aaer_geschichte[2].items[3].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -210,7 +219,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[2].items[4].name, 
                                 title: aaer_geschichte[2].items[4].summary,
-                                description: aaer_geschichte[2].items[4].indicators,
+                                description: '*' + aaer_geschichte[2].items[4].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -223,7 +233,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[2].items[5].name, 
                                 title: aaer_geschichte[2].items[5].summary,
-                                description: aaer_geschichte[2].items[5].indicators,
+                                description: '*' + aaer_geschichte[2].items[5].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -240,7 +251,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[0].name, 
                                 title: aaer_geschichte[3].items[0].summary,
-                                description: aaer_geschichte[3].items[0].indicators,
+                                description: '*' + aaer_geschichte[3].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -253,7 +265,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[1].name, 
                                 title: aaer_geschichte[3].items[1].summary,
-                                description: aaer_geschichte[3].items[1].indicators,
+                                description: '*' + aaer_geschichte[3].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -266,7 +279,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[2].name, 
                                 title: aaer_geschichte[3].items[2].summary,
-                                description: aaer_geschichte[3].items[2].indicators,
+                                description: '*' + aaer_geschichte[3].items[2].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -279,7 +293,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[3].name, 
                                 title: aaer_geschichte[3].items[3].summary,
-                                description: aaer_geschichte[3].items[3].indicators,
+                                description: '*' + aaer_geschichte[3].items[3].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -292,7 +307,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[4].name, 
                                 title: aaer_geschichte[3].items[4].summary,
-                                description: aaer_geschichte[3].items[4].indicators,
+                                description: '*' + aaer_geschichte[3].items[4].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -305,7 +321,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[5].name, 
                                 title: aaer_geschichte[3].items[5].summary,
-                                description: aaer_geschichte[3].items[5].indicators,
+                                description: '*' + aaer_geschichte[3].items[5].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -321,7 +338,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[4].items[0].name, 
                                 title: aaer_geschichte[4].items[0].summary,
-                                description: aaer_geschichte[4].items[0].indicators,
+                                description: '*' + aaer_geschichte[4].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -334,7 +352,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[4].items[1].name, 
                                 title: aaer_geschichte[4].items[1].summary,
-                                description: aaer_geschichte[4].items[1].indicators,
+                                description: '*' + aaer_geschichte[4].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -350,7 +369,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[5].items[0].name, 
                                 title: aaer_geschichte[5].items[0].summary,
-                                description: aaer_geschichte[5].items[0].indicators,
+                                description: '*' + aaer_geschichte[5].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -363,7 +383,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[5].items[1].name, 
                                 title: aaer_geschichte[5].items[1].summary,
-                                description: aaer_geschichte[5].items[1].indicators,
+                                description: '*' + aaer_geschichte[5].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -376,7 +397,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[5].items[2].name, 
                                 title: aaer_geschichte[5].items[2].summary,
-                                description: aaer_geschichte[5].items[2].indicators,
+                                description: '*' + aaer_geschichte[5].items[2].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -389,7 +411,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[5].items[3].name, 
                                 title: aaer_geschichte[5].items[3].summary,
-                                description: aaer_geschichte[5].items[3].indicators,
+                                description: '*' + aaer_geschichte[5].items[3].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -405,7 +428,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[6].items[0].name, 
                                 title: aaer_geschichte[6].items[0].summary,
-                                description: aaer_geschichte[6].items[0].indicators,
+                                description: '*' + aaer_geschichte[6].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -418,7 +442,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[6].items[1].name, 
                                 title: aaer_geschichte[6].items[1].summary,
-                                description: aaer_geschichte[6].items[1].indicators,
+                                description: '*' + aaer_geschichte[6].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -431,7 +456,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[6].items[2].name, 
                                 title: aaer_geschichte[6].items[2].summary,
-                                description: aaer_geschichte[6].items[2].indicators,
+                                description: '*' + aaer_geschichte[6].items[2].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -447,7 +473,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[7].items[0].name, 
                                 title: aaer_geschichte[7].items[0].summary,
-                                description: aaer_geschichte[7].items[0].indicators,
+                                description: '*' + aaer_geschichte[7].items[0].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
@@ -460,7 +487,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[7].items[1].name, 
                                 title: aaer_geschichte[7].items[1].summary,
-                                description: aaer_geschichte[7].items[1].indicators,
+                                description: '*' + aaer_geschichte[7].items[1].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
