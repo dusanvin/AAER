@@ -1720,35 +1720,6 @@
 
 		}
 
-		function getEvaluationPresetsForGroup() {
-
-			return new Promise(((resolve, reject) => {
-
-				let group_id = document.getElementById('group_id').value;
-				if (group_id.length === 10) {
-					let xhr = new XMLHttpRequest();
-					xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluationPresetsForGroup");
-					xhr.responseType = 'json';
-
-					xhr.onreadystatechange = function () {
-						if (this.readyState == 4 && this.status == 200) {
-							if (db_data.length > 0) {
-								resolve(this.response); // JSON.parse(this.responseText) deprecated, use xhr.responseType if necessesary and xhr.response instead
-							} else {
-								reject("Zum angegebenen Code wurde nichts gefunden!");
-							}
-						}
-					}
-
-					xhr.send(group_id);
-
-				} else {
-					reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
-				}
-				
-			}))
-		}
-
 
 		function getEvaluationGroup() {
 			let group_id = document.getElementById('loadEvaluationGroup').value;
@@ -1764,49 +1735,34 @@
 
 						// array mit datensätzen
 						let evaluations = JSON.parse(this.responseText);
+
+						console.log(evaluations[0])
 						if (evaluations.length > 0) {  // && evaluations !== '[]'
 
 							let gesamtEvaluation = {
-								// presets
-								"Evaluationscode": group_id,
-								"Name": evaluations[0].Name,
-								"Verlinkung": (evaluations[0].Verlinkung == null) ? 'Keine Angabe' : evaluations[0].Verlinkung,
-								"Schulart": (evaluations[0].Schulart == null) ? 'Keine Angabe' : evaluations[0].Schulart,
-								"Fach": (evaluations[0].Fach == null) ? 'Keine Angabe' : evaluations[0].Fach,
-								"Evaluationsdatum": getDate()
+								"Gruppencode": group_id,
+								"Anzahl Datensätze": evaluations.length,
+								"Name": evaluations[0].data.Name
 							};
-							
-							// berechnungen der durchschnittswerte
-							let countVars = new Map();
-							document.getElementById('anmerkungen').innerHTML = `Die Anzahl der berücksichtigten Datensätze ist ${evaluations.length}.`;
-							for(i=0; i<aaer_geschichte.length; i++) {
-								for(j=0; j<aaer_geschichte[i].items.length; j++) {
 
-									countVars.set('dim' + i + 'item' + j, {'SUM': 0, 'COUNT': 0, 'COUNT_NULLS':0 , AVG: 'nicht bewertbar'});
+							aaer_geschichte.forEach(dimension => {
+								dimension.items.forEach(item => {
+									let sum = 0;
+									let nulls = 0;
+									for (let i = 0; i < evaluations.length; i++) {
+										let {single_id, data} = evaluations[i]
+										console.log(single_id)
+										console.log(data[item.name])
+										if (data[item.name] > 0)
+											sum+=data[item.name];
+										else nulls++;
+									}
+									gesamtEvaluation[item.name] = sum/(evaluations.length - nulls);
+								})
+							})
 
-									evaluations.forEach(evaluation => {
-										if (evaluation[aaer_geschichte[i].items[j].name] == 0) {
-											countVars.get('dim' + i + 'item' + j).COUNT_NULLS++;
-										} else {
-											countVars.get('dim' + i + 'item' + j).SUM += evaluation[aaer_geschichte[i].items[j].name];
-											countVars.get('dim' + i + 'item' + j).COUNT++;
-										}
-									});
+							console.log(gesamtEvaluation)
 
-									if (countVars.get('dim' + i + 'item' + j).COUNT > 0)
-										countVars.get('dim' + i + 'item' + j).AVG = countVars.get('dim' + i + 'item' + j).SUM / countVars.get('dim' + i + 'item' + j).COUNT;
-
-									gesamtEvaluation[aaer_geschichte[i].items[j].name] = countVars.get('dim' + i + 'item' + j).AVG;
-
-									if (countVars.get('dim' + i + 'item' + j).COUNT_NULLS > 0)
-										document.getElementById('anmerkungen').innerHTML += `<br> ${aaer_geschichte[i].items[j].name} wurde ${countVars.get('dim' + i + 'item' + j).COUNT_NULLS} mal als nicht bewertbar oder nicht relevant eingestuft.`;
-
-
-								}
-							}
-
-							// vis code
-							document.getElementById('single_id').innerHTML = group_id;
 							window.survey = new Survey.Model(json);
 							survey.data = gesamtEvaluation;
 							visualize();
