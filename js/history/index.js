@@ -307,8 +307,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 type: "radiogroup",
                                 name: aaer_geschichte[3].items[4].name, 
                                 title: aaer_geschichte[3].items[4].summary,
-                                description: '*' + aaer_geschichte[3].items[4].indicators,
-                                descriptionLocation: 'underInput',
+                                // description: '*' + aaer_geschichte[3].items[4].indicators,
+                                // descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: antworten
                             }
