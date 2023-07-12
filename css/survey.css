@@ -100,11 +100,9 @@ div.form-group {
 	font-size: 13px !important;
 	margin-bottom: 0rem !important;
 }
+/*input.sv_complete_btn {
 
-input.sv_complete_btn {
-
-}
-
+}*/
 .sv_q_radiogroup_control_label span {
 	margin-left: 0.5em;
 }
@@ -216,9 +214,9 @@ pre {
 	background: white !important;
 }
 
-input {
-	/*padding-bottom: 0px !important;*/
-}
+/*input {
+	padding-bottom: 0px !important;
+}*/
 
 a.btn-status {
 	background-color: #18a689 !important;
@@ -445,6 +443,10 @@ a.btn-status {
     letter-spacing: .02em;
 }
 
+.sv_qstn .small {
+	margin-top: 1em;
+	font-size: 100% !important; /*.small: Ursprünlich 80%*/
+}
 
-
+/* form-group bmd-form-group */
 
