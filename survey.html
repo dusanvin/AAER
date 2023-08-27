@@ -1980,7 +1980,7 @@
 
 			if (input.length === 10) {
 				let xhr = new XMLHttpRequest();
-				xhr.open("POST", "https://aaer.zlbib.uni-augsburg.de/loadPredefined");
+				xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/loadPredefined");
 				xhr.setRequestHeader("Content-Type", "application/json");
 				xhr.send(JSON.stringify({ "predefined_id": input }));
 
@@ -2050,7 +2050,7 @@
 
 			survey.data = {
 				"Name": 'Generiert',
-				"Verlinkung": loaded_values? link: 'https://aaer.zlbib.uni-augsburg.de/',
+				"Verlinkung": loaded_values? link: 'kein',
 
 				"Fach": loaded_values? fach: (22) + 2,
 				"Schulart": loaded_values? schulart: (25) + 2,
@@ -2138,7 +2138,7 @@
 				console.log('pre000' + predefined)
 				displayController(DISPLAY.THANKS);
 				var status_request = new XMLHttpRequest();
-				status_request.open('POST', 'https://aaer.zlbib.uni-augsburg.de/');
+				status_request.open('POST', 'https://staging.zlbib.uni-augsburg.de/');
 
 				status_request.onreadystatechange = function () {
 					if (this.status == 200) {

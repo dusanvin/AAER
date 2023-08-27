@@ -539,7 +539,7 @@ function getDate() {
 // saves data of a survey to db and return result_id
 function saveResult(data) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/saveResult");
+    xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/saveResult");
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -616,7 +616,7 @@ function loadResult() {
         if (input.length === 12) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadResult");
+            xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/loadResult");
 
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -698,7 +698,7 @@ function loadResultSet(data) {
         if (input.length === 10) {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadResultSet");
+            xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/loadResultSet");
 
             xhr.onreadystatechange = function() {
 
@@ -1076,7 +1076,7 @@ function getPredefinedData() {
     return new Promise( ((resolve, reject) => {
         if (input.length === 10) {
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadPredefined");
+            xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/loadPredefined");
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     let db_data = this.responseText;
@@ -1109,7 +1109,7 @@ function getPredefinedData() {
 //     return new Promise( (resolve, reject) => {
 //         if (input.length === 10) {
 //             let xhr = new XMLHttpRequest();
-//             xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadPredefined");
+//             xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/loadPredefined");
 //             xhr.setRequestHeader("Content-Type", "application/json");
 //             xhr.send(JSON.stringify({"predefined_id": input}));
 
@@ -1210,7 +1210,7 @@ function savePredefined() {
             }
 
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/savePredefined");
+            xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/savePredefined");
 
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
