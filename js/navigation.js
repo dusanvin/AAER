@@ -5,6 +5,10 @@ function display_navigation() {
 
 		<!-- Navigation Start -->
 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+		<link rel="stylesheet" href="/css/navigation.css">
+
 		<nav class="navbar navbar-expand-lg pt-3 mt-0 navbar-dark mb-3">
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,28 +21,46 @@ function display_navigation() {
 
 				<li class="nav-item pl-5 pr-5 mt-3 mb-3" data-lang="De">
 
-					<a class="aaer_menu py-2 d-md-inline-block text-white navigation_link" href="index.html" data-toggle="tooltip" data-placement="bottom"
-  title="Zur Startseite">Home</a>
+					<a class="aaer_menu pt-2 d-md-inline-block text-white navigation_link text-center" href="index.html" data-toggle="tooltip" data-placement="bottom"
+  title="Zur Startseite" alt="Start">
+
+						  <span class="material-symbols-rounded d-block mb-2">
+						cottage
+						</span>
+
+					</a>
 
 				</li>
 
 				<li class="nav-item pl-5 pr-5 mt-3 mb-3" data-lang="En" style="display: none;">
 
-				<a class="aaer_menu py-2 d-md-inline-block text-white navigation_link" href="index.html" data-toggle="tooltip" data-placement="bottom"
-title="Go to startpage">Home</a>
+					<a class="aaer_menu pt-2 d-md-inline-block text-white navigation_link text-center" href="index.html" data-toggle="tooltip" data-placement="bottom"
+	title="Go to startpage" alt="Start">
 
-			</li>
+						<span class="material-symbols-rounded d-block mb-2">
+							cottage
+						</span>
+
+					</a>
+
+				</li>
 
 				<li class="nav-item pl-5 pr-5 mt-3 mb-3" data-lang="De">
 
-					<a class="aaer_menu py-2 d-md-inline-block text-white navigation_link text-center" href="survey.html" data-toggle="tooltip" data-placement="bottom"
-  title="Analysieren und bewerten Sie ein Bildungsmedium">Zum AAER</a>
+					<a class="aaer_menu pt-2 d-md-inline-block text-white navigation_link text-center" href="survey.html" data-toggle="tooltip" data-placement="bottom"
+  title="Analysieren und bewerten Sie ein Bildungsmedium" alt="Zum AAER">
+
+				    <span class="material-symbols-rounded d-block mb-2">
+						chat_paste_go
+					</span>
+
+					</a>
 
 				</li>
 
 				<li class="nav-item pl-5 pr-5 mt-3 mb-3" data-lang="En" style="display: none;">
 
-				<a class="aaer_menu py-2 d-md-inline-block text-white navigation_link text-center" href="survey.html" data-toggle="tooltip" data-placement="bottom"
+				<a class="aaer_menu pt-2 d-md-inline-block text-white navigation_link text-center" href="survey.html" data-toggle="tooltip" data-placement="bottom"
 title="Analyse and evaluate an educational medium">Go to AAER</a>
 
 			</li>
