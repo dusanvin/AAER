@@ -1,3 +1,19 @@
-.material-symbols-rounded {
-  font-size: 24px;
+.site-navbar-top {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+}
+
+.site-navbar-top a {
+    color: white;
+}
+
+.sticky-wrapper {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+.navbar {
+	position: relative;
+    padding-left: 0 !important;
 }

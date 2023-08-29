@@ -230,7 +230,7 @@ canvas{
 
 .navigation_link:hover {
   border-radius: 7px !important;
-  border: 2px solid #fff !important;
+  border: 2px solid transparent !important;
   color: white !important;
   text-decoration: none;
   padding-left: 16px;
