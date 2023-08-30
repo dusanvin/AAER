@@ -10,7 +10,7 @@ function display_footer() {
 		  <footer class="container py-5 text-dark text-center text-sm-left">
 		    <div class="row">
 		      <div class="col-12 col-md pr-xs-0 pr-sm-0 pr-md-5 mr-lg-5 mb-5">
-		      	<div class="image ml-3">
+		      	<div class="image ml-0 ml-sm-3">
 		          <figure>
 		            <img class="image-img" src="/img/sophie/AAER-Logo_RGB-Gradient.png" width="190">
 		          </figure>
