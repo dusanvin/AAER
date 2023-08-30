@@ -144,10 +144,6 @@ p.nav-contact {
 }
 
 a.active {
-    background-color: transparent !important;
-    border: 2px solid #fff !important;
-    border-color: white !important;
-    border-radius: 7px !important;
     color: white !important;
 }
 
