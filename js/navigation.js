@@ -78,7 +78,7 @@ function display_navigation() {
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="De">Das allgemeine AAER</a>
 				          </li>
 				          <li>
-				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De" style="min-width: 400px;">Das geschichtsspezifische AAER <span class="badge badge-light p-2 ml-2">New!</span></a>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De" style="min-width: 400px;">Das geschichtsspezifische AAER <span class="badge badge-light p-2 ml-2">Neu!</span></a>
 				          </li>
 				        </ul>
 					</li>
@@ -90,29 +90,29 @@ function display_navigation() {
 							href="#"
 							role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 						>
-          				Analyze and Evaluate 
+          				Analyze & Evaluate 
         				</a>
 				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
 				          <li>
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="En" style="display: none;">The common Tool</a>
 				          </li>
 				          <li>
-				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="En" style="display: none;">The history specific Tool</a>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="En" style="display: none;">The history specific Tool <span class="badge badge-light p-2 ml-2">New!</span></a>
 				          </li>
 				        </ul>
 					</li>
 					<!-- Dropdown English -->
 					<li class="nav-item mx-3" data-lang="De">
-			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Erfahren Sie mehr über das AAER" alt="Erfahren Sie mehr über das AAER">Mehr</a>
+			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Erfahren Sie mehr über das AAER." alt="Erfahren Sie mehr über das AAER">Mehr</a>
 			      	</li>
 			    	<li class="nav-item mx-3" data-lang="En" style="display: none;">
-			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Learn more about the AAER" alt="Learn more about the AAER">More</a>
+			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Learn more about the AAER." alt="Learn more about the AAER">More</a>
 			      	</li>
 					<li class="nav-item ml-3" data-lang="De">
-			        	<a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" title="Kontaktieren Sie uns bei Fragen" alt="Kontaktieren Sie uns bei Fragen">Kontakt</a>
+			        	<a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" title="Kontaktieren Sie uns bei Fragen." alt="Kontaktieren Sie uns bei Fragen">Kontakt</a>
 			      	</li>
 			    	<li class="nav-item ml-3" data-lang="En" style="display: none;">
-			        	<a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" title="Contact us if you have any questions" alt="Contact us if you have any questions">Contact</a>
+			        	<a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" title="Contact us if you have any questions." alt="Contact us if you have any questions">Contact</a>
 			      	</li>
 			     </ul>
 			  </div>
