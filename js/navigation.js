@@ -64,8 +64,8 @@ function display_navigation() {
 			      </li>
 			    </ul>
 			    <ul class="navbar-nav mt-3">
-			    	<!-- Dropdown -->
-					<li class="nav-item mx-3 dropdown">
+			    	<!-- Dropdown German-->
+					<li class="nav-item mx-3 dropdown" data-lang="De">
 						<a
 							class="nav-link dropdown-toggle"
 							href="#"
@@ -75,20 +75,33 @@ function display_navigation() {
         				</a>
 				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
 				          <li>
-				            <a class="dropdown-item nav-link" href="survey.html">Das allgemeine AAER</a>
+				            <a class="dropdown-item nav-link" href="survey.html" data-lang="De">Das allgemeine AAER</a>
 				          </li>
 				          <li>
-				            <a class="dropdown-item nav-link" href="aaer-geschichte.html">Das geschichtsspezifische AAER</a>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De">Das geschichtsspezifische AAER <span class="badge badge-light p-2 ml-2">New!</span></a>
 				          </li>
 				        </ul>
 					</li>
-					<!-- Dropdown -->
-			    	<li class="nav-item mx-3" data-lang="De">
-			        	<a class="nav-link" href="survey.html" data-toggle="tooltip" data-placement="bottom" title="Analysieren und bewerten Sie ein Bildungsmedium" alt="Analysieren und bewerten Sie ein Bildungsmedium">Zum AAER</a>
-			      	</li>
-			    	<li class="nav-item mx-3" data-lang="En" style="display: none;">
-			        	<a class="nav-link" href="survey.html" data-toggle="tooltip" data-placement="bottom" title="Analyze and evaluate an Open Educational Resource" alt="Go to the AAER">Go to: AAER</a>
-			      	</li>
+					<!-- Dropdown German-->
+			    	<!-- Dropdown English -->
+					<li class="nav-item mx-3 dropdown" data-lang="En" style="display: none;">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						>
+          				Analyze and Evaluate 
+        				</a>
+				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
+				          <li>
+				            <a class="dropdown-item nav-link" href="survey.html" data-lang="En" style="display: none;">The common Tool</a>
+				          </li>
+				          <li>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="En" style="display: none;">The history specific Tool</a>
+				          </li>
+				        </ul>
+					</li>
+					<!-- Dropdown English -->
 					<li class="nav-item mx-3" data-lang="De">
 			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Erfahren Sie mehr über das AAER" alt="Erfahren Sie mehr über das AAER">Mehr</a>
 			      	</li>

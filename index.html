@@ -11,43 +11,49 @@
 
 	    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-        <!-- ChartJS-Integration Start -->
+    	<!-- Custom CSS Start -->
 
-        <script src="/js/chart.min.js"></script>
-
-        <!-- ChartJS-Integration Ende -->
-
-	    <!-- jQuery Start -->
-
-	    <script src="/js/jquery-3.5.1.min.js"></script>
-
-	    <!-- jQuery End -->
-
-	    <!-- Custom CSS Start -->
-
-	    <link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/index.css">
 
 		<link rel="stylesheet" href="/css/sidepanel.css">
 
-	    <!-- Custom CSS End -->
+		<!-- Custom CSS End -->
 
-	    <!-- Bootstrap Material Design v.4.1.1 Start -->
+		<!-- Custom Survey CSS Start -->
 
-	    <link rel="stylesheet" href="/css/bootstrap-material-design-4_1_1-min.css">
+		<link rel="stylesheet" href="/css/survey.css">
 
-	    <!-- Bootstrap Material Design v.4.1.1 End -->
+		<!-- Custom Survey CSS End -->
 
-	    <!-- PopperJS v.1.12.6 Start -->
+		<!-- Custom Dashboard CSS Start -->
 
-	    <script src="/js/popperJS-1_12_6.js"></script>
+		<link href="/css/simple-sidebar.css" rel="stylesheet">
 
-	    <!-- PopperJS v.1.12.6 End -->
+		<!-- Custom Dashboard CSS End -->
 
-	    <!-- Bootstrap Material Design JS Start -->
+		<!-- Bootstrap Material Design v.4.1.1 Start -->
 
-	    <script src="/js/bootstrap.bundle.min.js"></script>
+		<link rel="stylesheet" href="/css/bootstrap-material-design-4_1_1-min.css">
 
-	    <!-- Bootstrap Material Design JS End -->
+		<!-- Bootstrap Material Design v.4.1.1 End -->
+
+		<!-- jQuery Start -->
+
+		<script src="/js/jquery-3.5.1.min.js"></script>
+
+		<!-- jQuery End -->
+
+		<!-- PopperJS v.1.12.6 Start -->
+
+		<script src="/js/popperJS-1_12_6.js"></script>
+
+		<!-- PopperJS v.1.12.6 End -->
+
+		<!-- Bootstrap Material Design JS Start -->
+
+		<script src="/js/bootstrap-material-design.js"></script>
+
+		<!-- Bootstrap Material Design JS End -->
 
 	</head>
 
@@ -67,7 +73,7 @@
 
 	<!-- Front Start -->
 
-	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+	<div class="container position-relative overflow-hidden text-center pt-lg-5 pt-md-5 pt-sm-1 pt-xs-1">
 
 	    <!-- Lead Row Start -->
 
@@ -75,7 +81,7 @@
 
 	    	<!-- Lead Col 1 Start -->
 
-		    <div class="col pt-xs-1 pt-sm-5 pt-md-5 pt-lg-5">
+		    <div class="col pt-xs-1 pt-sm-5 pt-md-5 pt-lg-5 px-0">
 
 		    	<!--<div class="wrapper">
 
@@ -101,21 +107,36 @@
 
 		    <div class="col">
 
-		      	<h1 class="font-weight-bold lead-text text-xs-center text-sm-center text-md-left text-lg-left pt-xs-5 mt-4 mb-3 pt-sm-1 mb-sm-3 mt-md-3 pt-md-5 mt-lg-3 pt-lg-5 text-white">Das Augsburger Analyse- und Evaluationsraster (AAER)</h1>
-				
-				<p class="font-weight-normal text-xs-center text-sm-center text-md-left text-lg-left pt-xs-5 pt-sm-3 pt-md-3 pt-lg-4 text-white">Das AAER unterstützt Sie bei der Überprüfung von Bildungsmedien für die Verwendung in kompetenzorientiertem Unterricht. Mit anonymen Einzel- und Gruppenbewertungen. Ohne Login und ohne Angabe persönlicher Daten.</p>
+		      	<h1 class="font-weight-bold lead-text text-xs-center text-sm-center text-md-left text-lg-left pt-xs-5 mt-4 mb-3 pt-sm-1 mb-sm-3 mt-md-3 pt-md-5 mt-lg-3 pt-lg-5 text-white"  data-lang="De">Das Augsburger Analyse- und Evaluationsraster (AAER)</h1>
 
+		      	<h1 class="font-weight-bold lead-text text-xs-center text-sm-center text-md-left text-lg-left pt-xs-5 mt-4 mb-3 pt-sm-1 mb-sm-3 mt-md-3 pt-md-5 mt-lg-3 pt-lg-5 text-white"  data-lang="En" style="display: none;">The Augsburg Grid for analysis and evaluation (AAER)</h1>
+				
+				<p class="front-text font-weight-normal text-xs-center text-sm-center text-md-left text-lg-left pt-xs-5 pt-sm-3 pt-md-3 pt-lg-2 text-white" data-lang="De">Das AAER unterstützt Sie bei der Überprüfung von Bildungsmedien für die Verwendung in kompetenzorientiertem Unterricht. Mit anonymen Einzel- und Gruppenbewertungen. Ohne Login und ohne Angabe persönlicher Daten.</p>
+
+				<p class="front-text font-weight-normal text-xs-center text-sm-center text-md-left text-lg-left pt-xs-5 pt-sm-3 pt-md-3 pt-lg-2 text-white" data-lang="En" style="display: none;">The AAER helps you review educational media for use in competency-based instruction. With anonymous individual and group evaluations. Without login and without providing personal data.</p>
 				<!-- Buttons Start -->
 				<div class="text-xs-center text-sm-center text-md-left text-lg-left mt-3">
-					<a class="btn btn-aaer-2 btn-outline-secondary" href="survey.html" data-toggle="tooltip" data-placement="right" title="Analyiseren und bewerten Sie ein Bildungsmedium.">
+					<a class="btn btn-aaer-2" href="survey.html" data-toggle="tooltip" data-placement="right" title="Analyiseren und bewerten Sie ein Bildungsmedium." data-lang="De">
 						Zum AAER
 					</a>
+					
 				</div>
+				<div class="text-xs-center text-sm-center text-md-left text-lg-left mt-3">
+					<a class="btn btn-aaer-2" href="survey.html" data-toggle="tooltip" data-placement="right" title="Analyze and evaluate an educational medium."data-lang="En" style="display: none;">
+						Go to the common tool
+					</a>
+				</div>
+
 				<!-- Buttons End -->
 				<!-- Buttons Start -->
-				<div class="text-xs-center text-sm-center text-md-left text-lg-left mt-3">
-					<a class="btn btn-aaer-2 btn-outline-secondary" href="aaer-geschichte.html" data-toggle="tooltip" data-placement="right" title="Analyiseren und bewerten Sie ein geschichtsspezifisches Bildungsmedium.">
-						Zum geschichtsspezifischen AAER
+				<div class="text-xs-center text-sm-center text-md-left text-lg-left mt-2">
+					<a class="btn btn-aaer-2" href="aaer-geschichte.html" data-toggle="tooltip" data-placement="right" title="Analyiseren und bewerten Sie ein geschichtsspezifisches Bildungsmedium." data-lang="De">
+						Zum geschichtsspezifischen AAER <span class="badge badge-light p-2 ml-2">Neu!</span>
+					</a>
+				</div>
+				<div class="text-xs-center text-sm-center text-md-left text-lg-left mt-2">
+					<a class="btn btn-aaer-2" href="aaer-geschichte.html" data-toggle="tooltip" data-placement="right" title="Analyze and evaluate an educational medium specific to history." data-lang="En" style="display: none;">
+						Go to the history specific tool <span class="badge badge-light p-2 ml-2">New!</span>
 					</a>
 				</div>
 				<!-- Buttons End -->

@@ -159,6 +159,13 @@ a.btn-aaer-2 {
   border-color: white !important;
   border-radius: 7px !important;
   color: white !important;
+  display: block;
+}
+
+@media (max-width: 400px){
+  a.btn-aaer-2 {
+    font-size: 10px !important;
+  }
 }
 
 a.btn-aaer-2:hover {
@@ -188,7 +195,11 @@ a.btn-aaer-2:hover {
 }
 
 .lead-text {
-	font-size: 23px !important;
+	font-size: 20px !important;
+}
+
+.front-text {
+  font-size: 14px !important;
 }
 
 textarea {
@@ -235,10 +246,22 @@ canvas{
 
 .video-container-wrapper {
   max-width: 100%;
-  width: 480px;
+  width: 690px;
   left: 0;
   right:0;
+  /*margin:auto;*/
+}
+
+@media (min-width: 1199px) {
+.video-container-wrapper {
+  width: 480px;
+}
+}
+
+@media (max-width: 1199px) {
+.video-container-wrapper {
   margin:auto;
+}
 }
 
 .video-container {
