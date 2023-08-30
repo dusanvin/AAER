@@ -10,7 +10,7 @@ function display_footer() {
 		  <footer class="container py-5 text-dark text-center text-sm-left">
 		    <div class="row">
 		      <div class="col-12 col-md pr-xs-0 pr-sm-0 pr-md-5 mr-lg-5 mb-5">
-		      	<div class="image ml-0 ml-sm-3">
+		      	<div class="image ml-3 ml-sm-0">
 		          <figure>
 		            <img class="image-img" src="/img/sophie/AAER-Logo_RGB-Gradient.png" width="190">
 		          </figure>
@@ -20,11 +20,11 @@ function display_footer() {
 		            <img class="image-img" src="https://aaer.zlbib.uni-augsburg.de/img/Uni_Aug_Logo_ZDL_RGB_small.png" width="230">
 		          </figure>
 		        </div> -->
-		        <small class="mb-3 ml-3 text-center text-sm-left text-dark"  data-lang="De" ><br><strong>Version 1.1: 08/2023</strong><br><br> <strong>Lizenz des AAERs:</strong>
-		        	<br>&copy; 2020 Universität Augsburg / Dr. Carl-Christian Fey. <br><br> 
+		        <small class="mb-3 ml-3 text-center text-sm-left text-dark"  data-lang="De" ><br><strong>Version 1.1:</strong><br>08/2023<br><br> <strong>Lizenz des AAERs:</strong>
+		        	<br>&copy; 2020 Universität Augsburg/ <br>Dr. Carl-Christian Fey. <br><br> 
 		        	<span><strong>Lizenz der digitalen Version:</strong></span><br>
 		        	<a 
-		        		href="https://aaer.zlbib.uni-augsburg.de" 
+		        		href="https://aaer.digillab.uni-augsburg.de" 
 		        		target=”_blank” 
 		        		>
 		        		https://aaer.digillab.uni-augsburg.de
