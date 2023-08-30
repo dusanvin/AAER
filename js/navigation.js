@@ -97,7 +97,7 @@ function display_navigation() {
 							href="#"
 							role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 						>
-          				Analyze & Evaluate 
+          				Analyse & Evaluate 
         				</a>
 				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
 				          <li>

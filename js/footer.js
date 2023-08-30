@@ -79,18 +79,26 @@ function display_footer() {
 					</a>, 2023. MIT-License.
 				</small>
 		    </div>
-		    <div class="col-6 col-md ml-xs-0 ml-sm-0 ml-md-5 ml-lg-5 mb-3">
+		    <div class="col-6 col-md ml-xs-0 ml-sm-0 ml-md-5 ml-lg-5 mb-3" data-lang="De">
 		      <h5>Allgemein</h5>
 		      <ul class="list-unstyled text-dark" style="font-size: 80%;">
-		        <li class="my-2"><a class="" href="contact.html">Kontakt</a></li>
-		        <li class="my-2"><a class="" href="info.html">Informationen</a></li>
-		        <li class="my-2"><a class="" href="log.html">Log</a></li>
+		        <li class="my-1"><a class="" href="contact.html">Kontakt</a></li>
+		        <li class="my-1"><a class="" href="info.html">Informationen</a></li>
+		        <li class="my-1"><a class="" href="log.html">Log</a></li>
 		      </ul>
 		    </div>
-		      <div class="col-6 col-md mb-3">
-		        <h5>Organisation</h5>
+		    <div class="col-6 col-md ml-xs-0 ml-sm-0 ml-md-5 ml-lg-5 mb-3" data-lang="En" style="display:none;">
+		      <h5>General</h5>
+		      <ul class="list-unstyled text-dark" style="font-size: 80%;">
+		        <li class="my-1"><a class="" href="contact.html">Contact</a></li>
+		        <li class="my-1"><a class="" href="info.html">Detailed Information</a></li>
+		        <li class="my-1"><a class="" href="log.html">Log</a></li>
+		      </ul>
+		    </div>
+	      	<div class="col-6 col-md mb-3" data-lang="De">
+		        <h5>Organisationen</h5>
 		        <ul class="list-unstyled" style="font-size: 80%;">
-					<li class="my-2">
+					<li class="my-1">
 						<a 
 							class="" 
 							href="https://digillab.uni-augsburg.de/" 
@@ -98,7 +106,7 @@ function display_footer() {
 							DigiLLab
 						</a>
 					</li>
-					<li class="my-2">
+					<li class="my-1">
 						<a 
 							class="" 
 							href="https://www.uni-augsburg.de/de/" 
@@ -108,13 +116,34 @@ function display_footer() {
 					</li>					
 		        </ul>
 		      </div>
-		      <div class="col-6 col-md mb-3">
+		      <div class="col-6 col-md mb-3" data-lang="En" style="display: none;">
+		        <h5>Organisations</h5>
+		        <ul class="list-unstyled" style="font-size: 80%;">
+					<li class="my-1">
+						<a 
+							class="" 
+							href="https://digillab.uni-augsburg.de/" 
+							target=”_blank” >
+							DigiLLab
+						</a>
+					</li>
+					<li class="my-1">
+						<a 
+							class="" 
+							href="https://www.uni-augsburg.de/de/" 
+							target=”_blank” >
+							Uni Augsburg
+						</a>
+					</li>					
+		        </ul>
+		      </div>
+		      <div class="col-6 col-md mb-3" data-lang="De">
 		        <h5>Onlinedienste</h5>
 		        <ul class="list-unstyled" style="font-size: 80%;">
-		          <li class="my-2"><a class="" href="https://hedgedoc.digillab.uni-augsburg.de/">HedgeDoc</a></li>
-		          <li class="my-2"><a class="" href="https://futurebox.digillab.uni-augsburg.de">FutureBOx</a></li>
-		          <li class="my-2"><a class="" href="https://digipad.zlbib.uni-augsburg.de">Digi:Pad</a></li>
-		          	<li class="my-2">
+		          <li class="my-1"><a class="" href="https://hedgedoc.digillab.uni-augsburg.de/">HedgeDoc</a></li>
+		          <li class="my-1"><a class="" href="https://futurebox.digillab.uni-augsburg.de">FutureBOx</a></li>
+		          <li class="my-1"><a class="" href="https://digipad.zlbib.uni-augsburg.de">Digi:Pad</a></li>
+		          	<li class="my-1">
 						<a 
 							class="" 
 							href="https://digillab.uni-augsburg.de/kursarchiv/" 
@@ -122,7 +151,7 @@ function display_footer() {
 							Digi:Learn
 						</a>
 					</li> 
-					<li class="my-2">
+					<li class="my-1">
 						<a 
 							class="" 
 							href="https://digidev.zlbib.uni-augsburg.de/moodle" 
@@ -130,7 +159,7 @@ function display_footer() {
 							Digi:Course
 						</a>
 					</li> 
-					<li class="my-2">
+					<li class="my-1">
 						<a 
 							class="" 
 							href="https://lehrwerkstatt.digillab.uni-augsburg.de/" 
@@ -138,7 +167,7 @@ function display_footer() {
 							Lehr:werkstatt
 						</a>
 					</li>
-					<li class="my-2">
+					<li class="my-1">
 						<a 
 							class="" 
 							href="https://daz-buddies.digillab.uni-augsburg.de" 
@@ -146,7 +175,7 @@ function display_footer() {
 							DaZ-Buddies
 						</a>
 					</li>
-					<li class="my-2">
+					<li class="my-1">
 						<a 
 							class="" 
 							href="https://digidev.zlbib.uni-augsburg.de/mahara" 
@@ -156,11 +185,66 @@ function display_footer() {
 					</li>
 		        </ul>
 		      </div>
-		      <div class="col-6 col-md mb-3">
+		      <div class="col-6 col-md mb-3" data-lang="En" style="display: none;">
+		        <h5>Webervices</h5>
+		        <ul class="list-unstyled" style="font-size: 80%;">
+		          <li class="my-1"><a class="" href="https://hedgedoc.digillab.uni-augsburg.de/">HedgeDoc</a></li>
+		          <li class="my-1"><a class="" href="https://futurebox.digillab.uni-augsburg.de">FutureBOx</a></li>
+		          <li class="my-1"><a class="" href="https://digipad.zlbib.uni-augsburg.de">Digi:Pad</a></li>
+		          	<li class="my-1">
+						<a 
+							class="" 
+							href="https://digillab.uni-augsburg.de/kursarchiv/" 
+							target=”_blank” >
+							Digi:Learn
+						</a>
+					</li> 
+					<li class="my-1">
+						<a 
+							class="" 
+							href="https://digidev.zlbib.uni-augsburg.de/moodle" 
+							target=”_blank” >
+							Digi:Course
+						</a>
+					</li> 
+					<li class="my-1">
+						<a 
+							class="" 
+							href="https://lehrwerkstatt.digillab.uni-augsburg.de/" 
+							target=”_blank” >
+							Lehr:werkstatt
+						</a>
+					</li>
+					<li class="my-1">
+						<a 
+							class="" 
+							href="https://daz-buddies.digillab.uni-augsburg.de" 
+							target=”_blank” >
+							DaZ-Buddies
+						</a>
+					</li>
+					<li class="my-1">
+						<a 
+							class="" 
+							href="https://digidev.zlbib.uni-augsburg.de/mahara" 
+							target=”_blank” >
+							Digi:Hara
+						</a>
+					</li>
+		        </ul>
+		      </div>
+		      <div class="col-6 col-md mb-3" data-lang="De">
 		        <h5>Über</h5>
 		        <ul class="list-unstyled" style="font-size: 80%;">
-		          <li class="my-2"><a class="" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Impressum</a></li>
-		          <li class="my-2"><a class="" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Datenschutz</a></li>
+		          <li class="my-1"><a class="" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Impressum</a></li>
+		          <li class="my-1"><a class="" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Datenschutz</a></li>
+		        </ul>
+		      </div>
+		      <div class="col-6 col-md mb-3" data-lang="En" style="display: none;">
+		        <h5>About</h5>
+		        <ul class="list-unstyled" style="font-size: 80%;">
+		          <li class="my-1"><a class="" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Legal notice</a></li>
+		          <li class="my-1"><a class="" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Privacy</a></li>
 		        </ul>
 		      </div>
 		    </div>
