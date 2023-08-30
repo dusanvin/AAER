@@ -7,9 +7,9 @@ gradientStroke.addColorStop(1, '#f49080');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli"],
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August"],
         datasets: [{
-            label: "Analysierte Bildungsmedien",
+            label: "Educational media analyzed",
             borderColor: gradientStroke,
             pointBorderColor: gradientStroke,
             pointBackgroundColor: gradientStroke,
@@ -21,7 +21,7 @@ var myChart = new Chart(ctx, {
             pointRadius: 3,
             fill: false,
             borderWidth: 4,
-            data: [100, 120, 150, 170, 180, 170, 160]
+            data: [100, 120, 150, 170, 180, 170, 160, 120]
         }]
     },
     options: {

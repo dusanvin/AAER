@@ -37,6 +37,12 @@
 
 		<!-- Bootstrap Material Design v.4.1.1 End -->
 
+        <!-- ChartJS-Integration Start -->
+
+        <script src="/js/chart.min.js"></script>
+
+        <!-- ChartJS-Integration Ende -->
+
 		<!-- jQuery Start -->
 
 		<script src="/js/jquery-3.5.1.min.js"></script>
@@ -89,15 +95,19 @@
 
 				</div>-->
 
-				<div class="video-container-wrapper">
+				<div class="video-container-wrapper" data-lang="De">
 
 					<div class="video-container">
 
 						<iframe width="480" height="270" src="https://www.youtube.com/embed/WTD9hIhRjGU" title="YouTube video player" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 					</div>
-
 				</div>
+				<div class="wrapper" data-lang="En" style="display: none;">
+
+						<canvas id="myChart"></canvas>
+
+					</div>
 
 		    </div>
 
@@ -178,11 +188,11 @@
 
     <!-- Footer JS End -->
 
-	<!-- Example Chart JS Start 
+	<!-- Example Chart JS Start  -->
 
     <script src="/js/example_chart.js"></script>
 
-	Example Chart JS End -->
+	<!-- Example Chart JS End -->
 	    
 	</body>
 

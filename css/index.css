@@ -212,10 +212,10 @@ textarea {
 }
 
 .wrapper{
-  width:60%;
+  width:90%;
   display:block;
   overflow:hidden;
-  margin:0 auto;
+  /* margin:0 auto; */
   padding: 30px 20px;
   background:#fff;
   border-radius:4px;
