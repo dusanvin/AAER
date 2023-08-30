@@ -14,11 +14,18 @@ function display_navigation() {
 							</svg>
 							<span class="d-none d-md-inline-block">team@digillab.uni-augsburg.de</span>
 						</a>
-						<a href="tel:+498215983151" class="d-flex align-items-center mr-auto">
+						<a href="tel:+498215983151" class="d-flex align-items-center mr-4">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mr-2 d-none d-md-inline-block" viewBox="0 0 16 16">
 							  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
 							</svg>
 							<span class="d-none d-md-inline-block"> +49 821 598 3151</span>
+						</a>
+						<a href="https://digillab.uni-augsburg.de" class="d-flex align-items-center mr-auto" target=”_blank” >
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mr-2 d-none d-md-inline-block" viewBox="0 0 16 16">
+							  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+							  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+							</svg>
+							<span class="d-none d-md-inline-block">https://digillab.uni-augsburg.de</span>
 						</a>
 					</div>
 					<div class="d-flex ml-auto">
@@ -47,14 +54,14 @@ function display_navigation() {
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item mx-auto">
-			        <a data-lang="De" class="nav-link pl-0 pb-0" href="index.html" data-toggle="tooltip" data-placement="bottom" title="Zur Startseite" alt="Start">
+			        <a data-lang="De" class="nav-link pl-0 pb-0" href="index.html" alt="Start">
 			        	<div class="image">
 			          		<figure class="mb-0">
 			            		<img class="image-img" src="/img/sophie/AAER%20Logo.png" width="200">
 			          		</figure>
 			        	</div>
 			        </a>
-			        <a style="display: none;" data-lang="En" class="nav-link pl-0 pb-0" href="index.html" data-toggle="tooltip" data-placement="bottom" title="GoTo: Startpage" alt="Start">
+			        <a style="display: none;" data-lang="En" class="nav-link pl-0 pb-0" href="index.html" alt="Start">
 			        	<div class="image">
 			          		<figure class="mb-0">
 			            		<img class="image-img" src="/img/sophie/AAER%20Logo.png" width="200">
@@ -73,7 +80,7 @@ function display_navigation() {
 						>
           				Analysieren & Bewerten
         				</a>
-				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
+				        <ul class="dropdown-menu mb-2 mt-1" aria-labelledby="dropdownMenuLink">
 				          <li>
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="De">Das allgemeine AAER</a>
 				          </li>

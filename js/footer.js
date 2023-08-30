@@ -20,78 +20,122 @@ function display_footer() {
 		            <img class="image-img" src="https://aaer.zlbib.uni-augsburg.de/img/Uni_Aug_Logo_ZDL_RGB_small.png" width="230">
 		          </figure>
 		        </div>
-		        <small class="d-block mb-3 ml-3 text-center text-sm-left"><br><strong>Version 1.1: 08/2023;</strong><br><br> Lizenz des AAERs:<br>&copy; 2020 Universität Augsburg / Dr. Carl-Christian Fey. <br><br> Lizenz der digitalen Version:<br><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">https://aaer.digillab.uni-augsburg.de</a> von <a class="text-dark" href="https://github.com/dusanvin">Vincent Dusanek</a> und Norman Szabo für <a class="text-dark" href="https://digillab.uni-augsburg.de">DigiLLab</a>, 2023. MIT-Lizenz.</small>
+		        <small class="d-block mb-3 ml-3 text-center text-sm-left"><br><strong>Version 1.1: 08/2023</strong><br><br> <strong>Lizenz des AAERs:</strong>
+		        	<br>&copy; 2020 Universität Augsburg / Dr. Carl-Christian Fey. <br><br> 
+		        	<strong>Lizenz der digitalen Version:</strong><br>
+		        	<a 
+		        		href="https://aaer.zlbib.uni-augsburg.de" 
+		        		style="color: #B52188 !important;"
+		        		target=”_blank” 
+		        		>
+		        		https://aaer.digillab.uni-augsburg.de
+	        		</a> 
+	        		von 
+	        		<a 
+	        			href="https://github.com/dusanvin"
+	        			style="color: #B52188 !important;"
+	        			target=”_blank” 
+	        			>
+	        			Vincent Dusanek
+        			</a>
+        			 und 
+        			<a 
+        				href="https://github.com/sn2016"
+        				style="color: #B52188 !important;"
+        				target=”_blank” 
+        				>
+        				Norman Szabo
+    				</a> für <a class="text-dark" href="https://digillab.uni-augsburg.de">DigiLLab</a>, 2023. MIT-Lizenz.</small>
 		    </div>
-
 		    <div class="col-6 col-md ml-xs-0 ml-sm-0 ml-md-5 ml-lg-5 mb-3">
-
 		      <h5>Allgemein</h5>
-
 		      <ul class="list-unstyled text-small">
-
 		        <li><a class="text-dark" href="contact.html">Kontakt</a></li>
-
 		        <li><a class="text-dark" href="info.html">Informationen</a></li>
-
 		        <li><a class="text-dark" href="log.html">Log</a></li>
-
 		        <!-- <li><a class="text-dark" href="survey.html">Teilnehmen</a></li> -->
-
 		      </ul>
-
 		    </div>
-
 		      <div class="col-6 col-md mb-3">
-
 		        <h5>Organisation</h5>
-
 		        <ul class="list-unstyled text-small">
-
-		          <li><a class="text-dark" href="https://digillab.zlbib.uni-augsburg.de/">DigiLLab</a></li>
-
-		          <li><a class="text-dark" href="https://www.uni-augsburg.de/de/forschung/einrichtungen/institute/zlbib/">ZLbiB</a></li>
-
+					<li>
+						<a 
+							class="text-dark" 
+							href="https://digillab.uni-augsburg.de/" 
+							target=”_blank” >
+							DigiLLab
+						</a>
+					</li>
+					<li>
+						<a 
+							class="text-dark" 
+							href="https://www.uni-augsburg.de/de/" 
+							target=”_blank” >
+							Uni Augsburg
+						</a>
+					</li>					
 		        </ul>
-
 		      </div>
-
 		      <div class="col-6 col-md mb-3">
-
 		        <h5>Onlinedienste</h5>
-
 		        <ul class="list-unstyled text-small">
-
-		          <li><a class="text-dark" href="https://aaer.zlbib.uni-augsburg.de">AAER</a></li>
-
-		          <li><a class="text-dark" href="https://digipad.zlbib.uni-augsburg.de">DIGIPAD</a></li>
-
+		          <li><a class="text-dark" href="https://hedgedoc.digillab.uni-augsburg.de/">HedgeDoc</a></li>
+		          <li><a class="text-dark" href="https://futurebox.digillab.uni-augsburg.de">FutureBOx</a></li>
+		          <li><a class="text-dark" href="https://digipad.zlbib.uni-augsburg.de">Digi:Pad</a></li>
+		          	<li>
+						<a 
+							class="text-dark" 
+							href="https://digillab.uni-augsburg.de/kursarchiv/" 
+							target=”_blank” >
+							Digi:Learn
+						</a>
+					</li> 
+					<li>
+						<a 
+							class="text-dark" 
+							href="https://digidev.zlbib.uni-augsburg.de/moodle" 
+							target=”_blank” >
+							Digi:Course
+						</a>
+					</li> 
+					<li>
+						<a 
+							class="text-dark" 
+							href="https://lehrwerkstatt.digillab.uni-augsburg.de/" 
+							target=”_blank” >
+							Lehr:werkstatt
+						</a>
+					</li>
+					<li>
+						<a 
+							class="text-dark" 
+							href="https://daz-buddies.digillab.uni-augsburg.de" 
+							target=”_blank” >
+							DaZ-Buddies
+						</a>
+					</li>
+					<li>
+						<a 
+							class="text-dark" 
+							href="https://digidev.zlbib.uni-augsburg.de/mahara" 
+							target=”_blank” >
+							Digi:Hara
+						</a>
+					</li>
 		        </ul>
-
 		      </div>
-
 		      <div class="col-6 col-md mb-3">
-
 		        <h5>Über</h5>
-
 		        <ul class="list-unstyled text-small">
-
 		          <li><a class="text-dark" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Impressum</a></li>
-
 		          <li><a class="text-dark" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Datenschutz</a></li>
-
 		        </ul>
-
 		      </div>
-
 		    </div>
-
 		  </footer>
-
 		  </div>
-
 		<!-- Footer End -->
-
 	`;
 }
-
 display_footer();
