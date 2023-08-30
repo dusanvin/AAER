@@ -6,7 +6,7 @@ function display_sidepanel() {
 
 		<div class="sidenav">
 
-		  <a href="https://digillab.zlbib.uni-augsburg.de" alt="DigiLLab" target="_blank">
+		  <!-- <a href="https://digillab.zlbib.uni-augsburg.de" alt="DigiLLab" target="_blank"> 
 
 		    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="sidenav_icon">
 
@@ -16,7 +16,8 @@ function display_sidepanel() {
 
 		    </svg>
 		    
-		  </a>
+		  </a>-->
+		  
 
 		  <a href="https://twitter.com/digillab" alt="Twitter" target="_blank">
 

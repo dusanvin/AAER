@@ -20,7 +20,7 @@ function display_footer() {
 		            <img class="image-img" src="https://aaer.zlbib.uni-augsburg.de/img/Uni_Aug_Logo_ZDL_RGB_small.png" width="230">
 		          </figure>
 		        </div>
-		        <small class="d-block mb-3 ml-3 text-center text-sm-left"><br><strong>Version 1.1: 08/2023</strong><br><br> <strong>Lizenz des AAERs:</strong>
+		        <small class="d-block mb-3 ml-3 text-center text-sm-left text-dark"><br><strong>Version 1.1: 08/2023</strong><br><br> <strong>Lizenz des AAERs:</strong>
 		        	<br>&copy; 2020 Universität Augsburg / Dr. Carl-Christian Fey. <br><br> 
 		        	<strong>Lizenz der digitalen Version:</strong><br>
 		        	<a 
@@ -45,21 +45,26 @@ function display_footer() {
         				target=”_blank” 
         				>
         				Norman Szabo
-    				</a> für <a class="text-dark" href="https://digillab.uni-augsburg.de">DigiLLab</a>, 2023. MIT-Lizenz.</small>
+    				</a> für
+    				<a 
+    					href="https://digillab.uni-augsburg.de"
+    					style="color: #B52188 !important;"
+        				target=”_blank” 
+    					>DigiLLab
+					</a>, 2023. MIT-Lizenz.</small>
 		    </div>
 		    <div class="col-6 col-md ml-xs-0 ml-sm-0 ml-md-5 ml-lg-5 mb-3">
 		      <h5>Allgemein</h5>
-		      <ul class="list-unstyled text-small">
-		        <li><a class="text-dark" href="contact.html">Kontakt</a></li>
-		        <li><a class="text-dark" href="info.html">Informationen</a></li>
-		        <li><a class="text-dark" href="log.html">Log</a></li>
-		        <!-- <li><a class="text-dark" href="survey.html">Teilnehmen</a></li> -->
+		      <ul class="list-unstyled text-dark" style="font-size: 80%;">
+		        <li class="my-2"><a class="text-dark" href="contact.html">Kontakt</a></li>
+		        <li class="my-2"><a class="text-dark" href="info.html">Informationen</a></li>
+		        <li class="my-2"><a class="text-dark" href="log.html">Log</a></li>
 		      </ul>
 		    </div>
 		      <div class="col-6 col-md mb-3">
 		        <h5>Organisation</h5>
-		        <ul class="list-unstyled text-small">
-					<li>
+		        <ul class="list-unstyled" style="font-size: 80%;">
+					<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://digillab.uni-augsburg.de/" 
@@ -67,7 +72,7 @@ function display_footer() {
 							DigiLLab
 						</a>
 					</li>
-					<li>
+					<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://www.uni-augsburg.de/de/" 
@@ -79,11 +84,11 @@ function display_footer() {
 		      </div>
 		      <div class="col-6 col-md mb-3">
 		        <h5>Onlinedienste</h5>
-		        <ul class="list-unstyled text-small">
-		          <li><a class="text-dark" href="https://hedgedoc.digillab.uni-augsburg.de/">HedgeDoc</a></li>
-		          <li><a class="text-dark" href="https://futurebox.digillab.uni-augsburg.de">FutureBOx</a></li>
-		          <li><a class="text-dark" href="https://digipad.zlbib.uni-augsburg.de">Digi:Pad</a></li>
-		          	<li>
+		        <ul class="list-unstyled" style="font-size: 80%;">
+		          <li class="my-2"><a class="text-dark" href="https://hedgedoc.digillab.uni-augsburg.de/">HedgeDoc</a></li>
+		          <li class="my-2"><a class="text-dark" href="https://futurebox.digillab.uni-augsburg.de">FutureBOx</a></li>
+		          <li class="my-2"><a class="text-dark" href="https://digipad.zlbib.uni-augsburg.de">Digi:Pad</a></li>
+		          	<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://digillab.uni-augsburg.de/kursarchiv/" 
@@ -91,7 +96,7 @@ function display_footer() {
 							Digi:Learn
 						</a>
 					</li> 
-					<li>
+					<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://digidev.zlbib.uni-augsburg.de/moodle" 
@@ -99,7 +104,7 @@ function display_footer() {
 							Digi:Course
 						</a>
 					</li> 
-					<li>
+					<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://lehrwerkstatt.digillab.uni-augsburg.de/" 
@@ -107,7 +112,7 @@ function display_footer() {
 							Lehr:werkstatt
 						</a>
 					</li>
-					<li>
+					<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://daz-buddies.digillab.uni-augsburg.de" 
@@ -115,7 +120,7 @@ function display_footer() {
 							DaZ-Buddies
 						</a>
 					</li>
-					<li>
+					<li class="my-2">
 						<a 
 							class="text-dark" 
 							href="https://digidev.zlbib.uni-augsburg.de/mahara" 
@@ -127,9 +132,9 @@ function display_footer() {
 		      </div>
 		      <div class="col-6 col-md mb-3">
 		        <h5>Über</h5>
-		        <ul class="list-unstyled text-small">
-		          <li><a class="text-dark" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Impressum</a></li>
-		          <li><a class="text-dark" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Datenschutz</a></li>
+		        <ul class="list-unstyled" style="font-size: 80%;">
+		          <li class="my-2"><a class="text-dark" href="https://digillab.zlbib.uni-augsburg.de/impressum/">Impressum</a></li>
+		          <li class="my-2"><a class="text-dark" href="https://www.uni-augsburg.de/de/impressum/datenschutz/">Datenschutz</a></li>
 		        </ul>
 		      </div>
 		    </div>
