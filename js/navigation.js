@@ -78,7 +78,7 @@ function display_navigation() {
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="De">Das allgemeine AAER</a>
 				          </li>
 				          <li>
-				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De">Das geschichtsspezifische AAER <span class="badge badge-light p-2 ml-2">New!</span></a>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De" style="min-width: 400px;">Das geschichtsspezifische AAER <span class="badge badge-light p-2 ml-2">New!</span></a>
 				          </li>
 				        </ul>
 					</li>
