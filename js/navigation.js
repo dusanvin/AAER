@@ -46,7 +46,7 @@ function display_navigation() {
 			  </button>
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
+			      <li class="nav-item mx-auto">
 			        <a data-lang="De" class="nav-link pl-0 pb-0" href="index.html" data-toggle="tooltip" data-placement="bottom" title="Zur Startseite" alt="Start">
 			        	<div class="image">
 			          		<figure class="mb-0">
@@ -64,22 +64,41 @@ function display_navigation() {
 			      </li>
 			    </ul>
 			    <ul class="navbar-nav mt-3">
-			    	<li class="nav-item" data-lang="De">
+			    	<!-- Dropdown -->
+					<li class="nav-item mx-3 dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						>
+          				Analysieren & Bewerten
+        				</a>
+				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
+				          <li>
+				            <a class="dropdown-item nav-link" href="survey.html">Das allgemeine AAER</a>
+				          </li>
+				          <li>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html">Das geschichtsspezifische AAER</a>
+				          </li>
+				        </ul>
+					</li>
+					<!-- Dropdown -->
+			    	<li class="nav-item mx-3" data-lang="De">
 			        	<a class="nav-link" href="survey.html" data-toggle="tooltip" data-placement="bottom" title="Analysieren und bewerten Sie ein Bildungsmedium" alt="Analysieren und bewerten Sie ein Bildungsmedium">Zum AAER</a>
 			      	</li>
-			    	<li class="nav-item" data-lang="En" style="display: none;">
+			    	<li class="nav-item mx-3" data-lang="En" style="display: none;">
 			        	<a class="nav-link" href="survey.html" data-toggle="tooltip" data-placement="bottom" title="Analyze and evaluate an Open Educational Resource" alt="Go to the AAER">Go to: AAER</a>
 			      	</li>
-					<li class="nav-item" data-lang="De">
+					<li class="nav-item mx-3" data-lang="De">
 			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Erfahren Sie mehr über das AAER" alt="Erfahren Sie mehr über das AAER">Mehr</a>
 			      	</li>
-			    	<li class="nav-item" data-lang="En" style="display: none;">
+			    	<li class="nav-item mx-3" data-lang="En" style="display: none;">
 			        	<a class="nav-link" href="info.html" data-toggle="tooltip" data-placement="bottom" title="Learn more about the AAER" alt="Learn more about the AAER">More</a>
 			      	</li>
-					<li class="nav-item" data-lang="De">
+					<li class="nav-item ml-3" data-lang="De">
 			        	<a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" title="Kontaktieren Sie uns bei Fragen" alt="Kontaktieren Sie uns bei Fragen">Kontakt</a>
 			      	</li>
-			    	<li class="nav-item" data-lang="En" style="display: none;">
+			    	<li class="nav-item ml-3" data-lang="En" style="display: none;">
 			        	<a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" title="Contact us if you have any questions" alt="Contact us if you have any questions">Contact</a>
 			      	</li>
 			     </ul>

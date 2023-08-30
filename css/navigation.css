@@ -29,3 +29,31 @@
 .navbar-dark .navbar-nav .nav-link:active {
     color: hsla(0,0%,100%);
 }
+
+.dropdown-menu {
+    background-color: transparent;
+    border-radius: 0.125rem;
+    box-shadow: none;
+    margin: 0;
+    padding-top: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    min-width: 7rem;
+    max-width: 17.5rem;
+    min-height: 0;
+    padding: 0.5em 0.5em;
+    overflow: hidden;
+    line-height: 0.8;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: white;
+    background-color: transparent;
+}
