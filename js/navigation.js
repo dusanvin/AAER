@@ -85,7 +85,7 @@ function display_navigation() {
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="De">Das allgemeine AAER</a>
 				          </li>
 				          <li>
-				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De" style="min-width: 400px;">Das geschichtsspezifische AAER <span class="badge badge-light p-2 ml-2">Neu!</span></a>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="De" style="min-width: 300px;">Das AAER für den Geschichtsunterricht</a>
 				          </li>
 				        </ul>
 					</li>
@@ -101,10 +101,10 @@ function display_navigation() {
         				</a>
 				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
 				          <li>
-				            <a class="dropdown-item nav-link" href="survey.html" data-lang="En" style="display: none;">The common Tool</a>
+				            <a class="dropdown-item nav-link" href="survey.html" data-lang="En" style="display: none;">Common Tool</a>
 				          </li>
 				          <li>
-				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="En" style="display: none;">The history specific Tool <span class="badge badge-light p-2 ml-2">New!</span></a>
+				            <a class="dropdown-item nav-link" href="aaer-geschichte.html" data-lang="En" style="display: none; min-width:300px !important;">Tool for History Education</a>
 				          </li>
 				        </ul>
 					</li>

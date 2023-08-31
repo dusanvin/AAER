@@ -43,14 +43,17 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    line-height: 1.4 !important;
+    margin-top: 0.4em;
     min-width: 7rem;
     max-width: 17.5rem;
     min-height: 0;
     padding: 3px 0.5em !important;
     overflow: hidden;
     line-height: 0.8;
-    text-overflow: ellipsis;
+    text-overflow: clip;
     word-wrap: break-word;
+    white-space: inherit;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
