@@ -80,7 +80,7 @@ function display_navigation() {
 						>
           				Analysieren & Bewerten
         				</a>
-				        <ul class="dropdown-menu mb-2 mt-1" aria-labelledby="dropdownMenuLink">
+				        <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuLink">
 				          <li>
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="De">Das allgemeine AAER</a>
 				          </li>
@@ -99,7 +99,7 @@ function display_navigation() {
 						>
           				Analyse & Evaluate 
         				</a>
-				        <ul class="dropdown-menu mb-2" aria-labelledby="dropdownMenuLink">
+				        <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuLink">
 				          <li>
 				            <a class="dropdown-item nav-link" href="survey.html" data-lang="En" style="display: none;">Common Tool</a>
 				          </li>
