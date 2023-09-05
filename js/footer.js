@@ -46,8 +46,7 @@ function display_footer() {
     				<a 
     					href="https://digillab.uni-augsburg.de"
         				target=”_blank” 
-    					>DigiLLab
-					</a>, 2023. MIT-Lizenz.
+    					>DigiLLab</a>, 2023. MIT-Lizenz.
 				</small> 
 		        <small class="mb-3 ml-3 text-center text-sm-left text-dark" data-lang="En" style="display: none;" ><br><strong>Version 1.1: 08/2023</strong><br><br> <strong>AAER's license:</strong>
 		        	<br>&copy; 2020 Universität Augsburg / Dr. Carl-Christian Fey. <br><br> 
@@ -75,8 +74,7 @@ function display_footer() {
     				<a 
     					href="https://digillab.uni-augsburg.de"
         				target=”_blank” 
-    					>DigiLLab
-					</a>, 2023. MIT-License.
+    					>DigiLLab</a>, 2023. MIT-License.
 				</small>
 		    </div>
 		    <div class="col-6 col-md ml-xs-0 ml-sm-0 ml-md-5 ml-lg-5 mb-3" data-lang="De">
