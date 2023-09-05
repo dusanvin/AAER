@@ -170,7 +170,7 @@ a.btn-aaer-2 {
   display: block;
 }
 
-@media (max-width: 400px){
+@media (max-width: 482px){
   a.btn-aaer-2 {
     font-size: 10px !important;
   }
