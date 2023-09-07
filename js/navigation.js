@@ -180,6 +180,8 @@ function clickedGerman() {
 	let elements_en = document.querySelectorAll('[data-lang="En"]')
 	let en = [...elements_en]
 	en.forEach(element => element.style.display = 'none')
+	// SessionStorage De
+	sessionStorage.setItem("language", "De");
 }
 
 function clickedEnglish() {
@@ -193,4 +195,16 @@ function clickedEnglish() {
 	let elements_de = document.querySelectorAll('[data-lang="De"]')
 	let de = [...elements_de]
 	de.forEach(element => element.style.display = 'none')
+	// SessionStorage En
+	sessionStorage.setItem("language", "En");
 }
+
+// Hinzufügen des SessionStorages zur Sprache
+$(document).ready(function() {
+	let language = sessionStorage.getItem("language");
+	console.log("Sprache:" + language);
+	if (language == 'En') {
+		clickedEnglish();
+	}
+	else clickedGerman();
+});
