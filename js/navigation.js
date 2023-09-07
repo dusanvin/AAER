@@ -201,10 +201,5 @@ function clickedEnglish() {
 
 // Hinzufügen des SessionStorages zur Sprache
 $(document).ready(function() {
-	let language = sessionStorage.getItem("language");
-	console.log("Sprache:" + language);
-	if (language == 'En') {
-		clickedEnglish();
-	}
-	else clickedGerman();
+  sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 });
