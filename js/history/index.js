@@ -67,7 +67,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                 ]
             }, {
                 title: "Ihre Meinung", 
-                description: "Wir interessieren uns für Ihre Meinung: Halten Sie das Ihnen vorliegende Geschichtslehrmitteln für gut oder schlecht? Welche Kriterien ziehen Sie heran? Welche sind für Sie die entscheidenden, welche sind Ihnen weniger wichtig?",
+                description: "Wir wollen unser Analyse- und Evaluationsraster kontinuierlich weiterentwickeln. Dafür ist für uns auch von Interessen wie sie das Lehr-Lernmittel ohne Verwendung unseres Analyse- und Evaluationsraster bewerten. Halten Sie das Ihnen vorliegende Geschichtslehrmitteln für gut oder schlecht? Welche Kriterien ziehen Sie heran? Welche sind für Sie die entscheidenden, welche sind Ihnen weniger wichtig?",
                 elements: [
                     {
                         type: "text",
@@ -495,7 +495,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         ]
             }, {
                 title: "Kritikpunkte und Verbesserungsvorschläge", 
-                description: "Wir wollen unser Analyse- und Evaluationsraster kontinuierlich weiterentwickeln. Hier ist Platz für Ihre Kritikpunkte und ihre Verbesserungsvorschläge. Zur Anregung: Vermissen Sie bestimmte Kriterien? Erscheint Ihnen die Reihenfolge der Kriterien logisch? Sind die einzelnen Kriteiren für Sie nachvollziehbar und verständlich verfasst?",
+                description: "Wir wollen unser Analyse- und Evaluationsraster kontinuierlich weiterentwickeln. Hier ist Platz für Ihre Kritikpunkte und ihre Verbesserungsvorschläge. Zur Anregung: Vermissen Sie bestimmte Kriterien? Erscheint Ihnen die Reihenfolge der Kriterien logisch? Sind die einzelnen Kriterien für Sie nachvollziehbar und verständlich verfasst?",
                 elements: [
                     {
                         type: "text",
