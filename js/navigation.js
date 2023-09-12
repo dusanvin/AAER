@@ -170,6 +170,8 @@ window.addEventListener('click', function(e) {
 })
 
 function clickedGerman() {
+	changePlaceholderTextAAER('De')
+
 	dropdown = document.getElementById('dropdown-languages_de')
 	dropdown.style.display = 'none'
 
@@ -184,7 +186,17 @@ function clickedGerman() {
 	sessionStorage.setItem("language", "De");
 }
 
+function changePlaceholderTextAAER(language) {
+	if (language == "De") {
+		document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
+	} else {
+		document.getElementById('loadPredefined').placeholder = "10 characters long code"
+	}
+}
+
 function clickedEnglish() {
+	changePlaceholderTextAAER('En')
+
 	dropdown = document.getElementById('dropdown-languages_en')
 	dropdown.style.display = 'none'
 
@@ -197,6 +209,8 @@ function clickedEnglish() {
 	de.forEach(element => element.style.display = 'none')
 	// SessionStorage En
 	sessionStorage.setItem("language", "En");
+
+
 }
 
 // Hinzufügen des SessionStorages zur Sprache
