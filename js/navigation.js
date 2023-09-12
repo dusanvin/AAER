@@ -186,11 +186,40 @@ function clickedGerman() {
 	sessionStorage.setItem("language", "De");
 }
 
+let subjects_de = [
+	'Bitte wählen Sie ein Fach...',
+	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
+	'Erdkunde / Geographie', 'Ethik', 'Französich', 'Geschichte', 'Informatik / IT',
+	'Kunst / Werken', 'Latein', 'Mathematik', 'Musik', 'Pädagogik', 'Philosophie',
+	'Physik', 'Psychologie', 'Religion', 'Sozialkunde / Politik', 
+	'Sport', 'Sprachen (andere)', 'Sonstiges Fach'
+]
+
+let subjects_en = [
+	'Please choose a subject...',
+	'not specified', 'biology', 'chemistry', 'german', 'english', 
+	'geography', 'ethics', 'french', 'history', 'computer science', 
+	'art', 'latin', 'maths', 'music', 'pedagogy', 'philosophy',
+	'physics', 'psychology', 'religion', 'social/political studies', 
+	'sports', 'languages (other)', 'other subject'
+]
+
+
+
 function changePlaceholderTextAAER(language) {
+	subjects = document.getElementById('survey_subject');
 	if (language == "De") {
 		document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
+		Array.prototype.forEach.call(subjects.options, function(option, index) {
+			option.innerHTML = subjects_de[index];
+		})
+
+		
 	} else {
 		document.getElementById('loadPredefined').placeholder = "10 characters long code"
+		Array.prototype.forEach.call(subjects.options, function(option, index) {
+			option.innerHTML = subjects_en[index];
+		})
 	}
 }
 
