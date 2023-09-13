@@ -578,7 +578,8 @@
 
 									<br>
 
-									Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?
+									<span data-lang="De">Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?</span>
+									<span data-lang="En">To which type of school is the educational ressource related?</span>
 
 									<br>
 
@@ -622,7 +623,7 @@
 									<div class="text-center">
 
 										<button class="btn btn-green ml-1 mr-1"
-											onclick="newPredefined();">Gruppenevaluation anlegen</button>
+											onclick="newPredefined();"><span data-lang="De">Gruppenevaluation anlegen</span><span data-lang="En">Create group evaluation</span></button>
 
 									</div>
 
@@ -672,17 +673,21 @@
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center"
 														style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation
+														<p class="mt-5" data-lang="De">Es wurde erfolgreich eine Gruppenevaluation
 															angelegt. Bitte kopieren Sie den angegebenen Code und geben
 															diesen an die weiteren Teilnehmer*innen weiter. Sie können
 															direkt fortfahren und Ihre eigenen Bewertung vornehmen, wenn
 															Sie möchten.</p>
 
+														<p class="mt-5" data-lang="En">A group evaluation was succesfully created.
+															You may share the given code with participants. You can proceed and fill out 
+														an evaluation.</p>
+
 														<div class="mt-3">
 															<div id="anlegen_next_message" style="color: green;"></div>
 															<button class="btn btn-green ml-1 mr-1"
-																onclick="startNewPredefined();">Eigene Bewertung
-																vornehmen</button>
+																onclick="startNewPredefined();"><span data-lang="De">Eigene Bewertung
+																	vornehmen</span><span data-lang="En">Proceed with own evaluation</span></button>
 														</div>
 
 													</div>
@@ -730,15 +735,18 @@
 
 								<!-- Canvas _AUSWERTEN Start -->
 
-								<p class="mt-5">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong>
+								<p class="mt-5" data-lang="De">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong>
 									mittels Ihres Gruppencodes (10-stellig).</p>
+
+								<p class="mt-5" data-lang="En">Load results of a <strong>group evaluation</strong>
+									with your 10 characters long code.</p>
 
 								<div class="mt-3">
 
 									<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text"
 										id="loadResultSet" placeholder="10-stelliger-Code" style="width:10.5em;">
-									<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();">Gruppenergebnis
-										laden</button>
+									<button class="btn btn-green ml-1 mr-1" onclick="evaluateSet();"><span data-lang="De">Gruppenergebnis
+										laden</span><span data-lang="En">Load group result</span></button>
 
 									<div id="evaluateResultSet_message" style="color: red;"></div>
 
@@ -746,15 +754,18 @@
 
 								<div class="mt-5">
 
-									<p>Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres
+									<p data-lang="De">Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres
 										Einzelcodes (12-stellig).</p>
+
+									<p data-lang="En">Load result of a <strong>single evaluation</strong> with your 12 characters long code.</p>
+	
 
 									<div class="mt-3">
 
 										<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text"
 											id="loadResult" placeholder="12-stelliger-Code" style="width:10.5em;">
 										<button class="btn btn-green ml-1 mr-1"
-											onclick="evaluateResult();">Einzelergebnis laden</button>
+											onclick="evaluateResult();"><span data-lang="De">Einzelergebnis laden</span><span data-lang="En">Load single result</span></button>
 
 										<br>
 
@@ -788,11 +799,17 @@
 					<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 mt-5 text-center" id="display_thanks">
 
 						<p
-							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="De">
 							Ihre Daten in <strong>visualisierter Form finden Sie links unter "Auswertung"</strong></p>
-						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen
+						<p
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="En">
+							The data in <strong>visualised form can be looked up under "Report"</strong></p>
+						
+						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="De">Wir hoffen, Ihre Bewertungen
 							helfen Ihnen bei der Entscheidung über die <strong>Nutzung des Bildungsmediums</strong> in
 							Unterricht und Schule.</p>
+						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="En">We hope your assessment will help to decide which <strong>educational ressource</strong> to use
+							for education.</p>
 
 					</div>
 
@@ -829,7 +846,7 @@
 													<div class="col">
 
 														<p id="name_lernmittel" class="lehr-lernmittel-name mb-0">
-															Name des Lehr-Lernmittels
+															<span data-lang="De">Name des Lehr-Lernmittels</span><span data-lang="En">Name of educational ressource</span>
 														</p>
 
 														<div id="text-container" class="container-fluid mb-3">
@@ -840,7 +857,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Ihr Abrufcode</p>
+																		<span data-lang="De">Ihr Abrufcode</span><span data-lang="En">Your code</span></p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -858,7 +875,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Verlinkung</p>
+																		<span data-lang="De">Verlinkung</span><span data-lang="En">Link</span></p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -876,7 +893,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Schulart</p>
+																		<span data-lang="De">Schulart</span><span data-lang="En">type of school</span></p>
 
 																	<div style="background-color: #f1f3fa; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -891,7 +908,7 @@
 																<div
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Fach
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading"><span data-lang="De">Fach</span><span data-lang="En">Subject</span>
 																	</p>
 
 																	<div style="background-color: #f1f3fa; min-height:76px;"
@@ -907,7 +924,7 @@
 																<div
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Datum
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading"><span data-lang="De">Datum</span><span data-lang="En">Date</span>
 																	</p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-right-radius: 7px; border-top-right-radius: 7px; min-height:76px;"
@@ -924,7 +941,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
-																		Anmerkungen</p>
+																		<span data-lang="De">Anmerkungen</span><span data-lang="En"Comments></span></p>
 
 																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -964,13 +981,23 @@
 													<div class="col pl-0">
 
 														<p style="font-size:80% !important;">
-															Ihre Bewertungen werden in dieser Darstellung in
-															absteigender Reihenfolge - <strong>der Wertigkeit
-																nach</strong> - visualisiert. Während <em>0</em> für
-															<em>nicht bewertbar</em> steht, repräsentieren <em>1 =
-																trifft nicht zu</em>, <em>2 = trifft weniger zu</em>,
-															<em>3 = trifft mehr zu</em> und <em>4 = trifft voll zu</em>.
-															Diese Indexierung gilt für alle Auswertungen.
+															<span data-lang="De">
+																Ihre Bewertungen werden in dieser Darstellung in
+																absteigender Reihenfolge - <strong>der Wertigkeit
+																	nach</strong> - visualisiert. Während <em>0</em> für
+																<em>nicht bewertbar</em> steht, repräsentieren <em>1 =
+																	trifft nicht zu</em>, <em>2 = trifft weniger zu</em>,
+																<em>3 = trifft mehr zu</em> und <em>4 = trifft voll zu</em>.
+																Diese Indexierung gilt für alle Auswertungen.
+															</span><span data-lang="En">
+																Values will be displayed in descending order with following meanings:  
+																<em>0 = not assessable</em> 
+																<em>1 = not correct at all</em>, 
+																<em>2 = rather not correct</em>,
+																<em>3 = rather correct</em> and <em>4 - fully correct</em>.
+																This indexing holds for all evaluations.
+															</span>
+
 
 														</p>
 
@@ -1037,7 +1064,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp1Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Curriculum & Bildungsstandards</strong>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Curriculum & Bildungsstandards</span><span data-lang="En">Curriculum & Educational Standards</span></strong>
 						</h2>
 
 						<!-- Row grp1Chart Start -->
@@ -1070,11 +1097,14 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Curriculum</strong> und
+								<p class="resultate_info" data-lang="De">Die Items <strong>Curriculum</strong> und
 									<strong>Bildungsstandards</strong> beziehen sich auf eine transparente Ausrichtung
 									des Lehr- und Lernmittels an gültigen Curricula sowie geltenden Bildungsstandards.
 									Dies betrifft beispielsweise die fach-, stufen- und jahrgangsbezogenen Ziele,
 									angepasst an den Kompetenz- sowie Anforderungsbereichen deutscher Bildungsstandards.
+								</p>
+								<p class="resultate_info" data-lang="En">The items <strong>Curriculum</strong> and
+									<strong>educational standards</strong> ...
 								</p>
 
 							</div>
@@ -1095,7 +1125,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp2Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Diskursive Positionierung</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Diskursive Positionierung</span><span data-lang="En">Discursive Positioning</span></strong></h2>
 
 						<!-- Row grp2Chart Start -->
 
@@ -1127,7 +1157,7 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Interessensgeleitete Themenführung /
+								<p class="resultate_info" data-lang="De">Die Items <strong>Interessensgeleitete Themenführung /
 										Positionierung, Transparenz, Werbliche Elemente</strong> und
 									<strong>Heterogenität / Gender</strong> widmen sich der <em>diskursiven
 										Positionierung</em> des Lehr- und Lernmittels. Dies umfasst etwa die
@@ -1137,6 +1167,16 @@
 									<strong>Heterogenität / Gender</strong> mögliche Zuschreibungen auf soziale oder
 									gesellschaftliche Umwelten und das Maß an kultureller Diversität.
 								</p>
+								<p class="resultate_info" data-lang="En">The items <strong> ... Interessensgeleitete Themenführung /
+									Positionierung, Transparenz, Werbliche Elemente</strong> und
+								<strong>Heterogenität / Gender</strong> widmen sich der <em>diskursiven
+									Positionierung</em> des Lehr- und Lernmittels. Dies umfasst etwa die
+								Objektivität der Ressource, die multiperspektive Aufarbeitung der behandelten
+								Thematik, Transparenz bezüglich der Motive der verfassenden Person sowie das
+								Vorhandensein von werblichen Elementen. Zudem fokussiert das Item
+								<strong>Heterogenität / Gender</strong> mögliche Zuschreibungen auf soziale oder
+								gesellschaftliche Umwelten und das Maß an kultureller Diversität.
+							</p>
 
 							</div>
 
@@ -1156,7 +1196,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp3Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Makrodidaktische Fundierung</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Makrodidaktische Fundierung</span><span data-lang="En">Macrodidactical Foundation</span></strong></h2>
 
 						<!-- Row grp3Chart Start -->
 
@@ -1188,13 +1228,20 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Handlungsorientierung, Lebensweltlichkeit,
+								<p class="resultate_info" data-lang="De">Die Items <strong>Handlungsorientierung, Lebensweltlichkeit,
 										Reflexion / Urteilsfähigkeit</strong> und <strong>Multiperspektivität /
 										Kontroversität</strong> bilden den Bereich der <em>makrodidaktischen
 										Fundierung</em>. Im Fokus stehen somit die Fragen, ob aktiv Wissensstrukturen
 									erschlossen, ein Lebensweltbezug hergestellt, Prozesse der Selbstrefelexion
 									gefördert sowie aktuelle Themen sowohl multiperspektivistisch als auch kontrovers
 									diskutiert werden.</p>
+								<p class="resultate_info" data-lang="En">The items <strong> ... Handlungsorientierung, Lebensweltlichkeit,
+									Reflexion / Urteilsfähigkeit</strong> und <strong>Multiperspektivität /
+									Kontroversität</strong> bilden den Bereich der <em>makrodidaktischen
+									Fundierung</em>. Im Fokus stehen somit die Fragen, ob aktiv Wissensstrukturen
+								erschlossen, ein Lebensweltbezug hergestellt, Prozesse der Selbstrefelexion
+								gefördert sowie aktuelle Themen sowohl multiperspektivistisch als auch kontrovers
+								diskutiert werden.</p>
 
 							</div>
 
@@ -1214,7 +1261,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp4Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Mikrodidaktische Fundierung</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Mikrodidaktische Fundierung</span><span data-lang="En">Microdidactical Foundation</span></strong></h2>
 
 						<!-- Row grp4Chart Start -->
 
@@ -1246,7 +1293,7 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Methodenpluralität, Multimedia /
+								<p class="resultate_info" data-lang="De">Die Items <strong>Methodenpluralität, Multimedia /
 										Multimodalität, Medienkompetenz, Differenzierung</strong> und
 									<strong>Barrierefreiheit / Inklusion</strong> zeichnen die <em>mikrodidaktische
 										Fundierung</em> aus. Neben der Variation in der verwendeten Methodik und der
@@ -1255,6 +1302,15 @@
 									der Barrierefreiheit beziehungsweise der Inklusion von benachteiligten Gruppierungen
 									auseinander.
 								</p>
+								<p class="resultate_info" data-lang="En">The items <strong> ...Methodenpluralität, Multimedia /
+									Multimodalität, Medienkompetenz, Differenzierung</strong> und
+								<strong>Barrierefreiheit / Inklusion</strong> zeichnen die <em>mikrodidaktische
+									Fundierung</em> aus. Neben der Variation in der verwendeten Methodik und der
+								Medialität setzt sich dieser Bereich außerdem mit der Förderung der
+								Medienkompetenzen, der Rücksichtnahme auf Heterogenität in der Schülerschaft sowie
+								der Barrierefreiheit beziehungsweise der Inklusion von benachteiligten Gruppierungen
+								auseinander.
+							</p>
 
 							</div>
 
@@ -1274,7 +1330,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp5Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Kognitive Strukturierung</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Kognitive Strukturierung</span><span data-lang="En">Cognitive Structuring</span></strong></h2>
 
 						<!-- Row grp5Chart Start -->
 
@@ -1306,13 +1362,20 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Transfer- und Anwendungsorientierung,
+								<p class="resultate_info" data-lang="De">Die Items <strong>Transfer- und Anwendungsorientierung,
 										Prozessorientierung (Kumulation)</strong> und <strong>Lernwegunterstützende
-										Elemente (Scaffolding</strong> repräsentieren den Bereich der <em>kognitiven
+										Elemente (Scaffolding)</strong> repräsentieren den Bereich der <em>kognitiven
 										Strukturierung</em>. Im Vordergrund der Ressource steht nicht nur der Transfer
 									sondern auch der kumulative Aufbau von Wissen, Fertigkeiten und Kompetenzen.
 									Lernwegunterstütztende Elemente sind systematisch an entsprechenden Schlüsselstellen
 									des Lehr- und Lernmittels aufzufinden.</p>
+								<p class="resultate_info" data-lang="En">The items <strong>...Transfer- und Anwendungsorientierung,
+									Prozessorientierung (Kumulation)</strong> und <strong>Lernwegunterstützende
+									Elemente (Scaffolding)</strong> repräsentieren den Bereich der <em>kognitiven
+									Strukturierung</em>. Im Vordergrund der Ressource steht nicht nur der Transfer
+								sondern auch der kumulative Aufbau von Wissen, Fertigkeiten und Kompetenzen.
+								Lernwegunterstütztende Elemente sind systematisch an entsprechenden Schlüsselstellen
+								des Lehr- und Lernmittels aufzufinden.</p>
 
 							</div>
 
@@ -1331,7 +1394,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp6Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Bild- und Textkomposition</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Bild- und Textkomposition</span><span data-lang="En">Image- and Textcomposition</span></strong></h2>
 
 						<!-- Row grp6Chart Start -->
 
@@ -1363,7 +1426,12 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Sprachlichkeit, Bildsprache</strong>
+								<p class="resultate_info" data-lang="De">Die Items <strong>Sprachlichkeit, Bildsprache</strong>
+									beziehungsweise <strong>Additive Kommunikation (Anreicherung)</strong> lassen sich
+									zum Bereich der <em>Bild- und Textkomposition</em> vereinen. Direkte, klare
+									Formulierungen, ergänzende bildliche sowie zusätzliche Elemente runden das Lehr- und
+									Lernmittel professionell ab.</p>
+								<p class="resultate_info" data-lang="En">The items <strong>....Sprachlichkeit, Bildsprache</strong>
 									beziehungsweise <strong>Additive Kommunikation (Anreicherung)</strong> lassen sich
 									zum Bereich der <em>Bild- und Textkomposition</em> vereinen. Direkte, klare
 									Formulierungen, ergänzende bildliche sowie zusätzliche Elemente runden das Lehr- und
@@ -1387,7 +1455,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_grp7Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Aufgabendesign</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Aufgabendesign</span><span data-lang="En">Task Design</span></strong></h2>
 
 						<!-- Row grp7Chart Start -->
 
@@ -1419,7 +1487,13 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Die Items <strong>Sequenzierung, Aktivierung</strong> und
+								<p class="resultate_info" data-lang="De">Die Items <strong>Sequenzierung, Aktivierung</strong> und
+									<strong>Multiple Lösungswege</strong> befassen sich mit der sinnvollen didaktischen
+									oder fachlichen Abstimmung der Aufgaben, der lernpsychologischen Aktivierung der
+									bearbeitenden Person sowie der Möglichkeit unterschiedliche Lösungswege zur Klärung
+									eines Sachverhalts zu nutzen.
+								</p>
+								<p class="resultate_info" data-lang="En">The items <strong>...Sequenzierung, Aktivierung</strong> und
 									<strong>Multiple Lösungswege</strong> befassen sich mit der sinnvollen didaktischen
 									oder fachlichen Abstimmung der Aufgaben, der lernpsychologischen Aktivierung der
 									bearbeitenden Person sowie der Möglichkeit unterschiedliche Lösungswege zur Klärung
@@ -1444,7 +1518,7 @@
 
 					<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs1" id="display_grp8Chart">
 
-						<h2 class="font-weight-normal lead-text mb-0"><strong>Anwendungstransparenz</strong></h2>
+						<h2 class="font-weight-normal lead-text mb-0"><strong><span data-lang="De">Anwendungstransparenz</span><span data-lang="En">Application Transparency</span></strong></h2>
 
 						<!-- Row grp8Chart Start -->
 
@@ -1476,7 +1550,14 @@
 
 							<div class="col d-flex">
 
-								<p class="resultate_info">Der Bereich der <em>Anwendungstransprenz</em> setzt sich aus
+								<p class="resultate_info" data-lang="De">Der Bereich der <em>Anwendungstransprenz</em> setzt sich aus
+									den Items <strong>Didaktisches Konzept</strong> und
+									<strong>Rahmenbedingungen</strong> zusammen. Die vorliegende Kategorie klärt, ob das
+									Lehr- und Lernmittel Informationen über dessen didaktische Konzeption sowie über
+									dessen Rahmenbedingungen, wie etwa den zeitlichen Umfang oder die technischen
+									Voraussetzungen, enthält.
+								</p>
+								<p class="resultate_info" data-lang="En">The area of <em>application transparency</em> ...setzt sich aus
 									den Items <strong>Didaktisches Konzept</strong> und
 									<strong>Rahmenbedingungen</strong> zusammen. Die vorliegende Kategorie klärt, ob das
 									Lehr- und Lernmittel Informationen über dessen didaktische Konzeption sowie über
@@ -1635,8 +1716,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Nutzen Sie die <strong>Gruppenevaluation</strong> um gemeinsame Evaluationen in
-										Ihrem Kollegium durchzuführen.</p>
+										<span data-lang="De">Nutzen Sie die <strong>Gruppenevaluation</strong> um gemeinsame Evaluationen in
+											Ihrem Kollegium durchzuführen.</span><span data-lang="En">Make use of <strong>group evaluation</strong> to ...</span></p>
 
 								</div>
 
@@ -1660,8 +1741,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>mediendidaktisch fundiertes Online-Instrument</strong> zur Analyse
-										und Evaluation von Bildungsmedien in der Schul- und Unterrichtspraxis.</p>
+										<span data-lang="De">Ein <strong>mediendidaktisch fundiertes Online-Instrument</strong> zur Analyse
+											und Evaluation von Bildungsmedien in der Schul- und Unterrichtspraxis.</span><span data-lang="En">A online tool based on media didactics to analyse and evaluate educational ressources.</span></p>
 
 								</div>
 
@@ -1685,9 +1766,9 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>Reflexionsintrument</strong> und eine
-										<strong>Entscheidungshilfe</strong> zur pädagogisch-didaktischen Auswahl von
-										Lehr- und Lernmitteln.
+										<span data-lang="De">Ein <strong>Reflexionsintrument</strong> und eine
+											<strong>Entscheidungshilfe</strong> zur pädagogisch-didaktischen Auswahl von
+											Lehr- und Lernmitteln.</span><span data-lang="En">A ...</span>
 									</p>
 
 								</div>
@@ -1712,8 +1793,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>Leitfaden für AutorInnen und ProduzentInnen</strong> von
-										Bildungsmedien / Open Educational Resources (OER).</p>
+										<span data-lang="De">Ein <strong>Leitfaden für AutorInnen und ProduzentInnen</strong> von
+											Bildungsmedien / Open Educational Resources (OER).</span><span data-lang="En">A ...</span></p>
 
 								</div>
 
@@ -1737,8 +1818,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>Bewertungs- und Prüfinstrument</strong> für Repositorien von Lehr-
-										und Lernmitteln.</p>
+										<span data-lang="De">Ein <strong>Bewertungs- und Prüfinstrument</strong> für Repositorien von Lehr-
+											und Lernmitteln.</span><span data-lang="En">A ...</span></p>
 
 								</div>
 
@@ -1762,9 +1843,9 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Eine <strong>Entscheidungshilfe</strong> sowie ein <strong>Instrument zur
+										<span data-lang="De">Eine <strong>Entscheidungshilfe</strong> sowie ein <strong>Instrument zur
 											Herstellung von Transparenz</strong> in Hinblick auf die Auswahl von Lehr-
-										und Lernmitteln für Fachgremien in Schulen.</p>
+										und Lernmitteln für Fachgremien in Schulen.</span><span data-lang="En"> A ...</span></p>
 
 								</div>
 

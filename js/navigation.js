@@ -204,21 +204,55 @@ let subjects_en = [
 	'sports', 'languages (other)', 'other subject'
 ]
 
+let schools_de = [
+	'Bitte wählen Sie eine Schulart...', 
+	'Keine Angabe', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
+	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
+	'Fachakademie', 'Fachhochschule', 'Fachoberschule', 'Fachschule',
+	'Förderschule', 'Gemeinschaftsschule', 'Gesamtschule', 'Grundschule',
+	'Gymnasium', 'Hochschule', 'Internationale Schule', 'Mittelschule',
+	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
+	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'Sonstige Schule'
+]
+
+let schools_en = [
+	'Please choose the type of school...', 
+	'not specified', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
+	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
+	'Fachakademie', 'Fachhochschule', 'Fachoberschule', 'Fachschule',
+	'Förderschule', 'Gemeinschaftsschule', 'Gesamtschule', 'Grundschule',
+	'Gymnasium', 'Hochschule', 'Internationale Schule', 'Mittelschule',
+	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
+	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'other school'
+]
+
 
 
 function changePlaceholderTextAAER(language) {
 	subjects = document.getElementById('survey_subject');
+	schools = document.getElementById('survey_institution');
 	if (language == "De") {
 		document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
+		document.getElementById('loadResultSet').placeholder = "10-stelliger Code"
+		document.getElementById('loadResult').placeholder = "12-stelliger Code"
 		Array.prototype.forEach.call(subjects.options, function(option, index) {
 			option.innerHTML = subjects_de[index];
+			option.innerHTML = subjects_de[index];
+		})
+		Array.prototype.forEach.call(schools.options, function(option, index) {
+			option.innerHTML = schools_de[index];
 		})
 
 		
 	} else {
 		document.getElementById('loadPredefined').placeholder = "10 characters long code"
+		document.getElementById('loadResultSet').placeholder = "10 characters long code"
+		document.getElementById('loadResult').placeholder = "12 characters long code"
 		Array.prototype.forEach.call(subjects.options, function(option, index) {
 			option.innerHTML = subjects_en[index];
+		})
+		Array.prototype.forEach.call(schools.options, function(option, index) {
+			option.innerHTML = schools_en[index];
 		})
 	}
 }
