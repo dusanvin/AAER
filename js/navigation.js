@@ -231,30 +231,33 @@ let schools_en = [
 function changePlaceholderTextAAER(language) {
 	subjects = document.getElementById('survey_subject');
 	schools = document.getElementById('survey_institution');
-	if (language == "De") {
-		document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
-		document.getElementById('loadResultSet').placeholder = "10-stelliger Code"
-		document.getElementById('loadResult').placeholder = "12-stelliger Code"
-		Array.prototype.forEach.call(subjects.options, function(option, index) {
-			option.innerHTML = subjects_de[index];
-			option.innerHTML = subjects_de[index];
-		})
-		Array.prototype.forEach.call(schools.options, function(option, index) {
-			option.innerHTML = schools_de[index];
-		})
-
-		
-	} else {
-		document.getElementById('loadPredefined').placeholder = "10 characters long code"
-		document.getElementById('loadResultSet').placeholder = "10 characters long code"
-		document.getElementById('loadResult').placeholder = "12 characters long code"
-		Array.prototype.forEach.call(subjects.options, function(option, index) {
-			option.innerHTML = subjects_en[index];
-		})
-		Array.prototype.forEach.call(schools.options, function(option, index) {
-			option.innerHTML = schools_en[index];
-		})
+	if (subjects != null) {
+		if (language == "De") {
+			document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
+			document.getElementById('loadResultSet').placeholder = "10-stelliger Code"
+			document.getElementById('loadResult').placeholder = "12-stelliger Code"
+			Array.prototype.forEach.call(subjects.options, function(option, index) {
+				option.innerHTML = subjects_de[index];
+				option.innerHTML = subjects_de[index];
+			})
+			Array.prototype.forEach.call(schools.options, function(option, index) {
+				option.innerHTML = schools_de[index];
+			})
+	
+			
+		} else {
+			document.getElementById('loadPredefined').placeholder = "10 characters long code"
+			document.getElementById('loadResultSet').placeholder = "10 characters long code"
+			document.getElementById('loadResult').placeholder = "12 characters long code"
+			Array.prototype.forEach.call(subjects.options, function(option, index) {
+				option.innerHTML = subjects_en[index];
+			})
+			Array.prototype.forEach.call(schools.options, function(option, index) {
+				option.innerHTML = schools_en[index];
+			})
+		}
 	}
+
 }
 
 function clickedEnglish() {
