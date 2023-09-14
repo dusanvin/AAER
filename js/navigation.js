@@ -169,6 +169,16 @@ window.addEventListener('click', function(e) {
 	}
 })
 
+function changeDeInline() {
+	let elements_de = document.querySelectorAll('[data-lang="de-inline"]')
+	let de = [...elements_de]
+	de.forEach(element => element.style.display = 'inline-block')
+
+	let elements_en = document.querySelectorAll('[data-lang="en-inline"]')
+	let en = [...elements_en]
+	en.forEach(element => element.style.display = 'none')
+}
+
 function clickedGerman() {
 	changePlaceholderTextAAER('De')
 	changeSurveyText('De')
@@ -183,6 +193,9 @@ function clickedGerman() {
 	let elements_en = document.querySelectorAll('[data-lang="En"]')
 	let en = [...elements_en]
 	en.forEach(element => element.style.display = 'none')
+
+	changeDeInline()
+
 	// SessionStorage De
 	sessionStorage.setItem("language", "De");
 }
@@ -586,6 +599,15 @@ function changeSurveyText(language) {
 	}
 }
 
+function changeEnInline() {
+	let elements_en = document.querySelectorAll('[data-lang="en-inline"]')
+	let en = [...elements_en]
+	en.forEach(element => element.style.display = 'inline-block')
+
+	let elements_de = document.querySelectorAll('[data-lang="de-inline"]')
+	let de = [...elements_de]
+	de.forEach(element => element.style.display = 'none')
+}
 
 function clickedEnglish() {
 	changePlaceholderTextAAER('En')
@@ -601,10 +623,11 @@ function clickedEnglish() {
 	let elements_de = document.querySelectorAll('[data-lang="De"]')
 	let de = [...elements_de]
 	de.forEach(element => element.style.display = 'none')
+	
+	changeEnInline()
+
 	// SessionStorage En
 	sessionStorage.setItem("language", "En");
-
-
 }
 
 // Hinzufügen des SessionStorages zur Sprache

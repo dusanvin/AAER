@@ -2120,6 +2120,8 @@
 							predefined = true;
 							predefined_id = input;
 
+							sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
+
 						} else {
 							document.getElementById('teilnehmen_message').innerHTML = "Zum angegebenen Code wurde nichts gefunden!";
 						}
