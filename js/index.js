@@ -97,7 +97,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                 {
                     type: "text",
                     name: "Name",
-                    title: "Bitte geben Sie den Namen des Lehr-Lernmittels an, das Sie mit Hilfe des AAER analysieren/evaluieren möchten.",
+                    title: "Bitte geben Sie den Namen des Lehr-Lernmittels an, das Sie mit Hilfe des AAER analysieren/evaluieren möchten.", 
                     isRequired: true,
                     readOnly: isPredefinedName,
                     
