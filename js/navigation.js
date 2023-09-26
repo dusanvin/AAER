@@ -456,135 +456,135 @@ let surveyTextEn = [
 		question: "5"
 	},
 	{
-		title: "6",
-		description: "",
-		question: ""
-	},
+        title: "References to the Curriculum",
+        description: "Contemporary curricula contain subject-, grade- and age-group-specific educational objectives, subject areas, skills/competencies, didactical principles or suggestions of learning and teaching methods. Though educational media need not necessarily reach a narrow equivalence, an alignment of the mid- and long-term learning activities to the curriculum is important. Therefore it is helpful, if the educational medium makes at least shorthand references, so that an easier attribution by the teachers and maybe also by the learners is possible.",
+        question: "The educational medium makes transparent references to educational objectives, topics, skills/competencies, didactical principles or suggestions of learning and teachings methods, which easily allows for the teachers to allocate them to the relevant curriculum. Ideally, the educational medium itself elucidates the specific relations by making particular statements in this regard. The reference to the curriculum may also be an indirect one, emphasizing the supplementary character of the content."
+    },
 	{
-		title: "7",
-		description: "",
-		question: ""
-	},
+        title: "References to Educational Standards",
+        description: "Several countries have implemented national educational standards for a range of subjects, which describe competencies resp. requirement areas and standards. Although it can be assumed that these standards will also penetrate the curricula, it can be helpful if the educational medium makes also at least shorthand references to them, so that an easier attribution by the teachers and maybe also by the learners is possible.",
+        question: "The educational medium provides a general classification of the educational objectives, the topics and the aspired competencies with regard to the educational standards, which are applicable for the particular subject (e.g., areas of requirement, competencies, topics). This can also be done in a detailed/small-steps manner, for example by relating the importance of single learning sequences or assignments to the acquisition of competencies in terms of the educational standards."
+    },
+    {
+        title: "Interest-driven Mediation of Topics/Positioning",
+        description: "An elementary question to be asked with regard to the analysis of educational media is how their content is related to specific interests of their providers and if this relation is exerting a biased, one-sided influence on learners and teachers. Does the educational medium, for instance, aim to transport a specific subject into the classroom? Is a particular topic highlighted or are specific assertions made with regard to this topic? Or is a certain organization connoted in a positive way with regard to the overarching topic of the educational medium? Is this done in a one-sided way, or does the medium take a multi-perspective view on relevant societal, political or scientific discourses, which includes the equivalent presentation of different or contrary perspectives?",
+        question: "The educational medium does not include one-sided statements and presentations of topics or positive self-portrayals of organizations/providers. Its authors recognizably take efforts to present differing/pluralistic views on societal discourses in an equivalent manner. This is, for instance, indicated by a formulation of statements, which avoids absolutizations in phrasing/wording (with the exception of statements that can be regarded as basic facts). This is also true for supposedly incidentally mediated content or statements, which are not directly related to the central theme or topic of the educational medium (for instance, statements made in instructions for tasks, instructions for practical applications, illustrations, annotations, etc.).",
+    },
 	{
-		title: "8",
-		description: "",
-		question: ""
-	},
+        title: "Transparency (Provider/Authors/Motivation)",
+        description: "Transparency means to what extent the origin of the educational medium is clear for the user, so that a (critical) assessment and contextualization of its content is possible. In order to allow for this, the educational medium must include information referring to its origination. This includes, for instance, information about who developed and who disseminates it (authors, distributers, sponsors – that is, all relevant persons and their relation to specific organizations). It also includes information about funding, which was used to develop the educational medium, as well as information about the sources of its content. Statements about goals (educational as well as general), which shall be achieved by offering the educational medium, are also an important information for the teacher: Why is this educational medium offered/distributed (motivation)?",
+        question: "Authors, providers and their organizational or institutional affiliation(s) are explicitly named. Sources of financing are disclosed. Relations of persons and organizations involved in the making and distribution of the educational medium (for example if several providers or organizations are participating) are traceable for the user. In addition, goals and motivation for offering the educational medium are made clear (i.e., reasons why this educational medium is provided).",
+    },
+    {
+        title: "Promotional Elements",
+        description: "The question to be asked here is to what extent the educational medium includes elements, which have a promotional character. This has to be critically assessed since advertising is forbidden or regulated by many school administrations or is at least subject to provisions (depending on the country where the medium is used). Promotional elements in the context of educational media may be (amongst others): logos, product images, references to trademarks, unless they are a themselves subject of the lesson/are treated as a (media-)educational topic.",
+        question: "The educational-medium does not include any of the elements mentioned above. At the most, the name of the author (source) or the logo of the provider of the educational medium may be included – but the latter should not be presented in a visually dominant way.",
+    },
+    {
+        title: "Heterogeneity/Gender",
+        description: "Educational media directly or indirectly include representations/depictions of social and societal environments (e.g., via visual representations, pictures, figures, or also as textual elements). By “representing/depicting” those environments, they are “created” in the learners’ imagination and influence their comprehension of the topic. In a pluralistic, democratic society it is important to avoid one-sided attributions/determinations with regard to societal or ethnical groups or minorities and also with regard to gender or religion. In addition, it is crucial that cultural diversity, which also refers to the learners, is represented in educational media as well.",
+        question: "Illustrations, photos, textual descriptions, which are related to societal groups, do not depict these groups in a one-sided, reducing manner (for instance, by assigning specific activities, opinions, behaviors in a simplifying way to these groups). With regard to the category “gender” it is important that a balanced and equal representation of male and female persons is given, again avoiding biased attributions or maybe breaking them consciously. The depiction of different societal groups/ethnicities follows the same pattern, also in order to comply with the learners’ heterogeneity and to offer appropriate opportunities for identification.",
+    },
+    {
+        title: "Activity Orientation",
+        description: "The concept of „Activity Orientation” aims at an active acquisition of knowledge and competencies by the learners. The concept belongs to a wider education-theoretical framework, which acknowledges the educational objectives of self-determination and participation (Klafki) as overarching normative goals of teaching. Activity-oriented teaching is among others characterized by the fact that the learners become pro-active and produce their own working and thinking results. This can be achieved by means of individualized assignments, but many forms of group-based and discovery-oriented learning activities (cooperation, collaboration) are also suitable. Thus „Activity Orientation“ also implies personal responsibility and thereby the opportunity resp. necessity to influence and organize the process of learning by one’s own decisions.",
+        question: "The educational medium encourages and enables learners to organize their own learning process resp. the use of their knowledge, skills and competencies actively. This can be seen from genuine individual or group-based decisions about learning paths or the use of knowledge, skills and competencies, which require the opportunity to choose on the side of the learners."
+    },
+    {
+        title: "Reference to the Learners’ Background / Social Milieu",
+        description: "This item deals with the question how strongly the educational medium is related to the learners’ background/social milieu. This may be the case when it deals with central and authentic issues, which are of high relevance to the learners from a societal, political, individual or group-specific perspective (classmates, peer-group). This may include that the educational medium deliberately addresses the emotional aspect of this background.",
+        question: "The educational medium does not only show general references to the learners’ background, but also concrete ones, including for example authentic elements/materials/statements from contemporary political and/or societal events, which have an (emotional) closeness to the learners (e.g., from magazines, websites, concrete events, with references to topics like identity development, way of living, leisure, workplace and career, etc.)."
+    },
+    {
+        title: "Reflection/Ability to Judge",
+        description: "Overarching normative educational objectives like maturity, self-determination, participation and solidarity (Klafki) require that learners are addressed as responsible and reasoning human beings, both with regard to subject-related issues and to their closer and wider environment. This also implies a level of self-reflection, i.e., that learners make themselves, their situation, the situation of their group, their political, social and societal position a subject of their critical thinking (metacognition, reflection).",
+        question: "The educational medium requires and encourages the forming of a reasonable opinion resp. the argumentative statement of this opinion. The learners are, for instance, explicitly prompted to make a decision as answer to a specific question, based on their subject-related knowledge and their information at hand. This may even exceed the scope of a specific school-subject, as subject-related topics are embedded in their societal, political or social references and are addressed as such."
+    },
+    {
+        title: "Multiperspectivity/Controversy",
+        description: "Oftentimes educational media refer directly or collaterally to topics that are being discussed under different perspectives or are even discussed controversially in society and related academic disciplines. For pedagogically responsible education it is of central concern that learners are not imposed by pre-decided and one-sided content. Instead, the learners should be presented facts and different/opposing arguments to guide and empower them to their own formation of opinion (within the framework of an adequate reduction of complexity and elementarization provided by the authors of the educational medium). In this sense, educational media are challenged to not only avoid a one-sided, reductional presentation of topics/subjects, but also present their content in a sensitive way, giving plural and sometimes even controversial views on topics/subjects, reflecting the way they are prevalent in society/the academic field.",
+        question: "Topics/Subjects mediated by the educational medium, regardless if they are central or arbitrary, make it clear in the way they are bein presented to the learners, that different positions, opinions, perspectives or arguments exist to judge and decide upon them. Not only are one-sided statements, valuations or rhetoric avoided, that create the impression that alternative thinking and judgement is non-existent, but instead the learners are sensibilized for existing different and controversial views and perspectives on the subject. The way topics and content is presented (for example by directly pointing to societal and academic dissent), as well as the language used to mediate and communicate to the learners create an openness for the learners to form their own opinion and identify alternative/competing perspectives. "
+    },
+    {
+        title: "Plurality in Methods of Learning and Teaching",
+        description: "Methods are „techniques of learning and working, aiming at an autonomous and appropriate perceiving, discovering, experimenting, processing, constructing, shaping, presenting, communicating, and monitoring” (Wiater 2011). Klippert differentiates methods for information acquisition (reading, consulting, questioning, etc.), for information processing and preparation (structuring, visualizing, organizing, etc.), methods for work planning, time management and learning processes, and methods, which foster the reflection about the individual learning procedure (Klippert 2006). Specific methods may be consciously used in educational media, in order to support the intended learning processes and activities. They may also be stressed as an own topic, their meaning can be explained, and they can be deliberately trained to increase their effectiveness (fostering of methodological competencies). Methods are never ends in themselves, but they have a distinct function for achieving the overarching objectives of the learning process (including general and generic development goals of the learners).",
+        question: "The educational medium uses (different) learning and teaching methods in order to support the solution of specific assignments or particular learning/teaching sequences. Thereby the methods aim at the learners’ activities. The goal is not to use as many different methods as possible (end in itself), but preferably those, which didactically support the aspired goals, skills and competencies. It is useful if the purpose or the goals of the methods employed are explicitly named and are made transparent with regard to these goals."
+    },
+    {
+        title: "Multimedia/Multimodality",
+        description: "Media can be impressive means for the illustration of facts, the didactical processing and comprehensible presentation of information, and the connection to the learners’ background and environment. Educational media can use media to address learners in different ways to provide access to their educational content in alignment with their learning goals. This can be particular effective when educational media combine different “channels” or forms of media to address multiple sensory channels of the learners at the same time (multimodality) or by offering choices as to which media the learners might use for specific elements of the learning process.",
+        question: "Significant content of the learning/teaching process, the acquisition of which is aimed at by the educational medium, is conveyed by means of media. The educational medium uses different media-“modalities” (for instance audio, audio-visual, annotated or symbolic illustration/video, interactive web-based elements, etc.) and combines them in a meaningful way to foster learning processes on the side of the learners. This may include allowing for choices between different media to use by the learners depending on their own preference."
+    },
+	    {
+        title: "Media Literacy",
+        description: "Media are an integral part of the learners’ cultural and social environment; they are important carriers of the information and knowledge society we live in. Therefor they are both a necessary field of learning and a didactical means to support teaching and learning processes (mediating function). It is important to train, to foster the competent use of media as well as the critical reflection about media as a means of communication and content presentation. In this sense, media literacy (media competence) can be interpreted as capability (skill) and readiness to act in media contexts, to communicate about them, to choose, to create and use medial content and to reflect about media and their impact critically.",
+        question: "Learners are not only passive recipients of medial content, but actively and reflectively engage with this content. They work, learn and progress through learning sequences by means of it; where applicable, they even create medial content by their own or are required to assess the medial presentation in a critical and reflective way (fostering of media competency)."
+    },
+    {
+        title: "(Internal) Differentiation",
+        description: "A particular challenge for the arrangement of teaching is the adaptation to a heterogeneous group of learners. Educational media can make a significant contribution by offering, so to speak, “variations” of themselves which allow for a “parallelization” of the learning process. This can, for instance, be achieved by provisioning different fields of application and educational objectives (also with different levels of difficulty), matched working steps and various assignments in the educational medium. It is important though to bring the different results of the parallel learning sequences together in the end.",
+        question: "The educational medium offers variations, which can be used at the same time by different learners. This exceeds simple working groups, who merely pursue the same targets with regard to different objects, and includes for example also different educational objectives, different levels of difficulty, interdependent work steps, etc. In doing so, the safekeeping of the binding results for all learners is not neglected."
+    },
 	{
-		title: "9",
-		description: "",
-		question: ""
-	},
+        title: "Acessibility / Inclusion",
+        description: "Educational media can significantly contribute to the successful design of inclusive learning scenarios by providing barrier-free access for students with impairments (particularly for students with visual, auditory, or learning impairments). For individuals with auditory or visual impairments, for example, it is important to adhere to the 'dual sensory principle,' meaning that an element or content of the educational material is always conveyed through two channels (auditory and visual). Additionally, features such as subtitles in videos, supplementary texts describing the content of a graphic or image, the integration of sign language, options for digital voice output via screen readers, or the usability of magnification software, audio descriptions, etc., can facilitate the accessibility of the educational materials for the aforementioned group of individuals. For people with learning difficulties, it is advisable to integrate texts in easy-to-read language into the educational materials.",
+        question: "The educational medium consistently incorporates elements and enhancements throughout all of its components, enabling barrier-free access for at least one of the mentioned target groups."
+    },
+    {
+        title: "Transfer and Application Orientation",
+        description: "Educational Media can encourage or aim at various cognitive processes. These can be roughly described by the following action verbs (ascending order stands for the complexity of the action): remember, understand, apply, analyze, evaluate, create. Competence-oriented teaching and learning will usually aim to foster, besides the elementary cognitive processes of remembering and understanding, 'higher' cognitive processes, according to the learning and competence objectives. Therefore educational media can deliberately integrate appropriate cognitive processes in the form of questions, assignments, or conceptions.",
+        question: "It is possible to identify the particularly stimulated/intended cognitive processes in separate parts/sequences of the educational medium; perhaps they are even designated. Additionally, the educational medium includes questions or assignments, which shall encourage that the learners apply their knowledge to other learning objects (transfer), that they analyze facts independently, make their own assessments on the basis of their knowledge and acquired subject-related skills, or even autonomously build up new knowledge or skills for so far unknown fields of application, in order to solve subject-related problems."
+    },
+    {
+        title: "Process Orientation (Accumulation)",
+        description: "Educational media often consist of several consecutive learning sequences, which lead step-by-step towards a certain educational objective or to different sub-goals within an overall teaching and learning context. This item deals with the question to what extent the singular learning sequences show a subject-related and didactically reasonable coherence. Besides, it is evident that a cumulative, successive development of knowledge, skills and competencies is most promising. Linking to the learners’ prior knowledge (so to speak as a starting point) can also play an important role in this context.",
+        question: "It is possible to identify the singular learning sequences and their interconnectedness within the educational medium. A step-by-step approach is apparent with regard to educational objectives, aspired skills and competencies, and can be pursued by means of this educational medium. The educational medium is potentially conceptualized in such a way that it explains and elucidates the meaning of its separate steps and their connections by itself."
+    },
+    {
+        title: "Elements Supporting the Learning Process (Scaffolding)",
+        description: "This item deals with the question to what extent the educational medium includes elements, which may explain to the users – especially the learners – how it can/ should be used for effective learning. This can be done via explanatory hints and references (e.g., preliminary or summarizing remarks, comments, text modules, marginalia). It is important that these elements refer to the learners and that they support/foster/guide the learning process and the learning activities.",
+        question: "Elements, which support the learning path, are not only implemented occasionally, but are recognizably and systematically integrated at the key sections of the educational medium and provide a 'framing' function. Such elements may be: preliminary and summarizing remarks, comments with regard to content or learning processes of the educational medium (these may, so to speak, metacognitively refer directly to the learners."
+    },
+    {
+        title: "Language",
+        description: "In order to make educational media suitable for a wide range of learners, it is advantageous (also, but not only for lower achieving students) to use a clear and simple language in all of its parts (also in assignments). This does not apply to technical terms and foreign words, which are necessary for subject-specific concepts. Furthermore, text passages should be 'coherent,' which means that the sections are logically interconnected (stream of speech without interruptions).",
+        question: "The educational medium does not use unnecessarily long and complicated sentences. Assignments are also phrased directly and clearly, and several tasks are not intermingled within a single assignment. Technical terms and foreign words are used in a reasonable way, which is required by the subject, and are explained, if necessary. There are no linguistic or logical breaks between single sentences or sections."
+    },
 	{
-		title: "10",
-		description: "",
-		question: ""
-	},
-	{
-		title: "11",
-		description: "",
-		question: ""
-	},
-	{
-		title: "12",
-		description: "",
-		question: ""
-	},
-	{
-		title: "13",
-		description: "",
-		question: ""
-	},
-	{
-		title: "14",
-		description: "",
-		question: ""
-	},
-	{
-		title: "15",
-		description: "",
-		question: ""
-	},
-	{
-		title: "16",
-		description: "",
-		question: ""
-	},
-	{
-		title: "17",
-		description: "",
-		question: ""
-	},
-	{
-		title: "18",
-		description: "",
-		question: ""
-	},
-	{
-		title: "19",
-		description: "",
-		question: ""
-	},
-	{
-		title: "20",
-		description: "",
-		question: ""
-	},
-	{
-		title: "21",
-		description: "",
-		question: ""
-	},
-	{
-		title: "22",
-		description: "",
-		question: ""
-	},
-	{
-		title: "23",
-		description: "",
-		question: ""
-	},
-	{
-		title: "24",
-		description: "",
-		question: ""
-	},
-	{
-		title: "25",
-		description: "",
-		question: ""
-	},
-	{
-		title: "26",
-		description: "",
-		question: ""
-	},
-	{
-		title: "27",
-		description: "",
-		question: ""
-	},
-	{
-		title: "28",
-		description: "",
-		question: ""
-	},
-	{
-		title: "29",
-		description: "",
-		question: ""
-	},
-	{
-		title: "30",
-		description: "",
-		question: ""
-	},
-	{
-		title: "31",
-		description: "",
-		question: ""
-	}
+        title: "Visual Literacy",
+        description: "By means of pictorial representations (e.g., photos, diagrams, tables, charts, animations) educational media can convey, elucidate and explain facts and issues. These pictorial elements should be related logically and didactically to the topic and to the educational objectives of the educational medium. Moreover, pictorial elements are usually embedded within textual elements or are related to them – this relation should be as clear as possible. To foster visual literacy and interpretive capability on the side of the learners, it may be useful to accompany abstracted pictorial representations (like charts, e.g.) with textual elements, which explain the content of the pictorial representations.",
+        question: "The educational medium uses pictorial representations beyond a merely illustrative function. They are connected to the learning topic and the educational objectives and contribute themselves to the understanding, explanation or application of knowledge, skills and competencies, which are important for the learning process initiated by the educational medium. At the same time, they are textually embedded, which may, for instance, be achieved by explaining text passages or captions."
+    },
+    {
+        title: "Additive Communication (Enrichment)",
+        description: "Beyond the merely subject-related presentation, an educational medium can integrate also further elements and thus 'enrich' itself. They may include: references to the learners’ living environment in terms of additional information, anecdotes or humorous passages. These may also be supplements, which complement or deepen the content of the educational medium (e.g., summaries, excursions, mnemotechnic verses, glossaries, definitions).",
+        question: "The educational medium includes beyond a merely subject-related presentation of the learning topic and the educational objectives also additional elements (text/illustrations), which address the learners, for example, with regard to their living environment, or serve as supplement, explanation, reinforcement of the content of the educational medium."
+    },
+    {
+        title: "Sequencing",
+        description: "Assignments, which are included in the educational medium, should be related to each other in a subject-specific and/or didactical way. This item deals with the question, which cognitive activities and processes (e.g., remembering, understanding, applying, analyzing, assessing, creating) shall be initiated by the singular assignments or by parts of them and whether they are interrelated in a reasonable way: for instance, whether they build on one another, lead to one another, or whether they deal with a subject or a competence from different perspectives and deepen it.",
+        question: "The assignments included in the educational medium are sequenced in a comprehensive way from a subject-specific or didactical perspective. They refer to each other/build on one another, and in doing so, not only the same or similar cognitive processes are repeated."
+    },
+    {
+        title: "Activation",
+        description: "This item deals with the question to what extent the educational medium as a whole pursues an issue, which is worked on and solved by the learners during the learning course. Such an issue is normally introduced at the beginning of the educational medium and thus provides the 'setting' for the consequential steps and assignments, which initiates from a learning-psychological point of view an activation of the learners (motivation).",
+        question: "At the beginning of the educational medium, a fundamental issue is articulated, which has to be solved during the learning course. All following learning steps are related to this issue and lead towards a solution of the problem or deepen it."
+    },
+    {
+        title: "Multiple Approaches",
+        description: "Mostly, there is not only one single method, a single subject-specific procedure or point of view to solve a problem or an assignment. Educational media can be sensible to this fact and – if possible – allow for different approaches or even encourage them. This opens heterogeneous learners a scope of various possible strategies and fosters flexibility of different solution approaches.",
+        question: "The educational medium allows for different solution approaches, whilst leaving the learners not completely without guidance or hints for potential strategies. Different approaches or strategies are, for example, sketched and proposed as offers to the learners. These hints can be regarded as an offer to the learners, which outline and recommend certain strategies. Additionally, concrete examples of various ways of solving a problem or of different strategies can support this concept."
+    },
+    {
+        title: "Didactical Concept",
+        description: "For the use of the educational medium – especially by the teachers – it is advantageous when central concepts for the didactical application are mediated, even if the teachers will not use the educational medium one-to-one in their lessons, but want to adapt it to their own requirements. Helpful information includes: target group, (educational) objectives, sub-goals, relating methods, targeted resp. fostered competencies, relation to specific aspects of the subject, etc.",
+        question: "The educational medium includes extensive and reasonable information about its didactical concept. This information exceeds basic information about both thematic references and the target group and additionally provides information about methodological approaches, targeted competencies, or sub-goals. This information explains the intention of the educational medium and thus facilitates its use."
+    },
+    {
+        title: "Framework Conditions",
+        description: "The use of educational media for instruction is subject to certain conditions, which have to be considered. These include for example: time need, technical or spatial requirements, specific group size, availability of particular materials or media, possibility to play back certain media-formats, internet connection, a specific number of PCs or mobile devices, etc. It is helpful for the teacher if these preconditions are a priori concisely specified.",
+        question: "All preconditions for use of the educational medium are concisely specified."
+    }
 ]
 
 function changeSurveyText(language) {
