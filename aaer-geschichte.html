@@ -92,18 +92,20 @@
 
 					<div class="list-group list-group-flush">
 
-						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Analyse und Evaluation</span>
+						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5" data-lang="De">Analyse und Evaluation</span>
+						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5" data-lang="En">Analysis and Evaluation</span>
 
 						<button id="button_display_start" class="list-group-item list-group-item-action"
-							onclick="displayController(DISPLAY.START)">Lehr-Lernmittel evaluieren</button>
+							onclick="displayController(DISPLAY.START)"><span data-lang="De">Lehr-Lernmittel evaluieren</span><span data-lang="En">Evaluate educational ressource</span></button>
 
 						<button id="button_display_anlegen" class="list-group-item list-group-item-action"
-							onclick="displayController(DISPLAY.ANLEGEN)">Gruppenevaluation anlegen</button>
+							onclick="displayController(DISPLAY.ANLEGEN)"><span data-lang="De">Gruppenevaluation anlegen</span><span data-lang="En">Create evaluation for group</span></button>
 
 						<button id="button_display_auswerten" class="list-group-item list-group-item-action"
-							onclick="displayController(DISPLAY.AUSWERTEN)">Evaluationsergebnisse laden</button>
+							onclick="displayController(DISPLAY.AUSWERTEN)"><span data-lang="De">Evaluationsergebnisse laden</span><span data-lang="En">Load results</span></button>
 
-						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5">Auswertung</span>
+						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5" data-lang="De">Auswertung</span>
+						<span class="dashboard-title font-weight-bold mb-1 pl-3 mt-5" data-lang="En">Report</span>
 
 						<button id="button_display_overallView" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.OVERALL)">
@@ -113,9 +115,10 @@
 								xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z" />
-							</svg>Übersicht
+							</svg><span data-lang="De">Übersicht</span><span data-lang="En">Overview</span>
 
 						</button>
+
 
 						<button id="button_display_chart1" class="list-group-item list-group-item-action"
 							onclick="displayController(DISPLAY.CHART1)">
@@ -127,7 +130,7 @@
 								<path fill-rule="evenodd"
 									d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
 
-							</svg>Curriculum & Bildungsstandards
+							</svg><span data-lang="De">Curriculum & Bildungsstandards</span><span data-lang="En">Curriculum & educational standards</span>
 
 						</button>
 
@@ -141,7 +144,7 @@
 									d="M12.532 5H2v4h10.532l1.666-2-1.666-2zM2 4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H2z" />
 								<path d="M7 10h2v6H7v-6z" />
 
-							</svg>Diskursive Positionierung
+							</svg><span data-lang="De">Diskursive Positionierung</span><span data-lang="En">Discursive Positioning</span>
 
 						</button>
 
@@ -155,7 +158,7 @@
 								<path fill-rule="evenodd"
 									d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm1 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0V5h2.5a.5.5 0 0 0 0-1h-3zm11 8a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-1 0V11h-2.5a.5.5 0 0 0 0 1h3z" />
 
-							</svg>Makrodidaktische Fundierung
+							</svg><span data-lang="De">Makrodidaktische Fundierung</span><span data-lang="En">Macrodidactical Foundation</span>
 
 						</button>
 
@@ -171,7 +174,7 @@
 								<path fill-rule="evenodd"
 									d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z" />
 
-							</svg>Mikrodidaktische Fundierung
+							</svg><span data-lang="De">Mikrodidaktische Fundierung</span><span data-lang="En">Microdidactical Foundation</span>
 
 						</button>
 
@@ -187,7 +190,7 @@
 								<path fill-rule="evenodd"
 									d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
 
-							</svg>Kognitive Strukturierung
+							</svg><span data-lang="De">Kognitive Strukturierung</span><span data-lang="En">Cognitive Stucturing</span>
 
 						</button>
 
@@ -201,7 +204,7 @@
 								<path fill-rule="evenodd"
 									d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
 
-							</svg>Bild- und Textkomposition
+							</svg><span data-lang="De">Bild- und Textkomposition</span><span data-lang="En">Image- and Textcomposition</span>
 
 						</button>
 
@@ -215,7 +218,7 @@
 								<path fill-rule="evenodd"
 									d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
 
-							</svg>Aufgabendesign
+							</svg><span data-lang="De">Aufgabendesign</span><span data-lang="En">Task Design</span>
 
 						</button>
 
@@ -229,11 +232,12 @@
 								<path fill-rule="evenodd"
 									d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
 
-							</svg>Anwendungstransparenz
+							</svg><span data-lang="De">Anwendungstransparenz</span><span data-lang="En">Application Transparency</span>
 
 						</button>
 
-						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3">Weiteres</span>
+						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3" data-lang="De">Weiteres</span>
+						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3" data-lang="En">Other</span>
 
 						<!--<button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.PDF)">-->
 						<button id="button_display_PDF" data-toggle="modal" data-target="#DruckansichtModal"
@@ -244,8 +248,8 @@
 								xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd"
 									d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
-							</svg>Druckansicht
-							<div class="new p-1 pl-3 pr-3">Neu</div>
+							</svg><span data-lang="De">Druckansicht</span><span data-lang="En">Print View</span>
+							<div class="new p-1 pl-3 pr-3"><span data-lang="De">Neu</span><span data-lang="En">New</span></div>
 
 						</button>
 						<div class="modal fade" id="DruckansichtModal" tabindex="-1" role="dialog"
@@ -258,13 +262,21 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<div class="modal-body">
+									<div class="modal-body" data-lang="De">
 										Wählen Sie <b>Menü</b> um zurück zu gelangen. Mit Rechtsklick am Rand der Seite
 										können Sie nun <b>Drucken...</b> auswählen.
 									</div>
-									<div class="modal-footer">
+									<div class="modal-body" data-lang="En">
+										Choose <b>Menu</b> to return. Right click and choose 
+										<b>print...</b>
+									</div>
+									<div class="modal-footer" data-lang="De">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">Verstanden.</button>
+									</div>
+									<div class="modal-footer" data-lang="En">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Got it.</button>
 									</div>
 								</div>
 							</div>
@@ -284,7 +296,7 @@
 									d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z">
 								</path>
 
-							</svg>Einträge im JSON-Format
+							</svg><span data-lang="De">Einträge im JSON-Format</span><span data-lang="En">Data as JSON-Format</span>
 
 						</button>
 
@@ -299,19 +311,20 @@
 				<div id="page-content-wrapper">
 
 					<nav class="navbar navbar-expand-lg navbar-dashboard">
-
 						<button class="btn btn-primary btn-toggle" id="menu-toggle">
-
 							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layout-sidebar-inset mr-1"
 								fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:-2px">
-
 								<path fill-rule="evenodd"
 									d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
 								<path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z" />
-							</svg> Menü
+							</svg> <span data-lang="De">Menü</span><span data-lang="En">Menu</span>
 						</button>
-						<small class="ml-auto font-weight-bold text-muted mr-1">
+
+						<small class="ml-auto font-weight-bold text-muted mr-1" data-lang="De">
 							Fach: Geschichte
+						</small>
+						<small class="ml-auto font-weight-bold text-muted mr-1"data-lang="En">
+							Subject: History
 						</small>
 
 					</nav>
@@ -383,10 +396,10 @@
 					<!-- Start: WILLKOMMEN -->
 
 					<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 mt-5 text-center" id="display_willkommen">
-
 						<p
 							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">
-							<strong>Analysieren und bewerten Sie ein Bildungsmedium.</strong>
+							<strong data-lang="De">Analysieren und bewerten Sie ein Bildungsmedium.</strong>
+							<strong data-lang="En">Analyse and evaluate an educational ressource.</strong>
 						</p>
 
 						<div class="video-container-wrapper pb-3 pt-3 px-3 mx-auto">
@@ -402,12 +415,19 @@
 						</div>
 
 						<p
-							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-3 pt-lg-3 px-xs-1 px-sm-1 px-md-3 px-lg-3 uebersicht-details mx-3">
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-3 pt-lg-3 px-xs-1 px-sm-1 px-md-3 px-lg-3 uebersicht-details mx-3" data-lang="De">
 							Sie haben die Möglichkeit, <strong>ein Lehr-Lernmittel zu bewerten</strong>, an
 							<strong>einer Gruppenevaluation eines Bildungsmediums teilzunehmen</strong> sowie
 							<strong>bereits vorhandene Bewertungssergebnisse</strong> zu laden. Nutzen Sie dazu das Menü
 							am linken Bildschirmrand.
 						</p>
+						<p
+						class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-3 pt-lg-3 px-xs-1 px-sm-1 px-md-3 px-lg-3 uebersicht-details mx-3" data-lang="En">
+						You have the possibility to <strong>evaluate a educational ressource</strong>, 
+						<strong>participate within a group evaluation</strong> or load
+						<strong>already fully evaluated results</strong>. Therefore you can use the menu at left corner.
+						</p>
+
 
 					</div>
 
@@ -425,32 +445,59 @@
 
 							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 text-center">
 
-								<p class="mb-3 mt-5">
+								<p class="mb-3 mt-5" data-lang="De">
 
 									Analysieren beziehungsweise evaluieren Sie ein Lehr-Lernmittel.
 
 								</p>
 
-								<p class="mt-0 uebersicht-details">
+								<p class="mb-3 mt-5" data-lang="En">
+
+									Analyse respectively evaluate an educational ressource.
+
+								</p>
+
+								<p class="mt-0 uebersicht-details" data-lang="De">
 
 									Sie erhalten im Anschluss einen <strong>12-stelligen Code</strong> mit dem Sie Ihre
 									Bewertung teilen und erneut aufrufen können.
 
 								</p>
 
-								<button class="btn btn-green ml-1 mr-1 mb-3" onclick="startEvaluation()">Lehr-Lernmittel
-									evaluieren</button>
+								<p class="mt-0 uebersicht-details" data-lang="En">
 
-								<p class="mb-3 mt-5">
+									A <strong>12 characters long code</strong> is generated on completion with which you will be abel to share and recall the evaluation result.
+
+								</p>
+
+								<button class="btn btn-green ml-1 mr-1 mb-3" onclick="startEvaluation()">
+									<span data-lang="De">Lehr-Lernmittel evaluieren</span>
+									<span data-lang="En">Evaluate educational ressource</span>
+								</button>
+
+								<p class="mb-3 mt-5" data-lang="De">
 
 									Nehmen Sie an einer Gruppenevaluation teil.
 
 								</p>
 
-								<p class="mt-0 uebersicht-details">
+								<p class="mb-3 mt-5" data-lang="En">
+
+									Participate in a group evaluation.
+
+								</p>
+
+								<p class="mt-0 uebersicht-details" data-lang="De">
 
 									Sie benötigen zur Teilnahme an einer Gruppenevaluation Ihren <strong>10-stelligen
 										Gruppencode</strong>.
+
+								</p>
+
+								<p class="mt-0 uebersicht-details" data-lang="En">
+
+									To participate in a group evaluation the <strong>10 characters long
+										code</strong> is needed that was handed out to you.
 
 								</p>
 
@@ -460,7 +507,7 @@
 										id="group_id" placeholder="10-stelliger-Code" style="width:10.5em;">
 
 									<button class="btn btn-green ml-1 mr-1"
-										onclick="startGroupEvaluation();">teilnehmen</button>
+										onclick="startGroupEvaluation();"><span data-lang="De">teilnehmen</span><span data-lang="En">participate</span></button>
 
 									<br>
 
@@ -493,12 +540,17 @@
 							<div class="bg-white col grey-border mt-xs-3 mt-sm-3 m-md-3 m-lg-3 pt-5 pb-5 px-xs-1 px-sm-3 px-md-3 px-lg-5 text-left"
 								id="survey_anlegen1">
 
-								<p class="mb-3 mt-5 text-center">
+								<p class="mb-3 mt-5 text-center" data-lang="De">
 
 									<strong>Legen Sie hier eine neue Gruppenevaluation an.</strong>
 								</p>
 
-								<p class="mt-0 text-center uebersicht-details">
+								<p class="mb-3 mt-5 text-center" data-lang="En">
+
+									<strong>Create a group evaluation here.</strong>
+								</p>
+
+								<p class="mt-0 text-center uebersicht-details" data-lang="De">
 
 									Geben Sie hier die Basisdaten des Lehr-Lernmittels ein, die für alle
 									Teilnehmer*innen übernommen werden. Sie erhalten nach Abschluss einen
@@ -507,21 +559,31 @@
 
 								</p>
 
+								<p class="mt-0 text-center uebersicht-details" data-lang="En">
+
+									Enter here the base data of the educational ressource, which serves as a blueprint for further participants. 
+									You will receive a <strong>10 characters long code</strong> which may be shared with participants.
+
+								</p>
+
 								<div class="mt-5">
 
-									Wie lautet der Name des Lehr-Lernmittels?
+									<span data-lang="De">Wie lautet der Name des Lehr-Lernmittels?</span>
+									<span data-lang="En">What is the name of the educational ressource?</span>
 
 									<input class="form-control" type="text" id="form-preset-lehrmittel">
 
 									<br>
 
-									Bitte geben Sie den Link zum Lehr-Lernmittel an (optional)?
+									<span data-lang="De">Bitte geben Sie den Link zum Lehr-Lernmittel an. (optional)</span>
+									<span data-lang="En">Please insert a link to the ressource. (optional)</span>
 
 									<input class="form-control" type="text" id="form-preset-link">
 
 									<br>
 
-									Welchem Fach ist das Lehr-Lernmittel zugeordnet?
+									<span data-lang="De">Welchem Fach ist das Lehr-Lernmittel zugeordnet?</span>
+									<span data-lang="En">To which subject is the ressource related?</span>
 
 									<select class="form-control" id="form-preset-fach">
 										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein
@@ -558,7 +620,8 @@
 
 									<br>
 
-									Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?
+									<span data-lang="De">Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?</span>
+									<span data-lang="En">To which type of school is the educational ressource related?</span>
 
 									<br>
 
@@ -607,7 +670,7 @@
 									<div class="text-center">
 
 										<button class="btn btn-green ml-1 mr-1"
-											onclick="createEvaluationPresetsForGroup();">Gruppenevaluation anlegen</button>
+											onclick="createEvaluationPresetsForGroup();"><span data-lang="De">Gruppenevaluation anlegen</span><span data-lang="En">Create group evaluation</span></button>
 
 									</div>
 
@@ -657,17 +720,22 @@
 
 													<div class="bg-white mt-xs-3 mt-sm-3 m-md-5 m-lg-5 pt-5 pb-5 pl-5 pr-5 text-center"
 														style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-														<p class="mt-5">Es wurde erfolgreich eine Gruppenevaluation
+														<p class="mt-5" data-lang="De">Es wurde erfolgreich eine Gruppenevaluation
 															angelegt. Bitte kopieren Sie den angegebenen Code und geben
 															diesen an die weiteren Teilnehmer*innen weiter. Sie können
 															direkt fortfahren und Ihre eigenen Bewertung vornehmen, wenn
 															Sie möchten.</p>
 
+														<p class="mt-5" data-lang="En">A group evaluation was succesfully created.
+															You may share the given code with participants. You can proceed and fill out 
+														an evaluation.</p>
+
 														<div class="mt-3">
 															<div id="anlegen_next_message" style="color: green;"></div>
-															<button class="btn btn-green ml-1 mr-1"
-																onclick="startGroupEvaluation();">Eigene Bewertung
-																vornehmen</button>
+															<button class="btn btn-green ml-1 mr-1" onclick="startGroupEvaluation();">
+																<span data-lang="De">Eigene Bewertung vornehmen</span>
+																<span data-lang="En">Proceed with own evaluation</span>
+															</button>
 														</div>
 
 													</div>
@@ -715,15 +783,18 @@
 
 								<!-- Canvas _AUSWERTEN Start -->
 
-								<p class="mt-5">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong>
+								<p class="mt-5" data-lang="De">Laden Sie die Ergebnisse einer <strong>Gruppenevaluation</strong>
 									mittels Ihres Gruppencodes (10-stellig).</p>
+
+								<p class="mt-5" data-lang="En">Load results of a <strong>group evaluation</strong>
+									with your 10 characters long code.</p>
 
 								<div class="mt-3">
 
 									<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text"
 										id="loadEvaluationGroup" placeholder="10-stelliger-Code" style="width:10.5em;">
-									<button class="btn btn-green ml-1 mr-1" onclick="getEvaluationGroup();">Gruppenergebnis
-										laden</button>
+									<button class="btn btn-green ml-1 mr-1" onclick="getEvaluationGroup();"><span data-lang="De">Gruppenergebnis
+										laden</span><span data-lang="En">Load group result</span></button>
 
 									<div id="getEvaluationGroup_error" style="color: red;"></div>
 
@@ -731,15 +802,17 @@
 
 								<div class="mt-5">
 
-									<p>Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres
+									<p data-lang="De">Laden Sie die Ergebnisse einer <strong>Einzelevaluation</strong> mittels Ihres
 										Einzelcodes (12-stellig).</p>
+
+									<p data-lang="En">Load result of a <strong>single evaluation</strong> with your 12 characters long code.</p>
 
 									<div class="mt-3">
 
 										<input class="pt-2 pb-1 pl-3 pr-3 mb-3 ml-1 mr-1 text-center" type="text"
 											id="loadEvaluation" placeholder="12-stelliger-Code" style="width:10.5em;">
 										<button class="btn btn-green ml-1 mr-1"
-											onclick="getEvaluation();">Einzelergebnis laden</button>
+											onclick="getEvaluation();"><span data-lang="De">Einzelergebnis laden</span><span data-lang="En">Load single result</span></button>
 
 										<br>
 
@@ -773,11 +846,17 @@
 					<div class="p-md-5 p-lg-5 m-md-3 m-lg-5 mt-5 text-center" id="display_thanks">
 
 						<p
-							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3">
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="De">
 							Ihre Daten in <strong>visualisierter Form finden Sie links unter "Auswertung"</strong></p>
-						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3">Wir hoffen, Ihre Bewertungen
+						<p
+							class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 m-xs-1 m-sm-3 px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="En">
+							The data in <strong>visualised form can be looked up under "Report"</strong></p>
+						
+						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="De">Wir hoffen, Ihre Bewertungen
 							helfen Ihnen bei der Entscheidung über die <strong>Nutzung des Bildungsmediums</strong> in
 							Unterricht und Schule.</p>
+						<p class="resultate_info lead-text px-xs-1 px-sm-1 px-md-3 px-lg-3" data-lang="En">We hope your assessment will help to decide which <strong>educational ressource</strong> to use
+							for education.</p>
 
 					</div>
 
@@ -816,7 +895,7 @@
 														<!-- ids text chartübersicht -->
 
 														<p id="lernmittel" class="lehr-lernmittel-name mb-0">
-															Name des Lehr-Lernmittels
+															<span data-lang="De">Name des Lehr-Lernmittels</span><span data-lang="En">Name of educational ressource</span>
 														</p>
 
 														<!-- text-container über gesamtchart -->
@@ -828,7 +907,8 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Gruppencode</p>
+																		<span data-lang="De">Gruppencode</span><span data-lang="En">Groupcode</span></p>
+																	
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -846,7 +926,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Anzahl Datensätze</p>
+																		<span data-lang="De">Anzahl Datensätze</span><span data-lang="En">Number of Evaluations</span></p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -864,7 +944,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Ihr Abrufcode</p>
+																		<span data-lang="De">Ihr Abrufcode</span><span data-lang="En">Your code</span></p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -882,7 +962,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Verlinkung</p>
+																		<span data-lang="De">Verlinkung</span><span data-lang="En">Link</span></p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -900,7 +980,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		Schulart</p>
+																		<span data-lang="De">Schulart</span><span data-lang="En">type of school</span></p>
 
 																	<div style="background-color: #f1f3fa; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -915,7 +995,7 @@
 																<div id="div-fach"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Fach
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading"><span data-lang="De">Fach</span><span data-lang="En">Subject</span>
 																	</p>
 
 																	<div style="background-color: #f1f3fa; min-height:76px;"
@@ -931,7 +1011,7 @@
 																<div id="div-evaluationsdatum"
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
 
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading">Evaluationsdatum
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading"><span data-lang="De">Evaluationsdatum</span><span data-lang="En">Date of Evaluation</span>
 																	</p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-right-radius: 7px; border-top-right-radius: 7px; min-height:76px;"
@@ -948,7 +1028,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
-																		Meinung</p>
+																		<span data-lang="De">Meinung</span><span data-lang="En">Opinion</span></p>
 
 																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -964,7 +1044,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
-																		Kritik</p>
+																		<span data-lang="De">Kritik</span><span data-lang="En">Critics</span></p>
 
 																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -980,7 +1060,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3 pl-0 pr-0">
 
 																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
-																		Anmerkungen</p>
+																		<span data-lang="De">Anmerkungen</span><span data-lang="En">Comments</span></p>
 
 																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -1019,7 +1099,7 @@
 
 													<div class="col pl-0">
 
-														<p style="font-size:80% !important;">
+														<span data-lang="De">
 															Ihre Bewertungen werden in dieser Darstellung in
 															absteigender Reihenfolge - <strong>der Wertigkeit
 																nach</strong> - visualisiert. Während <em>0</em> für
@@ -1027,8 +1107,14 @@
 																trifft nicht zu</em>, <em>2 = trifft weniger zu</em>,
 															<em>3 = trifft mehr zu</em> und <em>4 = trifft voll zu</em>.
 															Diese Indexierung gilt für alle Auswertungen.
-
-														</p>
+														</span><span data-lang="En">
+															Values will be displayed in descending order with following meanings:  
+															<em>0 = not assessable</em> 
+															<em>1 = not correct at all</em>, 
+															<em>2 = rather not correct</em>,
+															<em>3 = rather correct</em> and <em>4 - fully correct</em>.
+															This indexing holds for all evaluations.
+														</span>
 
 													</div>
 
@@ -1285,8 +1371,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Nutzen Sie die <strong>Gruppenevaluation</strong> um gemeinsame Evaluationen in
-										Ihrem Kollegium durchzuführen.</p>
+										<span data-lang="De">Nutzen Sie die <strong>Gruppenevaluation</strong> um gemeinsame Evaluationen in
+											Ihrem Kollegium durchzuführen.</span><span data-lang="En">Make use of <strong>group evaluation</strong> to ...</span></p>
 
 								</div>
 
@@ -1310,8 +1396,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>mediendidaktisch fundiertes Online-Instrument</strong> zur Analyse
-										und Evaluation von Bildungsmedien in der Schul- und Unterrichtspraxis.</p>
+										<span data-lang="De">Ein <strong>mediendidaktisch fundiertes Online-Instrument</strong> zur Analyse
+											und Evaluation von Bildungsmedien in der Schul- und Unterrichtspraxis.</span><span data-lang="En">A online tool based on media didactics to analyse and evaluate educational ressources.</span></p>
 
 								</div>
 
@@ -1335,9 +1421,9 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>Reflexionsintrument</strong> und eine
-										<strong>Entscheidungshilfe</strong> zur pädagogisch-didaktischen Auswahl von
-										Lehr- und Lernmitteln.
+										<span data-lang="De">Ein <strong>Reflexionsintrument</strong> und eine
+											<strong>Entscheidungshilfe</strong> zur pädagogisch-didaktischen Auswahl von
+											Lehr- und Lernmitteln.</span><span data-lang="En">A ...</span>
 									</p>
 
 								</div>
@@ -1362,8 +1448,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>Leitfaden für AutorInnen und ProduzentInnen</strong> von
-										Bildungsmedien / Open Educational Resources (OER).</p>
+										<span data-lang="De">Ein <strong>Leitfaden für AutorInnen und ProduzentInnen</strong> von
+											Bildungsmedien / Open Educational Resources (OER).</span><span data-lang="En">A ...</span></p>
 
 								</div>
 
@@ -1387,8 +1473,8 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Ein <strong>Bewertungs- und Prüfinstrument</strong> für Repositorien von Lehr-
-										und Lernmitteln.</p>
+										<span data-lang="De">Ein <strong>Bewertungs- und Prüfinstrument</strong> für Repositorien von Lehr-
+											und Lernmitteln.</span><span data-lang="En">A ...</span></p>
 
 								</div>
 
@@ -1412,9 +1498,9 @@
 
 									<p
 										class="font-weight-normal lead-text pt-xs-1 pt-sm-1 pt-md-5 pt-lg-5 text-white carousel-text text-center">
-										Eine <strong>Entscheidungshilfe</strong> sowie ein <strong>Instrument zur
+										<span data-lang="De">Eine <strong>Entscheidungshilfe</strong> sowie ein <strong>Instrument zur
 											Herstellung von Transparenz</strong> in Hinblick auf die Auswahl von Lehr-
-										und Lernmitteln für Fachgremien in Schulen.</p>
+										und Lernmitteln für Fachgremien in Schulen.</span><span data-lang="En"> A ...</span></p>
 
 								</div>
 
