@@ -183,6 +183,8 @@ function clickedGerman() {
 	changePlaceholderTextAAER('De')
 	changeSurveyText('De')
 
+	changePlaceholderTextAAERHistory('De')
+
 	dropdown = document.getElementById('dropdown-languages_de')
 	dropdown.style.display = 'none'
 
@@ -261,6 +263,37 @@ function changePlaceholderTextAAER(language) {
 			document.getElementById('loadPredefined').placeholder = "10 characters long code"
 			document.getElementById('loadResultSet').placeholder = "10 characters long code"
 			document.getElementById('loadResult').placeholder = "12 characters long code"
+			Array.prototype.forEach.call(subjects.options, function(option, index) {
+				option.innerHTML = subjects_en[index];
+			})
+			Array.prototype.forEach.call(schools.options, function(option, index) {
+				option.innerHTML = schools_en[index];
+			})
+		}
+	}
+}
+
+function changePlaceholderTextAAERHistory(language) {
+	subjects = document.getElementById('form-preset-fach');
+	schools = document.getElementById('form-preset-schulart');
+	if (subjects != null) {
+		if (language == "De") {
+			document.getElementById('group_id').placeholder = "10-stelliger Code"
+			document.getElementById('loadEvaluationGroup').placeholder = "10-stelliger Code"
+			document.getElementById('loadEvaluation').placeholder = "12-stelliger Code"
+			Array.prototype.forEach.call(subjects.options, function(option, index) {
+				option.innerHTML = subjects_de[index];
+				option.innerHTML = subjects_de[index];
+			})
+			Array.prototype.forEach.call(schools.options, function(option, index) {
+				option.innerHTML = schools_de[index];
+			})
+	
+			
+		} else {
+			document.getElementById('group_id').placeholder = "10 characters long code"
+			document.getElementById('loadEvaluationGroup').placeholder = "10 characters long code"
+			document.getElementById('loadEvaluation').placeholder = "12 characters long code"
 			Array.prototype.forEach.call(subjects.options, function(option, index) {
 				option.innerHTML = subjects_en[index];
 			})
@@ -607,6 +640,8 @@ function changeEnInline() {
 function clickedEnglish() {
 	changePlaceholderTextAAER('En')
 	changeSurveyText('En')
+
+	changePlaceholderTextAAERHistory('En')
 
 	dropdown = document.getElementById('dropdown-languages_en')
 	dropdown.style.display = 'none'
