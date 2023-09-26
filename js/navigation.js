@@ -140,7 +140,7 @@ for (var i = 0; i < specialChars.length; i++) {
 // Hinzufügen der Klasse active für das aktuelle Element im DOM
 $(document).ready(function() {
     $('a[href$="' + active + '"]').addClass('active');
-    console.log("Hey Nerd! Vince und Norman wünschen dir viel Spaß bei der Nutzung des AAER.");
+    console.log("Hey Nerd! Vince, Norman und Israa wünschen dir viel Spaß bei der Nutzung des AAER.");
 });
 
 // Ende: Hervorhebung des Active-Elements in der Navigation
