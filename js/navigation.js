@@ -431,30 +431,25 @@ let surveyTextDe = [
 
 let surveyTextEn = [
 	{
-		title: "1",
-		description: "1",
-		question: "1"
-	},
-	{
-		title: "2",
-		description: "2",
-		question: "2"
-	},
-	{
-		title: "3",
-		description: "3",
-		question: "3"
-	},
-	{
-		title: "4",
-		description: "4",
-		question: "4"
-	},
-	{
-		title: "5",
-		description: "5",
-		question: "5"
-	},
+        title: "Name of the Resource",
+        description: "The name will be displayed later in your personally generated evaluation.",
+        question: "Please enter the name of the teaching learning resource you would like to analyze/evaluate using the AAER."
+    },
+    {
+        title: "Link (optional)",
+        description: "At this point, you can provide the link to the teaching learning resource to be analyzed/evaluated. It will be displayed in the final evaluation summary generated for you.",
+        question: "Please provide the link to your teaching learning resource (optional)."
+    },
+    {
+        title: "",
+        description: "",
+        question: "Please let us know for which subject you are using the AAER (optional)."
+    },
+    {
+        title: "",
+        description: "",
+        question: "Please let us know for which type of school you are using the AAER (optional)."
+    },
 	{
         title: "References to the Curriculum",
         description: "Contemporary curricula contain subject-, grade- and age-group-specific educational objectives, subject areas, skills/competencies, didactical principles or suggestions of learning and teaching methods. Though educational media need not necessarily reach a narrow equivalence, an alignment of the mid- and long-term learning activities to the curriculum is important. Therefore it is helpful, if the educational medium makes at least shorthand references, so that an easier attribution by the teachers and maybe also by the learners is possible.",
