@@ -122,6 +122,10 @@
     color: #747373;
  }
 
+ #menu-toggle {
+  margin-left: 0.5em;
+ }
+
 .new {
   background:#ff962f !important;
   border-radius:2px !important;
