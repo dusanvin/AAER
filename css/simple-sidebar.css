@@ -122,6 +122,10 @@
     color: #747373;
  }
 
+ #menu-toggle {
+  margin-left: 0.5em;
+ }
+
 .new {
   background:#ff962f !important;
   border-radius:2px !important;
@@ -142,7 +146,7 @@
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
-  width:450px;
+  width:490px;
 }
 
 #sidebar-wrapper .sidebar-heading {
