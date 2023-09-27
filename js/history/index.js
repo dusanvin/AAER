@@ -80,6 +80,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
               
             //dimension 1 mit (0:2) Items
             {
+                dimension: aaer_geschichte[0].items[0].dimension, 
                 title: aaer_geschichte[0].items[0].name, 
                 description: aaer_geschichte[0].items[0].description,
                 elements: [
@@ -90,6 +91,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         description: '*' + aaer_geschichte[0].items[0].indicators,
                         descriptionLocation: 'underInput',
                         isRequired: true,
+                        dimension: aaer_geschichte[0].items[0].dimension,
                         choices: antworten
                     }
                 ]

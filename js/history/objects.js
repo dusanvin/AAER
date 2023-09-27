@@ -4,6 +4,7 @@ let aaer_geschichte = [
 		dimension: "I. Anlehnung an Curriculum und fachspezifische Bildungsstandards",
 		items: [
 			{
+				dimension: "Testdimension",
 				name: "Kongruenz mit den fachspezifischen Zielen des Lehrplans",
 				description: "„Gute“ Geschichtslehrmittel fördern bei den Schüler*innen die Entwicklung eines reflektierten Geschichtsbewusstseins (auch Historisches Bewusstsein). Sich Geschichte bewusst zu sein, bedeutet das Zusammenspiel von Vergangenheitsdeutung, Gegenwartsverständnis und Zukunftsperspektive zu betrachten. Das Lehr-Lernmittel fokussiert dabei auf der Ebene der Inhalte auf verschiedenen Dimensionen des Geschichtsbewusstseins (nach Pandel: Temporal-, Wirklichkeits-, Identitäts-, politisches, ökonomisch-soziales, moralisches Bewusstsein). Auf der Ebene der Bewusstseinsprozesse (nach Rüsen: Prozess des Erzählens) stehen Narration und Rekonstruktion im Zentrum. „Gute“ Geschichtslehrmittel lassen die Schüler*innen  ihrer Entwicklungsstufe entsprechend zu Narrations- und Rekonstruktionsakteuren werden. Zentral ist dabei die operative Abfolge von Sachanalyse, Sachurteil und Werturteil und der Nachweis empirischer, normativer und narrativer Trifftigkeit (Jeismann). ",
 				summary: "Das Lehr-Lernmittel zielt nachvollziehbar auf eine der Jahrgangsstufe angemessene Förderung eines reflektierten Geschichtsbewusstseins (Historischen Bewusstseins).",
