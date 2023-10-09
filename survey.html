@@ -1650,6 +1650,7 @@
 	<!-- Disable First Option Select Start -->
 
 	<script>
+		// gruppenevaluation anlegen
 		function createSelectOptions(select_id, list) {
 			let select = document.getElementById(select_id);
 			Array.prototype.forEach.call(list, function(item, index) {
@@ -1669,8 +1670,6 @@
 
 		createSelectOptions('survey_subject', sessionStorage.getItem("language") == 'En' ? subjects_en : subjects_de);
 		createSelectOptions('survey_institution', sessionStorage.getItem("language") == 'En' ? schools_en : schools_de);
-
-
 
 	</script>
 

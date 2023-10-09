@@ -184,12 +184,14 @@ function clickedGerman() {
 		changePlaceholderTextAAER('De')
 		changeSurveyText('De')
 		changeSelectOptionsAAER('De')
+		changeAnswers('De')
 	}
 
 	if(isAAERHistory()) {
 		changePlaceholderTextAAERHistory('De')
 		changeSurveyTextHistory('De')
 		changeSelectOptionsAAERHistory('De')
+		changeAnswers('De')
 	}
 
 	dropdown = document.getElementById('dropdown-languages_de')
@@ -305,6 +307,16 @@ let answers_en = [
     {value: 0, text: "not evaluable / not relevant"}
 ];
 
+function changeAnswers(lang) {
+	let answers = lang == 'De' ? answers_de : answers_en
+	for(let i=0; i < window.survey.pageCount; i++) {
+		let options = window.survey.getPage(i).questions[0].choices;
+		if(options != null && options.length == 5) {
+			window.survey.getPage(i).questions[0].choices = answers
+		}
+	}
+}
+
 function changePlaceholderTextAAER(language) {
 	if (language == "De") {
 		document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
@@ -331,6 +343,7 @@ function changePlaceholderTextAAERHistory(language) {
 
 function changeSelectOptionsAAER(lang) {
 
+	// gruppe anlegen
 	let subjects = lang == 'De' ? subjects_de : subjects_en
 	Array.prototype.forEach.call(document.getElementById('survey_subject').options, function(option, index) {
 		option.innerHTML = subjects[index];
@@ -340,6 +353,7 @@ function changeSelectOptionsAAER(lang) {
 		option.innerHTML = schools[index];
 	})
 
+	// umfrage
 	let options_subject = []
 	Array.prototype.forEach.call(subjects, function(item, index) {
 		let option = {};
@@ -1174,12 +1188,14 @@ function clickedEnglish() {
 		changePlaceholderTextAAER('En')
 		changeSurveyText('En')
 		changeSelectOptionsAAER('En')
+		changeAnswers('En')
 	}
 
 	if(isAAERHistory()) {
 		changePlaceholderTextAAERHistory('En')
 		changeSurveyTextHistory('En')
 		changeSelectOptionsAAERHistory('En')
+		changeAnswers('En')
 	}
 
 
