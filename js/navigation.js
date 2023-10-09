@@ -180,11 +180,17 @@ function changeDeInline() {
 }
 
 function clickedGerman() {
-	changePlaceholderTextAAER('De')
-	changeSurveyText('De')
+	if(isAAER()) {
+		changePlaceholderTextAAER('De')
+		changeSurveyText('De')
+		changeSelectOptionsAAER('De')
+	}
 
-	changePlaceholderTextAAERHistory('De')
-	changeSurveyTextHistory('De')
+	if(isAAERHistory()) {
+		changePlaceholderTextAAERHistory('De')
+		changeSurveyTextHistory('De')
+		changeSelectOptionsAAERHistory('De')
+	}
 
 	dropdown = document.getElementById('dropdown-languages_de')
 	dropdown.style.display = 'none'
@@ -204,7 +210,7 @@ function clickedGerman() {
 }
 
 let subjects_de = [
-	'Bitte wählen Sie ein Fach...',
+	'Bitte wählen Sie ein Fach...', 'AAER...de',
 	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
 	'Erdkunde / Geographie', 'Ethik', 'Französich', 'Geschichte', 'Informatik / IT',
 	'Kunst / Werken', 'Latein', 'Mathematik', 'Musik', 'Pädagogik', 'Philosophie',
@@ -213,7 +219,25 @@ let subjects_de = [
 ]
 
 let subjects_en = [
-	'Please choose a subject...',
+	'Please choose a subject...', 'AAER...en',
+	'not specified', 'biology', 'chemistry', 'german', 'english', 
+	'geography', 'ethics', 'french', 'history', 'computer science', 
+	'art', 'latin', 'maths', 'music', 'pedagogy', 'philosophy',
+	'physics', 'psychology', 'religion', 'social/political studies', 
+	'sports', 'languages (other)', 'other subject'
+]
+
+let subjects_history_de = [
+	'Bitte wählen Sie ein Fach...', 'AAER Hist de',
+	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
+	'Erdkunde / Geographie', 'Ethik', 'Französich', 'Geschichte', 'Informatik / IT',
+	'Kunst / Werken', 'Latein', 'Mathematik', 'Musik', 'Pädagogik', 'Philosophie',
+	'Physik', 'Psychologie', 'Religion', 'Sozialkunde / Politik', 
+	'Sport', 'Sprachen (andere)', 'Sonstiges Fach'
+]
+
+let subjects_history_en = [
+	'Please choose a subject...', 'AAER Hist en',
 	'not specified', 'biology', 'chemistry', 'german', 'english', 
 	'geography', 'ethics', 'french', 'history', 'computer science', 
 	'art', 'latin', 'maths', 'music', 'pedagogy', 'philosophy',
@@ -243,66 +267,122 @@ let schools_en = [
 	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'other school'
 ]
 
+let schools_history_de = [
+	'Bitte wählen Sie eine Schulart...', 
+	'Keine Angabe', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
+	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
+	'Fachakademie', 'Fachhochschule', 'Fachoberschule', 'Fachschule',
+	'Förderschule', 'Gemeinschaftsschule', 'Gesamtschule', 'Grundschule',
+	'Gymnasium', 'Hochschule', 'Internationale Schule', 'Mittelschule',
+	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
+	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'Sonstige Schule'
+]
+
+let schools_history_en = [
+	'Please choose the type of school...', 
+	'not specified', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
+	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
+	'Fachakademie', 'Fachhochschule', 'Fachoberschule', 'Fachschule',
+	'Förderschule', 'Gemeinschaftsschule', 'Gesamtschule', 'Grundschule',
+	'Gymnasium', 'Hochschule', 'Internationale Schule', 'Mittelschule',
+	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
+	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'other school'
+]
+
+let answers_de = [
+    {value: 1, text: "trifft nicht zu"},
+    {value: 2, text: "trifft weniger zu"},
+    {value: 3, text: "trifft mehr zu"},
+    {value: 4, text: "trifft voll zu"},
+    {value: 0, text: "nicht bewertbar / nicht relevant"}
+];
+
+let answers_en = [
+    {value: 1, text: "not applicable"},
+    {value: 2, text: "less applicable"},
+    {value: 3, text: "more applicable"},
+    {value: 4, text: "completely applicable"},
+    {value: 0, text: "not evaluable / not relevant"}
+];
+
 function changePlaceholderTextAAER(language) {
-	subjects = document.getElementById('survey_subject');
-	schools = document.getElementById('survey_institution');
-	if (subjects != null) {
-		if (language == "De") {
-			document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
-			document.getElementById('loadResultSet').placeholder = "10-stelliger Code"
-			document.getElementById('loadResult').placeholder = "12-stelliger Code"
-			Array.prototype.forEach.call(subjects.options, function(option, index) {
-				option.innerHTML = subjects_de[index];
-				option.innerHTML = subjects_de[index];
-			})
-			Array.prototype.forEach.call(schools.options, function(option, index) {
-				option.innerHTML = schools_de[index];
-			})
-	
-			
-		} else {
-			document.getElementById('loadPredefined').placeholder = "10 characters long code"
-			document.getElementById('loadResultSet').placeholder = "10 characters long code"
-			document.getElementById('loadResult').placeholder = "12 characters long code"
-			Array.prototype.forEach.call(subjects.options, function(option, index) {
-				option.innerHTML = subjects_en[index];
-			})
-			Array.prototype.forEach.call(schools.options, function(option, index) {
-				option.innerHTML = schools_en[index];
-			})
-		}
+	if (language == "De") {
+		document.getElementById('loadPredefined').placeholder = "10-stelliger Code"
+		document.getElementById('loadResultSet').placeholder = "10-stelliger Code"
+		document.getElementById('loadResult').placeholder = "12-stelliger Code"		
+	} else {
+		document.getElementById('loadPredefined').placeholder = "10 characters long code"
+		document.getElementById('loadResultSet').placeholder = "10 characters long code"
+		document.getElementById('loadResult').placeholder = "12 characters long code"
 	}
 }
 
 function changePlaceholderTextAAERHistory(language) {
-	subjects = document.getElementById('form-preset-fach');
-	schools = document.getElementById('form-preset-schulart');
-	if (subjects != null) {
 		if (language == "De") {
 			document.getElementById('group_id').placeholder = "10-stelliger Code"
 			document.getElementById('loadEvaluationGroup').placeholder = "10-stelliger Code"
-			document.getElementById('loadEvaluation').placeholder = "12-stelliger Code"
-			Array.prototype.forEach.call(subjects.options, function(option, index) {
-				option.innerHTML = subjects_de[index];
-				option.innerHTML = subjects_de[index];
-			})
-			Array.prototype.forEach.call(schools.options, function(option, index) {
-				option.innerHTML = schools_de[index];
-			})
-	
-			
+			document.getElementById('loadEvaluation').placeholder = "12-stelliger Code"			
 		} else {
 			document.getElementById('group_id').placeholder = "10 characters long code"
 			document.getElementById('loadEvaluationGroup').placeholder = "10 characters long code"
 			document.getElementById('loadEvaluation').placeholder = "12 characters long code"
-			Array.prototype.forEach.call(subjects.options, function(option, index) {
-				option.innerHTML = subjects_en[index];
-			})
-			Array.prototype.forEach.call(schools.options, function(option, index) {
-				option.innerHTML = schools_en[index];
-			})
 		}
-	}
+}
+
+function changeSelectOptionsAAER(lang) {
+
+	let subjects = lang == 'De' ? subjects_de : subjects_en
+	Array.prototype.forEach.call(document.getElementById('survey_subject').options, function(option, index) {
+		option.innerHTML = subjects[index];
+	})
+	let schools = lang == 'De' ? schools_de : schools_en
+	Array.prototype.forEach.call(document.getElementById('survey_institution').options, function(option, index) {
+		option.innerHTML = schools[index];
+	})
+
+	let options_subject = []
+	Array.prototype.forEach.call(subjects, function(item, index) {
+		let option = {};
+		if(index == 0) {
+			// selected="selected" disabled="disabled" value="" 
+			option.selected = 'selected'
+			option.value = ''
+		} else {
+			option.value = index
+		}
+		option.text = item;
+		options_subject.push(option)
+	})
+	window.survey.getPage(2).questions[0].choices = options_subject
+	window.survey.getPage(2).questions[0].choices[0].setIsEnabled(false)
+
+	let options_schools = []
+	Array.prototype.forEach.call(schools, function(item, index) {
+		let option = {};
+		if(index == 0) {
+			// selected="selected" disabled="disabled" value="" 
+			option.selected = 'selected'
+			option.value = ''
+		} else {
+			option.value = index
+		}
+		option.text = item;
+		options_schools.push(option)
+	})
+	window.survey.getPage(3).questions[0].choices = options_schools
+	window.survey.getPage(3).questions[0].choices[0].setIsEnabled(false)
+	
+}
+
+function changeSelectOptionsAAERHistory(lang) {
+	let subjects = lang == 'De' ? subjects_de : subjects_en
+	Array.prototype.forEach.call(document.getElementById('form-preset-fach').options, function(option, index) {
+		option.innerHTML = subjects[index];
+	})
+	let schools = lang == 'De' ? schools_de : schools_en
+	Array.prototype.forEach.call(document.getElementById('form-preset-schulart').options, function(option, index) {
+		option.innerHTML = schools[index];
+	})
 }
 
 let surveyTextDe = [
@@ -608,18 +688,23 @@ let surveyTextEn = [
         title: "Didactical Concept",
         description: "For the use of the educational medium – especially by the teachers – it is advantageous when central concepts for the didactical application are mediated, even if the teachers will not use the educational medium one-to-one in their lessons, but want to adapt it to their own requirements. Helpful information includes: target group, (educational) objectives, sub-goals, relating methods, targeted resp. fostered competencies, relation to specific aspects of the subject, etc.",
         question: "The educational medium includes extensive and reasonable information about its didactical concept. This information exceeds basic information about both thematic references and the target group and additionally provides information about methodological approaches, targeted competencies, or sub-goals. This information explains the intention of the educational medium and thus facilitates its use."
-    },
+    },	
     {
         title: "Framework Conditions",
         description: "The use of educational media for instruction is subject to certain conditions, which have to be considered. These include for example: time need, technical or spatial requirements, specific group size, availability of particular materials or media, possibility to play back certain media-formats, internet connection, a specific number of PCs or mobile devices, etc. It is helpful for the teacher if these preconditions are a priori concisely specified.",
         question: "All preconditions for use of the educational medium are concisely specified."
+    },
+	{
+        title: "Own Notes",
+        description: "...",
+        question: "..."
     }
 ]
 
 function changeSurveyText(language) {
 	if (window.survey != null) {
 		let surveyText = language == 'De' ? surveyTextDe : surveyTextEn;
-		if (window.survey.pageCount < 35) {
+		if (window.survey.pageCount < 35) {  // vorläufig zum Unterscheiden um welche Umfrage es geht
 			for (i = 0; i < survey.pageCount; i++) {
 				page = survey.getPage(i);
 				page.title = surveyText[i].title;
@@ -1061,8 +1146,8 @@ let surveyTextHistoryEn = [
 
 function changeSurveyTextHistory(language) {
 	if (window.survey != null) {
-		let surveyText = language == 'De' ? surveyTextHistoryDe : surveyTextHistoryEn;
 		if (window.survey.pageCount == 35) {
+			let surveyText = language == 'De' ? surveyTextHistoryDe : surveyTextHistoryEn;
 			for (i = 0; i < survey.pageCount; i++) {
 				page = survey.getPage(i);
 				page.title = surveyText[i].name;  // Überschrift
@@ -1085,11 +1170,18 @@ function changeEnInline() {
 }
 
 function clickedEnglish() {
-	changePlaceholderTextAAER('En')
-	changeSurveyText('En')
+	if(isAAER()) {
+		changePlaceholderTextAAER('En')
+		changeSurveyText('En')
+		changeSelectOptionsAAER('En')
+	}
 
-	changePlaceholderTextAAERHistory('En')
-	changeSurveyTextHistory('En')
+	if(isAAERHistory()) {
+		changePlaceholderTextAAERHistory('En')
+		changeSurveyTextHistory('En')
+		changeSelectOptionsAAERHistory('En')
+	}
+
 
 	dropdown = document.getElementById('dropdown-languages_en')
 	dropdown.style.display = 'none'
@@ -1106,6 +1198,20 @@ function clickedEnglish() {
 
 	// SessionStorage En
 	sessionStorage.setItem("language", "En");
+}
+
+function isAAER() {
+	if (window.survey != null && window.survey.pageCount < 35)
+		return true;
+	else 
+		return false;
+}
+
+function isAAERHistory() {
+	if (window.survey != null && window.survey.pageCount == 35)
+		return true;
+	else 
+		return false;
 }
 
 // Hinzufügen des SessionStorages zur Sprache

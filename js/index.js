@@ -14,72 +14,18 @@ Chart.defaults.global.tooltips.callbacks.title = (tooltipItems, data) => { retur
 
 Chart.defaults.global.datasets.bar.maxBarThickness = 70
 
-//Fächer
+function createObjectList(list) {
+        object_list = []
+        Array.prototype.forEach.call(list, function(item, index) {
+            object_list.push({value: index, text: item})
+        })
+        return object_list
+    }
 
-fach = [
-    {value: 1, text: "Keine Angabe"},
-    {value: 2, text: "Biologie"},
-    {value: 3, text: "Chemie"},
-    {value: 4, text: "Deutsch"},
-    {value: 5, text: "Englisch"},
-    {value: 6, text: "Erdkunde / Geographie"},
-    {value: 7, text: "Ethik"},
-    {value: 8, text: "Französich"},
-    {value: 9, text: "Geschichte"},
-    {value: 10, text: "Informatik / IT"},
-    {value: 11, text: "Kunst / Werken"},
-    {value: 12, text: "Latein"},
-    {value: 13, text: "Mathematik"},
-    {value: 14, text: "Musik"},
-    {value: 15, text: "Pädagogik"},
-    {value: 16, text: "Philosophie"},
-    {value: 17, text: "Physik"},
-    {value: 18, text: "Psychologie"},
-    {value: 19, text: "Religion"},
-    {value: 20, text: "Sozialkunde / Politik"},
-    {value: 21, text: "Sport"},
-    {value: 22, text: "Sprachen (andere)"},
-    {value: 23, text: "Sonstiges Fach"}
-];
-
-schularten = [
-    {value: 1, text: "Keine Angabe"},
-    {value: 2, text: "Abendschule"},
-    {value: 3, text: "Alternatives Schulkonzept"},
-    {value: 4, text: "Berufsfachschule"},
-    {value: 5, text: "Berufskolleg"},
-    {value: 6, text: "Berufsoberschule"},
-    {value: 7, text: "Berufsschule"},
-    {value: 8, text: "Bildungskolleg"},
-    {value: 9, text: "Fachakademie"},
-    {value: 10, text: "Fachhochschule"},
-    {value: 11, text: "Fachoberschule"},
-    {value: 12, text: "Fachschule"},
-    {value: 13, text: "Förderschule"},
-    {value: 27, text: "Gemeinschaftsschule"},
-    {value: 14, text: "Gesamtschule"},
-    {value: 15, text: "Grundschule"},
-    {value: 16, text: "Gymnasium"},
-    {value: 17, text: "Hochschule"},
-    {value: 18, text: "Internationale Schule"},
-    {value: 19, text: "Mittelschule"},
-    {value: 20, text: "Realschule"},
-    {value: 21, text: "Schule besonderer Art"},
-    {value: 22, text: "Schule für Kranke"},
-    {value: 28, text: "Sekundarschule"},
-    {value: 23, text: "Volkshochschule"},
-    {value: 24, text: "Vorschule"},
-    {value: 25, text: "Wirtschaftsschule"},
-    {value: 26, text: "Sonstige Schule"},
-];
-
-antworten = [
-    {value: 1, text: "trifft nicht zu"},
-    {value: 2, text: "trifft weniger zu"},
-    {value: 3, text: "trifft mehr zu"},
-    {value: 4, text: "trifft voll zu"},
-    {value: 0, text: "nicht bewertbar / nicht relevant"}
-];
+// navigation.js
+fach = createObjectList(sessionStorage.getItem("language") == 'En' ? subjects_en : subjects_de)
+schularten = createObjectList(sessionStorage.getItem("language") == 'En' ? schools_en : schools_de)
+antworten = sessionStorage.getItem("language") == 'En' ? answers_en : answers_de
 
 
 var isPredefinedName = false;
@@ -124,8 +70,10 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Fach",
                     title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
                     defaultValue: 1,
+                    showOptionsCaption: false,
                     readOnly: isPredefinedSubject,
                     choices: fach
+                    
                 }
             ]
 
@@ -136,6 +84,7 @@ var json = {title:"Nutzung des Augsburger Analyse- und Evaluationsrasters für d
                     name: "Schulart",
                     title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
                     defaultValue: 1,
+                    showOptionsCaption: false,
                     readOnly: isPredefinedInstitute,
                     choices: schularten
                 }

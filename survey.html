@@ -335,7 +335,7 @@
 
 												<!--													</div>-->
 
-												<script type="text/javascript" src="/js/index.js"></script>
+												
 
 												<!-- Initialisierung der Umfrage End -->
 
@@ -550,33 +550,7 @@
 									<span data-lang="De">Welchem Fach ist das Lehr-Lernmittel zugeordnet?</span>
 									<span data-lang="En">To which subject is the ressource related?</span>
 
-									<select class="form-control" id="survey_subject">
-										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein
-											Fach...</option>
-										<option value="1">Keine Angabe</option>
-										<option value="2">Biologie</option>
-										<option value="3">Chemie</option>
-										<option value="4">Deutsch</option>
-										<option value="5">Englisch</option>
-										<option value="6">Erdkunde / Geographie</option>
-										<option value="7">Ethik</option>
-										<option value="8">Französich</option>
-										<option value="9">Geschichte</option>
-										<option value="10">Informatik / IT</option>
-										<option value="11">Kunst / Werken</option>
-										<option value="12">Latein</option>
-										<option value="13">Mathematik</option>
-										<option value="14">Musik</option>
-										<option value="15">Pädagogik</option>
-										<option value="16">Philosophie</option>
-										<option value="17">Physik</option>
-										<option value="18">Psychologie</option>
-										<option value="19">Religion</option>
-										<option value="20">Sozialkunde / Politik</option>
-										<option value="21">Sport</option>
-										<option value="22">Sprachen (andere)</option>
-										<option value="23">Sonstiges Fach</option>
-									</select>
+									<select class="form-control" id="survey_subject"></select>
 
 									<br>
 
@@ -585,38 +559,7 @@
 
 									<br>
 
-									<select class="form-control" id="survey_institution">
-										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie eine
-											Schulart...</option>
-										<option value="1">Keine Angabe</option>
-										<option value="2">Abendschule</option>
-										<option value="3">Alternatives Schulkonzept</option>
-										<option value="4">Berufsfachschule</option>
-										<option value="5">Berufskolleg</option>
-										<option value="6">Berufsoberschule</option>
-										<option value="7">Berufsschule</option>
-										<option value="8">Bildungskolleg</option>
-										<option value="9">Fachakademie</option>
-										<option value="10">Fachhochschule</option>
-										<option value="11">Fachoberschule</option>
-										<option value="12">Fachschule</option>
-										<option value="13">Förderschule</option>
-										<option value="27">Gemeinschaftsschule</option>
-										<option value="14">Gesamtschule</option>
-										<option value="15">Grundschule</option>
-										<option value="16">Gymnasium</option>
-										<option value="17">Hochschule</option>
-										<option value="18">Internationale Schule</option>
-										<option value="19">Mittelschule</option>
-										<option value="20">Realschule</option>
-										<option value="21">Schule besonderer Art</option>
-										<option value="22">Schule für Kranke</option>
-										<option value="28">Sekundarschule</option>
-										<option value="23">Volkshochschule</option>
-										<option value="24">Vorschule</option>
-										<option value="25">Wirtschaftsschule</option>
-										<option value="26">Sonstige Schule</option>
-									</select>
+									<select class="form-control" id="survey_institution"></select>
 
 									<br>
 
@@ -1698,6 +1641,41 @@
 
 	<!-- Navigation JS End -->
 
+	<!-- SURVEY LOGIC Start -->
+
+	<script type="text/javascript" src="/js/index.js"></script>
+
+	<!-- SURVEY LOGIC End -->
+
+	<!-- Disable First Option Select Start -->
+
+	<script>
+		function createSelectOptions(select_id, list) {
+			let select = document.getElementById(select_id);
+			Array.prototype.forEach.call(list, function(item, index) {
+				let option = document.createElement('option');
+				if(index == 0) {
+					// selected="selected" disabled="disabled" value="" 
+					option.selected = 'selected'
+					option.disabled = 'disabled'
+					option.value = ''
+				} else {
+					option.value = index
+				}
+				option.text = item;
+				select.appendChild(option)
+			})
+		}
+
+		createSelectOptions('survey_subject', sessionStorage.getItem("language") == 'En' ? subjects_en : subjects_de);
+		createSelectOptions('survey_institution', sessionStorage.getItem("language") == 'En' ? schools_en : schools_de);
+
+
+
+	</script>
+
+	<!-- Disable First Option Select End  -->
+
 	<!-- Footer Start -->
 
 	<div id="footer_container"></div>
@@ -2019,7 +1997,7 @@
 		function newSurvey() {
 
 			window.survey = new Survey.Model(json);
-			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
+
 
 			survey.onComplete.add(function (sender, options) {
 				saveResult(sender.data);
@@ -2040,6 +2018,7 @@
 
 
 			$("#surveyElement").Survey({ model: survey });
+			
 
 
 			$(".sv_complete_btn").click(function () {
@@ -2065,6 +2044,7 @@
 			});
 			displayController(DISPLAY.UMFRAGE);
 			buttons.forEach(btn => document.getElementById(btn).disabled = true);
+
 		}
 
 		function evaluateSet() {
