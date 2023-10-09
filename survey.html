@@ -1996,6 +1996,7 @@
 		function newSurvey() {
 
 			window.survey = new Survey.Model(json);
+			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 
 
 			survey.onComplete.add(function (sender, options) {
