@@ -182,16 +182,20 @@ function changeDeInline() {
 function clickedGerman() {
 	if(isAAER()) {
 		changePlaceholderTextAAER('De')
-		changeSurveyText('De')
 		changeSelectOptionsAAER('De')
-		changeAnswers('De')
+		if(window.survey != null) {
+			changeSurveyText('De')
+			changeAnswers('De')
+		}
 	}
 
 	if(isAAERHistory()) {
 		changePlaceholderTextAAERHistory('De')
-		changeSurveyTextHistory('De')
 		changeSelectOptionsAAERHistory('De')
-		changeAnswers('De')
+		if(window.survey != null) {
+			changeSurveyTextHistory('De')
+			changeAnswers('De')
+		}
 	}
 
 	dropdown = document.getElementById('dropdown-languages_de')
@@ -315,50 +319,90 @@ function changeSelectOptionsAAER(lang) {
 		option.innerHTML = schools[index];
 	})
 
-	// umfrage
-	let options_subject = []
-	Array.prototype.forEach.call(subjects, function(item, index) {
-		let option = {};
-		if(index == 0) {
-			// selected="selected" disabled="disabled" value="" 
-			option.selected = 'selected'
-			option.value = ''
-		} else {
-			option.value = index
-		}
-		option.text = item;
-		options_subject.push(option)
-	})
-	window.survey.getPage(2).questions[0].choices = options_subject
-	window.survey.getPage(2).questions[0].choices[0].setIsEnabled(false)
 
-	let options_schools = []
-	Array.prototype.forEach.call(schools, function(item, index) {
-		let option = {};
-		if(index == 0) {
-			// selected="selected" disabled="disabled" value="" 
-			option.selected = 'selected'
-			option.value = ''
-		} else {
-			option.value = index
-		}
-		option.text = item;
-		options_schools.push(option)
-	})
-	window.survey.getPage(3).questions[0].choices = options_schools
-	window.survey.getPage(3).questions[0].choices[0].setIsEnabled(false)
+	// umfrage
+	if (window.survey != null) {
+		let options_subject = []
+		Array.prototype.forEach.call(subjects, function(item, index) {
+			let option = {};
+			if(index == 0) {
+				// selected="selected" disabled="disabled" value="" 
+				option.selected = 'selected'
+				option.value = ''
+			} else {
+				option.value = index
+			}
+			option.text = item;
+			options_subject.push(option)
+		})
+
+		window.survey.getPage(2).questions[0].choices = options_subject
+		window.survey.getPage(2).questions[0].choices[0].setIsEnabled(false)
+
+		let options_schools = []
+		Array.prototype.forEach.call(schools, function(item, index) {
+			let option = {};
+			if(index == 0) {
+				// selected="selected" disabled="disabled" value="" 
+				option.selected = 'selected'
+				option.value = ''
+			} else {
+				option.value = index
+			}
+			option.text = item;
+			options_schools.push(option)
+		})
+		window.survey.getPage(3).questions[0].choices = options_schools
+		window.survey.getPage(3).questions[0].choices[0].setIsEnabled(false)
+	}
 	
 }
 
 function changeSelectOptionsAAERHistory(lang) {
-	let subjects = lang == 'De' ? subjects_de : subjects_en
+	let subjects = lang == 'De' ? subjects_history_de : subjects_history_en
 	Array.prototype.forEach.call(document.getElementById('form-preset-fach').options, function(option, index) {
 		option.innerHTML = subjects[index];
 	})
-	let schools = lang == 'De' ? schools_de : schools_en
+	let schools = lang == 'De' ? schools_history_de : schools_history_en
 	Array.prototype.forEach.call(document.getElementById('form-preset-schulart').options, function(option, index) {
 		option.innerHTML = schools[index];
 	})
+
+	// umfrage
+	if (window.survey != null) {
+		let options_subject = []
+		Array.prototype.forEach.call(subjects, function(item, index) {
+			let option = {};
+			if(index == 0) {
+				// selected="selected" disabled="disabled" value="" 
+				option.selected = 'selected'
+				option.value = ''
+			} else {
+				option.value = index
+			}
+			option.text = item;
+			options_subject.push(option)
+		})
+
+		window.survey.getPage(2).questions[0].choices = options_subject
+		window.survey.getPage(2).questions[0].choices[0].setIsEnabled(false)
+
+		let options_schools = []
+		Array.prototype.forEach.call(schools, function(item, index) {
+			let option = {};
+			if(index == 0) {
+				// selected="selected" disabled="disabled" value="" 
+				option.selected = 'selected'
+				option.value = ''
+			} else {
+				option.value = index
+			}
+			option.text = item;
+			options_schools.push(option)
+		})
+		window.survey.getPage(3).questions[0].choices = options_schools
+		window.survey.getPage(3).questions[0].choices[0].setIsEnabled(false)
+	}
 }
 
 let surveyTextDe = [
@@ -1154,16 +1198,20 @@ function changeEnInline() {
 function clickedEnglish() {
 	if(isAAER()) {
 		changePlaceholderTextAAER('En')
-		changeSurveyText('En')
 		changeSelectOptionsAAER('En')
-		changeAnswers('En')
+		if(window.survey != null) {
+			changeSurveyText('En')
+			changeAnswers('En')
+		}
 	}
 
 	if(isAAERHistory()) {
 		changePlaceholderTextAAERHistory('En')
-		changeSurveyTextHistory('En')
 		changeSelectOptionsAAERHistory('En')
-		changeAnswers('En')
+		if(window.survey != null) {
+			changeSurveyTextHistory('En')
+			changeAnswers('En')
+		}
 	}
 
 
@@ -1185,14 +1233,16 @@ function clickedEnglish() {
 }
 
 function isAAER() {
-	if (window.survey != null && window.survey.pageCount < 35)
+	// if (window.survey != null && window.survey.pageCount < 35)
+	if (window.location.href.split('/').pop() == 'survey.html')
 		return true;
 	else 
 		return false;
 }
 
 function isAAERHistory() {
-	if (window.survey != null && window.survey.pageCount == 35)
+	// if (window.survey != null && window.survey.pageCount == 35)
+	if (window.location.href.split('/').pop() == 'aaer-geschichte.html')
 		return true;
 	else 
 		return false;
