@@ -29,12 +29,17 @@
 	<script src="/js/bootstrap-material-design.js"></script>
 	<!-- Bootstrap Material Design JS End -->
 	<script src="/js/history/objects.js"></script>
-	<script src="/js/history/index.js"></script>
+
 </head>
 <body style="width:100% !important">
+
 	<!-- Navigation Start -->
 	<div id="navigation_container"></div>
 	<!-- Navigation End -->
+
+
+
+
 	<!-- Start: Dashboard Div -->
 	<div id="dashboard-aaer" class="mr-lg-5 mr-md-3 mr-sm-0 mr-xs-0 ml-lg-5 ml-md-3 ml-sm-0 ml-xs-0 mt-lg-5 mt-md-5 mt-sm-1 mt-xs-1 pt-lg-5 pt-md-5 pt-sm-1 pt-xs-1">
 		<div>
@@ -394,75 +399,36 @@
 									<br>
 									<span data-lang="De">Welchem Fach ist das Lehr-Lernmittel zugeordnet?</span>
 									<span data-lang="En">To which subject is the ressource related?</span>
-									<select class="form-control" id="form-preset-fach">
-										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie ein
-											Fach...</option>
-										<option>Keine Angabe</option>
-										<option>Biologie</option>
-										<option>Chemie</option>
-										<option>Deutsch</option>
-										<option>Englisch</option>
-										<option>Erdkunde / Geographie</option>
-										<option>Ethik</option>
-										<option>Französich</option>
-										<option>Geschichte</option>
-										<option>Informatik / IT</option>
-										<option>Kunst / Werken</option>
-										<option>Latein</option>
-										<option>Mathematik</option>
-										<option>Musik</option>
-										<option>Pädagogik</option>
-										<option>Philosophie</option>
-										<option>Physik</option>
-										<option>Psychologie</option>
-										<option>Religion</option>
-										<option>Sozialkunde / Politik</option>
-										<option>Sport</option>
-										<option>Sprachen (andere)</option>
-										<option>Sonstiges Fach</option>
-									</select>
-									<!-- TO DO: set options dynamically according to variable fach in objects.js-->
-									<!-- <script>
-									</script> -->
+									<select class="form-control" id="form-preset-fach"></select>
 									<br>
 									<span data-lang="De">Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?</span>
 									<span data-lang="En">To which type of school is the educational ressource related?</span>
 									<br>
-									<select class="form-control" id="form-preset-schulart">
-										<option selected="selected" disabled="disabled" value="">Bitte wählen Sie eine
-											Schulart...</option>
-										<option>Keine Angabe</option>
-										<option>Abendschule</option>
-										<option>Alternatives Schulkonzept</option>
-										<option>Berufsfachschule</option>
-										<option>Berufskolleg</option>
-										<option>Berufsoberschule</option>
-										<option>Berufsschule</option>
-										<option>Bildungskolleg</option>
-										<option>Fachakademie</option>
-										<option>Fachhochschule</option>
-										<option>Fachoberschule</option>
-										<option>Fachschule</option>
-										<option>Förderschule</option>
-										<option>Gemeinschaftsschule</option>
-										<option>Gesamtschule</option>
-										<option>Grundschule</option>
-										<option>Gymnasium</option>
-										<option>Hochschule</option>
-										<option>Internationale Schule</option>
-										<option>Mittelschule</option>
-										<option>Realschule</option>
-										<option>Schule besonderer Art</option>
-										<option>Schule für Kranke</option>
-										<option>Sekundarschule</option>
-										<option>Volkshochschule</option>
-										<option>Vorschule</option>
-										<option>Wirtschaftsschule</option>
-										<option>Sonstige Schule</option>
-									</select>
-									<!-- TO DO: set options dynamically according to variable schularten in objects.js-->
-									<!-- <script>
-									</script> -->
+									<select class="form-control" id="form-preset-schulart"></select>
+
+									<script>
+										// gruppenevaluation anlegen
+										function _createSelectOptions(select_id, list) {
+											let select = document.getElementById(select_id);
+											Array.prototype.forEach.call(list, function(item, index) {
+												let option = document.createElement('option');
+												if(index == 0) {
+													// selected="selected" disabled="disabled" value="" 
+													option.selected = 'selected'
+													option.disabled = 'disabled'
+													option.value = ''
+												} else {
+													option.value = index
+												}
+												option.text = item;
+												select.appendChild(option)
+											})
+										}
+
+										_createSelectOptions('form-preset-fach', sessionStorage.getItem("language") == 'En' ? subjects_history_en : subjects_history_de);
+										_createSelectOptions('form-preset-schulart', sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de);
+									</script>
+
 									<br><br>
 									<div class="text-center">
 										<button class="btn btn-green ml-1 mr-1"
@@ -1135,6 +1101,8 @@
 
 	<!-- Navigation JS End -->
 
+	<script src="/js/history/index.js"></script>
+
 	<!-- Footer Start -->
 
 	<div id="footer_container"></div>
@@ -1667,6 +1635,7 @@
 		});
 
 		// Ende: Trigger für Dashbaord-Menü
+
 
 		$("#dashboard-aaer").css("display", "block");
 		buttons.forEach(btn => document.getElementById(btn).disabled = true);

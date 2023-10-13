@@ -9,7 +9,7 @@ window.addEventListener("beforeunload", function (event) {
     event.returnValue = '';
 });
 
-Survey.englishStrings.optionsCaption = "Wählen..."
+// Survey.englishStrings.optionsCaption = "Wählen..."
 
 // import {aaer_geschichte, fach, schularten, antworten} from './objects.js'; should be loaded in browser already
 
@@ -50,6 +50,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
                         // defaultValue: "Keine Angabe",
                         readOnly: isPresetFach,
+                        showOptionsCaption: false,
+                        // defaultValue: 1,
                         choices: fach
                     }
                 ]
@@ -62,6 +64,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
                         // defaultValue: "Keine Angabe",
                         readOnly: isPresetSchulart,
+                        showOptionsCaption: false,
+                        // defaultValue: 1,
                         choices: schularten
                     }
                 ]

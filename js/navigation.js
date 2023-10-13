@@ -231,24 +231,6 @@ let subjects_en = [
 	'sports', 'languages (other)', 'other subject'
 ]
 
-let subjects_history_de = [
-	'Bitte wählen Sie ein Fach...', 'AAER Hist de',
-	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
-	'Erdkunde / Geographie', 'Ethik', 'Französich', 'Geschichte', 'Informatik / IT',
-	'Kunst / Werken', 'Latein', 'Mathematik', 'Musik', 'Pädagogik', 'Philosophie',
-	'Physik', 'Psychologie', 'Religion', 'Sozialkunde / Politik', 
-	'Sport', 'Sprachen (andere)', 'Sonstiges Fach'
-]
-
-let subjects_history_en = [
-	'Please choose a subject...', 'AAER Hist en',
-	'not specified', 'biology', 'chemistry', 'german', 'english', 
-	'geography', 'ethics', 'french', 'history', 'computer science', 
-	'art', 'latin', 'maths', 'music', 'pedagogy', 'philosophy',
-	'physics', 'psychology', 'religion', 'social/political studies', 
-	'sports', 'languages (other)', 'other subject'
-]
-
 let schools_de = [
 	'Bitte wählen Sie eine Schulart...', 
 	'Keine Angabe', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
@@ -261,28 +243,6 @@ let schools_de = [
 ]
 
 let schools_en = [
-	'Please choose the type of school...', 
-	'not specified', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
-	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
-	'Fachakademie', 'Fachhochschule', 'Fachoberschule', 'Fachschule',
-	'Förderschule', 'Gemeinschaftsschule', 'Gesamtschule', 'Grundschule',
-	'Gymnasium', 'Hochschule', 'Internationale Schule', 'Mittelschule',
-	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
-	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'other school'
-]
-
-let schools_history_de = [
-	'Bitte wählen Sie eine Schulart...', 
-	'Keine Angabe', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
-	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
-	'Fachakademie', 'Fachhochschule', 'Fachoberschule', 'Fachschule',
-	'Förderschule', 'Gemeinschaftsschule', 'Gesamtschule', 'Grundschule',
-	'Gymnasium', 'Hochschule', 'Internationale Schule', 'Mittelschule',
-	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
-	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'Sonstige Schule'
-]
-
-let schools_history_en = [
 	'Please choose the type of school...', 
 	'not specified', 'Abendschule', 'Alternatives Schulkonzept', 'Berufsfachschule',
 	'Berufskolleg', 'Berufsoberschule', 'Berufsschule', 'Bildungskolleg',
