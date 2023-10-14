@@ -1274,9 +1274,17 @@
 		function startEvaluation(saved_data = null) {
 
 			let json = getJson();
-			window.survey = new Survey.Model(json);  // global: window.
+			window.survey = new Survey.Model(json);
+			window.survey.onCurrentPageChanged.add( () => {
+				if (document.querySelector('.sv_prev_btn')) {
+					document.querySelector('.sv_prev_btn').value = sessionStorage.getItem("language") == 'En' ? 'Back' : 'Zurück'
+				}
+				document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
+			})
 
 			$("#surveyElement").Survey({ model: survey });
+			document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
+
 			
 			displayController(DISPLAY.UMFRAGE);
 			buttons.forEach(btn => document.getElementById(btn).disabled = true);

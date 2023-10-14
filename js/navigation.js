@@ -198,6 +198,15 @@ function clickedGerman() {
 		}
 	}
 
+	if (document.querySelector('.sv_prev_btn')) {
+		document.querySelector('.sv_prev_btn').value = 'Zurück'
+	}
+
+	if(document.querySelector('.sv_next_btn')) {
+		document.querySelector('.sv_next_btn').value = 'Weiter'
+	}
+
+
 	dropdown = document.getElementById('dropdown-languages_de')
 	dropdown.style.display = 'none'
 
@@ -266,11 +275,11 @@ let answers_de = [
 ];
 
 let answers_en = [
-    {value: 1, text: "not applicable"},
-    {value: 2, text: "less applicable"},
-    {value: 3, text: "more applicable"},
-    {value: 4, text: "completely applicable"},
-    {value: 0, text: "not evaluable / not relevant"}
+    {value: 1, text: "does not apply"},
+    {value: 2, text: "applies less"},
+    {value: 3, text: "applies more"},
+    {value: 4, text: "applies fully"},
+    {value: 0, text: "cannot be assessed / not relevant"}
 ];
 
 function changeAnswers(lang) {
@@ -1212,6 +1221,14 @@ function clickedEnglish() {
 			changeSurveyTextHistory('En')
 			changeAnswers('En')
 		}
+	}
+
+	if (document.querySelector('.sv_prev_btn')) {
+		document.querySelector('.sv_prev_btn').value = 'Back'
+	}
+
+	if(document.querySelector('.sv_next_btn')) {
+		document.querySelector('.sv_next_btn').value = 'Continue'
 	}
 
 
