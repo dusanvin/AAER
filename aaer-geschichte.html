@@ -1285,6 +1285,8 @@
 			$("#surveyElement").Survey({ model: survey });
 			document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
 
+			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
+
 			
 			displayController(DISPLAY.UMFRAGE);
 			buttons.forEach(btn => document.getElementById(btn).disabled = true);
