@@ -179,6 +179,42 @@ function changeDeInline() {
 	en.forEach(element => element.style.display = 'none')
 }
 
+function clickedGerman() {
+	if(isAAER()) {
+		changePlaceholderTextAAER('De')
+		changeSelectOptionsAAER('De')
+		if(window.survey != null) {
+			changeSurveyText('De')
+			changeAnswers('De')
+		}
+	}
+
+	if(isAAERHistory()) {
+		changePlaceholderTextAAERHistory('De')
+		changeSelectOptionsAAERHistory('De')
+		if(window.survey != null) {
+			changeSurveyTextHistory('De')
+			changeAnswers('De')
+		}
+	}
+
+	dropdown = document.getElementById('dropdown-languages_de')
+	dropdown.style.display = 'none'
+
+	let elements_de = document.querySelectorAll('[data-lang="De"]')
+	let de = [...elements_de]
+	de.forEach(element => element.style.display = 'block')
+
+	let elements_en = document.querySelectorAll('[data-lang="En"]')
+	let en = [...elements_en]
+	en.forEach(element => element.style.display = 'none')
+
+	changeDeInline()
+
+	// SessionStorage De
+	sessionStorage.setItem("language", "De");
+}
+
 let subjects_de = [
 	'Bitte wählen Sie ein Fach...', 'AAER...de',
 	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
@@ -726,8 +762,8 @@ let surveyTextHistoryDe = [
 	},
 	{
 		name: "Meinung",
-		description: "",
-		summary: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
+		description: "Wir wollen unser Analyse- und Bewertungsraster kontinuierlich weiterentwickeln. Zu diesem Zweck interessiert uns auch, wie Sie Ihre Bildungsressource bewerten, ohne unser Analyse- und Bewertungsraster zu verwenden. Halten Sie die Bildungsressource, die Sie vor sich haben, für gut oder schlecht? Welche Kriterien verwenden Sie? Welche sind für Sie am wichtigsten, welche sind für Sie weniger wichtig?",
+		summary: " Bitte teilen Sie Ihre Meinung hier mit. (optional).",
 		indicators: ''
 	},
 	{
@@ -1179,14 +1215,6 @@ function clickedEnglish() {
 			changeAnswers('En')
 		}
 		aaerTextHistory('En')
-	}
-
-	if (document.querySelector('.sv_prev_btn')) {
-		document.querySelector('.sv_prev_btn').value = 'Back'
-	}
-
-	if(document.querySelector('.sv_next_btn')) {
-		document.querySelector('.sv_next_btn').value = 'Continue'
 	}
 
 
