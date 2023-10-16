@@ -622,8 +622,12 @@ function loadResult() {
                         resolve();
 
                     } else {
-                        reject("Es konnten keine entsprechenden Daten geladen werden.");
+                        let err = sessionStorage.getItem("language") == 'En' ? 'No data available.' : 'Keine Daten vorhanden.';
+                        reject(err);
                     }
+                } else {
+                    let err = sessionStorage.getItem("language") == 'En' ? 'Something went wrong while loading.' : 'Es konnten keine entsprechenden Daten geladen werden.';
+                    reject(err);
                 };
 
             };
@@ -632,7 +636,8 @@ function loadResult() {
             xhr.send(JSON.stringify({"result_id": input}));
 
         } else {
-            reject("Es müssen genau 12 Zeichen sein.");
+            let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure the code is exactly 12 characters long.' : 'Der angegebene Code muss genau 12 Zeichen lang sein!';
+            reject(err);
         }
 
     }))
@@ -1003,7 +1008,8 @@ function loadResultSet(data) {
 
                         resolve();
                     } else {
-                        reject("Es konnten keine entsprechenden Daten geladen werden.");
+                        let err = sessionStorage.getItem("language") == 'En' ? 'Something went wrong while loading.' : 'Es konnten keine entsprechenden Daten geladen werden.';
+                        reject(err);
                     }
                 }
 
@@ -1013,7 +1019,8 @@ function loadResultSet(data) {
             xhr.send(JSON.stringify({"predefined_id": input}));
 
         } else {
-            reject("Es müssen genau 10 Zeichen sein.");
+            let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure the code is exactly 10 characters long.' : 'Der angegebene Code muss genau 10 Zeichen lang sein!';
+            reject(err);
         }
     }))
 
@@ -1035,7 +1042,8 @@ function getPredefinedData() {
                         console.log(data)
                         resolve(db_data);
                     } else {
-                        reject("Zum angegebenen Code wurde nichts gefunden!");
+                        let err = sessionStorage.getItem("language") == 'En' ? 'No data available for the given code.' : 'Zum angegebenen Code wurde nichts gefunden!'
+                        reject(err);
                     }
 
                 }
@@ -1045,7 +1053,8 @@ function getPredefinedData() {
             xhr.send(JSON.stringify({"predefined_id": input}));
 
         } else {
-            reject("Der angegebene Code muss genau 10 Zeichen lang sein!");
+            let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure the code is exactly 10 characters long.' : 'Der angegebene Code muss genau 10 Zeichen lang sein!';
+            reject(err);
         }
 
     }))
@@ -1131,7 +1140,8 @@ function savePredefined() {
 
         let input_tname = document.getElementById('survey_tname').value;
         if (!input_tname.replace(/\s/g, '').length) { // only whitespaces
-            reject("Bitte Name des Lehr-/Lernmittels eingeben!");
+            let err = sessionStorage.getItem("language") == 'En' ? 'Please insert the name of the resource.' : 'Bitte Name des Lehr-/Lernmittels eingeben!';
+            reject(err);
         } else {
             let input_link = document.getElementById('survey_link').value;
             if (!input_link.replace(/\s/g, '').length) {
@@ -1307,7 +1317,9 @@ barChartOptions = {
 
 function overallChart() {
     let canvas0 = document.getElementById('overallChart');
-    let labels = ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"];
+    let labels_en = ["References to the Curriculum", "References to Educational Standards", "Interest-driven Mediation of Topics/Positioning", "Transparency (Provider/Authors/Motivation)", "Promotional Elements", "Heterogeneity/Gender", "Activity Orientation", "Reference to the Learners’ Background / Social Milieu", "Reflection/Ability to Judge", "Multiperspectivity/Controversy", "Plurality in Methods of Learning and Teaching", "Multimedia/Multimodality", "Media Literacy", "(Internal) Differentiation", "Acessibility / Inclusion", "Transfer and Application Orientation", "Process Orientation (Accumulation)", "Elements Supporting the Learning Process (Scaffolding)", "Language", "Visual Literacy", "Additive Communication (Enrichment)", "Sequencing", "Activation", "Multiple Approaches", "Didactical Concept", "Framework Conditions"];
+    let labels_de = ["Bezüge Curriculum", "Bezüge Bildungsstandards", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "Sprachlichkeit", "Bildsprache", "Anreicherung", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "Didaktisches Konzept", "Rahmenbedingungen"];
+    let labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de;
     let values = [survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')];
     let colors = [
         // 1. Bereich
@@ -1328,7 +1340,10 @@ function overallChart() {
         "#ffa600","#ffa600"
     ];
 
-    let labelsRadar = ["", "Bezüge Curriculum", "Bezüge Bildungsstandards", "", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "", "Sprachlichkeit", "Bildsprache", "Anreicherung", "", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "", "Didaktisches Konzept", "Rahmenbedingungen"];
+    let labelsRadar_en = ["", "References to the Curriculum", "References to Educational Standards", "", "Interest-driven Mediation of Topics/Positioning", "Transparency (Provider/Authors/Motivation)", "Promotional Elements", "Heterogeneity/Gender", "", "Activity Orientation", "Reference to the Learners’ Background / Social Milieu", "Reflection/Ability to Judge", "Multiperspectivity/Controversy", "", "Plurality in Methods of Learning and Teaching", "Multimedia/Multimodality", "Media Literacy", "(Internal) Differentiation", "Acessibility / Inclusion", "", "Transfer and Application Orientation", "Process Orientation (Accumulation)", "Elements Supporting the Learning Process (Scaffolding)", "", "Language", "Visual Literacy", "Additive Communication (Enrichment)", "", "Sequencing", "Activation", "Multiple Approaches", "", "Didactical Concept", "Framework Conditions"];
+    let labelsRadar_de = ["", "Bezüge Curriculum", "Bezüge Bildungsstandards", "", "Interessensgeleitete Themenführung", "Transparenz", "Werbliche Elemente", "Heterogenität/Gender", "", "Handlungsorientierung", "Lebensweltlichkeit", "Reflexion / Urteilsfähigkeit", "Multiperspektivität / Kontroversität", "", "Methodenpluralität", "Multimedia / Multimodalität", "Medienkompetenz", "Differenzierung", "Barrierefreiheit / Inklusion", "", "Transferorientierung", "Prozessorientierung", "Lernwegunterstützend", "", "Sprachlichkeit", "Bildsprache", "Anreicherung", "", "Sequenzierung", "Aktivierung", "Multiple Lösungswege", "", "Didaktisches Konzept", "Rahmenbedingungen"];
+    let labelsRadar = sessionStorage.getItem("language") == 'En' ? labelsRadar_en : labelsRadar_de;
+    
     let valuesRadar = [0, survey.getValue('Bezüge Curriculum'), survey.getValue('Bezüge Bildungsstandards'), 0, survey.getValue('Interessegeleitete Themenführung/Positionierung'), survey.getValue('Transparenz'), survey.getValue('Werbliche Elemente'), survey.getValue('Heterogenität/Gender'), 0, survey.getValue('Handlungsorientierung'), survey.getValue('Lebensweltlichkeit'), survey.getValue('Reflexion/Urteilsfähigkeit'), survey.getValue('Multiperspektivität/Kontroversität'), 0, survey.getValue('Methodenpluralität'), survey.getValue('Multimedia/Multimodalität'), survey.getValue('Medienkompetenz'), survey.getValue('Differenzierung'), survey.getValue('Barrierefreiheit/Inklusion'), 0, survey.getValue('Transfer- und Anwendungsorientierung'), survey.getValue('Prozessorientierung (Kumulation)'), survey.getValue('Lernwegunterstützende Elemente (Scaffolding)'), 0, survey.getValue('Sprachlichkeit'), survey.getValue('Bildsprache'), survey.getValue('Additive Kommunikation (Anreicherung)'), 0, survey.getValue('Sequenzierung'), survey.getValue('Aktivierung'), survey.getValue('Multiple Lösungswege'), 0, survey.getValue('Didaktisches Konzept'), survey.getValue('Rahmenbedingungen')];
     let colorsRadar = [
         // 1. Bereich
@@ -1443,7 +1458,7 @@ function overallChart() {
 function grp1Chart() {
     let canvas1 = window.document.getElementById('grp1Chart');
     let data1 = {
-        labels: ["Curriculum", "Bildungsstandards"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Curriculum", "Educational Standards"] : ["Curriculum", "Bildungsstandards"],
         datasets: [{
             // label: "Anlehnung an Curriculum und Bildungsstandards",
             backgroundColor: "#003f5c",

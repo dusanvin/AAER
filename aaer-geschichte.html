@@ -1428,7 +1428,8 @@
 							survey.doComplete();
 
 						} else {
-							document.getElementById('getEvaluation_error').innerText = "Es konnten keine entsprechenden Daten geladen werden."
+							let err = sessionStorage.getItem("language") == 'En' ? 'Something went wrong while loading.' : 'Es konnten keine entsprechenden Daten geladen werden.';
+							document.getElementById('getEvaluation_error').innerText = err;
 							
 						}
 					};
@@ -1439,7 +1440,8 @@
 				xhr.send(JSON.stringify({ "single_id": single_id }));
 
 			} else {
-				document.getElementById('getEvaluation_error').innerText = "Es müssen genau 12 Zeichen sein.";
+				let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure the code is exactly 12 characters long.' : 'Der angegebene Code muss genau 12 Zeichen lang sein!';
+				document.getElementById('getEvaluation_error').innerText = err;
 			}
 
 		}

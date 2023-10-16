@@ -1168,6 +1168,7 @@ function clickedEnglish() {
 			changeAnswers('En')
 		}
 		aaerText('En')
+		generateCharts()
 	}
 
 	if(isAAERHistory()) {
@@ -1215,6 +1216,7 @@ function clickedGerman() {
 			changeAnswers('De')
 		}
 		aaerText('De')
+		generateCharts()
 	}
 
 	if(isAAERHistory()) {
