@@ -1706,7 +1706,7 @@
 
 		function display_Link() {
 			if (survey.getValue('Verlinkung') === "") {
-				survey.setValue('Verlinkung', sessionStorage.getItem("language") == 'En' ? 'Not specified' : 'Keine Angabe');
+				survey.setValue('Verlinkung', 'Keine Angabe');
 				$("#link_lernmittel").prop('href', "#");
 			} else {
 				$("#link_lernmittel").prop('href', survey.getValue('Verlinkung'));
@@ -1781,41 +1781,41 @@
 			$("#text-container").css("display", "none");
 			document.getElementById("name_lernmittel").innerHTML = aaer_data.Name;
 
-			let not_specified = sessionStorage.getItem("language") == 'En' ? 'not specified' : 'Keine Angabe';
-
+			let link;
 			if (aaer_data.Verlinkung == null) {
-				aaer_data.Verlinkung = not_specified;
-			} 
+				link = 'Keine Angabe';
+			} else {
+				link = aaer_data.Verlinkung;
+			}
 
+			let schulart;
 			if (aaer_data.Schulart == null) {
-				aaer_data.Schulart = not_specified;
+				schulart = 'Keine Angabe';
+			} else {
+				schulart = aaer_data.Schulart;
 			}
 
+			let fach;
 			if (aaer_data.Fach == null) {
-				aaer_data.Fach = not_specified;
+				fach = 'Keine Angabe';
+			} else {
+				fach = aaer_data.Fach;
 			}
 
+			let anmerkungen;
 			if (aaer_data['Eigene Anmerkungen'] == null) {
-				aaer_data['Eigene Anmerkungen'] = not_specified;
+				anmerkungen = 'Keine Angabe';
+			} else {
+				anmerkungen = aaer_data['Eigene Anmerkungen'];
 			}
 
-			if(sessionStorage.getItem("language") == 'En') {
-				document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + aaer_data.Verlinkung +
-				'<br> Schulart: ' + aaer_data.Schulart +
-				'<br> Fach: ' + aaer_data.Fach +
-				'<br> Eigene Anmerkungen: ' + aaer_data['Eigene Anmerkungen'] +
+			document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + link +
+				'<br> Schulart: ' + schulart +
+				'<br> Fach: ' + fach +
+				'<br> Eigene Anmerkungen: ' + anmerkungen +
 				'<br> Datum: ' + aaer_data.Datum +
 				'<br>' +
 				'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
-			} else {
-				document.getElementById("aaer_text").innerHTML = 'Link: ' + aaer_data.Verlinkung +
-				'<br> School: ' + aaer_data.Schulart +
-				'<br> Subject: ' + aaer_data.Fach +
-				'<br> Own Notes: ' + aaer_data['Eigene Anmerkungen'] +
-				'<br> Date: ' + aaer_data.Datum +
-				'<br>' +
-				'<br> <b>This evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
-			}
 
 			$("#wrapper").toggleClass("toggled");
 		}
@@ -1906,16 +1906,14 @@
 							sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 
 						} else {
-							let err = sessionStorage.getItem("language") == 'En' ? 'Please check if the code was spelled right.' : 'Zum angegebenen Code wurde nichts gefunden!';
-							document.getElementById('teilnehmen_message').innerHTML = err;
+							document.getElementById('teilnehmen_message').innerHTML = "Zum angegebenen Code wurde nichts gefunden!";
 						}
 					}
 				}
 
 
 			} else {
-				let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure that the given code is 10 characters long.' : 'Der angegebene Code muss genau 10 Zeichen lang sein!';
-				document.getElementById('teilnehmen_message').innerHTML = err;
+				document.getElementById('teilnehmen_message').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!";
 			}
 		}
 
@@ -2000,18 +1998,6 @@
 			window.survey = new Survey.Model(json);
 			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 
-			window.survey.onCurrentPageChanged.add( () => {
-				if (document.querySelector('.sv_prev_btn')) {
-					document.querySelector('.sv_prev_btn').value = sessionStorage.getItem("language") == 'En' ? 'Back' : 'Zurück'
-				}
-				document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-			})
-
-			survey.onErrorCustomText.add( function (sender, options) {
-				let err = sessionStorage.getItem("language") == 'En' ? 'Please choose an answer or write appropriate text.' : 'Bitte entscheiden Sie sich für eine Antwortmöglichkeit oder befüllen das Textfeld mit einer sinnvollen Eingabe.';
-				options.text = err;
-			})
-
 
 			survey.onComplete.add(function (sender, options) {
 				saveResult(sender.data);
@@ -2027,19 +2013,16 @@
 				index_last = window.survey.pages.length - 1
 				survey.currentPage = survey.pages[index_last];
 
-				let msg = sessionStorage.getItem("language") == 'En' ? 'Something went wrong while transmitting your data. Please try again.' : 'Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.'
-				alert(msg)
+				alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
 			}
 
 
 			$("#surveyElement").Survey({ model: survey });
-			document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter';
-
-			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 			
 
 
 			$(".sv_complete_btn").click(function () {
+				console.log('pre000' + predefined)
 				displayController(DISPLAY.THANKS);
 				var status_request = new XMLHttpRequest();
 				status_request.open('POST', 'https://staging.zlbib.uni-augsburg.de/');

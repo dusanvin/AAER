@@ -1233,17 +1233,15 @@
 			$('#div-kritik').css("display", "block");
 			$('#div-evaluationsdatum').css("display", "block");
 			$('#div-anmerkungen').css("display", "block");
-
-			let not_specified = sessionStorage.getItem("language") == 'En' ? 'Not specified' : 'Keine Angabe'
     
 			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
-			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;
-			document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? not_specified;
-			document.getElementById('fach').innerHTML = survey.data['Fach'] ?? not_specified;
-			document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? not_specified;
-			document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? not_specified;
+			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? 'Keine Angabe';
+			document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? 'Keine Angabe';
+			document.getElementById('fach').innerHTML = survey.data['Fach'] ?? 'Keine Angabe';
+			document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? 'Keine Angabe';
+			document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? 'Keine Angabe';
 			document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
-			document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'] ?? not_specified;
+			document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'] ?? 'Keine Angabe';
 			
 			// JSON-Übersicht
 			document.querySelector('#surveyResult').textContent = "" + JSON.stringify(survey.data, null, 4);
@@ -1265,35 +1263,23 @@
 			$('#div-anmerkungen').css("display", "block");
     
 			document.getElementById('gruppencode').innerHTML = group_id;
-			document.getElementById('anzahl').innerHTML = survey.data["Anzahl Datensätze"] + sessionStorage.getItem("language") == 'En' ? ', for the calculation of the average values questions answered with "cannot be assessed / not relevant" are not taken into account' : ', für die Ermittlung der Durchschnittswerte wurden Antworten mit "nicht bewertbar / nicht relevant" ausgeschlossen';
-			document.getElementById('anmerkungen').innerHTML = sessionStorage.getItem("language") == 'En' ? 'For details of single evaluations click on "DATA AS JSON-FORMAT"' : 'Details zu den Einzelevaluationen gibt es unter "Einträge im JSON-Format"';
+			document.getElementById('anzahl').innerHTML = survey.data["Anzahl Datensätze"] + ', für die Ermittlung der Durchschnittswerte wurden Antworten mit "nicht bewertbar / nicht relevant" ausgeschlossen';
+			document.getElementById('anmerkungen').innerHTML = 'Details zu den Einzelevaluationen gibt es unter "Einträge im JSON-Format"';
 		
 			generateCharts();
 		}
 
-		function _init(saved_data = null, group_id = null) {
+		
+		// single evaluation
+		function startEvaluation(saved_data = null) {
 
-			window.survey.onCurrentPageChanged.add( () => {
-				if (document.querySelector('.sv_prev_btn')) {
-					document.querySelector('.sv_prev_btn').value = sessionStorage.getItem("language") == 'En' ? 'Back' : 'Zurück'
-				}
-				document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-			})
+			let json = getJson();
+			window.survey = new Survey.Model(json);  // global: window.
 
 			$("#surveyElement").Survey({ model: survey });
-			document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-
-			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
-
-
+			
 			displayController(DISPLAY.UMFRAGE);
 			buttons.forEach(btn => document.getElementById(btn).disabled = true);
-
-			
-			survey.onComplete.add(function (sender, options) {
-				submitEvaluation(survey.data, group_id);  // index.js function
-			});
-
 
 			if (saved_data) {
 				survey.data = saved_data;
@@ -1302,50 +1288,14 @@
 				index_last = window.survey.pages.length - 1
 				survey.currentPage = survey.pages[index_last];
 				
-				let msg = sessionStorage.getItem("language") == 'En' ? 'Something went wrong while transmitting your data. Please try again.' : 'Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.'
-				alert(msg)
+				alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
 			}
-		}
-
-		
-		// single evaluation
-		function startEvaluation(saved_data = null) {
-
-			let json = getJson();
-			window.survey = new Survey.Model(json);
-			_init(saved_data);
-
-			// window.survey.onCurrentPageChanged.add( () => {
-			// 	if (document.querySelector('.sv_prev_btn')) {
-			// 		document.querySelector('.sv_prev_btn').value = sessionStorage.getItem("language") == 'En' ? 'Back' : 'Zurück'
-			// 	}
-			// 	document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-			// })
-
-			// $("#surveyElement").Survey({ model: survey });
-			// document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-
-			// sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 
 			
-			// displayController(DISPLAY.UMFRAGE);
-			// buttons.forEach(btn => document.getElementById(btn).disabled = true);
-
-			// if (saved_data) {
-			// 	survey.data = saved_data;
-			// 	console.log(survey.data)
-				
-			// 	index_last = window.survey.pages.length - 1
-			// 	survey.currentPage = survey.pages[index_last];
-				
-			// 	alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
-			// }
-
-			
-			// survey.onComplete.add(function (sender, options) {
-			// 	// submitEvaluation(sender.data);  // index.js function
-			// 	submitEvaluation(survey.data);  // index.js function
-			// });
+			survey.onComplete.add(function (sender, options) {
+				// submitEvaluation(sender.data);  // index.js function
+				submitEvaluation(survey.data);  // index.js function
+			});
 
 			$(".sv_complete_btn").click(function () {
 				displayController(DISPLAY.THANKS);
@@ -1561,11 +1511,11 @@
 
 							
 							// alle datensätze als json ausgeben
-							let json_str = sessionStorage.getItem("language") == 'En' ? 'Group evaluation:\n\n' : 'Gruppenevaluation:\n\n';
+							let json_str = 'Gruppenevaluation:\n\n';
 							json_str += JSON.stringify(gesamtEvaluation, null, 4);
 							json_str += '\n\n';
 
-							json_str += sessionStorage.getItem("language") == 'En' ? 'Listing of single evaluations' : '\nAuflistung der zugehörigen Einzelevaluationen: ';
+							json_str += '\nAuflistung der zugehörigen Einzelevaluationen: ';
 						    evaluations.forEach( evaluation => {
 								json_str += '\n\n' + JSON.stringify(evaluation.data, null, 4);
 							})
@@ -1575,13 +1525,11 @@
 							displayController(DISPLAY.OVERALL);
 						
 						} else {
-							let err = sessionStorage.getItem("language") == 'En' ? 'No data available.' : 'Keine Daten vorhanden.';
-							document.getElementById('getEvaluationGroup_error').innerText = err;
+							document.getElementById('getEvaluationGroup_error').innerText = "Keine Daten vorhanden."
 						}
 
 					} else {
-						let err = sessionStorage.getItem("language") == 'En' ? 'Something went wrong while loading.' : 'Es konnten keine entsprechenden Daten geladen werden.';
-						document.getElementById('getEvaluationGroup_error').innerText = err;
+						document.getElementById('getEvaluationGroup_error').innerText = "Es konnten keine entsprechenden Daten geladen werden."
 					}
 
 				}
@@ -1590,8 +1538,7 @@
 				xhr.send(JSON.stringify({ "group_id": group_id }));
 
 			} else {
-				let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure the code is exactly 10 characters long.' : 'Der angegebene Code muss genau 10 Zeichen lang sein!';
-				document.getElementById('getEvaluationGroup_error').innerText = err;
+				document.getElementById('getEvaluationGroup_error').innerText = "Es müssen genau 10 Zeichen sein.";
 			}			
 
 		}
@@ -1628,27 +1575,25 @@
 						survey.setValue('Fach', presets.fach ?? 'Keine Angabe.');
 						survey.setValue('Schulart', presets.schulart ?? 'Keine Angabe.');
 
-						_init(saved_data, group_id)
+						$("#surveyElement").Survey({ model: survey });
 
-						// $("#surveyElement").Survey({ model: survey });
+						displayController(DISPLAY.UMFRAGE);
+						buttons.forEach(btn => document.getElementById(btn).disabled = true);
 
-						// displayController(DISPLAY.UMFRAGE);
-						// buttons.forEach(btn => document.getElementById(btn).disabled = true);
-
-						// if (saved_data) {
-						// 	survey.data = saved_data;
-						// 	console.log(survey.data)
+						if (saved_data) {
+							survey.data = saved_data;
+							console.log(survey.data)
 							
-						// 	index_last = window.survey.pages.length - 1
-						// 	survey.currentPage = survey.pages[index_last];
+							index_last = window.survey.pages.length - 1
+							survey.currentPage = survey.pages[index_last];
 							
-						// 	alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
-						// }
+							alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
+						}
 
 
-						// survey.onComplete.add(function (sender, options) {
-						// 	submitEvaluation(survey.data, group_id);
-						// });
+						survey.onComplete.add(function (sender, options) {
+							submitEvaluation(survey.data, group_id);
+						});
 
 						$(".sv_complete_btn").click(function () {
 							displayController(DISPLAY.THANKS);
@@ -1666,16 +1611,17 @@
 							status_request.send();
 						});						
 						
+
+						
+						
 						} else {
-							let = sessionStorage.getItem("language") == 'En' ? 'No data available for the given code.' : 'Zum angegebenen Code wurde nichts gefunden!';
-							document.getElementById('teilnehmen_error').innerHTML = err;
+							document.getElementById('teilnehmen_error').innerHTML = "Zum angegebenen Code wurde nichts gefunden!";
 					}
 				}
 
 
 			} else {
-				let err = sessionStorage.getItem("language") == 'En' ? 'Please make sure the code is exactly 10 characters long.' : 'Der angegebene Code muss genau 10 Zeichen lang sein!';
-				document.getElementById('teilnehmen_error').innerHTML = err;
+				document.getElementById('teilnehmen_error').innerHTML = "Der angegebene Code muss genau 10 Zeichen lang sein!";
 			}
 		}
 

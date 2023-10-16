@@ -15,10 +15,6 @@ window.addEventListener("beforeunload", function (event) {
 
 
 function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isPresetSchulart=false) {
-    let subjects = sessionStorage.getItem("language") == 'En' ? subjects_history_en : subjects_history_de
-    let schools = sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de
-    let answers = sessionStorage.getItem("language") == 'En' ? answers_history_en : answers_history_de
-
     return  {
         title: "Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER) im Bereich Geschichte",
         pages: [
@@ -56,7 +52,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         readOnly: isPresetFach,
                         showOptionsCaption: false,
                         // defaultValue: 1,
-                        choices: subjects
+                        choices: fach
                     }
                 ]
     
@@ -70,7 +66,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         readOnly: isPresetSchulart,
                         showOptionsCaption: false,
                         // defaultValue: 1,
-                        choices: schools
+                        choices: schularten
                     }
                 ]
             }, {
@@ -100,7 +96,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         descriptionLocation: 'underInput',
                         isRequired: true,
                         dimension: aaer_geschichte[0].items[0].dimension,
-                        choices: answers
+                        choices: antworten
                     }
                 ]
             }, {
@@ -114,7 +110,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[0].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -128,7 +124,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[0].items[2].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, 
@@ -145,7 +141,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[1].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -159,7 +155,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[1].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             },
@@ -176,7 +172,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[2].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -190,7 +186,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[2].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -204,7 +200,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[2].items[2].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -218,7 +214,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[2].items[3].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -232,7 +228,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[2].items[4].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -246,7 +242,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[2].items[5].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             },
@@ -264,7 +260,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[3].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -278,7 +274,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[3].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -292,7 +288,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[3].items[2].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -306,7 +302,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[3].items[3].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -320,7 +316,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 // description: '*' + aaer_geschichte[3].items[4].indicators,
                                 // descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -334,7 +330,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[3].items[5].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             },
@@ -351,7 +347,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[4].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -365,7 +361,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[4].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             },
@@ -382,7 +378,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[5].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -396,7 +392,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[5].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -410,7 +406,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[5].items[2].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -424,7 +420,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[5].items[3].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             },
@@ -441,7 +437,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[6].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -455,7 +451,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[6].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -469,7 +465,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[6].items[2].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             },
@@ -486,7 +482,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[7].items[0].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
@@ -500,7 +496,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                                 description: '*' + aaer_geschichte[7].items[1].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
-                                choices: answers
+                                choices: antworten
                             }
                         ]
             }, {
