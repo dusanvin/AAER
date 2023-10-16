@@ -244,72 +244,6 @@ let aaer_geschichte = [
 	},
 ]
 
-
-let fach = [
-	"Bitte wählen Sie ein Fach...",
-    "Biologie",
-    "Chemie",
-    "Deutsch",
-    "Englisch",
-    "Erdkunde / Geographie",
-    "Ethik",
-    "Französich",
-    "Geschichte",
-    "Informatik / IT",
-    "Kunst / Werken",
-    "Latein",
-    "Mathematik",
-    "Musik",
-    "Pädagogik",
-    "Philosophie",
-    "Physik",
-    "Psychologie",
-    "Religion",
-    "Sozialkunde / Politik",
-    "Sport",
-    "Sprachen (andere)",
-    "Sonstiges Fach"
-];
-
-let schularten = [
-	"Bitte wählen Sie eine Schulart...",
-    "Abendschule",
-    "Alternatives Schulkonzept",
-    "Berufsfachschule",
-    "Berufskolleg",
-    "Berufsoberschule",
-    "Berufsschule",
-    "Bildungskolleg",
-    "Fachakademie",
-    "Fachhochschule",
-    "Fachoberschule",
-    "Fachschule",
-    "Förderschule",
-    "Gemeinschaftsschule",
-    "Gesamtschule",
-    "Grundschule",
-    "Gymnasium",
-    "Hochschule",
-    "Internationale Schule",
-    "Mittelschule",
-    "Realschule",
-    "Schule besonderer Art",
-    "Schule für Kranke",
-    "Sekundarschule",
-    "Volkshochschule",
-    "Vorschule",
-    "Wirtschaftsschule",
-    "Sonstige Schule",
-];
-
-let antworten = [
-    { value: 1, text: "trifft nicht zu" },
-    { value: 2, text: "trifft weniger zu" },
-    { value: 3, text: "trifft mehr zu" },
-    { value: 4, text: "trifft voll zu" },
-    { value: 0, text: "nicht bewertbar / nicht relevant" }
-];
-
 let subjects_history_de = [
 	'Bitte wählen Sie ein Fach...', 'AAER Hist de',
 	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
@@ -349,3 +283,19 @@ let schools_history_en = [
 	'Realschule', 'Schule besonderer Art', 'Schule für Kranke', 'Sekundarschule',
 	'Volkshochschule', 'Vorschule', 'Wirtschaftsschule', 'other school'
 ]
+
+let answers_history_de = [
+    {value: 1, text: "trifft nicht zu"},
+    {value: 2, text: "trifft weniger zu"},
+    {value: 3, text: "trifft mehr zu"},
+    {value: 4, text: "trifft voll zu"},
+    {value: 0, text: "nicht bewertbar / nicht relevant"}
+];
+
+let answers_history_en = [
+    {value: 1, text: "does not apply"},
+    {value: 2, text: "applies less"},
+    {value: 3, text: "applies more"},
+    {value: 4, text: "applies fully"},
+    {value: 0, text: "cannot be assessed / not relevant"}
+];

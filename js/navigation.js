@@ -179,42 +179,6 @@ function changeDeInline() {
 	en.forEach(element => element.style.display = 'none')
 }
 
-function clickedGerman() {
-	if(isAAER()) {
-		changePlaceholderTextAAER('De')
-		changeSelectOptionsAAER('De')
-		if(window.survey != null) {
-			changeSurveyText('De')
-			changeAnswers('De')
-		}
-	}
-
-	if(isAAERHistory()) {
-		changePlaceholderTextAAERHistory('De')
-		changeSelectOptionsAAERHistory('De')
-		if(window.survey != null) {
-			changeSurveyTextHistory('De')
-			changeAnswers('De')
-		}
-	}
-
-	dropdown = document.getElementById('dropdown-languages_de')
-	dropdown.style.display = 'none'
-
-	let elements_de = document.querySelectorAll('[data-lang="De"]')
-	let de = [...elements_de]
-	de.forEach(element => element.style.display = 'block')
-
-	let elements_en = document.querySelectorAll('[data-lang="En"]')
-	let en = [...elements_en]
-	en.forEach(element => element.style.display = 'none')
-
-	changeDeInline()
-
-	// SessionStorage De
-	sessionStorage.setItem("language", "De");
-}
-
 let subjects_de = [
 	'Bitte wählen Sie ein Fach...', 'AAER...de',
 	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
@@ -266,11 +230,11 @@ let answers_de = [
 ];
 
 let answers_en = [
-    {value: 1, text: "not applicable"},
-    {value: 2, text: "less applicable"},
-    {value: 3, text: "more applicable"},
-    {value: 4, text: "completely applicable"},
-    {value: 0, text: "not evaluable / not relevant"}
+    {value: 1, text: "does not apply"},
+    {value: 2, text: "applies less"},
+    {value: 3, text: "applies more"},
+    {value: 4, text: "applies fully"},
+    {value: 0, text: "cannot be assessed / not relevant"}
 ];
 
 function changeAnswers(lang) {
@@ -1203,6 +1167,7 @@ function clickedEnglish() {
 			changeSurveyText('En')
 			changeAnswers('En')
 		}
+		aaerText('En')
 	}
 
 	if(isAAERHistory()) {
@@ -1212,6 +1177,15 @@ function clickedEnglish() {
 			changeSurveyTextHistory('En')
 			changeAnswers('En')
 		}
+		aaerTextHistory('En')
+	}
+
+	if (document.querySelector('.sv_prev_btn')) {
+		document.querySelector('.sv_prev_btn').value = 'Back'
+	}
+
+	if(document.querySelector('.sv_next_btn')) {
+		document.querySelector('.sv_next_btn').value = 'Continue'
 	}
 
 
@@ -1232,6 +1206,53 @@ function clickedEnglish() {
 	sessionStorage.setItem("language", "En");
 }
 
+function clickedGerman() {
+	if(isAAER()) {
+		changePlaceholderTextAAER('De')
+		changeSelectOptionsAAER('De')
+		if(window.survey != null) {
+			changeSurveyText('De')
+			changeAnswers('De')
+		}
+		aaerText('De')
+	}
+
+	if(isAAERHistory()) {
+		changePlaceholderTextAAERHistory('De')
+		changeSelectOptionsAAERHistory('De')
+		if(window.survey != null) {
+			changeSurveyTextHistory('De')
+			changeAnswers('De')
+		}
+		aaerTextHistory('De')
+	}
+
+	if (document.querySelector('.sv_prev_btn')) {
+		document.querySelector('.sv_prev_btn').value = 'Zurück'
+	}
+
+	if(document.querySelector('.sv_next_btn')) {
+		document.querySelector('.sv_next_btn').value = 'Weiter'
+	}
+
+
+	dropdown = document.getElementById('dropdown-languages_de')
+	dropdown.style.display = 'none'
+
+	let elements_de = document.querySelectorAll('[data-lang="De"]')
+	let de = [...elements_de]
+	de.forEach(element => element.style.display = 'block')
+
+	let elements_en = document.querySelectorAll('[data-lang="En"]')
+	let en = [...elements_en]
+	en.forEach(element => element.style.display = 'none')
+
+	changeDeInline()
+
+	// SessionStorage De
+	sessionStorage.setItem("language", "De");
+}
+
 function isAAER() {
 	// if (window.survey != null && window.survey.pageCount < 35)
 	if (window.location.href.split('/').pop() == 'survey.html')
@@ -1246,6 +1267,47 @@ function isAAERHistory() {
 		return true;
 	else 
 		return false;
+}
+
+function aaerText(lang) {
+	if(document.getElementById("aaer_text")) {
+		if(lang == 'En') {
+			document.getElementById("aaer_text").innerHTML = 'Link: ' + aaer_data.Verlinkung +
+			'<br> School: ' + aaer_data.Schulart +
+			'<br> Subject: ' + aaer_data.Fach +
+			'<br> Own Notes: ' + aaer_data['Eigene Anmerkungen'] +
+			'<br> Date: ' + aaer_data.Datum +
+			'<br>' +
+			'<br> <b>This evaluation is available with following code: ' + aaer_data.Einzelevaluation + '</b>';
+		} else {
+			document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + aaer_data.Verlinkung +
+			'<br> Schulart: ' + aaer_data.Schulart +
+			'<br> Fach: ' + aaer_data.Fach +
+			'<br> Eigene Anmerkungen: ' + aaer_data['Eigene Anmerkungen'] +
+			'<br> Datum: ' + aaer_data.Datum +
+			'<br>' +
+			'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
+		}
+	}
+}
+
+function aaerTextHistory(lang) {
+
+	if(document.getElementById('anmerkungen').innerHTML) {
+		let not_specified = lang == 'En' ? 'Not specified' : 'Keine Angabe'
+		document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
+		document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;
+		document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? not_specified;
+		document.getElementById('fach').innerHTML = survey.data['Fach'] ?? not_specified;
+		document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? not_specified;
+		document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? not_specified;
+		document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
+		document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'] ?? not_specified;
+		
+		// JSON-Übersicht
+		document.querySelector('#surveyResult').textContent = "" + JSON.stringify(survey.data, null, 4);
+	}
+
 }
 
 // Hinzufügen des SessionStorages zur Sprache
