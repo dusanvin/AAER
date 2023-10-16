@@ -762,8 +762,8 @@ let surveyTextHistoryDe = [
 	},
 	{
 		name: "Meinung",
-		description: "",
-		summary: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
+		description: "Wir wollen unser Analyse- und Bewertungsraster kontinuierlich weiterentwickeln. Zu diesem Zweck interessiert uns auch, wie Sie Ihre Bildungsressource bewerten, ohne unser Analyse- und Bewertungsraster zu verwenden. Halten Sie die Bildungsressource, die Sie vor sich haben, für gut oder schlecht? Welche Kriterien verwenden Sie? Welche sind für Sie am wichtigsten, welche sind für Sie weniger wichtig?",
+		summary: " Bitte teilen Sie Ihre Meinung hier mit. (optional).",
 		indicators: ''
 	},
 	{
