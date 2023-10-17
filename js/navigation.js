@@ -179,42 +179,6 @@ function changeDeInline() {
 	en.forEach(element => element.style.display = 'none')
 }
 
-function clickedGerman() {
-	if(isAAER()) {
-		changePlaceholderTextAAER('De')
-		changeSelectOptionsAAER('De')
-		if(window.survey != null) {
-			changeSurveyText('De')
-			changeAnswers('De')
-		}
-	}
-
-	if(isAAERHistory()) {
-		changePlaceholderTextAAERHistory('De')
-		changeSelectOptionsAAERHistory('De')
-		if(window.survey != null) {
-			changeSurveyTextHistory('De')
-			changeAnswers('De')
-		}
-	}
-
-	dropdown = document.getElementById('dropdown-languages_de')
-	dropdown.style.display = 'none'
-
-	let elements_de = document.querySelectorAll('[data-lang="De"]')
-	let de = [...elements_de]
-	de.forEach(element => element.style.display = 'block')
-
-	let elements_en = document.querySelectorAll('[data-lang="En"]')
-	let en = [...elements_en]
-	en.forEach(element => element.style.display = 'none')
-
-	changeDeInline()
-
-	// SessionStorage De
-	sessionStorage.setItem("language", "De");
-}
-
 let subjects_de = [
 	'Bitte wählen Sie ein Fach...', 'AAER...de',
 	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',

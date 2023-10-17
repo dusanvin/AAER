@@ -1292,6 +1292,7 @@
 			
 			survey.onComplete.add(function (sender, options) {
 				submitEvaluation(survey.data, group_id);  // index.js function
+				sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 			});
 
 
