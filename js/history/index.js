@@ -579,6 +579,27 @@ var charts = [];
 let ids = ['chart1', 'chart2', 'chart3', 'chart4', 'chart5', 'chart6', 'chart7', 'chart8']
 let colors = ['#003f5c', '#2f4b7c', '#665191', '#a05195', '#d45087', '#f95d6a', '#ff7c43', '#ffa600']
 
+let labels_en = [
+    ['Congruence with the subject-specific goals according to the curriculum', 'Congruence with the subject-specific competencies according to the curriculum', 'Congruence with the subject-specific topical fields according to the curriculum'],
+    ['Distinguishing historical (topical) information from interpretation/personal judgement', 'Conceptions of history: Non-discriminating and in conformity with the constitution'],
+    ['Orientation at science', 'Orientation at sources/methods', 'Multiperspectivity', 'Controversity', 'Plurality', 'Orientation at the present/future'],
+    ['Distinguishing historical sources and representations', 'The nature of the used historical sources', 'The nature of the used representations', 'The method of the (re)construction of history (source work)', 'The method of the deconstruction of representations', 'The methode of historical comparison'],
+    ['Accumulation of dimensions of historical knowledge', 'The transfer/application of historical competencies'],
+    ['Narrative structure and language', 'Narrative structure and language', 'Subject-related vocabulary and terms', 'Subject-specific function of images', 'Subject-specific paratexts/support discourses'],
+    ['Activating, historical guiding questions with present-time relevance', 'Sequencing the historical setting of tasks', 'The material-methodical focus of the historical setting of tasks'],
+    ['Didactical concept', 'General conditions']
+]
+let labels_de = [
+    ['Kongruenz mit den fachspezifischen Zielen des Lehrplans', 'Kongruenz mit den fachspezifischen Kompetenzen des Lehrplans', 'Kongruenz mit den fachspezifischen Inhaltsfeldern des Lehrplans'],
+    ['Trennung von historischer (Sach-)information und Deutung/Wertung', 'Verfassungskonforme, antidiskriminierende Geschichtsbilder'],
+    ['Wissenschaftsorientierung', 'Quellen-/Methodenorientierung', 'Multiperspektivität i. e. S.', 'Kontroversität', 'Pluralität', 'Gegenwarts-/Zukunftsorientierung'],
+    ['Unterscheidungen von historischen Quellen und Darstellungen', 'Charakter der historischen Quellen', 'Charakter der Darstellungen', 'Methode der (Re-)Konstruktion von Geschichte (Quellenarbeit)', 'Methode der Dekonstruktion vorhandener Darstellungen', 'Methode des Historischen Vergleichs'],
+    ['Kumulation von historischen Wissensdimensionen', 'Progression und Transfer/Anwendung von historischen Kompetenzen'],
+    ['Narrative Struktur und Sprache', 'Fachvokabular und Begriffe', 'Fachspezifische Bildfunktion', 'Fachspezifische Paratexte/Hilfsdiskurse'],
+    ['Aktivierende gegenwartsrelevante, historische Leitfragen als Lernimpuls', 'Sequenzierung und Angemessenheit des historischen Aufgabensettings', 'Materiell-Methodische Schwerpunktsetzung des historischen Aufgabensettings'],
+    ['Didaktisches Konzept', 'Rahmenbedingungen']
+]
+
 
 function generateBarChart(index) {
 
@@ -590,7 +611,7 @@ function generateBarChart(index) {
     })
 
     let chartData = {
-        labels: aaer_geschichte[index].labels,
+        labels: sessionStorage.getItem("language") == 'En' ? labels_en[index] : labels_de[index],  //aaer_geschichte[index].labels,
         datasets: [{
             backgroundColor: colors[index],
             data: submittedData
@@ -618,11 +639,15 @@ function generateOverallChart() {
     // console.log(labels)
 
     let names = [];
-    aaer_geschichte.forEach( obj => {
-        obj.items.forEach( item => {
-            names = names.concat(item.name);
-        })
+    let labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
+    labels.forEach(arr => {
+        names = names.concat(arr)
     })
+    // aaer_geschichte.forEach( obj => {
+    //     obj.items.forEach( item => {
+    //         names = names.concat(item.name);
+    //     })
+    // })
     // console.log("Names:")
     // console.log(names)
 
@@ -692,11 +717,15 @@ function generateOverallChart() {
 function generateRadarChart() {
 
     let names = [];
-    aaer_geschichte.forEach( obj => {
-        obj.items.forEach( item => {
-            names = names.concat(item.name);
-        })
+    let labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
+    labels.forEach(arr => {
+        names = names.concat(arr)
     })
+    // aaer_geschichte.forEach( obj => {
+    //     obj.items.forEach( item => {
+    //         names = names.concat(item.name);
+    //     })
+    // })
     let values = [];
     names.forEach( name => {
         if (!name) 

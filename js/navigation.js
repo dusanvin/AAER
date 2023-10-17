@@ -1198,7 +1198,7 @@ function changeEnInline() {
 function clickedEnglish() {
 	// SessionStorage En
 	sessionStorage.setItem("language", "En");
-	
+
 	if(isAAER()) {
 		changePlaceholderTextAAER('En')
 		changeSelectOptionsAAER('En')
@@ -1216,6 +1216,9 @@ function clickedEnglish() {
 		if(window.survey != null) {
 			changeSurveyTextHistory('En')
 			changeAnswers('En')
+			generateOverallChart()
+			generateRadarChart()
+			generateCharts()
 		}
 		aaerTextHistory('En')
 	}
@@ -1257,6 +1260,9 @@ function clickedGerman() {
 		if(window.survey != null) {
 			changeSurveyTextHistory('De')
 			changeAnswers('De')
+			generateOverallChart()
+			generateRadarChart()
+			generateCharts()
 		}
 		aaerTextHistory('De')
 	}
