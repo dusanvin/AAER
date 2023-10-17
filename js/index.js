@@ -1485,7 +1485,7 @@ function grp1Chart() {
 function grp2Chart() {
     let canvas2 = document.getElementById('grp2Chart');
     data2 = {
-        labels: [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
+        labels: sessionStorage.getItem("language") == 'En' ? [["Interest-driven", "Mediation of Topics/Positioning"], "Transparency (Provider/Authors/Motivation)", "Promotional Elements", ["Heterogeneity /", "Gender"]] : [["Interessensgeleitete", "Themenführung"], "Transparenz", "Werbliche Elemente", ["Heterogenität /", "Gender"]],
         datasets: [{
             // label: "Diskursive Positionierung",
             backgroundColor: "#2f4b7c",
@@ -1512,7 +1512,7 @@ function grp2Chart() {
 function grp3Chart() {
     let canvas3 = document.getElementById('grp3Chart');
     data3 = {
-        labels: ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Activity Orientation", "Reference to the Learners’ Background / Social Milieu", "Reflection/Ability to Judge", "Multiperspectivity/Controversy"] : ["Handlungsorientierung", "Lebensweltlichkeit", "Reflexion", "Multiperspektivität"],
         datasets: [{
             // label: "Makrodidaktische und bildungstheoretische Fundierung",
             backgroundColor: "#665191",
@@ -1539,7 +1539,7 @@ function grp3Chart() {
 function grp4Chart() {
     let canvas4 = document.getElementById('grp4Chart');
     data4 = {
-        labels: ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Plurality in Methods of Learning and Teaching", "Multimedia/Multimodality", "Media Literacy", "(Internal) Differentiation", "Acessibility / Inclusion"] : ["Methodenpluralität", "Multimedia", "Medienkompetenz", "Differenzierung", "Barrierefreiheit"],
         datasets: [{
             // label: "Mikrodidaktische Umsetzung",
             backgroundColor: "#a05195",
@@ -1566,7 +1566,7 @@ function grp4Chart() {
 function grp5Chart() {
     let canvas5 = document.getElementById('grp5Chart');
     data5 = {
-        labels: ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Transfer and Application Orientation", "Process Orientation (Accumulation)", "Elements Supporting the Learning Process (Scaffolding)"] : ["Transferorientierung", "Prozessorientierung", "Lernwegunterstützend"],
         datasets: [{
             // label: "Kognitive Strukturierung",
             backgroundColor: "#d45087",
@@ -1593,7 +1593,7 @@ function grp5Chart() {
 function grp6Chart() {
     let canvas6 = document.getElementById('grp6Chart');
     data6 = {
-        labels: ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Language", "Visual Literacy", "Additive Communication (Enrichment)"] : ["Sprachlichkeit", "Bildsprache", "Anreicherung"],
         datasets: [{
             // label: "Bild- und Textkomposition",
             backgroundColor: "#f95d6a",
@@ -1619,7 +1619,7 @@ function grp6Chart() {
 function grp7Chart() {
     let canvas7 = document.getElementById('grp7Chart');
     data7 = {
-        labels: ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Sequencing", "Activation", "Multiple Approaches"] : ["Sequenzierung", "Aktivierung", "Multiple Lösungswege"],
         datasets: [{
             // label: "Aufgabendesign",
             backgroundColor: "#ff7c43",
@@ -1645,7 +1645,7 @@ function grp7Chart() {
 function grp8Chart() {
     let canvas8 = document.getElementById('grp8Chart');
     data8 = {
-        labels: ["Didaktisches Konzept", "Rahmenbedingungen"],
+        labels: sessionStorage.getItem("language") == 'En' ? ["Didactical Concept", "Framework Conditions"] : ["Didaktisches Konzept", "Rahmenbedingungen"],
         datasets: [{
             // label: "Anwendungstransparenz",
             backgroundColor: "#ffa600",
