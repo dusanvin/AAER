@@ -1425,6 +1425,7 @@
 								displayController(DISPLAY.OVERALL);
 
 								visualize();
+								sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 							});
 							survey.doComplete();
 
