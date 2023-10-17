@@ -1223,6 +1223,18 @@ function clickedEnglish() {
 		aaerTextHistory('En')
 	}
 
+	if (document.querySelector('.sv_prev_btn')) {
+		document.querySelector('.sv_prev_btn').value = 'Back'
+	}
+
+	if(document.querySelector('.sv_next_btn')) {
+		document.querySelector('.sv_next_btn').value = 'Continue'
+	}
+
+	if(document.querySelector('.sv_complete_btn ')) {
+		document.querySelector('.sv_complete_btn ').value = 'Finish'
+	}
+
 
 	dropdown = document.getElementById('dropdown-languages_en')
 	dropdown.style.display = 'none'
@@ -1273,6 +1285,10 @@ function clickedGerman() {
 
 	if(document.querySelector('.sv_next_btn')) {
 		document.querySelector('.sv_next_btn').value = 'Weiter'
+	}
+
+	if(document.querySelector('.sv_complete_btn ')) {
+		document.querySelector('.sv_complete_btn ').value = 'Fertig'
 	}
 
 

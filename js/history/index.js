@@ -639,19 +639,28 @@ function generateOverallChart() {
     // console.log(labels)
 
     let names = [];
-    let labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
-    labels.forEach(arr => {
-        names = names.concat(arr)
-    })
-    // aaer_geschichte.forEach( obj => {
-    //     obj.items.forEach( item => {
-    //         names = names.concat(item.name);
-    //     })
-    // })
-    // console.log("Names:")
-    // console.log(names)
+    aaer_geschichte.forEach( obj => {
+            obj.items.forEach( item => {
+                    names = names.concat(item.name);
+                })
+            })
 
+    let labels = []
+    let _labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
+    _labels.forEach(arr => {
+        labels = labels.concat(arr)
+    })
+    
     let values = [];
+    // for(let i = 0; i < labels_en.length; i++) {
+    //     for(let j = 0; j < labels_en[i].length; j++){
+    //         if (typeof survey.getValue(labels_en[i][j]) != 'undefined') {
+    //             values.push(survey.getValue(labels_en[i][j]))
+    //         } else {
+    //             values.push(survey.getValue(labels_de[i][j]))
+    //         }
+    //     }
+    // }
     names.forEach( name => { values.push(survey.getValue(name)) });
 
     let bar_colors = [];
@@ -664,7 +673,7 @@ function generateOverallChart() {
     let sorted = [];
 
     for (let i = 0; i < names.length; i++) {
-        sorted.push({ 'name': names[i], 'value': values[i], 'color': bar_colors[i] });
+        sorted.push({ 'name': labels[i], 'value': values[i], 'color': bar_colors[i] });
     }
 
     sorted.sort(function (a, b) {
