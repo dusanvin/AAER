@@ -1219,8 +1219,8 @@ function clickedEnglish() {
 			generateOverallChart()
 			generateRadarChart()
 			generateCharts()
+			aaerTextHistory('En')
 		}
-		aaerTextHistory('En')
 	}
 
 	if (document.querySelector('.sv_prev_btn')) {
@@ -1275,8 +1275,8 @@ function clickedGerman() {
 			generateOverallChart()
 			generateRadarChart()
 			generateCharts()
+			aaerTextHistory('De')
 		}
-		aaerTextHistory('De')
 	}
 
 	if (document.querySelector('.sv_prev_btn')) {
@@ -1323,31 +1323,31 @@ function isAAERHistory() {
 		return false;
 }
 
-function aaerText(lang) {
-	if(document.getElementById("aaer_text")) {
-		if(lang == 'En') {
-			document.getElementById("aaer_text").innerHTML = 'Link: ' + aaer_data.Verlinkung +
-			'<br> School: ' + aaer_data.Schulart +
-			'<br> Subject: ' + aaer_data.Fach +
-			'<br> Own Notes: ' + aaer_data['Eigene Anmerkungen'] +
-			'<br> Date: ' + aaer_data.Datum +
-			'<br>' +
-			'<br> <b>This evaluation is available with following code: ' + aaer_data.Einzelevaluation + '</b>';
-		} else {
-			document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + aaer_data.Verlinkung +
-			'<br> Schulart: ' + aaer_data.Schulart +
-			'<br> Fach: ' + aaer_data.Fach +
-			'<br> Eigene Anmerkungen: ' + aaer_data['Eigene Anmerkungen'] +
-			'<br> Datum: ' + aaer_data.Datum +
-			'<br>' +
-			'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
-		}
-	}
-}
+// function aaerText(lang) {
+// 	if(document.getElementById("aaer_text")) {
+// 		if(lang == 'En') {
+// 			document.getElementById("aaer_text").innerHTML = 'Link: ' + aaer_data.Verlinkung +
+// 			'<br> School: ' + aaer_data.Schulart +
+// 			'<br> Subject: ' + aaer_data.Fach +
+// 			'<br> Own Notes: ' + aaer_data['Eigene Anmerkungen'] +
+// 			'<br> Date: ' + aaer_data.Datum +
+// 			'<br>' +
+// 			'<br> <b>This evaluation is available with following code: ' + aaer_data.Einzelevaluation + '</b>';
+// 		} else {
+// 			document.getElementById("aaer_text").innerHTML = 'Verlinkung: ' + aaer_data.Verlinkung +
+// 			'<br> Schulart: ' + aaer_data.Schulart +
+// 			'<br> Fach: ' + aaer_data.Fach +
+// 			'<br> Eigene Anmerkungen: ' + aaer_data['Eigene Anmerkungen'] +
+// 			'<br> Datum: ' + aaer_data.Datum +
+// 			'<br>' +
+// 			'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + aaer_data.Einzelevaluation + '</b>';
+// 		}
+// 	}
+// }
 
 function aaerTextHistory(lang) {
 
-	if(document.getElementById('anmerkungen').innerHTML) {
+	if(document.getElementById('anmerkungen')) {
 		let not_specified = lang == 'En' ? 'Not specified' : 'Keine Angabe'
 		document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
 		document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;

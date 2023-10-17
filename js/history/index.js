@@ -726,22 +726,27 @@ function generateOverallChart() {
 function generateRadarChart() {
 
     let names = [];
-    let labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
-    labels.forEach(arr => {
-        names = names.concat(arr)
+    aaer_geschichte.forEach( obj => {
+        obj.items.forEach( item => {
+            names = names.concat(item.name);
+        })
     })
-    // aaer_geschichte.forEach( obj => {
-    //     obj.items.forEach( item => {
-    //         names = names.concat(item.name);
-    //     })
-    // })
+
     let values = [];
     names.forEach( name => {
-        if (!name) 
-           values.push(0);
+        if (!name) {
+            console.log("push 0")
+            values.push(0);
+        }
         else
             values.push(survey.getValue(name))
     });
+
+    let labels = []
+    let _labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
+    _labels.forEach(arr => {
+        labels = labels.concat(arr)
+    })
 
     let radar_colors = [];
     aaer_geschichte.forEach( (dimension, index) => { 
@@ -752,7 +757,7 @@ function generateRadarChart() {
     });
 
     let data = {
-        labels: names,
+        labels: labels,
         datasets: [{
             label: "Übersichts-Chart",
             backgroundColor: "rgba(140, 140, 140, 0.15)", //colorsRadar
