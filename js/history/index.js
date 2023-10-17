@@ -581,7 +581,7 @@ let colors = ['#003f5c', '#2f4b7c', '#665191', '#a05195', '#d45087', '#f95d6a', 
 
 let labels_en = [
     ['Congruence with the subject-specific goals according to the curriculum', 'Congruence with the subject-specific competencies according to the curriculum', 'Congruence with the subject-specific topical fields according to the curriculum'],
-    ['Distinguishing historical (topical) information from interpretation/personal judgement', 'Conceptions of history: Non-discriminating and in conformity with the constitution'],
+    [['Distinguishing historical (topical) information', 'from interpretation/personal judgement'], ['Conceptions of history:', 'Non-discriminating and in conformity with the constitution']],
     ['Orientation at science', 'Orientation at sources/methods', 'Multiperspectivity', 'Controversity', 'Plurality', 'Orientation at the present/future'],
     ['Distinguishing historical sources and representations', 'The nature of the used historical sources', 'The nature of the used representations', 'The method of the (re)construction of history (source work)', 'The method of the deconstruction of representations', 'The methode of historical comparison'],
     ['Accumulation of dimensions of historical knowledge', 'The transfer/application of historical competencies'],
