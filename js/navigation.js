@@ -1196,15 +1196,18 @@ function changeEnInline() {
 }
 
 function clickedEnglish() {
+	// SessionStorage En
+	sessionStorage.setItem("language", "En");
+	
 	if(isAAER()) {
 		changePlaceholderTextAAER('En')
 		changeSelectOptionsAAER('En')
 		if(window.survey != null) {
+			console.log("gen CHARTS")
 			changeSurveyText('En')
 			changeAnswers('En')
+			generateCharts()
 		}
-		aaerText('En')
-		generateCharts()
 	}
 
 	if(isAAERHistory()) {
@@ -1231,20 +1234,21 @@ function clickedEnglish() {
 	
 	changeEnInline()
 
-	// SessionStorage En
-	sessionStorage.setItem("language", "En");
 }
 
 function clickedGerman() {
+	// SessionStorage De
+	sessionStorage.setItem("language", "De");
+
 	if(isAAER()) {
 		changePlaceholderTextAAER('De')
 		changeSelectOptionsAAER('De')
 		if(window.survey != null) {
+			console.log("gen CHARTS")
 			changeSurveyText('De')
 			changeAnswers('De')
+			generateCharts()
 		}
-		aaerText('De')
-		generateCharts()
 	}
 
 	if(isAAERHistory()) {
@@ -1279,13 +1283,11 @@ function clickedGerman() {
 
 	changeDeInline()
 
-	// SessionStorage De
-	sessionStorage.setItem("language", "De");
 }
 
 function isAAER() {
 	// if (window.survey != null && window.survey.pageCount < 35)
-	if (window.location.href.split('/').pop() == 'survey.html')
+	if (window.location.href.split('/').pop().includes('survey.html'))
 		return true;
 	else 
 		return false;
@@ -1293,7 +1295,7 @@ function isAAER() {
 
 function isAAERHistory() {
 	// if (window.survey != null && window.survey.pageCount == 35)
-	if (window.location.href.split('/').pop() == 'aaer-geschichte.html')
+	if (window.location.href.split('/').pop().includes('aaer-geschichte.html'))
 		return true;
 	else 
 		return false;
