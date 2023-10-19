@@ -81,7 +81,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         type: "text",
                         name: "Meinung",
                         title: "Bitte teilen Sie uns hier Ihre Meinung mit.",
-                        isRequired: false
+                        isRequired: true
                     }
                 ]
             },
