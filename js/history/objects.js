@@ -245,21 +245,58 @@ let aaer_geschichte = [
 ]
 
 let subjects_history_de = [
-	'Bitte wählen Sie ein Fach...', 'AAER Hist de',
-	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
-	'Erdkunde / Geographie', 'Ethik', 'Französich', 'Geschichte', 'Informatik / IT',
-	'Kunst / Werken', 'Latein', 'Mathematik', 'Musik', 'Pädagogik', 'Philosophie',
-	'Physik', 'Psychologie', 'Religion', 'Sozialkunde / Politik', 
-	'Sport', 'Sprachen (andere)', 'Sonstiges Fach'
+	'Bitte wählen Sie ein Fach...',
+	'Keine Angabe',
+	'Geschichte',
+	'Biologie',
+	'Chemie', 'Deutsch',
+	'Englisch',
+	'Erdkunde / Geographie',
+	'Ethik',
+	'Französisch',
+	'Heimat-  und Sachunterricht (Geschichte)',
+	'Informatik / IT',
+	'Kunst / Werken',
+	'Latein',
+	'Mathematik',
+	'Musik',
+	'Pädagogik',
+	'Philosophie',
+	'Physik',
+	'Psychologie',
+	'Religion',
+	'Sozialkunde / Politik',
+	'Sport',
+	'Sprachen (andere)',
+	'Sonstiges Fach'
 ]
 
 let subjects_history_en = [
-	'Please choose a subject...', 'AAER Hist en',
-	'not specified', 'biology', 'chemistry', 'german', 'english', 
-	'geography', 'ethics', 'french', 'history', 'computer science', 
-	'art', 'latin', 'maths', 'music', 'pedagogy', 'philosophy',
-	'physics', 'psychology', 'religion', 'social/political studies', 
-	'sports', 'languages (other)', 'other subject'
+	'Please choose a subject...',
+	'not specified',
+	'hisotry (education)',
+	'biology',
+	'chemistry',
+	'german',
+	'english',
+	'geography',
+	'ethics',
+	'french',
+	'local history and science education',
+	'computer science',
+	'art',
+	'latin',
+	'maths',
+	'music',
+	'pedagogy',
+	'philosophy',
+	'physics',
+	'psychology',
+	'religion',
+	'social/political studies',
+	'sports',
+	'languages (other)',
+	'other subject'
 ]
 
 let schools_history_de = [
