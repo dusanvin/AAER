@@ -993,7 +993,7 @@ let surveyTextHistoryEn = [
 	{
 		name: "Your opinion",
 		description: "We want to continuously develop our analysis and evaluation grid. For this purpose, it is also of interest to us how you evaluate your educational resource without using our analysis and evaluation grid. Do you think the educational resource in front of you is good or bad? Which criteria do you use? Which ones are the most important for you, which ones are less important for you?",
-		summary: "5. Please share your opinion here.",
+		summary: "Please share your opinion here.",
 		indicators:" Indicators of a positive rating for this item: "
 	},
 	{
