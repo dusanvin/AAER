@@ -1239,7 +1239,7 @@
 
 			let not_specified = sessionStorage.getItem("language") == 'En' ? 'Not specified' : 'Keine Angabe'
     
-			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
+			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'] ?? '';
 			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;
 			document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? not_specified;
 			document.getElementById('fach').innerHTML = survey.data['Fach'] ?? not_specified;
