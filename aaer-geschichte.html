@@ -418,7 +418,7 @@
 													option.disabled = 'disabled'
 													option.value = ''
 												} else {
-													option.value = index
+													option.value = item //index
 												}
 												option.text = item;
 												select.appendChild(option)
@@ -983,6 +983,9 @@
 
 						let _html = [];
 						aaer_geschichte.forEach((element, index) => {
+							console.log(index)
+							console.log(element['title_overview'])
+							console.log(element['description_overview'])
 							_html.push(createChartHTML(index+1, element['title_overview'], element['description_overview']))
 						})
 
