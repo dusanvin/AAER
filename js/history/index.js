@@ -54,6 +54,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
                         // defaultValue: "Keine Angabe",
                         readOnly: isPresetFach,
+                        isRequired: true,
                         showOptionsCaption: false,
                         // defaultValue: 1,
                         choices: subjects

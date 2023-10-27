@@ -767,7 +767,8 @@ let surveyTextHistoryDe = [
 	{
 		name: "Fach",
 		description: "",
-		summary: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
+		summary: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen.",
+		isRequired: true,
 		indicators: ''
 	},
 	{
@@ -779,7 +780,7 @@ let surveyTextHistoryDe = [
 	{
 		name: "Meinung",
 		description: "Wir wollen unser Analyse- und Bewertungsraster kontinuierlich weiterentwickeln. Zu diesem Zweck interessiert uns auch, wie Sie Ihre Bildungsressource bewerten, ohne unser Analyse- und Bewertungsraster zu verwenden. Halten Sie die Bildungsressource, die Sie vor sich haben, für gut oder schlecht? Welche Kriterien verwenden Sie? Welche sind für Sie am wichtigsten, welche sind für Sie weniger wichtig?",
-		summary: " Bitte teilen Sie Ihre Meinung hier mit. (optional).",
+		summary: " Bitte teilen Sie Ihre Meinung hier mit.",
 		indicators: ''
 	},
 	{
@@ -981,7 +982,8 @@ let surveyTextHistoryEn = [
 	{
 		name: "Subject",
 		description: "",
-		summary: "Please let us know for which subject you are using the AAER (optional).",
+		summary: "Please let us know for which subject you are using the AAER.",
+		isRequired: true,
 		indicators: ''
 	},
 	{
