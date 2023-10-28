@@ -51,7 +51,7 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                     {
                         type: "dropdown",
                         name: "Fach",
-                        title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen (optional).",
+                        title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen.",
                         // defaultValue: "Keine Angabe",
                         readOnly: isPresetFach,
                         isRequired: true,

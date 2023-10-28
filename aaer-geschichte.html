@@ -1319,6 +1319,11 @@
 			window.survey = new Survey.Model(json);
 			_init(saved_data);
 
+			survey.onErrorCustomText.add( function (sender, options) {
+				let err = sessionStorage.getItem("language") == 'En' ? 'Please choose an answer or write appropriate text.' : 'Bitte entscheiden Sie sich für eine Antwortmöglichkeit oder befüllen das Textfeld mit einer sinnvollen Eingabe.';
+				options.text = err;
+			})
+
 			// window.survey.onCurrentPageChanged.add( () => {
 			// 	if (document.querySelector('.sv_prev_btn')) {
 			// 		document.querySelector('.sv_prev_btn').value = sessionStorage.getItem("language") == 'En' ? 'Back' : 'Zurück'
@@ -1409,6 +1414,11 @@
 						if (this.responseText.length > 0) {
 							let json = getJson()
 							window.survey = new Survey.Model(json);
+
+							survey.onErrorCustomText.add( function (sender, options) {
+								let err = sessionStorage.getItem("language") == 'En' ? 'Please choose an answer or write appropriate text.' : 'Bitte entscheiden Sie sich für eine Antwortmöglichkeit oder befüllen das Textfeld mit einer sinnvollen Eingabe.';
+								options.text = err;
+							})
 
 							// let {single_id, group_id, data} = JSON.parse(this.responseText);
 							// console.log("destructuring")
@@ -1562,6 +1572,10 @@
 
 							let json = getJson()
 							window.survey = new Survey.Model(json);
+							survey.onErrorCustomText.add( function (sender, options) {
+								let err = sessionStorage.getItem("language") == 'En' ? 'Please choose an answer or write appropriate text.' : 'Bitte entscheiden Sie sich für eine Antwortmöglichkeit oder befüllen das Textfeld mit einer sinnvollen Eingabe.';
+								options.text = err;
+							})
 							survey.data = gesamtEvaluation;
 							visualizeGroup(group_id);
 
@@ -1629,6 +1643,10 @@
 
 						let json = getJson(true, presets.link ? true : false, presets.fach ? true : false, presets.schulart ? true : false)
 						window.survey = new Survey.Model(json);  // global: window.
+						survey.onErrorCustomText.add( function (sender, options) {
+							let err = sessionStorage.getItem("language") == 'En' ? 'Please choose an answer or write appropriate text.' : 'Bitte entscheiden Sie sich für eine Antwortmöglichkeit oder befüllen das Textfeld mit einer sinnvollen Eingabe.';
+							options.text = err;
+						})
 
 						survey.setValue('Name', presets.name);
 						survey.setValue('Verlinkung', presets.link ?? 'Keine Angabe.');
