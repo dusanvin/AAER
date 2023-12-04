@@ -397,10 +397,6 @@
 									<span data-lang="En">Please insert a link to the ressource. (optional)</span>
 									<input class="form-control" type="text" id="form-preset-link">
 									<br>
-									<span data-lang="De">Welchem Fach ist das Lehr-Lernmittel zugeordnet?</span>
-									<span data-lang="En">To which subject is the ressource related?</span>
-									<select class="form-control" id="form-preset-fach"></select>
-									<br>
 									<span data-lang="De">Welcher Schulart ist das Lehr-/ Lernmittel zugeordnet?</span>
 									<span data-lang="En">To which type of school is the educational ressource related?</span>
 									<br>
@@ -424,8 +420,6 @@
 												select.appendChild(option)
 											})
 										}
-
-										_createSelectOptions('form-preset-fach', sessionStorage.getItem("language") == 'En' ? subjects_history_en : subjects_history_de);
 										_createSelectOptions('form-preset-schulart', sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de);
 									</script>
 
@@ -736,22 +730,6 @@
 																		class="pt-3 pb-3 pl-3 pr-3">
 
 																		<a id="schulart"
-																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
-
-																	</div>
-
-																</div>
-
-																<div id="div-fach"
-																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 pl-0 pr-0">
-
-																	<p class="mb-2 pl-3 lehr-lernmittel-heading"><span data-lang="De">Fach</span><span data-lang="En">Subject</span>
-																	</p>
-
-																	<div style="background-color: #f1f3fa; min-height:76px;"
-																		class="pt-3 pb-3 pl-3">
-
-																		<a id="fach"
 																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
 
 																	</div>
@@ -1167,16 +1145,6 @@
 			// $("#printview-text").css("display", "block");
 			$(DISPLAY.FOOTER).css("display", "none");
 
-			// document.getElementById("lernmittel").innerHTML = window.survey.data.Name;
-
-			// document.getElementById("printview-text").innerHTML = 'Verlinkung: ' + window.survey.data.Verlinkung +
-			// 	'<br> Schulart: ' + window.survey.data.Schulart +
-			// 	'<br> Fach: ' + window.survey.data.Fach +
-			// 	'<br> Eigene Anmerkungen: ' + window.survey.data['Eigene Anmerkungen'] +
-			// 	'<br> Evaluationsdatum: ' + window.survey.data.Evaluationsdatum +
-			// 	'<br>' +
-			// 	'<br> <b>Diese AAER Evaluation ist abrufbar mit folgendem Code: ' + window.survey.data.Evaluationscode + '</b>';
-
 			$("#wrapper").toggleClass("toggled");
 		}
 
@@ -1231,7 +1199,6 @@
 			$('#div-evaluationscode').css("display", "block");
 			$('#div-verlinkung').css("display", "block");
 			$('#div-schulart').css("display", "block");
-			$('#div-fach').css("display", "block");
 			$('#div-meinung').css("display", "block");
 			$('#div-kritik').css("display", "block");
 			$('#div-evaluationsdatum').css("display", "block");
@@ -1242,7 +1209,6 @@
 			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'] ?? '';
 			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;
 			document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? not_specified;
-			document.getElementById('fach').innerHTML = survey.data['Fach'] ?? not_specified;
 			document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? not_specified;
 			document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? not_specified;
 			document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
@@ -1261,7 +1227,6 @@
 			$('#div-evaluationscode').css("display", "none");
 			$('#div-verlinkung').css("display", "none");
 			$('#div-schulart').css("display", "none");
-			$('#div-fach').css("display", "none");
 			$('#div-meinung').css("display", "none");
 			$('#div-kritik').css("display", "none");
 			$('#div-evaluationsdatum').css("display", "none");
@@ -1477,11 +1442,6 @@
 						lehrmittelLink = null;
 					}
 
-					let lehrmittelFach = document.getElementById('form-preset-fach').value;
-					if (lehrmittelFach === '' || lehrmittelFach == 'Keine Angabe') {
-						lehrmittelFach = null;
-					}
-
 					let lehrmittelSchulart = document.getElementById('form-preset-schulart').value;
 					if (lehrmittelSchulart == '' || lehrmittelSchulart == 'Keine Angabe') {
 						lehrmittelSchulart = null;
@@ -1490,7 +1450,6 @@
 					let presets = {
 						"lehrmittelName": lehrmittelName,
 						"lehrmittelLink": lehrmittelLink,
-						"lehrmittelFach": lehrmittelFach,
 						"lehrmittelSchulart": lehrmittelSchulart
 					}
 
@@ -1637,12 +1596,11 @@
 						console.log(presets)
 						console.log(presets.name ? true : false)
 						console.log(presets.link ? true : false)
-						console.log(presets.fach ? true : false)
 						console.log(presets.schulart ? true : false)
 
 
 
-						let json = getJson(true, presets.link ? true : false, presets.fach ? true : false, presets.schulart ? true : false)
+						let json = getJson(true, presets.link ? true : false, presets.schulart ? true : false)
 						window.survey = new Survey.Model(json);  // global: window.
 						survey.onErrorCustomText.add( function (sender, options) {
 							let err = sessionStorage.getItem("language") == 'En' ? 'Please choose an answer or write appropriate text.' : 'Bitte entscheiden Sie sich für eine Antwortmöglichkeit oder befüllen das Textfeld mit einer sinnvollen Eingabe.';
@@ -1651,30 +1609,9 @@
 
 						survey.setValue('Name', presets.name);
 						survey.setValue('Verlinkung', presets.link ?? 'Keine Angabe.');
-						survey.setValue('Fach', presets.fach ?? 'Keine Angabe.');
 						survey.setValue('Schulart', presets.schulart ?? 'Keine Angabe.');
 
 						_init(saved_data, group_id)
-
-						// $("#surveyElement").Survey({ model: survey });
-
-						// displayController(DISPLAY.UMFRAGE);
-						// buttons.forEach(btn => document.getElementById(btn).disabled = true);
-
-						// if (saved_data) {
-						// 	survey.data = saved_data;
-						// 	console.log(survey.data)
-							
-						// 	index_last = window.survey.pages.length - 1
-						// 	survey.currentPage = survey.pages[index_last];
-							
-						// 	alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
-						// }
-
-
-						// survey.onComplete.add(function (sender, options) {
-						// 	submitEvaluation(survey.data, group_id);
-						// });
 
 						$(".sv_complete_btn").click(function () {
 							displayController(DISPLAY.THANKS);

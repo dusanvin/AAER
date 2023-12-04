@@ -14,8 +14,7 @@ window.addEventListener("beforeunload", function (event) {
 // import {aaer_geschichte, fach, schularten, antworten} from './objects.js'; should be loaded in browser already
 
 
-function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isPresetSchulart=false) {
-    let subjects = sessionStorage.getItem("language") == 'En' ? subjects_history_en : subjects_history_de
+function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false) {
     let schools = sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de
     let answers = sessionStorage.getItem("language") == 'En' ? answers_history_en : answers_history_de
 
@@ -46,21 +45,6 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetFach=false, isP
                         readOnly: isPresetLink,
                     }
                 ]
-            }, {
-                elements: [
-                    {
-                        type: "dropdown",
-                        name: "Fach",
-                        title: "Bitte teilen Sie uns mit, für welches Fach Sie das AAER nutzen.",
-                        // defaultValue: "Keine Angabe",
-                        readOnly: isPresetFach,
-                        isRequired: true,
-                        showOptionsCaption: false,
-                        // defaultValue: 1,
-                        choices: subjects
-                    }
-                ]
-    
             }, {
                 elements: [
                     {
@@ -862,7 +846,6 @@ function forward(index) {
     let data = {
         "Name": "name_index_" + index,
         "Verlinkung": "link_index_" + index,
-        "Fach": "Englisch",
         "Schulart": "Hochschule",
         "Meinung": "meinung_index_" + index,  //
         "Kongruenz mit den fachspezifischen Zielen des Lehrplans": 1,
