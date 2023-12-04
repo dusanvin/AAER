@@ -1360,11 +1360,12 @@
 				displayController(DISPLAY.THANKS);
 				
 				let status_request = new XMLHttpRequest();
-				status_request.open('POST', 'https://staging.zlbib.uni-augsburg.de/');  // check internetverbindung
+				status_request.open('POST', 'https://aaer.digillab.uni-augsburg.de/');  // check internetverbindung
 
 				status_request.onreadystatechange = function () {
 					if (this.status == 200) {
 						buttons.forEach(btn => document.getElementById(btn).disabled = false);
+						submitEvaluation(data = survey.data)
 					} else {
 						startEvaluation(saved_data = survey.data);  // fallback if connection fails
 					}
@@ -1382,7 +1383,7 @@
 			survey.setValue('Evaluationsdatum', getDate());
 
 			let xhr = new XMLHttpRequest();
-			xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/saveEvaluation");
+			xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/saveEvaluation");
 
 			xhr.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
@@ -1406,7 +1407,7 @@
 			if (single_id.length === 12) {
 
 				let xhr = new XMLHttpRequest();
-				xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/getEvaluation");
+				xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluation");
 
 				xhr.onreadystatechange = function () {
 					if (this.readyState == 4 && this.status == 200) {
@@ -1494,7 +1495,7 @@
 					}
 
 					let xhr = new XMLHttpRequest();
-					xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/createEvaluationPresetsForGroup");
+					xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/createEvaluationPresetsForGroup");
 
 					xhr.onreadystatechange = function () {
 						if (this.readyState == 4 && this.status == 200) {
@@ -1525,7 +1526,7 @@
 			if (group_id.length === 10) {
 
 				let xhr = new XMLHttpRequest();
-				xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/getEvaluationGroup");
+				xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluationGroup");
 
 				xhr.onreadystatechange = function () {
 
@@ -1625,7 +1626,7 @@
 			if (group_id.length === 10) {
 
 				let xhr = new XMLHttpRequest();
-				xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/getEvaluationPresetsForGroup");
+				xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/getEvaluationPresetsForGroup");
 				xhr.setRequestHeader("Content-Type", "application/json");
 				xhr.send(JSON.stringify({ "group_id": group_id }));
 
@@ -1679,7 +1680,7 @@
 							displayController(DISPLAY.THANKS);
 							
 							let status_request = new XMLHttpRequest();
-							status_request.open('POST', 'https://staging.zlbib.uni-augsburg.de/');  // check internetverbindung
+							status_request.open('POST', 'https://aaer.digillab.uni-augsburg.de/');  // check internetverbindung
 
 							status_request.onreadystatechange = function () {
 								if (this.status == 200) {
