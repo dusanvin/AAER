@@ -511,7 +511,8 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
                     }
                 ]
             }
-        ]
+        ],
+        "showQuestionNumbers": "off"
     };
 }
 
