@@ -581,7 +581,7 @@ let labels_de = [
 
 
 function generateBarChart(index) {
-    let names = [
+    let _names = [
         ['I', 'II', 'III'],
         ['IV', 'V'],
         ['VI', 'VII', 'VIII', 'IX', 'X', 'XI'],
@@ -595,7 +595,7 @@ function generateBarChart(index) {
     let canvas = window.document.getElementById(ids[index]);
 
     let submittedData = [];
-    names[index].forEach(function (name) {
+    _names[index].forEach(function (name) {
         submittedData.push(survey.getValue(name))
     })
 
@@ -622,6 +622,8 @@ function generateOverallChart() {
 
     let canvas = document.getElementById('overallChart');
 
+    let _names = [...names]
+
     let labels = []
     let _labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
     _labels.forEach(arr => {
@@ -629,8 +631,11 @@ function generateOverallChart() {
     })
     
     let values = [];
-
-    names.forEach( name => { values.push(survey.getValue(name)) });
+    _names.forEach( name => { values.push(survey.getValue(name)) });
+    console.log('Overall Chart: values')
+    console.log(names)
+    console.log(_names)
+    console.log(values)
 
     let bar_colors = [];
     dimensionsHistoryEn.forEach( (dimension, index) => { 
@@ -640,23 +645,20 @@ function generateOverallChart() {
     });
 
     let sorted = [];
-
-    for (let i = 0; i < names.length; i++) {
+    for (let i = 0; i < _names.length; i++) {
         sorted.push({ 'name': labels[i], 'value': values[i], 'color': bar_colors[i] });
     }
-
     sorted.sort(function (a, b) {
         return ((a.value > b.value) ? -1 : ((a.value == b.value) ? 0 : 1));
     })
-
     for (let i = 0; i < sorted.length; i++) {
-        names[i] = sorted[i].name;
+        _names[i] = sorted[i].name;
         values[i] = sorted[i].value;
         bar_colors[i] = sorted[i].color;
     }
 
     let data = {
-        labels: names,
+        labels: _names,
         datasets: [{
             label: "Übersichts-Chart",
             backgroundColor: bar_colors,
@@ -698,6 +700,8 @@ function generateRadarChart() {
     names.forEach( name => {
         values.push(survey.getValue(name))
     });
+    console.log('names radar chart')
+    console.log(names)
 
     let labels = []
     let _labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de

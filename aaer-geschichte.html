@@ -1620,7 +1620,7 @@
 						});						
 						
 						} else {
-							let = sessionStorage.getItem("language") == 'En' ? 'No data available for the given code.' : 'Zum angegebenen Code wurde nichts gefunden!';
+							let err = sessionStorage.getItem("language") == 'En' ? 'No data available for the given code.' : 'Zum angegebenen Code wurde nichts gefunden!';
 							document.getElementById('teilnehmen_error').innerHTML = err;
 					}
 				}
