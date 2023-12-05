@@ -718,19 +718,15 @@ let surveyTextEn = [
 ]
 
 function changeSurveyText(language) {
-	if (window.survey != null) {
-		let surveyText = language == 'De' ? surveyTextDe : surveyTextEn;
-		if (window.survey.pageCount < 35) {  // vorläufig zum Unterscheiden um welche Umfrage es geht
-			for (i = 0; i < survey.pageCount; i++) {
-				page = survey.getPage(i);
-				page.title = surveyText[i].title;
-				page.description = surveyText[i].description;
-				page.questions[0].title = surveyText[i].question;
-			}
-		}
+	let surveyText = language == 'De' ? surveyTextDe : surveyTextEn;
+	for (i = 0; i < survey.pageCount; i++) {
+		page = survey.getPage(i);
+		page.title = surveyText[i].title;
+		page.description = surveyText[i].description;
+		page.questions[0].title = surveyText[i].question;
 	}
 }
-// es fehlen die texte in den einzelcharts
+
 function changeSurveyTextHistory(language) {
 	let surveyText = language == 'De' ? surveyTextHistoryDe : surveyTextHistoryEn;
 	for (i = 0; i < survey.pageCount; i++) {
@@ -765,7 +761,6 @@ function clickedEnglish() {
 		changePlaceholderTextAAER('En')
 		changeSelectOptionsAAER('En')
 		if(window.survey != null) {
-			console.log("gen CHARTS")
 			changeSurveyText('En')
 			changeAnswers('En')
 			generateCharts()
