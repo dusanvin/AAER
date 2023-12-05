@@ -11,36 +11,34 @@ window.addEventListener("beforeunload", function (event) {
 
 // Survey.englishStrings.optionsCaption = "Wählen..."
 
-// import {aaer_geschichte, fach, schularten, antworten} from './objects.js'; should be loaded in browser already
-
-
 function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false) {
     let schools = sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de
     let answers = sessionStorage.getItem("language") == 'En' ? answers_history_en : answers_history_de
+    let aaer = sessionStorage.getItem("language") == 'En' ? surveyTextHistoryEn : surveyTextHistoryDe
 
     return  {
         title: "Nutzung des Augsburger Analyse- und Evaluationsrasters für digitale und analoge Bildungsmedien (AAER) im Bereich Geschichte",
         pages: [
             {
-                title: "Name des Lehr-Lernmittels", // überschrift seite
-                description: "Der Name wird später in Ihrer für Sie persönlich generierten Auswertung angezeigt.",
+                title: aaer[0].name,
+                description: aaer[0].description,
                 elements: [
                     {
                         type: "text",
-                        name: "Name", // dict key, zugriff auf angegeben wert
-                        title: "Bitte geben Sie den Namen des Lehr-Lernmittels an, das Sie mit Hilfe des AAER analysieren/evaluieren möchten.", // überschrift direkt vor der eingabe
+                        name: "Name",
+                        title: aaer[0].summary,
                         isRequired: true,
                         readOnly: isPresetName,
                     }
                 ]
             }, {
-                title: "Link (optional)", 
-                description: "Sie können an dieser Stelle den Link zu dem zu analysierenden/evaluierenden Lehr-Lernmittel angeben. Er wird in der abschließend für Sie generierten Auswertungsübersicht angezeigt.",
+                title: aaer[1].name,
+                description: aaer[1].description,
                 elements: [
                     {
                         type: "text",
                         name: "Verlinkung",
-                        title: "Bitte geben Sie den Link zu Ihrem Lehr-Lernmittel an (optional).",
+                        title: aaer[1].summary,
                         isRequired: false,
                         readOnly: isPresetLink,
                     }
@@ -50,22 +48,20 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
                     {
                         type: "dropdown",
                         name: "Schulart",
-                        title: "Bitte teilen Sie uns mit, für welche Schulart Sie das AAER nutzen (optional).",
-                        // defaultValue: "Keine Angabe",
+                        title: aaer[2].summary,
                         readOnly: isPresetSchulart,
                         showOptionsCaption: false,
-                        // defaultValue: 1,
                         choices: schools
                     }
                 ]
             }, {
-                title: "Ihre Meinung", 
-                description: "Wir wollen unser Analyse- und Evaluationsraster kontinuierlich weiterentwickeln. Dafür ist für uns auch von Interessen wie sie das Lehr-Lernmittel ohne Verwendung unseres Analyse- und Evaluationsraster bewerten. Halten Sie das Ihnen vorliegende Geschichtslehrmitteln für gut oder schlecht? Welche Kriterien ziehen Sie heran? Welche sind für Sie die entscheidenden, welche sind Ihnen weniger wichtig?",
+                title: aaer[3].name,
+                description: aaer[3].description,
                 elements: [
                     {
                         type: "text",
                         name: "Meinung",
-                        title: "Bitte teilen Sie uns hier Ihre Meinung mit.",
+                        title: aaer[3].summary,
                         isRequired: true
                     }
                 ]
@@ -73,44 +69,42 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
               
             //dimension 1 mit (0:2) Items
             {
-                dimension: aaer_geschichte[0].items[0].dimension, 
-                title: aaer_geschichte[0].items[0].name, 
-                description: aaer_geschichte[0].items[0].description,
+                title: aaer[4].name,
+                description: aaer[4].description,
                 elements: [
                     {
                         type: "radiogroup",
-                        name: aaer_geschichte[0].items[0].name, // name is hidden
-                        title: aaer_geschichte[0].items[0].summary,  // entspricht frage
-                        description: '*' + aaer_geschichte[0].items[0].indicators,
+                        name: "I",
+                        title: aaer[4].summary,
+                        description: '*' + aaer[4].indicators,
                         descriptionLocation: 'underInput',
                         isRequired: true,
-                        dimension: aaer_geschichte[0].items[0].dimension,
                         choices: answers
                     }
                 ]
             }, {
-                title: aaer_geschichte[0].items[1].name, 
-                description: aaer_geschichte[0].items[1].description,
+                title: aaer[5].name,
+                description: aaer[5].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[0].items[1].name, 
-                                title: aaer_geschichte[0].items[1].summary,
-                                description: '*' + aaer_geschichte[0].items[1].indicators,
+                                name: "II",
+                                title: aaer[5].summary,
+                                description: '*' + aaer[5].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[0].items[2].name, 
-                description: aaer_geschichte[0].items[2].description,
+                title: aaer[6].name,
+                description: aaer[6].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[0].items[2].name, 
-                                title: aaer_geschichte[0].items[2].summary,
-                                description: '*' + aaer_geschichte[0].items[2].indicators,
+                                name: "III",
+                                title: aaer[6].summary,
+                                description: '*' + aaer[6].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -120,28 +114,28 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
     
             //dimension 2 mit (0:1) items
             {
-                title: aaer_geschichte[1].items[0].name, 
-                description: aaer_geschichte[1].items[0].description,
+                title: aaer[7].name,
+                description: aaer[7].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[1].items[0].name, 
-                                title: aaer_geschichte[1].items[0].summary,
-                                description: '*' + aaer_geschichte[1].items[0].indicators,
+                                name: "IV",
+                                title: aaer[7].summary,
+                                description: '*' + aaer[7].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[1].items[1].name, 
-                description: aaer_geschichte[1].items[1].description,
+                title: aaer[8].name,
+                description: aaer[8].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[1].items[1].name, 
-                                title: aaer_geschichte[1].items[1].summary,
-                                description: '*' + aaer_geschichte[1].items[1].indicators,
+                                name: "V",
+                                title: aaer[8].summary,
+                                description: '*' + aaer[8].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -151,84 +145,84 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
     
             //dimension3 mit (0:5) items
             {
-                title: aaer_geschichte[2].items[0].name, 
-                description: aaer_geschichte[2].items[0].description,
+                title: aaer[9].name,
+                description: aaer[9].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[2].items[0].name, 
-                                title: aaer_geschichte[2].items[0].summary,
-                                description: '*' + aaer_geschichte[2].items[0].indicators,
+                                name: "VI",
+                                title: aaer[9].summary,
+                                description: '*' + aaer[9].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[2].items[1].name, 
-                description: aaer_geschichte[2].items[1].description,
+                title: aaer[10].name,
+                description: aaer[10].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[2].items[1].name, 
-                                title: aaer_geschichte[2].items[1].summary,
-                                description: '*' + aaer_geschichte[2].items[1].indicators,
+                                name: "VII",
+                                title: aaer[10].summary,
+                                description: '*' + aaer[10].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[2].items[2].name, 
-                description: aaer_geschichte[2].items[2].description,
+                title: aaer[11].name,
+                description: aaer[11].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[2].items[2].name, 
-                                title: aaer_geschichte[2].items[2].summary,
-                                description: '*' + aaer_geschichte[2].items[2].indicators,
+                                name: "VIII",
+                                title: aaer[11].summary,
+                                description: '*' + aaer[11].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[2].items[3].name, 
-                description: aaer_geschichte[2].items[3].description,
+                title: aaer[12].name,
+                description: aaer[12].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[2].items[3].name, 
-                                title: aaer_geschichte[2].items[3].summary,
-                                description: '*' + aaer_geschichte[2].items[3].indicators,
+                                name: "IX",
+                                title: aaer[12].summary,
+                                description: '*' + aaer[12].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[2].items[4].name, 
-                description: aaer_geschichte[2].items[4].description,
+                title: aaer[13].name,
+                description: aaer[13].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[2].items[4].name, 
-                                title: aaer_geschichte[2].items[4].summary,
-                                description: '*' + aaer_geschichte[2].items[4].indicators,
+                                name: "X",
+                                title: aaer[13].summary,
+                                description: '*' + aaer[13].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[2].items[5].name, 
-                description: aaer_geschichte[2].items[5].description,
+                title: aaer[14].name,
+                description: aaer[14].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[2].items[5].name, 
-                                title: aaer_geschichte[2].items[5].summary,
-                                description: '*' + aaer_geschichte[2].items[5].indicators,
+                                name: "XI",
+                                title: aaer[14].summary,
+                                description: '*' + aaer[14].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -237,86 +231,85 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
             },
     
             //dimension4 mit (0:5) items
-    
             {
-                title: aaer_geschichte[3].items[0].name, 
-                description: aaer_geschichte[3].items[0].description,
+                title: aaer[15].name,
+                description: aaer[15].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[3].items[0].name, 
-                                title: aaer_geschichte[3].items[0].summary,
-                                description: '*' + aaer_geschichte[3].items[0].indicators,
+                                name: "XII",
+                                title: aaer[15].summary,
+                                description: '*' + aaer[15].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[3].items[1].name, 
-                description: aaer_geschichte[3].items[1].description,
+                title: aaer[16].name,
+                description: aaer[16].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[3].items[1].name, 
-                                title: aaer_geschichte[3].items[1].summary,
-                                description: '*' + aaer_geschichte[3].items[1].indicators,
+                                name: "XIII",
+                                title: aaer[16].summary,
+                                description: '*' + aaer[16].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[3].items[2].name, 
-                description: aaer_geschichte[3].items[2].description,
+                title: aaer[17].name,
+                description: aaer[17].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[3].items[2].name, 
-                                title: aaer_geschichte[3].items[2].summary,
-                                description: '*' + aaer_geschichte[3].items[2].indicators,
+                                name: "XIV",
+                                title: aaer[17].summary,
+                                description: '*' + aaer[17].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[3].items[3].name, 
-                description: aaer_geschichte[3].items[3].description,
+                title: aaer[18].name,
+                description: aaer[18].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[3].items[3].name, 
-                                title: aaer_geschichte[3].items[3].summary,
-                                description: '*' + aaer_geschichte[3].items[3].indicators,
+                                name: "XV",
+                                title: aaer[18].summary,
+                                description: '*' + aaer[18].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[3].items[4].name, 
-                description: aaer_geschichte[3].items[4].description,
+                title: aaer[19].name,
+                description: aaer[19].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[3].items[4].name, 
-                                title: aaer_geschichte[3].items[4].summary,
-                                // description: '*' + aaer_geschichte[3].items[4].indicators,
-                                // descriptionLocation: 'underInput',
+                                name: "XVI",
+                                title: aaer[19].summary,
+                                description: '*' + aaer[19].indicators,
+                                descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[3].items[5].name, 
-                description: aaer_geschichte[3].items[5].description,
+                title: aaer[20].name,
+                description: aaer[20].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[3].items[5].name, 
-                                title: aaer_geschichte[3].items[5].summary,
-                                description: '*' + aaer_geschichte[3].items[5].indicators,
+                                name: "XVII",
+                                title: aaer[20].summary,
+                                description: '*' + aaer[20].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -326,28 +319,28 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
     
             //dimension5 mit (0:1) items
             {
-                title: aaer_geschichte[4].items[0].name, 
-                description: aaer_geschichte[4].items[0].description,
+                title: aaer[21].name,
+                description: aaer[21].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[4].items[0].name, 
-                                title: aaer_geschichte[4].items[0].summary,
-                                description: '*' + aaer_geschichte[4].items[0].indicators,
+                                name: "XVIII",
+                                title: aaer[21].summary,
+                                description: '*' + aaer[21].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[4].items[1].name, 
-                description: aaer_geschichte[4].items[1].description,
+                title: aaer[22].name,
+                description: aaer[22].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[4].items[1].name, 
-                                title: aaer_geschichte[4].items[1].summary,
-                                description: '*' + aaer_geschichte[4].items[1].indicators,
+                                name: "XIX",
+                                title: aaer[22].summary,
+                                description: '*' + aaer[22].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -357,56 +350,56 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
     
             //dimension6 mit (0:3) items
             {
-                title: aaer_geschichte[5].items[0].name, 
-                description: aaer_geschichte[5].items[0].description,
+                title: aaer[23].name,
+                description: aaer[23].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[5].items[0].name, 
-                                title: aaer_geschichte[5].items[0].summary,
-                                description: '*' + aaer_geschichte[5].items[0].indicators,
+                                name: "XX",
+                                title: aaer[23].summary,
+                                description: '*' + aaer[23].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[5].items[1].name, 
-                description: aaer_geschichte[5].items[1].description,
+                title: aaer[24].name,
+                description: aaer[24].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[5].items[1].name, 
-                                title: aaer_geschichte[5].items[1].summary,
-                                description: '*' + aaer_geschichte[5].items[1].indicators,
+                                name: "XXI",
+                                title: aaer[24].summary,
+                                description: '*' + aaer[24].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[5].items[2].name, 
-                description: aaer_geschichte[5].items[2].description,
+                title: aaer[25].name,
+                description: aaer[25].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[5].items[2].name, 
-                                title: aaer_geschichte[5].items[2].summary,
-                                description: '*' + aaer_geschichte[5].items[2].indicators,
+                                name: "XXII",
+                                title: aaer[25].summary,
+                                description: '*' + aaer[25].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[5].items[3].name, 
-                description: aaer_geschichte[5].items[3].description,
+                title: aaer[26].name,
+                description: aaer[26].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[5].items[3].name, 
-                                title: aaer_geschichte[5].items[3].summary,
-                                description: '*' + aaer_geschichte[5].items[3].indicators,
+                                name: "XXIII",
+                                title: aaer[26].summary,
+                                description: '*' + aaer[26].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -416,42 +409,42 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
     
             //dimension7 mit (0:2) items
             {
-                title: aaer_geschichte[6].items[0].name, 
-                description: aaer_geschichte[6].items[0].description,
+                title: aaer[27].name,
+                description: aaer[27].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[6].items[0].name, 
-                                title: aaer_geschichte[6].items[0].summary,
-                                description: '*' + aaer_geschichte[6].items[0].indicators,
+                                name: "XXIV",
+                                title: aaer[27].summary,
+                                description: '*' + aaer[27].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[6].items[1].name, 
-                description: aaer_geschichte[6].items[1].description,
+                title: aaer[28].name,
+                description: aaer[28].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[6].items[1].name, 
-                                title: aaer_geschichte[6].items[1].summary,
-                                description: '*' + aaer_geschichte[6].items[1].indicators,
+                                name: "XXV",
+                                title: aaer[28].summary,
+                                description: '*' + aaer[28].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[6].items[2].name, 
-                description: aaer_geschichte[6].items[2].description,
+                title: aaer[29].name,
+                description: aaer[29].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[6].items[2].name, 
-                                title: aaer_geschichte[6].items[2].summary,
-                                description: '*' + aaer_geschichte[6].items[2].indicators,
+                                name: "XXVI",
+                                title: aaer[29].summary,
+                                description: '*' + aaer[29].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
@@ -461,52 +454,52 @@ function getJson(isPresetName=false, isPresetLink=false, isPresetSchulart=false)
     
             //dimension8 mit (0:1) items
             {
-                title: aaer_geschichte[7].items[0].name, 
-                description: aaer_geschichte[7].items[0].description,
+                title: aaer[30].name,
+                description: aaer[30].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[7].items[0].name, 
-                                title: aaer_geschichte[7].items[0].summary,
-                                description: '*' + aaer_geschichte[7].items[0].indicators,
+                                name: "XXVII",
+                                title: aaer[30].summary,
+                                description: '*' + aaer[30].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: aaer_geschichte[7].items[1].name, 
-                description: aaer_geschichte[7].items[1].description,
+                title: aaer[31].name,
+                description: aaer[31].description,
                 elements: [
                             {
                                 type: "radiogroup",
-                                name: aaer_geschichte[7].items[1].name, 
-                                title: aaer_geschichte[7].items[1].summary,
-                                description: '*' + aaer_geschichte[7].items[1].indicators,
+                                name: "XXVIII",
+                                title: aaer[31].summary,
+                                description: '*' + aaer[31].indicators,
                                 descriptionLocation: 'underInput',
                                 isRequired: true,
                                 choices: answers
                             }
                         ]
             }, {
-                title: "Kritikpunkte und Verbesserungsvorschläge", 
-                description: "Wir wollen unser Analyse- und Evaluationsraster kontinuierlich weiterentwickeln. Hier ist Platz für Ihre Kritikpunkte und ihre Verbesserungsvorschläge. Zur Anregung: Vermissen Sie bestimmte Kriterien? Erscheint Ihnen die Reihenfolge der Kriterien logisch? Sind die einzelnen Kriterien für Sie nachvollziehbar und verständlich verfasst?",
+                title: aaer[32].name,
+                description: aaer[32].description,
                 elements: [
                     {
                         type: "text",
                         name: "Kritik",
-                        title: "Bitte teilen Sie uns hier Ihre Kritik und Verbesserungsvorschläge mit (optional).",
-                        isRequired: false,
+                        title: aaer[32].summary,
+                        isRequired: true,
                     }
                 ]
             }, {
-                title: "Eigene Anmerkungen", 
-                description: "Hier können Sie eigene Kommentare zum analysierten/evaluierten Lehr-Lernmnittel einfügen, die in der Auswertung angezeigt werden.",
+                title: aaer[33].name,
+                description: aaer[33].description,
                 elements: [
                     {
                         type: "text",
                         name: "Eigene Anmerkungen",
-                        title: "Bitte geben Sie hier eigene Anmerkungen zum Lehr-Lernmittel ein (optional).",
+                        title: aaer[33].summary,
                         isRequired: false,
                     }
                 ]
@@ -588,16 +581,26 @@ let labels_de = [
 
 
 function generateBarChart(index) {
+    let names = [
+        ['I', 'II', 'III'],
+        ['IV', 'V'],
+        ['VI', 'VII', 'VIII', 'IX', 'X', 'XI'],
+        ['XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII'],
+        ['XVIII', 'XIX'],
+        ['XX', 'XXI', 'XXII', 'XXIII'],
+        ['XXIV', 'XXV', 'XXVI'],
+        ['XXVII', 'XXVIII']
+    ]
 
     let canvas = window.document.getElementById(ids[index]);
 
     let submittedData = [];
-    aaer_geschichte[index].items.forEach(function (question) {
-        submittedData.push(survey.getValue(question.name))
+    names[index].forEach(function (name) {
+        submittedData.push(survey.getValue(name))
     })
 
     let chartData = {
-        labels: sessionStorage.getItem("language") == 'En' ? labels_en[index] : labels_de[index],  //aaer_geschichte[index].labels,
+        labels: sessionStorage.getItem("language") == 'En' ? labels_en[index] : labels_de[index],
         datasets: [{
             backgroundColor: colors[index],
             data: submittedData
@@ -619,18 +622,6 @@ function generateOverallChart() {
 
     let canvas = document.getElementById('overallChart');
 
-    // let labels = [];
-    // aaer_geschichte.forEach( obj => { labels = labels.concat(obj.labels) });
-    // console.log("Labels:")
-    // console.log(labels)
-
-    let names = [];
-    aaer_geschichte.forEach( obj => {
-            obj.items.forEach( item => {
-                    names = names.concat(item.name);
-                })
-            })
-
     let labels = []
     let _labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
     _labels.forEach(arr => {
@@ -638,20 +629,12 @@ function generateOverallChart() {
     })
     
     let values = [];
-    // for(let i = 0; i < labels_en.length; i++) {
-    //     for(let j = 0; j < labels_en[i].length; j++){
-    //         if (typeof survey.getValue(labels_en[i][j]) != 'undefined') {
-    //             values.push(survey.getValue(labels_en[i][j]))
-    //         } else {
-    //             values.push(survey.getValue(labels_de[i][j]))
-    //         }
-    //     }
-    // }
+
     names.forEach( name => { values.push(survey.getValue(name)) });
 
     let bar_colors = [];
-    aaer_geschichte.forEach( (item, index) => { 
-        for(let i = 0; i < item.labels.length; i++) {
+    dimensionsHistoryEn.forEach( (dimension, index) => { 
+        for(let i = 0; i < dimension.count; i++) {
             bar_colors.push(colors[index]);
         }
     });
@@ -711,21 +694,9 @@ function generateOverallChart() {
 
 function generateRadarChart() {
 
-    let names = [];
-    aaer_geschichte.forEach( obj => {
-        obj.items.forEach( item => {
-            names = names.concat(item.name);
-        })
-    })
-
     let values = [];
     names.forEach( name => {
-        if (!name) {
-            console.log("push 0")
-            values.push(0);
-        }
-        else
-            values.push(survey.getValue(name))
+        values.push(survey.getValue(name))
     });
 
     let labels = []
@@ -735,9 +706,9 @@ function generateRadarChart() {
     })
 
     let radar_colors = [];
-    aaer_geschichte.forEach( (dimension, index) => { 
+    dimensionsHistoryEn.forEach( (dimension, index) => { 
         radar_colors.push("#ffffff");
-        for(let i = 0; i < dimension.items.length; i++) {
+        for(let i = 0; i < dimension.count; i++) {
             radar_colors.push(colors[index]);
         }
     });

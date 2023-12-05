@@ -960,11 +960,9 @@
 						}
 
 						let _html = [];
-						aaer_geschichte.forEach((element, index) => {
-							console.log(index)
-							console.log(element['title_overview'])
-							console.log(element['description_overview'])
-							_html.push(createChartHTML(index+1, element['title_overview'], element['description_overview']))
+						let dimensions = sessionStorage.getItem("language") == 'En' ? dimensionsHistoryEn : dimensionsHistoryDe;
+						dimensions.forEach((element, index) => {
+							_html.push(createChartHTML(index+1, element['name'], element['description']))
 						})
 
 						document.getElementById('append_after_here').insertAdjacentHTML('afterend', _html.join(''))
@@ -1503,30 +1501,22 @@
 								"Name": evaluations[0].data.Name
 							};
 
-							aaer_geschichte.forEach(dimension => {
-								dimension.items.forEach(item => {
-									let sum = 0;
-									let nulls = 0;
-									for (let i = 0; i < evaluations.length; i++) {
-										let {single_id, data} = evaluations[i]
-										console.log(single_id)
-										console.log(data[item.name])
-										if (data[item.name] > 0)
-											sum+=data[item.name];
-										else nulls++;
-									}
-									gesamtEvaluation[item.name] = sum/(evaluations.length - nulls);
-								})
+							names.forEach(name => {
+								let sum = 0;
+								let nulls = 0;
+								for (let i = 0; i < evaluations.length; i++) {
+									let {single_id, data} = evaluations[i]
+									if (data[name] > 0)
+										sum+=data[name];
+									else nulls++;
+								}
+								gesamtEvaluation[name] = sum/(evaluations.length - nulls);
 							})
-
-							console.log(gesamtEvaluation)
-
 
 							evaluations.forEach(evaluation => {
 								let single_id = evaluation.single_id;
 								delete evaluation.single_id;
 								evaluation = evaluation.data;
-								console.log(evaluation)
 								evaluation.Evaluationscode = single_id;
 							})
 
