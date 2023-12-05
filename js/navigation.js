@@ -730,19 +730,20 @@ function changeSurveyText(language) {
 		}
 	}
 }
-
+// es fehlen die texte in den einzelcharts
 function changeSurveyTextHistory(language) {
-	if (window.survey != null) {
-		if (window.survey.pageCount == 35) {
-			let surveyText = language == 'De' ? surveyTextHistoryDe : surveyTextHistoryEn;
-			for (i = 0; i < survey.pageCount; i++) {
-				page = survey.getPage(i);
-				page.title = surveyText[i].name;  // Überschrift
-				page.description = surveyText[i].description;  // Text
-				page.elements[0].title = surveyText[i].summary;  // Frage
-				page.elements[0].description = surveyText[i].indicators // Erklärung
-			}
-		}
+	let surveyText = language == 'De' ? surveyTextHistoryDe : surveyTextHistoryEn;
+	for (i = 0; i < survey.pageCount; i++) {
+		page = survey.getPage(i);
+		page.title = surveyText[i].name;  // Überschrift
+		page.description = surveyText[i].description;  // Text
+		page.elements[0].title = surveyText[i].summary;  // Frage
+		page.elements[0].description = surveyText[i].indicators // Erklärung
+	}
+	let chartText = language == 'De' ? dimensionsHistoryDe : dimensionsHistoryEn;
+	for (i = 0; i < dimensionsHistoryDe.length; i++) {
+		document.getElementById('chart_title' + (i + 1)).innerHTML = chartText[i].name;
+		document.getElementById('chart_text' + (i + 1)).innerHTML = chartText[i].description;
 	}
 }
 

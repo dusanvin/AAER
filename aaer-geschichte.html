@@ -149,7 +149,7 @@
 						<span class="dashboard-title font-weight-bold mb-1 mt-3 pl-3" data-lang="En">Other</span>
 						<!--<button id="button_display_PDF" class="list-group-item list-group-item-action" onclick="displayController(DISPLAY.PDF)">-->
 						<button id="button_display_PDF" data-toggle="modal" data-target="#DruckansichtModal"
-							class="list-group-item list-group-item-action" onclick="printview()">
+							class="list-group-item list-group-item-action" onclick="printview()" style="display: none !important;">
 							<svg width="1.2em" height="1.2em" viewBox="0 0 16 16"
 								class="bi bi-arrow-down-square-fill list-group-icon" fill="currentColor"
 								xmlns="http://www.w3.org/2000/svg">
@@ -913,7 +913,7 @@
 							return `
 								<div class="container-fluid mt-5 px-xl-5 px-lg-5 px-md-3 px-sm-3 px-xs-1" id="display_chart${index}">
 
-								<h2 class="font-weight-normal lead-text mb-0"><strong>${title}</strong></h2>
+								<h2 class="font-weight-normal lead-text mb-0"><strong id="chart_title${index}">${title}</strong></h2>
 
 								<!-- Row Start -->
 
@@ -945,7 +945,7 @@
 
 									<div class="col d-flex">
 
-										<p class="resultate_info">${description}</p>
+										<p class="resultate_info" id="chart_text${index}">${description}</p>
 
 									</div>
 

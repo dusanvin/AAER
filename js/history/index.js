@@ -632,10 +632,6 @@ function generateOverallChart() {
     
     let values = [];
     _names.forEach( name => { values.push(survey.getValue(name)) });
-    console.log('Overall Chart: values')
-    console.log(names)
-    console.log(_names)
-    console.log(values)
 
     let bar_colors = [];
     dimensionsHistoryEn.forEach( (dimension, index) => { 
@@ -700,8 +696,6 @@ function generateRadarChart() {
     names.forEach( name => {
         values.push(survey.getValue(name))
     });
-    console.log('names radar chart')
-    console.log(names)
 
     let labels = []
     let _labels = sessionStorage.getItem("language") == 'En' ? labels_en : labels_de
