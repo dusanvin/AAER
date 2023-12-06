@@ -1564,12 +1564,12 @@
 							}
 							legend_en += '\n\nValues have following meanings:\n 0 = not assessable\n 1 = not correct at all\n 2 = rather not correct\n 3 = rather correct\n 4 - fully correct\n\n';
 							
-							survey.data['groupcode'] = survey.data['Gruppencode'];
-							delete survey.data['Gruppencode'];
-							survey.data['number evaluations'] = survey.data['Anzahl Datensätze'];
-							delete survey.data['Anzahl Datensätze'];
-							survey.data['name'] = survey.data['Name'];
-							delete survey.data['Name'];
+							gesamtEvaluation['groupcode'] = gesamtEvaluation['Gruppencode'];
+							delete gesamtEvaluation['Gruppencode'];
+							gesamtEvaluation['number evaluations'] = gesamtEvaluation['Anzahl Datensätze'];
+							delete gesamtEvaluation['Anzahl Datensätze'];
+							gesamtEvaluation['name'] = gesamtEvaluation['Name'];
+							delete gesamtEvaluation['Name'];
 
 							json_en = legend_en + 'Group evaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Listing of single evaluations:';
 							evaluations.forEach( evaluation => {
