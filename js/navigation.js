@@ -891,7 +891,9 @@ function aaerTextHistory(lang) {
 		document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? not_specified;
 		document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? not_specified;
 		document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
-		document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'] ?? not_specified;
+		document.getElementById('anmerkungen').innerHTML = survey.data['Eigene Anmerkungen'] ?? not_specified;  
+		document.getElementById('anmerkungen-gruppe').innerHTML = sessionStorage.getItem("language") == 'En' ? 'For details of single evaluations click on "DATA AS JSON-FORMAT"' : 'Details zu den Einzelevaluationen gibt es unter "Einträge im JSON-Format"';
+		
 		
 		// JSON-Übersicht
 		document.querySelector('#surveyResult').textContent = "" + JSON.stringify(survey.data, null, 4);

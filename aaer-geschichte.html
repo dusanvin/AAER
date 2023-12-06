@@ -670,7 +670,7 @@
 																	class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 pl-0 pr-0">
 
 																	<p class="lehr-lernmittel-heading mb-2 mt-3 pl-3">
-																		<span data-lang="De">Anzahl Datensätze</span><span data-lang="En">Number of Evaluations</span></p>
+																		<span data-lang="De">Anzahl an Evaluationen</span><span data-lang="En">Number of Evaluations</span></p>
 
 																	<div style="background-color: #f1f3fa; border-bottom-left-radius: 7px; border-top-left-radius: 7px; min-height:76px;"
 																		class="pt-3 pb-3 pl-3 pr-3">
@@ -794,6 +794,19 @@
 																		class="pt-3 pb-3 pl-3 pr-3">
 
 																		<a id="anmerkungen"
+																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
+
+																	</div>
+
+																</div>
+
+
+																	<p class="mb-2 pl-3 lehr-lernmittel-heading">
+																		<span data-lang="De">Anmerkungen</span><span data-lang="En">Comments</span></p>
+
+																	<div style="background-color: #f1f3fa; border-radius: 7px; min-height:76px;"
+																		class="pt-3 pb-3 pl-3 pr-3">
+
 																			style="word-break:break-word; font-weight:400; font-size:80%;"></a>
 
 																	</div>
@@ -1201,6 +1214,7 @@
 			$('#div-kritik').css("display", "block");
 			$('#div-evaluationsdatum').css("display", "block");
 			$('#div-anmerkungen').css("display", "block");
+			$('#div-anmerkungen-gruppe').css("display", "none");
 
 			let not_specified = sessionStorage.getItem("language") == 'En' ? 'Not specified' : 'Keine Angabe'
     
@@ -1228,11 +1242,12 @@
 			$('#div-meinung').css("display", "none");
 			$('#div-kritik').css("display", "none");
 			$('#div-evaluationsdatum').css("display", "none");
-			$('#div-anmerkungen').css("display", "block");
+			$('#div-anmerkungen').css("display", "none");
+			$('#div-anmerkungen-gruppe').css("display", "block");
     
 			document.getElementById('gruppencode').innerHTML = group_id;
-			document.getElementById('anzahl').innerHTML = survey.data["Anzahl Datensätze"] + sessionStorage.getItem("language") == 'En' ? ', for the calculation of the average values questions answered with "cannot be assessed / not relevant" are not taken into account' : ', für die Ermittlung der Durchschnittswerte wurden Antworten mit "nicht bewertbar / nicht relevant" ausgeschlossen';
-			document.getElementById('anmerkungen').innerHTML = sessionStorage.getItem("language") == 'En' ? 'For details of single evaluations click on "DATA AS JSON-FORMAT"' : 'Details zu den Einzelevaluationen gibt es unter "Einträge im JSON-Format"';
+			document.getElementById('anzahl').innerHTML = survey.data["Anzahl Datensätze"];
+			document.getElementById('anmerkungen-gruppe').innerHTML = sessionStorage.getItem("language") == 'En' ? 'For details of single evaluations click on "DATA AS JSON-FORMAT"' : 'Details zu den Einzelevaluationen gibt es unter "Einträge im JSON-Format"';
 		
 			generateCharts();
 		}
