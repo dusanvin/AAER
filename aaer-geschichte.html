@@ -1548,15 +1548,50 @@
 							survey.data = gesamtEvaluation;
 							visualizeGroup(group_id);
 
-							json_en = 'Group evaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Listing of single evaluations';
-							evaluations.forEach( evaluation => {
-								json_en += '\n\n' + JSON.stringify(evaluation.data, null, 4);
-							})
-
-							json_de = 'Gruppenevaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Auflistung der zugehörigen Einzelevaluationen'
+							var legend_de = 'Legende: \n\n';
+							for (let i=4; i < surveyTextHistoryDe.length-2; i++) {
+								legend_de += surveyTextHistoryDe[i].name + '\n';
+							}
+							legend_de += '\n\nDie Bewertungen haben folgende Bedeutung:\n 0 = nicht bewertbar\n 1 = trifft nicht zu\n 2 = trifft weniger zu\n 3 = trifft mehr zu\n 4 = trifft voll zu\n\n'
+							json_de = legend_de + '\nGruppenevaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Auflistung der zugehörigen Einzelevaluationen:'
 							evaluations.forEach( evaluation => {
 								json_de += '\n\n' + JSON.stringify(evaluation.data, null, 4);
 							})
+
+							var legend_en = 'Legend: \n\n';
+							for (let i=4; i < surveyTextHistoryEn.length-2; i++) {
+								legend_en += surveyTextHistoryEn[i].name + '\n';
+							}
+							legend_en += '\n\nValues have following meanings:\n 0 = not assessable\n 1 = not correct at all\n 2 = rather not correct\n 3 = rather correct\n 4 - fully correct\n\n';
+							
+							survey.data['groupcode'] = survey.data['Gruppencode'];
+							delete survey.data['Gruppencode'];
+							survey.data['number evaluations'] = survey.data['Anzahl Datensätze'];
+							delete survey.data['Anzahl Datensätze'];
+							survey.data['name'] = survey.data['Name'];
+							delete survey.data['Name'];
+
+							json_en = legend_en + 'Group evaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Listing of single evaluations:';
+							evaluations.forEach( evaluation => {
+								evaluation.data['name'] = evaluation.data['Name'];
+								delete evaluation.data['Name'];
+								evaluation.data['link'] = evaluation.data['Verlinkung'];
+								delete evaluation.data['Verlinkung'];
+								evaluation.data['opinion'] = evaluation.data['Meinung'];
+								delete evaluation.data['Meinung'];
+								evaluation.data['criticism'] = evaluation.data['Kritik'];
+								delete evaluation.data['Kritik'];
+								evaluation.data['comments'] = evaluation.data['Eigene Anmerkungen'];
+								delete evaluation.data['Eigene Anmerkungen'];
+								evaluation.data['date'] = evaluation.data['Evaluationsdatum'];
+								delete evaluation.data['Evaluationsdatum'];
+								evaluation.data['code'] = evaluation.data['Evaluationscode'];
+								delete evaluation.data['Evaluationscode'];
+
+								json_en += '\n\n' + JSON.stringify(evaluation.data, null, 4);
+							})
+
+
 							document.querySelector('#surveyResult').textContent = sessionStorage.getItem("language") == 'En' ? json_en : json_de;
 
 							buttons.forEach(btn => document.getElementById(btn).disabled = false);
