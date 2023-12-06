@@ -1528,7 +1528,8 @@
 										sum+=data[name];
 									else nulls++;
 								}
-								gesamtEvaluation[name] = sum/(evaluations.length - nulls);
+								let avg = sum/(evaluations.length - nulls)
+								gesamtEvaluation[name] = avg.toFixed(2);
 							})
 
 							evaluations.forEach(evaluation => {
