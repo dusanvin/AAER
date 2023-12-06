@@ -1548,18 +1548,16 @@
 							survey.data = gesamtEvaluation;
 							visualizeGroup(group_id);
 
-
-							
-							// alle datensätze als json ausgeben
-							let json_str = sessionStorage.getItem("language") == 'En' ? 'Group evaluation:\n\n' : 'Gruppenevaluation:\n\n';
-							json_str += JSON.stringify(gesamtEvaluation, null, 4);
-							json_str += '\n\n';
-
-							json_str += sessionStorage.getItem("language") == 'En' ? 'Listing of single evaluations' : '\nAuflistung der zugehörigen Einzelevaluationen: ';
-						    evaluations.forEach( evaluation => {
-								json_str += '\n\n' + JSON.stringify(evaluation.data, null, 4);
+							json_en = 'Group evaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Listing of single evaluations';
+							evaluations.forEach( evaluation => {
+								json_en += '\n\n' + JSON.stringify(evaluation.data, null, 4);
 							})
-							document.querySelector('#surveyResult').textContent = "\n\n" + json_str;
+
+							json_de = 'Gruppenevaluation:\n\n' + JSON.stringify(gesamtEvaluation, null, 4) + '\n\n' + 'Auflistung der zugehörigen Einzelevaluationen'
+							evaluations.forEach( evaluation => {
+								json_de += '\n\n' + JSON.stringify(evaluation.data, null, 4);
+							})
+							document.querySelector('#surveyResult').textContent = sessionStorage.getItem("language") == 'En' ? json_en : json_de;
 
 							buttons.forEach(btn => document.getElementById(btn).disabled = false);
 							displayController(DISPLAY.OVERALL);

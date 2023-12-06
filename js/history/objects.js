@@ -538,3 +538,6 @@ let answers_history_en = [
     {value: 4, text: "applies fully"},
     {value: 0, text: "cannot be assessed / not relevant"}
 ];
+
+var json_de;
+var json_en;

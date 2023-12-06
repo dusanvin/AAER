@@ -896,7 +896,7 @@ function aaerTextHistory(lang) {
 		
 		
 		// JSON-Übersicht
-		document.querySelector('#surveyResult').textContent = "" + JSON.stringify(survey.data, null, 4);
+		document.querySelector('#surveyResult').textContent = lang == 'En' ? json_en : json_de;
 	}
 
 }
