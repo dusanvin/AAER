@@ -1862,7 +1862,7 @@
 
 			if (input.length === 10) {
 				let xhr = new XMLHttpRequest();
-				xhr.open("POST", "https://staging.zlbib.uni-augsburg.de/loadPredefined");
+				xhr.open("POST", "https://aaer.digillab.uni-augsburg.de/loadPredefined");
 				xhr.setRequestHeader("Content-Type", "application/json");
 				xhr.send(JSON.stringify({ "predefined_id": input }));
 
@@ -2042,7 +2042,7 @@
 			$(".sv_complete_btn").click(function () {
 				displayController(DISPLAY.THANKS);
 				var status_request = new XMLHttpRequest();
-				status_request.open('POST', 'https://staging.zlbib.uni-augsburg.de/');
+				status_request.open('POST', 'https://aaer.digillab.uni-augsburg.de/');
 
 				status_request.onreadystatechange = function () {
 					if (this.status == 200) {
