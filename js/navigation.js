@@ -180,7 +180,7 @@ function changeDeInline() {
 }
 
 let subjects_de = [
-	'Bitte wählen Sie ein Fach...', 'AAER...de',
+	'Bitte wählen Sie ein Fach...', 
 	'Keine Angabe', 'Biologie', 'Chemie', 'Deutsch', 'Englisch',
 	'Erdkunde / Geographie', 'Ethik', 'Französich', 'Geschichte', 'Informatik / IT',
 	'Kunst / Werken', 'Latein', 'Mathematik', 'Musik', 'Pädagogik', 'Philosophie',
@@ -191,7 +191,7 @@ let subjects_de = [
 //Hier Liste für Geschichte einfügen (Heimat & Sachunttericht, )
 
 let subjects_en = [
-	'Please choose a subject...', 'AAER...en',
+	'Please choose a subject...', 
 	'not specified', 'biology', 'chemistry', 'german', 'english', 
 	'geography', 'ethics', 'french', 'history', 'computer science', 
 	'art', 'latin', 'maths', 'music', 'pedagogy', 'philosophy',

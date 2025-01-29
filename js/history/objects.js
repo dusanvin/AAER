@@ -196,7 +196,7 @@ let surveyTextHistoryDe = [
 	{
 		name: "Kritikpunkte und Verbesserungsvorschläge",
 		description: "Wir wollen unser Analyse- und Evaluationsraster kontinuierlich weiterentwickeln. Hier ist Platz für Ihre Kritikpunkte und ihre Verbesserungsvorschläge. Zur Anregung: Vermissen Sie bestimmte Kriterien? Erscheint Ihnen die Reihenfolge der Kriterien logisch? Sind die einzelnen Kriterien für Sie nachvollziehbar und verständlich verfasst?",
-		summary: "Bitte teilen Sie uns hier Ihre Kritik und Verbesserungsvorschläge mit (optional).",
+		summary: "Bitte teilen Sie uns hier Ihre Kritik und Verbesserungsvorschläge mit.",
 		indicators: ''
 	},
 	{
@@ -403,7 +403,7 @@ let surveyTextHistoryEn = [
 	{
 		name: "Your critics and suggestions for improvement",
 		description: "We want to continuously develop our analysis and evaluation grid. Here is space for your criticisms and their suggestions for improvement. As a suggestion: Do you miss certain criteria? Does the order of the criteria seem logical to you? Are the individual criteria comprehensible and understandable for you?",
-		summary: "Please share your criticism and suggestions for improvement here (optional).",
+		summary: "Please share your criticism and suggestions for improvement here.",
 		indicators: ""
 	},
 	{
