@@ -552,7 +552,7 @@ function visualize(data) {
     if (data['Fach'] == null) {
         data['Fach'] = 1;
     }
-    fachName = fach[data['Fach'] - 1].text;
+    fachName = fach[data['Fach']].text;
     jsonViewData.Fach = fachName; // JSON-Übersicht
     document.getElementById('fach').innerHTML = fachName; // Gesamtübersicht
 
