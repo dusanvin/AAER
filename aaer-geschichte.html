@@ -1387,9 +1387,16 @@
 
 
 						
-								json_de = JSON.stringify(survey.data, null, 4);
+								json_de = JSON.stringify(survey.data, (k, v) => {
+									if (k == 'Schulart') {
+										return schools_history_de[v];
+									}
+									return v;
+								}, 4);
 
 								en_data = JSON.parse(json_de)
+								en_data['school'] = schools_history_en[survey.data['Schulart']];
+								delete en_data['Schulart']
 								en_data['name'] = en_data['Name'];
 								delete en_data['Name'];
 								en_data['link'] = en_data['Verlinkung'];
@@ -1405,7 +1412,7 @@
 								en_data['code'] = en_data['Evaluationscode'];
 								delete en_data['Evaluationscode'];
 								json_en = JSON.stringify(en_data, null, 4);
-								
+
 								document.querySelector('#surveyResult').textContent = sessionStorage.getItem("language") == 'En' ? json_en : json_de;
 
 								sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
