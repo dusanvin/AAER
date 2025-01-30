@@ -1384,6 +1384,30 @@
 								displayController(DISPLAY.OVERALL);
 
 								visualize();
+
+
+						
+								json_de = JSON.stringify(survey.data, null, 4);
+
+								en_data = JSON.parse(json_de)
+								en_data['name'] = en_data['Name'];
+								delete en_data['Name'];
+								en_data['link'] = en_data['Verlinkung'];
+								delete en_data['Verlinkung'];
+								en_data['opinion'] = en_data['Meinung'];
+								delete en_data['Meinung'];
+								en_data['criticism'] = en_data['Kritik'];
+								delete en_data['Kritik'];
+								en_data['comments'] = en_data['Eigene Anmerkungen'];
+								delete en_data['Eigene Anmerkungen'];
+								en_data['date'] = en_data['Evaluationsdatum'];
+								delete en_data['Evaluationsdatum'];
+								en_data['code'] = en_data['Evaluationscode'];
+								delete en_data['Evaluationscode'];
+								json_en = JSON.stringify(en_data, null, 4);
+								
+								document.querySelector('#surveyResult').textContent = sessionStorage.getItem("language") == 'En' ? json_en : json_de;
+
 								sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
 							});
 							survey.doComplete();
