@@ -1650,13 +1650,12 @@
 	<!-- Disable First Option Select Start -->
 
 	<script>
-		// gruppenevaluation anlegen
+		// Gruppenevaluation anlegen
 		function createSelectOptions(select_id, list) {
 			let select = document.getElementById(select_id);
 			Array.prototype.forEach.call(list, function(item, index) {
 				let option = document.createElement('option');
 				if(index == 0) {
-					// selected="selected" disabled="disabled" value="" 
 					option.selected = 'selected'
 					option.disabled = 'disabled'
 					option.value = ''
@@ -1696,7 +1695,6 @@
 		// Start: Display - Name Lehr- Lernmittel
 
 		function display_Name() {
-			//$('name_lernmittel').css("display", "block");
 			document.getElementById('name_lernmittel').innerHTML = survey.getValue('Name');
 		}
 
@@ -1711,7 +1709,6 @@
 			} else {
 				$("#link_lernmittel").prop('href', survey.getValue('Verlinkung'));
 			}
-			//$("#link_lernmittel").css("display", "block");
 			document.getElementById('link_lernmittel').innerHTML = survey.getValue('Verlinkung');
 		}
 
@@ -1720,7 +1717,6 @@
 		// Start: Display - Datum
 
 		function display_Date() {
-			//$("#datum_lernmittel").css("display", "block");
 			document.getElementById('datum_lernmittel').innerHTML = getDate();
 		}
 
@@ -1820,7 +1816,7 @@
 			$("#wrapper").toggleClass("toggled");
 		}
 
-		// gets called if button is clicked
+		
 		function displayController(btn_enum) {
 			for (variable in DISPLAY) {
 				$(DISPLAY[variable]).css("display", "none");
@@ -1897,9 +1893,6 @@
 
 							survey.data = data_object;
 
-							// $("#surveyElement").Survey({ model: survey });
-
-
 							predefined = true;
 							predefined_id = input;
 
@@ -1919,79 +1912,6 @@
 			}
 		}
 
-
-		function getrand(n = 5) {
-			return Math.floor(Math.random() * n);
-		}
-
-
-		function fill(loaded_values = 0) {
-			let link, fach, schulart;
-			if (loaded_values) {
-				link = survey.data.Verlinkung;
-				fach = survey.data.Fach;
-				schulart = survey.data.Schulart
-			}
-			newSurvey();
-
-			survey.data = {
-				"Name": 'Generiert',
-				"Verlinkung": loaded_values? link: 'kein',
-
-				"Fach": loaded_values? fach: (22) + 2,
-				"Schulart": loaded_values? schulart: (25) + 2,
-
-				//Anlehnung an Curriculum und Bildungsstandards
-				"Bezüge Curriculum": getrand(),
-				"Bezüge Bildungsstandards": getrand(),
-
-				//Diskursive Positionierung
-				"Interessegeleitete Themenführung/Positionierung": getrand(),
-				"Transparenz": getrand(),
-				"Werbliche Elemente": getrand(),
-				"Heterogenität/Gender": getrand(),
-
-				//Makrodidaktische und bildungstheoretische Fundierung
-				"Handlungsorientierung": getrand(),
-				"Lebensweltlichkeit": getrand(),
-				"Reflexion/Urteilsfähigkeit": getrand(),
-				"Multiperspektivität/Kontroversität": getrand(),
-
-				//Mikrodidaktische Umsetzung
-				"Methodenpluralität": getrand(),
-				"Multimedia/Multimodalität": getrand(),
-				"Medienkompetenz": getrand(),
-				"Differenzierung": getrand(),
-				"Barrierefreiheit/Inklusion": getrand(),
-
-				//Kognitive Strukturierung
-				"Transfer- und Anwendungsorientierung": getrand(),
-				"Prozessorientierung (Kumulation)": getrand(),
-				"Lernwegunterstützende Elemente (Scaffolding)": getrand(),
-
-				//Bild- und Textkomposition
-				"Sprachlichkeit": getrand(),
-				"Bildsprache": getrand(),
-				"Additive Kommunikation (Anreicherung)": getrand(),
-
-				//Aufgabendesign
-				"Sequenzierung": getrand(),
-				"Aktivierung": getrand(),
-				"Multiple Lösungswege": getrand(),
-
-				//Anwendungstransparenz
-				"Didaktisches Konzept": getrand(),
-				"Rahmenbedingungen": getrand(),
-
-				"Eigene Anmerkungen": 'Super!'
-			};
-
-			index_last = window.survey.pages.length - 1
-			survey.currentPage = survey.pages[index_last];
-
-			displayController(DISPLAY.UMFRAGE);
-
-		}
 
 		var error_status = false;
 		var saved_data;
@@ -2034,9 +1954,6 @@
 
 			$("#surveyElement").Survey({ model: survey });
 			document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter';
-
-			sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
-			
 
 
 			$(".sv_complete_btn").click(function () {

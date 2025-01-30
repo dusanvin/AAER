@@ -1220,10 +1220,11 @@
 			$('#div-anmerkungen-gruppe').css("display", "none");
 
 			let not_specified = sessionStorage.getItem("language") == 'En' ? 'Not specified' : 'Keine Angabe'
+			let schools = sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de
     
 			document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'] ?? '';
 			document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;
-			document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? not_specified;
+			document.getElementById('schulart').innerHTML = schools[survey.data['Schulart']] ?? not_specified;
 			document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? not_specified;
 			document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? not_specified;
 			document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
@@ -1305,38 +1306,6 @@
 				options.text = err;
 			})
 
-			// window.survey.onCurrentPageChanged.add( () => {
-			// 	if (document.querySelector('.sv_prev_btn')) {
-			// 		document.querySelector('.sv_prev_btn').value = sessionStorage.getItem("language") == 'En' ? 'Back' : 'Zurück'
-			// 	}
-			// 	document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-			// })
-
-			// $("#surveyElement").Survey({ model: survey });
-			// document.querySelector('.sv_next_btn').value = sessionStorage.getItem("language") == 'En' ? 'Continue' : 'Weiter'
-
-			// sessionStorage.getItem("language") == 'En' ? clickedEnglish() : clickedGerman();
-
-			
-			// displayController(DISPLAY.UMFRAGE);
-			// buttons.forEach(btn => document.getElementById(btn).disabled = true);
-
-			// if (saved_data) {
-			// 	survey.data = saved_data;
-			// 	console.log(survey.data)
-				
-			// 	index_last = window.survey.pages.length - 1
-			// 	survey.currentPage = survey.pages[index_last];
-				
-			// 	alert('Etwas ist bei der Übermittlung der Daten schiefgelaufen. Bitte versuchen Sie es erneut.')
-			// }
-
-			
-			// survey.onComplete.add(function (sender, options) {
-			// 	// submitEvaluation(sender.data);  // index.js function
-			// 	submitEvaluation(survey.data);  // index.js function
-			// });
-
 			$(".sv_complete_btn").click(function () {
 				displayController(DISPLAY.THANKS);
 				
@@ -1360,7 +1329,6 @@
 		// for single and group
 		function submitEvaluation(data, group_id=null) {
 
-			// survey.data.Evaluationsdatum = getDate(); wrong
 			survey.setValue('Evaluationsdatum', getDate());
 
 			let xhr = new XMLHttpRequest();
@@ -1402,19 +1370,15 @@
 								options.text = err;
 							})
 
-							// let {single_id, group_id, data} = JSON.parse(this.responseText);
-							// console.log("destructuring")
-							// console.log(single_id)
-							// console.log(group_id)
-							// console.log(data)
-
 							let { data } = JSON.parse(this.responseText);
 
 							data.Evaluationscode = single_id;
-							// data.Gruppencode = group_id;
 							survey.data = data
 
+							schulart_backup = survey.data['Schulart']
+
 							survey.onComplete.add(function (sender, options) {
+								survey.setValue("Schulart", schulart_backup);
 	
 								buttons.forEach(btn => document.getElementById(btn).disabled = false);
 								displayController(DISPLAY.OVERALL);

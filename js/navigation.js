@@ -885,9 +885,11 @@ function aaerTextHistory(lang) {
 
 	if(document.getElementById('anmerkungen')) {
 		let not_specified = lang == 'En' ? 'Not specified' : 'Keine Angabe'
+		let schools = sessionStorage.getItem("language") == 'En' ? schools_history_en : schools_history_de
+
 		document.getElementById('evaluationscode').innerHTML = survey.data['Evaluationscode'];
 		document.getElementById('verlinkung').innerHTML = survey.data['Verlinkung'] ?? not_specified;
-		document.getElementById('schulart').innerHTML = survey.data['Schulart'] ?? not_specified;
+		document.getElementById('schulart').innerHTML = schools[survey.data['Schulart']] ?? not_specified;
 		document.getElementById('meinung').innerHTML = survey.data['Meinung'] ?? not_specified;
 		document.getElementById('kritik').innerHTML = survey.data['Kritik'] ?? not_specified;
 		document.getElementById('evaluationsdatum').innerHTML = survey.data['Evaluationsdatum'];
