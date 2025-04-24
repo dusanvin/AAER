@@ -242,7 +242,7 @@ function changeAnswers(lang) {
 	for(let i=0; i < window.survey.pageCount; i++) {
 		let options = window.survey.getPage(i).questions[0].choices;
 		if(options != null && options.length == 5) {
-			window.survey.getPage(i).questions[0].choices = answers
+			window.survey.getPage(i).elements[0].choices = answers
 		}
 	}
 }
@@ -300,8 +300,8 @@ function changeSelectOptionsAAER(lang) {
 			options_subject.push(option)
 		})
 
-		window.survey.getPage(2).questions[0].choices = options_subject
-		window.survey.getPage(2).questions[0].choices[0].setIsEnabled(false)
+		window.survey.getPage(2).elements[0].choices = options_subject
+		window.survey.getPage(2).elements[0].choices[0].setIsEnabled(false)
 
 		let options_schools = []
 		Array.prototype.forEach.call(schools, function(item, index) {
@@ -316,8 +316,8 @@ function changeSelectOptionsAAER(lang) {
 			option.text = item;
 			options_schools.push(option)
 		})
-		window.survey.getPage(3).questions[0].choices = options_schools
-		window.survey.getPage(3).questions[0].choices[0].setIsEnabled(false)
+		window.survey.getPage(3).elements[0].choices = options_schools
+		window.survey.getPage(3).elements[0].choices[0].setIsEnabled(false)
 	}
 	
 }
@@ -344,8 +344,8 @@ function changeSelectOptionsAAERHistory(lang) {
 			option.text = item;
 			options_schools.push(option)
 		})
-		window.survey.getPage(2).questions[0].choices = options_schools
-		window.survey.getPage(2).questions[0].choices[0].setIsEnabled(false)
+		window.survey.getPage(2).elements[0].choices = options_schools
+		window.survey.getPage(2).elements[0].choices[0].setIsEnabled(false)
 	}
 }
 
@@ -404,7 +404,8 @@ let surveyTextDe = [
 	{
 		title: "VI. Heterogenität/Gender (Dimension: Diskursive Positionierung)",
 		description: "Lehr-Lernmittel enthalten direkt oder indirekt (z.B. über visuelle Darstellungen, Bilder, Grafiken oder auch im Rahmen von Textteilen) Repräsentationen/Darstellungen einer sozialen und gesellschaftlichen Umwelt, die sie jedoch auch gleichzeitig aufgrund dieser Darstellung für das Verständnis der Schüler*innen wiederum beeinflussen und 'erzeugen'. In einer pluralistisch verfassten, demokratischen Gesellschaft erscheint es wichtig, dass einseitige Zuschreibungen/Festlegungen auf gesellschaftliche bzw. ethnische Gruppen oder Minderheiten, auf Menschen mit Beeinträchtigungen sowie auf Geschlecht oder Religion vermieden werden. Darüber hinaus erscheint es als wichtig, dass eine kulturelle Vielfalt, wie sie unter den Schüler*innen herrscht, auch in Lehr-Lernmitteln repräsentiert wird.",
-		question: "Das Lehr-Lernmittel ist in seinen textlichen und bildlichen Darstellungen von gesellschaftlichen bzw. ethnischen Gruppen sowie hinsichtlich der Kategorie Geschlecht ausgewogen und in ihm werden einseitige, reduzierende Darstellungen vermieden."
+		question: "Das Lehr-Lernmittel ist in seinen textlichen und bildlichen Darstellungen von gesellschaftlichen bzw. ethnischen Gruppen sowie hinsichtlich der Kategorie Geschlecht ausgewogen und in ihm werden einseitige, reduzierende Darstellungen vermieden.",
+		indicators: "Abbildungen, Fotos, textliche Beschreibungen, in denen gesellschaftliche Gruppen vorkommen,stellen diese nicht vereinseitigend da (etwa, indem eine bestimmte gesellschaftliche Gruppe zu bestimmten Tätigkeiten, Meinungen, Verhaltensweisen vereinfachend zugeordnet wird). Für die Kategorie Geschlecht gilt, dass eine ausgewogene, sozusagen gleichberechtigte Darstellung von weiblichen und männlichen Personen enthalten ist, in der ebenfalls vereinseitigende Zuordnungen vermieden bzw. möglicherweise sogar bewusst aufgebrochen werden. In ähnlicher Weise erfolgt die Darstellung unterschiedlicher gesellschaftlicher Gruppen, Ethnien. Dies erfolgt unter anderem auch deshalb, um der Heterogenität der Schüler*innen in diesem Bereich Rechnung zu tragen und entsprechende Identifikationsangebote zu bieten."
 	},
 	{
 		title: "VII. Handlungsorientierung (Dimension: Makrodidaktische und bildungstheoretische Fundierung)",
@@ -723,7 +724,28 @@ function changeSurveyText(language) {
 		page = survey.getPage(i);
 		page.title = surveyText[i].title;
 		page.description = surveyText[i].description;
-		page.questions[0].title = surveyText[i].question;
+		page.elements[0].title = surveyText[i].question;
+
+		if (surveyText[i].indicators) {
+			page.elements[0].description = surveyText[i].indicators;
+			page.elements[0].descriptionLocation = 'underInput';
+		} else {
+			page.elements[0].description = ''; // Falls keine vorhanden, leer lassen
+		}
+	}
+}
+
+function toggleIndicator(index) {
+	const indicatorContent = document.getElementById(`indicatorContent${index}`);
+	const toggleText = document.querySelector(`#indicatorContent${index}`).previousElementSibling;
+
+	// Umschalten der Sichtbarkeit
+	if (indicatorContent.style.display === 'none') {
+		indicatorContent.style.display = 'block';
+		toggleText.innerText = 'Weniger anzeigen';
+	} else {
+		indicatorContent.style.display = 'none';
+		toggleText.innerText = 'Mehr anzeigen';
 	}
 }
 
