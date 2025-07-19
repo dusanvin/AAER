@@ -3,7 +3,7 @@ function display_navigation() {
 	container.innerHTML =
 		`
 		<!-- Navigation Start -->
-		<link rel = "stylesheet" href = "/css/navigation.css" />
+		<link rel = "stylesheet" href = "css/navigation.css" />
 		<div class="site-navbar-top">
 			<div class="container py-3 px-2">
 				<div class="row align-items-center mx-0">
@@ -57,14 +57,14 @@ function display_navigation() {
 			        <a data-lang="De" class="nav-link pl-0 pb-0" href="index.html" alt="Start">
 			        	<div class="image">
 			          		<figure class="mb-0">
-			            		<img class="image-img" src="/img/sophie/AAER%20Logo.png" width="200">
+			            		<img class="image-img" src="img/sophie/AAER%20Logo.png" width="200">
 			          		</figure>
 			        	</div>
 			        </a>
 			        <a style="display: none;" data-lang="En" class="nav-link pl-0 pb-0" href="index.html" alt="Start">
 			        	<div class="image">
 			          		<figure class="mb-0">
-			            		<img class="image-img" src="/img/sophie/AAER%20Logo.png" width="200">
+			            		<img class="image-img" src="img/sophie/AAER%20Logo.png" width="200">
 			          		</figure>
 			        	</div>
 			        </a>

@@ -12,12 +12,12 @@ function display_footer() {
 		      <div class="col-12 col-md pr-xs-0 pr-sm-0 pr-md-5 mr-lg-5 mb-5">
 		      	<div class="image ml-3 ml-sm-0">
 		          <figure>
-		            <img class="image-img" src="/img/sophie/AAER-Logo_RGB-Gradient.png" width="190">
+		            <img class="image-img" src="img/sophie/AAER-Logo_RGB-Gradient.png" width="190">
 		          </figure>
 		        </div>
 		        <!-- <div class="image">
 		          <figure>
-		            <img class="image-img" src="https://aaer.zlbib.uni-augsburg.de/img/Uni_Aug_Logo_ZDL_RGB_small.png" width="230">
+		            <img class="image-img" src="https://aaer.zlbib.uni-augsburg.deimg/Uni_Aug_Logo_ZDL_RGB_small.png" width="230">
 		          </figure>
 		        </div> -->
 		        <small class="mb-3 ml-3 text-center text-sm-left text-dark"  data-lang="De" ><br><strong>Version 1.1:</strong><br>08/2023<br><br> <strong>Lizenz des AAERs:</strong>

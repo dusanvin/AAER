@@ -7,7 +7,6 @@ Mixture of own CSS/JS and...
 - MaterialDesignBootstrap (MDB)
 - jQuery
 - Chart.js
-- d3.js
 - SurveyJS including SurveyCreator
 
 Available under: https://aaer.zlbib.uni-augsburg.de
